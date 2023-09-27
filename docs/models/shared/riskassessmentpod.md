@@ -1,0 +1,16 @@
+# RiskAssessmentPod
+
+Single pod risk assessment
+
+
+## Fields
+
+| Field                                                                                | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `DockerfileScanResultsSummary`                                                       | [*DockerfileScanResultsSummary](../../models/shared/dockerfilescanresultssummary.md) | :heavy_minus_sign:                                                                   | dockerfile scan results summary by severity                                          |
+| `ID`                                                                                 | **string*                                                                            | :heavy_minus_sign:                                                                   | kubernetes pod uid                                                                   |
+| `Images`                                                                             | [][RiskAssessmentImage](../../models/shared/riskassessmentimage.md)                  | :heavy_minus_sign:                                                                   | N/A                                                                                  |
+| `Labels`                                                                             | [][Label](../../models/shared/label.md)                                              | :heavy_minus_sign:                                                                   | N/A                                                                                  |
+| `Name`                                                                               | **string*                                                                            | :heavy_minus_sign:                                                                   | N/A                                                                                  |
+| `Namespace`                                                                          | **string*                                                                            | :heavy_minus_sign:                                                                   | N/A                                                                                  |
+| `VulnerabilitiesSummary`                                                             | [*VulnerabilitiesSummary](../../models/shared/vulnerabilitiessummary.md)             | :heavy_minus_sign:                                                                   | Vulnerabilities summary by severity                                                  |

@@ -1,0 +1,9 @@
+# GetMitreTechniqueRequest
+
+
+## Fields
+
+| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `ClustersIds`                                                                                         | []*string*                                                                                            | :heavy_minus_sign:                                                                                    | the clusters ids to filter by                                                                         |
+| `MitreTechniqueType`                                                                                  | [GetMitreTechniqueMitreTechniqueType](../../models/operations/getmitretechniquemitretechniquetype.md) | :heavy_check_mark:                                                                                    | MITRE technique type                                                                                  |

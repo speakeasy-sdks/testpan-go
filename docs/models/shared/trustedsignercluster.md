@@ -1,0 +1,11 @@
+# TrustedSignerCluster
+
+
+## Fields
+
+| Field                                                                                    | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `ID`                                                                                     | **string*                                                                                | :heavy_minus_sign:                                                                       | N/A                                                                                      |
+| `Name`                                                                                   | **string*                                                                                | :heavy_minus_sign:                                                                       | N/A                                                                                      |
+| `Status`                                                                                 | [*TrustedSignerClusterStatus](../../models/shared/trustedsignerclusterstatus.md)         | :heavy_minus_sign:                                                                       | N/A                                                                                      |
+| `Validation`                                                                             | [*TrustedSignerClusterValidation](../../models/shared/trustedsignerclustervalidation.md) | :heavy_minus_sign:                                                                       | N/A                                                                                      |

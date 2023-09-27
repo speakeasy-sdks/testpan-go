@@ -1,0 +1,17 @@
+# PodSpecInfo
+
+pod spec attributes which are potentially risky 
+
+
+## Fields
+
+| Field                                                                         | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `Containers`                                                                  | [][ContainerSecurityContext](../../models/shared/containersecuritycontext.md) | :heavy_minus_sign:                                                            | N/A                                                                           |
+| `HostIPC`                                                                     | **bool*                                                                       | :heavy_minus_sign:                                                            | N/A                                                                           |
+| `HostNetwork`                                                                 | **bool*                                                                       | :heavy_minus_sign:                                                            | N/A                                                                           |
+| `HostPID`                                                                     | **bool*                                                                       | :heavy_minus_sign:                                                            | N/A                                                                           |
+| `InitContainers`                                                              | [][ContainerSecurityContext](../../models/shared/containersecuritycontext.md) | :heavy_minus_sign:                                                            | N/A                                                                           |
+| `PodSecurityContext`                                                          | [*PodSecurityContext](../../models/shared/podsecuritycontext.md)              | :heavy_minus_sign:                                                            | N/A                                                                           |
+| `ShareProcessNamespace`                                                       | **bool*                                                                       | :heavy_minus_sign:                                                            | N/A                                                                           |
+| `Volumes`                                                                     | []*string*                                                                    | :heavy_minus_sign:                                                            | N/A                                                                           |

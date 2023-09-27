@@ -1,0 +1,12 @@
+# PermissionRoleResponse
+
+
+## Fields
+
+| Field                                                                       | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `ClusterName`                                                               | **string*                                                                   | :heavy_minus_sign:                                                          | N/A                                                                         |
+| `ID`                                                                        | **string*                                                                   | :heavy_minus_sign:                                                          | N/A                                                                         |
+| `OwnerName`                                                                 | **string*                                                                   | :heavy_minus_sign:                                                          | N/A                                                                         |
+| `Resources`                                                                 | [][PermissionRoleResources](../../models/shared/permissionroleresources.md) | :heavy_minus_sign:                                                          | N/A                                                                         |
+| `RoleName`                                                                  | **string*                                                                   | :heavy_minus_sign:                                                          | N/A                                                                         |

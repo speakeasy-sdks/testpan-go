@@ -1,0 +1,13 @@
+# GetPodDefinitionsRequest
+
+
+## Fields
+
+| Field                                                                       | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `ClusterName`                                                               | **string*                                                                   | :heavy_minus_sign:                                                          | Filter pod definitions by cluster name                                      |
+| `DeploymentType`                                                            | []*string*                                                                  | :heavy_minus_sign:                                                          | Filter pod definitions by deployment type                                   |
+| `DownloadAsXlsx`                                                            | **bool*                                                                     | :heavy_minus_sign:                                                          | When true, the API will return an xlsx file, and pagination will be ignored |
+| `Name`                                                                      | **string*                                                                   | :heavy_minus_sign:                                                          | Filter pod definitions by name                                              |
+| `NoPagination`                                                              | **bool*                                                                     | :heavy_minus_sign:                                                          | When true, the pagination params will be ignored                            |
+| `TemplateSource`                                                            | []*string*                                                                  | :heavy_minus_sign:                                                          | Filter pod definitions by template source                                   |

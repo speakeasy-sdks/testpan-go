@@ -1,0 +1,13 @@
+# Owner
+
+
+## Fields
+
+| Field                                                                    | Type                                                                     | Required                                                                 | Description                                                              |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `ID`                                                                     | **string*                                                                | :heavy_minus_sign:                                                       | N/A                                                                      |
+| `Namespace`                                                              | **string*                                                                | :heavy_minus_sign:                                                       | N/A                                                                      |
+| `Owner`                                                                  | **string*                                                                | :heavy_minus_sign:                                                       | N/A                                                                      |
+| `OwnerType`                                                              | [*PermissionOwnerType](../../models/shared/permissionownertype.md)       | :heavy_minus_sign:                                                       | N/A                                                                      |
+| `PermissionInfo`                                                         | [][PermissionInfo](../../models/shared/permissioninfo.md)                | :heavy_minus_sign:                                                       | N/A                                                                      |
+| `SystemDefaultOwnerType`                                                 | [*SystemDefaultOwnerType](../../models/shared/systemdefaultownertype.md) | :heavy_minus_sign:                                                       | N/A                                                                      |

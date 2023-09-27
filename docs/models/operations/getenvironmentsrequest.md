@@ -1,0 +1,12 @@
+# GetEnvironmentsRequest
+
+
+## Fields
+
+| Field                                                                        | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `DownloadAsXlsx`                                                             | **bool*                                                                      | :heavy_minus_sign:                                                           | When true, the API will return an xlsx file, and pagination will be ignored  |
+| `IncludeSystemEnvs`                                                          | **bool*                                                                      | :heavy_minus_sign:                                                           | include systems environments                                                 |
+| `Name`                                                                       | **string*                                                                    | :heavy_minus_sign:                                                           | Filter environments by name                                                  |
+| `SortDir`                                                                    | [*GetEnvironmentsSortDir](../../models/operations/getenvironmentssortdir.md) | :heavy_minus_sign:                                                           | sorting direction                                                            |
+| `SortKey`                                                                    | **string*                                                                    | :heavy_minus_sign:                                                           | Environment sort key                                                         |

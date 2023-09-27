@@ -1,0 +1,14 @@
+# GetDeployersRequest
+
+
+## Fields
+
+| Field                                                                  | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `MaxResults`                                                           | **float64*                                                             | :heavy_minus_sign:                                                     | The number of entries to return (pagination)                           |
+| `Name`                                                                 | **string*                                                              | :heavy_minus_sign:                                                     | Filter deployers by name                                               |
+| `Offset`                                                               | **float64*                                                             | :heavy_minus_sign:                                                     | Return entries from this offset (pagination)                           |
+| `RuleCreation`                                                         | **bool*                                                                | :heavy_minus_sign:                                                     | Filter deployers by rule creation                                      |
+| `SecurityCheck`                                                        | **bool*                                                                | :heavy_minus_sign:                                                     | Filter deployers by security checks                                    |
+| `SortDir`                                                              | [*GetDeployersSortDir](../../models/operations/getdeployerssortdir.md) | :heavy_minus_sign:                                                     | sorting direction                                                      |
+| `SortKey`                                                              | [GetDeployersSortKey](../../models/operations/getdeployerssortkey.md)  | :heavy_check_mark:                                                     | sort key                                                               |

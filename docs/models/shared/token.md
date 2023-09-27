@@ -1,0 +1,15 @@
+# Token
+
+
+## Fields
+
+| Field                                                            | Type                                                             | Required                                                         | Description                                                      |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `Apis`                                                           | []*string*                                                       | :heavy_minus_sign:                                               | N/A                                                              |
+| `AttributeName`                                                  | **string*                                                        | :heavy_minus_sign:                                               | N/A                                                              |
+| `AttributeType`                                                  | [*TokenAttributeType](../../models/shared/tokenattributetype.md) | :heavy_minus_sign:                                               | N/A                                                              |
+| `ExpirationDate`                                                 | [*time.Time](https://pkg.go.dev/time#Time)                       | :heavy_minus_sign:                                               | N/A                                                              |
+| `HTTPPath`                                                       | **string*                                                        | :heavy_minus_sign:                                               | N/A                                                              |
+| `ID`                                                             | **string*                                                        | :heavy_minus_sign:                                               | N/A                                                              |
+| `Name`                                                           | *string*                                                         | :heavy_check_mark:                                               | N/A                                                              |
+| `VaultSecretPath`                                                | *string*                                                         | :heavy_check_mark:                                               | N/A                                                              |

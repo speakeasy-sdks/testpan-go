@@ -1,0 +1,10 @@
+# ClusterEventRuleRecommendationPeriod
+
+
+## Fields
+
+| Field                                                                                     | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `ClusterEventRuleRecommendations`                                                         | [][ClusterEventRuleRecommendation](../../models/shared/clustereventrulerecommendation.md) | :heavy_minus_sign:                                                                        | N/A                                                                                       |
+| `TimePeriod`                                                                              | [*RecommendationTimePeriod](../../models/shared/recommendationtimeperiod.md)              | :heavy_minus_sign:                                                                        | N/A                                                                                       |
+| `TotalEvents`                                                                             | **int64*                                                                                  | :heavy_minus_sign:                                                                        | N/A                                                                                       |

@@ -1,0 +1,12 @@
+# ServerlessViolationInfo
+
+
+## Fields
+
+| Field                                                                            | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `DefaultRule`                                                                    | [*ServerlessDefaultRule](../../models/shared/serverlessdefaultrule.md)           | :heavy_minus_sign:                                                               | N/A                                                                              |
+| `RuleAction`                                                                     | [*ServerlessRuleAction](../../models/shared/serverlessruleaction.md)             | :heavy_minus_sign:                                                               | serverless rule action                                                           |
+| `UnidentifiedServerlessRule`                                                     | [*UnidentifiedServerlessRule](../../models/shared/unidentifiedserverlessrule.md) | :heavy_minus_sign:                                                               | N/A                                                                              |
+| `UserRule`                                                                       | [*ServerlessUserRule](../../models/shared/serverlessuserrule.md)                 | :heavy_minus_sign:                                                               | used for violation in ServerlessFunction                                         |
+| `ViolationReasons`                                                               | [][ServerlessViolationReason](../../models/shared/serverlessviolationreason.md)  | :heavy_minus_sign:                                                               | N/A                                                                              |

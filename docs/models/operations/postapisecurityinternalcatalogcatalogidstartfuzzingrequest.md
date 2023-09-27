@@ -1,0 +1,9 @@
+# PostAPISecurityInternalCatalogCatalogIDStartFuzzingRequest
+
+
+## Fields
+
+| Field                                                                                    | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `APIFuzzingTestConfiguration`                                                            | [shared.APIFuzzingTestConfiguration](../../models/shared/apifuzzingtestconfiguration.md) | :heavy_check_mark:                                                                       | N/A                                                                                      |
+| `CatalogID`                                                                              | *string*                                                                                 | :heavy_check_mark:                                                                       | N/A                                                                                      |

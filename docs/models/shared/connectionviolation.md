@@ -1,0 +1,16 @@
+# ConnectionViolation
+
+If there is a connection violation according to the policy - this object will hold the violation info
+
+
+## Fields
+
+| Field                                                                          | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `DefaultRule`                                                                  | [*DefaultConnectionRule](../../models/shared/defaultconnectionrule.md)         | :heavy_minus_sign:                                                             | N/A                                                                            |
+| `DirectPodRule`                                                                | [*DirectPodIPConnectionRule](../../models/shared/directpodipconnectionrule.md) | :heavy_minus_sign:                                                             | N/A                                                                            |
+| `EncryptRule`                                                                  | [*ConnectionsRule](../../models/shared/connectionsrule.md)                     | :heavy_minus_sign:                                                             | A rule that states what Apps are allowed to communicate with each other.       |
+| `EncryptionReason`                                                             | [*EncryptionReason](../../models/shared/encryptionreason.md)                   | :heavy_minus_sign:                                                             | N/A                                                                            |
+| `InterceptionRule`                                                             | **string*                                                                      | :heavy_minus_sign:                                                             | N/A                                                                            |
+| `LastViolation`                                                                | [*time.Time](https://pkg.go.dev/time#Time)                                     | :heavy_minus_sign:                                                             | N/A                                                                            |
+| `UserRule`                                                                     | [*ConnectionsRule](../../models/shared/connectionsrule.md)                     | :heavy_minus_sign:                                                             | A rule that states what Apps are allowed to communicate with each other.       |

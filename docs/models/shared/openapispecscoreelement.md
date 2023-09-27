@@ -1,0 +1,12 @@
+# OpenAPISpecScoreElement
+
+
+## Fields
+
+| Field                                                                      | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `Findings`                                                                 | [*SpecScoreFindings](../../models/shared/specscorefindings.md)             | :heavy_minus_sign:                                                         | N/A                                                                        |
+| `Name`                                                                     | **string*                                                                  | :heavy_minus_sign:                                                         | Name of the Object                                                         |
+| `Severity`                                                                 | [*APISecurityRiskSeverity](../../models/shared/apisecurityriskseverity.md) | :heavy_minus_sign:                                                         | An `enum`eration.                                                          |
+| `SpecPath`                                                                 | **string*                                                                  | :heavy_minus_sign:                                                         | N/A                                                                        |
+| `VulnerabilitiesSummary`                                                   | [*VulnerabilitiesSummary](../../models/shared/vulnerabilitiessummary.md)   | :heavy_minus_sign:                                                         | Vulnerabilities summary by severity                                        |

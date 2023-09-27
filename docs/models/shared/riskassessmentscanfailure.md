@@ -1,0 +1,10 @@
+# RiskAssessmentScanFailure
+
+
+## Fields
+
+| Field                                                                                      | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `Message`                                                                                  | **string*                                                                                  | :heavy_minus_sign:                                                                         | N/A                                                                                        |
+| `Source`                                                                                   | [*RiskAssessmentScanFailureSource](../../models/shared/riskassessmentscanfailuresource.md) | :heavy_minus_sign:                                                                         | N/A                                                                                        |
+| `Type`                                                                                     | [*RiskAssessmentScanFailureType](../../models/shared/riskassessmentscanfailuretype.md)     | :heavy_minus_sign:                                                                         | N/A                                                                                        |

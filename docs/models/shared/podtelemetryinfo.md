@@ -1,0 +1,17 @@
+# PodTelemetryInfo
+
+
+## Fields
+
+| Field                                                              | Type                                                               | Required                                                           | Description                                                        |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| `Containers`                                                       | [][Container](../../models/shared/container.md)                    | :heavy_minus_sign:                                                 | N/A                                                                |
+| `ID`                                                               | **string*                                                          | :heavy_minus_sign:                                                 | N/A                                                                |
+| `InitContainers`                                                   | [][Container](../../models/shared/container.md)                    | :heavy_minus_sign:                                                 | N/A                                                                |
+| `IsIdentified`                                                     | **bool*                                                            | :heavy_minus_sign:                                                 | N/A                                                                |
+| `IsProtected`                                                      | **bool*                                                            | :heavy_minus_sign:                                                 | N/A                                                                |
+| `Kind`                                                             | [*PodTemplateKind](../../models/shared/podtemplatekind.md)         | :heavy_minus_sign:                                                 | N/A                                                                |
+| `Labels`                                                           | [][Label](../../models/shared/label.md)                            | :heavy_minus_sign:                                                 | N/A                                                                |
+| `Name`                                                             | **string*                                                          | :heavy_minus_sign:                                                 | N/A                                                                |
+| `PermissionOwnerName`                                              | **string*                                                          | :heavy_minus_sign:                                                 | N/A                                                                |
+| `PodDefinitionSource`                                              | [*PodDefinitionSource](../../models/shared/poddefinitionsource.md) | :heavy_minus_sign:                                                 | The source type of the pod definition                              |

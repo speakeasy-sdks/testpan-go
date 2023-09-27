@@ -1,0 +1,11 @@
+# EventsForwardingDetailsInput
+
+
+## Fields
+
+| Field                                                                                     | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `EventsForwardingDetailsType`                                                             | [EventsForwardingDetailsTypeEnum](../../models/shared/eventsforwardingdetailstypeenum.md) | :heavy_check_mark:                                                                        | N/A                                                                                       |
+| `EventsToForward`                                                                         | [][EventsToForward](../../models/shared/eventstoforward.md)                               | :heavy_check_mark:                                                                        | N/A                                                                                       |
+| `Name`                                                                                    | *string*                                                                                  | :heavy_check_mark:                                                                        | N/A                                                                                       |
+| `URL`                                                                                     | **string*                                                                                 | :heavy_minus_sign:                                                                        | N/A                                                                                       |

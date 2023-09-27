@@ -1,0 +1,15 @@
+# SpecMethod
+
+
+## Fields
+
+| Field                                                                      | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `Description`                                                              | **string*                                                                  | :heavy_minus_sign:                                                         | N/A                                                                        |
+| `Diffs`                                                                    | [*SpecScoreDiffsLists](../../models/shared/specscorediffslists.md)         | :heavy_minus_sign:                                                         | N/A                                                                        |
+| `Findings`                                                                 | [*SpecScoreFindings](../../models/shared/specscorefindings.md)             | :heavy_minus_sign:                                                         | N/A                                                                        |
+| `Method`                                                                   | [*HTTPMethod](../../models/shared/httpmethod.md)                           | :heavy_minus_sign:                                                         | N/A                                                                        |
+| `Path`                                                                     | **string*                                                                  | :heavy_minus_sign:                                                         | N/A                                                                        |
+| `Severity`                                                                 | [*APISecurityRiskSeverity](../../models/shared/apisecurityriskseverity.md) | :heavy_minus_sign:                                                         | An `enum`eration.                                                          |
+| `Tag`                                                                      | **string*                                                                  | :heavy_minus_sign:                                                         | N/A                                                                        |
+| `VulnerabilitiesSummary`                                                   | [*VulnerabilitiesSummary](../../models/shared/vulnerabilitiessummary.md)   | :heavy_minus_sign:                                                         | Vulnerabilities summary by severity                                        |

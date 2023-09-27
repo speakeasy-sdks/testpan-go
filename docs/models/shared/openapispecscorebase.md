@@ -1,0 +1,11 @@
+# OpenAPISpecScoreBase
+
+
+## Fields
+
+| Field                                                                                      | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `General`                                                                                  | [*OpenAPISpecScoreElementsList](../../models/shared/openapispecscoreelementslist.md)       | :heavy_minus_sign:                                                                         | N/A                                                                                        |
+| `OapIVersion`                                                                              | [*OpenAPISpecScoreBaseOapIVersion](../../models/shared/openapispecscorebaseoapiversion.md) | :heavy_minus_sign:                                                                         | N/A                                                                                        |
+| `Security`                                                                                 | [*OpenAPISpecScoreElementsList](../../models/shared/openapispecscoreelementslist.md)       | :heavy_minus_sign:                                                                         | N/A                                                                                        |
+| `Tags`                                                                                     | [*OpenAPISpecTags](../../models/shared/openapispectags.md)                                 | :heavy_minus_sign:                                                                         | N/A                                                                                        |

@@ -1,0 +1,10 @@
+# ConnectionsRuleRecommendationPeriod
+
+
+## Fields
+
+| Field                                                                                   | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `ConnectionsRuleRecommendations`                                                        | [][ConnectionsRuleRecommendation](../../models/shared/connectionsrulerecommendation.md) | :heavy_minus_sign:                                                                      | N/A                                                                                     |
+| `TimePeriod`                                                                            | [*RecommendationTimePeriod](../../models/shared/recommendationtimeperiod.md)            | :heavy_minus_sign:                                                                      | N/A                                                                                     |
+| `TotalConnections`                                                                      | **int64*                                                                                | :heavy_minus_sign:                                                                      | N/A                                                                                     |

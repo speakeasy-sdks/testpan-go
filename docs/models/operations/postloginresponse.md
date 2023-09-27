@@ -1,0 +1,12 @@
+# PostLoginResponse
+
+
+## Fields
+
+| Field                                                               | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `ChallengeRequest`                                                  | [*shared.ChallengeRequest](../../models/shared/challengerequest.md) | :heavy_minus_sign:                                                  | Accepted. Challenge required                                        |
+| `ContentType`                                                       | *string*                                                            | :heavy_check_mark:                                                  | HTTP response content type for this operation                       |
+| `StatusCode`                                                        | *int*                                                               | :heavy_check_mark:                                                  | HTTP response status code for this operation                        |
+| `RawResponse`                                                       | [*http.Response](https://pkg.go.dev/net/http#Response)              | :heavy_minus_sign:                                                  | Raw HTTP response; suitable for custom response parsing             |
+| `UserLoginInfo`                                                     | [*shared.UserLoginInfo](../../models/shared/userlogininfo.md)       | :heavy_minus_sign:                                                  | Success                                                             |

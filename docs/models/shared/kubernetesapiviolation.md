@@ -1,0 +1,11 @@
+# KubernetesAPIViolation
+
+
+## Fields
+
+| Field                                                                                    | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `Action`                                                                                 | [*KubernetesAPIRuleAction](../../models/shared/kubernetesapiruleaction.md)               | :heavy_minus_sign:                                                                       | N/A                                                                                      |
+| `IsDefaultRule`                                                                          | **bool*                                                                                  | :heavy_minus_sign:                                                                       | N/A                                                                                      |
+| `MatchedRecommendedRule`                                                                 | [*MatchedRecommendedRule](../../models/shared/matchedrecommendedrule.md)                 | :heavy_minus_sign:                                                                       | recommended rule that might reduce potential risk                                        |
+| `UserRule`                                                                               | [*KubernetesAPIViolationUserRule](../../models/shared/kubernetesapiviolationuserrule.md) | :heavy_minus_sign:                                                                       | N/A                                                                                      |

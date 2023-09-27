@@ -1,0 +1,9 @@
+# GetDashboardApisecTopRiskyApisRequest
+
+
+## Fields
+
+| Field                                                                                                               | Type                                                                                                                | Required                                                                                                            | Description                                                                                                         |
+| ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `APISecSource`                                                                                                      | [GetDashboardApisecTopRiskyApisAPISecSource](../../models/operations/getdashboardapisectopriskyapisapisecsource.md) | :heavy_check_mark:                                                                                                  | source filter. an enum representing the source of the APIs service in scope                                         |
+| `MaxResults`                                                                                                        | **float64*                                                                                                          | :heavy_minus_sign:                                                                                                  | The number of entries to return (pagination)                                                                        |

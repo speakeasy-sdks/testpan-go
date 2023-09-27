@@ -1,0 +1,14 @@
+# ConnectionRuleBasic
+
+
+## Fields
+
+| Field                                                                          | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `Action`                                                                       | [ConnectionRuleAction](../../models/shared/connectionruleaction.md)            | :heavy_check_mark:                                                             | ENCRYPT is not allowed in default rule                                         |
+| `GroupName`                                                                    | **string*                                                                      | :heavy_minus_sign:                                                             | N/A                                                                            |
+| `ID`                                                                           | **string*                                                                      | :heavy_minus_sign:                                                             | N/A                                                                            |
+| `IsRuleActive`                                                                 | **bool*                                                                        | :heavy_minus_sign:                                                             | N/A                                                                            |
+| `Name`                                                                         | *string*                                                                       | :heavy_check_mark:                                                             | N/A                                                                            |
+| `RuleOrigin`                                                                   | [*ConnectionRuleOrigin](../../models/shared/connectionruleorigin.md)           | :heavy_minus_sign:                                                             | N/A                                                                            |
+| `RuleType`                                                                     | [*NetworkConnectionRuleType](../../models/shared/networkconnectionruletype.md) | :heavy_minus_sign:                                                             | N/A                                                                            |

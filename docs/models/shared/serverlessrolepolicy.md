@@ -1,0 +1,11 @@
+# ServerlessRolePolicy
+
+
+## Fields
+
+| Field                                                                               | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `PolicyArn`                                                                         | **string*                                                                           | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `PolicyName`                                                                        | **string*                                                                           | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `PolicyRisk`                                                                        | [*ServerlessPolicyRisk](../../models/shared/serverlesspolicyrisk.md)                | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `RiskReasons`                                                                       | [][ServerlessPolicyRiskReasons](../../models/shared/serverlesspolicyriskreasons.md) | :heavy_minus_sign:                                                                  | N/A                                                                                 |

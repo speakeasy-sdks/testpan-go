@@ -1,0 +1,10 @@
+# TopSecurityRisksWidget
+
+
+## Fields
+
+| Field                                                                                          | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `TopRiskyApisWidget`                                                                           | [*TopRiskyApisWidget](../../models/shared/topriskyapiswidget.md)                               | :heavy_minus_sign:                                                                             | N/A                                                                                            |
+| `TopRiskyServerlessFunctionsWidget`                                                            | [*TopRiskyServerlessFunctionsWidget](../../models/shared/topriskyserverlessfunctionswidget.md) | :heavy_minus_sign:                                                                             | N/A                                                                                            |
+| `TopRiskyWorkloadsWidget`                                                                      | [*TopRiskyWorkloadsWidget](../../models/shared/topriskyworkloadswidget.md)                     | :heavy_minus_sign:                                                                             | N/A                                                                                            |
