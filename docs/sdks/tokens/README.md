@@ -37,7 +37,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Tokens.DeleteTokensTokenID(ctx, operations.DeleteTokensTokenIDRequest{
-        TokenID: "fc9f4844-225e-475b-b960-65c0efa6f93b",
+        TokenID: "b10248b8-2d53-4623-885c-a738cc4f3785",
     })
     if err != nil {
         log.Fatal(err)
@@ -89,12 +89,12 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Tokens.GetTokens(ctx, operations.GetTokensRequest{
-        MaxResults: testpango.Float64(5639.37),
+        MaxResults: testpango.Float64(681.78),
         NoPagination: testpango.Bool(false),
-        Offset: testpango.Float64(35.7),
-        SortDir: operations.GetTokensSortDirDesc.ToPointer(),
-        SortKey: testpango.String("beatae"),
-        TokenName: testpango.String("distinctio"),
+        Offset: testpango.Float64(7366.65),
+        SortDir: operations.GetTokensSortDirAsc.ToPointer(),
+        SortKey: testpango.String("what"),
+        TokenName: testpango.String("policy Rustic"),
     })
     if err != nil {
         log.Fatal(err)
@@ -147,7 +147,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Tokens.GetTokensInfo(ctx, operations.GetTokensInfoRequest{
         TokensIds: []string{
-            "8c95be12-54b7-439f-8fe7-7210d1f6558c",
+            "17c3fed3-a3bf-4acc-82ca-e618f8f9bdf3",
         },
     })
     if err != nil {
@@ -200,7 +200,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Tokens.GetTokensTokenIDDeleteDependencies(ctx, operations.GetTokensTokenIDDeleteDependenciesRequest{
-        TokenID: "99c722d2-bc0f-4940-87d9-caae042dd7ca",
+        TokenID: "8e7108bc-33f0-4915-b49d-5a4a26ffa567",
     })
     if err != nil {
         log.Fatal(err)
@@ -253,15 +253,15 @@ func main() {
     ctx := context.Background()
     res, err := s.Tokens.PostTokens(ctx, shared.Token{
         Apis: []string{
-            "ac9b4caa-1cfe-49e1-9df9-03907f378319",
+            "06eb110c-ef48-45c9-b334-9ef284ebe70b",
         },
-        AttributeName: testpango.String("quos"),
+        AttributeName: testpango.String("offensive flexibility Gate"),
         AttributeType: shared.TokenAttributeTypeRequestHeader.ToPointer(),
-        ExpirationDate: types.MustTimeFromString("2022-03-19T04:59:23.224Z"),
-        HTTPPath: testpango.String("odit"),
-        ID: testpango.String("e54a8546-6597-4c50-a33c-1471d51aaa6d"),
-        Name: "Terrell Hettinger",
-        VaultSecretPath: "nulla",
+        ExpirationDate: types.MustTimeFromString("2022-12-06T03:02:47.254Z"),
+        HTTPPath: testpango.String("Gasoline Bicycle"),
+        ID: testpango.String("15c6181f-23a7-44d2-945a-aec34929a503"),
+        Name: "Cyclocross",
+        VaultSecretPath: "intermediate array",
     })
     if err != nil {
         log.Fatal(err)
@@ -316,17 +316,17 @@ func main() {
     res, err := s.Tokens.PutTokensTokenID(ctx, operations.PutTokensTokenIDRequest{
         Token: shared.Token{
             Apis: []string{
-                "6487c5fc-2b86-42a0-8bef-69e100157630",
+                "92f997c4-3e7b-4827-80b5-81f98e4dc9a1",
             },
-            AttributeName: testpango.String("libero"),
-            AttributeType: shared.TokenAttributeTypeQueryParam.ToPointer(),
-            ExpirationDate: types.MustTimeFromString("2022-01-23T22:28:56.652Z"),
-            HTTPPath: testpango.String("similique"),
-            ID: testpango.String("fded84a3-5a41-4238-a1a7-35ac26ae33be"),
-            Name: "Miss Terrence Kulas",
-            VaultSecretPath: "repellat",
+            AttributeName: testpango.String("ah card Mercedes"),
+            AttributeType: shared.TokenAttributeTypeRequestHeader.ToPointer(),
+            ExpirationDate: types.MustTimeFromString("2023-05-19T15:11:35.927Z"),
+            HTTPPath: testpango.String("Ball"),
+            ID: testpango.String("6d3d22b8-df11-4333-9e59-e4bbc71d1a3f"),
+            Name: "deposit Checking Rap",
+            VaultSecretPath: "Chevrolet error",
         },
-        TokenID: "46bca110-6fe9-465b-b11d-08cf88ec9f7b",
+        TokenID: "650a257d-f5fe-417c-b321-bf84e462e505",
     })
     if err != nil {
         log.Fatal(err)

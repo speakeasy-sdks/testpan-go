@@ -51,7 +51,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Serverless.DeleteCloudAccountsCloudAccountID(ctx, operations.DeleteCloudAccountsCloudAccountIDRequest{
-        CloudAccountID: "df22a94d-20ec-490e-a41d-1f465e85156f",
+        CloudAccountID: "a4061d9a-ae48-48cc-a173-2eca65acca85",
     })
     if err != nil {
         log.Fatal(err)
@@ -103,12 +103,12 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Serverless.GetCloudAccounts(ctx, operations.GetCloudAccountsRequest{
-        CloudAccountName: testpango.String("sapiente"),
-        MaxResults: testpango.Float64(9524.11),
+        CloudAccountName: testpango.String("quam Legacy"),
+        MaxResults: testpango.Float64(1307.16),
         NoPagination: testpango.Bool(false),
-        Offset: testpango.Float64(4778.26),
-        Region: testpango.String("amet"),
-        SortDir: operations.GetCloudAccountsSortDirDesc.ToPointer(),
+        Offset: testpango.Float64(8371.14),
+        Region: testpango.String("Wagon Arlington"),
+        SortDir: operations.GetCloudAccountsSortDirAsc.ToPointer(),
         SortKey: operations.GetCloudAccountsSortKeyName,
     })
     if err != nil {
@@ -353,7 +353,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Serverless.GetCloudAccountsCloudAccountIDDeleteDependencies(ctx, operations.GetCloudAccountsCloudAccountIDDeleteDependenciesRequest{
-        CloudAccountID: "f54fdd5e-a954-4339-8daf-b42a8d63388e",
+        CloudAccountID: "64304886-9365-422a-8282-644a12d7387e",
     })
     if err != nil {
         log.Fatal(err)
@@ -405,7 +405,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Serverless.GetCloudAccountsCloudAccountIDDownloadBundle(ctx, operations.GetCloudAccountsCloudAccountIDDownloadBundleRequest{
-        CloudAccountID: "4d8039ea-5f9b-418a-a44f-d619039dacd3",
+        CloudAccountID: "78a9218a-bbdc-48dd-8c99-acaaac2d314e",
     })
     if err != nil {
         log.Fatal(err)
@@ -457,20 +457,20 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Serverless.GetServerlessFunctions(ctx, operations.GetServerlessFunctionsRequest{
-        CloudAccountName: testpango.String("voluptatum"),
+        CloudAccountName: testpango.String("coordinated"),
         CloudAccountsIdsFilter: []string{
-            "ed0dc671-dc7f-41e3-af15-920c90d1b490",
+            "13824322-22f0-4b89-ac2b-1bfba58c422a",
         },
         DownloadAsXlsx: testpango.Bool(false),
         FuncName: []string{
-            "dicta",
+            "synthesizing",
         },
-        MaxResults: testpango.Float64(9957.13),
-        Offset: testpango.Float64(1728.07),
+        MaxResults: testpango.Float64(9594.89),
+        Offset: testpango.Float64(7413.73),
         PolicyRisk: []GetServerlessFunctionsPolicyRisk{
-            operations.GetServerlessFunctionsPolicyRiskHigh,
+            operations.GetServerlessFunctionsPolicyRiskMedium,
         },
-        Region: testpango.String("quibusdam"),
+        Region: testpango.String("transmit"),
         Result: []GetServerlessFunctionsResult{
             operations.GetServerlessFunctionsResultDetect,
         },
@@ -480,7 +480,7 @@ func main() {
         SecretsRisk: []GetServerlessFunctionsSecretsRisk{
             operations.GetServerlessFunctionsSecretsRiskRiskIdentified,
         },
-        SortDir: operations.GetServerlessFunctionsSortDirDesc.ToPointer(),
+        SortDir: operations.GetServerlessFunctionsSortDirAsc.ToPointer(),
     })
     if err != nil {
         log.Fatal(err)
@@ -532,11 +532,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Serverless.GetServerlessFunctionsArns(ctx, operations.GetServerlessFunctionsArnsRequest{
-        CloudAccountName: testpango.String("id"),
+        CloudAccountName: testpango.String("Northwest"),
         FuncArn: []string{
-            "neque",
+            "South",
         },
-        Region: testpango.String("dolores"),
+        Region: testpango.String("Kia righteously Bronze"),
     })
     if err != nil {
         log.Fatal(err)
@@ -588,11 +588,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Serverless.GetServerlessFunctionsNames(ctx, operations.GetServerlessFunctionsNamesRequest{
-        CloudAccountName: testpango.String("vel"),
+        CloudAccountName: testpango.String("withdrawal Human"),
         FuncName: []string{
-            "ipsum",
+            "whiteboard",
         },
-        Region: testpango.String("occaecati"),
+        Region: testpango.String("Avon gosh"),
     })
     if err != nil {
         log.Fatal(err)
@@ -644,7 +644,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Serverless.GetServerlessFunctionsFunctionID(ctx, operations.GetServerlessFunctionsFunctionIDRequest{
-        FunctionID: "da5b7b69-02b8-481a-94f6-43664a8f0af8",
+        FunctionID: "c94885c8-e582-488b-bf74-bf3ac1e10be4",
     })
     if err != nil {
         log.Fatal(err)
@@ -696,7 +696,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Serverless.GetServerlessFunctionsFunctionIDSecrets(ctx, operations.GetServerlessFunctionsFunctionIDSecretsRequest{
-        FunctionID: "c691d732-d9fb-4af9-876a-2ae8dcc50c8a",
+        FunctionID: "1200d55a-1387-4753-ab90-33c09b02720e",
     })
     if err != nil {
         log.Fatal(err)
@@ -748,9 +748,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Serverless.GetServerlessFunctionsFunctionIDVulnerabilities(ctx, operations.GetServerlessFunctionsFunctionIDVulnerabilitiesRequest{
-        FunctionID: "3512c737-8489-4307-90a0-0e966ec736d4",
-        MaxResults: testpango.Float64(2068.14),
-        Offset: testpango.Float64(816.89),
+        FunctionID: "2ad182ca-55b9-436d-935a-2584c6608fc0",
+        MaxResults: testpango.Float64(8248.92),
+        Offset: testpango.Float64(7517.01),
     })
     if err != nil {
         log.Fatal(err)
@@ -802,12 +802,12 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Serverless.GetServerlessZipFiles(ctx, operations.GetServerlessZipFilesRequest{
-        MaxResults: testpango.Float64(6064.72),
-        Offset: testpango.Float64(3096.94),
+        MaxResults: testpango.Float64(5376.87),
+        Offset: testpango.Float64(8734.72),
         SortDir: operations.GetServerlessZipFilesSortDirAsc.ToPointer(),
-        SortKey: operations.GetServerlessZipFilesSortKeyVulnerabilities.ToPointer(),
-        ZipNameFilter: testpango.String("corrupti"),
-        ZipSha256Filter: testpango.String("optio"),
+        SortKey: operations.GetServerlessZipFilesSortKeyTime.ToPointer(),
+        ZipNameFilter: testpango.String("Gasoline"),
+        ZipSha256Filter: testpango.String("calm executive implement"),
     })
     if err != nil {
         log.Fatal(err)
@@ -859,7 +859,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Serverless.GetServerlessZipFilesZipID(ctx, operations.GetServerlessZipFilesZipIDRequest{
-        ZipID: "783c9239-8ed3-4d3a-b7ca-3c5ca8649a70",
+        ZipID: "47af1679-7e54-41ca-b6c1-2fafc1426c1d",
     })
     if err != nil {
         log.Fatal(err)
@@ -911,7 +911,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Serverless.GetServerlessZipFilesZipIDPackages(ctx, operations.GetServerlessZipFilesZipIDPackagesRequest{
-        ZipID: "cfd5d698-9b72-4064-9107-7d19ea83d492",
+        ZipID: "8930b13e-93d3-4a51-9609-c730ba7092f4",
     })
     if err != nil {
         log.Fatal(err)
@@ -963,10 +963,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Serverless.GetServerlessZipFilesZipIDVulnerabilities(ctx, operations.GetServerlessZipFilesZipIDVulnerabilitiesRequest{
-        MaxResults: testpango.Float64(9357.71),
-        Offset: testpango.Float64(8426.89),
+        MaxResults: testpango.Float64(4757.97),
+        Offset: testpango.Float64(8704.31),
         SortDir: operations.GetServerlessZipFilesZipIDVulnerabilitiesSortDirAsc.ToPointer(),
-        ZipID: "4b8a2c19-5454-45e9-95dc-c185ea4901c7",
+        ZipID: "40878f68-2a69-434d-bf1a-10ecad858b07",
     })
     if err != nil {
         log.Fatal(err)
@@ -1018,7 +1018,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Serverless.PostCloudAccountsScan(ctx, shared.ServerlessScanConfig{
         CloudAccounts: []string{
-            "c43ad2da-a784-4aba-bd23-0edf73811a11",
+            "458b5913-dc88-4dbf-ab7f-5674c6953077",
         },
     })
     if err != nil {
@@ -1074,36 +1074,36 @@ func main() {
         CloudAccountInput: shared.CloudAccountInput{
             CloudProvider: shared.CloudProviderTypeAws.ToPointer(),
             InstallVulnerabilityScanner: testpango.Bool(false),
-            Name: testpango.String("Lena Cruickshank"),
+            Name: testpango.String("Bicycle"),
             PeriodicJobExpression: shared.ServerlessPeriodicJobExpression{
-                PeriodicJobType: shared.ServerlessPeriodicJobExpressionPeriodicJobTypeServerlessByHoursPeriodicJobExpression,
+                PeriodicJobType: shared.ServerlessPeriodicJobExpressionPeriodicJobTypeServerlessByDaysPeriodicJobExpression,
             },
             Regions: []string{
-                "eveniet",
+                "Division",
             },
             SecurityThreats: &shared.CloudAccountSecurityThreats{
                 DataAccessRisk: shared.ServerlessDataAccessRiskMedium.ToPointer(),
-                DataAccessRiskCount: testpango.Int64(313305),
+                DataAccessRiskCount: testpango.Int64(719927),
                 IsUnusedFunction: testpango.Bool(false),
-                PolicyRisk: shared.ServerlessPolicyRiskLow.ToPointer(),
-                PolicyRiskCount: testpango.Int64(331703),
+                PolicyRisk: shared.ServerlessPolicyRiskNoRisk.ToPointer(),
+                PolicyRiskCount: testpango.Int64(327969),
                 PubliclyAccessibleRisk: shared.ServerlessPubliclyAccessibleRiskNoRisk.ToPointer(),
-                PubliclyAccessibleRiskCount: testpango.Int64(464242),
+                PubliclyAccessibleRiskCount: testpango.Int64(212197),
                 SecretsRisk: shared.ServerlessSecretsRiskNoKnownRisk.ToPointer(),
-                SecretsRiskCount: testpango.Int64(136036),
-                UnusedFunctionCount: testpango.Int64(85002),
+                SecretsRiskCount: testpango.Int64(276225),
+                UnusedFunctionCount: testpango.Int64(505048),
             },
-            ValidateFunction: shared.CloudAccountValidateFunctionNone.ToPointer(),
+            ValidateFunction: shared.CloudAccountValidateFunctionSignatureValidation.ToPointer(),
             VulnerabilitiesSummary: &shared.VulnerabilitiesSummary{
-                Critical: testpango.Int64(322054),
-                High: testpango.Int64(533096),
-                Low: testpango.Int64(985155),
-                Medium: testpango.Int64(296712),
-                Total: testpango.Int64(857355),
-                Unknown: testpango.Int64(481914),
+                Critical: testpango.Int64(866582),
+                High: testpango.Int64(785242),
+                Low: testpango.Int64(794613),
+                Medium: testpango.Int64(453950),
+                Total: testpango.Int64(407496),
+                Unknown: testpango.Int64(594287),
             },
         },
-        CloudAccountID: "396564c2-0a07-411a-961d-24a7dbb8f532",
+        CloudAccountID: "7a579ecd-c3c3-4cb0-b74b-a26ecaa06648",
     })
     if err != nil {
         log.Fatal(err)

@@ -39,7 +39,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.EnvironmentPolicies.GetAppsPolicy(ctx, operations.GetAppsPolicyRequest{
-        PolicyFilter: testpango.String("esse"),
+        PolicyFilter: testpango.String("Secured Hybrid"),
     })
     if err != nil {
         log.Fatal(err)
@@ -139,7 +139,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.EnvironmentPolicies.GetAppsPolicySearchOptions(ctx, operations.GetAppsPolicySearchOptionsRequest{
-        NameFilter: testpango.String("neque"),
+        NameFilter: testpango.String("Ball Clothing Classical"),
     })
     if err != nil {
         log.Fatal(err)
@@ -190,27 +190,27 @@ func main() {
 
     ctx := context.Background()
     res, err := s.EnvironmentPolicies.PutAppsPolicy(ctx, shared.AppPolicy{
-        DefaultRule: shared.DefaultRuleBlockAll.ToPointer(),
+        DefaultRule: shared.DefaultRuleDetectAll.ToPointer(),
         UnidentifiedPodsRule: &shared.UnidentifiedPodsRule{
             Action: shared.UnidentifiedPodsRuleActionBlock,
-            Name: testpango.String("Ricky Hilpert"),
+            Name: testpango.String("Bolivia Peso Gasoline"),
         },
         UserRules: []shared.AppRule{
             shared.AppRule{
                 App: &shared.WorkloadRuleType{
-                    WorkloadRuleType: shared.WorkloadRuleTypeWorkloadRuleTypeAppTypeWorkloadRuleType,
+                    WorkloadRuleType: shared.WorkloadRuleTypeWorkloadRuleTypeAppNameWorkloadRuleType,
                 },
-                GroupName: testpango.String("voluptatem"),
-                ID: testpango.String("a319f4ba-df94-47c9-a867-bc4242666581"),
-                Name: "Rosemarie Steuber",
-                RuleOrigin: shared.AppRuleOriginAutomatedPolicy.ToPointer(),
+                GroupName: testpango.String("Elegant mole Bronze"),
+                ID: testpango.String("c913f708-35e4-4a31-9380-1bc9778ebe02"),
+                Name: "Delaware cultivate",
+                RuleOrigin: shared.AppRuleOriginSystem.ToPointer(),
                 RuleTypeProperties: shared.AppRuleType{
                     RuleType: shared.AppRuleTypeRuleTypeViolationRuleType,
                 },
                 Scope: &shared.WorkloadRuleScopeType{
-                    WorkloadRuleScopeType: shared.WorkloadRuleScopeTypeEnumEnvironmentNameRuleType,
+                    WorkloadRuleScopeType: shared.WorkloadRuleScopeTypeEnumAnyRuleType,
                 },
-                Status: shared.AppRuleStatusDisabled,
+                Status: shared.AppRuleStatusDeleted,
             },
         },
     })

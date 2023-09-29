@@ -43,7 +43,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.ConnectionPolicies.GetConnectionsPolicy(ctx, operations.GetConnectionsPolicyRequest{
-        PolicyFilter: testpango.String("ipsam"),
+        PolicyFilter: testpango.String("Serbia"),
     })
     if err != nil {
         log.Fatal(err)
@@ -191,7 +191,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.ConnectionPolicies.GetConnectionsPolicyKafkaKubernetesClusterIDBrokers(ctx, operations.GetConnectionsPolicyKafkaKubernetesClusterIDBrokersRequest{
-        KubernetesClusterID: "a972e056-7282-427b-ad30-9470bf7a4fa8",
+        KubernetesClusterID: "adf9ba62-2ac1-4d6f-9118-9c1b46212731",
     })
     if err != nil {
         log.Fatal(err)
@@ -243,7 +243,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.ConnectionPolicies.GetConnectionsPolicyKafkaKubernetesClusterIDTopics(ctx, operations.GetConnectionsPolicyKafkaKubernetesClusterIDTopicsRequest{
-        KubernetesClusterID: "7cf535a6-fae5-44eb-b60c-321f023b75d2",
+        KubernetesClusterID: "fa0332c3-3e86-408a-93f6-0cc1de785419",
     })
     if err != nil {
         log.Fatal(err)
@@ -295,7 +295,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.ConnectionPolicies.GetConnectionsPolicySearchOptions(ctx, operations.GetConnectionsPolicySearchOptionsRequest{
-        NameFilter: testpango.String("dolor"),
+        NameFilter: testpango.String("Soft"),
     })
     if err != nil {
         log.Fatal(err)
@@ -396,32 +396,32 @@ func main() {
     res, err := s.ConnectionPolicies.PutConnectionsPolicy(ctx, shared.ConnectionsPolicy{
         DefaultRule: &shared.DefaultConnectionRule{
             Action: shared.ConnectionRuleActionBlock.ToPointer(),
-            Type: shared.DefaultConnectionRuleTypeEnvironmentOnly.ToPointer(),
+            Type: shared.DefaultConnectionRuleTypeDenyAll.ToPointer(),
         },
         DirectPodRule: shared.DirectPodIPConnectionRule{
             Action: shared.DirectPodIPConnectionRuleActionBlock,
             IsDisabled: testpango.Bool(false),
-            Name: testpango.String("Miss Gerald Orn"),
+            Name: testpango.String("violet yet honestly"),
         },
         UserRules: []shared.ConnectionsRule{
             shared.ConnectionsRule{
-                Action: shared.ConnectionRuleActionAllow,
+                Action: shared.ConnectionRuleActionDetect,
                 Destination: &shared.ConnectionRulePart{
-                    ConnectionRulePartType: shared.ConnectionRulePartConnectionRulePartTypeExpansionLabelsConnectionRulePart,
+                    ConnectionRulePartType: shared.ConnectionRulePartConnectionRulePartTypeAPIServiceConnectionRulePart,
                 },
-                GroupName: testpango.String("maiores"),
-                ID: testpango.String("79f0a396-d90c-4364-b7c1-5dfbace188b1"),
+                GroupName: testpango.String("International"),
+                ID: testpango.String("7d416085-4f9b-4bdb-b9bd-42eaba046b7a"),
                 IsRuleActive: testpango.Bool(false),
                 Layer7Settings: &shared.Layer7SettingsPart{
-                    Layer7Protocol: shared.Layer7SettingsPartLayer7ProtocolAPIServiceLayerPart.ToPointer(),
+                    Layer7Protocol: shared.Layer7SettingsPartLayer7ProtocolHTTPLayer7Part.ToPointer(),
                 },
-                Name: "Laverne Waelchi",
-                RuleOrigin: shared.ConnectionRuleOriginAutomatedPolicy.ToPointer(),
+                Name: "repellat asymmetric",
+                RuleOrigin: shared.ConnectionRuleOriginUser.ToPointer(),
                 RuleType: shared.NetworkConnectionRuleTypeDirectPodRule.ToPointer(),
                 Source: &shared.ConnectionRulePart{
-                    ConnectionRulePartType: shared.ConnectionRulePartConnectionRulePartTypeEnvironmentAnyConnectionRulePart,
+                    ConnectionRulePartType: shared.ConnectionRulePartConnectionRulePartTypeIPRangeConnectionRulePart,
                 },
-                Status: shared.ConnectionsRuleStatusDeleted.ToPointer(),
+                Status: shared.ConnectionsRuleStatusEnabled.ToPointer(),
             },
         },
     })

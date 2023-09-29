@@ -45,7 +45,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Cd.DeleteCdRuleIDConnectionsRule(ctx, operations.DeleteCdRuleIDConnectionsRuleRequest{
-        RuleID: "e1e91e45-0ad2-4abd-8426-9802d502a94b",
+        RuleID: "192323ea-9230-406f-b63c-3a2786be61ed",
     })
     if err != nil {
         log.Fatal(err)
@@ -97,7 +97,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Cd.DeleteCdRuleIDServerlessRule(ctx, operations.DeleteCdRuleIDServerlessRuleRequest{
-        RuleID: "b4f63c96-9e9a-43ef-a77d-fb14cd66ae39",
+        RuleID: "3a210f22-fa8a-464b-89de-71407e1ae662",
     })
     if err != nil {
         log.Fatal(err)
@@ -150,13 +150,13 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Cd.GetCd(ctx, operations.GetCdRequest{
-        EndTime: types.MustTimeFromString("2022-02-13T03:59:53.583Z"),
-        MaxResults: testpango.Float64(9654.17),
-        Offset: testpango.Float64(6925.32),
-        ResourceName: testpango.String("provident"),
+        EndTime: types.MustTimeFromString("2022-11-13T13:45:57.433Z"),
+        MaxResults: testpango.Float64(9762.43),
+        Offset: testpango.Float64(9342.32),
+        ResourceName: testpango.String("kale Northeast Bicycle"),
         SortDir: operations.GetCdSortDirDesc.ToPointer(),
-        SortKey: operations.GetCdSortKeyStatus.ToPointer(),
-        StartTime: types.MustTimeFromString("2021-12-07T18:13:34.827Z"),
+        SortKey: operations.GetCdSortKeyTime.ToPointer(),
+        StartTime: types.MustTimeFromString("2023-10-03T17:16:38.452Z"),
     })
     if err != nil {
         log.Fatal(err)
@@ -208,9 +208,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Cd.GetCdResourceID(ctx, operations.GetCdResourceIDRequest{
-        ResourceID: "f3a66997-074b-4a44-a9b6-e2141959890a",
-        SortDir: operations.GetCdResourceIDSortDirDesc.ToPointer(),
-        SortKey: testpango.String("mollitia"),
+        ResourceID: "dbdc0e78-4707-4528-b885-f251b95127b5",
+        SortDir: operations.GetCdResourceIDSortDirAsc.ToPointer(),
+        SortKey: testpango.String("apropos doom"),
     })
     if err != nil {
         log.Fatal(err)
@@ -262,7 +262,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Cd.GetCdRuleIDConnectionsRule(ctx, operations.GetCdRuleIDConnectionsRuleRequest{
-        RuleID: "563e2516-fe4c-48b7-91e5-b7fd2ed02892",
+        RuleID: "d826ec74-f98b-4a09-b982-a21b9e98807d",
     })
     if err != nil {
         log.Fatal(err)
@@ -314,7 +314,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Cd.GetCdRuleIDServerlessRule(ctx, operations.GetCdRuleIDServerlessRuleRequest{
-        RuleID: "1cddc692-601f-4b57-ab0d-5f0d30c5fbb2",
+        RuleID: "fd218fe5-1dd3-4b03-aead-515501fcd459",
     })
     if err != nil {
         log.Fatal(err)
@@ -367,13 +367,13 @@ func main() {
     res, err := s.Cd.PostCdConnectionsRule(ctx, shared.CdConnectionRule{
         Action: shared.ConnectionRuleActionBlock.ToPointer(),
         Destination: &shared.ConnectionRulePart{
-            ConnectionRulePartType: shared.ConnectionRulePartConnectionRulePartTypeIPRangeConnectionRulePart,
+            ConnectionRulePartType: shared.ConnectionRulePartConnectionRulePartTypeAppTypeConnectionRulePart,
         },
-        GroupName: testpango.String("dignissimos"),
-        ID: testpango.String("053202c7-3d5f-4e9b-90c2-8909b3fe49a8"),
-        Name: testpango.String("Rene Rolfson"),
+        GroupName: testpango.String("North"),
+        ID: testpango.String("b91e56e8-5c5e-4dba-b536-b99e2dee788b"),
+        Name: testpango.String("Account programming quos"),
         Source: &shared.ConnectionRulePart{
-            ConnectionRulePartType: shared.ConnectionRulePartConnectionRulePartTypePodLablesConnectionRulePart,
+            ConnectionRulePartType: shared.ConnectionRulePartConnectionRulePartTypeExpansionLabelsConnectionRulePart,
         },
         Status: shared.CdConnectionRuleStatusDisabled.ToPointer(),
     })
@@ -426,31 +426,31 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Cd.PostCdServerlessRule(ctx, shared.CdServerlessRule{
-        Action: shared.ServerlessRuleActionAllow,
-        GroupName: testpango.String("dolorem"),
-        ID: testpango.String("3323f9b7-7f3a-4410-8674-ebf69280d1ba"),
-        Name: "Colleen Pagac",
+        Action: shared.ServerlessRuleActionDetect,
+        GroupName: testpango.String("orchestration Account navigate"),
+        ID: testpango.String("81ea9f29-4b56-4171-9abd-233ecb84ab91"),
+        Name: "Arizona South",
         Rule: shared.ServerlessRuleType{
             ServerlessFunctionValidation: &shared.ServerlessFunctionValidation{
-                DataAccessRisk: shared.ServerlessDataAccessRiskMedium.ToPointer(),
-                FunctionPermissionRisk: shared.ServerlessPolicyRiskHigh.ToPointer(),
+                DataAccessRisk: shared.ServerlessDataAccessRiskLow.ToPointer(),
+                FunctionPermissionRisk: shared.ServerlessPolicyRiskCritical.ToPointer(),
                 IsUnusedFunction: testpango.Bool(false),
-                PubliclyAccessibleRisk: shared.ServerlessPubliclyAccessibleRiskMedium.ToPointer(),
-                Risk: shared.ServerlessFunctionRiskLevelMedium.ToPointer(),
+                PubliclyAccessibleRisk: shared.ServerlessPubliclyAccessibleRiskNoRisk.ToPointer(),
+                Risk: shared.ServerlessFunctionRiskLevelLow.ToPointer(),
                 SecretsRisk: shared.ServerlessSecretsRiskNoKnownRisk.ToPointer(),
-                Vulnerability: shared.VulnerabilitySeverityMedium.ToPointer(),
+                Vulnerability: shared.VulnerabilitySeverityHigh.ToPointer(),
             },
             ServerlessRuleType: shared.ServerlessRuleTypeServerlessRuleTypeFunctionNameServerlessRuleType,
         },
         Scope: []shared.ServerlessRuleScope{
             shared.ServerlessRuleScope{
-                CloudAccount: "saepe",
+                CloudAccount: "Loan redundant",
                 Regions: []string{
-                    "eius",
+                    "orchid",
                 },
             },
         },
-        Status: shared.ServerlessRuleStatusEnabled,
+        Status: shared.ServerlessRuleStatusDeleted,
     })
     if err != nil {
         log.Fatal(err)
@@ -505,17 +505,17 @@ func main() {
         CdConnectionRule: shared.CdConnectionRule{
             Action: shared.ConnectionRuleActionDetect.ToPointer(),
             Destination: &shared.ConnectionRulePart{
-                ConnectionRulePartType: shared.ConnectionRulePartConnectionRulePartTypePodNameConnectionRulePart,
+                ConnectionRulePartType: shared.ConnectionRulePartConnectionRulePartTypeExpansionAnyConnectionRulePart,
             },
-            GroupName: testpango.String("optio"),
-            ID: testpango.String("e5e6a95d-8a0d-4446-8e2a-f7a73cf3be45"),
-            Name: testpango.String("Jeannie Leannon MD"),
+            GroupName: testpango.String("Rubber"),
+            ID: testpango.String("1c83a5ad-c392-412e-ad67-13c48128c295"),
+            Name: testpango.String("Philippines male Philippine"),
             Source: &shared.ConnectionRulePart{
-                ConnectionRulePartType: shared.ConnectionRulePartConnectionRulePartTypeAppAnyConnectionRulePart,
+                ConnectionRulePartType: shared.ConnectionRulePartConnectionRulePartTypeAnyConnectionRulePart,
             },
             Status: shared.CdConnectionRuleStatusEnabled.ToPointer(),
         },
-        RuleID: "6b5a7342-9cdb-41a8-822b-b679d2322715",
+        RuleID: "352316c2-4f37-43ef-9bcd-45b8a926d9e0",
     })
     if err != nil {
         log.Fatal(err)
@@ -568,33 +568,33 @@ func main() {
     ctx := context.Background()
     res, err := s.Cd.PutCdRuleIDServerlessRule(ctx, operations.PutCdRuleIDServerlessRuleRequest{
         CdServerlessRule: shared.CdServerlessRule{
-            Action: shared.ServerlessRuleActionBlock,
-            GroupName: testpango.String("hic"),
-            ID: testpango.String("0cbb1e31-b8b9-40f3-843a-1108e0adcf4b"),
-            Name: "Alan Bergnaum",
+            Action: shared.ServerlessRuleActionDetect,
+            GroupName: testpango.String("dedicated Developer Sports"),
+            ID: testpango.String("5f913b95-4cc1-4f6c-ab37-9119c49c2a96"),
+            Name: "Electric",
             Rule: shared.ServerlessRuleType{
                 ServerlessFunctionValidation: &shared.ServerlessFunctionValidation{
-                    DataAccessRisk: shared.ServerlessDataAccessRiskLow.ToPointer(),
-                    FunctionPermissionRisk: shared.ServerlessPolicyRiskCritical.ToPointer(),
+                    DataAccessRisk: shared.ServerlessDataAccessRiskNoRisk.ToPointer(),
+                    FunctionPermissionRisk: shared.ServerlessPolicyRiskHigh.ToPointer(),
                     IsUnusedFunction: testpango.Bool(false),
                     PubliclyAccessibleRisk: shared.ServerlessPubliclyAccessibleRiskMedium.ToPointer(),
-                    Risk: shared.ServerlessFunctionRiskLevelCritical.ToPointer(),
-                    SecretsRisk: shared.ServerlessSecretsRiskRiskIdentified.ToPointer(),
+                    Risk: shared.ServerlessFunctionRiskLevelLow.ToPointer(),
+                    SecretsRisk: shared.ServerlessSecretsRiskNoKnownRisk.ToPointer(),
                     Vulnerability: shared.VulnerabilitySeverityLow.ToPointer(),
                 },
-                ServerlessRuleType: shared.ServerlessRuleTypeServerlessRuleTypeFunctionAnyServerlessRuleType,
+                ServerlessRuleType: shared.ServerlessRuleTypeServerlessRuleTypeFunctionArnServerlessRuleType,
             },
             Scope: []shared.ServerlessRuleScope{
                 shared.ServerlessRuleScope{
-                    CloudAccount: "delectus",
+                    CloudAccount: "Rubber",
                     Regions: []string{
-                        "voluptate",
+                        "utilisation",
                     },
                 },
             },
             Status: shared.ServerlessRuleStatusEnabled,
         },
-        RuleID: "ef7fbc7a-bd74-4dd3-9c0f-5d2cff7c70a4",
+        RuleID: "688963e3-0212-4786-89a2-e3b6d79445cb",
     })
     if err != nil {
         log.Fatal(err)

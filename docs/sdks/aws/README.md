@@ -189,7 +189,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Aws.GetAwsAwsAccountIDRegions(ctx, operations.GetAwsAwsAccountIDRegionsRequest{
-        AwsAccountID: "non",
+        AwsAccountID: "owlishly evolve West",
     })
     if err != nil {
         log.Fatal(err)
@@ -241,8 +241,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Aws.GetAwsAwsAccountIDRegionIDSubnets(ctx, operations.GetAwsAwsAccountIDRegionIDSubnetsRequest{
-        AwsAccountID: "quasi",
-        RegionID: "mollitia",
+        AwsAccountID: "Associate",
+        RegionID: "Einsteinium",
     })
     if err != nil {
         log.Fatal(err)
@@ -295,8 +295,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Aws.GetAwsAwsAccountIDRegionIDVpcs(ctx, operations.GetAwsAwsAccountIDRegionIDVpcsRequest{
-        AwsAccountID: "accusamus",
-        RegionID: "harum",
+        AwsAccountID: "iterate Facilitator Soft",
+        RegionID: "Cab",
     })
     if err != nil {
         log.Fatal(err)
@@ -347,9 +347,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Aws.PostAwsRoles(ctx, shared.AWSRolePost{
-        Arn: "cumque",
-        Description: testpango.String("doloremque"),
-        Name: "Byron Becker",
+        Arn: "Communications female",
+        Description: testpango.String("Stand-alone encompassing knowledge base"),
+        Name: "Crossroad black",
     })
     if err != nil {
         log.Fatal(err)
@@ -402,10 +402,10 @@ func main() {
     ctx := context.Background()
     res, err := s.Aws.PutAwsRolesRoleID(ctx, operations.PutAwsRolesRoleIDRequest{
         AWSRoleDetails: shared.AWSRoleDetails{
-            Description: testpango.String("excepturi"),
-            Name: "Rhonda Schuster",
+            Description: testpango.String("Optional asymmetric superstructure"),
+            Name: "next Baby Neon",
         },
-        RoleID: "2ecfcc8f-8950-410f-9dd3-d6fa1804e54c",
+        RoleID: "e05da7a6-1a59-47d1-8375-7fdde668b4a1",
     })
     if err != nil {
         log.Fatal(err)

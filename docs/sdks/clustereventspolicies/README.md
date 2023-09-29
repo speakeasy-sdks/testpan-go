@@ -286,7 +286,7 @@ func main() {
         UserRules: []shared.KubernetesAPIRule{
             shared.KubernetesAPIRule{
                 KubernetesAPIRuleType: shared.KubernetesAPIRuleKubernetesAPIRuleTypeKubernetesAPIRecommendedRule,
-                RuleOrigin: shared.KubernetesAPIRuleOriginUser.ToPointer(),
+                RuleOrigin: shared.KubernetesAPIRuleOriginAutomatedPolicy.ToPointer(),
             },
         },
     })

@@ -50,7 +50,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.ImagesAndVulnerabilities.DeleteImagesID(ctx, operations.DeleteImagesIDRequest{
-        ID: "aaf9bbad-185f-4e43-9d6b-f5c838fbb8c2",
+        ID: "1532f8e0-5c4e-41fa-a5bc-5aa03e071f17",
     })
     if err != nil {
         log.Fatal(err)
@@ -103,15 +103,15 @@ func main() {
     ctx := context.Background()
     res, err := s.ImagesAndVulnerabilities.GetAccountVulnerabilitiesXlsx(ctx, operations.GetAccountVulnerabilitiesXlsxRequest{
         ImageHash: []string{
-            "eaque",
+            "Frozen",
         },
         ImageName: []string{
-            "impedit",
+            "olive",
         },
         ImageTag: []string{
-            "nam",
+            "IB",
         },
-        VulnerabilityName: testpango.String("ex"),
+        VulnerabilityName: testpango.String("Administrator"),
     })
     if err != nil {
         log.Fatal(err)
@@ -164,20 +164,20 @@ func main() {
     ctx := context.Background()
     res, err := s.ImagesAndVulnerabilities.GetImages(ctx, operations.GetImagesRequest{
         ImageHash: []string{
-            "odio",
+            "Health",
         },
         ImageName: []string{
-            "delectus",
+            "male",
         },
         ImageTag: []string{
-            "minus",
+            "Ytterbium",
         },
         DownloadAsXlsx: testpango.Bool(false),
-        MaxResults: testpango.Float64(2835.14),
-        Offset: testpango.Float64(7160.58),
-        SortDir: operations.GetImagesSortDirAsc.ToPointer(),
+        MaxResults: testpango.Float64(9052.61),
+        Offset: testpango.Float64(4508.91),
+        SortDir: operations.GetImagesSortDirDesc.ToPointer(),
         SortKey: operations.GetImagesSortKeyImageName,
-        VulnerabilityName: testpango.String("veniam"),
+        VulnerabilityName: testpango.String("grow"),
     })
     if err != nil {
         log.Fatal(err)
@@ -229,8 +229,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.ImagesAndVulnerabilities.GetImagesImagesHash(ctx, operations.GetImagesImagesHashRequest{
-        ImageHash: testpango.String("repudiandae"),
-        MaxResults: testpango.Float64(5723.17),
+        ImageHash: testpango.String("firewall Misty"),
+        MaxResults: testpango.Float64(8276.26),
     })
     if err != nil {
         log.Fatal(err)
@@ -282,12 +282,12 @@ func main() {
 
     ctx := context.Background()
     res, err := s.ImagesAndVulnerabilities.GetImagesVulnerabilitiesByImageNameAndHash(ctx, operations.GetImagesVulnerabilitiesByImageNameAndHashRequest{
-        ImageHash: "occaecati",
-        ImageName: "debitis",
+        ImageHash: "Dale Iowa",
+        ImageName: "boutique Health Martinique",
         IsIgnored: testpango.Bool(false),
-        LayerID: testpango.String("6234c9f7-b79d-4feb-b7a5-c38d4baf91e5"),
-        MaxResults: testpango.Float64(524.07),
-        Offset: testpango.Float64(4064.62),
+        LayerID: testpango.String("4f03eaaf-7b1e-44de-a52b-c93cd397f018"),
+        MaxResults: testpango.Float64(5718.05),
+        Offset: testpango.Float64(7191.45),
         ShowOnlyVulnerabilitiesWithFix: testpango.Bool(false),
         SortDir: operations.GetImagesVulnerabilitiesByImageNameAndHashSortDirDesc.ToPointer(),
     })
@@ -341,7 +341,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.ImagesAndVulnerabilities.GetImagesID(ctx, operations.GetImagesIDRequest{
-        ID: "f890a54b-475f-416f-96d3-85a3c4ac631b",
+        ID: "d118d3e1-8466-490a-a3b5-54afae983ffe",
     })
     if err != nil {
         log.Fatal(err)
@@ -393,10 +393,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.ImagesAndVulnerabilities.GetImagesImageIDDockerfileScanResults(ctx, operations.GetImagesImageIDDockerfileScanResultsRequest{
-        ImageID: "99e26ced-8f9f-4db9-810f-63bbf817837b",
+        ImageID: "da882664-c35f-4933-94c4-06103746e14d",
         IsIgnored: testpango.Bool(false),
-        MaxResults: testpango.Float64(457.28),
-        Offset: testpango.Float64(1127.88),
+        MaxResults: testpango.Float64(4943.96),
+        Offset: testpango.Float64(6053.79),
         SortDir: operations.GetImagesImageIDDockerfileScanResultsSortDirDesc.ToPointer(),
     })
     if err != nil {
@@ -449,7 +449,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.ImagesAndVulnerabilities.GetImagesImageIDImageLayers(ctx, operations.GetImagesImageIDImageLayersRequest{
-        ImageID: "fdd78862-4189-4eb4-8873-f5033f19dbf1",
+        ImageID: "15439eb8-81bd-4ffd-8863-3eb436058a37",
         IsIgnored: testpango.Bool(false),
         SortDir: operations.GetImagesImageIDImageLayersSortDirAsc.ToPointer(),
     })
@@ -503,7 +503,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.ImagesAndVulnerabilities.GetImagesImageIDPackages(ctx, operations.GetImagesImageIDPackagesRequest{
-        ImageID: "5ce4152e-ab9c-4d7e-9224-a6a0e123b784",
+        ImageID: "c2ee574a-71ae-4a8b-a2ff-c4930d365b60",
     })
     if err != nil {
         log.Fatal(err)
@@ -555,7 +555,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.ImagesAndVulnerabilities.GetImagesImageIDSbomPath(ctx, operations.GetImagesImageIDSbomPathRequest{
-        ImageID: "7ec59e1f-67f3-4c4c-8e4b-6d7696ff3c57",
+        ImageID: "32f4442d-9f10-4117-a8a5-a2e7f00c922a",
     })
     if err != nil {
         log.Fatal(err)
@@ -607,11 +607,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.ImagesAndVulnerabilities.GetImagesImageIDVulnerabilities(ctx, operations.GetImagesImageIDVulnerabilitiesRequest{
-        ImageID: "47501357-e44f-451f-8b08-4c3197e193a2",
+        ImageID: "d0043143-505e-42fc-aacc-aa87ecde910e",
         IsIgnored: testpango.Bool(false),
-        LayerID: testpango.String("45467f94-874c-42d5-8c49-72233e66bd8f"),
-        MaxResults: testpango.Float64(8866.84),
-        Offset: testpango.Float64(3578.67),
+        LayerID: testpango.String("7b364751-2259-4df9-ae67-4e88ed17b104"),
+        MaxResults: testpango.Float64(7244.87),
+        Offset: testpango.Float64(6826.65),
         ShowOnlyVulnerabilitiesWithFix: testpango.Bool(false),
         SortDir: operations.GetImagesImageIDVulnerabilitiesSortDirDesc.ToPointer(),
     })
@@ -665,12 +665,12 @@ func main() {
 
     ctx := context.Background()
     res, err := s.ImagesAndVulnerabilities.PostImages(ctx, shared.ImageDefInput{
-        ImageHash: testpango.String("aut"),
-        ImageName: testpango.String("voluptatem"),
+        ImageHash: testpango.String("Sedan silently"),
+        ImageName: testpango.String("Strontium"),
         ImageTags: []string{
-            "libero",
+            "gosh",
         },
-        TimeAdded: types.MustTimeFromString("2022-01-11T15:07:25.289Z"),
+        TimeAdded: types.MustTimeFromString("2021-03-23T13:45:56.960Z"),
     })
     if err != nil {
         log.Fatal(err)
@@ -724,7 +724,7 @@ func main() {
     res, err := s.ImagesAndVulnerabilities.PostImagesApprove(ctx, operations.PostImagesApproveRequest{
         UUIDList: shared.UUIDList{
             UUIDList: []string{
-                "9ef20387-3205-490c-8c10-96400313b3e5",
+                "afe40a3f-7c16-48da-ac19-b6309faa9f44",
             },
         },
         IsImageApproved: false,
@@ -781,11 +781,11 @@ func main() {
     res, err := s.ImagesAndVulnerabilities.PostImagesImageIDDockerfileScanResultsIgnore(ctx, operations.PostImagesImageIDDockerfileScanResultsIgnoreRequest{
         UUIDList: shared.UUIDList{
             UUIDList: []string{
-                "044f65fe-72dc-4407-bd0c-c3f408efc15c",
+                "7d411c9e-43ee-4529-bae8-7474b2c192fe",
             },
         },
-        ActionType: operations.PostImagesImageIDDockerfileScanResultsIgnoreActionTypeRemove,
-        ImageID: "b4d6e1ea-e0f7-45ae-9f2a-cab58b991c92",
+        ActionType: operations.PostImagesImageIDDockerfileScanResultsIgnoreActionTypeAdd,
+        ImageID: "fcccfe79-79d3-4058-b255-f4d4f301de39",
     })
     if err != nil {
         log.Fatal(err)
@@ -839,12 +839,12 @@ func main() {
     res, err := s.ImagesAndVulnerabilities.PostImagesImageIDVulnerabilitiesIgnore(ctx, operations.PostImagesImageIDVulnerabilitiesIgnoreRequest{
         UUIDList: shared.UUIDList{
             UUIDList: []string{
-                "6ddb5894-61e7-4421-8be6-d9502f0ea930",
+                "0f457328-8079-4ea1-b64e-d7631fc85bb9",
             },
         },
         ActionType: operations.PostImagesImageIDVulnerabilitiesIgnoreActionTypeRemove,
-        ImageID: "69f7ac2f-72f8-4850-8904-911608207888",
-        SnoozeTime: operations.PostImagesImageIDVulnerabilitiesIgnoreSnoozeTimeWeek.ToPointer(),
+        ImageID: "95b06784-3712-40b3-827e-08cfaaddc5ee",
+        SnoozeTime: operations.PostImagesImageIDVulnerabilitiesIgnoreSnoozeTimeMonth.ToPointer(),
     })
     if err != nil {
         log.Fatal(err)

@@ -41,12 +41,12 @@ func main() {
     ctx := context.Background()
     res, err := s.Apps.GetApps(ctx, operations.GetAppsRequest{
         DownloadAsXlsx: testpango.Bool(false),
-        Name: testpango.String("Mr. Forrest Howe"),
+        Name: testpango.String("West"),
         NoPagination: testpango.Bool(false),
         SortDir: operations.GetAppsSortDirDesc.ToPointer(),
         SortKey: operations.GetAppsSortKeyType.ToPointer(),
         Type: []string{
-            "consequatur",
+            "deliverables",
         },
     })
     if err != nil {
@@ -99,7 +99,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Apps.GetAppsAppID(ctx, operations.GetAppsAppIDRequest{
-        AppID: "01ac802e-2ec0-49ff-8f0f-816ff3477c13",
+        AppID: "b5ec2f78-8d75-415b-825b-1520f3bb2d0d",
     })
     if err != nil {
         log.Fatal(err)
@@ -151,16 +151,16 @@ func main() {
     ctx := context.Background()
     res, err := s.Apps.PostApps(ctx, shared.App{
         Args: []string{
-            "vero",
+            "Pennsylvania",
         },
         Cwd: testpango.String("/usr/local/bin/corp"),
         Executable: "java",
         ExecutablePath: testpango.String("/usr/bin"),
-        ID: testpango.String("902c1412-5b09-460a-a681-51a472af923c"),
+        ID: testpango.String("a23be434-0962-431a-a464-6df448ea2451"),
         Labels: []shared.Label{
             shared.Label{
-                Key: "quis",
-                Value: "cupiditate",
+                Key: "<key>",
+                Value: "considering",
             },
         },
         Name: "AccountingApp",
@@ -217,7 +217,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Apps.PostAppsDelete(ctx, []string{
-        "49f83f35-0cf8-476f-bb90-1c6ecbb4e243",
+        "928e88cb-3f2c-4e95-af8f-afbfe2029fce",
     })
     if err != nil {
         log.Fatal(err)
@@ -271,23 +271,23 @@ func main() {
     res, err := s.Apps.PutAppsAppID(ctx, operations.PutAppsAppIDRequest{
         App: shared.App{
             Args: []string{
-                "eligendi",
+                "invoice",
             },
             Cwd: testpango.String("/usr/local/bin/corp"),
             Executable: "java",
             ExecutablePath: testpango.String("/usr/bin"),
-            ID: testpango.String("f789ffaf-eda5-43e5-ae6e-0ac184c2b9c2"),
+            ID: testpango.String("a0b1a3d7-8ca7-4d0e-a8bc-a8a0d7f81190"),
             Labels: []shared.Label{
                 shared.Label{
-                    Key: "magnam",
-                    Value: "reprehenderit",
+                    Key: "<key>",
+                    Value: "infrastructures Tuna",
                 },
             },
             Name: "AccountingApp",
             ProcessName: testpango.String("accounting_app"),
             Type: "frontend",
         },
-        AppID: "c88373a4-0e19-442f-b2e5-5055756f5d56",
+        AppID: "17593302-d163-413d-8049-f888f283529e",
     })
     if err != nil {
         log.Fatal(err)

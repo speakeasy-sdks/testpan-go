@@ -54,7 +54,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Kubernetes.DeleteKubernetesClustersKubernetesClusterID(ctx, operations.DeleteKubernetesClustersKubernetesClusterIDRequest{
-        KubernetesClusterID: "50841f17-6445-4637-9f3f-b27e21f86265",
+        KubernetesClusterID: "a8fff1fd-16f4-41cf-ba2f-6b7d60168e00",
     })
     if err != nil {
         log.Fatal(err)
@@ -106,7 +106,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Kubernetes.DeletePodDefinitionsPodID(ctx, operations.DeletePodDefinitionsPodIDRequest{
-        PodID: "7b36fc6b-9f58-47ce-925c-67641a8312e5",
+        PodID: "1d7b59d4-9a1e-473b-8e2e-c8a463501aa8",
     })
     if err != nil {
         log.Fatal(err)
@@ -158,7 +158,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Kubernetes.GetGetControllerDataClusterID(ctx, operations.GetGetControllerDataClusterIDRequest{
-        ClusterID: "047b4c21-ccb4-423a-bcdc-91faabdd88e7",
+        ClusterID: "6d4f5b01-1e67-437c-a42b-e9becce491b4",
     })
     if err != nil {
         log.Fatal(err)
@@ -258,16 +258,16 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Kubernetes.GetKubernetesClusters(ctx, operations.GetKubernetesClustersRequest{
-        ClusterName: testpango.String("vitae"),
-        ControllerStatus: testpango.String("delectus"),
-        ControllerVersion: testpango.String("laboriosam"),
+        ClusterName: testpango.String("handle"),
+        ControllerStatus: testpango.String("Metical withdrawal unless"),
+        ControllerVersion: testpango.String("Northeast Northeast"),
         DownloadAsXlsx: testpango.Bool(false),
-        KubernetesVersion: testpango.String("minus"),
-        MaxResults: testpango.Float64(2894.1),
-        Offset: testpango.Float64(5587.31),
+        KubernetesVersion: testpango.String("SMTP PCI soulful"),
+        MaxResults: testpango.Float64(5309.6),
+        Offset: testpango.Float64(6721.13),
         OnlySpecReconstructionEnabledFilter: testpango.Bool(false),
         SortDir: operations.GetKubernetesClustersSortDirAsc.ToPointer(),
-        SortKey: testpango.String("veniam"),
+        SortKey: testpango.String("background mmm"),
     })
     if err != nil {
         log.Fatal(err)
@@ -319,7 +319,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Kubernetes.GetKubernetesClustersKubernetesClusterID(ctx, operations.GetKubernetesClustersKubernetesClusterIDRequest{
-        KubernetesClusterID: "2d7771e7-fd07-4400-9ef8-d29de1dd7097",
+        KubernetesClusterID: "6ad413ce-670c-4973-bf8a-5a66b7855734",
     })
     if err != nil {
         log.Fatal(err)
@@ -371,7 +371,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Kubernetes.GetKubernetesClustersKubernetesClusterIDDeleteDependencies(ctx, operations.GetKubernetesClustersKubernetesClusterIDDeleteDependenciesRequest{
-        KubernetesClusterID: "b5da08c5-7fa6-4c78-a216-e19bafeca619",
+        KubernetesClusterID: "b06f6c06-c4ec-44f8-ba3a-a7d63215e690",
     })
     if err != nil {
         log.Fatal(err)
@@ -423,8 +423,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Kubernetes.GetKubernetesClustersKubernetesClusterIDDownloadBundle(ctx, operations.GetKubernetesClustersKubernetesClusterIDDownloadBundleRequest{
-        KubernetesClusterID: "1498140b-64ff-48ae-970e-f03b5f37e4aa",
-        SendTelemetriesIntervalSec: testpango.Int64(504386),
+        KubernetesClusterID: "204aba8f-ddfd-4080-9f3c-89482d02fb76",
+        SendTelemetriesIntervalSec: testpango.Int64(908942),
     })
     if err != nil {
         log.Fatal(err)
@@ -476,7 +476,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Kubernetes.GetKubernetesClustersKubernetesClusterIDGetHelmCommands(ctx, operations.GetKubernetesClustersKubernetesClusterIDGetHelmCommandsRequest{
-        KubernetesClusterID: "68555966-732a-4a5d-8b66-82cb70f8cfd5",
+        KubernetesClusterID: "f7710c3a-4d45-43f9-898d-e19416c2b527",
     })
     if err != nil {
         log.Fatal(err)
@@ -529,7 +529,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Kubernetes.GetKubernetesClustersKubernetesClusterIDNamespaces(ctx, operations.GetKubernetesClustersKubernetesClusterIDNamespacesRequest{
         IncludeScannable: testpango.Bool(false),
-        KubernetesClusterID: "fb6e91b9-a9f7-4484-ae2c-3309db0536d9",
+        KubernetesClusterID: "b18474d1-b95c-48d9-af1c-951ce15b0be6",
         SortDir: operations.GetKubernetesClustersKubernetesClusterIDNamespacesSortDirDesc.ToPointer(),
         SortKey: operations.GetKubernetesClustersKubernetesClusterIDNamespacesSortKeyName.ToPointer(),
     })
@@ -583,7 +583,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Kubernetes.GetKubernetesClustersKubernetesClusterIDServices(ctx, operations.GetKubernetesClustersKubernetesClusterIDServicesRequest{
-        KubernetesClusterID: "5ca006f5-392c-411a-a5a8-bf92f97428ad",
+        KubernetesClusterID: "1b08f941-6d25-44a9-8a5a-94e46b69d5cc",
         ShowIstioOnly: testpango.Bool(false),
     })
     if err != nil {
@@ -636,7 +636,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Kubernetes.GetLeanKubernetesClusters(ctx, operations.GetLeanKubernetesClustersRequest{
-        ClusterName: testpango.String("unde"),
+        ClusterName: testpango.String("sensor Granite"),
     })
     if err != nil {
         log.Fatal(err)
@@ -688,14 +688,14 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Kubernetes.GetNamespaces(ctx, operations.GetNamespacesRequest{
-        ClusterName: testpango.String("laborum"),
+        ClusterName: testpango.String("Thorium"),
         DownloadAsXlsx: testpango.Bool(false),
-        MaxResults: testpango.Float64(5904.22),
-        NamespaceName: testpango.String("hic"),
-        Offset: testpango.Float64(5458.54),
+        MaxResults: testpango.Float64(6640.03),
+        NamespaceName: testpango.String("mindshare"),
+        Offset: testpango.Float64(617.97),
         ProtectionStatus: operations.GetNamespacesProtectionStatusDisabled.ToPointer(),
         SortDir: operations.GetNamespacesSortDirDesc.ToPointer(),
-        SortKey: operations.GetNamespacesSortKeyRunningPods.ToPointer(),
+        SortKey: operations.GetNamespacesSortKeyProtectionStatus.ToPointer(),
     })
     if err != nil {
         log.Fatal(err)
@@ -747,15 +747,15 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Kubernetes.GetPodDefinitions(ctx, operations.GetPodDefinitionsRequest{
-        ClusterName: testpango.String("explicabo"),
+        ClusterName: testpango.String("Illinois Savings"),
         DeploymentType: []string{
-            "odit",
+            "disclaimer",
         },
         DownloadAsXlsx: testpango.Bool(false),
-        Name: testpango.String("Julie Cremin"),
+        Name: testpango.String("Multigender M2F"),
         NoPagination: testpango.Bool(false),
         TemplateSource: []string{
-            "ullam",
+            "Boulder",
         },
     })
     if err != nil {
@@ -807,7 +807,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Kubernetes.PostKubernetesClusters(ctx, shared.KubernetesCluster{
-        AccountName: testpango.String("provident"),
+        AccountName: testpango.String("withdrawal"),
         AgentFailClose: testpango.Bool(false),
         APIIntelligenceDAST: testpango.Bool(false),
         AutoLabelEnabled: testpango.Bool(false),
@@ -815,24 +815,24 @@ func main() {
         AutomatedPolicyRequiresDeployer: testpango.Bool(false),
         CiImageSignatureValidation: testpango.Bool(false),
         CiImageValidation: testpango.Bool(false),
-        ClusterPodDefinitionSource: shared.ClusterPodDefinitionSourceCd.ToPointer(),
+        ClusterPodDefinitionSource: shared.ClusterPodDefinitionSourceKubernetes.ToPointer(),
         ControllerDataResponse: &shared.ControllerDataResponse{
-            AgentID: testpango.String("98387f7a-79cd-472c-9248-4da21729f2ac"),
-            SharedKey: testpango.String("numquam"),
+            AgentID: testpango.String("81eb935a-67c1-4676-82ab-92109ab1c541"),
+            SharedKey: testpango.String("Movies"),
         },
-        ControllerStatus: shared.ControllerStatusPendingInstall.ToPointer(),
+        ControllerStatus: shared.ControllerStatusUnknown.ToPointer(),
         EnableConnectionsControl: testpango.Bool(false),
         HelmCommandsInstallation: &shared.HelmCommandsInstallation{
-            IstioHelmCommand: testpango.String("necessitatibus"),
-            PanopticaHelmCommand: testpango.String("tenetur"),
-            VaultHelmCommand: testpango.String("exercitationem"),
+            IstioHelmCommand: testpango.String("wherever Bedfordshire"),
+            PanopticaHelmCommand: testpango.String("Personal generation Small"),
+            VaultHelmCommand: testpango.String("Generic than"),
         },
-        ID: testpango.String("725f1169-ac1e-441d-8a23-c23e34f2dfa4"),
+        ID: testpango.String("6e76a9b0-598f-49f4-b42b-b8cf86555cd8"),
         InstallEnvoyTracingSupport: testpango.Bool(false),
         InstallTracingSupport: testpango.Bool(false),
         InstallationSource: shared.InstallationSourceHelm.ToPointer(),
         InternalRegistryParameters: &shared.InternalRegistryParameters{
-            InternalRegistry: testpango.String("sunt"),
+            InternalRegistry: testpango.String("Pines Trial"),
             InternalRegistryEnabled: testpango.Bool(false),
         },
         IsHoldApplicationUntilProxyStarts: testpango.Bool(false),
@@ -841,41 +841,41 @@ func main() {
         IsPersistent: testpango.Bool(false),
         IstioIngressAnnotations: []shared.KubernetesAnnotation{
             shared.KubernetesAnnotation{
-                Key: "perspiciatis",
-                Value: "quam",
+                Key: "<key>",
+                Value: "upright maximize verbally",
             },
         },
         IstioInstallationParameters: &shared.IstioInstallationParameters{
             IsIstioAlreadyInstalled: testpango.Bool(false),
-            IstioVersion: testpango.String("a"),
+            IstioVersion: testpango.String("ladybug"),
         },
         K8sEventsEnabled: testpango.Bool(false),
         KubernetesSecurity: testpango.Bool(false),
-        MinimalNumberOfControllerReplicas: testpango.Int64(434345),
-        Name: "Clay Monahan",
-        OrchestrationType: shared.KubernetesClusterOrchestrationTypeGke.ToPointer(),
+        MinimalNumberOfControllerReplicas: testpango.Int64(225610),
+        Name: "female Branding Architect",
+        OrchestrationType: shared.KubernetesClusterOrchestrationTypeRancher.ToPointer(),
         PreserveOriginalSourceIP: testpango.Bool(false),
         ProxyConfiguration: &shared.ProxyConfiguration{
             EnableProxy: testpango.Bool(false),
-            HTTPSProxy: testpango.String("ipsam"),
+            HTTPSProxy: testpango.String("Customer befriend"),
         },
         RestrictRegistires: testpango.Bool(false),
         ScanConfiguration: &shared.ScanConfiguration{
-            NumberOfScanners: testpango.Int64(92978),
+            NumberOfScanners: testpango.Int64(127892),
             ScanTypes: []shared.ScanType{
-                shared.ScanTypeDockerCisBenchmark,
+                shared.ScanTypeVulnerabilities,
             },
         },
         ServiceDiscoveryIsolationEnabled: testpango.Bool(false),
         SidecarsResources: &shared.SidecarsResource{
-            ProxyInitLimitsCPU: testpango.String("saepe"),
-            ProxyInitLimitsMemory: testpango.String("sunt"),
-            ProxyInitRequestsCPU: testpango.String("in"),
-            ProxyInitRequestsMemory: testpango.String("architecto"),
-            ProxyLimitsCPU: testpango.String("sed"),
-            ProxyLimitsMemory: testpango.String("voluptatem"),
-            ProxyRequestCPU: testpango.String("perspiciatis"),
-            ProxyRequestMemory: testpango.String("error"),
+            ProxyInitLimitsCPU: testpango.String("meter deposit South"),
+            ProxyInitLimitsMemory: testpango.String("compress Lake"),
+            ProxyInitRequestsCPU: testpango.String("as Tactics mobile"),
+            ProxyInitRequestsMemory: testpango.String("blue Manager Program"),
+            ProxyLimitsCPU: testpango.String("achievement Optimization"),
+            ProxyLimitsMemory: testpango.String("Zirconium"),
+            ProxyRequestCPU: testpango.String("fuchsia Texas Ergonomic"),
+            ProxyRequestMemory: testpango.String("Longview"),
         },
         SSHMonitorDisabled: testpango.Bool(false),
         SupportExternalTraceSource: testpango.Bool(false),
@@ -932,14 +932,14 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Kubernetes.PostPodDefinitions(ctx, shared.PodDefinitionInput{
-        ClusterID: "853e9f54-3d85-4443-9ee2-24460443bc15",
+        ClusterID: "caf647ad-b35e-4462-baa4-a61d2b4e2410",
         Containers: []shared.Container{
             shared.Container{
                 Image: &shared.Image{
-                    DockerfileScanSeverity: shared.DockerfileScanSeverityInfo.ToPointer(),
-                    Hash: testpango.String("vitae"),
-                    Repository: testpango.String("quos"),
-                    Tag: testpango.String("atque"),
+                    DockerfileScanSeverity: shared.DockerfileScanSeverityFatal.ToPointer(),
+                    Hash: testpango.String("Folk"),
+                    Repository: testpango.String("Smart Trigender"),
+                    Tag: testpango.String("Analyst"),
                     VulnerabilitySeverityLevel: shared.VulnerabilitySeverityHigh.ToPointer(),
                 },
             },
@@ -948,22 +948,22 @@ func main() {
             shared.Container{
                 Image: &shared.Image{
                     DockerfileScanSeverity: shared.DockerfileScanSeverityInfo.ToPointer(),
-                    Hash: testpango.String("asperiores"),
-                    Repository: testpango.String("corporis"),
-                    Tag: testpango.String("vel"),
-                    VulnerabilitySeverityLevel: shared.VulnerabilitySeverityCritical.ToPointer(),
+                    Hash: testpango.String("yellow Solutions geez"),
+                    Repository: testpango.String("resound mobile applications"),
+                    Tag: testpango.String("meh"),
+                    VulnerabilitySeverityLevel: shared.VulnerabilitySeverityLow.ToPointer(),
                 },
             },
         },
-        Kind: shared.PodTemplateKindDaemonSet.ToPointer(),
+        Kind: shared.PodTemplateKindReplicaSet.ToPointer(),
         Labels: []shared.Label{
             shared.Label{
-                Key: "ipsam",
-                Value: "at",
+                Key: "<key>",
+                Value: "unless",
             },
         },
-        Name: "Jessie Larkin",
-        PodDefinitionSource: shared.PodDefinitionSourceCli.ToPointer(),
+        Name: "payment Michigan",
+        PodDefinitionSource: shared.PodDefinitionSourceKubernetes.ToPointer(),
     })
     if err != nil {
         log.Fatal(err)
@@ -1016,7 +1016,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Kubernetes.PutKubernetesClustersKubernetesClusterID(ctx, operations.PutKubernetesClustersKubernetesClusterIDRequest{
         KubernetesCluster: shared.KubernetesCluster{
-            AccountName: testpango.String("mollitia"),
+            AccountName: testpango.String("savior normalization absentmindedly"),
             AgentFailClose: testpango.Bool(false),
             APIIntelligenceDAST: testpango.Bool(false),
             AutoLabelEnabled: testpango.Bool(false),
@@ -1026,22 +1026,22 @@ func main() {
             CiImageValidation: testpango.Bool(false),
             ClusterPodDefinitionSource: shared.ClusterPodDefinitionSourceCd.ToPointer(),
             ControllerDataResponse: &shared.ControllerDataResponse{
-                AgentID: testpango.String("d617c3b0-d51a-444b-b01b-ad8706d46082"),
-                SharedKey: testpango.String("libero"),
+                AgentID: testpango.String("d957958a-0796-4a5f-ad9d-7f9c73b14840"),
+                SharedKey: testpango.String("Fantastic Berkshire"),
             },
-            ControllerStatus: shared.ControllerStatusAutoUpgradeInProgress.ToPointer(),
+            ControllerStatus: shared.ControllerStatusPendingInstall.ToPointer(),
             EnableConnectionsControl: testpango.Bool(false),
             HelmCommandsInstallation: &shared.HelmCommandsInstallation{
-                IstioHelmCommand: testpango.String("nam"),
-                PanopticaHelmCommand: testpango.String("pariatur"),
-                VaultHelmCommand: testpango.String("quod"),
+                IstioHelmCommand: testpango.String("orange Central invoice"),
+                PanopticaHelmCommand: testpango.String("pascal to squeegee"),
+                VaultHelmCommand: testpango.String("parsing blissfully pine"),
             },
-            ID: testpango.String("41ff5d4e-2ae4-4fb5-8b35-d17638f1edb7"),
+            ID: testpango.String("f781f7b5-14b5-45e8-9b88-a92334e6deac"),
             InstallEnvoyTracingSupport: testpango.Bool(false),
             InstallTracingSupport: testpango.Bool(false),
             InstallationSource: shared.InstallationSourceHelm.ToPointer(),
             InternalRegistryParameters: &shared.InternalRegistryParameters{
-                InternalRegistry: testpango.String("consectetur"),
+                InternalRegistry: testpango.String("North Highlands"),
                 InternalRegistryEnabled: testpango.Bool(false),
             },
             IsHoldApplicationUntilProxyStarts: testpango.Bool(false),
@@ -1050,41 +1050,41 @@ func main() {
             IsPersistent: testpango.Bool(false),
             IstioIngressAnnotations: []shared.KubernetesAnnotation{
                 shared.KubernetesAnnotation{
-                    Key: "nemo",
-                    Value: "provident",
+                    Key: "<key>",
+                    Value: "ADP Seamless",
                 },
             },
             IstioInstallationParameters: &shared.IstioInstallationParameters{
                 IsIstioAlreadyInstalled: testpango.Bool(false),
-                IstioVersion: testpango.String("accusamus"),
+                IstioVersion: testpango.String("Southeast"),
             },
             K8sEventsEnabled: testpango.Bool(false),
             KubernetesSecurity: testpango.Bool(false),
-            MinimalNumberOfControllerReplicas: testpango.Int64(793260),
-            Name: "Warren Runolfsson",
-            OrchestrationType: shared.KubernetesClusterOrchestrationTypeRancher.ToPointer(),
+            MinimalNumberOfControllerReplicas: testpango.Int64(890421),
+            Name: "delectus Rap Awesome",
+            OrchestrationType: shared.KubernetesClusterOrchestrationTypeIks.ToPointer(),
             PreserveOriginalSourceIP: testpango.Bool(false),
             ProxyConfiguration: &shared.ProxyConfiguration{
                 EnableProxy: testpango.Bool(false),
-                HTTPSProxy: testpango.String("doloremque"),
+                HTTPSProxy: testpango.String("Directives spar Handcrafted"),
             },
             RestrictRegistires: testpango.Bool(false),
             ScanConfiguration: &shared.ScanConfiguration{
-                NumberOfScanners: testpango.Int64(964052),
+                NumberOfScanners: testpango.Int64(663885),
                 ScanTypes: []shared.ScanType{
-                    shared.ScanTypeDockerCisBenchmark,
+                    shared.ScanTypeVulnerabilities,
                 },
             },
             ServiceDiscoveryIsolationEnabled: testpango.Bool(false),
             SidecarsResources: &shared.SidecarsResource{
-                ProxyInitLimitsCPU: testpango.String("impedit"),
-                ProxyInitLimitsMemory: testpango.String("illum"),
-                ProxyInitRequestsCPU: testpango.String("ullam"),
-                ProxyInitRequestsMemory: testpango.String("praesentium"),
-                ProxyLimitsCPU: testpango.String("perferendis"),
-                ProxyLimitsMemory: testpango.String("soluta"),
-                ProxyRequestCPU: testpango.String("animi"),
-                ProxyRequestMemory: testpango.String("molestiae"),
+                ProxyInitLimitsCPU: testpango.String("tan comic tan"),
+                ProxyInitLimitsMemory: testpango.String("Rubber"),
+                ProxyInitRequestsCPU: testpango.String("Sleek drain sensor"),
+                ProxyInitRequestsMemory: testpango.String("indexing Hackensack"),
+                ProxyLimitsCPU: testpango.String("superstructure"),
+                ProxyLimitsMemory: testpango.String("generating"),
+                ProxyRequestCPU: testpango.String("micronutrient"),
+                ProxyRequestMemory: testpango.String("pro Cambridgeshire"),
             },
             SSHMonitorDisabled: testpango.Bool(false),
             SupportExternalTraceSource: testpango.Bool(false),
@@ -1092,7 +1092,7 @@ func main() {
             TokenInjectionEnabled: testpango.Bool(false),
             UseExternalCA: testpango.Bool(false),
         },
-        KubernetesClusterID: "3810e4fe-4447-4297-8d3b-1dd3bbce247b",
+        KubernetesClusterID: "96a74b13-6974-4b67-a067-bd753e149f7b",
     })
     if err != nil {
         log.Fatal(err)
@@ -1145,9 +1145,9 @@ func main() {
     ctx := context.Background()
     res, err := s.Kubernetes.PutKubernetesClustersKubernetesClusterIDManagedByHelm(ctx, operations.PutKubernetesClustersKubernetesClusterIDManagedByHelmRequest{
         EditKubernetesClusterManagedByHelm: shared.EditKubernetesClusterManagedByHelm{
-            Name: testpango.String("Vicki Labadie"),
+            Name: testpango.String("transmitter innocently"),
         },
-        KubernetesClusterID: "ff50126d-71cf-4fbd-8eb7-4b8421953b44",
+        KubernetesClusterID: "ff47cf23-f7b6-483e-bd0b-e8fe575edb2f",
     })
     if err != nil {
         log.Fatal(err)
@@ -1200,40 +1200,40 @@ func main() {
     ctx := context.Background()
     res, err := s.Kubernetes.PutPodDefinitionsPodID(ctx, operations.PutPodDefinitionsPodIDRequest{
         PodDefinitionInput: shared.PodDefinitionInput{
-            ClusterID: "bd3c4315-9d33-4e59-93c0-01139863aa41",
+            ClusterID: "8813d860-716a-4bd1-be6a-f36d0732a688",
             Containers: []shared.Container{
                 shared.Container{
                     Image: &shared.Image{
                         DockerfileScanSeverity: shared.DockerfileScanSeverityFatal.ToPointer(),
-                        Hash: testpango.String("aliquid"),
-                        Repository: testpango.String("optio"),
-                        Tag: testpango.String("adipisci"),
-                        VulnerabilitySeverityLevel: shared.VulnerabilitySeverityUnknown.ToPointer(),
+                        Hash: testpango.String("female West"),
+                        Repository: testpango.String("Cyclocross female jubilant"),
+                        Tag: testpango.String("Rubber Tamiami"),
+                        VulnerabilitySeverityLevel: shared.VulnerabilitySeverityLow.ToPointer(),
                     },
                 },
             },
             InitContainers: []shared.Container{
                 shared.Container{
                     Image: &shared.Image{
-                        DockerfileScanSeverity: shared.DockerfileScanSeverityFatal.ToPointer(),
-                        Hash: testpango.String("porro"),
-                        Repository: testpango.String("explicabo"),
-                        Tag: testpango.String("reiciendis"),
-                        VulnerabilitySeverityLevel: shared.VulnerabilitySeverityUnknown.ToPointer(),
+                        DockerfileScanSeverity: shared.DockerfileScanSeverityWarn.ToPointer(),
+                        Hash: testpango.String("Southeast custody"),
+                        Repository: testpango.String("Music Unbranded Visionary"),
+                        Tag: testpango.String("Squares towards"),
+                        VulnerabilitySeverityLevel: shared.VulnerabilitySeverityLow.ToPointer(),
                     },
                 },
             },
-            Kind: shared.PodTemplateKindOther.ToPointer(),
+            Kind: shared.PodTemplateKindStatefulSet.ToPointer(),
             Labels: []shared.Label{
                 shared.Label{
-                    Key: "porro",
-                    Value: "tempore",
+                    Key: "<key>",
+                    Value: "actualize Dollar",
                 },
             },
-            Name: "Joan Schaefer",
+            Name: "opt virtual copying",
             PodDefinitionSource: shared.PodDefinitionSourceHelm.ToPointer(),
         },
-        PodID: "1ffbe9cb-d795-4ee6-9e07-6cc7abf616ea",
+        PodID: "d7ad7bdf-9c15-4917-b40e-79415cfed383",
     })
     if err != nil {
         log.Fatal(err)

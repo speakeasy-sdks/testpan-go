@@ -282,7 +282,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Advisor.GetAdvisorQueueAdvisorType(ctx, operations.GetAdvisorQueueAdvisorTypeRequest{
-        AdvisorType: operations.GetAdvisorQueueAdvisorTypeAdvisorTypePodSecurityStandard,
+        AdvisorType: operations.GetAdvisorQueueAdvisorTypeAdvisorTypeDeploymentRules,
     })
     if err != nil {
         log.Fatal(err)

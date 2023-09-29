@@ -41,7 +41,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Registries.DeleteRegistriesRegistryID(ctx, operations.DeleteRegistriesRegistryIDRequest{
-        RegistryID: "b7021a52-046b-464e-99fb-0e67e094fdfe",
+        RegistryID: "e5f28387-13f7-45c6-911a-2f9bf926c17f",
     })
     if err != nil {
         log.Fatal(err)
@@ -93,8 +93,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Registries.GetRegistries(ctx, operations.GetRegistriesRequest{
-        SortDir: operations.GetRegistriesSortDirDesc.ToPointer(),
-        SortKey: testpango.String("exercitationem"),
+        SortDir: operations.GetRegistriesSortDirAsc.ToPointer(),
+        SortKey: testpango.String("Southwest OCR"),
     })
     if err != nil {
         log.Fatal(err)
@@ -146,13 +146,13 @@ func main() {
     ctx := context.Background()
     res, err := s.Registries.PostRegistries(ctx, shared.RegistryInput{
         ClusterIds: []string{
-            "540ef53a-34a1-4b8f-a997-31adc05d85ae",
+            "95b632a5-fe89-4e35-884b-fdb5be5f9972",
         },
         Credentials: &shared.RegistryCredentials{
             RegistryCredentialsType: shared.RegistryCredentialsRegistryCredentialsTypeAwsRegistryCredentials,
         },
-        Type: shared.RegistryTypeOther,
-        URL: "delectus",
+        Type: shared.RegistryTypeAzure,
+        URL: "http://svelte-curio.org",
     })
     if err != nil {
         log.Fatal(err)
@@ -204,13 +204,13 @@ func main() {
     ctx := context.Background()
     res, err := s.Registries.PostRegistriesTestConnection(ctx, shared.RegistryInput{
         ClusterIds: []string{
-            "b70fb387-4290-4d33-a561-eca16ef89451",
+            "146c9745-4e65-4c13-96b3-e4e8e106ebca",
         },
         Credentials: &shared.RegistryCredentials{
-            RegistryCredentialsType: shared.RegistryCredentialsRegistryCredentialsTypeJfrogRegistryCredentials,
+            RegistryCredentialsType: shared.RegistryCredentialsRegistryCredentialsTypeAwsRegistryCredentials,
         },
         Type: shared.RegistryTypeOther,
-        URL: "ducimus",
+        URL: "http://handy-energy.net",
     })
     if err != nil {
         log.Fatal(err)
@@ -264,15 +264,15 @@ func main() {
     res, err := s.Registries.PostRegistriesTestConnectionRegistryID(ctx, operations.PostRegistriesTestConnectionRegistryIDRequest{
         RegistryInput: shared.RegistryInput{
             ClusterIds: []string{
-                "6eeeb518-c4da-41fa-9355-12f06d4e5b72",
+                "309c9980-a8e5-4df0-8f7a-f1c1e7dae13c",
             },
             Credentials: &shared.RegistryCredentials{
-                RegistryCredentialsType: shared.RegistryCredentialsRegistryCredentialsTypeJfrogRegistryCredentials,
+                RegistryCredentialsType: shared.RegistryCredentialsRegistryCredentialsTypeStandardRegistryCredentials,
             },
             Type: shared.RegistryTypeAws,
-            URL: "doloribus",
+            URL: "http://blond-horror.org",
         },
-        RegistryID: "548568a0-424e-400a-9d6e-b9434645d030",
+        RegistryID: "99bd4248-5508-4257-836a-3d0e30be4155",
     })
     if err != nil {
         log.Fatal(err)
@@ -326,15 +326,15 @@ func main() {
     res, err := s.Registries.PutRegistriesRegistryID(ctx, operations.PutRegistriesRegistryIDRequest{
         RegistryInput: shared.RegistryInput{
             ClusterIds: []string{
-                "84fbba5c-ceff-45cb-81fe-51e528a45ac8",
+                "bb846b91-90fe-4927-838c-5cc07f3bb118",
             },
             Credentials: &shared.RegistryCredentials{
                 RegistryCredentialsType: shared.RegistryCredentialsRegistryCredentialsTypeAwsRegistryCredentials,
             },
-            Type: shared.RegistryTypeJfrog,
-            URL: "praesentium",
+            Type: shared.RegistryTypeAws,
+            URL: "https://mixed-affiliate.info",
         },
-        RegistryID: "5f8bc2ca-ba8d-4a41-a7dd-597ff4711aa1",
+        RegistryID: "a8f4138b-1ba6-41a9-bb5f-375f1e0e9ee0",
     })
     if err != nil {
         log.Fatal(err)

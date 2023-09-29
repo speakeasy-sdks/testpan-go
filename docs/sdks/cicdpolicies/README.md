@@ -43,7 +43,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.CICDPolicies.DeleteCdPolicyPolicyID(ctx, operations.DeleteCdPolicyPolicyIDRequest{
-        PolicyID: "5626d436-813f-416d-9f5f-ce6c556146c3",
+        PolicyID: "113917a9-a33e-48f7-8502-0a3844f10696",
     })
     if err != nil {
         log.Fatal(err)
@@ -95,7 +95,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.CICDPolicies.DeleteCiPolicyPolicyID(ctx, operations.DeleteCiPolicyPolicyIDRequest{
-        PolicyID: "e250fb00-8c42-4e14-9aac-366c8dd6b144",
+        PolicyID: "04ff3f56-c960-40ce-85e7-ad7f8b628cd7",
     })
     if err != nil {
         log.Fatal(err)
@@ -243,25 +243,25 @@ func main() {
     ctx := context.Background()
     res, err := s.CICDPolicies.PostCdPolicy(ctx, shared.CdPolicyInput{
         APISecurityCdPolicy: &shared.APISecurityCdPolicyElement{
-            APISecurityProfile: "29074747-78a7-4bd4-a6d2-8c10ab3cdca4",
+            APISecurityProfile: "e20e4f6e-3e04-4f9f-8904-433d8246a999",
             EnforcementOption: shared.EnforcementOptionFail,
         },
         Deployers: []string{
-            "51904e52-3c7e-40bc-b178-e4796f2a70c6",
+            "aede075c-3164-444b-a1e6-c4ecee9d9042",
         },
-        Description: testpango.String("quas"),
-        Name: "Eugene Leuschke",
+        Description: testpango.String("User-friendly composite Graphic Interface"),
+        Name: "Concrete",
         PermissionCDPolicy: &shared.CdPolicyElement{
             EnforcementOption: shared.EnforcementOptionIgnore,
-            PermissibleVulnerabilityLevel: shared.CDPipelineFindingRiskNoRisk,
+            PermissibleVulnerabilityLevel: shared.CDPipelineFindingRiskHigh,
         },
         SecretCDPolicy: &shared.SecretsCdPolicyElement{
-            EnforcementOption: shared.EnforcementOptionIgnore,
+            EnforcementOption: shared.EnforcementOptionFail,
             PermissibleVulnerabilityLevel: shared.CDPipelineSecretsFindingRiskNoKnownRisk,
         },
         SecurityContextCDPolicy: &shared.CdPolicyElement{
-            EnforcementOption: shared.EnforcementOptionFail,
-            PermissibleVulnerabilityLevel: shared.CDPipelineFindingRiskMedium,
+            EnforcementOption: shared.EnforcementOptionIgnore,
+            PermissibleVulnerabilityLevel: shared.CDPipelineFindingRiskNoRisk,
         },
     })
     if err != nil {
@@ -313,15 +313,15 @@ func main() {
 
     ctx := context.Background()
     res, err := s.CICDPolicies.PostCiPolicy(ctx, shared.CiPolicyInput{
-        Description: testpango.String("fugit"),
+        Description: testpango.String("Adaptive scalable portal"),
         DockerfileScanCiPolicy: &shared.DockerfileScanCiPolicy{
-            EnforcementOption: shared.EnforcementOptionIgnore,
+            EnforcementOption: shared.EnforcementOptionFail,
             PermissibleDockerfileScanSeverity: shared.DockerfileScanSeverityInfo,
         },
-        Name: "Rose Turner",
+        Name: "local Tom",
         VulnerabilityCiPolicy: &shared.VulnerabilityCiPolicy{
             EnforcementOption: shared.EnforcementOptionFail,
-            PermissibleVulnerabilityLevel: shared.VulnerabilitySeverityMedium,
+            PermissibleVulnerabilityLevel: shared.VulnerabilitySeverityLow,
         },
     })
     if err != nil {
@@ -376,28 +376,28 @@ func main() {
     res, err := s.CICDPolicies.PutCdPolicyPolicyID(ctx, operations.PutCdPolicyPolicyIDRequest{
         CdPolicyInput: shared.CdPolicyInput{
             APISecurityCdPolicy: &shared.APISecurityCdPolicyElement{
-                APISecurityProfile: "ee17cbe6-1e6b-47b9-9bc0-ab3c20c4f378",
-                EnforcementOption: shared.EnforcementOptionIgnore,
+                APISecurityProfile: "75218fad-dbdc-48d5-b27f-e1d8ecd9e791",
+                EnforcementOption: shared.EnforcementOptionFail,
             },
             Deployers: []string{
-                "fd871f99-dd2e-4fd1-a1aa-6f1e674bdb04",
+                "45666e4d-fb74-4ef6-9a81-a0d950f62fec",
             },
-            Description: testpango.String("sapiente"),
-            Name: "Marion Kihn",
+            Description: testpango.String("Enterprise-wide 4th generation process improvement"),
+            Name: "Berkshire quantifying",
             PermissionCDPolicy: &shared.CdPolicyElement{
-                EnforcementOption: shared.EnforcementOptionFail,
-                PermissibleVulnerabilityLevel: shared.CDPipelineFindingRiskMedium,
+                EnforcementOption: shared.EnforcementOptionIgnore,
+                PermissibleVulnerabilityLevel: shared.CDPipelineFindingRiskHigh,
             },
             SecretCDPolicy: &shared.SecretsCdPolicyElement{
-                EnforcementOption: shared.EnforcementOptionFail,
+                EnforcementOption: shared.EnforcementOptionIgnore,
                 PermissibleVulnerabilityLevel: shared.CDPipelineSecretsFindingRiskRiskIdentified,
             },
             SecurityContextCDPolicy: &shared.CdPolicyElement{
-                EnforcementOption: shared.EnforcementOptionFail,
-                PermissibleVulnerabilityLevel: shared.CDPipelineFindingRiskMedium,
+                EnforcementOption: shared.EnforcementOptionIgnore,
+                PermissibleVulnerabilityLevel: shared.CDPipelineFindingRiskHigh,
             },
         },
-        PolicyID: "ea19f1d1-7051-4339-9080-86a1840394c2",
+        PolicyID: "0d219b4a-2fde-47a8-9370-33a3f0a96f23",
     })
     if err != nil {
         log.Fatal(err)
@@ -450,18 +450,18 @@ func main() {
     ctx := context.Background()
     res, err := s.CICDPolicies.PutCiPolicyPolicyID(ctx, operations.PutCiPolicyPolicyIDRequest{
         CiPolicyInput: shared.CiPolicyInput{
-            Description: testpango.String("voluptas"),
+            Description: testpango.String("Public-key 24 hour pricing structure"),
             DockerfileScanCiPolicy: &shared.DockerfileScanCiPolicy{
                 EnforcementOption: shared.EnforcementOptionFail,
-                PermissibleDockerfileScanSeverity: shared.DockerfileScanSeverityWarn,
+                PermissibleDockerfileScanSeverity: shared.DockerfileScanSeverityInfo,
             },
-            Name: "Elisa Mosciski",
+            Name: "primary transform drive",
             VulnerabilityCiPolicy: &shared.VulnerabilityCiPolicy{
-                EnforcementOption: shared.EnforcementOptionFail,
+                EnforcementOption: shared.EnforcementOptionIgnore,
                 PermissibleVulnerabilityLevel: shared.VulnerabilitySeverityCritical,
             },
         },
-        PolicyID: "0642dac7-af51-45cc-813a-a63aae8d6786",
+        PolicyID: "e24f5dcf-d347-4fd8-8ec5-8c84ce879afb",
     })
     if err != nil {
         log.Fatal(err)

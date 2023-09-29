@@ -41,17 +41,17 @@ func main() {
     ctx := context.Background()
     res, err := s.AuditLogs.GetAuditLogs(ctx, operations.GetAuditLogsRequest{
         Actions: []string{
-            "pariatur",
+            "male",
         },
         DownloadAsXlsx: testpango.Bool(false),
-        EndTime: types.MustTimeFromString("2022-04-22T10:10:54.165Z"),
-        MaxResults: testpango.Float64(8310.31),
-        ObjectType: testpango.String("perferendis"),
-        Offset: testpango.Float64(6605.36),
+        EndTime: types.MustTimeFromString("2022-01-24T02:40:28.078Z"),
+        MaxResults: testpango.Float64(5619.36),
+        ObjectType: testpango.String("GB grey Folding"),
+        Offset: testpango.Float64(2262.25),
         SortDir: operations.GetAuditLogsSortDirDesc.ToPointer(),
         SortKey: operations.GetAuditLogsSortKeyTime.ToPointer(),
-        StartTime: types.MustTimeFromString("2020-01-06T07:14:49.176Z"),
-        User: testpango.String("repudiandae"),
+        StartTime: types.MustTimeFromString("2022-05-15T07:17:17.108Z"),
+        User: testpango.String("Lennie.Torphy0"),
     })
     if err != nil {
         log.Fatal(err)
@@ -152,25 +152,25 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AuditLogs.GetAuditLogsKubernetes(ctx, operations.GetAuditLogsKubernetesRequest{
-        ClusterName: testpango.String("architecto"),
+        ClusterName: testpango.String("Coupe Southeast Southeast"),
         DownloadAsXlsx: testpango.Bool(false),
-        EndTime: types.MustTimeFromString("2022-02-18T12:04:35.830Z"),
+        EndTime: types.MustTimeFromString("2022-08-15T09:50:37.531Z"),
         KubernetesAuditAction: []string{
-            "harum",
+            "online",
         },
-        MaxResults: testpango.Float64(2942.66),
-        NamespaceName: testpango.String("voluptatibus"),
+        MaxResults: testpango.Float64(3231.79),
+        NamespaceName: testpango.String("Cadillac"),
         NoPagination: testpango.Bool(false),
-        Offset: testpango.Float64(4353.53),
-        ResourceKind: testpango.String("explicabo"),
-        ResourceName: testpango.String("minus"),
+        Offset: testpango.Float64(5266.56),
+        ResourceKind: testpango.String("Island SSL"),
+        ResourceName: testpango.String("South vaguely"),
         Result: []GetAuditLogsKubernetesResult{
             operations.GetAuditLogsKubernetesResultBlock,
         },
         SortDir: operations.GetAuditLogsKubernetesSortDirDesc.ToPointer(),
-        SortKey: operations.GetAuditLogsKubernetesSortKeyLastSeen.ToPointer(),
-        StartTime: types.MustTimeFromString("2021-06-21T12:40:08.193Z"),
-        User: testpango.String("error"),
+        SortKey: operations.GetAuditLogsKubernetesSortKeyAction.ToPointer(),
+        StartTime: types.MustTimeFromString("2022-02-10T19:51:08.510Z"),
+        User: testpango.String("Rebekah66"),
     })
     if err != nil {
         log.Fatal(err)

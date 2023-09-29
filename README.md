@@ -7,7 +7,7 @@
 </div>
 
 <!-- Start SDK Installation -->
-# SDK Installation
+## SDK Installation
 
 ```bash
 go get github.com/speakeasy-sdks/testpan-go
@@ -16,8 +16,6 @@ go get github.com/speakeasy-sdks/testpan-go
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
-
-
 ```go
 package main
 
@@ -39,7 +37,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurityPolicies.DeleteAPISecurityPolicyPolicyID(ctx, operations.DeleteAPISecurityPolicyPolicyIDRequest{
-        PolicyID: "a05dfc2d-df7c-4c78-8a1b-a928fc816742",
+        PolicyID: "04ae1a0e-dcb7-4d2b-b7a6-f7ca105f8c92",
     })
     if err != nil {
         log.Fatal(err)
@@ -53,10 +51,10 @@ func main() {
 <!-- End SDK Example Usage -->
 
 <!-- Start SDK Available Operations -->
-# Available Resources and Operations
+## Available Resources and Operations
 
 
-## [APISecurityPolicies](docs/sdks/apisecuritypolicies/README.md)
+### [APISecurityPolicies](docs/sdks/apisecuritypolicies/README.md)
 
 * [DeleteAPISecurityPolicyPolicyID](docs/sdks/apisecuritypolicies/README.md#deleteapisecuritypolicypolicyid) - Delete api security policy
 * [GetAPISecurityPolicy](docs/sdks/apisecuritypolicies/README.md#getapisecuritypolicy) - Get a list of API security policies
@@ -64,7 +62,7 @@ func main() {
 * [PostAPISecurityPolicy](docs/sdks/apisecuritypolicies/README.md#postapisecuritypolicy) - Add new API security policy
 * [PutAPISecurityPolicyPolicyID](docs/sdks/apisecuritypolicies/README.md#putapisecuritypolicypolicyid) - Edit Api security policy.
 
-## [Cd](docs/sdks/cd/README.md)
+### [Cd](docs/sdks/cd/README.md)
 
 * [DeleteCdRuleIDConnectionsRule](docs/sdks/cd/README.md#deletecdruleidconnectionsrule) - delete a cd connection rule.
 * [DeleteCdRuleIDServerlessRule](docs/sdks/cd/README.md#deletecdruleidserverlessrule) - delete a cd serverless rule.
@@ -77,7 +75,7 @@ func main() {
 * [PutCdRuleIDConnectionsRule](docs/sdks/cd/README.md#putcdruleidconnectionsrule) - update a cd connection rule.
 * [PutCdRuleIDServerlessRule](docs/sdks/cd/README.md#putcdruleidserverlessrule) - update a cd serverless rule.
 
-## [CICDPolicies](docs/sdks/cicdpolicies/README.md)
+### [CICDPolicies](docs/sdks/cicdpolicies/README.md)
 
 * [DeleteCdPolicyPolicyID](docs/sdks/cicdpolicies/README.md#deletecdpolicypolicyid) - Delete CD policy
 * [DeleteCiPolicyPolicyID](docs/sdks/cicdpolicies/README.md#deletecipolicypolicyid) - Delete CI policy
@@ -88,7 +86,7 @@ func main() {
 * [PutCdPolicyPolicyID](docs/sdks/cicdpolicies/README.md#putcdpolicypolicyid) - Edit CD policy. At least one CdPolicyElement should be present
 * [PutCiPolicyPolicyID](docs/sdks/cicdpolicies/README.md#putcipolicypolicyid) - Edit CI policy
 
-## [Advisor](docs/sdks/advisor/README.md)
+### [Advisor](docs/sdks/advisor/README.md)
 
 * [GetAdvisorClusterEventRules](docs/sdks/advisor/README.md#getadvisorclustereventrules) - Returns a list of suggested cluster event rules
 * [GetAdvisorConnectionRules](docs/sdks/advisor/README.md#getadvisorconnectionrules) - Returns a list of suggested connection rules
@@ -98,17 +96,17 @@ func main() {
 * [GetAdvisorQueueAdvisorType](docs/sdks/advisor/README.md#getadvisorqueueadvisortype) - Get status for policy advisor background job
 * [PostAdvisorRun](docs/sdks/advisor/README.md#postadvisorrun) - Runs the policy advisor
 
-## [AgentManagement](docs/sdks/agentmanagement/README.md)
+### [AgentManagement](docs/sdks/agentmanagement/README.md)
 
 * [GetAgents](docs/sdks/agentmanagement/README.md#getagents) - List all installed agents
 * [PostAgentsAgentIDUpdate](docs/sdks/agentmanagement/README.md#postagentsagentidupdate) - Update the agent with the given id to the latest agent version
 * [PostAgentsAgentIDUpdateState](docs/sdks/agentmanagement/README.md#postagentsagentidupdatestate) - Update the status of an agent with the given id
 
-## [API](docs/sdks/api/README.md)
+### [API](docs/sdks/api/README.md)
 
 * [GetAPI](docs/sdks/api/README.md#getapi) - Get Secure Application API as a Swagger file
 
-## [APISecurity](docs/sdks/apisecurity/README.md)
+### [APISecurity](docs/sdks/apisecurity/README.md)
 
 * [DeleteAPISecurityAPICatalogID](docs/sdks/apisecurity/README.md#deleteapisecurityapicatalogid) - Delete an API
 * [DeleteAPISecurityInternalCatalogCatalogIDBflaDetection](docs/sdks/apisecurity/README.md#deleteapisecurityinternalcatalogcatalogidbfladetection) - stop bfla detection phase
@@ -166,7 +164,7 @@ func main() {
 * [PutAPISecurityOpenAPISpecsCatalogID](docs/sdks/apisecurity/README.md#putapisecurityopenapispecscatalogid) - Add or edit a spec about a specific API for the account
 * [PutGatewaysGatewayID](docs/sdks/apisecurity/README.md#putgatewaysgatewayid) - Edit gateway
 
-## [Apps](docs/sdks/apps/README.md)
+### [Apps](docs/sdks/apps/README.md)
 
 * [GetApps](docs/sdks/apps/README.md#getapps) - Returns a list of defined Apps
 * [GetAppsAppID](docs/sdks/apps/README.md#getappsappid) - Returns an App by its ID
@@ -174,14 +172,14 @@ func main() {
 * [PostAppsDelete](docs/sdks/apps/README.md#postappsdelete) - Delete several Apps
 * [PutAppsAppID](docs/sdks/apps/README.md#putappsappid) - Edit the existing App
 
-## [AuditLogs](docs/sdks/auditlogs/README.md)
+### [AuditLogs](docs/sdks/auditlogs/README.md)
 
 * [GetAuditLogs](docs/sdks/auditlogs/README.md#getauditlogs) - Get audit logs
 * [GetAuditLogsActions](docs/sdks/auditlogs/README.md#getauditlogsactions) - Get all the audit logs actions
 * [GetAuditLogsKubernetes](docs/sdks/auditlogs/README.md#getauditlogskubernetes) - Get audit logs
 * [GetAuditLogsKubernetesActions](docs/sdks/auditlogs/README.md#getauditlogskubernetesactions) - Get all the kubernetes audit logs actions
 
-## [Aws](docs/sdks/aws/README.md)
+### [Aws](docs/sdks/aws/README.md)
 
 * [GetAwsAccounts](docs/sdks/aws/README.md#getawsaccounts) - Get a list of AWS accounts
 * [GetAwsRoles](docs/sdks/aws/README.md#getawsroles) - Lists AWS role ARNs for the account
@@ -192,7 +190,7 @@ func main() {
 * [PostAwsRoles](docs/sdks/aws/README.md#postawsroles) - Add AWS role to the account
 * [PutAwsRolesRoleID](docs/sdks/aws/README.md#putawsrolesroleid) - Change AWS role name
 
-## [Bfla](docs/sdks/bfla/README.md)
+### [Bfla](docs/sdks/bfla/README.md)
 
 * [DeleteAPISecurityInternalCatalogCatalogIDBflaDetection](docs/sdks/bfla/README.md#deleteapisecurityinternalcatalogcatalogidbfladetection) - stop bfla detection phase
 * [DeleteAPISecurityInternalCatalogCatalogIDBflaLearning](docs/sdks/bfla/README.md#deleteapisecurityinternalcatalogcatalogidbflalearning) - stop bfla learning phase
@@ -202,11 +200,11 @@ func main() {
 * [PostAPISecurityInternalCatalogCatalogIDBflaReset](docs/sdks/bfla/README.md#postapisecurityinternalcatalogcatalogidbflareset) - Reset bfla model
 * [PutAPISecurityInternalCatalogCatalogIDBfla](docs/sdks/bfla/README.md#putapisecurityinternalcatalogcatalogidbfla) - update BFLA info for this catalogId
 
-## [Cli](docs/sdks/cli/README.md)
+### [Cli](docs/sdks/cli/README.md)
 
 * [GetToolsCliSecurecnDeploymentCli](docs/sdks/cli/README.md#gettoolsclisecurecndeploymentcli) - Get the Secure Application deployment cli
 
-## [ClusterEventsPolicies](docs/sdks/clustereventspolicies/README.md)
+### [ClusterEventsPolicies](docs/sdks/clustereventspolicies/README.md)
 
 * [GetKubernetesAPIPolicy](docs/sdks/clustereventspolicies/README.md#getkubernetesapipolicy) - Get current Kubernetes API policy
 * [GetKubernetesAPIPolicyHistory](docs/sdks/clustereventspolicies/README.md#getkubernetesapipolicyhistory) - Get the history of the Kubernetes API policies
@@ -215,7 +213,7 @@ func main() {
 * [GetKubernetesAPIPolicyRecommendedRules](docs/sdks/clustereventspolicies/README.md#getkubernetesapipolicyrecommendedrules) - Get the recommended Kubernetes API rules
 * [PutKubernetesAPIPolicy](docs/sdks/clustereventspolicies/README.md#putkubernetesapipolicy) - set the current Kubernetes API policy
 
-## [ConnectionPolicies](docs/sdks/connectionpolicies/README.md)
+### [ConnectionPolicies](docs/sdks/connectionpolicies/README.md)
 
 * [GetConnectionsPolicy](docs/sdks/connectionpolicies/README.md#getconnectionspolicy) - Get current connection policy
 * [GetConnectionsPolicyHistory](docs/sdks/connectionpolicies/README.md#getconnectionspolicyhistory) - Get the history of the connection policies
@@ -226,7 +224,7 @@ func main() {
 * [GetServerlessPolicyHistory](docs/sdks/connectionpolicies/README.md#getserverlesspolicyhistory) - Get the history of the serverless policies
 * [PutConnectionsPolicy](docs/sdks/connectionpolicies/README.md#putconnectionspolicy) - Set the current connection policy
 
-## [Dashboard](docs/sdks/dashboard/README.md)
+### [Dashboard](docs/sdks/dashboard/README.md)
 
 * [GetDashboardApisecRiskFindings](docs/sdks/dashboard/README.md#getdashboardapisecriskfindings) - Get API sec risk findings widget
 * [GetDashboardApisecRiskFindingsTrend](docs/sdks/dashboard/README.md#getdashboardapisecriskfindingstrend) - Get API sec risk findings trend graph widget for the last 30 days
@@ -250,7 +248,7 @@ func main() {
 * [GetLicensingDashboard](docs/sdks/dashboard/README.md#getlicensingdashboard) - Get licensing dashboard data
 * [PostDashboardReportGenerate](docs/sdks/dashboard/README.md#postdashboardreportgenerate) - Generate Secure Application security report
 
-## [Deployers](docs/sdks/deployers/README.md)
+### [Deployers](docs/sdks/deployers/README.md)
 
 * [DeleteDeployersDeployerID](docs/sdks/deployers/README.md#deletedeployersdeployerid) - Delete an deployer
 * [GetDeployers](docs/sdks/deployers/README.md#getdeployers) - List all the deployers on the system
@@ -259,14 +257,14 @@ func main() {
 * [PostDeployers](docs/sdks/deployers/README.md#postdeployers) - Create a new deployer
 * [PutDeployersDeployerID](docs/sdks/deployers/README.md#putdeployersdeployerid) - Edit deployer definition
 
-## [EnvironmentPolicies](docs/sdks/environmentpolicies/README.md)
+### [EnvironmentPolicies](docs/sdks/environmentpolicies/README.md)
 
 * [GetAppsPolicy](docs/sdks/environmentpolicies/README.md#getappspolicy) - Get the current Apps policy
 * [GetAppsPolicyHistory](docs/sdks/environmentpolicies/README.md#getappspolicyhistory) - Get the history of Apps policies
 * [GetAppsPolicySearchOptions](docs/sdks/environmentpolicies/README.md#getappspolicysearchoptions) - Get the current Apps policy filter option
 * [PutAppsPolicy](docs/sdks/environmentpolicies/README.md#putappspolicy) - Set the current Apps policy
 
-## [Envs](docs/sdks/envs/README.md)
+### [Envs](docs/sdks/envs/README.md)
 
 * [DeleteEnvironmentsEnvID](docs/sdks/envs/README.md#deleteenvironmentsenvid)
 * [GetEnvironments](docs/sdks/envs/README.md#getenvironments) - List all defined Secure Application environments
@@ -277,7 +275,7 @@ func main() {
 * [PostEnvironmentsDelete](docs/sdks/envs/README.md#postenvironmentsdelete) - Delete multiple Secure Application environments
 * [PutEnvironmentsEnvID](docs/sdks/envs/README.md#putenvironmentsenvid) - Edit an existing Secure Application environment
 
-## [Expansions](docs/sdks/expansions/README.md)
+### [Expansions](docs/sdks/expansions/README.md)
 
 * [DeleteExpansionsExpansionID](docs/sdks/expansions/README.md#deleteexpansionsexpansionid) - Delete an expansion
 * [GetExpansions](docs/sdks/expansions/README.md#getexpansions) - List all the expansions on the system
@@ -285,7 +283,7 @@ func main() {
 * [PostExpansions](docs/sdks/expansions/README.md#postexpansions) - Create a new expansion
 * [PutExpansionsExpansionID](docs/sdks/expansions/README.md#putexpansionsexpansionid) - Edit expansion definition
 
-## [Gateways](docs/sdks/gateways/README.md)
+### [Gateways](docs/sdks/gateways/README.md)
 
 * [DeleteGatewaysGatewayID](docs/sdks/gateways/README.md#deletegatewaysgatewayid) - Delete gateway
 * [GetGateways](docs/sdks/gateways/README.md#getgateways) - Get gateways
@@ -294,7 +292,7 @@ func main() {
 * [PostGateways](docs/sdks/gateways/README.md#postgateways) - Add new gateway
 * [PutGatewaysGatewayID](docs/sdks/gateways/README.md#putgatewaysgatewayid) - Edit gateway
 
-## [ImagesAndVulnerabilities](docs/sdks/imagesandvulnerabilities/README.md)
+### [ImagesAndVulnerabilities](docs/sdks/imagesandvulnerabilities/README.md)
 
 * [DeleteImagesID](docs/sdks/imagesandvulnerabilities/README.md#deleteimagesid) - Delete an image hash
 * [GetAccountVulnerabilitiesXlsx](docs/sdks/imagesandvulnerabilities/README.md#getaccountvulnerabilitiesxlsx) - Returns a xlsx file of images alongside to their vulnerabilities.
@@ -312,7 +310,7 @@ func main() {
 * [PostImagesImageIDDockerfileScanResultsIgnore](docs/sdks/imagesandvulnerabilities/README.md#postimagesimageiddockerfilescanresultsignore) - Add / remove a list of  UUIDs of dockerfileScanResults from ignored list
 * [PostImagesImageIDVulnerabilitiesIgnore](docs/sdks/imagesandvulnerabilities/README.md#postimagesimageidvulnerabilitiesignore) - Add / remove a list of  UUIDs of vulnerabilities from ignored list
 
-## [K8sCisBenchmark](docs/sdks/k8scisbenchmark/README.md)
+### [K8sCisBenchmark](docs/sdks/k8scisbenchmark/README.md)
 
 * [GetK8sCISBenchmark](docs/sdks/k8scisbenchmark/README.md#getk8scisbenchmark) - Get k8s cis benchmark for clusters
 * [GetK8sCISBenchmarkSummary](docs/sdks/k8scisbenchmark/README.md#getk8scisbenchmarksummary) - Get k8s cis benchmark summary of account
@@ -320,7 +318,7 @@ func main() {
 * [PostK8sCISBenchmarkClusterID](docs/sdks/k8scisbenchmark/README.md#postk8scisbenchmarkclusterid) - initiate k8s cis benchmark scan for a specific cluster
 * [PutK8sCISBenchmarkClusterID](docs/sdks/k8scisbenchmark/README.md#putk8scisbenchmarkclusterid) - edit k8s cis benchmark for a specific cluster with test statuses
 
-## [Kubernetes](docs/sdks/kubernetes/README.md)
+### [Kubernetes](docs/sdks/kubernetes/README.md)
 
 * [DeleteKubernetesClustersKubernetesClusterID](docs/sdks/kubernetes/README.md#deletekubernetesclusterskubernetesclusterid) - Delete a Kubernetes cluster
 * [DeletePodDefinitionsPodID](docs/sdks/kubernetes/README.md#deletepoddefinitionspodid) - Delete a pod definition
@@ -342,7 +340,7 @@ func main() {
 * [PutKubernetesClustersKubernetesClusterIDManagedByHelm](docs/sdks/kubernetes/README.md#putkubernetesclusterskubernetesclusteridmanagedbyhelm) - Update the Kubernetes cluster which managed by HELM
 * [PutPodDefinitionsPodID](docs/sdks/kubernetes/README.md#putpoddefinitionspodid) - Change pod definition
 
-## [Mitre](docs/sdks/mitre/README.md)
+### [Mitre](docs/sdks/mitre/README.md)
 
 * [GetMitreDashboard](docs/sdks/mitre/README.md#getmitredashboard) - Get data for MITRE dashboard for all clusters
 * [GetMitreReportDownload](docs/sdks/mitre/README.md#getmitrereportdownload) - Download Mitre security report
@@ -351,12 +349,12 @@ func main() {
 * [PostMitreReportGenerate](docs/sdks/mitre/README.md#postmitrereportgenerate) - Generate Mitre report
 * [PostMitreTechniqueFix](docs/sdks/mitre/README.md#postmitretechniquefix) - Post fix for MITRE technique of the given mitreTechniqueType
 
-## [Performance](docs/sdks/performance/README.md)
+### [Performance](docs/sdks/performance/README.md)
 
 * [GetAPISecurityAPICatalogIDHitCountGraph](docs/sdks/performance/README.md#getapisecurityapicatalogidhitcountgraph) - Get hit count for specific spec path
 * [GetPerformanceMetrics](docs/sdks/performance/README.md#getperformancemetrics) - Get performance metrics for a connection between workloads
 
-## [PspProfiles](docs/sdks/pspprofiles/README.md)
+### [PspProfiles](docs/sdks/pspprofiles/README.md)
 
 * [DeletePodSecurityPolicyProfilesProfileID](docs/sdks/pspprofiles/README.md#deletepodsecuritypolicyprofilesprofileid) - Delete a pod security policy standards
 * [DeleteSeccompProfilesProfileID](docs/sdks/pspprofiles/README.md#deleteseccompprofilesprofileid) - Delete a seccomp profile
@@ -368,7 +366,7 @@ func main() {
 * [PutPodSecurityPolicyProfilesProfileID](docs/sdks/pspprofiles/README.md#putpodsecuritypolicyprofilesprofileid) - Change pod security standards profile
 * [PutSeccompProfilesProfileID](docs/sdks/pspprofiles/README.md#putseccompprofilesprofileid) - Change seccomp profile
 
-## [Registries](docs/sdks/registries/README.md)
+### [Registries](docs/sdks/registries/README.md)
 
 * [DeleteRegistriesRegistryID](docs/sdks/registries/README.md#deleteregistriesregistryid) - Delete a registry
 * [GetRegistries](docs/sdks/registries/README.md#getregistries) - Get a list of defined registries
@@ -377,7 +375,7 @@ func main() {
 * [PostRegistriesTestConnectionRegistryID](docs/sdks/registries/README.md#postregistriestestconnectionregistryid) - test registry connection
 * [PutRegistriesRegistryID](docs/sdks/registries/README.md#putregistriesregistryid) - edit existing registry
 
-## [RiskAssessment](docs/sdks/riskassessment/README.md)
+### [RiskAssessment](docs/sdks/riskassessment/README.md)
 
 * [DeleteRiskAssessmentIgnoredRisksIgnoredRiskID](docs/sdks/riskassessment/README.md#deleteriskassessmentignoredrisksignoredriskid) - Delete ignored risk
 * [DeleteRiskAssessmentKubernetesClusterIDCancel](docs/sdks/riskassessment/README.md#deleteriskassessmentkubernetesclusteridcancel) - Cancel the runtime scan on the given cluster with the given id
@@ -396,14 +394,14 @@ func main() {
 * [PostRiskAssessmentKubernetesClusterIDSettings](docs/sdks/riskassessment/README.md#postriskassessmentkubernetesclusteridsettings) - Save the runtime scan configuration on the given cluster
 * [PutRiskAssessmentIgnoredRisksIgnoredRiskID](docs/sdks/riskassessment/README.md#putriskassessmentignoredrisksignoredriskid) - Edit ignore risk
 
-## [RuntimeMap](docs/sdks/runtimemap/README.md)
+### [RuntimeMap](docs/sdks/runtimemap/README.md)
 
 * [DeleteNetworkMapQueueRequestID](docs/sdks/runtimemap/README.md#deletenetworkmapqueuerequestid) - Cancel the network map background job
 * [GetNetworkMap](docs/sdks/runtimemap/README.md#getnetworkmap) - Get data for network map
 * [GetNetworkMapQueueRequestID](docs/sdks/runtimemap/README.md#getnetworkmapqueuerequestid) - Get status for network map background job
 * [GetNetworkMapResultsRequestID](docs/sdks/runtimemap/README.md#getnetworkmapresultsrequestid) - Get result for network map background job
 
-## [Serverless](docs/sdks/serverless/README.md)
+### [Serverless](docs/sdks/serverless/README.md)
 
 * [DeleteCloudAccountsCloudAccountID](docs/sdks/serverless/README.md#deletecloudaccountscloudaccountid) - Delete a cloud account
 * [GetCloudAccounts](docs/sdks/serverless/README.md#getcloudaccounts) - List all the cloud accounts on the system
@@ -426,12 +424,12 @@ func main() {
 * [PostCloudAccountsScan](docs/sdks/serverless/README.md#postcloudaccountsscan) - invoke cloud account scan
 * [PutCloudAccountsCloudAccountID](docs/sdks/serverless/README.md#putcloudaccountscloudaccountid) - Edit cloud account definition
 
-## [ServerlessPolicies](docs/sdks/serverlesspolicies/README.md)
+### [ServerlessPolicies](docs/sdks/serverlesspolicies/README.md)
 
 * [GetServerlessPolicy](docs/sdks/serverlesspolicies/README.md#getserverlesspolicy) - Get current serverless policy
 * [PutServerlessPolicy](docs/sdks/serverlesspolicies/README.md#putserverlesspolicy) - Set the current serverless policy
 
-## [Settings](docs/sdks/settings/README.md)
+### [Settings](docs/sdks/settings/README.md)
 
 * [DeleteSettingsIntegrationsCaID](docs/sdks/settings/README.md#deletesettingsintegrationscaid) - Delete the CA integration details
 * [DeleteSettingsIntegrationsEventForwardingEventForwardingID](docs/sdks/settings/README.md#deletesettingsintegrationseventforwardingeventforwardingid) - Delete the event forwarding integration details with the given id
@@ -453,7 +451,7 @@ func main() {
 * [PutSettingsIntegrationsCaID](docs/sdks/settings/README.md#putsettingsintegrationscaid) - Edit the CA integration details
 * [PutSettingsIntegrationsEventForwardingEventForwardingID](docs/sdks/settings/README.md#putsettingsintegrationseventforwardingeventforwardingid) - Edit the event forwarding integration details
 
-## [Telemetries](docs/sdks/telemetries/README.md)
+### [Telemetries](docs/sdks/telemetries/README.md)
 
 * [GetAppTelemetries](docs/sdks/telemetries/README.md#getapptelemetries) - Get App telemetries
 * [GetAppTelemetriesAppTelemetryID](docs/sdks/telemetries/README.md#getapptelemetriesapptelemetryid) - Get App telemetry by ID
@@ -463,7 +461,7 @@ func main() {
 * [GetConnectionTelemetries](docs/sdks/telemetries/README.md#getconnectiontelemetries) - Get connection telemetries
 * [GetConnectionTelemetriesConnectionTelemetryID](docs/sdks/telemetries/README.md#getconnectiontelemetriesconnectiontelemetryid) - get details for a single connection telemetry
 
-## [Tokens](docs/sdks/tokens/README.md)
+### [Tokens](docs/sdks/tokens/README.md)
 
 * [DeleteTokensTokenID](docs/sdks/tokens/README.md#deletetokenstokenid) - Delete token
 * [GetTokens](docs/sdks/tokens/README.md#gettokens) - Get tokens
@@ -472,14 +470,14 @@ func main() {
 * [PostTokens](docs/sdks/tokens/README.md#posttokens) - Add new token
 * [PutTokensTokenID](docs/sdks/tokens/README.md#puttokenstokenid) - Edit token
 
-## [Truncation](docs/sdks/truncation/README.md)
+### [Truncation](docs/sdks/truncation/README.md)
 
 * [GetTruncationImages](docs/sdks/truncation/README.md#gettruncationimages) - Get workloads truncation time for account
 * [GetTruncationWorkloads](docs/sdks/truncation/README.md#gettruncationworkloads) - Get workloads truncation time for account
 * [PostTruncationImages](docs/sdks/truncation/README.md#posttruncationimages) - Update workloads truncation status for account
 * [PostTruncationWorkloads](docs/sdks/truncation/README.md#posttruncationworkloads) - Update workloads truncation status for account
 
-## [TrustedSigners](docs/sdks/trustedsigners/README.md)
+### [TrustedSigners](docs/sdks/trustedsigners/README.md)
 
 * [DeleteTrustedSignersTrustedSignerID](docs/sdks/trustedsigners/README.md#deletetrustedsignerstrustedsignerid) - Delete a trusted signer
 * [GetTrustedSigners](docs/sdks/trustedsigners/README.md#gettrustedsigners) - Get a list of defined trusted signers
@@ -487,7 +485,7 @@ func main() {
 * [PostTrustedSigners](docs/sdks/trustedsigners/README.md#posttrustedsigners) - Add new trusted signer
 * [PutTrustedSignersTrustedSignerID](docs/sdks/trustedsigners/README.md#puttrustedsignerstrustedsignerid) - edit existing trusted signer
 
-## [Users](docs/sdks/users/README.md)
+### [Users](docs/sdks/users/README.md)
 
 * [DeleteUsersUserID](docs/sdks/users/README.md#deleteusersuserid) - Delete a user
 * [GetOperatorCredentials](docs/sdks/users/README.md#getoperatorcredentials) - get the credentials of the Secure Application Operator service user
@@ -504,14 +502,12 @@ func main() {
 * [PostUsersTrial](docs/sdks/users/README.md#postuserstrial) - Create a trail user
 * [PutUsersUserID](docs/sdks/users/README.md#putusersuserid) - Change user details
 
-## [Vulnerabilities](docs/sdks/vulnerabilities/README.md)
+### [Vulnerabilities](docs/sdks/vulnerabilities/README.md)
 
 * [GetVulnerabilities](docs/sdks/vulnerabilities/README.md#getvulnerabilities) - search for vulnerability names in the account
 <!-- End SDK Available Operations -->
 
 <!-- Start Dev Containers -->
-
-
 
 <!-- End Dev Containers -->
 
@@ -523,8 +519,6 @@ returned response object will have a `Next` method that can be called to pull do
 return value of `Next` is `nil`, then there are no more pages to be fetched.
 
 Here's an example of one such pagination call:
-
-
 <!-- End Pagination -->
 
 <!-- Start Go Types -->

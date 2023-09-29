@@ -41,11 +41,11 @@ func main() {
     ctx := context.Background()
     res, err := s.K8sCisBenchmark.GetK8sCISBenchmark(ctx, operations.GetK8sCISBenchmarkRequest{
         ClusterIds: []string{
-            "minus",
+            "magnitude",
         },
-        MaxResults: testpango.Float64(4196.69),
+        MaxResults: testpango.Float64(5852.41),
         NoPagination: testpango.Bool(false),
-        Offset: testpango.Float64(4235.5),
+        Offset: testpango.Float64(1447.41),
     })
     if err != nil {
         log.Fatal(err)
@@ -145,7 +145,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.K8sCisBenchmark.GetK8sCISBenchmarkClusterID(ctx, operations.GetK8sCISBenchmarkClusterIDRequest{
-        ClusterID: "183bfe96-59eb-440e-816f-af75b0b532a4",
+        ClusterID: "22b6e2e3-3165-4cce-b4e8-bc9db9f52c45",
     })
     if err != nil {
         log.Fatal(err)
@@ -197,7 +197,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.K8sCisBenchmark.PostK8sCISBenchmarkClusterID(ctx, operations.PostK8sCISBenchmarkClusterIDRequest{
-        ClusterID: "da37cbaa-f445-42c4-842c-9b2ad32dafe8",
+        ClusterID: "35b87c47-9c94-446b-bd9d-9edabb3c15c6",
     })
     if err != nil {
         log.Fatal(err)
@@ -250,16 +250,16 @@ func main() {
     ctx := context.Background()
     res, err := s.K8sCisBenchmark.PutK8sCISBenchmarkClusterID(ctx, operations.PutK8sCISBenchmarkClusterIDRequest{
         K8sCISBenchmarkUpdateNodes: shared.K8sCISBenchmarkUpdateNodes{
-            ClusterID: "1a88f444-4573-4fec-9473-53f63c820937",
-            Index: "unde",
+            ClusterID: "49b403e0-ddc8-4f07-8f6d-7b4806fe4a7b",
+            Index: "exactly tan Bespoke",
             Nodes: []shared.K8sCISBenchmarkUpdateNode{
                 shared.K8sCISBenchmarkUpdateNode{
-                    ID: testpango.String("aa69cd5f-bcf7-49da-98a7-822bf95894e6"),
+                    ID: testpango.String("e905f14c-9f8f-455f-8602-b586f168c3d5"),
                 },
             },
-            Status: shared.K8sCISBenchmarkUpdateNodeStatusPass,
+            Status: shared.K8sCISBenchmarkUpdateNodeStatusFail,
         },
-        ClusterID: "61adb55f-9e5d-4751-89fe-8f7502bfdc34",
+        ClusterID: "0e1fb82e-2384-4feb-b1f7-119a392759c9",
     })
     if err != nil {
         log.Fatal(err)

@@ -38,7 +38,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Bfla.DeleteAPISecurityInternalCatalogCatalogIDBflaDetection(ctx, operations.DeleteAPISecurityInternalCatalogCatalogIDBflaDetectionRequest{
-        CatalogID: "82f168a3-63c8-4873-a484-380b1f6b8ca2",
+        CatalogID: "3d2f6c1c-29ba-4502-9cb8-4666b2e993b7",
     })
     if err != nil {
         log.Fatal(err)
@@ -90,7 +90,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Bfla.DeleteAPISecurityInternalCatalogCatalogIDBflaLearning(ctx, operations.DeleteAPISecurityInternalCatalogCatalogIDBflaLearningRequest{
-        CatalogID: "75a60a04-c495-4cc6-9917-1b51c1bdb1cf",
+        CatalogID: "3ba770da-4891-4357-a360-0c0e060f5b0f",
     })
     if err != nil {
         log.Fatal(err)
@@ -142,7 +142,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Bfla.GetAPISecurityInternalCatalogCatalogIDBfla(ctx, operations.GetAPISecurityInternalCatalogCatalogIDBflaRequest{
-        CatalogID: "4b888ebd-fc4c-4cca-99bc-7fc0b2dce108",
+        CatalogID: "74e0c81f-ef10-4f23-b74f-8447d1953ccf",
     })
     if err != nil {
         log.Fatal(err)
@@ -195,9 +195,9 @@ func main() {
     ctx := context.Background()
     res, err := s.Bfla.PostAPISecurityInternalCatalogCatalogIDBflaDetection(ctx, operations.PostAPISecurityInternalCatalogCatalogIDBflaDetectionRequest{
         BflaDurationConfiguration: shared.BflaDurationConfiguration{
-            Duration: "iusto",
+            Duration: "FTM",
         },
-        CatalogID: "3e42b006-d678-4878-ba85-81a58208c54f",
+        CatalogID: "464b0ff0-e6fe-414c-a291-62fc27770a3f",
     })
     if err != nil {
         log.Fatal(err)
@@ -250,9 +250,9 @@ func main() {
     ctx := context.Background()
     res, err := s.Bfla.PostAPISecurityInternalCatalogCatalogIDBflaLearning(ctx, operations.PostAPISecurityInternalCatalogCatalogIDBflaLearningRequest{
         BflaDurationConfiguration: shared.BflaDurationConfiguration{
-            Duration: "saepe",
+            Duration: "parse",
         },
-        CatalogID: "fa9c95f2-eac5-4565-9307-cfee81206e28",
+        CatalogID: "bc82f2c9-ea85-4a32-ab52-d888f26e15ab",
     })
     if err != nil {
         log.Fatal(err)
@@ -304,7 +304,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Bfla.PostAPISecurityInternalCatalogCatalogIDBflaReset(ctx, operations.PostAPISecurityInternalCatalogCatalogIDBflaResetRequest{
-        CatalogID: "13fa4a41-c480-4d3f-a132-af03102d514f",
+        CatalogID: "2682814f-440b-4991-ae68-e4a1209728f3",
     })
     if err != nil {
         log.Fatal(err)
@@ -358,41 +358,41 @@ func main() {
     ctx := context.Background()
     res, err := s.Bfla.PutAPISecurityInternalCatalogCatalogIDBfla(ctx, operations.PutAPISecurityInternalCatalogCatalogIDBflaRequest{
         APIServiceBflaInfo: shared.APIServiceBflaInfo{
-            EndTime: types.MustTimeFromString("2022-03-29T11:57:17.823Z"),
-            Status: shared.APIServiceBflaInfoStatusInProgressDetection,
+            EndTime: types.MustTimeFromString("2021-04-10T03:52:46.500Z"),
+            Status: shared.APIServiceBflaInfoStatusInProgressLearning,
             Tags: []shared.APIServiceBflaTagInfo{
                 shared.APIServiceBflaTagInfo{
                     IsLegitimate: testpango.Bool(false),
-                    Name: "Kristie Bergnaum",
+                    Name: "Rhodium Rubber yearly",
                     Paths: []shared.APIServiceBflaPathInfo{
                         shared.APIServiceBflaPathInfo{
                             Clients: []shared.APIServiceBflaClientInfo{
                                 shared.APIServiceBflaClientInfo{
                                     External: testpango.Bool(false),
-                                    Identifier: testpango.String("f9621a6a-4f77-4a87-ae3e-4be752c65b34"),
+                                    Identifier: testpango.String("3b3fcaad-d442-4012-ad14-59f8769c2011"),
                                     IsLegitimate: testpango.Bool(false),
-                                    LastObserved: types.MustTimeFromString("2022-11-24T01:03:51.181Z"),
-                                    LastStatusCode: testpango.Int64(506966),
-                                    Name: "Rodney Quitzon",
-                                    Namespace: testpango.String("illo"),
+                                    LastObserved: types.MustTimeFromString("2021-02-25T06:09:36.065Z"),
+                                    LastStatusCode: testpango.Int64(508539),
+                                    Name: "Carolina",
+                                    Namespace: testpango.String("Account"),
                                     Principles: []shared.APIServiceBflaPrincipleInfo{
                                         shared.APIServiceBflaPrincipleInfo{
-                                            IP: "minus",
-                                            Name: "Gustavo Mayer",
-                                            PrincipleType: "accusamus",
+                                            IP: "56.91.79.204",
+                                            Name: "Hyundai punctually",
+                                            PrincipleType: "Granite Rustic",
                                         },
                                     },
                                 },
                             },
                             IsLegitimate: testpango.Bool(false),
-                            Method: shared.HTTPMethodGet,
-                            Path: "voluptates",
+                            Method: shared.HTTPMethodTrace,
+                            Path: "/usr/local/bin",
                         },
                     },
                 },
             },
         },
-        CatalogID: "8419d8f8-4f14-44f3-a07e-dcc4aa5f3cab",
+        CatalogID: "ac789245-d57c-4c22-8dbd-c1e1df3ce330",
     })
     if err != nil {
         log.Fatal(err)

@@ -135,7 +135,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Truncation.PostTruncationImages(ctx, shared.TruncationStatus{
         IsTruncationEnabled: false,
-        TruncateTimeInDays: 596393,
+        TruncateTimeInDays: 271429,
     })
     if err != nil {
         log.Fatal(err)
@@ -187,7 +187,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Truncation.PostTruncationWorkloads(ctx, shared.TruncationStatus{
         IsTruncationEnabled: false,
-        TruncateTimeInDays: 577273,
+        TruncateTimeInDays: 519889,
     })
     if err != nil {
         log.Fatal(err)

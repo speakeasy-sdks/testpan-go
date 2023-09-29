@@ -39,7 +39,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RuntimeMap.DeleteNetworkMapQueueRequestID(ctx, operations.DeleteNetworkMapQueueRequestIDRequest{
-        RequestID: "9c87ae50-c166-461a-9d91-36a7e8d53213",
+        RequestID: "d744d9fc-99bf-4fa7-bd43-977bd77decee",
     })
     if err != nil {
         log.Fatal(err)
@@ -92,31 +92,31 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RuntimeMap.GetNetworkMap(ctx, operations.GetNetworkMapRequest{
-        APIRisk: operations.GetNetworkMapAPIRiskUnknown.ToPointer(),
+        APIRisk: operations.GetNetworkMapAPIRiskNeutral.ToPointer(),
         Apps: []string{
-            "velit",
+            "unto",
         },
-        EndTime: types.MustTimeFromString("2021-10-04T11:34:13.847Z"),
+        EndTime: types.MustTimeFromString("2022-07-01T23:29:00.212Z"),
         Environments: []string{
-            "voluptas",
+            "Gasoline",
         },
         ExcludeApps: []string{
-            "quos",
+            "West",
         },
         GroupAppsOnTheSameEnvironment: testpango.Bool(false),
         IgnoreExternalConnection: testpango.Bool(false),
         IsBackgroundJob: testpango.Bool(false),
         Labels: []string{
-            "esse",
+            "thoughtfully",
         },
         Namespaces: []string{
-            "52db764c-59f0-4a56-8ebc-ada29ca79181",
+            "770727e0-bc8a-4727-a6cf-78080c58f4e0",
         },
         ShowOnlyAppsWithConnections: testpango.Bool(false),
         ShowOnlyAppsWithViolations: testpango.Bool(false),
         ShowOnlyConnectionsBetweenEnvironments: testpango.Bool(false),
         ShowOnlyConnectionsWithViolations: testpango.Bool(false),
-        StartTime: types.MustTimeFromString("2021-04-13T03:05:21.776Z"),
+        StartTime: types.MustTimeFromString("2021-06-22T19:37:42.851Z"),
     })
     if err != nil {
         log.Fatal(err)
@@ -168,7 +168,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RuntimeMap.GetNetworkMapQueueRequestID(ctx, operations.GetNetworkMapQueueRequestIDRequest{
-        RequestID: "5671663c-530b-4566-9163-a3638512ab25",
+        RequestID: "3d22620c-025b-41f7-b070-9e069dc87bfd",
     })
     if err != nil {
         log.Fatal(err)
@@ -220,7 +220,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RuntimeMap.GetNetworkMapResultsRequestID(ctx, operations.GetNetworkMapResultsRequestIDRequest{
-        RequestID: "21b9f2e0-7246-47b8-a40b-c05fab0d650e",
+        RequestID: "78c61cf8-31c2-407a-a949-4700ad100770",
     })
     if err != nil {
         log.Fatal(err)

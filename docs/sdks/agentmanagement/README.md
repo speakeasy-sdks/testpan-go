@@ -40,18 +40,18 @@ func main() {
     res, err := s.AgentManagement.GetAgents(ctx, operations.GetAgentsRequest{
         DownloadAsXlsx: testpango.Bool(false),
         EnvironmentName: []string{
-            "facilis",
+            "Account",
         },
         HostName: []string{
-            "cum",
+            "Shoes",
         },
         Risk: []GetAgentsRisk{
-            operations.GetAgentsRiskMedium,
+            operations.GetAgentsRiskUndefined,
         },
         SortDir: operations.GetAgentsSortDirAsc.ToPointer(),
-        SortKey: operations.GetAgentsSortKeyEnvironmentName.ToPointer(),
+        SortKey: operations.GetAgentsSortKeyLastActive.ToPointer(),
         Status: []GetAgentsStatus{
-            operations.GetAgentsStatusTerminated,
+            operations.GetAgentsStatusActive,
         },
     })
     if err != nil {
@@ -104,7 +104,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AgentManagement.PostAgentsAgentIDUpdate(ctx, operations.PostAgentsAgentIDUpdateRequest{
-        AgentID: "d5e60b37-5ed4-4f6f-bee4-1f33317fe35b",
+        AgentID: "0a0835d7-8d36-4444-8529-411e73a9b7a8",
     })
     if err != nil {
         log.Fatal(err)
@@ -159,7 +159,7 @@ func main() {
         AgentStatusUpdate: shared.AgentStatusUpdate{
             Active: testpango.Bool(false),
         },
-        AgentID: "60eb1ea4-2655-45ba-bc28-744ed53b88f3",
+        AgentID: "34a187e9-3552-49e2-8694-f733a8b3f850",
     })
     if err != nil {
         log.Fatal(err)

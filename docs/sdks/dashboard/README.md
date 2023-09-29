@@ -56,7 +56,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Dashboard.GetDashboardApisecRiskFindings(ctx, operations.GetDashboardApisecRiskFindingsRequest{
-        APISecSource: operations.GetDashboardApisecRiskFindingsAPISecSourceExternal,
+        APISecSource: operations.GetDashboardApisecRiskFindingsAPISecSourceInternal,
     })
     if err != nil {
         log.Fatal(err)
@@ -109,7 +109,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Dashboard.GetDashboardApisecRiskFindingsTrend(ctx, operations.GetDashboardApisecRiskFindingsTrendRequest{
         APISecSource: operations.GetDashboardApisecRiskFindingsTrendAPISecSourceInternal,
-        NumOfDays: testpango.Int64(105094),
+        NumOfDays: testpango.Int64(738205),
     })
     if err != nil {
         log.Fatal(err)
@@ -161,7 +161,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Dashboard.GetDashboardApisecSpecsAndOperationsDiffs(ctx, operations.GetDashboardApisecSpecsAndOperationsDiffsRequest{
-        APISecSource: operations.GetDashboardApisecSpecsAndOperationsDiffsAPISecSourceInternal,
+        APISecSource: operations.GetDashboardApisecSpecsAndOperationsDiffsAPISecSourceExternal,
     })
     if err != nil {
         log.Fatal(err)
@@ -214,7 +214,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Dashboard.GetDashboardApisecTopRiskyApis(ctx, operations.GetDashboardApisecTopRiskyApisRequest{
         APISecSource: operations.GetDashboardApisecTopRiskyApisAPISecSourceExternal,
-        MaxResults: testpango.Float64(9308.77),
+        MaxResults: testpango.Float64(9119.67),
     })
     if err != nil {
         log.Fatal(err)
@@ -266,8 +266,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Dashboard.GetDashboardApisecTopRiskyFindings(ctx, operations.GetDashboardApisecTopRiskyFindingsRequest{
-        APISecSource: operations.GetDashboardApisecTopRiskyFindingsAPISecSourceExternal,
-        MaxResults: testpango.Float64(6943.94),
+        APISecSource: operations.GetDashboardApisecTopRiskyFindingsAPISecSourceInternal,
+        MaxResults: testpango.Float64(5232.51),
     })
     if err != nil {
         log.Fatal(err)
@@ -464,7 +464,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Dashboard.GetDashboardOperationalBar(ctx, operations.GetDashboardOperationalBarRequest{
         ClustersIds: []string{
-            "1c7cbdb6-eec7-4437-8ba2-5317747dc915",
+            "22554b3a-d14f-42dc-b8d0-c3530e8f8d65",
         },
     })
     if err != nil {
@@ -518,7 +518,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Dashboard.GetDashboardPermissions(ctx, operations.GetDashboardPermissionsRequest{
         ClustersIds: []string{
-            "ad2caf5d-d672-43dc-8f5a-e2f3a6b70087",
+            "5a331cfa-e207-49d9-a176-e260318ece7d",
         },
         IncludeSystemOwners: testpango.Bool(false),
     })
@@ -717,7 +717,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Dashboard.GetDashboardSecurityContext(ctx, operations.GetDashboardSecurityContextRequest{
         ClustersIds: []string{
-            "8756143f-5a6c-498b-9555-4080d40bcacc",
+            "238f2259-a31a-4eed-8f78-79faf6121c42",
         },
     })
     if err != nil {
@@ -771,9 +771,9 @@ func main() {
     ctx := context.Background()
     res, err := s.Dashboard.GetDashboardTopSecurityRisks(ctx, operations.GetDashboardTopSecurityRisksRequest{
         ClustersIds: []string{
-            "6cbd6b5f-3ec9-4093-84f9-26bad2553819",
+            "e552767e-0350-4925-b7e4-39731700805c",
         },
-        Size: testpango.Int64(748606),
+        Size: testpango.Int64(313477),
     })
     if err != nil {
         log.Fatal(err)
@@ -826,7 +826,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Dashboard.GetDashboardVulnerabilities(ctx, operations.GetDashboardVulnerabilitiesRequest{
         ClustersIds: []string{
-            "474b0ed2-0e56-4248-bff6-39a910abdcab",
+            "f32607b3-fc0f-4f77-9432-186ec778c011",
         },
     })
     if err != nil {
@@ -879,7 +879,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Dashboard.GetDashboardKubernetesClusterIDConnectionTelemetries(ctx, operations.GetDashboardKubernetesClusterIDConnectionTelemetriesRequest{
-        KubernetesClusterID: "62676696-e1ec-4002-a1b3-35d89acb3ecf",
+        KubernetesClusterID: "fcc6ab38-d1d9-486d-93c4-52d73dc4b7aa",
     })
     if err != nil {
         log.Fatal(err)
@@ -931,7 +931,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Dashboard.GetDashboardKubernetesClusterIDKubernetesAuditLogs(ctx, operations.GetDashboardKubernetesClusterIDKubernetesAuditLogsRequest{
-        KubernetesClusterID: "da8d0c54-9ef0-4300-8978-a61fa1cf2068",
+        KubernetesClusterID: "6f0ce2c1-9ce6-424f-84d6-ad78557fec29",
     })
     if err != nil {
         log.Fatal(err)
@@ -983,7 +983,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Dashboard.GetDashboardKubernetesClusterIDPodTelemetries(ctx, operations.GetDashboardKubernetesClusterIDPodTelemetriesRequest{
-        KubernetesClusterID: "8f77c1ff-c71d-4ca1-a3f2-a3c80a97ff33",
+        KubernetesClusterID: "6c0046f1-672f-410e-9032-dde3c7f70879",
     })
     if err != nil {
         log.Fatal(err)

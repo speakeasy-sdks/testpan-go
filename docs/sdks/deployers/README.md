@@ -41,7 +41,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Deployers.DeleteDeployersDeployerID(ctx, operations.DeleteDeployersDeployerIDRequest{
-        DeployerID: "4cddf857-a9e6-4187-ac6a-b21d29dfc94d",
+        DeployerID: "3dadebf3-f849-4db8-9b45-692d5d0f8f1e",
     })
     if err != nil {
         log.Fatal(err)
@@ -93,13 +93,13 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Deployers.GetDeployers(ctx, operations.GetDeployersRequest{
-        MaxResults: testpango.Float64(3772.69),
-        Name: testpango.String("Clay Schaefer"),
-        Offset: testpango.Float64(6143.46),
+        MaxResults: testpango.Float64(757.15),
+        Name: testpango.String("neural Card"),
+        Offset: testpango.Float64(4706.54),
         RuleCreation: testpango.Bool(false),
         SecurityCheck: testpango.Bool(false),
-        SortDir: operations.GetDeployersSortDirDesc.ToPointer(),
-        SortKey: operations.GetDeployersSortKeyDeployer,
+        SortDir: operations.GetDeployersSortDirAsc.ToPointer(),
+        SortKey: operations.GetDeployersSortKeyType,
     })
     if err != nil {
         log.Fatal(err)
@@ -151,8 +151,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Deployers.GetDeployersServiceAccounts(ctx, operations.GetDeployersServiceAccountsRequest{
-        KubernetesClusterID: "90066a6d-2d00-4035-9338-cec086fa21e9",
-        NamespaceName: testpango.String("dicta"),
+        KubernetesClusterID: "2cec5765-5bfd-4372-88d6-c69c1df0fe41",
+        NamespaceName: testpango.String("synthesizing"),
     })
     if err != nil {
         log.Fatal(err)
@@ -204,7 +204,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Deployers.GetDeployersDeployerIDDeleteDependencies(ctx, operations.GetDeployersDeployerIDDeleteDependenciesRequest{
-        DeployerID: "52cb3119-167b-48e3-88db-03408d6d364f",
+        DeployerID: "e9516b93-3d3f-40df-8a57-7f05ddcfb304",
     })
     if err != nil {
         log.Fatal(err)
@@ -255,9 +255,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Deployers.PostDeployers(ctx, shared.DeployerInput{
-        Deployer: testpango.String("tenetur"),
-        DeployerID: "d455906d-1263-4d48-a935-c2c9e81f30be",
-        DeployerType: shared.DeployerDeployerTypeOperatorDeployer,
+        Deployer: testpango.String("pixel"),
+        DeployerID: "c2d6bf94-8feb-495d-aafb-538f00cdbb74",
+        DeployerType: shared.DeployerDeployerTypeSecureCnDeployer,
     })
     if err != nil {
         log.Fatal(err)
@@ -310,11 +310,11 @@ func main() {
     ctx := context.Background()
     res, err := s.Deployers.PutDeployersDeployerID(ctx, operations.PutDeployersDeployerIDRequest{
         DeployerInput: shared.DeployerInput{
-            Deployer: testpango.String("recusandae"),
-            DeployerID: "43202d72-1657-4650-a641-870d9d21f9ad",
-            DeployerType: shared.DeployerDeployerTypeOperatorDeployer,
+            Deployer: testpango.String("towards Vanuatu Zirconium"),
+            DeployerID: "7ae2aefa-5ee4-4175-ba71-bdf48687529a",
+            DeployerType: shared.DeployerDeployerTypeSecureCnDeployer,
         },
-        DeployerID: "30c4ecc1-1a08-4364-a906-8b8502a55e7f",
+        DeployerID: "a122201f-98e6-4927-bec6-fe116f385701",
     })
     if err != nil {
         log.Fatal(err)

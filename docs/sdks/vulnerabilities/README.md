@@ -32,8 +32,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Vulnerabilities.GetVulnerabilities(ctx, operations.GetVulnerabilitiesRequest{
-        MaxResults: testpango.Float64(343.42),
-        VulName: testpango.String("necessitatibus"),
+        MaxResults: testpango.Float64(6542.3),
+        VulName: testpango.String("Vivienne repudiandae Venezuela"),
     })
     if err != nil {
         log.Fatal(err)

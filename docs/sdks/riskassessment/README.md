@@ -51,7 +51,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RiskAssessment.DeleteRiskAssessmentIgnoredRisksIgnoredRiskID(ctx, operations.DeleteRiskAssessmentIgnoredRisksIgnoredRiskIDRequest{
-        IgnoredRiskID: "bc74b86c-ecc7-44f7-bb48-48bd6a6f0441",
+        IgnoredRiskID: "591339a8-adc9-48b1-82f6-1d3cce316b8d",
     })
     if err != nil {
         log.Fatal(err)
@@ -103,7 +103,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RiskAssessment.DeleteRiskAssessmentKubernetesClusterIDCancel(ctx, operations.DeleteRiskAssessmentKubernetesClusterIDCancelRequest{
-        KubernetesClusterID: "d2c3b808-0943-473e-8604-59bebbad02f2",
+        KubernetesClusterID: "0086ba38-7819-4a93-be05-2abfdf0aef92",
     })
     if err != nil {
         log.Fatal(err)
@@ -252,12 +252,12 @@ func main() {
     ctx := context.Background()
     res, err := s.RiskAssessment.GetRiskAssessmentPermissions(ctx, operations.GetRiskAssessmentPermissionsRequest{
         ClustersIds: []string{
-            "586bcf15-2558-4daa-95be-6cd02756c354",
+            "a89898f1-37f8-4c09-8113-2e54dc492339",
         },
         IncludeSystemOwners: testpango.Bool(false),
-        PermissionRisk: operations.GetRiskAssessmentPermissionsPermissionRiskHigh.ToPointer(),
+        PermissionRisk: operations.GetRiskAssessmentPermissionsPermissionRiskMedium.ToPointer(),
         SortDir: operations.GetRiskAssessmentPermissionsSortDirDesc.ToPointer(),
-        SortKey: testpango.String("labore"),
+        SortKey: testpango.String("Account but"),
     })
     if err != nil {
         log.Fatal(err)
@@ -309,17 +309,17 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RiskAssessment.GetRiskAssessmentPermissionsClusterID(ctx, operations.GetRiskAssessmentPermissionsClusterIDRequest{
-        ClusterID: "32b47e17-63c5-4208-823e-9802d82f0d45",
+        ClusterID: "af306627-d7b5-4fd9-a554-cf5effac095b",
         IncludeSystemOwners: testpango.Bool(false),
-        MaxResults: testpango.Float64(9204.88),
-        NamespaceName: testpango.String("soluta"),
+        MaxResults: testpango.Float64(8466.56),
+        NamespaceName: testpango.String("Moldovan"),
         NoPagination: testpango.Bool(false),
-        Offset: testpango.Float64(2626.14),
-        Owner: testpango.String("fuga"),
-        OwnerType: operations.GetRiskAssessmentPermissionsClusterIDOwnerTypeUser.ToPointer(),
-        PermissionRisk: operations.GetRiskAssessmentPermissionsClusterIDPermissionRiskHigh.ToPointer(),
-        SortDir: operations.GetRiskAssessmentPermissionsClusterIDSortDirAsc.ToPointer(),
-        SortKey: operations.GetRiskAssessmentPermissionsClusterIDSortKeyOwner.ToPointer(),
+        Offset: testpango.Float64(3482.6),
+        Owner: testpango.String("Tennessine Cisgender"),
+        OwnerType: operations.GetRiskAssessmentPermissionsClusterIDOwnerTypeServiceaccount.ToPointer(),
+        PermissionRisk: operations.GetRiskAssessmentPermissionsClusterIDPermissionRiskNoRisk.ToPointer(),
+        SortDir: operations.GetRiskAssessmentPermissionsClusterIDSortDirDesc.ToPointer(),
+        SortKey: operations.GetRiskAssessmentPermissionsClusterIDSortKeyOwnerType.ToPointer(),
     })
     if err != nil {
         log.Fatal(err)
@@ -371,11 +371,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RiskAssessment.GetRiskAssessmentPermissionsClusterIDOwnerID(ctx, operations.GetRiskAssessmentPermissionsClusterIDOwnerIDRequest{
-        ClusterID: "4ee5cfc1-8edc-47f7-87e3-2e04b3d3ed0c",
+        ClusterID: "e6c26498-20da-481b-bc16-7b830d3456dd",
         IsApproved: testpango.Bool(false),
-        OwnerID: "5670ef42-bd3c-49f1-8c50-3f6c39bcd0a6",
+        OwnerID: "79a8a441-40ea-4cdf-8584-73da2c62b846",
         SortDir: operations.GetRiskAssessmentPermissionsClusterIDOwnerIDSortDirAsc.ToPointer(),
-        SortKey: testpango.String("perspiciatis"),
+        SortKey: testpango.String("criminal green"),
     })
     if err != nil {
         log.Fatal(err)
@@ -427,9 +427,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RiskAssessment.GetRiskAssessmentPermissionsClusterIDOwnerIDRoleID(ctx, operations.GetRiskAssessmentPermissionsClusterIDOwnerIDRoleIDRequest{
-        ClusterID: "0f957f38-5189-4ad7-af80-7aae03f33ca7",
-        OwnerID: "9fb9de40-32ba-426f-9368-ba9216bcb415",
-        RoleID: "835c7364-1723-4133-adc0-46bc5163bbca",
+        ClusterID: "419337aa-84cc-4a55-afba-5a213e1dbdfd",
+        OwnerID: "4e00792b-c0ad-4551-9794-d6bafdbc8352",
+        RoleID: "ad0304b4-bb83-44d6-bf7f-174c17202a1e",
     })
     if err != nil {
         log.Fatal(err)
@@ -482,7 +482,7 @@ func main() {
     ctx := context.Background()
     res, err := s.RiskAssessment.GetRiskAssessmentPoll(ctx, operations.GetRiskAssessmentPollRequest{
         RiskAssessmentPollKey: []string{
-            "49227c42-c22c-4553-9049-5c5dbb3c57c1",
+            "813cbccb-b94b-4a50-afbd-d7c394a6030d",
         },
     })
     if err != nil {
@@ -535,11 +535,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RiskAssessment.GetRiskAssessmentImageIDVulnerabilities(ctx, operations.GetRiskAssessmentImageIDVulnerabilitiesRequest{
-        ImageID: "e4981e8a-a257-4ddc-9912-ebde64bfcc54",
-        MaxResults: testpango.Float64(4362.35),
-        Offset: testpango.Float64(6168.21),
-        SortDir: operations.GetRiskAssessmentImageIDVulnerabilitiesSortDirDesc.ToPointer(),
-        SortKey: "quaerat",
+        ImageID: "6cbcdb90-f642-47ed-b640-ae8227deac5c",
+        MaxResults: testpango.Float64(8240.13),
+        Offset: testpango.Float64(7702.86),
+        SortDir: operations.GetRiskAssessmentImageIDVulnerabilitiesSortDirAsc.ToPointer(),
+        SortKey: "Montana Loan",
     })
     if err != nil {
         log.Fatal(err)
@@ -592,10 +592,10 @@ func main() {
     ctx := context.Background()
     res, err := s.RiskAssessment.GetRiskAssessmentKubernetesClusterIDPods(ctx, operations.GetRiskAssessmentKubernetesClusterIDPodsRequest{
         DownloadAsXlsx: testpango.Bool(false),
-        KubernetesClusterID: "015dfa79-6206-4bef-ab0a-3e42c1aa010e",
-        MaxResults: testpango.Float64(5668.96),
-        NamespacesNamesFilter: testpango.String("fuga"),
-        Offset: testpango.Float64(6332.93),
+        KubernetesClusterID: "764514eb-01d8-4d87-972e-7065c0075222",
+        MaxResults: testpango.Float64(2696.33),
+        NamespacesNamesFilter: testpango.String("copying scent"),
+        Offset: testpango.Float64(3728.39),
         SortDir: operations.GetRiskAssessmentKubernetesClusterIDPodsSortDirDesc.ToPointer(),
         SortKey: operations.GetRiskAssessmentKubernetesClusterIDPodsSortKeyName,
     })
@@ -699,11 +699,11 @@ func main() {
     res, err := s.RiskAssessment.PostRiskAssessmentPermissionsOwnerIDApprove(ctx, operations.PostRiskAssessmentPermissionsOwnerIDApproveRequest{
         UUIDList: shared.UUIDList{
             UUIDList: []string{
-                "e9135586-d18f-49f9-ba4b-fad2bf7d67ca",
+                "fda4268f-7c78-46d3-87e2-782993d8ba4d",
             },
         },
         ActionType: operations.PostRiskAssessmentPermissionsOwnerIDApproveActionTypeRemove,
-        OwnerID: "4ad99b41-d612-4435-b187-0cf68b03ad42",
+        OwnerID: "c3b8ad34-72d2-4f81-a59b-f81c3cc9c10e",
     })
     if err != nil {
         log.Fatal(err)
@@ -755,7 +755,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RiskAssessment.PostRiskAssessmentKubernetesClusterIDScan(ctx, operations.PostRiskAssessmentKubernetesClusterIDScanRequest{
-        KubernetesClusterID: "1bd43d1f-0cb0-4a00-83eb-22d9b3a70d94",
+        KubernetesClusterID: "967e4e2b-c728-4357-980a-727b8f594aad",
     })
     if err != nil {
         log.Fatal(err)
@@ -808,17 +808,17 @@ func main() {
     ctx := context.Background()
     res, err := s.RiskAssessment.PostRiskAssessmentKubernetesClusterIDSettings(ctx, operations.PostRiskAssessmentKubernetesClusterIDSettingsRequest{
         RiskAssessmentClusterScanConfig: shared.RiskAssessmentClusterScanConfig{
-            MaxParallelism: 973256,
-            MinimumSeverity: shared.VulnerabilitySeverityHigh,
+            MaxParallelism: 752536,
+            MinimumSeverity: shared.VulnerabilitySeverityLow,
             Namespaces: []string{
-                "deserunt",
+                "synthesizing",
             },
             PeriodicJobExpression: &shared.PeriodicJobExpression{
-                PeriodicJobType: shared.PeriodicJobExpressionPeriodicJobTypeByHoursPeriodicJobExpression,
+                PeriodicJobType: shared.PeriodicJobExpressionPeriodicJobTypeNonPeriodicJobExpression,
             },
             RunDockerfileScan: testpango.Bool(false),
         },
-        KubernetesClusterID: "41c57d1f-edc2-4050-938d-c3ce185472f9",
+        KubernetesClusterID: "a0c9884d-ef8c-417b-9484-5665df2f730e",
     })
     if err != nil {
         log.Fatal(err)
@@ -871,18 +871,18 @@ func main() {
     ctx := context.Background()
     res, err := s.RiskAssessment.PutRiskAssessmentIgnoredRisksIgnoredRiskID(ctx, operations.PutRiskAssessmentIgnoredRisksIgnoredRiskIDRequest{
         CiPolicyInput: shared.CiPolicyInput{
-            Description: testpango.String("necessitatibus"),
+            Description: testpango.String("Face to face directional superstructure"),
             DockerfileScanCiPolicy: &shared.DockerfileScanCiPolicy{
                 EnforcementOption: shared.EnforcementOptionIgnore,
-                PermissibleDockerfileScanSeverity: shared.DockerfileScanSeverityWarn,
+                PermissibleDockerfileScanSeverity: shared.DockerfileScanSeverityInfo,
             },
-            Name: "Arthur Kerluke",
+            Name: "haptic Manager",
             VulnerabilityCiPolicy: &shared.VulnerabilityCiPolicy{
                 EnforcementOption: shared.EnforcementOptionIgnore,
-                PermissibleVulnerabilityLevel: shared.VulnerabilitySeverityHigh,
+                PermissibleVulnerabilityLevel: shared.VulnerabilitySeverityLow,
             },
         },
-        IgnoredRiskID: "e3444eac-8b3a-4287-9c6c-1fe606d07d2a",
+        IgnoredRiskID: "2b6ef16d-35fd-4f85-a9c3-11ad619343e9",
     })
     if err != nil {
         log.Fatal(err)

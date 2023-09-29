@@ -40,7 +40,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Expansions.DeleteExpansionsExpansionID(ctx, operations.DeleteExpansionsExpansionIDRequest{
-        ExpansionID: "b78f1562-6398-4a0d-8766-324ccb06c8ca",
+        ExpansionID: "f85d88d8-8509-415c-acc6-dcdc8448694e",
     })
     if err != nil {
         log.Fatal(err)
@@ -92,17 +92,17 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Expansions.GetExpansions(ctx, operations.GetExpansionsRequest{
-        ClusterName: testpango.String("inventore"),
-        ControllerStatus: testpango.String("consequuntur"),
-        ControllerVersion: testpango.String("repellendus"),
+        ClusterName: testpango.String("Agent interface"),
+        ControllerStatus: testpango.String("Funk Flerovium Road"),
+        ControllerVersion: testpango.String("Quality"),
         DownloadAsXlsx: testpango.Bool(false),
-        MaxResults: testpango.Float64(271.97),
-        Name: testpango.String("Jill Collins"),
-        NamespaceName: testpango.String("odio"),
+        MaxResults: testpango.Float64(2748.69),
+        Name: testpango.String("male payment Kentucky"),
+        NamespaceName: testpango.String("Toyota"),
         NoPagination: testpango.Bool(false),
-        Offset: testpango.Float64(27.58),
+        Offset: testpango.Float64(4144.14),
         SortDir: operations.GetExpansionsSortDirDesc.ToPointer(),
-        SortKey: "deleniti",
+        SortKey: "virtual",
     })
     if err != nil {
         log.Fatal(err)
@@ -154,7 +154,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Expansions.GetExpansionsExpansionIDInstallExpansionTarGz(ctx, operations.GetExpansionsExpansionIDInstallExpansionTarGzRequest{
-        ExpansionID: "d5722dd8-95b8-4bcf-a4db-959693352f74",
+        ExpansionID: "f93ee138-484b-4ae8-9598-dc7e98557c98",
     })
     if err != nil {
         log.Fatal(err)
@@ -206,21 +206,21 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Expansions.PostExpansions(ctx, shared.ExpansionInput{
-        ClusterID: "533994d7-8de3-4b6e-9389-f5abb7f66255",
-        ControllerLastActive: types.MustTimeFromString("2022-05-02T06:02:30.053Z"),
+        ClusterID: "ef536384-aae2-4f5a-87a4-cef022a42548",
+        ControllerLastActive: types.MustTimeFromString("2023-08-24T22:57:12.780Z"),
         Labels: []shared.Label{
             shared.Label{
-                Key: "qui",
-                Value: "praesentium",
+                Key: "<key>",
+                Value: "bolívar North Frozen",
             },
         },
-        Name: "Christy Deckow",
-        NamespaceID: "483afd23-15bb-4a65-8164-e06f5bf6ae59",
+        Name: "postmark",
+        NamespaceID: "cab88259-ba11-4df1-9d86-c530fc31b7b3",
         ShouldSendMetrics: testpango.Bool(false),
         WorkloadAddresses: []shared.WorkloadAddress{
             shared.WorkloadAddress{
-                Address: "77578 Wunsch Extension",
-                NetworkProtocol: shared.NetworkProtocolTCP.ToPointer(),
+                Address: "23391 Padberg Keys",
+                NetworkProtocol: shared.NetworkProtocolHTTP.ToPointer(),
             },
         },
     })
@@ -277,19 +277,19 @@ func main() {
         ExpansionPut: shared.ExpansionPut{
             Labels: []shared.Label{
                 shared.Label{
-                    Key: "vitae",
-                    Value: "fugit",
+                    Key: "<key>",
+                    Value: "solemnly Money logistical",
                 },
             },
-            Name: "Marc Doyle",
+            Name: "Kids Program",
             WorkloadAddresses: []shared.WorkloadAddress{
                 shared.WorkloadAddress{
-                    Address: "39865 Alvina Lock",
+                    Address: "628 Will Route",
                     NetworkProtocol: shared.NetworkProtocolTCP.ToPointer(),
                 },
             },
         },
-        ExpansionID: "4a68a9a3-5d08-46b6-b66f-ef020e9f443b",
+        ExpansionID: "4baa7b3c-4b09-4bff-8d17-0310c446aa3a",
     })
     if err != nil {
         log.Fatal(err)

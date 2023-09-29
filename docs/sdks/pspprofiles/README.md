@@ -44,7 +44,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.PspProfiles.DeletePodSecurityPolicyProfilesProfileID(ctx, operations.DeletePodSecurityPolicyProfilesProfileIDRequest{
-        ProfileID: "b084da99-257d-404f-8084-7a742d84496c",
+        ProfileID: "bb90cc1f-4444-454a-8574-313c05003108",
     })
     if err != nil {
         log.Fatal(err)
@@ -96,7 +96,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.PspProfiles.DeleteSeccompProfilesProfileID(ctx, operations.DeleteSeccompProfilesProfileIDRequest{
-        ProfileID: "bdeecf6b-99bc-4635-a2eb-fdf55c294c06",
+        ProfileID: "4cc0f6a2-ff01-4311-a20d-d6510a1ff69a",
     })
     if err != nil {
         log.Fatal(err)
@@ -245,11 +245,11 @@ func main() {
     res, err := s.PspProfiles.PostPodSecurityPolicyProfiles(ctx, shared.PodSecurityPolicy{
         AllowPrivilegeEscalation: testpango.Bool(false),
         AllowedCapabilities: []string{
-            "consequatur",
+            "bypass",
         },
         AllowedHostPaths: []shared.AllowedHostPath{
             shared.AllowedHostPath{
-                PathPrefix: testpango.String("nobis"),
+                PathPrefix: testpango.String("turquoise"),
                 ReadOnly: testpango.Bool(false),
             },
         },
@@ -257,18 +257,18 @@ func main() {
             shared.AllowedProcMountTypeDefault,
         },
         AllowedUnsafeSysctls: []string{
-            "ea",
+            "Product",
         },
         DefaultAllowPrivilegeEscalation: testpango.Bool(false),
-        Description: testpango.String("laborum"),
+        Description: testpango.String("Down-sized empowering frame"),
         ForbiddenSysctls: []string{
-            "et",
+            "incremental",
         },
         FsGroup: shared.RunAsGroupStrategyOptions{
             Ranges: []shared.IDRange{
                 shared.IDRange{
-                    Max: testpango.Int64(144856),
-                    Min: testpango.Int64(550579),
+                    Max: testpango.Int64(247342),
+                    Min: testpango.Int64(407317),
                 },
             },
             Rule: shared.RunAsGroupStrategyMayRunAs.ToPointer(),
@@ -278,23 +278,23 @@ func main() {
         HostPID: testpango.Bool(false),
         HostPorts: []shared.HostPortRange{
             shared.HostPortRange{
-                Max: testpango.Int(454329),
-                Min: testpango.Int(421018),
+                Max: testpango.Int(80641),
+                Min: testpango.Int(34868),
             },
         },
-        ID: testpango.String("4eef6d0c-6d6e-4d9c-b3dd-634571509a8e"),
+        ID: testpango.String("142085d7-d484-444d-9348-fb70a8e37e62"),
         IsSecurecnDefaultProfile: testpango.Bool(false),
-        Name: "Julio Bauch",
+        Name: "Wooden repudiandae Paradigm",
         Privileged: testpango.Bool(false),
         ReadOnlyRootFileSystem: testpango.Bool(false),
         RequiredDropCapabilities: []string{
-            "minus",
+            "clearly",
         },
         RunAsGroup: &shared.RunAsGroupStrategyOptions{
             Ranges: []shared.IDRange{
                 shared.IDRange{
-                    Max: testpango.Int64(330908),
-                    Min: testpango.Int64(664679),
+                    Max: testpango.Int64(307575),
+                    Min: testpango.Int64(822060),
                 },
             },
             Rule: shared.RunAsGroupStrategyMustRunAs.ToPointer(),
@@ -302,24 +302,24 @@ func main() {
         RunAsUser: shared.RunAsUserStrategyOptions{
             Ranges: []shared.IDRange{
                 shared.IDRange{
-                    Max: testpango.Int64(978229),
-                    Min: testpango.Int64(598497),
+                    Max: testpango.Int64(177881),
+                    Min: testpango.Int64(417586),
                 },
             },
-            Rule: shared.RunAsUserStrategyRunAsAny.ToPointer(),
+            Rule: shared.RunAsUserStrategyMustRunAs.ToPointer(),
         },
-        SeccompProfile: testpango.String("242c7b66-a1f3-40c7-bdf5-b6719890f42a"),
+        SeccompProfile: testpango.String("e80dd252-3540-4eb3-996a-05613aad0af4"),
         SupplementalGroups: shared.RunAsGroupStrategyOptions{
             Ranges: []shared.IDRange{
                 shared.IDRange{
-                    Max: testpango.Int64(272396),
-                    Min: testpango.Int64(749863),
+                    Max: testpango.Int64(169335),
+                    Min: testpango.Int64(820289),
                 },
             },
             Rule: shared.RunAsGroupStrategyRunAsAny.ToPointer(),
         },
         Volumes: []shared.PSPVolumeTypes{
-            shared.PSPVolumeTypesDownwardAPI,
+            shared.PSPVolumeTypesStorageos,
         },
     })
     if err != nil {
@@ -375,81 +375,81 @@ func main() {
         shared.PodSecurityPolicy{
             AllowPrivilegeEscalation: testpango.Bool(false),
             AllowedCapabilities: []string{
-                "adipisci",
+                "Copernicium",
             },
             AllowedHostPaths: []shared.AllowedHostPath{
                 shared.AllowedHostPath{
-                    PathPrefix: testpango.String("atque"),
+                    PathPrefix: testpango.String("Northeast Directives"),
                     ReadOnly: testpango.Bool(false),
                 },
             },
             AllowedProcMountTypes: []shared.AllowedProcMountType{
-                shared.AllowedProcMountTypeUnmasked,
+                shared.AllowedProcMountTypeDefault,
             },
             AllowedUnsafeSysctls: []string{
-                "rem",
+                "mint",
             },
             DefaultAllowPrivilegeEscalation: testpango.Bool(false),
-            Description: testpango.String("exercitationem"),
+            Description: testpango.String("Self-enabling national application"),
             ForbiddenSysctls: []string{
-                "tempore",
+                "THX",
             },
             FsGroup: shared.RunAsGroupStrategyOptions{
                 Ranges: []shared.IDRange{
                     shared.IDRange{
-                        Max: testpango.Int64(180839),
-                        Min: testpango.Int64(389585),
+                        Max: testpango.Int64(581609),
+                        Min: testpango.Int64(807880),
                     },
                 },
-                Rule: shared.RunAsGroupStrategyMustRunAs.ToPointer(),
+                Rule: shared.RunAsGroupStrategyRunAsAny.ToPointer(),
             },
             HostIPC: testpango.Bool(false),
             HostNetwork: testpango.Bool(false),
             HostPID: testpango.Bool(false),
             HostPorts: []shared.HostPortRange{
                 shared.HostPortRange{
-                    Max: testpango.Int(326894),
-                    Min: testpango.Int(595595),
+                    Max: testpango.Int(693689),
+                    Min: testpango.Int(305839),
                 },
             },
-            ID: testpango.String("1d745e3c-2059-4c9c-bf56-7e0e252765b1"),
+            ID: testpango.String("ccbec10a-9bc5-4ecc-aa49-c56c0e0d8163"),
             IsSecurecnDefaultProfile: testpango.Bool(false),
-            Name: "Reginald Cruickshank",
+            Name: "Bicycle synthesize",
             Privileged: testpango.Bool(false),
             ReadOnlyRootFileSystem: testpango.Bool(false),
             RequiredDropCapabilities: []string{
-                "possimus",
+                "Cyclocross",
             },
             RunAsGroup: &shared.RunAsGroupStrategyOptions{
                 Ranges: []shared.IDRange{
                     shared.IDRange{
-                        Max: testpango.Int64(670710),
-                        Min: testpango.Int64(761835),
-                    },
-                },
-                Rule: shared.RunAsGroupStrategyRunAsAny.ToPointer(),
-            },
-            RunAsUser: shared.RunAsUserStrategyOptions{
-                Ranges: []shared.IDRange{
-                    shared.IDRange{
-                        Max: testpango.Int64(100926),
-                        Min: testpango.Int64(968792),
-                    },
-                },
-                Rule: shared.RunAsUserStrategyMustRunAs.ToPointer(),
-            },
-            SeccompProfile: testpango.String("1216ce22-39e8-4f25-8d0d-19d959f439e3"),
-            SupplementalGroups: shared.RunAsGroupStrategyOptions{
-                Ranges: []shared.IDRange{
-                    shared.IDRange{
-                        Max: testpango.Int64(573816),
-                        Min: testpango.Int64(177632),
+                        Max: testpango.Int64(978567),
+                        Min: testpango.Int64(527502),
                     },
                 },
                 Rule: shared.RunAsGroupStrategyMayRunAs.ToPointer(),
             },
+            RunAsUser: shared.RunAsUserStrategyOptions{
+                Ranges: []shared.IDRange{
+                    shared.IDRange{
+                        Max: testpango.Int64(393434),
+                        Min: testpango.Int64(336870),
+                    },
+                },
+                Rule: shared.RunAsUserStrategyMustRunAs.ToPointer(),
+            },
+            SeccompProfile: testpango.String("33ebfbb0-cc93-4268-acf5-38bb5e43e0cc"),
+            SupplementalGroups: shared.RunAsGroupStrategyOptions{
+                Ranges: []shared.IDRange{
+                    shared.IDRange{
+                        Max: testpango.Int64(259664),
+                        Min: testpango.Int64(329554),
+                    },
+                },
+                Rule: shared.RunAsGroupStrategyMustRunAs.ToPointer(),
+            },
             Volumes: []shared.PSPVolumeTypes{
-                shared.PSPVolumeTypesFlocker,
+                shared.PSPVolumeTypesVsphereVolume,
             },
         },
     })
@@ -502,10 +502,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.PspProfiles.PostSeccompProfiles(ctx, shared.SeccompProfileInput{
-        Data: testpango.String("{"foo":"boZ>zM]_.a","bar":30034,"bike":9270,"a":39110,"b":"An)tEFVT}l","name":">?XG1+Mk1U","prop":47319}"),
-        Name: testpango.String("Allison Kemmer"),
+        Data: testpango.String("{steam: 44630, freedom: null, lathe: \"maiores metrics\"}"),
+        Name: testpango.String("bitterly North"),
         PodSecurityPolicies: []string{
-            "tempora",
+            "bandwidth",
         },
     })
     if err != nil {
@@ -561,11 +561,11 @@ func main() {
         PodSecurityPolicy: shared.PodSecurityPolicy{
             AllowPrivilegeEscalation: testpango.Bool(false),
             AllowedCapabilities: []string{
-                "aspernatur",
+                "North",
             },
             AllowedHostPaths: []shared.AllowedHostPath{
                 shared.AllowedHostPath{
-                    PathPrefix: testpango.String("ad"),
+                    PathPrefix: testpango.String("since DNS Central"),
                     ReadOnly: testpango.Bool(false),
                 },
             },
@@ -573,18 +573,18 @@ func main() {
                 shared.AllowedProcMountTypeDefault,
             },
             AllowedUnsafeSysctls: []string{
-                "alias",
+                "Mercedes",
             },
             DefaultAllowPrivilegeEscalation: testpango.Bool(false),
-            Description: testpango.String("adipisci"),
+            Description: testpango.String("Customer-focused eco-centric encryption"),
             ForbiddenSysctls: []string{
-                "atque",
+                "Checking",
             },
             FsGroup: shared.RunAsGroupStrategyOptions{
                 Ranges: []shared.IDRange{
                     shared.IDRange{
-                        Max: testpango.Int64(734296),
-                        Min: testpango.Int64(989913),
+                        Max: testpango.Int64(885380),
+                        Min: testpango.Int64(870395),
                     },
                 },
                 Rule: shared.RunAsGroupStrategyRunAsAny.ToPointer(),
@@ -594,23 +594,23 @@ func main() {
             HostPID: testpango.Bool(false),
             HostPorts: []shared.HostPortRange{
                 shared.HostPortRange{
-                    Max: testpango.Int(328217),
-                    Min: testpango.Int(584483),
+                    Max: testpango.Int(208639),
+                    Min: testpango.Int(494299),
                 },
             },
-            ID: testpango.String("71e98190-5573-489c-adba-c7fda39594d6"),
+            ID: testpango.String("9d9afbb9-b687-4b2c-be0a-637e73494546"),
             IsSecurecnDefaultProfile: testpango.Bool(false),
-            Name: "Patty Schinner",
+            Name: "Silicon sensor",
             Privileged: testpango.Bool(false),
             ReadOnlyRootFileSystem: testpango.Bool(false),
             RequiredDropCapabilities: []string{
-                "officiis",
+                "ex",
             },
             RunAsGroup: &shared.RunAsGroupStrategyOptions{
                 Ranges: []shared.IDRange{
                     shared.IDRange{
-                        Max: testpango.Int64(304571),
-                        Min: testpango.Int64(559392),
+                        Max: testpango.Int64(639188),
+                        Min: testpango.Int64(375698),
                     },
                 },
                 Rule: shared.RunAsGroupStrategyMustRunAs.ToPointer(),
@@ -618,27 +618,27 @@ func main() {
             RunAsUser: shared.RunAsUserStrategyOptions{
                 Ranges: []shared.IDRange{
                     shared.IDRange{
-                        Max: testpango.Int64(422215),
-                        Min: testpango.Int64(209920),
+                        Max: testpango.Int64(34862),
+                        Min: testpango.Int64(966964),
                     },
                 },
                 Rule: shared.RunAsUserStrategyMustRunAs.ToPointer(),
             },
-            SeccompProfile: testpango.String("b9954b6f-a220-4636-9828-553cb10006be"),
+            SeccompProfile: testpango.String("114f1e40-0857-4100-95d7-43f0167fa418"),
             SupplementalGroups: shared.RunAsGroupStrategyOptions{
                 Ranges: []shared.IDRange{
                     shared.IDRange{
-                        Max: testpango.Int64(968591),
-                        Min: testpango.Int64(277569),
+                        Max: testpango.Int64(807200),
+                        Min: testpango.Int64(91090),
                     },
                 },
-                Rule: shared.RunAsGroupStrategyMayRunAs.ToPointer(),
+                Rule: shared.RunAsGroupStrategyMustRunAs.ToPointer(),
             },
             Volumes: []shared.PSPVolumeTypes{
-                shared.PSPVolumeTypesCinder,
+                shared.PSPVolumeTypesScaleIo,
             },
         },
-        ProfileID: "1ec2053b-7493-466a-88ee-0f2bf19588d4",
+        ProfileID: "30ce44b3-7a43-4d84-b255-0fa77d979933",
     })
     if err != nil {
         log.Fatal(err)
@@ -691,13 +691,13 @@ func main() {
     ctx := context.Background()
     res, err := s.PspProfiles.PutSeccompProfilesProfileID(ctx, operations.PutSeccompProfilesProfileIDRequest{
         SeccompProfileInput: shared.SeccompProfileInput{
-            Data: testpango.String("{"foo":87372,"bar":19647,"bike":"4nuf_/ZMbx","a":93359,"b":"!af8!o|TGO","name":"qC2<\">hd53","prop":86405}"),
-            Name: testpango.String("Ramona Crona"),
+            Data: testpango.String("{incandescence: 66214, hint: null, licorice: \"Mobility lime\"}"),
+            Name: testpango.String("BMX Cambridgeshire wherever"),
             PodSecurityPolicies: []string{
-                "doloribus",
+                "plum",
             },
         },
-        ProfileID: "127fb0e0-bf1f-4821-b978-d0acca77aeb7",
+        ProfileID: "36c76ef4-4408-4a69-9bd6-c47238638eac",
     })
     if err != nil {
         log.Fatal(err)

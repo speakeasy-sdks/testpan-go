@@ -90,7 +90,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.DeleteAPISecurityAPICatalogID(ctx, operations.DeleteAPISecurityAPICatalogIDRequest{
-        CatalogID: "a8d8f5c0-b2f2-4fb7-b194-a276b26916fe",
+        CatalogID: "842f34dd-ffa1-41b2-85e1-21c9635c9fcb",
     })
     if err != nil {
         log.Fatal(err)
@@ -142,7 +142,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.DeleteAPISecurityInternalCatalogCatalogIDBflaDetection(ctx, operations.DeleteAPISecurityInternalCatalogCatalogIDBflaDetectionRequest{
-        CatalogID: "1f08f429-4e36-498f-847f-603e8b445e80",
+        CatalogID: "3d2f6c1c-29ba-4502-9cb8-4666b2e993b7",
     })
     if err != nil {
         log.Fatal(err)
@@ -194,7 +194,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.DeleteAPISecurityInternalCatalogCatalogIDBflaLearning(ctx, operations.DeleteAPISecurityInternalCatalogCatalogIDBflaLearningRequest{
-        CatalogID: "ca55efd2-0e45-47e1-858b-6a89fbe3a5aa",
+        CatalogID: "3ba770da-4891-4357-a360-0c0e060f5b0f",
     })
     if err != nil {
         log.Fatal(err)
@@ -246,7 +246,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.DeleteAPISecurityOpenAPISpecsCatalogID(ctx, operations.DeleteAPISecurityOpenAPISpecsCatalogIDRequest{
-        CatalogID: "8e4824d0-ab40-4750-88e5-1862065e904f",
+        CatalogID: "95e2243c-a46e-4f56-870a-883817cd0574",
     })
     if err != nil {
         log.Fatal(err)
@@ -298,7 +298,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.DeleteGatewaysGatewayID(ctx, operations.DeleteGatewaysGatewayIDRequest{
-        GatewayID: "3b1194b8-abf6-403a-b9f9-dfe0ab7da8a5",
+        GatewayID: "0059ee9e-2eb4-40ca-97cc-9e2e4879b4b7",
     })
     if err != nil {
         log.Fatal(err)
@@ -352,17 +352,17 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.GetAPISecurityExternalCatalog(ctx, operations.GetAPISecurityExternalCatalogRequest{
         APIPolicyProfiles: []string{
-            "voluptatem",
+            "Bronze",
         },
         DrillDownScore: testpango.Bool(false),
         IncludeServiceWithNoSpec: testpango.Bool(false),
-        MaxResults: testpango.Float64(7908.4),
-        Name: testpango.String("Ryan Littel"),
+        MaxResults: testpango.Float64(4178.64),
+        Name: testpango.String("Colton Tin programming"),
         NoPagination: testpango.Bool(false),
-        Offset: testpango.Float64(5199.52),
+        Offset: testpango.Float64(9915.74),
         SortDir: operations.GetAPISecurityExternalCatalogSortDirAsc.ToPointer(),
-        SortKey: operations.GetAPISecurityExternalCatalogSortKeyRisk.ToPointer(),
-        UpdatedAfter: types.MustTimeFromString("2022-09-23T11:31:21.970Z"),
+        SortKey: operations.GetAPISecurityExternalCatalogSortKeyName.ToPointer(),
+        UpdatedAfter: types.MustTimeFromString("2023-06-28T23:23:21.281Z"),
     })
     if err != nil {
         log.Fatal(err)
@@ -416,8 +416,8 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.GetAPISecurityExternalCatalogCount(ctx, operations.GetAPISecurityExternalCatalogCountRequest{
         IncludeServiceWithNoSpec: testpango.Bool(false),
-        Name: testpango.String("Grace Shields"),
-        UpdatedAfter: types.MustTimeFromString("2021-03-24T07:07:12.173Z"),
+        Name: testpango.String("revolutionary alienated Chair"),
+        UpdatedAfter: types.MustTimeFromString("2021-01-16T05:22:36.516Z"),
     })
     if err != nil {
         log.Fatal(err)
@@ -470,9 +470,9 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.GetAPISecurityExternalCatalogCatalogID(ctx, operations.GetAPISecurityExternalCatalogCatalogIDRequest{
         APIPolicyProfiles: []string{
-            "officiis",
+            "Sports",
         },
-        CatalogID: "e9526f8d-986e-4881-aad4-f0e1012563f9",
+        CatalogID: "833a138a-8e36-4df0-9dd8-6e879c685823",
         DownloadAsJSON: testpango.Bool(false),
     })
     if err != nil {
@@ -527,18 +527,18 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.GetAPISecurityInternalCatalog(ctx, operations.GetAPISecurityInternalCatalogRequest{
         APIPolicyProfiles: []string{
-            "magnam",
+            "systemic",
         },
         DrillDownScore: testpango.Bool(false),
         IncludeServiceWithNoSpec: testpango.Bool(false),
-        MaxResults: testpango.Float64(9063.55),
-        Name: testpango.String("Toni Torphy"),
-        NamespacesFilter: testpango.String("adipisci"),
+        MaxResults: testpango.Float64(5658.49),
+        Name: testpango.String("tranquilize pascal"),
+        NamespacesFilter: testpango.String("Cis capacitor"),
         NoPagination: testpango.Bool(false),
-        Offset: testpango.Float64(9078.76),
-        SortDir: operations.GetAPISecurityInternalCatalogSortDirDesc.ToPointer(),
+        Offset: testpango.Float64(1528.82),
+        SortDir: operations.GetAPISecurityInternalCatalogSortDirAsc.ToPointer(),
         SortKey: operations.GetAPISecurityInternalCatalogSortKeyName.ToPointer(),
-        UpdatedAfter: types.MustTimeFromString("2022-05-04T16:36:37.699Z"),
+        UpdatedAfter: types.MustTimeFromString("2021-11-28T12:36:29.977Z"),
     })
     if err != nil {
         log.Fatal(err)
@@ -592,9 +592,9 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.GetAPISecurityInternalCatalogCount(ctx, operations.GetAPISecurityInternalCatalogCountRequest{
         IncludeServiceWithNoSpec: testpango.Bool(false),
-        Name: testpango.String("Mrs. Bessie Muller"),
-        NamespacesFilter: testpango.String("eveniet"),
-        UpdatedAfter: types.MustTimeFromString("2022-02-14T08:24:16.303Z"),
+        Name: testpango.String("Bugatti"),
+        NamespacesFilter: testpango.String("3rd Hassium"),
+        UpdatedAfter: types.MustTimeFromString("2023-12-03T10:33:57.779Z"),
     })
     if err != nil {
         log.Fatal(err)
@@ -647,9 +647,9 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.GetAPISecurityInternalCatalogCatalogID(ctx, operations.GetAPISecurityInternalCatalogCatalogIDRequest{
         APIPolicyProfiles: []string{
-            "doloremque",
+            "Future",
         },
-        CatalogID: "60807e2b-6e3a-4b88-85f0-597a60ff2a54",
+        CatalogID: "b30b167e-21dd-44fc-9f71-8b9d3086136a",
         DownloadAsJSON: testpango.Bool(false),
     })
     if err != nil {
@@ -702,7 +702,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.GetAPISecurityInternalCatalogCatalogIDBfla(ctx, operations.GetAPISecurityInternalCatalogCatalogIDBflaRequest{
-        CatalogID: "a31e9476-4a3e-4865-a795-6f9251a5a9da",
+        CatalogID: "74e0c81f-ef10-4f23-b74f-8447d1953ccf",
     })
     if err != nil {
         log.Fatal(err)
@@ -754,7 +754,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.GetAPISecurityInternalCatalogCatalogIDFuzzingStatus(ctx, operations.GetAPISecurityInternalCatalogCatalogIDFuzzingStatusRequest{
-        CatalogID: "660ff57b-faad-44f9-afc1-b4512c103264",
+        CatalogID: "b8ae405f-27d4-4986-b826-818df6837b3d",
     })
     if err != nil {
         log.Fatal(err)
@@ -806,7 +806,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.GetAPISecurityInternalCatalogCatalogIDFuzzingTests(ctx, operations.GetAPISecurityInternalCatalogCatalogIDFuzzingTestsRequest{
-        CatalogID: "8dc2f615-199e-4bfd-8e9f-e6c632ca3aed",
+        CatalogID: "03b031d5-bcbe-4041-865f-3cf281949555",
     })
     if err != nil {
         log.Fatal(err)
@@ -858,9 +858,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.GetAPISecurityInternalCatalogCatalogIDTraceAnalysis(ctx, operations.GetAPISecurityInternalCatalogCatalogIDTraceAnalysisRequest{
-        CatalogID: "01179963-12fd-4e04-b717-78ff61d01747",
-        MaxResults: testpango.Float64(4037.93),
-        Offset: testpango.Float64(2352.63),
+        CatalogID: "14f8fff8-1410-462d-9de3-1aa0e5094377",
+        MaxResults: testpango.Float64(970.24),
+        Offset: testpango.Float64(4969.86),
     })
     if err != nil {
         log.Fatal(err)
@@ -912,7 +912,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.GetAPISecurityOpenAPISpecsCatalogID(ctx, operations.GetAPISecurityOpenAPISpecsCatalogIDRequest{
-        CatalogID: "60a15db6-a660-4659-a1ad-eaab5851d6c6",
+        CatalogID: "9766bdb5-2002-47a6-9ab1-0c9e7ba174e7",
     })
     if err != nil {
         log.Fatal(err)
@@ -964,7 +964,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.GetAPISecurityOpenAPISpecsCatalogIDDiffDetectionStatus(ctx, operations.GetAPISecurityOpenAPISpecsCatalogIDDiffDetectionStatusRequest{
-        CatalogID: "45b08b61-891b-4aa0-be1a-de008e6f8c5f",
+        CatalogID: "89ba7d71-938d-4e0d-ae77-2227f0233a60",
     })
     if err != nil {
         log.Fatal(err)
@@ -1016,7 +1016,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.GetAPISecurityOpenAPISpecsCatalogIDGetOpenAPISpecScoreStatus(ctx, operations.GetAPISecurityOpenAPISpecsCatalogIDGetOpenAPISpecScoreStatusRequest{
-        CatalogID: "350d8cdb-5a34-4181-8301-0421813d5208",
+        CatalogID: "e844ac3e-b37a-4e44-810c-fb03dafad57b",
     })
     if err != nil {
         log.Fatal(err)
@@ -1068,7 +1068,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.GetAPISecurityOpenAPISpecsCatalogIDOpenAPISpecSwaggerJSON(ctx, operations.GetAPISecurityOpenAPISpecsCatalogIDOpenAPISpecSwaggerJSONRequest{
-        CatalogID: "ece7e253-b668-4451-86c6-e205e16deab3",
+        CatalogID: "c1e78882-5e52-4c34-a91e-a88ab3af7faf",
     })
     if err != nil {
         log.Fatal(err)
@@ -1120,7 +1120,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReview(ctx, operations.GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReviewRequest{
-        CatalogID: "fec9578a-6458-4427-ba84-18d162309fb0",
+        CatalogID: "96eed0ac-9db4-4a1c-babc-e6affa5427c5",
     })
     if err != nil {
         log.Fatal(err)
@@ -1172,7 +1172,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecStatus(ctx, operations.GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecStatusRequest{
-        CatalogID: "929921ae-fb9f-458c-8d86-e68e4be05601",
+        CatalogID: "0bfa0230-126d-4965-9d51-cb2d6c612293",
     })
     if err != nil {
         log.Fatal(err)
@@ -1224,7 +1224,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecJSON(ctx, operations.GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecJSONRequest{
-        CatalogID: "3f59da75-7a59-4ecf-af66-ef1caa3383c2",
+        CatalogID: "4022b3ba-9ecc-4767-9469-71ea890137cd",
         DownloadAsJSON: testpango.Bool(false),
     })
     if err != nil {
@@ -1278,18 +1278,18 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.GetAPISecurityRiskFindings(ctx, operations.GetAPISecurityRiskFindingsRequest{
         APISecSource: operations.GetAPISecurityRiskFindingsAPISecSourceExternal,
-        Category: testpango.String("repudiandae"),
+        Category: testpango.String("becquerel"),
         Detected: testpango.Bool(false),
-        Element: testpango.String("nam"),
-        MaxResults: testpango.Float64(2940.76),
-        Name: testpango.String("Colleen Dickinson"),
-        Offset: testpango.Float64(7781.72),
+        Element: testpango.String("green"),
+        MaxResults: testpango.Float64(7763.82),
+        Name: testpango.String("SMTP Southwest"),
+        Offset: testpango.Float64(5947.99),
         Risks: []GetAPISecurityRiskFindingsRisks{
             operations.GetAPISecurityRiskFindingsRisksHigh,
         },
-        SortDir: operations.GetAPISecurityRiskFindingsSortDirDesc.ToPointer(),
-        SortKey: operations.GetAPISecurityRiskFindingsSortKeyName,
-        Source: testpango.String("odit"),
+        SortDir: operations.GetAPISecurityRiskFindingsSortDirAsc.ToPointer(),
+        SortKey: operations.GetAPISecurityRiskFindingsSortKeyRisk,
+        Source: testpango.String("alliance"),
     })
     if err != nil {
         log.Fatal(err)
@@ -1437,7 +1437,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.GetAPISecurityRiskFindingsRiskFindingID(ctx, operations.GetAPISecurityRiskFindingsRiskFindingIDRequest{
-        RiskFindingID: "f64d1db1-f2c4-4310-a61e-96349e1cf9e0",
+        RiskFindingID: "a6f70519-fb6c-4b3a-af18-7a0de05d5783",
     })
     if err != nil {
         log.Fatal(err)
@@ -1489,7 +1489,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.GetAPISecurityCatalogIDDeleteDependencies(ctx, operations.GetAPISecurityCatalogIDDeleteDependenciesRequest{
-        CatalogID: "6e3a4370-00ae-46b6-bc9b-8f759eac55a9",
+        CatalogID: "a8274b04-711c-4a08-ae55-c1ca905077f8",
     })
     if err != nil {
         log.Fatal(err)
@@ -1541,9 +1541,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.GetAPISecurityCatalogIDMethods(ctx, operations.GetAPISecurityCatalogIDMethodsRequest{
-        CatalogID: "741d3113-5296-45bb-8a72-02611435e139",
+        CatalogID: "bc418193-54db-45b9-831c-a3b7fcd92288",
         Tags: []string{
-            "nulla",
+            "purple",
         },
     })
     if err != nil {
@@ -1596,7 +1596,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.GetAPISecurityCatalogIDTags(ctx, operations.GetAPISecurityCatalogIDTagsRequest{
-        CatalogID: "bc2259b1-abda-48c0-b0e1-084cb0672d1a",
+        CatalogID: "3f2d279c-52dc-45ca-8a35-0c4c47a5deff",
     })
     if err != nil {
         log.Fatal(err)
@@ -1648,7 +1648,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.GetDashboardApisecRiskFindings(ctx, operations.GetDashboardApisecRiskFindingsRequest{
-        APISecSource: operations.GetDashboardApisecRiskFindingsAPISecSourceExternal,
+        APISecSource: operations.GetDashboardApisecRiskFindingsAPISecSourceInternal,
     })
     if err != nil {
         log.Fatal(err)
@@ -1700,8 +1700,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.GetDashboardApisecRiskFindingsTrend(ctx, operations.GetDashboardApisecRiskFindingsTrendRequest{
-        APISecSource: operations.GetDashboardApisecRiskFindingsTrendAPISecSourceExternal,
-        NumOfDays: testpango.Int64(473143),
+        APISecSource: operations.GetDashboardApisecRiskFindingsTrendAPISecSourceInternal,
+        NumOfDays: testpango.Int64(738205),
     })
     if err != nil {
         log.Fatal(err)
@@ -1806,7 +1806,7 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.GetDashboardApisecTopRiskyApis(ctx, operations.GetDashboardApisecTopRiskyApisRequest{
         APISecSource: operations.GetDashboardApisecTopRiskyApisAPISecSourceExternal,
-        MaxResults: testpango.Float64(8964.8),
+        MaxResults: testpango.Float64(9119.67),
     })
     if err != nil {
         log.Fatal(err)
@@ -1858,8 +1858,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.GetDashboardApisecTopRiskyFindings(ctx, operations.GetDashboardApisecTopRiskyFindingsRequest{
-        APISecSource: operations.GetDashboardApisecTopRiskyFindingsAPISecSourceExternal,
-        MaxResults: testpango.Float64(5750.78),
+        APISecSource: operations.GetDashboardApisecTopRiskyFindingsAPISecSourceInternal,
+        MaxResults: testpango.Float64(5232.51),
     })
     if err != nil {
         log.Fatal(err)
@@ -1911,11 +1911,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.GetGateways(ctx, operations.GetGatewaysRequest{
-        MaxResults: testpango.Float64(4097.26),
-        Name: testpango.String("Brittany Prosacco"),
+        MaxResults: testpango.Float64(5622.15),
+        Name: testpango.String("Bicycle programming"),
         NoPagination: testpango.Bool(false),
-        Offset: testpango.Float64(8890.6),
-        SortDir: operations.GetGatewaysSortDirDesc.ToPointer(),
+        Offset: testpango.Float64(2121.34),
+        SortDir: operations.GetGatewaysSortDirAsc.ToPointer(),
     })
     if err != nil {
         log.Fatal(err)
@@ -2019,7 +2019,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.GetGatewaysGatewayIDDownloadBundle(ctx, operations.GetGatewaysGatewayIDDownloadBundleRequest{
-        GatewayID: "d02bae0b-e2d7-4822-99e3-ea4b5197f924",
+        GatewayID: "d7df551a-98f0-4f5b-9bdc-d69676cf90f0",
     })
     if err != nil {
         log.Fatal(err)
@@ -2070,7 +2070,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.PostAPISecurityAPI(ctx, shared.APISecurityAPI{
-        Name: "Peggy Swift",
+        Name: "array Metal",
     })
     if err != nil {
         log.Fatal(err)
@@ -2123,9 +2123,9 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.PostAPISecurityInternalCatalogCatalogIDBflaDetection(ctx, operations.PostAPISecurityInternalCatalogCatalogIDBflaDetectionRequest{
         BflaDurationConfiguration: shared.BflaDurationConfiguration{
-            Duration: "optio",
+            Duration: "FTM",
         },
-        CatalogID: "e52b895c-537c-4645-8efb-0b34896c3ca5",
+        CatalogID: "464b0ff0-e6fe-414c-a291-62fc27770a3f",
     })
     if err != nil {
         log.Fatal(err)
@@ -2178,9 +2178,9 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.PostAPISecurityInternalCatalogCatalogIDBflaLearning(ctx, operations.PostAPISecurityInternalCatalogCatalogIDBflaLearningRequest{
         BflaDurationConfiguration: shared.BflaDurationConfiguration{
-            Duration: "est",
+            Duration: "parse",
         },
-        CatalogID: "cfbe2fd5-7075-4779-a917-7deac646ecb5",
+        CatalogID: "bc82f2c9-ea85-4a32-ab52-d888f26e15ab",
     })
     if err != nil {
         log.Fatal(err)
@@ -2232,7 +2232,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.PostAPISecurityInternalCatalogCatalogIDBflaReset(ctx, operations.PostAPISecurityInternalCatalogCatalogIDBflaResetRequest{
-        CatalogID: "73409e3e-b1e5-4a2b-92eb-07f116db9954",
+        CatalogID: "2682814f-440b-4991-ae68-e4a1209728f3",
     })
     if err != nil {
         log.Fatal(err)
@@ -2284,7 +2284,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.PostAPISecurityInternalCatalogCatalogIDResetTraceAnalysis(ctx, operations.PostAPISecurityInternalCatalogCatalogIDResetTraceAnalysisRequest{
-        CatalogID: "5fc95fa8-8970-4e18-9dbb-30fcb33ea055",
+        CatalogID: "3e5cd1f7-bf20-45d2-aba9-73c37afbfaa8",
     })
     if err != nil {
         log.Fatal(err)
@@ -2338,11 +2338,11 @@ func main() {
     res, err := s.APISecurity.PostAPISecurityInternalCatalogCatalogIDStartFuzzing(ctx, operations.PostAPISecurityInternalCatalogCatalogIDStartFuzzingRequest{
         APIFuzzingTestConfiguration: shared.APIFuzzingTestConfiguration{
             Auth: shared.AuthorizationScheme{
-                AuthorizationSchemeType: shared.AuthorizationSchemeAuthorizationSchemeTypeAuthorizationSchemeBearerToken,
+                AuthorizationSchemeType: shared.AuthorizationSchemeAuthorizationSchemeTypeAuthorizationSchemeAPIToken,
             },
-            Depth: shared.TestInputDepthEnumQuick,
+            Depth: shared.TestInputDepthEnumDeep,
         },
-        CatalogID: "97cd44e2-f52d-482d-b513-bb6f48b656bc",
+        CatalogID: "312eede1-be03-42b8-bb19-27700a035c99",
     })
     if err != nil {
         log.Fatal(err)
@@ -2395,10 +2395,10 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.PostAPISecurityInternalCatalogCatalogIDStartTraceAnalysis(ctx, operations.PostAPISecurityInternalCatalogCatalogIDStartTraceAnalysisRequest{
         TraceAnalysisConfiguration: shared.TraceAnalysisConfiguration{
-            Duration: 815200,
+            Duration: 916267,
             TimeUnit: shared.TraceAnalysisConfigurationTimeUnitDays,
         },
-        CatalogID: "35ff2e4b-2753-47a8-8d9e-7319c177d525",
+        CatalogID: "815f76cb-d054-45bf-9982-26857956700d",
     })
     if err != nil {
         log.Fatal(err)
@@ -2450,7 +2450,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.PostAPISecurityInternalCatalogCatalogIDStopFuzzing(ctx, operations.PostAPISecurityInternalCatalogCatalogIDStopFuzzingRequest{
-        CatalogID: "f77b114e-eb52-4ff7-85fc-37814d4c98e0",
+        CatalogID: "c198f457-4849-4dd7-8320-e57f81ab2f63",
     })
     if err != nil {
         log.Fatal(err)
@@ -2502,7 +2502,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.PostAPISecurityInternalCatalogCatalogIDStopTraceAnalysis(ctx, operations.PostAPISecurityInternalCatalogCatalogIDStopTraceAnalysisRequest{
-        CatalogID: "c2bb89eb-75da-4d63-ac60-0503d8bb3118",
+        CatalogID: "a026be33-c18b-419f-9481-083f4a844dc4",
     })
     if err != nil {
         log.Fatal(err)
@@ -2554,7 +2554,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecAbort(ctx, operations.PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecAbortRequest{
-        CatalogID: "0f739ae9-e057-4eb8-89e2-810331f3981d",
+        CatalogID: "c8574da1-a228-4204-81bd-8ea8316c46d5",
     })
     if err != nil {
         log.Fatal(err)
@@ -2607,10 +2607,10 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecLearn(ctx, operations.PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecLearnRequest{
         APIReconstructionRequest: &shared.APIReconstructionRequest{
-            ClusterID: testpango.String("4c700b60-7f3c-493c-b3b9-da3f2ceda7e2"),
-            LearningDuration: testpango.String("consectetur"),
+            ClusterID: testpango.String("4fd7941d-9d44-44e5-b609-cdd9605335d7"),
+            LearningDuration: testpango.String("male Administrator"),
         },
-        CatalogID: "f2257411-faf4-4b75-84e4-72e802857a5b",
+        CatalogID: "1ecf6d42-4fd0-4f29-96f3-b4a797f266b2",
     })
     if err != nil {
         log.Fatal(err)
@@ -2663,22 +2663,22 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReviewApprove(ctx, operations.PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReviewApproveRequest{
         APIReconstructedSpecInput: shared.APIReconstructedSpecInput{
-            OASVersion: shared.OASVersionOaSv20,
+            OASVersion: shared.OASVersionOaSv30,
             ReviewPathItems: []shared.ReviewPathItem{
                 shared.ReviewPathItem{
                     APIEventsPaths: []shared.APIEventPathAndMethods{
                         shared.APIEventPathAndMethods{
                             Methods: []shared.HTTPMethod{
-                                shared.HTTPMethodGet,
+                                shared.HTTPMethodPut,
                             },
-                            Path: testpango.String("modi"),
+                            Path: testpango.String("/home/user/dir"),
                         },
                     },
-                    SuggestedPath: testpango.String("eum"),
+                    SuggestedPath: testpango.String("DNS"),
                 },
             },
         },
-        CatalogID: "3a7d575f-1400-4e76-8ad7-334ec1b781b3",
+        CatalogID: "b3e10c33-f3cc-4f1f-a2c5-b724ecc18aab",
     })
     if err != nil {
         log.Fatal(err)
@@ -2731,10 +2731,10 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.PostAPISecurityOpenAPISpecsCatalogIDStartDiffsDetection(ctx, operations.PostAPISecurityOpenAPISpecsCatalogIDStartDiffsDetectionRequest{
         ActionDuration: shared.ActionDuration{
-            Duration: 418637,
-            TimeUnit: shared.ActionDurationTimeUnitDays,
+            Duration: 672614,
+            TimeUnit: shared.ActionDurationTimeUnitHours,
         },
-        CatalogID: "08088d10-0efa-4da2-80ef-0422eb2164cf",
+        CatalogID: "84658317-7e1f-4e27-b84c-670056ef2d95",
     })
     if err != nil {
         log.Fatal(err)
@@ -2786,7 +2786,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.PostAPISecurityOpenAPISpecsCatalogIDStopDiffsDetection(ctx, operations.PostAPISecurityOpenAPISpecsCatalogIDStopDiffsDetectionRequest{
-        CatalogID: "9ab8366c-723f-4fda-9e06-bee4825c1fc0",
+        CatalogID: "733d2638-f8e8-462b-aa51-67f9d1bf9b92",
     })
     if err != nil {
         log.Fatal(err)
@@ -2837,10 +2837,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.PostGateways(ctx, shared.Gateway{
-        ClusterName: "officiis",
-        Description: testpango.String("architecto"),
-        ID: testpango.String("15c80bff-9185-444e-842d-efcce8f19777"),
-        Name: "Crystal Tremblay",
+        ClusterName: "budgetary",
+        Description: testpango.String("Organized non-volatile migration"),
+        ID: testpango.String("569c810a-5247-4536-a053-f148b119db42"),
+        Name: "Savings distinctio blue",
         Type: shared.GatewayTypeKongInternal,
     })
     if err != nil {
@@ -2895,41 +2895,41 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.PutAPISecurityInternalCatalogCatalogIDBfla(ctx, operations.PutAPISecurityInternalCatalogCatalogIDBflaRequest{
         APIServiceBflaInfo: shared.APIServiceBflaInfo{
-            EndTime: types.MustTimeFromString("2022-11-02T06:07:32.455Z"),
+            EndTime: types.MustTimeFromString("2021-04-10T03:52:46.500Z"),
             Status: shared.APIServiceBflaInfoStatusInProgressLearning,
             Tags: []shared.APIServiceBflaTagInfo{
                 shared.APIServiceBflaTagInfo{
                     IsLegitimate: testpango.Bool(false),
-                    Name: "Ms. Verna Gislason",
+                    Name: "Rhodium Rubber yearly",
                     Paths: []shared.APIServiceBflaPathInfo{
                         shared.APIServiceBflaPathInfo{
                             Clients: []shared.APIServiceBflaClientInfo{
                                 shared.APIServiceBflaClientInfo{
                                     External: testpango.Bool(false),
-                                    Identifier: testpango.String("05e3d48f-daf3-413a-9f5f-d94259c0b36f"),
+                                    Identifier: testpango.String("3b3fcaad-d442-4012-ad14-59f8769c2011"),
                                     IsLegitimate: testpango.Bool(false),
-                                    LastObserved: types.MustTimeFromString("2022-09-02T09:20:25.526Z"),
-                                    LastStatusCode: testpango.Int64(893773),
-                                    Name: "Kirk Goyette",
-                                    Namespace: testpango.String("adipisci"),
+                                    LastObserved: types.MustTimeFromString("2021-02-25T06:09:36.065Z"),
+                                    LastStatusCode: testpango.Int64(508539),
+                                    Name: "Carolina",
+                                    Namespace: testpango.String("Account"),
                                     Principles: []shared.APIServiceBflaPrincipleInfo{
                                         shared.APIServiceBflaPrincipleInfo{
-                                            IP: "libero",
-                                            Name: "Lorraine Jacobson Sr.",
-                                            PrincipleType: "hic",
+                                            IP: "56.91.79.204",
+                                            Name: "Hyundai punctually",
+                                            PrincipleType: "Granite Rustic",
                                         },
                                     },
                                 },
                             },
                             IsLegitimate: testpango.Bool(false),
-                            Method: shared.HTTPMethodDelete,
-                            Path: "quisquam",
+                            Method: shared.HTTPMethodTrace,
+                            Path: "/usr/local/bin",
                         },
                     },
                 },
             },
         },
-        CatalogID: "37a51262-4383-45bb-805a-23a45cefc5fd",
+        CatalogID: "ac789245-d57c-4c22-8dbd-c1e1df3ce330",
     })
     if err != nil {
         log.Fatal(err)
@@ -2981,8 +2981,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.PutAPISecurityOpenAPISpecsCatalogID(ctx, operations.PutAPISecurityOpenAPISpecsCatalogIDRequest{
-        RequestBody: "officiis",
-        CatalogID: "10a0ce21-69e5-4100-99c6-dc5e34762799",
+        RequestBody: "rerum",
+        CatalogID: "6c1e7d20-9d8c-4f8d-a690-7b8b2d3e446c",
     })
     if err != nil {
         log.Fatal(err)
@@ -3035,13 +3035,13 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.PutGatewaysGatewayID(ctx, operations.PutGatewaysGatewayIDRequest{
         Gateway: shared.Gateway{
-            ClusterName: "cum",
-            Description: testpango.String("doloribus"),
-            ID: testpango.String("bbe6949f-b2bb-44ec-ae6c-3d5db3adebd5"),
-            Name: "Pablo Veum",
+            ClusterName: "Executive Minivan sky",
+            Description: testpango.String("Upgradable bandwidth-monitored contingency"),
+            ID: testpango.String("69f02ce6-c757-479c-9c8e-935111463ea3"),
+            Name: "Directives pink Central",
             Type: shared.GatewayTypeF5BigIP,
         },
-        GatewayID: "506a8aa9-4c02-4644-8f5e-9d9a4578adc1",
+        GatewayID: "95ead58c-f0fb-4b52-ac2b-9a404d8ad2eb",
     })
     if err != nil {
         log.Fatal(err)

@@ -40,7 +40,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurityPolicies.DeleteAPISecurityPolicyPolicyID(ctx, operations.DeleteAPISecurityPolicyPolicyIDRequest{
-        PolicyID: "cb739205-9293-496f-aa75-96eb10faaa23",
+        PolicyID: "04ae1a0e-dcb7-4d2b-b7a6-f7ca105f8c92",
     })
     if err != nil {
         log.Fatal(err)
@@ -140,7 +140,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurityPolicies.GetAPISecurityPolicyPolicyIDDeleteDependencies(ctx, operations.GetAPISecurityPolicyPolicyIDDeleteDependenciesRequest{
-        PolicyID: "52c59559-07af-4f1a-ba2f-a9467739251a",
+        PolicyID: "d3b9d79d-ed4f-4420-a583-071cdb02c3fd",
     })
     if err != nil {
         log.Fatal(err)
@@ -194,16 +194,16 @@ func main() {
         CategoryConditions: &shared.APISecurityPolicyCategoryConditions{
             Conditions: []shared.APISecurityPolicyCategoryCondition{
                 shared.APISecurityPolicyCategoryCondition{
-                    Category: "animi",
-                    HighestAcceptedSeverity: shared.APISecurityPolicyRiskSeverityLow,
+                    Category: "before Borders",
+                    HighestAcceptedSeverity: shared.APISecurityPolicyRiskSeverityHigh,
                 },
             },
         },
-        Description: testpango.String("odit"),
+        Description: testpango.String("Front-line fault-tolerant orchestration"),
         GlobalCondition: &shared.APISecurityPolicyGlobalCondition{
-            HighestAcceptedSeverity: shared.APISecurityPolicyRiskSeverityHigh,
+            HighestAcceptedSeverity: shared.APISecurityPolicyRiskSeverityCritical,
         },
-        Name: "Mandy Hills",
+        Name: "copying",
     })
     if err != nil {
         log.Fatal(err)
@@ -259,18 +259,18 @@ func main() {
             CategoryConditions: &shared.APISecurityPolicyCategoryConditions{
                 Conditions: []shared.APISecurityPolicyCategoryCondition{
                     shared.APISecurityPolicyCategoryCondition{
-                        Category: "aut",
-                        HighestAcceptedSeverity: shared.APISecurityPolicyRiskSeverityNoRisk,
+                        Category: "Fantastic mole",
+                        HighestAcceptedSeverity: shared.APISecurityPolicyRiskSeverityHigh,
                     },
                 },
             },
-            Description: testpango.String("error"),
+            Description: testpango.String("Up-sized well-modulated leverage"),
             GlobalCondition: &shared.APISecurityPolicyGlobalCondition{
-                HighestAcceptedSeverity: shared.APISecurityPolicyRiskSeverityCritical,
+                HighestAcceptedSeverity: shared.APISecurityPolicyRiskSeverityNoRisk,
             },
-            Name: "Ryan Witting",
+            Name: "Small Northwest",
         },
-        PolicyID: "78f097b0-074f-4154-b1b5-e6e13b99d488",
+        PolicyID: "448558c2-807a-430f-90b4-3b138ce775c5",
     })
     if err != nil {
         log.Fatal(err)

@@ -80,39 +80,39 @@ func main() {
 
     ctx := context.Background()
     res, err := s.ServerlessPolicies.PutServerlessPolicy(ctx, shared.ServerlessPolicy{
-        DefaultRule: shared.ServerlessDefaultRuleBlockAll,
+        DefaultRule: shared.ServerlessDefaultRuleDetectAll,
         UnidentifiedServerlessRule: shared.UnidentifiedServerlessRule{
-            Action: shared.UnidentifiedServerlessRuleActionBlock,
-            Name: testpango.String("Wayne Romaguera"),
+            Action: shared.UnidentifiedServerlessRuleActionDetect,
+            Name: testpango.String("infrastructures solutions"),
         },
         UserRules: []shared.ServerlessRule{
             shared.ServerlessRule{
-                Action: shared.ServerlessRuleActionAllow,
-                GroupName: testpango.String("sunt"),
-                ID: testpango.String("2cb512c8-7824-40bf-948f-88f8f1bf0bc8"),
-                Name: "Willie Wunsch III",
+                Action: shared.ServerlessRuleActionDetect,
+                GroupName: testpango.String("Dodge"),
+                ID: testpango.String("6eaf47ac-061b-4704-854c-19159eac10ed"),
+                Name: "Convertible Shilling",
                 Rule: shared.ServerlessRuleType{
                     ServerlessFunctionValidation: &shared.ServerlessFunctionValidation{
-                        DataAccessRisk: shared.ServerlessDataAccessRiskMedium.ToPointer(),
-                        FunctionPermissionRisk: shared.ServerlessPolicyRiskLow.ToPointer(),
+                        DataAccessRisk: shared.ServerlessDataAccessRiskLow.ToPointer(),
+                        FunctionPermissionRisk: shared.ServerlessPolicyRiskHigh.ToPointer(),
                         IsUnusedFunction: testpango.Bool(false),
-                        PubliclyAccessibleRisk: shared.ServerlessPubliclyAccessibleRiskMedium.ToPointer(),
-                        Risk: shared.ServerlessFunctionRiskLevelMedium.ToPointer(),
+                        PubliclyAccessibleRisk: shared.ServerlessPubliclyAccessibleRiskLow.ToPointer(),
+                        Risk: shared.ServerlessFunctionRiskLevelLow.ToPointer(),
                         SecretsRisk: shared.ServerlessSecretsRiskNoKnownRisk.ToPointer(),
-                        Vulnerability: shared.VulnerabilitySeverityUnknown.ToPointer(),
+                        Vulnerability: shared.VulnerabilitySeverityLow.ToPointer(),
                     },
-                    ServerlessRuleType: shared.ServerlessRuleTypeServerlessRuleTypeFunctionArnServerlessRuleType,
+                    ServerlessRuleType: shared.ServerlessRuleTypeServerlessRuleTypeFunctionNameServerlessRuleType,
                 },
-                RuleOrigin: shared.ServerlessRuleOriginUser.ToPointer(),
+                RuleOrigin: shared.ServerlessRuleOriginSystem.ToPointer(),
                 Scope: []shared.ServerlessRuleScope{
                     shared.ServerlessRuleScope{
-                        CloudAccount: "aperiam",
+                        CloudAccount: "Latin West",
                         Regions: []string{
-                            "laudantium",
+                            "Configuration",
                         },
                     },
                 },
-                Status: shared.ServerlessRuleStatusEnabled,
+                Status: shared.ServerlessRuleStatusDisabled,
             },
         },
     })

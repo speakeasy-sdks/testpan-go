@@ -54,7 +54,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Settings.DeleteSettingsIntegrationsCaID(ctx, operations.DeleteSettingsIntegrationsCaIDRequest{
-        ID: "090f6706-673f-43a6-81c5-768dce742409",
+        ID: "2b23989d-8ad5-450f-8a76-f44a753018c5",
     })
     if err != nil {
         log.Fatal(err)
@@ -106,7 +106,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Settings.DeleteSettingsIntegrationsEventForwardingEventForwardingID(ctx, operations.DeleteSettingsIntegrationsEventForwardingEventForwardingIDRequest{
-        EventForwardingID: "a215e086-0148-49a5-b63e-3af3dd9dda33",
+        EventForwardingID: "a54e5100-941b-4501-ab74-aa7fd2e0ccc3",
     })
     if err != nil {
         log.Fatal(err)
@@ -301,7 +301,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Settings.PostSeccompProfilesValidateData(ctx, shared.SeccompProfileData{
-        Data: testpango.String("{"foo":"lqH8;P5w8`","bar":66051,"bike":"Ut:m{4Jt=A","a":"QY?@l=+4v(","b":62571,"name":50569,"prop":23484}"),
+        Data: testpango.String("{cycle: 29272, settlement: null, collaboration: \"grey yearly\"}"),
     })
     if err != nil {
         log.Fatal(err)
@@ -400,10 +400,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Settings.PostSettingsIntegrationsCa(ctx, shared.CaIntegrationRequestInput{
-        Certificate: "dicta",
-        IssuerName: "ipsa",
-        IssuerNamespace: testpango.String("occaecati"),
-        Name: "Charlene Ritchie",
+        Certificate: "prickly",
+        IssuerName: "Loan whereas green",
+        IssuerNamespace: testpango.String("Loan wield cyan"),
+        Name: "Northwest Wagon Soft",
     })
     if err != nil {
         log.Fatal(err)
@@ -454,12 +454,12 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Settings.PostSettingsIntegrationsEventForwarding(ctx, shared.EventsForwardingDetailsInput{
-        EventsForwardingDetailsType: shared.EventsForwardingDetailsTypeEnumSumoLogicEventsForwardingDetails,
+        EventsForwardingDetailsType: shared.EventsForwardingDetailsTypeEnumTeamsVulnerabilityEventsForwardingDetails,
         EventsToForward: []shared.EventsToForward{
-            shared.EventsToForwardAlert,
+            shared.EventsToForwardAttackPath,
         },
-        Name: "Charles McGlynn",
-        URL: testpango.String("https://knowledgeable-death.biz"),
+        Name: "Soft dull alliance",
+        URL: testpango.String("https://truthful-campaigning.name"),
     })
     if err != nil {
         log.Fatal(err)
@@ -510,7 +510,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Settings.PostSettingsIntegrationsOpsgenieTestIntegration(ctx, shared.TestOpsgenieConnectionRequest{
-        Token: "a",
+        Token: "pish invoice",
     })
     if err != nil {
         log.Fatal(err)
@@ -561,7 +561,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Settings.PostSettingsIntegrationsSecurexTestIntegration(ctx, shared.TestSecureXIntegrationRequest{
-        URL: "consequatur",
+        URL: "https://angelic-mortgage.name",
     })
     if err != nil {
         log.Fatal(err)
@@ -612,7 +612,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Settings.PostSettingsIntegrationsSlackTestIntegration(ctx, shared.TestSlackIntegrationRequest{
-        URL: "consequuntur",
+        URL: "https://every-vibration.name",
     })
     if err != nil {
         log.Fatal(err)
@@ -664,9 +664,9 @@ func main() {
     ctx := context.Background()
     res, err := s.Settings.PostSettingsIntegrationsSplunkTestIntegration(ctx, shared.TestSplunkConnectionRequest{
         IsCloud: testpango.Bool(false),
-        Port: testpango.Int64(254050),
-        Token: "numquam",
-        URL: "excepturi",
+        Port: testpango.Int64(353653),
+        Token: "orange XSS meter",
+        URL: "http://legal-pea.com",
     })
     if err != nil {
         log.Fatal(err)
@@ -717,7 +717,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Settings.PostSettingsIntegrationsSumoLogicTestIntegration(ctx, shared.TestSumoLogicIntegrationRequest{
-        URL: "pariatur",
+        URL: "http://sudden-concern.name",
     })
     if err != nil {
         log.Fatal(err)
@@ -768,7 +768,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Settings.PostSettingsIntegrationsTeamsTestIntegration(ctx, shared.TestTeamsIntegrationRequest{
-        URL: "voluptatum",
+        URL: "http://faraway-rayon.info",
     })
     if err != nil {
         log.Fatal(err)
@@ -819,7 +819,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Settings.PostSettingsIntegrationsWebexTestIntegration(ctx, shared.TestWebexIntegrationRequest{
-        URL: "vel",
+        URL: "http://charming-gadget.info",
     })
     if err != nil {
         log.Fatal(err)
@@ -924,12 +924,12 @@ func main() {
     ctx := context.Background()
     res, err := s.Settings.PutSettingsIntegrationsCaID(ctx, operations.PutSettingsIntegrationsCaIDRequest{
         CaIntegrationRequestInput: shared.CaIntegrationRequestInput{
-            Certificate: "delectus",
-            IssuerName: "modi",
-            IssuerNamespace: testpango.String("expedita"),
-            Name: "Eugene Bechtelar",
+            Certificate: "Berkshire",
+            IssuerName: "Bicycle",
+            IssuerNamespace: testpango.String("Central UDP recontextualize"),
+            Name: "Peru Market",
         },
-        ID: "5d911cbf-e749-4caf-85a2-7f69e2c9e6d1",
+        ID: "d2fdcaea-e550-46a1-9b8c-391af00a780a",
     })
     if err != nil {
         log.Fatal(err)
@@ -982,18 +982,18 @@ func main() {
     ctx := context.Background()
     res, err := s.Settings.PutSettingsIntegrationsEventForwardingEventForwardingID(ctx, operations.PutSettingsIntegrationsEventForwardingEventForwardingIDRequest{
         SplunkEventsForwardingDetailsInput: shared.SplunkEventsForwardingDetailsInput{
-            EventsForwardingDetailsType: shared.EventsForwardingDetailsTypeEnumSplunkEventsForwardingDetails,
+            EventsForwardingDetailsType: shared.EventsForwardingDetailsTypeEnumWebexEventsForwardingDetails,
             EventsToForward: []shared.EventsToForward{
-                shared.EventsToForwardAttackSurfaceDiscovery,
+                shared.EventsToForwardNotification,
             },
             IsCloud: testpango.Bool(false),
-            Name: "Gustavo Predovic",
-            Port: testpango.Int64(834457),
-            SourceName: testpango.String("tempora"),
-            Token: "quisquam",
-            URL: testpango.String("http://shameful-arch.biz"),
+            Name: "Genderqueer deploy",
+            Port: testpango.Int64(212010),
+            SourceName: testpango.String("proposal Yemen Audi"),
+            Token: "RSS",
+            URL: testpango.String("https://crafty-spec.net"),
         },
-        EventForwardingID: "108d9c33-7473-4082-b94f-2ab1fd5671e9",
+        EventForwardingID: "1b408bce-49d2-438c-ae86-ac5f2202c79c",
     })
     if err != nil {
         log.Fatal(err)

@@ -37,7 +37,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Gateways.DeleteGatewaysGatewayID(ctx, operations.DeleteGatewaysGatewayIDRequest{
-        GatewayID: "4257b992-c8db-4da6-a61e-fa2198258fd0",
+        GatewayID: "0059ee9e-2eb4-40ca-97cc-9e2e4879b4b7",
     })
     if err != nil {
         log.Fatal(err)
@@ -89,11 +89,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Gateways.GetGateways(ctx, operations.GetGatewaysRequest{
-        MaxResults: testpango.Float64(6302.86),
-        Name: testpango.String("Ramiro Reilly"),
+        MaxResults: testpango.Float64(5622.15),
+        Name: testpango.String("Bicycle programming"),
         NoPagination: testpango.Bool(false),
-        Offset: testpango.Float64(4554),
-        SortDir: operations.GetGatewaysSortDirDesc.ToPointer(),
+        Offset: testpango.Float64(2121.34),
+        SortDir: operations.GetGatewaysSortDirAsc.ToPointer(),
     })
     if err != nil {
         log.Fatal(err)
@@ -145,7 +145,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Gateways.GetGatewaysClusters(ctx, operations.GetGatewaysClustersRequest{
-        GatewayType: operations.GetGatewaysClustersGatewayTypeKongInternal,
+        GatewayType: operations.GetGatewaysClustersGatewayTypeTykInternal,
     })
     if err != nil {
         log.Fatal(err)
@@ -197,7 +197,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Gateways.GetGatewaysGatewayIDDownloadBundle(ctx, operations.GetGatewaysGatewayIDDownloadBundleRequest{
-        GatewayID: "d3ef0496-40d6-4a18-b1c8-7adf596fdf1a",
+        GatewayID: "d7df551a-98f0-4f5b-9bdc-d69676cf90f0",
     })
     if err != nil {
         log.Fatal(err)
@@ -248,11 +248,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Gateways.PostGateways(ctx, shared.Gateway{
-        ClusterName: "possimus",
-        Description: testpango.String("praesentium"),
-        ID: testpango.String("37ae80c1-c19c-495b-a998-678fa3f69699"),
-        Name: "Kristine Wilderman",
-        Type: shared.GatewayTypeTykInternal,
+        ClusterName: "budgetary",
+        Description: testpango.String("Organized non-volatile migration"),
+        ID: testpango.String("569c810a-5247-4536-a053-f148b119db42"),
+        Name: "Savings distinctio blue",
+        Type: shared.GatewayTypeKongInternal,
     })
     if err != nil {
         log.Fatal(err)
@@ -305,13 +305,13 @@ func main() {
     ctx := context.Background()
     res, err := s.Gateways.PutGatewaysGatewayID(ctx, operations.PutGatewaysGatewayIDRequest{
         Gateway: shared.Gateway{
-            ClusterName: "quod",
-            Description: testpango.String("repudiandae"),
-            ID: testpango.String("03614448-c797-47a0-af2f-536028efeef9"),
-            Name: "Alicia Bernier",
+            ClusterName: "Executive Minivan sky",
+            Description: testpango.String("Upgradable bandwidth-monitored contingency"),
+            ID: testpango.String("69f02ce6-c757-479c-9c8e-935111463ea3"),
+            Name: "Directives pink Central",
             Type: shared.GatewayTypeF5BigIP,
         },
-        GatewayID: "d7e253f4-c157-4dea-a717-0f445accf667",
+        GatewayID: "95ead58c-f0fb-4b52-ac2b-9a404d8ad2eb",
     })
     if err != nil {
         log.Fatal(err)
