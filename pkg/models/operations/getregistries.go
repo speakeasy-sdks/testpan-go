@@ -6,7 +6,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
-	"github.com/speakeasy-sdks/testpan-go/pkg/types"
 	"github.com/speakeasy-sdks/testpan-go/pkg/utils"
 	"net/http"
 )
@@ -39,11 +38,36 @@ func (e *GetRegistriesSortDir) UnmarshalJSON(data []byte) error {
 	}
 }
 
+// GetRegistriesSortKey - sort key
+type GetRegistriesSortKey string
+
+const (
+	GetRegistriesSortKeyURL GetRegistriesSortKey = "url"
+)
+
+func (e GetRegistriesSortKey) ToPointer() *GetRegistriesSortKey {
+	return &e
+}
+
+func (e *GetRegistriesSortKey) UnmarshalJSON(data []byte) error {
+	var v string
+	if err := json.Unmarshal(data, &v); err != nil {
+		return err
+	}
+	switch v {
+	case "url":
+		*e = GetRegistriesSortKey(v)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for GetRegistriesSortKey: %v", v)
+	}
+}
+
 type GetRegistriesRequest struct {
 	// sorting direction
 	SortDir *GetRegistriesSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
 	// sort key
-	sortKey *string `const:"url" queryParam:"style=form,explode=true,name=sortKey"`
+	SortKey *GetRegistriesSortKey `default:"url" queryParam:"style=form,explode=true,name=sortKey"`
 }
 
 func (g GetRegistriesRequest) MarshalJSON() ([]byte, error) {
@@ -64,8 +88,11 @@ func (o *GetRegistriesRequest) GetSortDir() *GetRegistriesSortDir {
 	return o.SortDir
 }
 
-func (o *GetRegistriesRequest) GetSortKey() *string {
-	return types.String("url")
+func (o *GetRegistriesRequest) GetSortKey() *GetRegistriesSortKey {
+	if o == nil {
+		return nil
+	}
+	return o.SortKey
 }
 
 type GetRegistriesResponse struct {

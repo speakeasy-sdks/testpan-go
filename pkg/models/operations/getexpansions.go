@@ -38,6 +38,31 @@ func (e *GetExpansionsSortDir) UnmarshalJSON(data []byte) error {
 	}
 }
 
+// GetExpansionsSortKey - sort key
+type GetExpansionsSortKey string
+
+const (
+	GetExpansionsSortKeyName GetExpansionsSortKey = "name"
+)
+
+func (e GetExpansionsSortKey) ToPointer() *GetExpansionsSortKey {
+	return &e
+}
+
+func (e *GetExpansionsSortKey) UnmarshalJSON(data []byte) error {
+	var v string
+	if err := json.Unmarshal(data, &v); err != nil {
+		return err
+	}
+	switch v {
+	case "name":
+		*e = GetExpansionsSortKey(v)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for GetExpansionsSortKey: %v", v)
+	}
+}
+
 type GetExpansionsRequest struct {
 	// Filter expansions by cluster name
 	ClusterName *string `queryParam:"style=form,explode=true,name=clusterName"`
@@ -60,7 +85,7 @@ type GetExpansionsRequest struct {
 	// sorting direction
 	SortDir *GetExpansionsSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
 	// sort key
-	sortKey string `const:"name" queryParam:"style=form,explode=true,name=sortKey"`
+	SortKey GetExpansionsSortKey `queryParam:"style=form,explode=true,name=sortKey"`
 }
 
 func (g GetExpansionsRequest) MarshalJSON() ([]byte, error) {
@@ -144,8 +169,11 @@ func (o *GetExpansionsRequest) GetSortDir() *GetExpansionsSortDir {
 	return o.SortDir
 }
 
-func (o *GetExpansionsRequest) GetSortKey() string {
-	return "name"
+func (o *GetExpansionsRequest) GetSortKey() GetExpansionsSortKey {
+	if o == nil {
+		return GetExpansionsSortKey("")
+	}
+	return o.SortKey
 }
 
 type GetExpansionsResponse struct {

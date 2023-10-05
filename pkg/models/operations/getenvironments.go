@@ -6,7 +6,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
-	"github.com/speakeasy-sdks/testpan-go/pkg/types"
 	"github.com/speakeasy-sdks/testpan-go/pkg/utils"
 	"net/http"
 )
@@ -39,6 +38,31 @@ func (e *GetEnvironmentsSortDir) UnmarshalJSON(data []byte) error {
 	}
 }
 
+// GetEnvironmentsSortKey - Environment sort key
+type GetEnvironmentsSortKey string
+
+const (
+	GetEnvironmentsSortKeyName GetEnvironmentsSortKey = "name"
+)
+
+func (e GetEnvironmentsSortKey) ToPointer() *GetEnvironmentsSortKey {
+	return &e
+}
+
+func (e *GetEnvironmentsSortKey) UnmarshalJSON(data []byte) error {
+	var v string
+	if err := json.Unmarshal(data, &v); err != nil {
+		return err
+	}
+	switch v {
+	case "name":
+		*e = GetEnvironmentsSortKey(v)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for GetEnvironmentsSortKey: %v", v)
+	}
+}
+
 type GetEnvironmentsRequest struct {
 	// When true, the API will return an xlsx file, and pagination will be ignored
 	DownloadAsXlsx *bool `queryParam:"style=form,explode=true,name=downloadAsXlsx"`
@@ -49,7 +73,7 @@ type GetEnvironmentsRequest struct {
 	// sorting direction
 	SortDir *GetEnvironmentsSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
 	// Environment sort key
-	sortKey *string `const:"name" queryParam:"style=form,explode=true,name=sortKey"`
+	SortKey *GetEnvironmentsSortKey `queryParam:"style=form,explode=true,name=sortKey"`
 }
 
 func (g GetEnvironmentsRequest) MarshalJSON() ([]byte, error) {
@@ -91,8 +115,11 @@ func (o *GetEnvironmentsRequest) GetSortDir() *GetEnvironmentsSortDir {
 	return o.SortDir
 }
 
-func (o *GetEnvironmentsRequest) GetSortKey() *string {
-	return types.String("name")
+func (o *GetEnvironmentsRequest) GetSortKey() *GetEnvironmentsSortKey {
+	if o == nil {
+		return nil
+	}
+	return o.SortKey
 }
 
 type GetEnvironmentsResponse struct {

@@ -3,25 +3,41 @@
 package shared
 
 import (
-	"github.com/speakeasy-sdks/testpan-go/pkg/types"
-	"github.com/speakeasy-sdks/testpan-go/pkg/utils"
+	"encoding/json"
+	"fmt"
 )
 
-type ChallengeRequest struct {
-	challengeName *string `const:"GOOGLE_LOGIN" json:"ChallengeName,omitempty"`
+type ChallengeRequestChallengeName string
+
+const (
+	ChallengeRequestChallengeNameGoogleLogin ChallengeRequestChallengeName = "GOOGLE_LOGIN"
+)
+
+func (e ChallengeRequestChallengeName) ToPointer() *ChallengeRequestChallengeName {
+	return &e
 }
 
-func (c ChallengeRequest) MarshalJSON() ([]byte, error) {
-	return utils.MarshalJSON(c, "", false)
-}
-
-func (c *ChallengeRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, false); err != nil {
+func (e *ChallengeRequestChallengeName) UnmarshalJSON(data []byte) error {
+	var v string
+	if err := json.Unmarshal(data, &v); err != nil {
 		return err
 	}
-	return nil
+	switch v {
+	case "GOOGLE_LOGIN":
+		*e = ChallengeRequestChallengeName(v)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for ChallengeRequestChallengeName: %v", v)
+	}
 }
 
-func (o *ChallengeRequest) GetChallengeName() *string {
-	return types.String("GOOGLE_LOGIN")
+type ChallengeRequest struct {
+	ChallengeName *ChallengeRequestChallengeName `json:"ChallengeName,omitempty"`
+}
+
+func (o *ChallengeRequest) GetChallengeName() *ChallengeRequestChallengeName {
+	if o == nil {
+		return nil
+	}
+	return o.ChallengeName
 }

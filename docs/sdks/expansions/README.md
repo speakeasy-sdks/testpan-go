@@ -102,7 +102,7 @@ func main() {
         NoPagination: testpango.Bool(false),
         Offset: testpango.Float64(4144.14),
         SortDir: operations.GetExpansionsSortDirDesc.ToPointer(),
-        SortKey: "virtual",
+        SortKey: operations.GetExpansionsSortKeyName,
     })
     if err != nil {
         log.Fatal(err)

@@ -93,8 +93,8 @@ func main() {
         NoPagination: testpango.Bool(false),
         Offset: testpango.Float64(7366.65),
         SortDir: operations.GetTokensSortDirAsc.ToPointer(),
-        SortKey: testpango.String("what"),
-        TokenName: testpango.String("policy Rustic"),
+        SortKey: operations.GetTokensSortKeyExpirationDate.ToPointer(),
+        TokenName: testpango.String("what"),
     })
     if err != nil {
         log.Fatal(err)

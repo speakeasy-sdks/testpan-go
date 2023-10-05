@@ -38,6 +38,31 @@ func (e *GetRiskAssessmentImageIDVulnerabilitiesSortDir) UnmarshalJSON(data []by
 	}
 }
 
+// GetRiskAssessmentImageIDVulnerabilitiesSortKey - risk assessment image sort key.
+type GetRiskAssessmentImageIDVulnerabilitiesSortKey string
+
+const (
+	GetRiskAssessmentImageIDVulnerabilitiesSortKeySeverity GetRiskAssessmentImageIDVulnerabilitiesSortKey = "SEVERITY"
+)
+
+func (e GetRiskAssessmentImageIDVulnerabilitiesSortKey) ToPointer() *GetRiskAssessmentImageIDVulnerabilitiesSortKey {
+	return &e
+}
+
+func (e *GetRiskAssessmentImageIDVulnerabilitiesSortKey) UnmarshalJSON(data []byte) error {
+	var v string
+	if err := json.Unmarshal(data, &v); err != nil {
+		return err
+	}
+	switch v {
+	case "SEVERITY":
+		*e = GetRiskAssessmentImageIDVulnerabilitiesSortKey(v)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for GetRiskAssessmentImageIDVulnerabilitiesSortKey: %v", v)
+	}
+}
+
 type GetRiskAssessmentImageIDVulnerabilitiesRequest struct {
 	// The id of the risk assessment image
 	ImageID string `pathParam:"style=simple,explode=false,name=imageId"`
@@ -48,7 +73,7 @@ type GetRiskAssessmentImageIDVulnerabilitiesRequest struct {
 	// sorting direction
 	SortDir *GetRiskAssessmentImageIDVulnerabilitiesSortDir `default:"DESC" queryParam:"style=form,explode=true,name=sortDir"`
 	// risk assessment image sort key.
-	sortKey string `const:"SEVERITY" queryParam:"style=form,explode=true,name=sortKey"`
+	SortKey GetRiskAssessmentImageIDVulnerabilitiesSortKey `default:"SEVERITY" queryParam:"style=form,explode=true,name=sortKey"`
 }
 
 func (g GetRiskAssessmentImageIDVulnerabilitiesRequest) MarshalJSON() ([]byte, error) {
@@ -90,8 +115,11 @@ func (o *GetRiskAssessmentImageIDVulnerabilitiesRequest) GetSortDir() *GetRiskAs
 	return o.SortDir
 }
 
-func (o *GetRiskAssessmentImageIDVulnerabilitiesRequest) GetSortKey() string {
-	return "SEVERITY"
+func (o *GetRiskAssessmentImageIDVulnerabilitiesRequest) GetSortKey() GetRiskAssessmentImageIDVulnerabilitiesSortKey {
+	if o == nil {
+		return GetRiskAssessmentImageIDVulnerabilitiesSortKey("")
+	}
+	return o.SortKey
 }
 
 type GetRiskAssessmentImageIDVulnerabilitiesResponse struct {

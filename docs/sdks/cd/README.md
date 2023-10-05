@@ -210,7 +210,7 @@ func main() {
     res, err := s.Cd.GetCdResourceID(ctx, operations.GetCdResourceIDRequest{
         ResourceID: "dbdc0e78-4707-4528-b885-f251b95127b5",
         SortDir: operations.GetCdResourceIDSortDirAsc.ToPointer(),
-        SortKey: testpango.String("apropos doom"),
+        SortKey: operations.GetCdResourceIDSortKeyRisk.ToPointer(),
     })
     if err != nil {
         log.Fatal(err)

@@ -94,7 +94,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Registries.GetRegistries(ctx, operations.GetRegistriesRequest{
         SortDir: operations.GetRegistriesSortDirAsc.ToPointer(),
-        SortKey: testpango.String("Southwest OCR"),
+        SortKey: operations.GetRegistriesSortKeyURL.ToPointer(),
     })
     if err != nil {
         log.Fatal(err)

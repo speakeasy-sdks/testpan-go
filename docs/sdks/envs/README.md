@@ -97,7 +97,7 @@ func main() {
         IncludeSystemEnvs: testpango.Bool(false),
         Name: testpango.String("Pangender"),
         SortDir: operations.GetEnvironmentsSortDirAsc.ToPointer(),
-        SortKey: testpango.String("Waltham if"),
+        SortKey: operations.GetEnvironmentsSortKeyName.ToPointer(),
     })
     if err != nil {
         log.Fatal(err)

@@ -6,7 +6,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
-	"github.com/speakeasy-sdks/testpan-go/pkg/types"
 	"github.com/speakeasy-sdks/testpan-go/pkg/utils"
 	"net/http"
 )
@@ -39,6 +38,31 @@ func (e *GetRiskAssessmentPermissionsClusterIDOwnerIDSortDir) UnmarshalJSON(data
 	}
 }
 
+// GetRiskAssessmentPermissionsClusterIDOwnerIDSortKey - sort key
+type GetRiskAssessmentPermissionsClusterIDOwnerIDSortKey string
+
+const (
+	GetRiskAssessmentPermissionsClusterIDOwnerIDSortKeyRisk GetRiskAssessmentPermissionsClusterIDOwnerIDSortKey = "risk"
+)
+
+func (e GetRiskAssessmentPermissionsClusterIDOwnerIDSortKey) ToPointer() *GetRiskAssessmentPermissionsClusterIDOwnerIDSortKey {
+	return &e
+}
+
+func (e *GetRiskAssessmentPermissionsClusterIDOwnerIDSortKey) UnmarshalJSON(data []byte) error {
+	var v string
+	if err := json.Unmarshal(data, &v); err != nil {
+		return err
+	}
+	switch v {
+	case "risk":
+		*e = GetRiskAssessmentPermissionsClusterIDOwnerIDSortKey(v)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for GetRiskAssessmentPermissionsClusterIDOwnerIDSortKey: %v", v)
+	}
+}
+
 type GetRiskAssessmentPermissionsClusterIDOwnerIDRequest struct {
 	ClusterID string `pathParam:"style=simple,explode=false,name=clusterId"`
 	// Return approved / not approved entries
@@ -47,7 +71,7 @@ type GetRiskAssessmentPermissionsClusterIDOwnerIDRequest struct {
 	// sorting direction
 	SortDir *GetRiskAssessmentPermissionsClusterIDOwnerIDSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
 	// sort key
-	sortKey *string `const:"risk" queryParam:"style=form,explode=true,name=sortKey"`
+	SortKey *GetRiskAssessmentPermissionsClusterIDOwnerIDSortKey `default:"risk" queryParam:"style=form,explode=true,name=sortKey"`
 }
 
 func (g GetRiskAssessmentPermissionsClusterIDOwnerIDRequest) MarshalJSON() ([]byte, error) {
@@ -89,8 +113,11 @@ func (o *GetRiskAssessmentPermissionsClusterIDOwnerIDRequest) GetSortDir() *GetR
 	return o.SortDir
 }
 
-func (o *GetRiskAssessmentPermissionsClusterIDOwnerIDRequest) GetSortKey() *string {
-	return types.String("risk")
+func (o *GetRiskAssessmentPermissionsClusterIDOwnerIDRequest) GetSortKey() *GetRiskAssessmentPermissionsClusterIDOwnerIDSortKey {
+	if o == nil {
+		return nil
+	}
+	return o.SortKey
 }
 
 type GetRiskAssessmentPermissionsClusterIDOwnerIDResponse struct {

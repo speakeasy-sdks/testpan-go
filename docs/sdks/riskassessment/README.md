@@ -257,7 +257,7 @@ func main() {
         IncludeSystemOwners: testpango.Bool(false),
         PermissionRisk: operations.GetRiskAssessmentPermissionsPermissionRiskMedium.ToPointer(),
         SortDir: operations.GetRiskAssessmentPermissionsSortDirDesc.ToPointer(),
-        SortKey: testpango.String("Account but"),
+        SortKey: operations.GetRiskAssessmentPermissionsSortKeyPermissionRisk.ToPointer(),
     })
     if err != nil {
         log.Fatal(err)
@@ -375,7 +375,7 @@ func main() {
         IsApproved: testpango.Bool(false),
         OwnerID: "79a8a441-40ea-4cdf-8584-73da2c62b846",
         SortDir: operations.GetRiskAssessmentPermissionsClusterIDOwnerIDSortDirAsc.ToPointer(),
-        SortKey: testpango.String("criminal green"),
+        SortKey: operations.GetRiskAssessmentPermissionsClusterIDOwnerIDSortKeyRisk.ToPointer(),
     })
     if err != nil {
         log.Fatal(err)
@@ -539,7 +539,7 @@ func main() {
         MaxResults: testpango.Float64(8240.13),
         Offset: testpango.Float64(7702.86),
         SortDir: operations.GetRiskAssessmentImageIDVulnerabilitiesSortDirAsc.ToPointer(),
-        SortKey: "Montana Loan",
+        SortKey: operations.GetRiskAssessmentImageIDVulnerabilitiesSortKeySeverity,
     })
     if err != nil {
         log.Fatal(err)

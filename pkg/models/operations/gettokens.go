@@ -6,7 +6,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
-	"github.com/speakeasy-sdks/testpan-go/pkg/types"
 	"github.com/speakeasy-sdks/testpan-go/pkg/utils"
 	"net/http"
 )
@@ -39,6 +38,31 @@ func (e *GetTokensSortDir) UnmarshalJSON(data []byte) error {
 	}
 }
 
+// GetTokensSortKey - the token sort key
+type GetTokensSortKey string
+
+const (
+	GetTokensSortKeyExpirationDate GetTokensSortKey = "expirationDate"
+)
+
+func (e GetTokensSortKey) ToPointer() *GetTokensSortKey {
+	return &e
+}
+
+func (e *GetTokensSortKey) UnmarshalJSON(data []byte) error {
+	var v string
+	if err := json.Unmarshal(data, &v); err != nil {
+		return err
+	}
+	switch v {
+	case "expirationDate":
+		*e = GetTokensSortKey(v)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for GetTokensSortKey: %v", v)
+	}
+}
+
 type GetTokensRequest struct {
 	// The number of entries to return (pagination)
 	MaxResults *float64 `default:"100" queryParam:"style=form,explode=true,name=maxResults"`
@@ -49,7 +73,7 @@ type GetTokensRequest struct {
 	// sorting direction
 	SortDir *GetTokensSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
 	// the token sort key
-	sortKey *string `const:"expirationDate" queryParam:"style=form,explode=true,name=sortKey"`
+	SortKey *GetTokensSortKey `queryParam:"style=form,explode=true,name=sortKey"`
 	// Defined token name
 	TokenName *string `queryParam:"style=form,explode=true,name=tokenName"`
 }
@@ -93,8 +117,11 @@ func (o *GetTokensRequest) GetSortDir() *GetTokensSortDir {
 	return o.SortDir
 }
 
-func (o *GetTokensRequest) GetSortKey() *string {
-	return types.String("expirationDate")
+func (o *GetTokensRequest) GetSortKey() *GetTokensSortKey {
+	if o == nil {
+		return nil
+	}
+	return o.SortKey
 }
 
 func (o *GetTokensRequest) GetTokenName() *string {

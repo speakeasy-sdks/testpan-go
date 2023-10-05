@@ -93,7 +93,7 @@ func main() {
     ctx := context.Background()
     res, err := s.TrustedSigners.GetTrustedSigners(ctx, operations.GetTrustedSignersRequest{
         SortDir: operations.GetTrustedSignersSortDirAsc.ToPointer(),
-        SortKey: testpango.String("Electric sailboat composite"),
+        SortKey: operations.GetTrustedSignersSortKeyName.ToPointer(),
     })
     if err != nil {
         log.Fatal(err)

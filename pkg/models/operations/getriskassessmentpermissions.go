@@ -6,7 +6,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
-	"github.com/speakeasy-sdks/testpan-go/pkg/types"
 	"github.com/speakeasy-sdks/testpan-go/pkg/utils"
 	"net/http"
 )
@@ -73,6 +72,31 @@ func (e *GetRiskAssessmentPermissionsSortDir) UnmarshalJSON(data []byte) error {
 	}
 }
 
+// GetRiskAssessmentPermissionsSortKey - sort key
+type GetRiskAssessmentPermissionsSortKey string
+
+const (
+	GetRiskAssessmentPermissionsSortKeyPermissionRisk GetRiskAssessmentPermissionsSortKey = "permissionRisk"
+)
+
+func (e GetRiskAssessmentPermissionsSortKey) ToPointer() *GetRiskAssessmentPermissionsSortKey {
+	return &e
+}
+
+func (e *GetRiskAssessmentPermissionsSortKey) UnmarshalJSON(data []byte) error {
+	var v string
+	if err := json.Unmarshal(data, &v); err != nil {
+		return err
+	}
+	switch v {
+	case "permissionRisk":
+		*e = GetRiskAssessmentPermissionsSortKey(v)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for GetRiskAssessmentPermissionsSortKey: %v", v)
+	}
+}
+
 type GetRiskAssessmentPermissionsRequest struct {
 	// the clusters ids to filter by
 	ClustersIds []string `queryParam:"style=form,explode=true,name=clustersIds"`
@@ -83,7 +107,7 @@ type GetRiskAssessmentPermissionsRequest struct {
 	// sorting direction
 	SortDir *GetRiskAssessmentPermissionsSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
 	// sort key
-	sortKey *string `const:"permissionRisk" queryParam:"style=form,explode=true,name=sortKey"`
+	SortKey *GetRiskAssessmentPermissionsSortKey `default:"permissionRisk" queryParam:"style=form,explode=true,name=sortKey"`
 }
 
 func (g GetRiskAssessmentPermissionsRequest) MarshalJSON() ([]byte, error) {
@@ -125,8 +149,11 @@ func (o *GetRiskAssessmentPermissionsRequest) GetSortDir() *GetRiskAssessmentPer
 	return o.SortDir
 }
 
-func (o *GetRiskAssessmentPermissionsRequest) GetSortKey() *string {
-	return types.String("permissionRisk")
+func (o *GetRiskAssessmentPermissionsRequest) GetSortKey() *GetRiskAssessmentPermissionsSortKey {
+	if o == nil {
+		return nil
+	}
+	return o.SortKey
 }
 
 type GetRiskAssessmentPermissionsResponse struct {

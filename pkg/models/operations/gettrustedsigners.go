@@ -6,7 +6,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
-	"github.com/speakeasy-sdks/testpan-go/pkg/types"
 	"github.com/speakeasy-sdks/testpan-go/pkg/utils"
 	"net/http"
 )
@@ -39,11 +38,36 @@ func (e *GetTrustedSignersSortDir) UnmarshalJSON(data []byte) error {
 	}
 }
 
+// GetTrustedSignersSortKey - sort key
+type GetTrustedSignersSortKey string
+
+const (
+	GetTrustedSignersSortKeyName GetTrustedSignersSortKey = "name"
+)
+
+func (e GetTrustedSignersSortKey) ToPointer() *GetTrustedSignersSortKey {
+	return &e
+}
+
+func (e *GetTrustedSignersSortKey) UnmarshalJSON(data []byte) error {
+	var v string
+	if err := json.Unmarshal(data, &v); err != nil {
+		return err
+	}
+	switch v {
+	case "name":
+		*e = GetTrustedSignersSortKey(v)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for GetTrustedSignersSortKey: %v", v)
+	}
+}
+
 type GetTrustedSignersRequest struct {
 	// sorting direction
 	SortDir *GetTrustedSignersSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
 	// sort key
-	sortKey *string `const:"name" queryParam:"style=form,explode=true,name=sortKey"`
+	SortKey *GetTrustedSignersSortKey `default:"name" queryParam:"style=form,explode=true,name=sortKey"`
 }
 
 func (g GetTrustedSignersRequest) MarshalJSON() ([]byte, error) {
@@ -64,8 +88,11 @@ func (o *GetTrustedSignersRequest) GetSortDir() *GetTrustedSignersSortDir {
 	return o.SortDir
 }
 
-func (o *GetTrustedSignersRequest) GetSortKey() *string {
-	return types.String("name")
+func (o *GetTrustedSignersRequest) GetSortKey() *GetTrustedSignersSortKey {
+	if o == nil {
+		return nil
+	}
+	return o.SortKey
 }
 
 type GetTrustedSignersResponse struct {

@@ -6,7 +6,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
-	"github.com/speakeasy-sdks/testpan-go/pkg/types"
 	"github.com/speakeasy-sdks/testpan-go/pkg/utils"
 	"net/http"
 )
@@ -39,12 +38,37 @@ func (e *GetCdResourceIDSortDir) UnmarshalJSON(data []byte) error {
 	}
 }
 
+// GetCdResourceIDSortKey - sort key
+type GetCdResourceIDSortKey string
+
+const (
+	GetCdResourceIDSortKeyRisk GetCdResourceIDSortKey = "risk"
+)
+
+func (e GetCdResourceIDSortKey) ToPointer() *GetCdResourceIDSortKey {
+	return &e
+}
+
+func (e *GetCdResourceIDSortKey) UnmarshalJSON(data []byte) error {
+	var v string
+	if err := json.Unmarshal(data, &v); err != nil {
+		return err
+	}
+	switch v {
+	case "risk":
+		*e = GetCdResourceIDSortKey(v)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for GetCdResourceIDSortKey: %v", v)
+	}
+}
+
 type GetCdResourceIDRequest struct {
 	ResourceID string `pathParam:"style=simple,explode=false,name=resourceId"`
 	// sorting direction
 	SortDir *GetCdResourceIDSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
 	// sort key
-	sortKey *string `const:"risk" queryParam:"style=form,explode=true,name=sortKey"`
+	SortKey *GetCdResourceIDSortKey `default:"risk" queryParam:"style=form,explode=true,name=sortKey"`
 }
 
 func (g GetCdResourceIDRequest) MarshalJSON() ([]byte, error) {
@@ -72,8 +96,11 @@ func (o *GetCdResourceIDRequest) GetSortDir() *GetCdResourceIDSortDir {
 	return o.SortDir
 }
 
-func (o *GetCdResourceIDRequest) GetSortKey() *string {
-	return types.String("risk")
+func (o *GetCdResourceIDRequest) GetSortKey() *GetCdResourceIDSortKey {
+	if o == nil {
+		return nil
+	}
+	return o.SortKey
 }
 
 type GetCdResourceIDResponse struct {
