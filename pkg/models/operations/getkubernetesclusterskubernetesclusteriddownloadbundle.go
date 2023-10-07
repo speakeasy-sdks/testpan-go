@@ -5,6 +5,7 @@ package operations
 import (
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
 	"github.com/speakeasy-sdks/testpan-go/pkg/utils"
+	"io"
 	"net/http"
 )
 
@@ -50,7 +51,8 @@ type GetKubernetesClustersKubernetesClusterIDDownloadBundleResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// OK
-	GetKubernetesClustersKubernetesClusterIDDownloadBundle200ApplicationJSONBinaryString []byte
+	// The Close method must be called on this field, even if it is not used, to prevent resource leaks.
+	GetKubernetesClustersKubernetesClusterIDDownloadBundle200ApplicationJSONBinaryString io.ReadCloser
 }
 
 func (o *GetKubernetesClustersKubernetesClusterIDDownloadBundleResponse) GetAPIResponse() *shared.APIResponse {
@@ -81,7 +83,7 @@ func (o *GetKubernetesClustersKubernetesClusterIDDownloadBundleResponse) GetRawR
 	return o.RawResponse
 }
 
-func (o *GetKubernetesClustersKubernetesClusterIDDownloadBundleResponse) GetGetKubernetesClustersKubernetesClusterIDDownloadBundle200ApplicationJSONBinaryString() []byte {
+func (o *GetKubernetesClustersKubernetesClusterIDDownloadBundleResponse) GetGetKubernetesClustersKubernetesClusterIDDownloadBundle200ApplicationJSONBinaryString() io.ReadCloser {
 	if o == nil {
 		return nil
 	}

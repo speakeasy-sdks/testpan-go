@@ -348,8 +348,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Aws.PostAwsRoles(ctx, shared.AWSRolePost{
         Arn: "Communications female",
-        Description: testpango.String("Stand-alone encompassing knowledge base"),
-        Name: "Crossroad black",
+        Name: "interfaces deposit Pants",
     })
     if err != nil {
         log.Fatal(err)
@@ -402,10 +401,9 @@ func main() {
     ctx := context.Background()
     res, err := s.Aws.PutAwsRolesRoleID(ctx, operations.PutAwsRolesRoleIDRequest{
         AWSRoleDetails: shared.AWSRoleDetails{
-            Description: testpango.String("Optional asymmetric superstructure"),
-            Name: "next Baby Neon",
+            Name: "Southwest oof",
         },
-        RoleID: "e05da7a6-1a59-47d1-8375-7fdde668b4a1",
+        RoleID: "92ab1e05-da7a-461a-997d-143757fdde66",
     })
     if err != nil {
         log.Fatal(err)

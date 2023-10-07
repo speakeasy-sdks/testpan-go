@@ -43,9 +43,6 @@ func main() {
         ClusterIds: []string{
             "magnitude",
         },
-        MaxResults: testpango.Float64(5852.41),
-        NoPagination: testpango.Bool(false),
-        Offset: testpango.Float64(1447.41),
     })
     if err != nil {
         log.Fatal(err)
@@ -253,13 +250,11 @@ func main() {
             ClusterID: "49b403e0-ddc8-4f07-8f6d-7b4806fe4a7b",
             Index: "exactly tan Bespoke",
             Nodes: []shared.K8sCISBenchmarkUpdateNode{
-                shared.K8sCISBenchmarkUpdateNode{
-                    ID: testpango.String("e905f14c-9f8f-455f-8602-b586f168c3d5"),
-                },
+                shared.K8sCISBenchmarkUpdateNode{},
             },
-            Status: shared.K8sCISBenchmarkUpdateNodeStatusFail,
+            Status: shared.K8sCISBenchmarkUpdateNodeStatusPass,
         },
-        ClusterID: "0e1fb82e-2384-4feb-b1f7-119a392759c9",
+        ClusterID: "905f14c9-f8f5-45f4-a02b-586f168c3d50",
     })
     if err != nil {
         log.Fatal(err)

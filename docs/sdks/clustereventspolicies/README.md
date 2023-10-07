@@ -280,13 +280,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.ClusterEventsPolicies.PutKubernetesAPIPolicy(ctx, shared.KubernetesAPIPolicy{
-        DefaultRule: &shared.DefaultKubernetesAPIRule{
-            Action: shared.KubernetesAPIRuleActionIgnore.ToPointer(),
-        },
+        DefaultRule: &shared.DefaultKubernetesAPIRule{},
         UserRules: []shared.KubernetesAPIRule{
             shared.KubernetesAPIRule{
                 KubernetesAPIRuleType: shared.KubernetesAPIRuleKubernetesAPIRuleTypeKubernetesAPIRecommendedRule,
-                RuleOrigin: shared.KubernetesAPIRuleOriginAutomatedPolicy.ToPointer(),
             },
         },
     })

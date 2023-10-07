@@ -243,83 +243,50 @@ func main() {
 
     ctx := context.Background()
     res, err := s.PspProfiles.PostPodSecurityPolicyProfiles(ctx, shared.PodSecurityPolicy{
-        AllowPrivilegeEscalation: testpango.Bool(false),
         AllowedCapabilities: []string{
             "bypass",
         },
         AllowedHostPaths: []shared.AllowedHostPath{
-            shared.AllowedHostPath{
-                PathPrefix: testpango.String("turquoise"),
-                ReadOnly: testpango.Bool(false),
-            },
+            shared.AllowedHostPath{},
         },
         AllowedProcMountTypes: []shared.AllowedProcMountType{
             shared.AllowedProcMountTypeDefault,
         },
         AllowedUnsafeSysctls: []string{
-            "Product",
+            "turquoise",
         },
-        DefaultAllowPrivilegeEscalation: testpango.Bool(false),
-        Description: testpango.String("Down-sized empowering frame"),
         ForbiddenSysctls: []string{
-            "incremental",
+            "moderator",
         },
         FsGroup: shared.RunAsGroupStrategyOptions{
             Ranges: []shared.IDRange{
-                shared.IDRange{
-                    Max: testpango.Int64(247342),
-                    Min: testpango.Int64(407317),
-                },
+                shared.IDRange{},
             },
-            Rule: shared.RunAsGroupStrategyMayRunAs.ToPointer(),
         },
-        HostIPC: testpango.Bool(false),
-        HostNetwork: testpango.Bool(false),
-        HostPID: testpango.Bool(false),
         HostPorts: []shared.HostPortRange{
-            shared.HostPortRange{
-                Max: testpango.Int(80641),
-                Min: testpango.Int(34868),
-            },
+            shared.HostPortRange{},
         },
-        ID: testpango.String("142085d7-d484-444d-9348-fb70a8e37e62"),
-        IsSecurecnDefaultProfile: testpango.Bool(false),
-        Name: "Wooden repudiandae Paradigm",
-        Privileged: testpango.Bool(false),
-        ReadOnlyRootFileSystem: testpango.Bool(false),
+        Name: "Gloves",
         RequiredDropCapabilities: []string{
-            "clearly",
+            "explicit",
         },
         RunAsGroup: &shared.RunAsGroupStrategyOptions{
             Ranges: []shared.IDRange{
-                shared.IDRange{
-                    Max: testpango.Int64(307575),
-                    Min: testpango.Int64(822060),
-                },
+                shared.IDRange{},
             },
-            Rule: shared.RunAsGroupStrategyMustRunAs.ToPointer(),
         },
         RunAsUser: shared.RunAsUserStrategyOptions{
             Ranges: []shared.IDRange{
-                shared.IDRange{
-                    Max: testpango.Int64(177881),
-                    Min: testpango.Int64(417586),
-                },
+                shared.IDRange{},
             },
-            Rule: shared.RunAsUserStrategyMustRunAs.ToPointer(),
         },
-        SeccompProfile: testpango.String("e80dd252-3540-4eb3-996a-05613aad0af4"),
         SupplementalGroups: shared.RunAsGroupStrategyOptions{
             Ranges: []shared.IDRange{
-                shared.IDRange{
-                    Max: testpango.Int64(169335),
-                    Min: testpango.Int64(820289),
-                },
+                shared.IDRange{},
             },
-            Rule: shared.RunAsGroupStrategyRunAsAny.ToPointer(),
         },
         Volumes: []shared.PSPVolumeTypes{
-            shared.PSPVolumeTypesStorageos,
+            shared.PSPVolumeTypesHostPath,
         },
     })
     if err != nil {
@@ -373,83 +340,50 @@ func main() {
     ctx := context.Background()
     res, err := s.PspProfiles.PostPodSecurityPolicyProfilesBatch(ctx, []shared.PodSecurityPolicy{
         shared.PodSecurityPolicy{
-            AllowPrivilegeEscalation: testpango.Bool(false),
             AllowedCapabilities: []string{
                 "Copernicium",
             },
             AllowedHostPaths: []shared.AllowedHostPath{
-                shared.AllowedHostPath{
-                    PathPrefix: testpango.String("Northeast Directives"),
-                    ReadOnly: testpango.Bool(false),
-                },
+                shared.AllowedHostPath{},
             },
             AllowedProcMountTypes: []shared.AllowedProcMountType{
-                shared.AllowedProcMountTypeDefault,
+                shared.AllowedProcMountTypeUnmasked,
             },
             AllowedUnsafeSysctls: []string{
-                "mint",
+                "Northeast",
             },
-            DefaultAllowPrivilegeEscalation: testpango.Bool(false),
-            Description: testpango.String("Self-enabling national application"),
             ForbiddenSysctls: []string{
-                "THX",
+                "Directives",
             },
             FsGroup: shared.RunAsGroupStrategyOptions{
                 Ranges: []shared.IDRange{
-                    shared.IDRange{
-                        Max: testpango.Int64(581609),
-                        Min: testpango.Int64(807880),
-                    },
+                    shared.IDRange{},
                 },
-                Rule: shared.RunAsGroupStrategyRunAsAny.ToPointer(),
             },
-            HostIPC: testpango.Bool(false),
-            HostNetwork: testpango.Bool(false),
-            HostPID: testpango.Bool(false),
             HostPorts: []shared.HostPortRange{
-                shared.HostPortRange{
-                    Max: testpango.Int(693689),
-                    Min: testpango.Int(305839),
-                },
+                shared.HostPortRange{},
             },
-            ID: testpango.String("ccbec10a-9bc5-4ecc-aa49-c56c0e0d8163"),
-            IsSecurecnDefaultProfile: testpango.Bool(false),
-            Name: "Bicycle synthesize",
-            Privileged: testpango.Bool(false),
-            ReadOnlyRootFileSystem: testpango.Bool(false),
+            Name: "mint",
             RequiredDropCapabilities: []string{
-                "Cyclocross",
+                "Gasoline",
             },
             RunAsGroup: &shared.RunAsGroupStrategyOptions{
                 Ranges: []shared.IDRange{
-                    shared.IDRange{
-                        Max: testpango.Int64(978567),
-                        Min: testpango.Int64(527502),
-                    },
+                    shared.IDRange{},
                 },
-                Rule: shared.RunAsGroupStrategyMayRunAs.ToPointer(),
             },
             RunAsUser: shared.RunAsUserStrategyOptions{
                 Ranges: []shared.IDRange{
-                    shared.IDRange{
-                        Max: testpango.Int64(393434),
-                        Min: testpango.Int64(336870),
-                    },
+                    shared.IDRange{},
                 },
-                Rule: shared.RunAsUserStrategyMustRunAs.ToPointer(),
             },
-            SeccompProfile: testpango.String("33ebfbb0-cc93-4268-acf5-38bb5e43e0cc"),
             SupplementalGroups: shared.RunAsGroupStrategyOptions{
                 Ranges: []shared.IDRange{
-                    shared.IDRange{
-                        Max: testpango.Int64(259664),
-                        Min: testpango.Int64(329554),
-                    },
+                    shared.IDRange{},
                 },
-                Rule: shared.RunAsGroupStrategyMustRunAs.ToPointer(),
             },
             Volumes: []shared.PSPVolumeTypes{
-                shared.PSPVolumeTypesVsphereVolume,
+                shared.PSPVolumeTypesAzureDisk,
             },
         },
     })
@@ -502,10 +436,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.PspProfiles.PostSeccompProfiles(ctx, shared.SeccompProfileInput{
-        Data: testpango.String("{steam: 44630, freedom: null, lathe: \"maiores metrics\"}"),
-        Name: testpango.String("bitterly North"),
         PodSecurityPolicies: []string{
-            "bandwidth",
+            "Cab",
         },
     })
     if err != nil {
@@ -559,86 +491,53 @@ func main() {
     ctx := context.Background()
     res, err := s.PspProfiles.PutPodSecurityPolicyProfilesProfileID(ctx, operations.PutPodSecurityPolicyProfilesProfileIDRequest{
         PodSecurityPolicy: shared.PodSecurityPolicy{
-            AllowPrivilegeEscalation: testpango.Bool(false),
             AllowedCapabilities: []string{
                 "North",
             },
             AllowedHostPaths: []shared.AllowedHostPath{
-                shared.AllowedHostPath{
-                    PathPrefix: testpango.String("since DNS Central"),
-                    ReadOnly: testpango.Bool(false),
-                },
+                shared.AllowedHostPath{},
             },
             AllowedProcMountTypes: []shared.AllowedProcMountType{
-                shared.AllowedProcMountTypeDefault,
+                shared.AllowedProcMountTypeUnmasked,
             },
             AllowedUnsafeSysctls: []string{
-                "Mercedes",
+                "since",
             },
-            DefaultAllowPrivilegeEscalation: testpango.Bool(false),
-            Description: testpango.String("Customer-focused eco-centric encryption"),
             ForbiddenSysctls: []string{
-                "Checking",
+                "DNS",
             },
             FsGroup: shared.RunAsGroupStrategyOptions{
                 Ranges: []shared.IDRange{
-                    shared.IDRange{
-                        Max: testpango.Int64(885380),
-                        Min: testpango.Int64(870395),
-                    },
+                    shared.IDRange{},
                 },
-                Rule: shared.RunAsGroupStrategyRunAsAny.ToPointer(),
             },
-            HostIPC: testpango.Bool(false),
-            HostNetwork: testpango.Bool(false),
-            HostPID: testpango.Bool(false),
             HostPorts: []shared.HostPortRange{
-                shared.HostPortRange{
-                    Max: testpango.Int(208639),
-                    Min: testpango.Int(494299),
-                },
+                shared.HostPortRange{},
             },
-            ID: testpango.String("9d9afbb9-b687-4b2c-be0a-637e73494546"),
-            IsSecurecnDefaultProfile: testpango.Bool(false),
-            Name: "Silicon sensor",
-            Privileged: testpango.Bool(false),
-            ReadOnlyRootFileSystem: testpango.Bool(false),
+            Name: "Coupe THX",
             RequiredDropCapabilities: []string{
-                "ex",
+                "Dynamic",
             },
             RunAsGroup: &shared.RunAsGroupStrategyOptions{
                 Ranges: []shared.IDRange{
-                    shared.IDRange{
-                        Max: testpango.Int64(639188),
-                        Min: testpango.Int64(375698),
-                    },
+                    shared.IDRange{},
                 },
-                Rule: shared.RunAsGroupStrategyMustRunAs.ToPointer(),
             },
             RunAsUser: shared.RunAsUserStrategyOptions{
                 Ranges: []shared.IDRange{
-                    shared.IDRange{
-                        Max: testpango.Int64(34862),
-                        Min: testpango.Int64(966964),
-                    },
+                    shared.IDRange{},
                 },
-                Rule: shared.RunAsUserStrategyMustRunAs.ToPointer(),
             },
-            SeccompProfile: testpango.String("114f1e40-0857-4100-95d7-43f0167fa418"),
             SupplementalGroups: shared.RunAsGroupStrategyOptions{
                 Ranges: []shared.IDRange{
-                    shared.IDRange{
-                        Max: testpango.Int64(807200),
-                        Min: testpango.Int64(91090),
-                    },
+                    shared.IDRange{},
                 },
-                Rule: shared.RunAsGroupStrategyMustRunAs.ToPointer(),
             },
             Volumes: []shared.PSPVolumeTypes{
-                shared.PSPVolumeTypesScaleIo,
+                shared.PSPVolumeTypesFlocker,
             },
         },
-        ProfileID: "30ce44b3-7a43-4d84-b255-0fa77d979933",
+        ProfileID: "04edb379-d9af-4bb9-b687-b2cfe0a637e7",
     })
     if err != nil {
         log.Fatal(err)
@@ -691,13 +590,11 @@ func main() {
     ctx := context.Background()
     res, err := s.PspProfiles.PutSeccompProfilesProfileID(ctx, operations.PutSeccompProfilesProfileIDRequest{
         SeccompProfileInput: shared.SeccompProfileInput{
-            Data: testpango.String("{incandescence: 66214, hint: null, licorice: \"Mobility lime\"}"),
-            Name: testpango.String("BMX Cambridgeshire wherever"),
             PodSecurityPolicies: []string{
-                "plum",
+                "payment",
             },
         },
-        ProfileID: "36c76ef4-4408-4a69-9bd6-c47238638eac",
+        ProfileID: "689ccbcc-101f-4ed2-936c-76ef44408a69",
     })
     if err != nil {
         log.Fatal(err)

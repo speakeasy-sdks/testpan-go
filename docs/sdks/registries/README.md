@@ -92,10 +92,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Registries.GetRegistries(ctx, operations.GetRegistriesRequest{
-        SortDir: operations.GetRegistriesSortDirAsc.ToPointer(),
-        SortKey: operations.GetRegistriesSortKeyURL.ToPointer(),
-    })
+    res, err := s.Registries.GetRegistries(ctx, operations.GetRegistriesRequest{})
     if err != nil {
         log.Fatal(err)
     }

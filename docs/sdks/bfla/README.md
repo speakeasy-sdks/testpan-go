@@ -344,7 +344,6 @@ import(
 	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
-	"github.com/speakeasy-sdks/testpan-go/pkg/types"
 )
 
 func main() {
@@ -358,41 +357,32 @@ func main() {
     ctx := context.Background()
     res, err := s.Bfla.PutAPISecurityInternalCatalogCatalogIDBfla(ctx, operations.PutAPISecurityInternalCatalogCatalogIDBflaRequest{
         APIServiceBflaInfo: shared.APIServiceBflaInfo{
-            EndTime: types.MustTimeFromString("2021-04-10T03:52:46.500Z"),
-            Status: shared.APIServiceBflaInfoStatusInProgressLearning,
+            Status: shared.APIServiceBflaInfoStatusNoSpec,
             Tags: []shared.APIServiceBflaTagInfo{
                 shared.APIServiceBflaTagInfo{
-                    IsLegitimate: testpango.Bool(false),
-                    Name: "Rhodium Rubber yearly",
+                    Name: "Identity yearly",
                     Paths: []shared.APIServiceBflaPathInfo{
                         shared.APIServiceBflaPathInfo{
                             Clients: []shared.APIServiceBflaClientInfo{
                                 shared.APIServiceBflaClientInfo{
-                                    External: testpango.Bool(false),
-                                    Identifier: testpango.String("3b3fcaad-d442-4012-ad14-59f8769c2011"),
-                                    IsLegitimate: testpango.Bool(false),
-                                    LastObserved: types.MustTimeFromString("2021-02-25T06:09:36.065Z"),
-                                    LastStatusCode: testpango.Int64(508539),
-                                    Name: "Carolina",
-                                    Namespace: testpango.String("Account"),
+                                    Name: "Manganese",
                                     Principles: []shared.APIServiceBflaPrincipleInfo{
                                         shared.APIServiceBflaPrincipleInfo{
-                                            IP: "56.91.79.204",
-                                            Name: "Hyundai punctually",
-                                            PrincipleType: "Granite Rustic",
+                                            IP: "244.203.175.173",
+                                            Name: "Crew green Northeast",
+                                            PrincipleType: "Bentley Granite withdrawal",
                                         },
                                     },
                                 },
                             },
-                            IsLegitimate: testpango.Bool(false),
-                            Method: shared.HTTPMethodTrace,
-                            Path: "/usr/local/bin",
+                            Method: shared.HTTPMethodConnect,
+                            Path: "/usr/libexec",
                         },
                     },
                 },
             },
         },
-        CatalogID: "ac789245-d57c-4c22-8dbd-c1e1df3ce330",
+        CatalogID: "20110831-cf06-40a3-94c8-d6e973832cca",
     })
     if err != nil {
         log.Fatal(err)

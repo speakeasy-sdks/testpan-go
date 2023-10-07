@@ -92,16 +92,6 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Expansions.GetExpansions(ctx, operations.GetExpansionsRequest{
-        ClusterName: testpango.String("Agent interface"),
-        ControllerStatus: testpango.String("Funk Flerovium Road"),
-        ControllerVersion: testpango.String("Quality"),
-        DownloadAsXlsx: testpango.Bool(false),
-        MaxResults: testpango.Float64(2748.69),
-        Name: testpango.String("male payment Kentucky"),
-        NamespaceName: testpango.String("Toyota"),
-        NoPagination: testpango.Bool(false),
-        Offset: testpango.Float64(4144.14),
-        SortDir: operations.GetExpansionsSortDirDesc.ToPointer(),
         SortKey: operations.GetExpansionsSortKeyName,
     })
     if err != nil {
@@ -193,7 +183,6 @@ import(
 	"log"
 	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
-	"github.com/speakeasy-sdks/testpan-go/pkg/types"
 )
 
 func main() {
@@ -207,20 +196,17 @@ func main() {
     ctx := context.Background()
     res, err := s.Expansions.PostExpansions(ctx, shared.ExpansionInput{
         ClusterID: "ef536384-aae2-4f5a-87a4-cef022a42548",
-        ControllerLastActive: types.MustTimeFromString("2023-08-24T22:57:12.780Z"),
         Labels: []shared.Label{
             shared.Label{
                 Key: "<key>",
-                Value: "bolívar North Frozen",
+                Value: "District Vista Senior",
             },
         },
-        Name: "postmark",
-        NamespaceID: "cab88259-ba11-4df1-9d86-c530fc31b7b3",
-        ShouldSendMetrics: testpango.Bool(false),
+        Name: "Forward International quantify",
+        NamespaceID: "259ba11d-f19d-486c-930f-c31b7b32455e",
         WorkloadAddresses: []shared.WorkloadAddress{
             shared.WorkloadAddress{
-                Address: "23391 Padberg Keys",
-                NetworkProtocol: shared.NetworkProtocolHTTP.ToPointer(),
+                Address: "56493 Berge Gateway",
             },
         },
     })
@@ -285,11 +271,10 @@ func main() {
             WorkloadAddresses: []shared.WorkloadAddress{
                 shared.WorkloadAddress{
                     Address: "628 Will Route",
-                    NetworkProtocol: shared.NetworkProtocolTCP.ToPointer(),
                 },
             },
         },
-        ExpansionID: "4baa7b3c-4b09-4bff-8d17-0310c446aa3a",
+        ExpansionID: "64baa7b3-c4b0-49bf-b8d1-70310c446aa3",
     })
     if err != nil {
         log.Fatal(err)

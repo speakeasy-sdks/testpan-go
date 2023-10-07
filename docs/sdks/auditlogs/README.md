@@ -43,15 +43,8 @@ func main() {
         Actions: []string{
             "male",
         },
-        DownloadAsXlsx: testpango.Bool(false),
         EndTime: types.MustTimeFromString("2022-01-24T02:40:28.078Z"),
-        MaxResults: testpango.Float64(5619.36),
-        ObjectType: testpango.String("GB grey Folding"),
-        Offset: testpango.Float64(2262.25),
-        SortDir: operations.GetAuditLogsSortDirDesc.ToPointer(),
-        SortKey: operations.GetAuditLogsSortKeyTime.ToPointer(),
-        StartTime: types.MustTimeFromString("2022-05-15T07:17:17.108Z"),
-        User: testpango.String("Lennie.Torphy0"),
+        StartTime: types.MustTimeFromString("2022-09-08T07:41:20.287Z"),
     })
     if err != nil {
         log.Fatal(err)
@@ -152,25 +145,14 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AuditLogs.GetAuditLogsKubernetes(ctx, operations.GetAuditLogsKubernetesRequest{
-        ClusterName: testpango.String("Coupe Southeast Southeast"),
-        DownloadAsXlsx: testpango.Bool(false),
-        EndTime: types.MustTimeFromString("2022-08-15T09:50:37.531Z"),
+        EndTime: types.MustTimeFromString("2023-03-24T20:20:48.235Z"),
         KubernetesAuditAction: []string{
-            "online",
+            "Coupe",
         },
-        MaxResults: testpango.Float64(3231.79),
-        NamespaceName: testpango.String("Cadillac"),
-        NoPagination: testpango.Bool(false),
-        Offset: testpango.Float64(5266.56),
-        ResourceKind: testpango.String("Island SSL"),
-        ResourceName: testpango.String("South vaguely"),
-        Result: []GetAuditLogsKubernetesResult{
-            operations.GetAuditLogsKubernetesResultBlock,
+        Result: []operations.GetAuditLogsKubernetesResult{
+            operations.GetAuditLogsKubernetesResultAllow,
         },
-        SortDir: operations.GetAuditLogsKubernetesSortDirDesc.ToPointer(),
-        SortKey: operations.GetAuditLogsKubernetesSortKeyAction.ToPointer(),
-        StartTime: types.MustTimeFromString("2022-02-10T19:51:08.510Z"),
-        User: testpango.String("Rebekah66"),
+        StartTime: types.MustTimeFromString("2023-06-24T03:55:36.271Z"),
     })
     if err != nil {
         log.Fatal(err)

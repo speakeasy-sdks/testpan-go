@@ -292,15 +292,13 @@ func main() {
     res, err := s.Mitre.PostMitreTechniqueFix(ctx, operations.PostMitreTechniqueFixRequest{
         MitreTechniqueFixInfo: shared.MitreTechniqueFixInfo{
             AffectedElements: []shared.MitreTechniqueAffectedElement{
-                shared.MitreTechniqueAffectedElement{
-                    MitreTechniqueAffectedElementType: shared.MitreTechniqueAffectedElementMitreTechniqueAffectedElementTypeMitreTechniqueAffectedWorkload.ToPointer(),
-                },
+                shared.MitreTechniqueAffectedElement{},
             },
         },
         ClustersIds: []string{
-            "84b4b2c6-3c2f-47d9-8968-3947da0e326b",
+            "684b4b2c-63c2-4f7d-9896-83947da0e326",
         },
-        MitreTechniqueType: operations.PostMitreTechniqueFixMitreTechniqueTypeAccessClusterResources,
+        MitreTechniqueType: operations.PostMitreTechniqueFixMitreTechniqueTypeClearK8SEvents,
     })
     if err != nil {
         log.Fatal(err)

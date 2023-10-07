@@ -4,6 +4,7 @@ package operations
 
 import (
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	"io"
 	"net/http"
 )
 
@@ -28,7 +29,8 @@ type GetExpansionsExpansionIDInstallExpansionTarGzResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// OK
-	GetExpansionsExpansionIDInstallExpansionTarGz200ApplicationJSONBinaryString []byte
+	// The Close method must be called on this field, even if it is not used, to prevent resource leaks.
+	GetExpansionsExpansionIDInstallExpansionTarGz200ApplicationJSONBinaryString io.ReadCloser
 }
 
 func (o *GetExpansionsExpansionIDInstallExpansionTarGzResponse) GetAPIResponse() *shared.APIResponse {
@@ -59,7 +61,7 @@ func (o *GetExpansionsExpansionIDInstallExpansionTarGzResponse) GetRawResponse()
 	return o.RawResponse
 }
 
-func (o *GetExpansionsExpansionIDInstallExpansionTarGzResponse) GetGetExpansionsExpansionIDInstallExpansionTarGz200ApplicationJSONBinaryString() []byte {
+func (o *GetExpansionsExpansionIDInstallExpansionTarGzResponse) GetGetExpansionsExpansionIDInstallExpansionTarGz200ApplicationJSONBinaryString() io.ReadCloser {
 	if o == nil {
 		return nil
 	}

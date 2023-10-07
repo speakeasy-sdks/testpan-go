@@ -88,13 +88,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Gateways.GetGateways(ctx, operations.GetGatewaysRequest{
-        MaxResults: testpango.Float64(5622.15),
-        Name: testpango.String("Bicycle programming"),
-        NoPagination: testpango.Bool(false),
-        Offset: testpango.Float64(2121.34),
-        SortDir: operations.GetGatewaysSortDirAsc.ToPointer(),
-    })
+    res, err := s.Gateways.GetGateways(ctx, operations.GetGatewaysRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -249,10 +243,8 @@ func main() {
     ctx := context.Background()
     res, err := s.Gateways.PostGateways(ctx, shared.Gateway{
         ClusterName: "budgetary",
-        Description: testpango.String("Organized non-volatile migration"),
-        ID: testpango.String("569c810a-5247-4536-a053-f148b119db42"),
-        Name: "Savings distinctio blue",
-        Type: shared.GatewayTypeKongInternal,
+        Name: "Tungsten technologies",
+        Type: shared.GatewayTypeTykInternal,
     })
     if err != nil {
         log.Fatal(err)
@@ -306,12 +298,10 @@ func main() {
     res, err := s.Gateways.PutGatewaysGatewayID(ctx, operations.PutGatewaysGatewayIDRequest{
         Gateway: shared.Gateway{
             ClusterName: "Executive Minivan sky",
-            Description: testpango.String("Upgradable bandwidth-monitored contingency"),
-            ID: testpango.String("69f02ce6-c757-479c-9c8e-935111463ea3"),
-            Name: "Directives pink Central",
+            Name: "Northeast Rupee Burundi",
             Type: shared.GatewayTypeF5BigIP,
         },
-        GatewayID: "95ead58c-f0fb-4b52-ac2b-9a404d8ad2eb",
+        GatewayID: "e6c75779-c9c8-4e93-9111-463ea3da225a",
     })
     if err != nil {
         log.Fatal(err)

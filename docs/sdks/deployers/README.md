@@ -93,13 +93,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Deployers.GetDeployers(ctx, operations.GetDeployersRequest{
-        MaxResults: testpango.Float64(757.15),
-        Name: testpango.String("neural Card"),
-        Offset: testpango.Float64(4706.54),
-        RuleCreation: testpango.Bool(false),
-        SecurityCheck: testpango.Bool(false),
-        SortDir: operations.GetDeployersSortDirAsc.ToPointer(),
-        SortKey: operations.GetDeployersSortKeyType,
+        SortKey: operations.GetDeployersSortKeyDeployer,
     })
     if err != nil {
         log.Fatal(err)
@@ -152,7 +146,6 @@ func main() {
     ctx := context.Background()
     res, err := s.Deployers.GetDeployersServiceAccounts(ctx, operations.GetDeployersServiceAccountsRequest{
         KubernetesClusterID: "2cec5765-5bfd-4372-88d6-c69c1df0fe41",
-        NamespaceName: testpango.String("synthesizing"),
     })
     if err != nil {
         log.Fatal(err)
@@ -255,8 +248,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Deployers.PostDeployers(ctx, shared.DeployerInput{
-        Deployer: testpango.String("pixel"),
-        DeployerID: "c2d6bf94-8feb-495d-aafb-538f00cdbb74",
+        DeployerID: "589c2d6b-f948-4feb-95d2-afb538f00cdb",
         DeployerType: shared.DeployerDeployerTypeSecureCnDeployer,
     })
     if err != nil {
@@ -310,11 +302,10 @@ func main() {
     ctx := context.Background()
     res, err := s.Deployers.PutDeployersDeployerID(ctx, operations.PutDeployersDeployerIDRequest{
         DeployerInput: shared.DeployerInput{
-            Deployer: testpango.String("towards Vanuatu Zirconium"),
-            DeployerID: "7ae2aefa-5ee4-4175-ba71-bdf48687529a",
-            DeployerType: shared.DeployerDeployerTypeSecureCnDeployer,
+            DeployerID: "bfd0fb57-ae2a-4efa-9ee4-175ba71bdf48",
+            DeployerType: shared.DeployerDeployerTypeOperatorDeployer,
         },
-        DeployerID: "a122201f-98e6-4927-bec6-fe116f385701",
+        DeployerID: "87529aca-1222-401f-98e6-927bec6fe116",
     })
     if err != nil {
         log.Fatal(err)

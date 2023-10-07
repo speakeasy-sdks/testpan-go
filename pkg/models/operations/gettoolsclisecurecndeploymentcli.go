@@ -3,6 +3,7 @@
 package operations
 
 import (
+	"io"
 	"net/http"
 )
 
@@ -14,7 +15,8 @@ type GetToolsCliSecurecnDeploymentCliResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Success
-	GetToolsCliSecurecnDeploymentCli200ApplicationJSONBinaryString []byte
+	// The Close method must be called on this field, even if it is not used, to prevent resource leaks.
+	GetToolsCliSecurecnDeploymentCli200ApplicationJSONBinaryString io.ReadCloser
 }
 
 func (o *GetToolsCliSecurecnDeploymentCliResponse) GetContentType() string {
@@ -38,7 +40,7 @@ func (o *GetToolsCliSecurecnDeploymentCliResponse) GetRawResponse() *http.Respon
 	return o.RawResponse
 }
 
-func (o *GetToolsCliSecurecnDeploymentCliResponse) GetGetToolsCliSecurecnDeploymentCli200ApplicationJSONBinaryString() []byte {
+func (o *GetToolsCliSecurecnDeploymentCliResponse) GetGetToolsCliSecurecnDeploymentCli200ApplicationJSONBinaryString() io.ReadCloser {
 	if o == nil {
 		return nil
 	}

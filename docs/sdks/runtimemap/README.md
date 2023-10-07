@@ -92,31 +92,23 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RuntimeMap.GetNetworkMap(ctx, operations.GetNetworkMapRequest{
-        APIRisk: operations.GetNetworkMapAPIRiskNeutral.ToPointer(),
         Apps: []string{
-            "unto",
+            "Analyst",
         },
-        EndTime: types.MustTimeFromString("2022-07-01T23:29:00.212Z"),
+        EndTime: types.MustTimeFromString("2023-01-02T05:19:39.286Z"),
         Environments: []string{
-            "Gasoline",
-        },
-        ExcludeApps: []string{
             "West",
         },
-        GroupAppsOnTheSameEnvironment: testpango.Bool(false),
-        IgnoreExternalConnection: testpango.Bool(false),
-        IsBackgroundJob: testpango.Bool(false),
-        Labels: []string{
+        ExcludeApps: []string{
             "thoughtfully",
         },
-        Namespaces: []string{
-            "770727e0-bc8a-4727-a6cf-78080c58f4e0",
+        Labels: []string{
+            "JBOD",
         },
-        ShowOnlyAppsWithConnections: testpango.Bool(false),
-        ShowOnlyAppsWithViolations: testpango.Bool(false),
-        ShowOnlyConnectionsBetweenEnvironments: testpango.Bool(false),
-        ShowOnlyConnectionsWithViolations: testpango.Bool(false),
-        StartTime: types.MustTimeFromString("2021-06-22T19:37:42.851Z"),
+        Namespaces: []string{
+            "0727e0bc-8a72-47a6-8f78-080c58f4e027",
+        },
+        StartTime: types.MustTimeFromString("2022-02-13T05:21:23.691Z"),
     })
     if err != nil {
         log.Fatal(err)

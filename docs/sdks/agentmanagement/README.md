@@ -38,19 +38,16 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AgentManagement.GetAgents(ctx, operations.GetAgentsRequest{
-        DownloadAsXlsx: testpango.Bool(false),
         EnvironmentName: []string{
             "Account",
         },
         HostName: []string{
             "Shoes",
         },
-        Risk: []GetAgentsRisk{
+        Risk: []operations.GetAgentsRisk{
             operations.GetAgentsRiskUndefined,
         },
-        SortDir: operations.GetAgentsSortDirAsc.ToPointer(),
-        SortKey: operations.GetAgentsSortKeyLastActive.ToPointer(),
-        Status: []GetAgentsStatus{
+        Status: []operations.GetAgentsStatus{
             operations.GetAgentsStatusActive,
         },
     })
@@ -156,9 +153,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AgentManagement.PostAgentsAgentIDUpdateState(ctx, operations.PostAgentsAgentIDUpdateStateRequest{
-        AgentStatusUpdate: shared.AgentStatusUpdate{
-            Active: testpango.Bool(false),
-        },
+        AgentStatusUpdate: shared.AgentStatusUpdate{},
         AgentID: "34a187e9-3552-49e2-8694-f733a8b3f850",
     })
     if err != nil {

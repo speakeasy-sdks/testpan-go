@@ -338,7 +338,6 @@ import(
 	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
-	"github.com/speakeasy-sdks/testpan-go/pkg/types"
 )
 
 func main() {
@@ -354,15 +353,6 @@ func main() {
         APIPolicyProfiles: []string{
             "Bronze",
         },
-        DrillDownScore: testpango.Bool(false),
-        IncludeServiceWithNoSpec: testpango.Bool(false),
-        MaxResults: testpango.Float64(4178.64),
-        Name: testpango.String("Colton Tin programming"),
-        NoPagination: testpango.Bool(false),
-        Offset: testpango.Float64(9915.74),
-        SortDir: operations.GetAPISecurityExternalCatalogSortDirAsc.ToPointer(),
-        SortKey: operations.GetAPISecurityExternalCatalogSortKeyName.ToPointer(),
-        UpdatedAfter: types.MustTimeFromString("2023-06-28T23:23:21.281Z"),
     })
     if err != nil {
         log.Fatal(err)
@@ -402,7 +392,6 @@ import(
 	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
-	"github.com/speakeasy-sdks/testpan-go/pkg/types"
 )
 
 func main() {
@@ -414,11 +403,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.APISecurity.GetAPISecurityExternalCatalogCount(ctx, operations.GetAPISecurityExternalCatalogCountRequest{
-        IncludeServiceWithNoSpec: testpango.Bool(false),
-        Name: testpango.String("revolutionary alienated Chair"),
-        UpdatedAfter: types.MustTimeFromString("2021-01-16T05:22:36.516Z"),
-    })
+    res, err := s.APISecurity.GetAPISecurityExternalCatalogCount(ctx, operations.GetAPISecurityExternalCatalogCountRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -473,7 +458,6 @@ func main() {
             "Sports",
         },
         CatalogID: "833a138a-8e36-4df0-9dd8-6e879c685823",
-        DownloadAsJSON: testpango.Bool(false),
     })
     if err != nil {
         log.Fatal(err)
@@ -513,7 +497,6 @@ import(
 	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
-	"github.com/speakeasy-sdks/testpan-go/pkg/types"
 )
 
 func main() {
@@ -529,16 +512,6 @@ func main() {
         APIPolicyProfiles: []string{
             "systemic",
         },
-        DrillDownScore: testpango.Bool(false),
-        IncludeServiceWithNoSpec: testpango.Bool(false),
-        MaxResults: testpango.Float64(5658.49),
-        Name: testpango.String("tranquilize pascal"),
-        NamespacesFilter: testpango.String("Cis capacitor"),
-        NoPagination: testpango.Bool(false),
-        Offset: testpango.Float64(1528.82),
-        SortDir: operations.GetAPISecurityInternalCatalogSortDirAsc.ToPointer(),
-        SortKey: operations.GetAPISecurityInternalCatalogSortKeyName.ToPointer(),
-        UpdatedAfter: types.MustTimeFromString("2021-11-28T12:36:29.977Z"),
     })
     if err != nil {
         log.Fatal(err)
@@ -578,7 +551,6 @@ import(
 	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
-	"github.com/speakeasy-sdks/testpan-go/pkg/types"
 )
 
 func main() {
@@ -590,12 +562,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.APISecurity.GetAPISecurityInternalCatalogCount(ctx, operations.GetAPISecurityInternalCatalogCountRequest{
-        IncludeServiceWithNoSpec: testpango.Bool(false),
-        Name: testpango.String("Bugatti"),
-        NamespacesFilter: testpango.String("3rd Hassium"),
-        UpdatedAfter: types.MustTimeFromString("2023-12-03T10:33:57.779Z"),
-    })
+    res, err := s.APISecurity.GetAPISecurityInternalCatalogCount(ctx, operations.GetAPISecurityInternalCatalogCountRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -650,7 +617,6 @@ func main() {
             "Future",
         },
         CatalogID: "b30b167e-21dd-44fc-9f71-8b9d3086136a",
-        DownloadAsJSON: testpango.Bool(false),
     })
     if err != nil {
         log.Fatal(err)
@@ -859,8 +825,6 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.GetAPISecurityInternalCatalogCatalogIDTraceAnalysis(ctx, operations.GetAPISecurityInternalCatalogCatalogIDTraceAnalysisRequest{
         CatalogID: "14f8fff8-1410-462d-9de3-1aa0e5094377",
-        MaxResults: testpango.Float64(970.24),
-        Offset: testpango.Float64(4969.86),
     })
     if err != nil {
         log.Fatal(err)
@@ -1225,7 +1189,6 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecJSON(ctx, operations.GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecJSONRequest{
         CatalogID: "4022b3ba-9ecc-4767-9469-71ea890137cd",
-        DownloadAsJSON: testpango.Bool(false),
     })
     if err != nil {
         log.Fatal(err)
@@ -1278,18 +1241,10 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.GetAPISecurityRiskFindings(ctx, operations.GetAPISecurityRiskFindingsRequest{
         APISecSource: operations.GetAPISecurityRiskFindingsAPISecSourceExternal,
-        Category: testpango.String("becquerel"),
-        Detected: testpango.Bool(false),
-        Element: testpango.String("green"),
-        MaxResults: testpango.Float64(7763.82),
-        Name: testpango.String("SMTP Southwest"),
-        Offset: testpango.Float64(5947.99),
-        Risks: []GetAPISecurityRiskFindingsRisks{
-            operations.GetAPISecurityRiskFindingsRisksHigh,
+        Risks: []operations.GetAPISecurityRiskFindingsRisks{
+            operations.GetAPISecurityRiskFindingsRisksLow,
         },
-        SortDir: operations.GetAPISecurityRiskFindingsSortDirAsc.ToPointer(),
         SortKey: operations.GetAPISecurityRiskFindingsSortKeyRisk,
-        Source: testpango.String("alliance"),
     })
     if err != nil {
         log.Fatal(err)
@@ -1701,7 +1656,6 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.GetDashboardApisecRiskFindingsTrend(ctx, operations.GetDashboardApisecRiskFindingsTrendRequest{
         APISecSource: operations.GetDashboardApisecRiskFindingsTrendAPISecSourceInternal,
-        NumOfDays: testpango.Int64(738205),
     })
     if err != nil {
         log.Fatal(err)
@@ -1806,7 +1760,6 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.GetDashboardApisecTopRiskyApis(ctx, operations.GetDashboardApisecTopRiskyApisRequest{
         APISecSource: operations.GetDashboardApisecTopRiskyApisAPISecSourceExternal,
-        MaxResults: testpango.Float64(9119.67),
     })
     if err != nil {
         log.Fatal(err)
@@ -1859,7 +1812,6 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.GetDashboardApisecTopRiskyFindings(ctx, operations.GetDashboardApisecTopRiskyFindingsRequest{
         APISecSource: operations.GetDashboardApisecTopRiskyFindingsAPISecSourceInternal,
-        MaxResults: testpango.Float64(5232.51),
     })
     if err != nil {
         log.Fatal(err)
@@ -1910,13 +1862,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.APISecurity.GetGateways(ctx, operations.GetGatewaysRequest{
-        MaxResults: testpango.Float64(5622.15),
-        Name: testpango.String("Bicycle programming"),
-        NoPagination: testpango.Bool(false),
-        Offset: testpango.Float64(2121.34),
-        SortDir: operations.GetGatewaysSortDirAsc.ToPointer(),
-    })
+    res, err := s.APISecurity.GetGateways(ctx, operations.GetGatewaysRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -2606,11 +2552,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecLearn(ctx, operations.PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecLearnRequest{
-        APIReconstructionRequest: &shared.APIReconstructionRequest{
-            ClusterID: testpango.String("4fd7941d-9d44-44e5-b609-cdd9605335d7"),
-            LearningDuration: testpango.String("male Administrator"),
-        },
-        CatalogID: "1ecf6d42-4fd0-4f29-96f3-b4a797f266b2",
+        APIReconstructionRequest: &shared.APIReconstructionRequest{},
+        CatalogID: "4fd7941d-9d44-44e5-b609-cdd9605335d7",
     })
     if err != nil {
         log.Fatal(err)
@@ -2671,14 +2614,12 @@ func main() {
                             Methods: []shared.HTTPMethod{
                                 shared.HTTPMethodPut,
                             },
-                            Path: testpango.String("/home/user/dir"),
                         },
                     },
-                    SuggestedPath: testpango.String("DNS"),
                 },
             },
         },
-        CatalogID: "b3e10c33-f3cc-4f1f-a2c5-b724ecc18aab",
+        CatalogID: "3273b3e1-0c33-4f3c-8f1f-e2c5b724ecc1",
     })
     if err != nil {
         log.Fatal(err)
@@ -2838,10 +2779,8 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.PostGateways(ctx, shared.Gateway{
         ClusterName: "budgetary",
-        Description: testpango.String("Organized non-volatile migration"),
-        ID: testpango.String("569c810a-5247-4536-a053-f148b119db42"),
-        Name: "Savings distinctio blue",
-        Type: shared.GatewayTypeKongInternal,
+        Name: "Tungsten technologies",
+        Type: shared.GatewayTypeTykInternal,
     })
     if err != nil {
         log.Fatal(err)
@@ -2881,7 +2820,6 @@ import(
 	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
-	"github.com/speakeasy-sdks/testpan-go/pkg/types"
 )
 
 func main() {
@@ -2895,41 +2833,32 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.PutAPISecurityInternalCatalogCatalogIDBfla(ctx, operations.PutAPISecurityInternalCatalogCatalogIDBflaRequest{
         APIServiceBflaInfo: shared.APIServiceBflaInfo{
-            EndTime: types.MustTimeFromString("2021-04-10T03:52:46.500Z"),
-            Status: shared.APIServiceBflaInfoStatusInProgressLearning,
+            Status: shared.APIServiceBflaInfoStatusNoSpec,
             Tags: []shared.APIServiceBflaTagInfo{
                 shared.APIServiceBflaTagInfo{
-                    IsLegitimate: testpango.Bool(false),
-                    Name: "Rhodium Rubber yearly",
+                    Name: "Identity yearly",
                     Paths: []shared.APIServiceBflaPathInfo{
                         shared.APIServiceBflaPathInfo{
                             Clients: []shared.APIServiceBflaClientInfo{
                                 shared.APIServiceBflaClientInfo{
-                                    External: testpango.Bool(false),
-                                    Identifier: testpango.String("3b3fcaad-d442-4012-ad14-59f8769c2011"),
-                                    IsLegitimate: testpango.Bool(false),
-                                    LastObserved: types.MustTimeFromString("2021-02-25T06:09:36.065Z"),
-                                    LastStatusCode: testpango.Int64(508539),
-                                    Name: "Carolina",
-                                    Namespace: testpango.String("Account"),
+                                    Name: "Manganese",
                                     Principles: []shared.APIServiceBflaPrincipleInfo{
                                         shared.APIServiceBflaPrincipleInfo{
-                                            IP: "56.91.79.204",
-                                            Name: "Hyundai punctually",
-                                            PrincipleType: "Granite Rustic",
+                                            IP: "244.203.175.173",
+                                            Name: "Crew green Northeast",
+                                            PrincipleType: "Bentley Granite withdrawal",
                                         },
                                     },
                                 },
                             },
-                            IsLegitimate: testpango.Bool(false),
-                            Method: shared.HTTPMethodTrace,
-                            Path: "/usr/local/bin",
+                            Method: shared.HTTPMethodConnect,
+                            Path: "/usr/libexec",
                         },
                     },
                 },
             },
         },
-        CatalogID: "ac789245-d57c-4c22-8dbd-c1e1df3ce330",
+        CatalogID: "20110831-cf06-40a3-94c8-d6e973832cca",
     })
     if err != nil {
         log.Fatal(err)
@@ -3036,12 +2965,10 @@ func main() {
     res, err := s.APISecurity.PutGatewaysGatewayID(ctx, operations.PutGatewaysGatewayIDRequest{
         Gateway: shared.Gateway{
             ClusterName: "Executive Minivan sky",
-            Description: testpango.String("Upgradable bandwidth-monitored contingency"),
-            ID: testpango.String("69f02ce6-c757-479c-9c8e-935111463ea3"),
-            Name: "Directives pink Central",
+            Name: "Northeast Rupee Burundi",
             Type: shared.GatewayTypeF5BigIP,
         },
-        GatewayID: "95ead58c-f0fb-4b52-ac2b-9a404d8ad2eb",
+        GatewayID: "e6c75779-c9c8-4e93-9111-463ea3da225a",
     })
     if err != nil {
         log.Fatal(err)

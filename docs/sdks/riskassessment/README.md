@@ -254,10 +254,6 @@ func main() {
         ClustersIds: []string{
             "a89898f1-37f8-4c09-8113-2e54dc492339",
         },
-        IncludeSystemOwners: testpango.Bool(false),
-        PermissionRisk: operations.GetRiskAssessmentPermissionsPermissionRiskMedium.ToPointer(),
-        SortDir: operations.GetRiskAssessmentPermissionsSortDirDesc.ToPointer(),
-        SortKey: operations.GetRiskAssessmentPermissionsSortKeyPermissionRisk.ToPointer(),
     })
     if err != nil {
         log.Fatal(err)
@@ -310,16 +306,6 @@ func main() {
     ctx := context.Background()
     res, err := s.RiskAssessment.GetRiskAssessmentPermissionsClusterID(ctx, operations.GetRiskAssessmentPermissionsClusterIDRequest{
         ClusterID: "af306627-d7b5-4fd9-a554-cf5effac095b",
-        IncludeSystemOwners: testpango.Bool(false),
-        MaxResults: testpango.Float64(8466.56),
-        NamespaceName: testpango.String("Moldovan"),
-        NoPagination: testpango.Bool(false),
-        Offset: testpango.Float64(3482.6),
-        Owner: testpango.String("Tennessine Cisgender"),
-        OwnerType: operations.GetRiskAssessmentPermissionsClusterIDOwnerTypeServiceaccount.ToPointer(),
-        PermissionRisk: operations.GetRiskAssessmentPermissionsClusterIDPermissionRiskNoRisk.ToPointer(),
-        SortDir: operations.GetRiskAssessmentPermissionsClusterIDSortDirDesc.ToPointer(),
-        SortKey: operations.GetRiskAssessmentPermissionsClusterIDSortKeyOwnerType.ToPointer(),
     })
     if err != nil {
         log.Fatal(err)
@@ -372,10 +358,7 @@ func main() {
     ctx := context.Background()
     res, err := s.RiskAssessment.GetRiskAssessmentPermissionsClusterIDOwnerID(ctx, operations.GetRiskAssessmentPermissionsClusterIDOwnerIDRequest{
         ClusterID: "e6c26498-20da-481b-bc16-7b830d3456dd",
-        IsApproved: testpango.Bool(false),
         OwnerID: "79a8a441-40ea-4cdf-8584-73da2c62b846",
-        SortDir: operations.GetRiskAssessmentPermissionsClusterIDOwnerIDSortDirAsc.ToPointer(),
-        SortKey: operations.GetRiskAssessmentPermissionsClusterIDOwnerIDSortKeyRisk.ToPointer(),
     })
     if err != nil {
         log.Fatal(err)
@@ -536,9 +519,6 @@ func main() {
     ctx := context.Background()
     res, err := s.RiskAssessment.GetRiskAssessmentImageIDVulnerabilities(ctx, operations.GetRiskAssessmentImageIDVulnerabilitiesRequest{
         ImageID: "6cbcdb90-f642-47ed-b640-ae8227deac5c",
-        MaxResults: testpango.Float64(8240.13),
-        Offset: testpango.Float64(7702.86),
-        SortDir: operations.GetRiskAssessmentImageIDVulnerabilitiesSortDirAsc.ToPointer(),
         SortKey: operations.GetRiskAssessmentImageIDVulnerabilitiesSortKeySeverity,
     })
     if err != nil {
@@ -591,12 +571,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RiskAssessment.GetRiskAssessmentKubernetesClusterIDPods(ctx, operations.GetRiskAssessmentKubernetesClusterIDPodsRequest{
-        DownloadAsXlsx: testpango.Bool(false),
         KubernetesClusterID: "764514eb-01d8-4d87-972e-7065c0075222",
-        MaxResults: testpango.Float64(2696.33),
-        NamespacesNamesFilter: testpango.String("copying scent"),
-        Offset: testpango.Float64(3728.39),
-        SortDir: operations.GetRiskAssessmentKubernetesClusterIDPodsSortDirDesc.ToPointer(),
         SortKey: operations.GetRiskAssessmentKubernetesClusterIDPodsSortKeyName,
     })
     if err != nil {
@@ -816,7 +791,6 @@ func main() {
             PeriodicJobExpression: &shared.PeriodicJobExpression{
                 PeriodicJobType: shared.PeriodicJobExpressionPeriodicJobTypeNonPeriodicJobExpression,
             },
-            RunDockerfileScan: testpango.Bool(false),
         },
         KubernetesClusterID: "a0c9884d-ef8c-417b-9484-5665df2f730e",
     })
@@ -871,18 +845,17 @@ func main() {
     ctx := context.Background()
     res, err := s.RiskAssessment.PutRiskAssessmentIgnoredRisksIgnoredRiskID(ctx, operations.PutRiskAssessmentIgnoredRisksIgnoredRiskIDRequest{
         CiPolicyInput: shared.CiPolicyInput{
-            Description: testpango.String("Face to face directional superstructure"),
             DockerfileScanCiPolicy: &shared.DockerfileScanCiPolicy{
-                EnforcementOption: shared.EnforcementOptionIgnore,
+                EnforcementOption: shared.EnforcementOptionFail,
                 PermissibleDockerfileScanSeverity: shared.DockerfileScanSeverityInfo,
             },
-            Name: "haptic Manager",
+            Name: "Bentley Intersex feed",
             VulnerabilityCiPolicy: &shared.VulnerabilityCiPolicy{
-                EnforcementOption: shared.EnforcementOptionIgnore,
-                PermissibleVulnerabilityLevel: shared.VulnerabilitySeverityLow,
+                EnforcementOption: shared.EnforcementOptionFail,
+                PermissibleVulnerabilityLevel: shared.VulnerabilitySeverityHigh,
             },
         },
-        IgnoredRiskID: "2b6ef16d-35fd-4f85-a9c3-11ad619343e9",
+        IgnoredRiskID: "52b6ef16-d35f-4df8-929c-311ad619343e",
     })
     if err != nil {
         log.Fatal(err)

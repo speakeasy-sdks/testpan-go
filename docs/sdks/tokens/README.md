@@ -88,14 +88,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Tokens.GetTokens(ctx, operations.GetTokensRequest{
-        MaxResults: testpango.Float64(681.78),
-        NoPagination: testpango.Bool(false),
-        Offset: testpango.Float64(7366.65),
-        SortDir: operations.GetTokensSortDirAsc.ToPointer(),
-        SortKey: operations.GetTokensSortKeyExpirationDate.ToPointer(),
-        TokenName: testpango.String("what"),
-    })
+    res, err := s.Tokens.GetTokens(ctx, operations.GetTokensRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -239,7 +232,6 @@ import(
 	"log"
 	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
-	"github.com/speakeasy-sdks/testpan-go/pkg/types"
 )
 
 func main() {
@@ -255,13 +247,8 @@ func main() {
         Apis: []string{
             "06eb110c-ef48-45c9-b334-9ef284ebe70b",
         },
-        AttributeName: testpango.String("offensive flexibility Gate"),
-        AttributeType: shared.TokenAttributeTypeRequestHeader.ToPointer(),
-        ExpirationDate: types.MustTimeFromString("2022-12-06T03:02:47.254Z"),
-        HTTPPath: testpango.String("Gasoline Bicycle"),
-        ID: testpango.String("15c6181f-23a7-44d2-945a-aec34929a503"),
-        Name: "Cyclocross",
-        VaultSecretPath: "intermediate array",
+        Name: "offensive flexibility Gate",
+        VaultSecretPath: "Customer",
     })
     if err != nil {
         log.Fatal(err)
@@ -301,7 +288,6 @@ import(
 	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
-	"github.com/speakeasy-sdks/testpan-go/pkg/types"
 )
 
 func main() {
@@ -318,15 +304,10 @@ func main() {
             Apis: []string{
                 "92f997c4-3e7b-4827-80b5-81f98e4dc9a1",
             },
-            AttributeName: testpango.String("ah card Mercedes"),
-            AttributeType: shared.TokenAttributeTypeRequestHeader.ToPointer(),
-            ExpirationDate: types.MustTimeFromString("2023-05-19T15:11:35.927Z"),
-            HTTPPath: testpango.String("Ball"),
-            ID: testpango.String("6d3d22b8-df11-4333-9e59-e4bbc71d1a3f"),
-            Name: "deposit Checking Rap",
-            VaultSecretPath: "Chevrolet error",
+            Name: "ah card Mercedes",
+            VaultSecretPath: "purple",
         },
-        TokenID: "650a257d-f5fe-417c-b321-bf84e462e505",
+        TokenID: "346d3d22-b8df-4113-b31e-59e4bbc71d1a",
     })
     if err != nil {
         log.Fatal(err)

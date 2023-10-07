@@ -199,11 +199,10 @@ func main() {
                 },
             },
         },
-        Description: testpango.String("Front-line fault-tolerant orchestration"),
         GlobalCondition: &shared.APISecurityPolicyGlobalCondition{
-            HighestAcceptedSeverity: shared.APISecurityPolicyRiskSeverityCritical,
+            HighestAcceptedSeverity: shared.APISecurityPolicyRiskSeverityLow,
         },
-        Name: "copying",
+        Name: "male Granite",
     })
     if err != nil {
         log.Fatal(err)
@@ -264,13 +263,12 @@ func main() {
                     },
                 },
             },
-            Description: testpango.String("Up-sized well-modulated leverage"),
             GlobalCondition: &shared.APISecurityPolicyGlobalCondition{
-                HighestAcceptedSeverity: shared.APISecurityPolicyRiskSeverityNoRisk,
+                HighestAcceptedSeverity: shared.APISecurityPolicyRiskSeverityCritical,
             },
-            Name: "Small Northwest",
+            Name: "Rock Integration Brentwood",
         },
-        PolicyID: "448558c2-807a-430f-90b4-3b138ce775c5",
+        PolicyID: "7448558c-2807-4a30-bd0b-43b138ce775c",
     })
     if err != nil {
         log.Fatal(err)

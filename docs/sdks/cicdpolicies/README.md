@@ -249,10 +249,9 @@ func main() {
         Deployers: []string{
             "aede075c-3164-444b-a1e6-c4ecee9d9042",
         },
-        Description: testpango.String("User-friendly composite Graphic Interface"),
-        Name: "Concrete",
+        Name: "Shirt Wooden radian",
         PermissionCDPolicy: &shared.CdPolicyElement{
-            EnforcementOption: shared.EnforcementOptionIgnore,
+            EnforcementOption: shared.EnforcementOptionFail,
             PermissibleVulnerabilityLevel: shared.CDPipelineFindingRiskHigh,
         },
         SecretCDPolicy: &shared.SecretsCdPolicyElement{
@@ -313,15 +312,14 @@ func main() {
 
     ctx := context.Background()
     res, err := s.CICDPolicies.PostCiPolicy(ctx, shared.CiPolicyInput{
-        Description: testpango.String("Adaptive scalable portal"),
         DockerfileScanCiPolicy: &shared.DockerfileScanCiPolicy{
             EnforcementOption: shared.EnforcementOptionFail,
-            PermissibleDockerfileScanSeverity: shared.DockerfileScanSeverityInfo,
+            PermissibleDockerfileScanSeverity: shared.DockerfileScanSeverityFatal,
         },
-        Name: "local Tom",
+        Name: "monetize navigate beatae",
         VulnerabilityCiPolicy: &shared.VulnerabilityCiPolicy{
             EnforcementOption: shared.EnforcementOptionFail,
-            PermissibleVulnerabilityLevel: shared.VulnerabilitySeverityLow,
+            PermissibleVulnerabilityLevel: shared.VulnerabilitySeverityUnknown,
         },
     })
     if err != nil {
@@ -382,11 +380,10 @@ func main() {
             Deployers: []string{
                 "45666e4d-fb74-4ef6-9a81-a0d950f62fec",
             },
-            Description: testpango.String("Enterprise-wide 4th generation process improvement"),
-            Name: "Berkshire quantifying",
+            Name: "Heights",
             PermissionCDPolicy: &shared.CdPolicyElement{
-                EnforcementOption: shared.EnforcementOptionIgnore,
-                PermissibleVulnerabilityLevel: shared.CDPipelineFindingRiskHigh,
+                EnforcementOption: shared.EnforcementOptionFail,
+                PermissibleVulnerabilityLevel: shared.CDPipelineFindingRiskMedium,
             },
             SecretCDPolicy: &shared.SecretsCdPolicyElement{
                 EnforcementOption: shared.EnforcementOptionIgnore,
@@ -397,7 +394,7 @@ func main() {
                 PermissibleVulnerabilityLevel: shared.CDPipelineFindingRiskHigh,
             },
         },
-        PolicyID: "0d219b4a-2fde-47a8-9370-33a3f0a96f23",
+        PolicyID: "8fba0d21-9b4a-42fd-a7a8-937033a3f0a9",
     })
     if err != nil {
         log.Fatal(err)
@@ -450,18 +447,17 @@ func main() {
     ctx := context.Background()
     res, err := s.CICDPolicies.PutCiPolicyPolicyID(ctx, operations.PutCiPolicyPolicyIDRequest{
         CiPolicyInput: shared.CiPolicyInput{
-            Description: testpango.String("Public-key 24 hour pricing structure"),
             DockerfileScanCiPolicy: &shared.DockerfileScanCiPolicy{
-                EnforcementOption: shared.EnforcementOptionFail,
+                EnforcementOption: shared.EnforcementOptionIgnore,
                 PermissibleDockerfileScanSeverity: shared.DockerfileScanSeverityInfo,
             },
-            Name: "primary transform drive",
+            Name: "Avon Bicycle primary",
             VulnerabilityCiPolicy: &shared.VulnerabilityCiPolicy{
-                EnforcementOption: shared.EnforcementOptionIgnore,
-                PermissibleVulnerabilityLevel: shared.VulnerabilitySeverityCritical,
+                EnforcementOption: shared.EnforcementOptionFail,
+                PermissibleVulnerabilityLevel: shared.VulnerabilitySeverityUnknown,
             },
         },
-        PolicyID: "e24f5dcf-d347-4fd8-8ec5-8c84ce879afb",
+        PolicyID: "5cdfe24f-5dcf-4d34-bfd8-0ec58c84ce87",
     })
     if err != nil {
         log.Fatal(err)

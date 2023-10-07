@@ -149,11 +149,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Users.GetUsers(ctx, operations.GetUsersRequest{
-        Email: testpango.String("Martine_Welch@hotmail.com"),
-        Roles: []GetUsersRoles{
-            operations.GetUsersRolesAccountAdmin,
+        Roles: []operations.GetUsersRoles{
+            operations.GetUsersRolesService,
         },
-        Username: testpango.String("Domenick_Schulist87"),
     })
     if err != nil {
         log.Fatal(err)
@@ -355,10 +353,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Users.PostChangePassword(ctx, shared.ChangePasswordInfo{
-        NewPassword: testpango.String("Clifton Tuna invoice"),
-        OldPassword: testpango.String("Loan"),
-    })
+    res, err := s.Users.PostChangePassword(ctx, shared.ChangePasswordInfo{})
     if err != nil {
         log.Fatal(err)
     }
@@ -408,10 +403,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Users.PostLogin(ctx, operations.PostLoginRequest{
-        GoogleIDToken: testpango.String("Paradigm Touring enthusiastically"),
-        Token: testpango.String("gray"),
-    })
+    res, err := s.Users.PostLogin(ctx, operations.PostLoginRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -558,11 +550,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Users.PostUsers(ctx, shared.UserInput{
-        Description: testpango.String("Cross-group reciprocal toolset"),
-        Email: testpango.String("Erin_Wintheiser@hotmail.com"),
-        FullName: "Mrs. Todd Halvorson",
-        ID: testpango.String("d86a2273-6c5e-406f-80e1-8a3ed58c3e0d"),
-        Role: shared.RolePortshiftAuditor.ToPointer(),
+        FullName: "Johnnie Windler",
         Status: shared.UserStatusDisabled,
     })
     if err != nil {
@@ -664,15 +652,12 @@ func main() {
     ctx := context.Background()
     res, err := s.Users.PostUsersTrial(ctx, operations.PostUsersTrialRequest{
         TrialUser: shared.TrialUser{
-            Company: testpango.String("Rohan and Sons"),
-            Email: "Tremaine.Bashirian@gmail.com",
-            FirstName: "Sim",
-            HowDidYouHearAboutUs: shared.TrialUserHowDidYouHearAboutUsAdvertising.ToPointer(),
-            JobTitle: testpango.String("Human Program Liaison"),
-            LastName: "Kovacek",
+            Email: "Nelle93@gmail.com",
+            FirstName: "Alice",
+            LastName: "Mitchell",
             PrivacyPolicyAndTermsAndConditionsAgreement: false,
         },
-        GRecaptchaResponse: "Automated",
+        GRecaptchaResponse: "oddly attentive",
     })
     if err != nil {
         log.Fatal(err)
@@ -725,13 +710,10 @@ func main() {
     ctx := context.Background()
     res, err := s.Users.PutUsersUserID(ctx, operations.PutUsersUserIDRequest{
         EditUserInput: shared.EditUserInput{
-            Description: testpango.String("Assimilated zero defect moratorium"),
-            FullName: "Ms. Kathy Stanton",
-            ID: testpango.String("79a1c67b-61ff-41da-8536-101e994c1527"),
-            Role: shared.RoleAccountAdmin.ToPointer(),
+            FullName: "Elisa O'Reilly",
             Status: shared.EditUserStatusDisabled,
         },
-        UserID: "04672250-5e17-4edb-8b8f-fdfce4dbd0b1",
+        UserID: "18479a1c-67b6-41ff-9da0-536101e994c1",
     })
     if err != nil {
         log.Fatal(err)

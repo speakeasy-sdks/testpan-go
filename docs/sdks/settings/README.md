@@ -300,9 +300,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Settings.PostSeccompProfilesValidateData(ctx, shared.SeccompProfileData{
-        Data: testpango.String("{cycle: 29272, settlement: null, collaboration: \"grey yearly\"}"),
-    })
+    res, err := s.Settings.PostSeccompProfilesValidateData(ctx, shared.SeccompProfileData{})
     if err != nil {
         log.Fatal(err)
     }
@@ -402,8 +400,7 @@ func main() {
     res, err := s.Settings.PostSettingsIntegrationsCa(ctx, shared.CaIntegrationRequestInput{
         Certificate: "prickly",
         IssuerName: "Loan whereas green",
-        IssuerNamespace: testpango.String("Loan wield cyan"),
-        Name: "Northwest Wagon Soft",
+        Name: "Loan wield cyan",
     })
     if err != nil {
         log.Fatal(err)
@@ -459,7 +456,6 @@ func main() {
             shared.EventsToForwardAttackPath,
         },
         Name: "Soft dull alliance",
-        URL: testpango.String("https://truthful-campaigning.name"),
     })
     if err != nil {
         log.Fatal(err)
@@ -663,10 +659,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Settings.PostSettingsIntegrationsSplunkTestIntegration(ctx, shared.TestSplunkConnectionRequest{
-        IsCloud: testpango.Bool(false),
-        Port: testpango.Int64(353653),
-        Token: "orange XSS meter",
-        URL: "http://legal-pea.com",
+        Token: "male grow",
+        URL: "https://short-term-accordion.biz",
     })
     if err != nil {
         log.Fatal(err)
@@ -869,10 +863,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Settings.PutSettingsAgentsUpdate(ctx, shared.AgentsUpdateSettingsInput{
-        IsManualUpdate: testpango.Bool(false),
-        IsUpdateNowEnabled: testpango.Bool(false),
-    })
+    res, err := s.Settings.PutSettingsAgentsUpdate(ctx, shared.AgentsUpdateSettingsInput{})
     if err != nil {
         log.Fatal(err)
     }
@@ -926,10 +917,9 @@ func main() {
         CaIntegrationRequestInput: shared.CaIntegrationRequestInput{
             Certificate: "Berkshire",
             IssuerName: "Bicycle",
-            IssuerNamespace: testpango.String("Central UDP recontextualize"),
-            Name: "Peru Market",
+            Name: "Central UDP recontextualize",
         },
-        ID: "d2fdcaea-e550-46a1-9b8c-391af00a780a",
+        ID: "80b658d2-fdca-4eae-9506-a19b8c391af0",
     })
     if err != nil {
         log.Fatal(err)
@@ -986,14 +976,10 @@ func main() {
             EventsToForward: []shared.EventsToForward{
                 shared.EventsToForwardNotification,
             },
-            IsCloud: testpango.Bool(false),
             Name: "Genderqueer deploy",
-            Port: testpango.Int64(212010),
-            SourceName: testpango.String("proposal Yemen Audi"),
-            Token: "RSS",
-            URL: testpango.String("https://crafty-spec.net"),
+            Token: "whoever",
         },
-        EventForwardingID: "1b408bce-49d2-438c-ae86-ac5f2202c79c",
+        EventForwardingID: "b0fd0479-c2dc-41b4-88bc-e49d238c6e86",
     })
     if err != nil {
         log.Fatal(err)

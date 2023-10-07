@@ -4,6 +4,7 @@ package operations
 
 import (
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	"io"
 	"net/http"
 )
 
@@ -28,7 +29,8 @@ type GetGatewaysGatewayIDDownloadBundleResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// OK
-	GetGatewaysGatewayIDDownloadBundle200ApplicationJSONBinaryString []byte
+	// The Close method must be called on this field, even if it is not used, to prevent resource leaks.
+	GetGatewaysGatewayIDDownloadBundle200ApplicationJSONBinaryString io.ReadCloser
 }
 
 func (o *GetGatewaysGatewayIDDownloadBundleResponse) GetAPIResponse() *shared.APIResponse {
@@ -59,7 +61,7 @@ func (o *GetGatewaysGatewayIDDownloadBundleResponse) GetRawResponse() *http.Resp
 	return o.RawResponse
 }
 
-func (o *GetGatewaysGatewayIDDownloadBundleResponse) GetGetGatewaysGatewayIDDownloadBundle200ApplicationJSONBinaryString() []byte {
+func (o *GetGatewaysGatewayIDDownloadBundleResponse) GetGetGatewaysGatewayIDDownloadBundle200ApplicationJSONBinaryString() io.ReadCloser {
 	if o == nil {
 		return nil
 	}

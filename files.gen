@@ -55,6 +55,7 @@ pkg/utils/requestbody.go
 pkg/utils/retries.go
 pkg/utils/security.go
 pkg/utils/utils.go
+tests/helpers.go
 pkg/models/operations/deleteapisecuritypolicypolicyid.go
 pkg/models/operations/getapisecuritypolicy.go
 pkg/models/operations/getapisecuritypolicypolicyiddeletedependencies.go

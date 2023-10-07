@@ -83,36 +83,24 @@ func main() {
         DefaultRule: shared.ServerlessDefaultRuleDetectAll,
         UnidentifiedServerlessRule: shared.UnidentifiedServerlessRule{
             Action: shared.UnidentifiedServerlessRuleActionDetect,
-            Name: testpango.String("infrastructures solutions"),
         },
         UserRules: []shared.ServerlessRule{
             shared.ServerlessRule{
-                Action: shared.ServerlessRuleActionDetect,
-                GroupName: testpango.String("Dodge"),
-                ID: testpango.String("6eaf47ac-061b-4704-854c-19159eac10ed"),
-                Name: "Convertible Shilling",
+                Action: shared.ServerlessRuleActionAllow,
+                Name: "Northwest granular",
                 Rule: shared.ServerlessRuleType{
-                    ServerlessFunctionValidation: &shared.ServerlessFunctionValidation{
-                        DataAccessRisk: shared.ServerlessDataAccessRiskLow.ToPointer(),
-                        FunctionPermissionRisk: shared.ServerlessPolicyRiskHigh.ToPointer(),
-                        IsUnusedFunction: testpango.Bool(false),
-                        PubliclyAccessibleRisk: shared.ServerlessPubliclyAccessibleRiskLow.ToPointer(),
-                        Risk: shared.ServerlessFunctionRiskLevelLow.ToPointer(),
-                        SecretsRisk: shared.ServerlessSecretsRiskNoKnownRisk.ToPointer(),
-                        Vulnerability: shared.VulnerabilitySeverityLow.ToPointer(),
-                    },
-                    ServerlessRuleType: shared.ServerlessRuleTypeServerlessRuleTypeFunctionNameServerlessRuleType,
+                    ServerlessFunctionValidation: &shared.ServerlessFunctionValidation{},
+                    ServerlessRuleType: shared.ServerlessRuleTypeServerlessRuleTypeFunctionAnyServerlessRuleType,
                 },
-                RuleOrigin: shared.ServerlessRuleOriginSystem.ToPointer(),
                 Scope: []shared.ServerlessRuleScope{
                     shared.ServerlessRuleScope{
-                        CloudAccount: "Latin West",
+                        CloudAccount: "Tuna brand Legacy",
                         Regions: []string{
-                            "Configuration",
+                            "Iraq",
                         },
                     },
                 },
-                Status: shared.ServerlessRuleStatusDisabled,
+                Status: shared.ServerlessRuleStatusEnabled,
             },
         },
     })

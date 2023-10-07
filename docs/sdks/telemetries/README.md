@@ -49,7 +49,6 @@ func main() {
         AppType: []string{
             "splendid",
         },
-        DownloadAsXlsx: testpango.Bool(false),
         EndTime: types.MustTimeFromString("2021-09-05T15:33:12.217Z"),
         EnvironmentName: []string{
             "Syrian",
@@ -57,7 +56,6 @@ func main() {
         Executable: []string{
             "strategy",
         },
-        HideInternals: testpango.Bool(false),
         HighestDockerfileScanResult: []string{
             "Concrete",
         },
@@ -67,28 +65,19 @@ func main() {
         ImagesID: []string{
             "356669e3-0a7d-4fca-9c8c-97d1dbbd6441",
         },
-        IsIdentified: testpango.Bool(false),
-        MaxResults: testpango.Float64(3704.75),
-        NamespacesFilter: testpango.String("North South"),
-        Offset: testpango.Float64(9999.51),
-        ProtectionStatus: operations.GetAppTelemetriesProtectionStatusFull.ToPointer(),
-        Result: []GetAppTelemetriesResult{
-            operations.GetAppTelemetriesResultBlock,
+        Result: []operations.GetAppTelemetriesResult{
+            operations.GetAppTelemetriesResultDetect,
         },
-        ShowOnlyEntriesWithAppName: testpango.Bool(false),
-        ShowOnlyViolations: testpango.Bool(false),
-        ShowSystemPods: testpango.Bool(false),
-        SortDir: operations.GetAppTelemetriesSortDirAsc.ToPointer(),
-        SortKey: operations.GetAppTelemetriesSortKeyEnvironmentName,
-        StartTime: types.MustTimeFromString("2023-08-01T01:58:56.429Z"),
+        SortKey: operations.GetAppTelemetriesSortKeyRisk,
+        StartTime: types.MustTimeFromString("2021-01-15T02:52:59.625Z"),
         Status: []string{
-            "and",
+            "Avon",
         },
         VulnerabilityLevelsFilter: []string{
-            "Benin Checking",
+            "audition female",
         },
-        WorkloadRisks: []GetAppTelemetriesWorkloadRisks{
-            operations.GetAppTelemetriesWorkloadRisksHigh,
+        WorkloadRisks: []operations.GetAppTelemetriesWorkloadRisks{
+            operations.GetAppTelemetriesWorkloadRisksMedium,
         },
     })
     if err != nil {
@@ -350,49 +339,41 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Telemetries.GetConnectionTelemetries(ctx, operations.GetConnectionTelemetriesRequest{
-        DownloadAsXlsx: testpango.Bool(false),
         EndTime: types.MustTimeFromString("2023-12-02T06:47:12.551Z"),
-        LogicalOperator: operations.GetConnectionTelemetriesLogicalOperatorOr.ToPointer(),
-        MaxResults: testpango.Float64(1093.57),
-        Offset: testpango.Float64(9127.11),
-        Result: []GetConnectionTelemetriesResult{
-            operations.GetConnectionTelemetriesResultDetect,
+        Result: []operations.GetConnectionTelemetriesResult{
+            operations.GetConnectionTelemetriesResultAllow,
         },
-        ShowOnlyViolations: testpango.Bool(false),
-        SortDir: operations.GetConnectionTelemetriesSortDirAsc.ToPointer(),
-        SortKey: operations.GetConnectionTelemetriesSortKeyTargetAppType,
+        SortKey: operations.GetConnectionTelemetriesSortKeySourceAppType,
         SourceAppName: []string{
-            "Hybrid",
+            "because",
         },
         SourceEnvironmentName: []string{
-            "wireless",
+            "Cotton",
         },
         SourceExecutable: []string{
-            "Walks",
+            "Hybrid",
         },
         SourceHostName: []string{
-            "circuit",
+            "wireless",
         },
-        SourceNamespacesFilter: testpango.String("rich Coves"),
-        SourceRisk: []GetConnectionTelemetriesSourceRisk{
-            operations.GetConnectionTelemetriesSourceRiskLow,
+        SourceRisk: []operations.GetConnectionTelemetriesSourceRisk{
+            operations.GetConnectionTelemetriesSourceRiskHigh,
         },
-        StartTime: types.MustTimeFromString("2022-12-19T09:46:13.488Z"),
+        StartTime: types.MustTimeFromString("2023-12-19T20:37:58.933Z"),
         TargetAppName: []string{
-            "debunk",
+            "Moscovium",
         },
         TargetEnvironmentName: []string{
-            "lysine",
+            "Regional",
         },
         TargetExecutable: []string{
-            "athwart",
+            "coddle",
         },
         TargetHostName: []string{
-            "female",
+            "Hampshire",
         },
-        TargetNamespacesFilter: testpango.String("zero"),
-        TargetRisk: []GetConnectionTelemetriesTargetRisk{
-            operations.GetConnectionTelemetriesTargetRiskHigh,
+        TargetRisk: []operations.GetConnectionTelemetriesTargetRisk{
+            operations.GetConnectionTelemetriesTargetRiskMedium,
         },
     })
     if err != nil {

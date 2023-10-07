@@ -40,13 +40,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Apps.GetApps(ctx, operations.GetAppsRequest{
-        DownloadAsXlsx: testpango.Bool(false),
-        Name: testpango.String("West"),
-        NoPagination: testpango.Bool(false),
-        SortDir: operations.GetAppsSortDirDesc.ToPointer(),
-        SortKey: operations.GetAppsSortKeyType.ToPointer(),
         Type: []string{
-            "deliverables",
+            "Bermuda",
         },
     })
     if err != nil {
@@ -151,16 +146,17 @@ func main() {
     ctx := context.Background()
     res, err := s.Apps.PostApps(ctx, shared.App{
         Args: []string{
-            "Pennsylvania",
+            "-cp",
+            "-jar",
+            "./*",
         },
         Cwd: testpango.String("/usr/local/bin/corp"),
         Executable: "java",
         ExecutablePath: testpango.String("/usr/bin"),
-        ID: testpango.String("a23be434-0962-431a-a464-6df448ea2451"),
         Labels: []shared.Label{
             shared.Label{
                 Key: "<key>",
-                Value: "considering",
+                Value: "becquerel",
             },
         },
         Name: "AccountingApp",
@@ -271,23 +267,24 @@ func main() {
     res, err := s.Apps.PutAppsAppID(ctx, operations.PutAppsAppIDRequest{
         App: shared.App{
             Args: []string{
-                "invoice",
+                "-cp",
+                "-jar",
+                "./*",
             },
             Cwd: testpango.String("/usr/local/bin/corp"),
             Executable: "java",
             ExecutablePath: testpango.String("/usr/bin"),
-            ID: testpango.String("a0b1a3d7-8ca7-4d0e-a8bc-a8a0d7f81190"),
             Labels: []shared.Label{
                 shared.Label{
                     Key: "<key>",
-                    Value: "infrastructures Tuna",
+                    Value: "Mercedes Fluorine",
                 },
             },
             Name: "AccountingApp",
             ProcessName: testpango.String("accounting_app"),
             Type: "frontend",
         },
-        AppID: "17593302-d163-413d-8049-f888f283529e",
+        AppID: "a3d78ca7-d0e6-48bc-a8a0-d7f811909514",
     })
     if err != nil {
         log.Fatal(err)

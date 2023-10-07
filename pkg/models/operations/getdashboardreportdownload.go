@@ -3,6 +3,7 @@
 package operations
 
 import (
+	"io"
 	"net/http"
 )
 
@@ -14,7 +15,8 @@ type GetDashboardReportDownloadResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// The Secure Application security report
-	GetDashboardReportDownload200ApplicationJSONBinaryString []byte
+	// The Close method must be called on this field, even if it is not used, to prevent resource leaks.
+	GetDashboardReportDownload200ApplicationJSONBinaryString io.ReadCloser
 }
 
 func (o *GetDashboardReportDownloadResponse) GetContentType() string {
@@ -38,7 +40,7 @@ func (o *GetDashboardReportDownloadResponse) GetRawResponse() *http.Response {
 	return o.RawResponse
 }
 
-func (o *GetDashboardReportDownloadResponse) GetGetDashboardReportDownload200ApplicationJSONBinaryString() []byte {
+func (o *GetDashboardReportDownloadResponse) GetGetDashboardReportDownload200ApplicationJSONBinaryString() io.ReadCloser {
 	if o == nil {
 		return nil
 	}

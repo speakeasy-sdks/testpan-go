@@ -3,6 +3,7 @@
 package operations
 
 import (
+	"io"
 	"net/http"
 )
 
@@ -14,7 +15,8 @@ type GetMitreReportDownloadResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// The Mitre report
-	GetMitreReportDownload200ApplicationJSONBinaryString []byte
+	// The Close method must be called on this field, even if it is not used, to prevent resource leaks.
+	GetMitreReportDownload200ApplicationJSONBinaryString io.ReadCloser
 }
 
 func (o *GetMitreReportDownloadResponse) GetContentType() string {
@@ -38,7 +40,7 @@ func (o *GetMitreReportDownloadResponse) GetRawResponse() *http.Response {
 	return o.RawResponse
 }
 
-func (o *GetMitreReportDownloadResponse) GetGetMitreReportDownload200ApplicationJSONBinaryString() []byte {
+func (o *GetMitreReportDownloadResponse) GetGetMitreReportDownload200ApplicationJSONBinaryString() io.ReadCloser {
 	if o == nil {
 		return nil
 	}

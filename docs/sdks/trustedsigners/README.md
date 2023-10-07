@@ -91,10 +91,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.TrustedSigners.GetTrustedSigners(ctx, operations.GetTrustedSignersRequest{
-        SortDir: operations.GetTrustedSignersSortDirAsc.ToPointer(),
-        SortKey: operations.GetTrustedSignersSortKeyName.ToPointer(),
-    })
+    res, err := s.TrustedSigners.GetTrustedSigners(ctx, operations.GetTrustedSignersRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -204,18 +201,10 @@ func main() {
         },
         Name: "killer United Agender",
         TrustedSignerCloudAccounts: []shared.TrustedSignerCloudAccountInput{
-            shared.TrustedSignerCloudAccountInput{
-                ID: testpango.String("339127fc-1c35-45d9-9677-cf34f19a2406"),
-                Status: shared.TrustedSignerClusterStatusWarning.ToPointer(),
-                Validation: shared.TrustedSignerClusterValidationHash.ToPointer(),
-            },
+            shared.TrustedSignerCloudAccountInput{},
         },
         TrustedSignerClusters: []shared.TrustedSignerClusterInput{
-            shared.TrustedSignerClusterInput{
-                ID: testpango.String("22272998-72b1-4626-b1e4-e3bd500d0622"),
-                Status: shared.TrustedSignerClusterStatusWarning.ToPointer(),
-                Validation: shared.TrustedSignerClusterValidationNone.ToPointer(),
-            },
+            shared.TrustedSignerClusterInput{},
         },
     })
     if err != nil {
@@ -277,21 +266,13 @@ func main() {
             },
             Name: "so static never",
             TrustedSignerCloudAccounts: []shared.TrustedSignerCloudAccountInput{
-                shared.TrustedSignerCloudAccountInput{
-                    ID: testpango.String("2390f3eb-b00b-4b0b-a50b-1429abb4df87"),
-                    Status: shared.TrustedSignerClusterStatusWarning.ToPointer(),
-                    Validation: shared.TrustedSignerClusterValidationNone.ToPointer(),
-                },
+                shared.TrustedSignerCloudAccountInput{},
             },
             TrustedSignerClusters: []shared.TrustedSignerClusterInput{
-                shared.TrustedSignerClusterInput{
-                    ID: testpango.String("af5cddc0-6513-44a6-9fd6-1a9bf59409fe"),
-                    Status: shared.TrustedSignerClusterStatusValid.ToPointer(),
-                    Validation: shared.TrustedSignerClusterValidationSignature.ToPointer(),
-                },
+                shared.TrustedSignerClusterInput{},
             },
         },
-        TrustedSignerID: "c650d3f6-4267-4f45-b31f-42c8f00b005e",
+        TrustedSignerID: "2390f3eb-b00b-4b0b-a50b-1429abb4df87",
     })
     if err != nil {
         log.Fatal(err)

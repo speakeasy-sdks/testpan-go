@@ -151,12 +151,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Cd.GetCd(ctx, operations.GetCdRequest{
         EndTime: types.MustTimeFromString("2022-11-13T13:45:57.433Z"),
-        MaxResults: testpango.Float64(9762.43),
-        Offset: testpango.Float64(9342.32),
-        ResourceName: testpango.String("kale Northeast Bicycle"),
-        SortDir: operations.GetCdSortDirDesc.ToPointer(),
-        SortKey: operations.GetCdSortKeyTime.ToPointer(),
-        StartTime: types.MustTimeFromString("2023-10-03T17:16:38.452Z"),
+        StartTime: types.MustTimeFromString("2023-12-05T23:39:45.476Z"),
     })
     if err != nil {
         log.Fatal(err)
@@ -209,8 +204,6 @@ func main() {
     ctx := context.Background()
     res, err := s.Cd.GetCdResourceID(ctx, operations.GetCdResourceIDRequest{
         ResourceID: "dbdc0e78-4707-4528-b885-f251b95127b5",
-        SortDir: operations.GetCdResourceIDSortDirAsc.ToPointer(),
-        SortKey: operations.GetCdResourceIDSortKeyRisk.ToPointer(),
     })
     if err != nil {
         log.Fatal(err)
@@ -365,17 +358,12 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Cd.PostCdConnectionsRule(ctx, shared.CdConnectionRule{
-        Action: shared.ConnectionRuleActionBlock.ToPointer(),
         Destination: &shared.ConnectionRulePart{
+            ConnectionRulePartType: shared.ConnectionRulePartConnectionRulePartTypePodNameConnectionRulePart,
+        },
+        Source: &shared.ConnectionRulePart{
             ConnectionRulePartType: shared.ConnectionRulePartConnectionRulePartTypeAppTypeConnectionRulePart,
         },
-        GroupName: testpango.String("North"),
-        ID: testpango.String("b91e56e8-5c5e-4dba-b536-b99e2dee788b"),
-        Name: testpango.String("Account programming quos"),
-        Source: &shared.ConnectionRulePart{
-            ConnectionRulePartType: shared.ConnectionRulePartConnectionRulePartTypeExpansionLabelsConnectionRulePart,
-        },
-        Status: shared.CdConnectionRuleStatusDisabled.ToPointer(),
     })
     if err != nil {
         log.Fatal(err)
@@ -427,30 +415,20 @@ func main() {
     ctx := context.Background()
     res, err := s.Cd.PostCdServerlessRule(ctx, shared.CdServerlessRule{
         Action: shared.ServerlessRuleActionDetect,
-        GroupName: testpango.String("orchestration Account navigate"),
-        ID: testpango.String("81ea9f29-4b56-4171-9abd-233ecb84ab91"),
-        Name: "Arizona South",
+        Name: "orchestration Account navigate",
         Rule: shared.ServerlessRuleType{
-            ServerlessFunctionValidation: &shared.ServerlessFunctionValidation{
-                DataAccessRisk: shared.ServerlessDataAccessRiskLow.ToPointer(),
-                FunctionPermissionRisk: shared.ServerlessPolicyRiskCritical.ToPointer(),
-                IsUnusedFunction: testpango.Bool(false),
-                PubliclyAccessibleRisk: shared.ServerlessPubliclyAccessibleRiskNoRisk.ToPointer(),
-                Risk: shared.ServerlessFunctionRiskLevelLow.ToPointer(),
-                SecretsRisk: shared.ServerlessSecretsRiskNoKnownRisk.ToPointer(),
-                Vulnerability: shared.VulnerabilitySeverityHigh.ToPointer(),
-            },
+            ServerlessFunctionValidation: &shared.ServerlessFunctionValidation{},
             ServerlessRuleType: shared.ServerlessRuleTypeServerlessRuleTypeFunctionNameServerlessRuleType,
         },
         Scope: []shared.ServerlessRuleScope{
             shared.ServerlessRuleScope{
-                CloudAccount: "Loan redundant",
+                CloudAccount: "that",
                 Regions: []string{
-                    "orchid",
+                    "tenetur",
                 },
             },
         },
-        Status: shared.ServerlessRuleStatusDeleted,
+        Status: shared.ServerlessRuleStatusEnabled,
     })
     if err != nil {
         log.Fatal(err)
@@ -503,19 +481,14 @@ func main() {
     ctx := context.Background()
     res, err := s.Cd.PutCdRuleIDConnectionsRule(ctx, operations.PutCdRuleIDConnectionsRuleRequest{
         CdConnectionRule: shared.CdConnectionRule{
-            Action: shared.ConnectionRuleActionDetect.ToPointer(),
             Destination: &shared.ConnectionRulePart{
+                ConnectionRulePartType: shared.ConnectionRulePartConnectionRulePartTypeAppNameConnectionRulePart,
+            },
+            Source: &shared.ConnectionRulePart{
                 ConnectionRulePartType: shared.ConnectionRulePartConnectionRulePartTypeExpansionAnyConnectionRulePart,
             },
-            GroupName: testpango.String("Rubber"),
-            ID: testpango.String("1c83a5ad-c392-412e-ad67-13c48128c295"),
-            Name: testpango.String("Philippines male Philippine"),
-            Source: &shared.ConnectionRulePart{
-                ConnectionRulePartType: shared.ConnectionRulePartConnectionRulePartTypeAnyConnectionRulePart,
-            },
-            Status: shared.CdConnectionRuleStatusEnabled.ToPointer(),
         },
-        RuleID: "352316c2-4f37-43ef-9bcd-45b8a926d9e0",
+        RuleID: "3491c83a-5adc-4392-92ee-d6713c48128c",
     })
     if err != nil {
         log.Fatal(err)
@@ -569,32 +542,22 @@ func main() {
     res, err := s.Cd.PutCdRuleIDServerlessRule(ctx, operations.PutCdRuleIDServerlessRuleRequest{
         CdServerlessRule: shared.CdServerlessRule{
             Action: shared.ServerlessRuleActionDetect,
-            GroupName: testpango.String("dedicated Developer Sports"),
-            ID: testpango.String("5f913b95-4cc1-4f6c-ab37-9119c49c2a96"),
-            Name: "Electric",
+            Name: "dedicated Developer Sports",
             Rule: shared.ServerlessRuleType{
-                ServerlessFunctionValidation: &shared.ServerlessFunctionValidation{
-                    DataAccessRisk: shared.ServerlessDataAccessRiskNoRisk.ToPointer(),
-                    FunctionPermissionRisk: shared.ServerlessPolicyRiskHigh.ToPointer(),
-                    IsUnusedFunction: testpango.Bool(false),
-                    PubliclyAccessibleRisk: shared.ServerlessPubliclyAccessibleRiskMedium.ToPointer(),
-                    Risk: shared.ServerlessFunctionRiskLevelLow.ToPointer(),
-                    SecretsRisk: shared.ServerlessSecretsRiskNoKnownRisk.ToPointer(),
-                    Vulnerability: shared.VulnerabilitySeverityLow.ToPointer(),
-                },
-                ServerlessRuleType: shared.ServerlessRuleTypeServerlessRuleTypeFunctionArnServerlessRuleType,
+                ServerlessFunctionValidation: &shared.ServerlessFunctionValidation{},
+                ServerlessRuleType: shared.ServerlessRuleTypeServerlessRuleTypeFunctionNameServerlessRuleType,
             },
             Scope: []shared.ServerlessRuleScope{
                 shared.ServerlessRuleScope{
-                    CloudAccount: "Rubber",
+                    CloudAccount: "Cisgender tesla incentivize",
                     Regions: []string{
-                        "utilisation",
+                        "ivory",
                     },
                 },
             },
             Status: shared.ServerlessRuleStatusEnabled,
         },
-        RuleID: "688963e3-0212-4786-89a2-e3b6d79445cb",
+        RuleID: "f6ceb379-119c-449c-aa96-4c43ac563e54",
     })
     if err != nil {
         log.Fatal(err)

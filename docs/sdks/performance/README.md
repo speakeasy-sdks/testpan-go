@@ -34,8 +34,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Performance.GetAPISecurityAPICatalogIDHitCountGraph(ctx, operations.GetAPISecurityAPICatalogIDHitCountGraphRequest{
         CatalogID: "6b535753-b47a-42be-a003-f45375c0bae8",
-        HoursInterval: testpango.Int64(654607),
-        SpecPath: "network",
+        SpecPath: "Tools maxime",
         SpecPathMethod: operations.GetAPISecurityAPICatalogIDHitCountGraphSpecPathMethodPost,
     })
     if err != nil {

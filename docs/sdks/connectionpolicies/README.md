@@ -42,9 +42,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.ConnectionPolicies.GetConnectionsPolicy(ctx, operations.GetConnectionsPolicyRequest{
-        PolicyFilter: testpango.String("Serbia"),
-    })
+    res, err := s.ConnectionPolicies.GetConnectionsPolicy(ctx, operations.GetConnectionsPolicyRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -294,9 +292,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.ConnectionPolicies.GetConnectionsPolicySearchOptions(ctx, operations.GetConnectionsPolicySearchOptionsRequest{
-        NameFilter: testpango.String("Soft"),
-    })
+    res, err := s.ConnectionPolicies.GetConnectionsPolicySearchOptions(ctx, operations.GetConnectionsPolicySearchOptionsRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -394,34 +390,21 @@ func main() {
 
     ctx := context.Background()
     res, err := s.ConnectionPolicies.PutConnectionsPolicy(ctx, shared.ConnectionsPolicy{
-        DefaultRule: &shared.DefaultConnectionRule{
-            Action: shared.ConnectionRuleActionBlock.ToPointer(),
-            Type: shared.DefaultConnectionRuleTypeDenyAll.ToPointer(),
-        },
+        DefaultRule: &shared.DefaultConnectionRule{},
         DirectPodRule: shared.DirectPodIPConnectionRule{
-            Action: shared.DirectPodIPConnectionRuleActionBlock,
-            IsDisabled: testpango.Bool(false),
-            Name: testpango.String("violet yet honestly"),
+            Action: shared.DirectPodIPConnectionRuleActionDetect,
         },
         UserRules: []shared.ConnectionsRule{
             shared.ConnectionsRule{
-                Action: shared.ConnectionRuleActionDetect,
+                Action: shared.ConnectionRuleActionEncryptDirect,
                 Destination: &shared.ConnectionRulePart{
-                    ConnectionRulePartType: shared.ConnectionRulePartConnectionRulePartTypeAPIServiceConnectionRulePart,
+                    ConnectionRulePartType: shared.ConnectionRulePartConnectionRulePartTypeKafkaConnectionRulePart,
                 },
-                GroupName: testpango.String("International"),
-                ID: testpango.String("7d416085-4f9b-4bdb-b9bd-42eaba046b7a"),
-                IsRuleActive: testpango.Bool(false),
-                Layer7Settings: &shared.Layer7SettingsPart{
-                    Layer7Protocol: shared.Layer7SettingsPartLayer7ProtocolHTTPLayer7Part.ToPointer(),
-                },
-                Name: "repellat asymmetric",
-                RuleOrigin: shared.ConnectionRuleOriginUser.ToPointer(),
-                RuleType: shared.NetworkConnectionRuleTypeDirectPodRule.ToPointer(),
+                Layer7Settings: &shared.Layer7SettingsPart{},
+                Name: "violet yet honestly",
                 Source: &shared.ConnectionRulePart{
-                    ConnectionRulePartType: shared.ConnectionRulePartConnectionRulePartTypeIPRangeConnectionRulePart,
+                    ConnectionRulePartType: shared.ConnectionRulePartConnectionRulePartTypeAppNameConnectionRulePart,
                 },
-                Status: shared.ConnectionsRuleStatusEnabled.ToPointer(),
             },
         },
     })

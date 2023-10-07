@@ -109,7 +109,6 @@ func main() {
     ctx := context.Background()
     res, err := s.Dashboard.GetDashboardApisecRiskFindingsTrend(ctx, operations.GetDashboardApisecRiskFindingsTrendRequest{
         APISecSource: operations.GetDashboardApisecRiskFindingsTrendAPISecSourceInternal,
-        NumOfDays: testpango.Int64(738205),
     })
     if err != nil {
         log.Fatal(err)
@@ -214,7 +213,6 @@ func main() {
     ctx := context.Background()
     res, err := s.Dashboard.GetDashboardApisecTopRiskyApis(ctx, operations.GetDashboardApisecTopRiskyApisRequest{
         APISecSource: operations.GetDashboardApisecTopRiskyApisAPISecSourceExternal,
-        MaxResults: testpango.Float64(9119.67),
     })
     if err != nil {
         log.Fatal(err)
@@ -267,7 +265,6 @@ func main() {
     ctx := context.Background()
     res, err := s.Dashboard.GetDashboardApisecTopRiskyFindings(ctx, operations.GetDashboardApisecTopRiskyFindingsRequest{
         APISecSource: operations.GetDashboardApisecTopRiskyFindingsAPISecSourceInternal,
-        MaxResults: testpango.Float64(5232.51),
     })
     if err != nil {
         log.Fatal(err)
@@ -520,7 +517,6 @@ func main() {
         ClustersIds: []string{
             "5a331cfa-e207-49d9-a176-e260318ece7d",
         },
-        IncludeSystemOwners: testpango.Bool(false),
     })
     if err != nil {
         log.Fatal(err)
@@ -773,7 +769,6 @@ func main() {
         ClustersIds: []string{
             "e552767e-0350-4925-b7e4-39731700805c",
         },
-        Size: testpango.Int64(313477),
     })
     if err != nil {
         log.Fatal(err)
