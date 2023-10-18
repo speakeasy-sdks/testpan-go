@@ -194,14 +194,14 @@ func main() {
                 App: &shared.WorkloadRuleType{
                     WorkloadRuleType: shared.WorkloadRuleTypeWorkloadRuleTypePodAnyWorkloadRuleType,
                 },
-                Name: "Bolivia Peso Gasoline",
+                Name: "Adventure",
                 RuleTypeProperties: shared.AppRuleType{
                     RuleType: shared.AppRuleTypeRuleTypeInjectionRuleType,
                 },
                 Scope: &shared.WorkloadRuleScopeType{
-                    WorkloadRuleScopeType: shared.WorkloadRuleScopeTypeEnumEnvironmentNameRuleType,
+                    WorkloadRuleScopeType: shared.WorkloadRuleScopeTypeEnumAnyRuleType,
                 },
-                Status: shared.AppRuleStatusEnabled,
+                Status: shared.AppRuleStatusDeleted,
             },
         },
     })

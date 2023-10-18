@@ -782,11 +782,11 @@ func main() {
         IstioIngressAnnotations: []shared.KubernetesAnnotation{
             shared.KubernetesAnnotation{
                 Key: "<key>",
-                Value: "withdrawal",
+                Value: "magnetic",
             },
         },
         IstioInstallationParameters: &shared.IstioInstallationParameters{},
-        Name: "bypassing mmm",
+        Name: "online",
         ProxyConfiguration: &shared.ProxyConfiguration{},
         ScanConfiguration: &shared.ScanConfiguration{
             ScanTypes: []shared.ScanType{
@@ -858,10 +858,10 @@ func main() {
         Labels: []shared.Label{
             shared.Label{
                 Key: "<key>",
-                Value: "Murfreesboro Recycled Smart",
+                Value: "ajar",
             },
         },
-        Name: "ew Analyst",
+        Name: "Folk",
     })
     if err != nil {
         log.Fatal(err)
@@ -920,20 +920,20 @@ func main() {
             IstioIngressAnnotations: []shared.KubernetesAnnotation{
                 shared.KubernetesAnnotation{
                     Key: "<key>",
-                    Value: "savior normalization absentmindedly",
+                    Value: "upload",
                 },
             },
             IstioInstallationParameters: &shared.IstioInstallationParameters{},
-            Name: "Land relationships Lead",
+            Name: "sapiente",
             ProxyConfiguration: &shared.ProxyConfiguration{},
             ScanConfiguration: &shared.ScanConfiguration{
                 ScanTypes: []shared.ScanType{
-                    shared.ScanTypeVulnerabilities,
+                    shared.ScanTypeDockerCisBenchmark,
                 },
             },
             SidecarsResources: &shared.SidecarsResource{},
         },
-        KubernetesClusterID: "96a5f2d9-d7f9-4c73-b148-40835ef5c171",
+        KubernetesClusterID: "e0fd9579-58a0-4796-a5f2-d9d7f9c73b14",
     })
     if err != nil {
         log.Fatal(err)
@@ -1053,12 +1053,12 @@ func main() {
             Labels: []shared.Label{
                 shared.Label{
                     Key: "<key>",
-                    Value: "Reactive wrongly Cyclocross",
+                    Value: "Ford",
                 },
             },
-            Name: "Pizza payment Rubber",
+            Name: "female",
         },
-        PodID: "0e36a1df-3f32-44e7-945f-9299dbfd5b7f",
+        PodID: "0efc46b3-d799-4349-9390-e36a1df3f324",
     })
     if err != nil {
         log.Fatal(err)

@@ -415,20 +415,20 @@ func main() {
     ctx := context.Background()
     res, err := s.Cd.PostCdServerlessRule(ctx, shared.CdServerlessRule{
         Action: shared.ServerlessRuleActionDetect,
-        Name: "orchestration Account navigate",
+        Name: "Assurance",
         Rule: shared.ServerlessRuleType{
             ServerlessFunctionValidation: &shared.ServerlessFunctionValidation{},
-            ServerlessRuleType: shared.ServerlessRuleTypeServerlessRuleTypeFunctionNameServerlessRuleType,
+            ServerlessRuleType: shared.ServerlessRuleTypeServerlessRuleTypeFunctionArnServerlessRuleType,
         },
         Scope: []shared.ServerlessRuleScope{
             shared.ServerlessRuleScope{
-                CloudAccount: "that",
+                CloudAccount: "navigate",
                 Regions: []string{
-                    "tenetur",
+                    "bypassing",
                 },
             },
         },
-        Status: shared.ServerlessRuleStatusEnabled,
+        Status: shared.ServerlessRuleStatusDeleted,
     })
     if err != nil {
         log.Fatal(err)
@@ -542,22 +542,22 @@ func main() {
     res, err := s.Cd.PutCdRuleIDServerlessRule(ctx, operations.PutCdRuleIDServerlessRuleRequest{
         CdServerlessRule: shared.CdServerlessRule{
             Action: shared.ServerlessRuleActionDetect,
-            Name: "dedicated Developer Sports",
+            Name: "yahoo",
             Rule: shared.ServerlessRuleType{
                 ServerlessFunctionValidation: &shared.ServerlessFunctionValidation{},
-                ServerlessRuleType: shared.ServerlessRuleTypeServerlessRuleTypeFunctionNameServerlessRuleType,
+                ServerlessRuleType: shared.ServerlessRuleTypeServerlessRuleTypeFunctionAnyServerlessRuleType,
             },
             Scope: []shared.ServerlessRuleScope{
                 shared.ServerlessRuleScope{
-                    CloudAccount: "Cisgender tesla incentivize",
+                    CloudAccount: "Developer",
                     Regions: []string{
-                        "ivory",
+                        "Sports",
                     },
                 },
             },
-            Status: shared.ServerlessRuleStatusEnabled,
+            Status: shared.ServerlessRuleStatusDisabled,
         },
-        RuleID: "f6ceb379-119c-449c-aa96-4c43ac563e54",
+        RuleID: "f913b954-cc1f-46ce-b379-119c49c2a964",
     })
     if err != nil {
         log.Fatal(err)

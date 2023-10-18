@@ -34,8 +34,8 @@ func main() {
     ctx := context.Background()
     res, err := s.Performance.GetAPISecurityAPICatalogIDHitCountGraph(ctx, operations.GetAPISecurityAPICatalogIDHitCountGraphRequest{
         CatalogID: "6b535753-b47a-42be-a003-f45375c0bae8",
-        SpecPath: "Tools maxime",
-        SpecPathMethod: operations.GetAPISecurityAPICatalogIDHitCountGraphSpecPathMethodPost,
+        SpecPath: "Dynamic",
+        SpecPathMethod: operations.GetAPISecurityAPICatalogIDHitCountGraphSpecPathMethodDelete,
     })
     if err != nil {
         log.Fatal(err)
@@ -89,12 +89,12 @@ func main() {
     ctx := context.Background()
     res, err := s.Performance.GetPerformanceMetrics(ctx, operations.GetPerformanceMetricsRequest{
         EndTime: types.MustTimeFromString("2023-06-20T17:24:08.589Z"),
-        Protocol: "Account",
-        SourceNamespace: "b8ead185-971d-4112-a105-9b89d3b7dcd1",
-        SourcePodTemplate: "b894b8a5-ad8e-4111-86dd-d9453d845e92",
-        StartTime: types.MustTimeFromString("2023-11-21T23:20:37.062Z"),
-        TargetNamespace: "a04569a7-7dda-4601-a8cf-6d7999aa93b9",
-        TargetPodTemplate: "be30176b-a06c-4558-9ceb-c600c70dc9c6",
+        Protocol: "technologies",
+        SourceNamespace: "5fb8ead1-8597-41d1-9261-059b89d3b7dc",
+        SourcePodTemplate: "d1b894b8-a5ad-48e1-9106-ddd9453d845e",
+        StartTime: types.MustTimeFromString("2022-09-17T00:22:13.332Z"),
+        TargetNamespace: "2fa04569-a77d-4da6-8168-cf6d7999aa93",
+        TargetPodTemplate: "b9be3017-6ba0-46c5-981c-ebc600c70dc9",
     })
     if err != nil {
         log.Fatal(err)

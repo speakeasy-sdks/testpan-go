@@ -849,13 +849,13 @@ func main() {
                 EnforcementOption: shared.EnforcementOptionFail,
                 PermissibleDockerfileScanSeverity: shared.DockerfileScanSeverityInfo,
             },
-            Name: "Bentley Intersex feed",
+            Name: "too",
             VulnerabilityCiPolicy: &shared.VulnerabilityCiPolicy{
                 EnforcementOption: shared.EnforcementOptionFail,
                 PermissibleVulnerabilityLevel: shared.VulnerabilitySeverityHigh,
             },
         },
-        IgnoredRiskID: "52b6ef16-d35f-4df8-929c-311ad619343e",
+        IgnoredRiskID: "78a3a52b-6ef1-46d3-9fdf-8529c311ad61",
     })
     if err != nil {
         log.Fatal(err)

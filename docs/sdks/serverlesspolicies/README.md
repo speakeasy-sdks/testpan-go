@@ -87,20 +87,20 @@ func main() {
         UserRules: []shared.ServerlessRule{
             shared.ServerlessRule{
                 Action: shared.ServerlessRuleActionAllow,
-                Name: "Northwest granular",
+                Name: "infrastructures",
                 Rule: shared.ServerlessRuleType{
                     ServerlessFunctionValidation: &shared.ServerlessFunctionValidation{},
                     ServerlessRuleType: shared.ServerlessRuleTypeServerlessRuleTypeFunctionAnyServerlessRuleType,
                 },
                 Scope: []shared.ServerlessRuleScope{
                     shared.ServerlessRuleScope{
-                        CloudAccount: "Tuna brand Legacy",
+                        CloudAccount: "granular",
                         Regions: []string{
-                            "Iraq",
+                            "Keys",
                         },
                     },
                 },
-                Status: shared.ServerlessRuleStatusEnabled,
+                Status: shared.ServerlessRuleStatusDisabled,
             },
         },
     })

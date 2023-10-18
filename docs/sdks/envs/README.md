@@ -252,27 +252,27 @@ func main() {
                 Tags: []shared.Tag{
                     shared.Tag{
                         Key: "<key>",
-                        Value: "South",
+                        Value: "Electronic",
                     },
                 },
                 Vpc: shared.VPCDescriptionInput{
-                    AwsAccountID: "Seaborgium",
-                    RegionID: "Northeast",
-                    VpcID: "invoice Honduras",
+                    AwsAccountID: "sticky",
+                    RegionID: "Seaborgium",
+                    VpcID: "Bosnia",
                 },
             },
         },
         KubernetesEnvironments: []shared.KubernetesEnvironmentInput{
             shared.KubernetesEnvironmentInput{
-                KubernetesCluster: "5a8916a0-e622-4811-bd3c-8c7fc23dd96f",
+                KubernetesCluster: "77d065a8-916a-40e6-a281-1bd3c8c7fc23",
                 NamespaceLabels: []shared.Label{
                     shared.Label{
                         Key: "<key>",
-                        Value: "Southwest group",
+                        Value: "substantial",
                     },
                 },
                 Namespaces: []string{
-                    "sievert",
+                    "Genderqueer",
                 },
             },
         },
@@ -334,27 +334,27 @@ func main() {
                     Tags: []shared.Tag{
                         shared.Tag{
                             Key: "<key>",
-                            Value: "Maine ampere",
+                            Value: "Cisgender",
                         },
                     },
                     Vpc: shared.VPCDescriptionInput{
-                        AwsAccountID: "support round",
-                        RegionID: "East",
-                        VpcID: "Coast Facilitator bypassing",
+                        AwsAccountID: "ampere",
+                        RegionID: "Dinar",
+                        VpcID: "round",
                     },
                 },
             },
             KubernetesEnvironments: []shared.KubernetesEnvironmentInput{
                 shared.KubernetesEnvironmentInput{
-                    KubernetesCluster: "198d741c-5bdf-45a6-87e9-5a1cd6d26b83",
+                    KubernetesCluster: "312c0aeb-d811-498d-b41c-5bdf5a607e95",
                     NamespaceLabels: []shared.Label{
                         shared.Label{
                             Key: "<key>",
-                            Value: "West Customer",
+                            Value: "Associate",
                         },
                     },
                     Namespaces: []string{
-                        "except",
+                        "Touring",
                     },
                 },
             },
@@ -467,33 +467,33 @@ func main() {
                     Tags: []shared.Tag{
                         shared.Tag{
                             Key: "<key>",
-                            Value: "1080p into",
+                            Value: "Networked",
                         },
                     },
                     Vpc: shared.VPCDescriptionInput{
-                        AwsAccountID: "tromp Upgradable",
-                        RegionID: "paradigms eligendi",
-                        VpcID: "Steel revolutionize Checking",
+                        AwsAccountID: "Tricycle",
+                        RegionID: "pixel",
+                        VpcID: "tromp",
                     },
                 },
             },
             KubernetesEnvironments: []shared.KubernetesEnvironmentInput{
                 shared.KubernetesEnvironmentInput{
-                    KubernetesCluster: "3566df6f-010d-4e05-b98d-e3a9acad0419",
+                    KubernetesCluster: "5e6509cb-415d-4600-b566-df6f010de053",
                     NamespaceLabels: []shared.Label{
                         shared.Label{
                             Key: "<key>",
-                            Value: "portals Lakes West",
+                            Value: "Soul",
                         },
                     },
                     Namespaces: []string{
-                        "zero",
+                        "Tesla",
                     },
                 },
             },
             Name: "Prod",
         },
-        EnvID: "efb650de-9801-4dae-8e96-7d9d0297331b",
+        EnvID: "3a9acad0-419b-46d5-9592-04790c5f1efb",
     })
     if err != nil {
         log.Fatal(err)

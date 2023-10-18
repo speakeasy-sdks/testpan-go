@@ -156,7 +156,7 @@ func main() {
         Labels: []shared.Label{
             shared.Label{
                 Key: "<key>",
-                Value: "becquerel",
+                Value: "Pennsylvania",
             },
         },
         Name: "AccountingApp",
@@ -277,14 +277,14 @@ func main() {
             Labels: []shared.Label{
                 shared.Label{
                     Key: "<key>",
-                    Value: "Mercedes Fluorine",
+                    Value: "invoice",
                 },
             },
             Name: "AccountingApp",
             ProcessName: testpango.String("accounting_app"),
             Type: "frontend",
         },
-        AppID: "a3d78ca7-d0e6-48bc-a8a0-d7f811909514",
+        AppID: "a0b1a3d7-8ca7-4d0e-a8bc-a8a0d7f81190",
     })
     if err != nil {
         log.Fatal(err)

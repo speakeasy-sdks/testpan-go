@@ -273,8 +273,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.ImagesAndVulnerabilities.GetImagesVulnerabilitiesByImageNameAndHash(ctx, operations.GetImagesVulnerabilitiesByImageNameAndHashRequest{
-        ImageHash: "Dale Iowa",
-        ImageName: "boutique Health Martinique",
+        ImageHash: "Marketing",
+        ImageName: "Savings",
     })
     if err != nil {
         log.Fatal(err)

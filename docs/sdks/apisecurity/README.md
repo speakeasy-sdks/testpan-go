@@ -2016,7 +2016,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.PostAPISecurityAPI(ctx, shared.APISecurityAPI{
-        Name: "array Metal",
+        Name: "generate",
     })
     if err != nil {
         log.Fatal(err)
@@ -2069,9 +2069,9 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.PostAPISecurityInternalCatalogCatalogIDBflaDetection(ctx, operations.PostAPISecurityInternalCatalogCatalogIDBflaDetectionRequest{
         BflaDurationConfiguration: shared.BflaDurationConfiguration{
-            Duration: "FTM",
+            Duration: "Garden",
         },
-        CatalogID: "464b0ff0-e6fe-414c-a291-62fc27770a3f",
+        CatalogID: "e94464b0-ff0e-46fe-94ca-29162fc27770",
     })
     if err != nil {
         log.Fatal(err)
@@ -2124,9 +2124,9 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.PostAPISecurityInternalCatalogCatalogIDBflaLearning(ctx, operations.PostAPISecurityInternalCatalogCatalogIDBflaLearningRequest{
         BflaDurationConfiguration: shared.BflaDurationConfiguration{
-            Duration: "parse",
+            Duration: "South",
         },
-        CatalogID: "bc82f2c9-ea85-4a32-ab52-d888f26e15ab",
+        CatalogID: "fbc82f2c-9ea8-45a3-a6b5-2d888f26e15a",
     })
     if err != nil {
         log.Fatal(err)
@@ -2778,8 +2778,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.PostGateways(ctx, shared.Gateway{
-        ClusterName: "budgetary",
-        Name: "Tungsten technologies",
+        ClusterName: "Tools",
+        Name: "Indiana",
         Type: shared.GatewayTypeTykInternal,
     })
     if err != nil {
@@ -2836,29 +2836,29 @@ func main() {
             Status: shared.APIServiceBflaInfoStatusNoSpec,
             Tags: []shared.APIServiceBflaTagInfo{
                 shared.APIServiceBflaTagInfo{
-                    Name: "Identity yearly",
+                    Name: "International",
                     Paths: []shared.APIServiceBflaPathInfo{
                         shared.APIServiceBflaPathInfo{
                             Clients: []shared.APIServiceBflaClientInfo{
                                 shared.APIServiceBflaClientInfo{
-                                    Name: "Manganese",
+                                    Name: "Human",
                                     Principles: []shared.APIServiceBflaPrincipleInfo{
                                         shared.APIServiceBflaPrincipleInfo{
-                                            IP: "244.203.175.173",
-                                            Name: "Crew green Northeast",
-                                            PrincipleType: "Bentley Granite withdrawal",
+                                            IP: "252.50.185.52",
+                                            Name: "sherbet",
+                                            PrincipleType: "Technician",
                                         },
                                     },
                                 },
                             },
-                            Method: shared.HTTPMethodConnect,
-                            Path: "/usr/libexec",
+                            Method: shared.HTTPMethodTrace,
+                            Path: "/usr/sbin",
                         },
                     },
                 },
             },
         },
-        CatalogID: "20110831-cf06-40a3-94c8-d6e973832cca",
+        CatalogID: "442012ad-1459-4f87-a9c2-0110831cf060",
     })
     if err != nil {
         log.Fatal(err)
@@ -2910,8 +2910,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.PutAPISecurityOpenAPISpecsCatalogID(ctx, operations.PutAPISecurityOpenAPISpecsCatalogIDRequest{
-        RequestBody: "rerum",
-        CatalogID: "6c1e7d20-9d8c-4f8d-a690-7b8b2d3e446c",
+        RequestBody: "Bespoke",
+        CatalogID: "b6c1e7d2-09d8-4cf8-9669-07b8b2d3e446",
     })
     if err != nil {
         log.Fatal(err)
@@ -2964,11 +2964,11 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.PutGatewaysGatewayID(ctx, operations.PutGatewaysGatewayIDRequest{
         Gateway: shared.Gateway{
-            ClusterName: "Executive Minivan sky",
-            Name: "Northeast Rupee Burundi",
-            Type: shared.GatewayTypeF5BigIP,
+            ClusterName: "magenta",
+            Name: "Southwest",
+            Type: shared.GatewayTypeTykInternal,
         },
-        GatewayID: "e6c75779-c9c8-4e93-9111-463ea3da225a",
+        GatewayID: "c87e1369-f02c-4e6c-b577-9c9c8e935111",
     })
     if err != nil {
         log.Fatal(err)

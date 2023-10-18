@@ -266,9 +266,9 @@ func main() {
         HostPorts: []shared.HostPortRange{
             shared.HostPortRange{},
         },
-        Name: "Gloves",
+        Name: "aggregate",
         RequiredDropCapabilities: []string{
-            "explicit",
+            "portals",
         },
         RunAsGroup: &shared.RunAsGroupStrategyOptions{
             Ranges: []shared.IDRange{
@@ -286,7 +286,7 @@ func main() {
             },
         },
         Volumes: []shared.PSPVolumeTypes{
-            shared.PSPVolumeTypesHostPath,
+            shared.PSPVolumeTypesFlexVolume,
         },
     })
     if err != nil {
@@ -363,9 +363,9 @@ func main() {
             HostPorts: []shared.HostPortRange{
                 shared.HostPortRange{},
             },
-            Name: "mint",
+            Name: "Saudi",
             RequiredDropCapabilities: []string{
-                "Gasoline",
+                "Clarita",
             },
             RunAsGroup: &shared.RunAsGroupStrategyOptions{
                 Ranges: []shared.IDRange{
@@ -514,9 +514,9 @@ func main() {
             HostPorts: []shared.HostPortRange{
                 shared.HostPortRange{},
             },
-            Name: "Coupe THX",
+            Name: "Central",
             RequiredDropCapabilities: []string{
-                "Dynamic",
+                "THX",
             },
             RunAsGroup: &shared.RunAsGroupStrategyOptions{
                 Ranges: []shared.IDRange{
@@ -534,10 +534,10 @@ func main() {
                 },
             },
             Volumes: []shared.PSPVolumeTypes{
-                shared.PSPVolumeTypesFlocker,
+                shared.PSPVolumeTypesPersistentVolumeClaim,
             },
         },
-        ProfileID: "04edb379-d9af-4bb9-b687-b2cfe0a637e7",
+        ProfileID: "3254604e-db37-49d9-afbb-9b687b2cfe0a",
     })
     if err != nil {
         log.Fatal(err)

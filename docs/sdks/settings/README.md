@@ -398,9 +398,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Settings.PostSettingsIntegrationsCa(ctx, shared.CaIntegrationRequestInput{
-        Certificate: "prickly",
-        IssuerName: "Loan whereas green",
-        Name: "Loan wield cyan",
+        Certificate: "Utah",
+        IssuerName: "Internal",
+        Name: "Loan",
     })
     if err != nil {
         log.Fatal(err)
@@ -455,7 +455,7 @@ func main() {
         EventsToForward: []shared.EventsToForward{
             shared.EventsToForwardAttackPath,
         },
-        Name: "Soft dull alliance",
+        Name: "Gallium",
     })
     if err != nil {
         log.Fatal(err)
@@ -506,7 +506,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Settings.PostSettingsIntegrationsOpsgenieTestIntegration(ctx, shared.TestOpsgenieConnectionRequest{
-        Token: "pish invoice",
+        Token: "invoice",
     })
     if err != nil {
         log.Fatal(err)
@@ -659,8 +659,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Settings.PostSettingsIntegrationsSplunkTestIntegration(ctx, shared.TestSplunkConnectionRequest{
-        Token: "male grow",
-        URL: "https://short-term-accordion.biz",
+        Token: "Realigned",
+        URL: "https://forked-investigation.org",
     })
     if err != nil {
         log.Fatal(err)
@@ -915,11 +915,11 @@ func main() {
     ctx := context.Background()
     res, err := s.Settings.PutSettingsIntegrationsCaID(ctx, operations.PutSettingsIntegrationsCaIDRequest{
         CaIntegrationRequestInput: shared.CaIntegrationRequestInput{
-            Certificate: "Berkshire",
-            IssuerName: "Bicycle",
-            Name: "Central UDP recontextualize",
+            Certificate: "Ergonomic",
+            IssuerName: "Advanced",
+            Name: "Bicycle",
         },
-        ID: "80b658d2-fdca-4eae-9506-a19b8c391af0",
+        ID: "da77d5f8-0b65-48d2-bdca-eae5506a19b8",
     })
     if err != nil {
         log.Fatal(err)
@@ -976,10 +976,10 @@ func main() {
             EventsToForward: []shared.EventsToForward{
                 shared.EventsToForwardNotification,
             },
-            Name: "Genderqueer deploy",
-            Token: "whoever",
+            Name: "Communications",
+            Token: "Guinea",
         },
-        EventForwardingID: "b0fd0479-c2dc-41b4-88bc-e49d238c6e86",
+        EventForwardingID: "3efb0fd0-479c-42dc-9b40-8bce49d238c6",
     })
     if err != nil {
         log.Fatal(err)

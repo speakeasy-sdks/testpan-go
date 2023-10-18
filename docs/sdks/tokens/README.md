@@ -247,8 +247,8 @@ func main() {
         Apis: []string{
             "06eb110c-ef48-45c9-b334-9ef284ebe70b",
         },
-        Name: "offensive flexibility Gate",
-        VaultSecretPath: "Customer",
+        Name: "which",
+        VaultSecretPath: "Jazz",
     })
     if err != nil {
         log.Fatal(err)
@@ -304,10 +304,10 @@ func main() {
             Apis: []string{
                 "92f997c4-3e7b-4827-80b5-81f98e4dc9a1",
             },
-            Name: "ah card Mercedes",
-            VaultSecretPath: "purple",
+            Name: "Wagon",
+            VaultSecretPath: "sexy",
         },
-        TokenID: "346d3d22-b8df-4113-b31e-59e4bbc71d1a",
+        TokenID: "4da05c23-46d3-4d22-b8df-113331e59e4b",
     })
     if err != nil {
         log.Fatal(err)

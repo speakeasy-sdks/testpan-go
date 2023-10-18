@@ -249,10 +249,10 @@ func main() {
         Deployers: []string{
             "aede075c-3164-444b-a1e6-c4ecee9d9042",
         },
-        Name: "Shirt Wooden radian",
+        Name: "court",
         PermissionCDPolicy: &shared.CdPolicyElement{
             EnforcementOption: shared.EnforcementOptionFail,
-            PermissibleVulnerabilityLevel: shared.CDPipelineFindingRiskHigh,
+            PermissibleVulnerabilityLevel: shared.CDPipelineFindingRiskNoRisk,
         },
         SecretCDPolicy: &shared.SecretsCdPolicyElement{
             EnforcementOption: shared.EnforcementOptionFail,
@@ -260,7 +260,7 @@ func main() {
         },
         SecurityContextCDPolicy: &shared.CdPolicyElement{
             EnforcementOption: shared.EnforcementOptionIgnore,
-            PermissibleVulnerabilityLevel: shared.CDPipelineFindingRiskNoRisk,
+            PermissibleVulnerabilityLevel: shared.CDPipelineFindingRiskHigh,
         },
     })
     if err != nil {
@@ -316,10 +316,10 @@ func main() {
             EnforcementOption: shared.EnforcementOptionFail,
             PermissibleDockerfileScanSeverity: shared.DockerfileScanSeverityFatal,
         },
-        Name: "monetize navigate beatae",
+        Name: "hertz",
         VulnerabilityCiPolicy: &shared.VulnerabilityCiPolicy{
             EnforcementOption: shared.EnforcementOptionFail,
-            PermissibleVulnerabilityLevel: shared.VulnerabilitySeverityUnknown,
+            PermissibleVulnerabilityLevel: shared.VulnerabilitySeverityMedium,
         },
     })
     if err != nil {
@@ -380,21 +380,21 @@ func main() {
             Deployers: []string{
                 "45666e4d-fb74-4ef6-9a81-a0d950f62fec",
             },
-            Name: "Heights",
+            Name: "Small",
             PermissionCDPolicy: &shared.CdPolicyElement{
-                EnforcementOption: shared.EnforcementOptionFail,
+                EnforcementOption: shared.EnforcementOptionIgnore,
                 PermissibleVulnerabilityLevel: shared.CDPipelineFindingRiskMedium,
             },
             SecretCDPolicy: &shared.SecretsCdPolicyElement{
-                EnforcementOption: shared.EnforcementOptionIgnore,
-                PermissibleVulnerabilityLevel: shared.CDPipelineSecretsFindingRiskRiskIdentified,
+                EnforcementOption: shared.EnforcementOptionFail,
+                PermissibleVulnerabilityLevel: shared.CDPipelineSecretsFindingRiskNoKnownRisk,
             },
             SecurityContextCDPolicy: &shared.CdPolicyElement{
                 EnforcementOption: shared.EnforcementOptionIgnore,
-                PermissibleVulnerabilityLevel: shared.CDPipelineFindingRiskHigh,
+                PermissibleVulnerabilityLevel: shared.CDPipelineFindingRiskMedium,
             },
         },
-        PolicyID: "8fba0d21-9b4a-42fd-a7a8-937033a3f0a9",
+        PolicyID: "ed8fba0d-219b-44a2-bde7-a8937033a3f0",
     })
     if err != nil {
         log.Fatal(err)
@@ -451,13 +451,13 @@ func main() {
                 EnforcementOption: shared.EnforcementOptionIgnore,
                 PermissibleDockerfileScanSeverity: shared.DockerfileScanSeverityInfo,
             },
-            Name: "Avon Bicycle primary",
+            Name: "mole",
             VulnerabilityCiPolicy: &shared.VulnerabilityCiPolicy{
                 EnforcementOption: shared.EnforcementOptionFail,
-                PermissibleVulnerabilityLevel: shared.VulnerabilitySeverityUnknown,
+                PermissibleVulnerabilityLevel: shared.VulnerabilitySeverityHigh,
             },
         },
-        PolicyID: "5cdfe24f-5dcf-4d34-bfd8-0ec58c84ce87",
+        PolicyID: "5971515c-dfe2-44f5-9cfd-347fd80ec58c",
     })
     if err != nil {
         log.Fatal(err)

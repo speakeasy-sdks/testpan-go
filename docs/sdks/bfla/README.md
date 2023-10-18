@@ -195,9 +195,9 @@ func main() {
     ctx := context.Background()
     res, err := s.Bfla.PostAPISecurityInternalCatalogCatalogIDBflaDetection(ctx, operations.PostAPISecurityInternalCatalogCatalogIDBflaDetectionRequest{
         BflaDurationConfiguration: shared.BflaDurationConfiguration{
-            Duration: "FTM",
+            Duration: "Garden",
         },
-        CatalogID: "464b0ff0-e6fe-414c-a291-62fc27770a3f",
+        CatalogID: "e94464b0-ff0e-46fe-94ca-29162fc27770",
     })
     if err != nil {
         log.Fatal(err)
@@ -250,9 +250,9 @@ func main() {
     ctx := context.Background()
     res, err := s.Bfla.PostAPISecurityInternalCatalogCatalogIDBflaLearning(ctx, operations.PostAPISecurityInternalCatalogCatalogIDBflaLearningRequest{
         BflaDurationConfiguration: shared.BflaDurationConfiguration{
-            Duration: "parse",
+            Duration: "South",
         },
-        CatalogID: "bc82f2c9-ea85-4a32-ab52-d888f26e15ab",
+        CatalogID: "fbc82f2c-9ea8-45a3-a6b5-2d888f26e15a",
     })
     if err != nil {
         log.Fatal(err)
@@ -360,29 +360,29 @@ func main() {
             Status: shared.APIServiceBflaInfoStatusNoSpec,
             Tags: []shared.APIServiceBflaTagInfo{
                 shared.APIServiceBflaTagInfo{
-                    Name: "Identity yearly",
+                    Name: "International",
                     Paths: []shared.APIServiceBflaPathInfo{
                         shared.APIServiceBflaPathInfo{
                             Clients: []shared.APIServiceBflaClientInfo{
                                 shared.APIServiceBflaClientInfo{
-                                    Name: "Manganese",
+                                    Name: "Human",
                                     Principles: []shared.APIServiceBflaPrincipleInfo{
                                         shared.APIServiceBflaPrincipleInfo{
-                                            IP: "244.203.175.173",
-                                            Name: "Crew green Northeast",
-                                            PrincipleType: "Bentley Granite withdrawal",
+                                            IP: "252.50.185.52",
+                                            Name: "sherbet",
+                                            PrincipleType: "Technician",
                                         },
                                     },
                                 },
                             },
-                            Method: shared.HTTPMethodConnect,
-                            Path: "/usr/libexec",
+                            Method: shared.HTTPMethodTrace,
+                            Path: "/usr/sbin",
                         },
                     },
                 },
             },
         },
-        CatalogID: "20110831-cf06-40a3-94c8-d6e973832cca",
+        CatalogID: "442012ad-1459-4f87-a9c2-0110831cf060",
     })
     if err != nil {
         log.Fatal(err)

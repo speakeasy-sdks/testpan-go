@@ -194,15 +194,15 @@ func main() {
         CategoryConditions: &shared.APISecurityPolicyCategoryConditions{
             Conditions: []shared.APISecurityPolicyCategoryCondition{
                 shared.APISecurityPolicyCategoryCondition{
-                    Category: "before Borders",
-                    HighestAcceptedSeverity: shared.APISecurityPolicyRiskSeverityHigh,
+                    Category: "solid",
+                    HighestAcceptedSeverity: shared.APISecurityPolicyRiskSeverityNoRisk,
                 },
             },
         },
         GlobalCondition: &shared.APISecurityPolicyGlobalCondition{
-            HighestAcceptedSeverity: shared.APISecurityPolicyRiskSeverityLow,
+            HighestAcceptedSeverity: shared.APISecurityPolicyRiskSeverityMedium,
         },
-        Name: "male Granite",
+        Name: "to",
     })
     if err != nil {
         log.Fatal(err)
@@ -258,17 +258,17 @@ func main() {
             CategoryConditions: &shared.APISecurityPolicyCategoryConditions{
                 Conditions: []shared.APISecurityPolicyCategoryCondition{
                     shared.APISecurityPolicyCategoryCondition{
-                        Category: "Fantastic mole",
-                        HighestAcceptedSeverity: shared.APISecurityPolicyRiskSeverityHigh,
+                        Category: "deposit",
+                        HighestAcceptedSeverity: shared.APISecurityPolicyRiskSeverityLow,
                     },
                 },
             },
             GlobalCondition: &shared.APISecurityPolicyGlobalCondition{
-                HighestAcceptedSeverity: shared.APISecurityPolicyRiskSeverityCritical,
+                HighestAcceptedSeverity: shared.APISecurityPolicyRiskSeverityHigh,
             },
-            Name: "Rock Integration Brentwood",
+            Name: "Buckinghamshire",
         },
-        PolicyID: "7448558c-2807-4a30-bd0b-43b138ce775c",
+        PolicyID: "ef90a301-7448-4558-8280-7a30fd0b43b1",
     })
     if err != nil {
         log.Fatal(err)

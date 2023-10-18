@@ -60,24 +60,24 @@ func main() {
             "Concrete",
         },
         Host: []string{
-            "Rupee",
+            "killer",
         },
         ImagesID: []string{
-            "356669e3-0a7d-4fca-9c8c-97d1dbbd6441",
+            "af356669-e30a-47df-8a5c-8c97d1dbbd64",
         },
         Result: []operations.GetAppTelemetriesResult{
-            operations.GetAppTelemetriesResultDetect,
+            operations.GetAppTelemetriesResultAllow,
         },
-        SortKey: operations.GetAppTelemetriesSortKeyRisk,
-        StartTime: types.MustTimeFromString("2021-01-15T02:52:59.625Z"),
+        SortKey: operations.GetAppTelemetriesSortKeyAppName,
+        StartTime: types.MustTimeFromString("2022-02-10T16:05:06.025Z"),
         Status: []string{
-            "Avon",
+            "auxiliary",
         },
         VulnerabilityLevelsFilter: []string{
-            "audition female",
+            "Avon",
         },
         WorkloadRisks: []operations.GetAppTelemetriesWorkloadRisks{
-            operations.GetAppTelemetriesWorkloadRisksMedium,
+            operations.GetAppTelemetriesWorkloadRisksHigh,
         },
     })
     if err != nil {

@@ -242,8 +242,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Gateways.PostGateways(ctx, shared.Gateway{
-        ClusterName: "budgetary",
-        Name: "Tungsten technologies",
+        ClusterName: "Tools",
+        Name: "Indiana",
         Type: shared.GatewayTypeTykInternal,
     })
     if err != nil {
@@ -297,11 +297,11 @@ func main() {
     ctx := context.Background()
     res, err := s.Gateways.PutGatewaysGatewayID(ctx, operations.PutGatewaysGatewayIDRequest{
         Gateway: shared.Gateway{
-            ClusterName: "Executive Minivan sky",
-            Name: "Northeast Rupee Burundi",
-            Type: shared.GatewayTypeF5BigIP,
+            ClusterName: "magenta",
+            Name: "Southwest",
+            Type: shared.GatewayTypeTykInternal,
         },
-        GatewayID: "e6c75779-c9c8-4e93-9111-463ea3da225a",
+        GatewayID: "c87e1369-f02c-4e6c-b577-9c9c8e935111",
     })
     if err != nil {
         log.Fatal(err)
