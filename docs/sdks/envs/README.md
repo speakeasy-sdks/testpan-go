@@ -252,27 +252,27 @@ func main() {
                 Tags: []shared.Tag{
                     shared.Tag{
                         Key: "<key>",
-                        Value: "Electronic",
+                        Value: "string",
                     },
                 },
                 Vpc: shared.VPCDescriptionInput{
-                    AwsAccountID: "sticky",
-                    RegionID: "Seaborgium",
-                    VpcID: "Bosnia",
+                    AwsAccountID: "string",
+                    RegionID: "string",
+                    VpcID: "string",
                 },
             },
         },
         KubernetesEnvironments: []shared.KubernetesEnvironmentInput{
             shared.KubernetesEnvironmentInput{
-                KubernetesCluster: "77d065a8-916a-40e6-a281-1bd3c8c7fc23",
+                KubernetesCluster: "3143be01-277d-4065-a891-6a0e622811bd",
                 NamespaceLabels: []shared.Label{
                     shared.Label{
                         Key: "<key>",
-                        Value: "substantial",
+                        Value: "string",
                     },
                 },
                 Namespaces: []string{
-                    "Genderqueer",
+                    "string",
                 },
             },
         },
@@ -334,27 +334,27 @@ func main() {
                     Tags: []shared.Tag{
                         shared.Tag{
                             Key: "<key>",
-                            Value: "Cisgender",
+                            Value: "string",
                         },
                     },
                     Vpc: shared.VPCDescriptionInput{
-                        AwsAccountID: "ampere",
-                        RegionID: "Dinar",
-                        VpcID: "round",
+                        AwsAccountID: "string",
+                        RegionID: "string",
+                        VpcID: "string",
                     },
                 },
             },
             KubernetesEnvironments: []shared.KubernetesEnvironmentInput{
                 shared.KubernetesEnvironmentInput{
-                    KubernetesCluster: "312c0aeb-d811-498d-b41c-5bdf5a607e95",
+                    KubernetesCluster: "925b166e-fc31-42c0-aebd-81198d741c5b",
                     NamespaceLabels: []shared.Label{
                         shared.Label{
                             Key: "<key>",
-                            Value: "Associate",
+                            Value: "string",
                         },
                     },
                     Namespaces: []string{
-                        "Touring",
+                        "string",
                     },
                 },
             },
@@ -467,33 +467,33 @@ func main() {
                     Tags: []shared.Tag{
                         shared.Tag{
                             Key: "<key>",
-                            Value: "Networked",
+                            Value: "string",
                         },
                     },
                     Vpc: shared.VPCDescriptionInput{
-                        AwsAccountID: "Tricycle",
-                        RegionID: "pixel",
-                        VpcID: "tromp",
+                        AwsAccountID: "string",
+                        RegionID: "string",
+                        VpcID: "string",
                     },
                 },
             },
             KubernetesEnvironments: []shared.KubernetesEnvironmentInput{
                 shared.KubernetesEnvironmentInput{
-                    KubernetesCluster: "5e6509cb-415d-4600-b566-df6f010de053",
+                    KubernetesCluster: "57cf89fe-5e65-409c-b415-d6003566df6f",
                     NamespaceLabels: []shared.Label{
                         shared.Label{
                             Key: "<key>",
-                            Value: "Soul",
+                            Value: "string",
                         },
                     },
                     Namespaces: []string{
-                        "Tesla",
+                        "string",
                     },
                 },
             },
             Name: "Prod",
         },
-        EnvID: "3a9acad0-419b-46d5-9592-04790c5f1efb",
+        EnvID: "010de053-98de-43a9-acad-0419b6d55592",
     })
     if err != nil {
         log.Fatal(err)

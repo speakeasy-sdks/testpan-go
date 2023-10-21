@@ -194,14 +194,14 @@ func main() {
                 App: &shared.WorkloadRuleType{
                     WorkloadRuleType: shared.WorkloadRuleTypeWorkloadRuleTypePodAnyWorkloadRuleType,
                 },
-                Name: "Adventure",
+                Name: "string",
                 RuleTypeProperties: shared.AppRuleType{
-                    RuleType: shared.AppRuleTypeRuleTypeInjectionRuleType,
+                    RuleType: shared.AppRuleTypeRuleTypeViolationRuleType,
                 },
                 Scope: &shared.WorkloadRuleScopeType{
                     WorkloadRuleScopeType: shared.WorkloadRuleScopeTypeEnumAnyRuleType,
                 },
-                Status: shared.AppRuleStatusDeleted,
+                Status: shared.AppRuleStatusEnabled,
             },
         },
     })

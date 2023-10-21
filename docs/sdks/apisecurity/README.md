@@ -351,7 +351,7 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.GetAPISecurityExternalCatalog(ctx, operations.GetAPISecurityExternalCatalogRequest{
         APIPolicyProfiles: []string{
-            "Bronze",
+            "string",
         },
     })
     if err != nil {
@@ -455,9 +455,9 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.GetAPISecurityExternalCatalogCatalogID(ctx, operations.GetAPISecurityExternalCatalogCatalogIDRequest{
         APIPolicyProfiles: []string{
-            "Sports",
+            "string",
         },
-        CatalogID: "833a138a-8e36-4df0-9dd8-6e879c685823",
+        CatalogID: "2d833a13-8a8e-436d-b01d-d86e879c6858",
     })
     if err != nil {
         log.Fatal(err)
@@ -510,7 +510,7 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.GetAPISecurityInternalCatalog(ctx, operations.GetAPISecurityInternalCatalogRequest{
         APIPolicyProfiles: []string{
-            "systemic",
+            "string",
         },
     })
     if err != nil {
@@ -614,9 +614,9 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.GetAPISecurityInternalCatalogCatalogID(ctx, operations.GetAPISecurityInternalCatalogCatalogIDRequest{
         APIPolicyProfiles: []string{
-            "Future",
+            "string",
         },
-        CatalogID: "b30b167e-21dd-44fc-9f71-8b9d3086136a",
+        CatalogID: "a4b30b16-7e21-4dd4-bc5f-718b9d308613",
     })
     if err != nil {
         log.Fatal(err)
@@ -1498,7 +1498,7 @@ func main() {
     res, err := s.APISecurity.GetAPISecurityCatalogIDMethods(ctx, operations.GetAPISecurityCatalogIDMethodsRequest{
         CatalogID: "bc418193-54db-45b9-831c-a3b7fcd92288",
         Tags: []string{
-            "purple",
+            "string",
         },
     })
     if err != nil {
@@ -2016,7 +2016,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.PostAPISecurityAPI(ctx, shared.APISecurityAPI{
-        Name: "generate",
+        Name: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -2069,9 +2069,9 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.PostAPISecurityInternalCatalogCatalogIDBflaDetection(ctx, operations.PostAPISecurityInternalCatalogCatalogIDBflaDetectionRequest{
         BflaDurationConfiguration: shared.BflaDurationConfiguration{
-            Duration: "Garden",
+            Duration: "string",
         },
-        CatalogID: "e94464b0-ff0e-46fe-94ca-29162fc27770",
+        CatalogID: "35e94464-b0ff-40e6-be14-ca29162fc277",
     })
     if err != nil {
         log.Fatal(err)
@@ -2124,9 +2124,9 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.PostAPISecurityInternalCatalogCatalogIDBflaLearning(ctx, operations.PostAPISecurityInternalCatalogCatalogIDBflaLearningRequest{
         BflaDurationConfiguration: shared.BflaDurationConfiguration{
-            Duration: "South",
+            Duration: "string",
         },
-        CatalogID: "fbc82f2c-9ea8-45a3-a6b5-2d888f26e15a",
+        CatalogID: "08fbc82f-2c9e-4a85-a326-b52d888f26e1",
     })
     if err != nil {
         log.Fatal(err)
@@ -2778,9 +2778,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.PostGateways(ctx, shared.Gateway{
-        ClusterName: "Tools",
-        Name: "Indiana",
-        Type: shared.GatewayTypeTykInternal,
+        ClusterName: "string",
+        Name: "string",
+        Type: shared.GatewayTypeApigeeX,
     })
     if err != nil {
         log.Fatal(err)
@@ -2836,29 +2836,29 @@ func main() {
             Status: shared.APIServiceBflaInfoStatusNoSpec,
             Tags: []shared.APIServiceBflaTagInfo{
                 shared.APIServiceBflaTagInfo{
-                    Name: "International",
+                    Name: "string",
                     Paths: []shared.APIServiceBflaPathInfo{
                         shared.APIServiceBflaPathInfo{
                             Clients: []shared.APIServiceBflaClientInfo{
                                 shared.APIServiceBflaClientInfo{
-                                    Name: "Human",
+                                    Name: "string",
                                     Principles: []shared.APIServiceBflaPrincipleInfo{
                                         shared.APIServiceBflaPrincipleInfo{
-                                            IP: "252.50.185.52",
-                                            Name: "sherbet",
-                                            PrincipleType: "Technician",
+                                            IP: "169.172.185.96",
+                                            Name: "string",
+                                            PrincipleType: "string",
                                         },
                                     },
                                 },
                             },
-                            Method: shared.HTTPMethodTrace,
-                            Path: "/usr/sbin",
+                            Method: shared.HTTPMethodPut,
+                            Path: "/tmp",
                         },
                     },
                 },
             },
         },
-        CatalogID: "442012ad-1459-4f87-a9c2-0110831cf060",
+        CatalogID: "ef3b3fca-add4-4420-92ad-1459f8769c20",
     })
     if err != nil {
         log.Fatal(err)
@@ -2910,8 +2910,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.PutAPISecurityOpenAPISpecsCatalogID(ctx, operations.PutAPISecurityOpenAPISpecsCatalogIDRequest{
-        RequestBody: "Bespoke",
-        CatalogID: "b6c1e7d2-09d8-4cf8-9669-07b8b2d3e446",
+        RequestBody: "string",
+        CatalogID: "39b6c1e7-d209-4d8c-b8d6-6907b8b2d3e4",
     })
     if err != nil {
         log.Fatal(err)
@@ -2964,11 +2964,11 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.PutGatewaysGatewayID(ctx, operations.PutGatewaysGatewayIDRequest{
         Gateway: shared.Gateway{
-            ClusterName: "magenta",
-            Name: "Southwest",
-            Type: shared.GatewayTypeTykInternal,
+            ClusterName: "string",
+            Name: "string",
+            Type: shared.GatewayTypeF5BigIP,
         },
-        GatewayID: "c87e1369-f02c-4e6c-b577-9c9c8e935111",
+        GatewayID: "b1d9c87e-1369-4f02-8e6c-75779c9c8e93",
     })
     if err != nil {
         log.Fatal(err)

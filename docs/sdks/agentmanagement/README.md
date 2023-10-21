@@ -39,13 +39,13 @@ func main() {
     ctx := context.Background()
     res, err := s.AgentManagement.GetAgents(ctx, operations.GetAgentsRequest{
         EnvironmentName: []string{
-            "Account",
+            "string",
         },
         HostName: []string{
-            "Shoes",
+            "string",
         },
         Risk: []operations.GetAgentsRisk{
-            operations.GetAgentsRiskUndefined,
+            operations.GetAgentsRiskMedium,
         },
         Status: []operations.GetAgentsStatus{
             operations.GetAgentsStatusActive,

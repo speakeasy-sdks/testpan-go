@@ -415,20 +415,20 @@ func main() {
     ctx := context.Background()
     res, err := s.Cd.PostCdServerlessRule(ctx, shared.CdServerlessRule{
         Action: shared.ServerlessRuleActionDetect,
-        Name: "Assurance",
+        Name: "string",
         Rule: shared.ServerlessRuleType{
             ServerlessFunctionValidation: &shared.ServerlessFunctionValidation{},
             ServerlessRuleType: shared.ServerlessRuleTypeServerlessRuleTypeFunctionArnServerlessRuleType,
         },
         Scope: []shared.ServerlessRuleScope{
             shared.ServerlessRuleScope{
-                CloudAccount: "navigate",
+                CloudAccount: "string",
                 Regions: []string{
-                    "bypassing",
+                    "string",
                 },
             },
         },
-        Status: shared.ServerlessRuleStatusDeleted,
+        Status: shared.ServerlessRuleStatusDisabled,
     })
     if err != nil {
         log.Fatal(err)
@@ -542,22 +542,22 @@ func main() {
     res, err := s.Cd.PutCdRuleIDServerlessRule(ctx, operations.PutCdRuleIDServerlessRuleRequest{
         CdServerlessRule: shared.CdServerlessRule{
             Action: shared.ServerlessRuleActionDetect,
-            Name: "yahoo",
+            Name: "string",
             Rule: shared.ServerlessRuleType{
                 ServerlessFunctionValidation: &shared.ServerlessFunctionValidation{},
-                ServerlessRuleType: shared.ServerlessRuleTypeServerlessRuleTypeFunctionAnyServerlessRuleType,
+                ServerlessRuleType: shared.ServerlessRuleTypeServerlessRuleTypeFunctionArnServerlessRuleType,
             },
             Scope: []shared.ServerlessRuleScope{
                 shared.ServerlessRuleScope{
-                    CloudAccount: "Developer",
+                    CloudAccount: "string",
                     Regions: []string{
-                        "Sports",
+                        "string",
                     },
                 },
             },
             Status: shared.ServerlessRuleStatusDisabled,
         },
-        RuleID: "f913b954-cc1f-46ce-b379-119c49c2a964",
+        RuleID: "4bb3d5f9-13b9-454c-81f6-ceb379119c49",
     })
     if err != nil {
         log.Fatal(err)

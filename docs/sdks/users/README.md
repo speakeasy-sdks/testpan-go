@@ -657,7 +657,7 @@ func main() {
             LastName: "Mitchell",
             PrivacyPolicyAndTermsAndConditionsAgreement: false,
         },
-        GRecaptchaResponse: "invoice",
+        GRecaptchaResponse: "string",
     })
     if err != nil {
         log.Fatal(err)

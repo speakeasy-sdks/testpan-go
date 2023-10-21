@@ -401,9 +401,9 @@ func main() {
                     ConnectionRulePartType: shared.ConnectionRulePartConnectionRulePartTypeKafkaConnectionRulePart,
                 },
                 Layer7Settings: &shared.Layer7SettingsPart{},
-                Name: "Officer",
+                Name: "string",
                 Source: &shared.ConnectionRulePart{
-                    ConnectionRulePartType: shared.ConnectionRulePartConnectionRulePartTypeEnvironmentAnyConnectionRulePart,
+                    ConnectionRulePartType: shared.ConnectionRulePartConnectionRulePartTypeAnyConnectionRulePart,
                 },
             },
         },

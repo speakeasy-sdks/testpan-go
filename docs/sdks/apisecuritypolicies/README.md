@@ -194,15 +194,15 @@ func main() {
         CategoryConditions: &shared.APISecurityPolicyCategoryConditions{
             Conditions: []shared.APISecurityPolicyCategoryCondition{
                 shared.APISecurityPolicyCategoryCondition{
-                    Category: "solid",
-                    HighestAcceptedSeverity: shared.APISecurityPolicyRiskSeverityNoRisk,
+                    Category: "string",
+                    HighestAcceptedSeverity: shared.APISecurityPolicyRiskSeverityMedium,
                 },
             },
         },
         GlobalCondition: &shared.APISecurityPolicyGlobalCondition{
-            HighestAcceptedSeverity: shared.APISecurityPolicyRiskSeverityMedium,
+            HighestAcceptedSeverity: shared.APISecurityPolicyRiskSeverityCritical,
         },
-        Name: "to",
+        Name: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -258,17 +258,17 @@ func main() {
             CategoryConditions: &shared.APISecurityPolicyCategoryConditions{
                 Conditions: []shared.APISecurityPolicyCategoryCondition{
                     shared.APISecurityPolicyCategoryCondition{
-                        Category: "deposit",
-                        HighestAcceptedSeverity: shared.APISecurityPolicyRiskSeverityLow,
+                        Category: "string",
+                        HighestAcceptedSeverity: shared.APISecurityPolicyRiskSeverityMedium,
                     },
                 },
             },
             GlobalCondition: &shared.APISecurityPolicyGlobalCondition{
-                HighestAcceptedSeverity: shared.APISecurityPolicyRiskSeverityHigh,
+                HighestAcceptedSeverity: shared.APISecurityPolicyRiskSeverityLow,
             },
-            Name: "Buckinghamshire",
+            Name: "string",
         },
-        PolicyID: "ef90a301-7448-4558-8280-7a30fd0b43b1",
+        PolicyID: "5c1bef90-a301-4744-8558-c2807a30fd0b",
     })
     if err != nil {
         log.Fatal(err)

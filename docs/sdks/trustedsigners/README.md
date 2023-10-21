@@ -196,10 +196,10 @@ func main() {
         Keys: []shared.TrustedSignerKey{
             shared.TrustedSignerKey{
                 Key: "<key>",
-                Name: "Configurable",
+                Name: "string",
             },
         },
-        Name: "Music",
+        Name: "string",
         TrustedSignerCloudAccounts: []shared.TrustedSignerCloudAccountInput{
             shared.TrustedSignerCloudAccountInput{},
         },
@@ -261,10 +261,10 @@ func main() {
             Keys: []shared.TrustedSignerKey{
                 shared.TrustedSignerKey{
                     Key: "<key>",
-                    Name: "bus",
+                    Name: "string",
                 },
             },
-            Name: "Bronze",
+            Name: "string",
             TrustedSignerCloudAccounts: []shared.TrustedSignerCloudAccountInput{
                 shared.TrustedSignerCloudAccountInput{},
             },
@@ -272,7 +272,7 @@ func main() {
                 shared.TrustedSignerClusterInput{},
             },
         },
-        TrustedSignerID: "3c1dde95-75de-4823-90f3-ebb00bb0b650",
+        TrustedSignerID: "8d323c1d-de95-475d-a823-90f3ebb00bb0",
     })
     if err != nil {
         log.Fatal(err)

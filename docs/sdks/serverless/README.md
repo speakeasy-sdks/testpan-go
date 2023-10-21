@@ -455,16 +455,16 @@ func main() {
             "2d213824-3222-42f0-b89a-c2b1bfba58c4",
         },
         FuncName: []string{
-            "Electronics",
+            "string",
         },
         PolicyRisk: []operations.GetServerlessFunctionsPolicyRisk{
-            operations.GetServerlessFunctionsPolicyRiskHigh,
+            operations.GetServerlessFunctionsPolicyRiskLow,
         },
         Result: []operations.GetServerlessFunctionsResult{
-            operations.GetServerlessFunctionsResultDetect,
+            operations.GetServerlessFunctionsResultAllow,
         },
         Risk: []operations.GetServerlessFunctionsRisk{
-            operations.GetServerlessFunctionsRiskCritical,
+            operations.GetServerlessFunctionsRiskHigh,
         },
         SecretsRisk: []operations.GetServerlessFunctionsSecretsRisk{
             operations.GetServerlessFunctionsSecretsRiskRiskIdentified,
@@ -521,7 +521,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Serverless.GetServerlessFunctionsArns(ctx, operations.GetServerlessFunctionsArnsRequest{
         FuncArn: []string{
-            "Northeast",
+            "string",
         },
     })
     if err != nil {
@@ -575,7 +575,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Serverless.GetServerlessFunctionsNames(ctx, operations.GetServerlessFunctionsNamesRequest{
         FuncName: []string{
-            "Hermaphrodite",
+            "string",
         },
     })
     if err != nil {
@@ -1048,12 +1048,12 @@ func main() {
                 PeriodicJobType: shared.ServerlessPeriodicJobExpressionPeriodicJobTypeServerlessByHoursPeriodicJobExpression,
             },
             Regions: []string{
-                "Cheese",
+                "string",
             },
             SecurityThreats: &shared.CloudAccountSecurityThreats{},
             VulnerabilitiesSummary: &shared.VulnerabilitiesSummary{},
         },
-        CloudAccountID: "18ca7fb1-5534-4488-9cc7-697a579ecdc3",
+        CloudAccountID: "3c18ca7f-b155-4344-88dc-c7697a579ecd",
     })
     if err != nil {
         log.Fatal(err)

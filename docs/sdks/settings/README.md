@@ -398,9 +398,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Settings.PostSettingsIntegrationsCa(ctx, shared.CaIntegrationRequestInput{
-        Certificate: "Utah",
-        IssuerName: "Internal",
-        Name: "Loan",
+        Certificate: "string",
+        IssuerName: "string",
+        Name: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -455,7 +455,7 @@ func main() {
         EventsToForward: []shared.EventsToForward{
             shared.EventsToForwardAttackPath,
         },
-        Name: "Gallium",
+        Name: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -506,7 +506,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Settings.PostSettingsIntegrationsOpsgenieTestIntegration(ctx, shared.TestOpsgenieConnectionRequest{
-        Token: "invoice",
+        Token: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -659,8 +659,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Settings.PostSettingsIntegrationsSplunkTestIntegration(ctx, shared.TestSplunkConnectionRequest{
-        Token: "Realigned",
-        URL: "https://forked-investigation.org",
+        Token: "string",
+        URL: "http://same-shopper.biz",
     })
     if err != nil {
         log.Fatal(err)
@@ -915,11 +915,11 @@ func main() {
     ctx := context.Background()
     res, err := s.Settings.PutSettingsIntegrationsCaID(ctx, operations.PutSettingsIntegrationsCaIDRequest{
         CaIntegrationRequestInput: shared.CaIntegrationRequestInput{
-            Certificate: "Ergonomic",
-            IssuerName: "Advanced",
-            Name: "Bicycle",
+            Certificate: "string",
+            IssuerName: "string",
+            Name: "string",
         },
-        ID: "da77d5f8-0b65-48d2-bdca-eae5506a19b8",
+        ID: "3150c8bd-a77d-45f8-8b65-8d2fdcaeae55",
     })
     if err != nil {
         log.Fatal(err)
@@ -976,10 +976,10 @@ func main() {
             EventsToForward: []shared.EventsToForward{
                 shared.EventsToForwardNotification,
             },
-            Name: "Communications",
-            Token: "Guinea",
+            Name: "string",
+            Token: "string",
         },
-        EventForwardingID: "3efb0fd0-479c-42dc-9b40-8bce49d238c6",
+        EventForwardingID: "a96473ef-b0fd-4047-9c2d-c1b408bce49d",
     })
     if err != nil {
         log.Fatal(err)

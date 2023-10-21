@@ -199,14 +199,14 @@ func main() {
         Labels: []shared.Label{
             shared.Label{
                 Key: "<key>",
-                Value: "restfully",
+                Value: "string",
             },
         },
-        Name: "bolívar",
-        NamespaceID: "0245fda1-faca-4b88-a59b-a11df19d86c5",
+        Name: "string",
+        NamespaceID: "ea7db024-5fda-41fa-8ab8-8259ba11df19",
         WorkloadAddresses: []shared.WorkloadAddress{
             shared.WorkloadAddress{
-                Address: "09821 Konopelski River",
+                Address: "547 Dean Brook",
             },
         },
     })
@@ -264,17 +264,17 @@ func main() {
             Labels: []shared.Label{
                 shared.Label{
                     Key: "<key>",
-                    Value: "Specialist",
+                    Value: "string",
                 },
             },
-            Name: "cyan",
+            Name: "string",
             WorkloadAddresses: []shared.WorkloadAddress{
                 shared.WorkloadAddress{
-                    Address: "430 Kris Knoll",
+                    Address: "218 Jenkins Gateway",
                 },
             },
         },
-        ExpansionID: "39a0b94d-cfc6-44ba-a7b3-c4b09bff8d17",
+        ExpansionID: "159739a0-b94d-4cfc-a4ba-a7b3c4b09bff",
     })
     if err != nil {
         log.Fatal(err)

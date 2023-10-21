@@ -244,19 +244,19 @@ func main() {
     ctx := context.Background()
     res, err := s.PspProfiles.PostPodSecurityPolicyProfiles(ctx, shared.PodSecurityPolicy{
         AllowedCapabilities: []string{
-            "bypass",
+            "string",
         },
         AllowedHostPaths: []shared.AllowedHostPath{
             shared.AllowedHostPath{},
         },
         AllowedProcMountTypes: []shared.AllowedProcMountType{
-            shared.AllowedProcMountTypeDefault,
+            shared.AllowedProcMountTypeUnmasked,
         },
         AllowedUnsafeSysctls: []string{
-            "turquoise",
+            "string",
         },
         ForbiddenSysctls: []string{
-            "moderator",
+            "string",
         },
         FsGroup: shared.RunAsGroupStrategyOptions{
             Ranges: []shared.IDRange{
@@ -266,9 +266,9 @@ func main() {
         HostPorts: []shared.HostPortRange{
             shared.HostPortRange{},
         },
-        Name: "aggregate",
+        Name: "string",
         RequiredDropCapabilities: []string{
-            "portals",
+            "string",
         },
         RunAsGroup: &shared.RunAsGroupStrategyOptions{
             Ranges: []shared.IDRange{
@@ -286,7 +286,7 @@ func main() {
             },
         },
         Volumes: []shared.PSPVolumeTypes{
-            shared.PSPVolumeTypesFlexVolume,
+            shared.PSPVolumeTypesAzureFile,
         },
     })
     if err != nil {
@@ -341,19 +341,19 @@ func main() {
     res, err := s.PspProfiles.PostPodSecurityPolicyProfilesBatch(ctx, []shared.PodSecurityPolicy{
         shared.PodSecurityPolicy{
             AllowedCapabilities: []string{
-                "Copernicium",
+                "string",
             },
             AllowedHostPaths: []shared.AllowedHostPath{
                 shared.AllowedHostPath{},
             },
             AllowedProcMountTypes: []shared.AllowedProcMountType{
-                shared.AllowedProcMountTypeUnmasked,
+                shared.AllowedProcMountTypeDefault,
             },
             AllowedUnsafeSysctls: []string{
-                "Northeast",
+                "string",
             },
             ForbiddenSysctls: []string{
-                "Directives",
+                "string",
             },
             FsGroup: shared.RunAsGroupStrategyOptions{
                 Ranges: []shared.IDRange{
@@ -363,9 +363,9 @@ func main() {
             HostPorts: []shared.HostPortRange{
                 shared.HostPortRange{},
             },
-            Name: "Saudi",
+            Name: "string",
             RequiredDropCapabilities: []string{
-                "Clarita",
+                "string",
             },
             RunAsGroup: &shared.RunAsGroupStrategyOptions{
                 Ranges: []shared.IDRange{
@@ -383,7 +383,7 @@ func main() {
                 },
             },
             Volumes: []shared.PSPVolumeTypes{
-                shared.PSPVolumeTypesAzureDisk,
+                shared.PSPVolumeTypesFlexVolume,
             },
         },
     })
@@ -437,7 +437,7 @@ func main() {
     ctx := context.Background()
     res, err := s.PspProfiles.PostSeccompProfiles(ctx, shared.SeccompProfileInput{
         PodSecurityPolicies: []string{
-            "Cab",
+            "string",
         },
     })
     if err != nil {
@@ -492,19 +492,19 @@ func main() {
     res, err := s.PspProfiles.PutPodSecurityPolicyProfilesProfileID(ctx, operations.PutPodSecurityPolicyProfilesProfileIDRequest{
         PodSecurityPolicy: shared.PodSecurityPolicy{
             AllowedCapabilities: []string{
-                "North",
+                "string",
             },
             AllowedHostPaths: []shared.AllowedHostPath{
                 shared.AllowedHostPath{},
             },
             AllowedProcMountTypes: []shared.AllowedProcMountType{
-                shared.AllowedProcMountTypeUnmasked,
+                shared.AllowedProcMountTypeDefault,
             },
             AllowedUnsafeSysctls: []string{
-                "since",
+                "string",
             },
             ForbiddenSysctls: []string{
-                "DNS",
+                "string",
             },
             FsGroup: shared.RunAsGroupStrategyOptions{
                 Ranges: []shared.IDRange{
@@ -514,9 +514,9 @@ func main() {
             HostPorts: []shared.HostPortRange{
                 shared.HostPortRange{},
             },
-            Name: "Central",
+            Name: "string",
             RequiredDropCapabilities: []string{
-                "THX",
+                "string",
             },
             RunAsGroup: &shared.RunAsGroupStrategyOptions{
                 Ranges: []shared.IDRange{
@@ -534,10 +534,10 @@ func main() {
                 },
             },
             Volumes: []shared.PSPVolumeTypes{
-                shared.PSPVolumeTypesPersistentVolumeClaim,
+                shared.PSPVolumeTypesAwsElasticBlockStore,
             },
         },
-        ProfileID: "3254604e-db37-49d9-afbb-9b687b2cfe0a",
+        ProfileID: "ce973a74-d37d-4a32-9460-4edb379d9afb",
     })
     if err != nil {
         log.Fatal(err)
@@ -591,10 +591,10 @@ func main() {
     res, err := s.PspProfiles.PutSeccompProfilesProfileID(ctx, operations.PutSeccompProfilesProfileIDRequest{
         SeccompProfileInput: shared.SeccompProfileInput{
             PodSecurityPolicies: []string{
-                "payment",
+                "string",
             },
         },
-        ProfileID: "689ccbcc-101f-4ed2-936c-76ef44408a69",
+        ProfileID: "7a689ccb-cc10-41fe-9293-6c76ef44408a",
     })
     if err != nil {
         log.Fatal(err)

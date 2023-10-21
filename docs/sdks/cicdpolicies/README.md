@@ -249,9 +249,9 @@ func main() {
         Deployers: []string{
             "aede075c-3164-444b-a1e6-c4ecee9d9042",
         },
-        Name: "court",
+        Name: "string",
         PermissionCDPolicy: &shared.CdPolicyElement{
-            EnforcementOption: shared.EnforcementOptionFail,
+            EnforcementOption: shared.EnforcementOptionIgnore,
             PermissibleVulnerabilityLevel: shared.CDPipelineFindingRiskNoRisk,
         },
         SecretCDPolicy: &shared.SecretsCdPolicyElement{
@@ -259,8 +259,8 @@ func main() {
             PermissibleVulnerabilityLevel: shared.CDPipelineSecretsFindingRiskNoKnownRisk,
         },
         SecurityContextCDPolicy: &shared.CdPolicyElement{
-            EnforcementOption: shared.EnforcementOptionIgnore,
-            PermissibleVulnerabilityLevel: shared.CDPipelineFindingRiskHigh,
+            EnforcementOption: shared.EnforcementOptionFail,
+            PermissibleVulnerabilityLevel: shared.CDPipelineFindingRiskNoRisk,
         },
     })
     if err != nil {
@@ -316,10 +316,10 @@ func main() {
             EnforcementOption: shared.EnforcementOptionFail,
             PermissibleDockerfileScanSeverity: shared.DockerfileScanSeverityFatal,
         },
-        Name: "hertz",
+        Name: "string",
         VulnerabilityCiPolicy: &shared.VulnerabilityCiPolicy{
-            EnforcementOption: shared.EnforcementOptionFail,
-            PermissibleVulnerabilityLevel: shared.VulnerabilitySeverityMedium,
+            EnforcementOption: shared.EnforcementOptionIgnore,
+            PermissibleVulnerabilityLevel: shared.VulnerabilitySeverityLow,
         },
     })
     if err != nil {
@@ -380,21 +380,21 @@ func main() {
             Deployers: []string{
                 "45666e4d-fb74-4ef6-9a81-a0d950f62fec",
             },
-            Name: "Small",
+            Name: "string",
             PermissionCDPolicy: &shared.CdPolicyElement{
-                EnforcementOption: shared.EnforcementOptionIgnore,
-                PermissibleVulnerabilityLevel: shared.CDPipelineFindingRiskMedium,
+                EnforcementOption: shared.EnforcementOptionFail,
+                PermissibleVulnerabilityLevel: shared.CDPipelineFindingRiskNoRisk,
             },
             SecretCDPolicy: &shared.SecretsCdPolicyElement{
-                EnforcementOption: shared.EnforcementOptionFail,
-                PermissibleVulnerabilityLevel: shared.CDPipelineSecretsFindingRiskNoKnownRisk,
+                EnforcementOption: shared.EnforcementOptionIgnore,
+                PermissibleVulnerabilityLevel: shared.CDPipelineSecretsFindingRiskRiskIdentified,
             },
             SecurityContextCDPolicy: &shared.CdPolicyElement{
-                EnforcementOption: shared.EnforcementOptionIgnore,
+                EnforcementOption: shared.EnforcementOptionFail,
                 PermissibleVulnerabilityLevel: shared.CDPipelineFindingRiskMedium,
             },
         },
-        PolicyID: "ed8fba0d-219b-44a2-bde7-a8937033a3f0",
+        PolicyID: "8aed8fba-0d21-49b4-a2fd-e7a8937033a3",
     })
     if err != nil {
         log.Fatal(err)
@@ -451,13 +451,13 @@ func main() {
                 EnforcementOption: shared.EnforcementOptionIgnore,
                 PermissibleDockerfileScanSeverity: shared.DockerfileScanSeverityInfo,
             },
-            Name: "mole",
+            Name: "string",
             VulnerabilityCiPolicy: &shared.VulnerabilityCiPolicy{
-                EnforcementOption: shared.EnforcementOptionFail,
-                PermissibleVulnerabilityLevel: shared.VulnerabilitySeverityHigh,
+                EnforcementOption: shared.EnforcementOptionIgnore,
+                PermissibleVulnerabilityLevel: shared.VulnerabilitySeverityUnknown,
             },
         },
-        PolicyID: "5971515c-dfe2-44f5-9cfd-347fd80ec58c",
+        PolicyID: "0c597151-5cdf-4e24-b5dc-fd347fd80ec5",
     })
     if err != nil {
         log.Fatal(err)

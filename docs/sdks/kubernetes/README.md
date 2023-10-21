@@ -721,10 +721,10 @@ func main() {
     ctx := context.Background()
     res, err := s.Kubernetes.GetPodDefinitions(ctx, operations.GetPodDefinitionsRequest{
         DeploymentType: []string{
-            "Bahamian",
+            "string",
         },
         TemplateSource: []string{
-            "Savings",
+            "string",
         },
     })
     if err != nil {
@@ -782,15 +782,15 @@ func main() {
         IstioIngressAnnotations: []shared.KubernetesAnnotation{
             shared.KubernetesAnnotation{
                 Key: "<key>",
-                Value: "magnetic",
+                Value: "string",
             },
         },
         IstioInstallationParameters: &shared.IstioInstallationParameters{},
-        Name: "online",
+        Name: "string",
         ProxyConfiguration: &shared.ProxyConfiguration{},
         ScanConfiguration: &shared.ScanConfiguration{
             ScanTypes: []shared.ScanType{
-                shared.ScanTypeDockerCisBenchmark,
+                shared.ScanTypeVulnerabilities,
             },
         },
         SidecarsResources: &shared.SidecarsResource{},
@@ -858,10 +858,10 @@ func main() {
         Labels: []shared.Label{
             shared.Label{
                 Key: "<key>",
-                Value: "ajar",
+                Value: "string",
             },
         },
-        Name: "Folk",
+        Name: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -920,11 +920,11 @@ func main() {
             IstioIngressAnnotations: []shared.KubernetesAnnotation{
                 shared.KubernetesAnnotation{
                     Key: "<key>",
-                    Value: "upload",
+                    Value: "string",
                 },
             },
             IstioInstallationParameters: &shared.IstioInstallationParameters{},
-            Name: "sapiente",
+            Name: "string",
             ProxyConfiguration: &shared.ProxyConfiguration{},
             ScanConfiguration: &shared.ScanConfiguration{
                 ScanTypes: []shared.ScanType{
@@ -933,7 +933,7 @@ func main() {
             },
             SidecarsResources: &shared.SidecarsResource{},
         },
-        KubernetesClusterID: "e0fd9579-58a0-4796-a5f2-d9d7f9c73b14",
+        KubernetesClusterID: "fc49f9e0-fd95-4795-8a07-96a5f2d9d7f9",
     })
     if err != nil {
         log.Fatal(err)
@@ -1053,12 +1053,12 @@ func main() {
             Labels: []shared.Label{
                 shared.Label{
                     Key: "<key>",
-                    Value: "Ford",
+                    Value: "string",
                 },
             },
-            Name: "female",
+            Name: "string",
         },
-        PodID: "0efc46b3-d799-4349-9390-e36a1df3f324",
+        PodID: "d5b40efc-46b3-4d79-9349-9390e36a1df3",
     })
     if err != nil {
         log.Fatal(err)

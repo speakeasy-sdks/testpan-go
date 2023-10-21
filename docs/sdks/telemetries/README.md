@@ -44,40 +44,40 @@ func main() {
     ctx := context.Background()
     res, err := s.Telemetries.GetAppTelemetries(ctx, operations.GetAppTelemetriesRequest{
         AppName: []string{
-            "Crew",
+            "string",
         },
         AppType: []string{
-            "splendid",
+            "string",
         },
-        EndTime: types.MustTimeFromString("2021-09-05T15:33:12.217Z"),
+        EndTime: types.MustTimeFromString("2023-07-22T16:11:08.877Z"),
         EnvironmentName: []string{
-            "Syrian",
+            "string",
         },
         Executable: []string{
-            "strategy",
+            "string",
         },
         HighestDockerfileScanResult: []string{
-            "Concrete",
+            "string",
         },
         Host: []string{
-            "killer",
+            "string",
         },
         ImagesID: []string{
-            "af356669-e30a-47df-8a5c-8c97d1dbbd64",
+            "50dc36c5-6d44-446a-b356-669e30a7dfca",
         },
         Result: []operations.GetAppTelemetriesResult{
-            operations.GetAppTelemetriesResultAllow,
+            operations.GetAppTelemetriesResultDetect,
         },
-        SortKey: operations.GetAppTelemetriesSortKeyAppName,
-        StartTime: types.MustTimeFromString("2022-02-10T16:05:06.025Z"),
+        SortKey: operations.GetAppTelemetriesSortKeyFinishTime,
+        StartTime: types.MustTimeFromString("2022-08-17T10:31:03.718Z"),
         Status: []string{
-            "auxiliary",
+            "string",
         },
         VulnerabilityLevelsFilter: []string{
-            "Avon",
+            "string",
         },
         WorkloadRisks: []operations.GetAppTelemetriesWorkloadRisks{
-            operations.GetAppTelemetriesWorkloadRisksHigh,
+            operations.GetAppTelemetriesWorkloadRisksCritical,
         },
     })
     if err != nil {
@@ -345,35 +345,35 @@ func main() {
         },
         SortKey: operations.GetConnectionTelemetriesSortKeySourceAppType,
         SourceAppName: []string{
-            "because",
+            "string",
         },
         SourceEnvironmentName: []string{
-            "Cotton",
+            "string",
         },
         SourceExecutable: []string{
-            "Hybrid",
+            "string",
         },
         SourceHostName: []string{
-            "wireless",
+            "string",
         },
         SourceRisk: []operations.GetConnectionTelemetriesSourceRisk{
-            operations.GetConnectionTelemetriesSourceRiskHigh,
+            operations.GetConnectionTelemetriesSourceRiskLow,
         },
-        StartTime: types.MustTimeFromString("2023-12-19T20:37:58.933Z"),
+        StartTime: types.MustTimeFromString("2021-04-04T11:53:10.030Z"),
         TargetAppName: []string{
-            "Moscovium",
+            "string",
         },
         TargetEnvironmentName: []string{
-            "Regional",
+            "string",
         },
         TargetExecutable: []string{
-            "coddle",
+            "string",
         },
         TargetHostName: []string{
-            "Hampshire",
+            "string",
         },
         TargetRisk: []operations.GetConnectionTelemetriesTargetRisk{
-            operations.GetConnectionTelemetriesTargetRiskMedium,
+            operations.GetConnectionTelemetriesTargetRiskHigh,
         },
     })
     if err != nil {

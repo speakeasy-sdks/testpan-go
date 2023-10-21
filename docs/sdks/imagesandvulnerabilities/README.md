@@ -103,13 +103,13 @@ func main() {
     ctx := context.Background()
     res, err := s.ImagesAndVulnerabilities.GetAccountVulnerabilitiesXlsx(ctx, operations.GetAccountVulnerabilitiesXlsxRequest{
         ImageHash: []string{
-            "Frozen",
+            "string",
         },
         ImageName: []string{
-            "olive",
+            "string",
         },
         ImageTag: []string{
-            "IB",
+            "string",
         },
     })
     if err != nil {
@@ -163,15 +163,15 @@ func main() {
     ctx := context.Background()
     res, err := s.ImagesAndVulnerabilities.GetImages(ctx, operations.GetImagesRequest{
         ImageHash: []string{
-            "Health",
+            "string",
         },
         ImageName: []string{
-            "male",
+            "string",
         },
         ImageTag: []string{
-            "Ytterbium",
+            "string",
         },
-        SortKey: operations.GetImagesSortKeyRisk,
+        SortKey: operations.GetImagesSortKeyImageName,
     })
     if err != nil {
         log.Fatal(err)
@@ -273,8 +273,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.ImagesAndVulnerabilities.GetImagesVulnerabilitiesByImageNameAndHash(ctx, operations.GetImagesVulnerabilitiesByImageNameAndHashRequest{
-        ImageHash: "Marketing",
-        ImageName: "Savings",
+        ImageHash: "string",
+        ImageName: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -638,7 +638,7 @@ func main() {
     ctx := context.Background()
     res, err := s.ImagesAndVulnerabilities.PostImages(ctx, shared.ImageDefInput{
         ImageTags: []string{
-            "Configuration",
+            "string",
         },
     })
     if err != nil {

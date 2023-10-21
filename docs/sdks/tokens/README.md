@@ -247,8 +247,8 @@ func main() {
         Apis: []string{
             "06eb110c-ef48-45c9-b334-9ef284ebe70b",
         },
-        Name: "which",
-        VaultSecretPath: "Jazz",
+        Name: "string",
+        VaultSecretPath: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -304,10 +304,10 @@ func main() {
             Apis: []string{
                 "92f997c4-3e7b-4827-80b5-81f98e4dc9a1",
             },
-            Name: "Wagon",
-            VaultSecretPath: "sexy",
+            Name: "string",
+            VaultSecretPath: "string",
         },
-        TokenID: "4da05c23-46d3-4d22-b8df-113331e59e4b",
+        TokenID: "de484da0-5c23-446d-bd22-b8df113331e5",
     })
     if err != nil {
         log.Fatal(err)

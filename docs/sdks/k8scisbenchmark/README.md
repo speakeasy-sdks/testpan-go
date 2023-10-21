@@ -41,7 +41,7 @@ func main() {
     ctx := context.Background()
     res, err := s.K8sCisBenchmark.GetK8sCISBenchmark(ctx, operations.GetK8sCISBenchmarkRequest{
         ClusterIds: []string{
-            "magnitude",
+            "string",
         },
     })
     if err != nil {
@@ -248,13 +248,13 @@ func main() {
     res, err := s.K8sCisBenchmark.PutK8sCISBenchmarkClusterID(ctx, operations.PutK8sCISBenchmarkClusterIDRequest{
         K8sCISBenchmarkUpdateNodes: shared.K8sCISBenchmarkUpdateNodes{
             ClusterID: "49b403e0-ddc8-4f07-8f6d-7b4806fe4a7b",
-            Index: "Hybrid",
+            Index: "string",
             Nodes: []shared.K8sCISBenchmarkUpdateNode{
                 shared.K8sCISBenchmarkUpdateNode{},
             },
-            Status: shared.K8sCISBenchmarkUpdateNodeStatusFail,
+            Status: shared.K8sCISBenchmarkUpdateNodeStatusPass,
         },
-        ClusterID: "c739e905-f14c-49f8-b55f-4602b586f168",
+        ClusterID: "e3c739e9-05f1-44c9-b8f5-5f4602b586f1",
     })
     if err != nil {
         log.Fatal(err)

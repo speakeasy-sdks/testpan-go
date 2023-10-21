@@ -87,20 +87,20 @@ func main() {
         UserRules: []shared.ServerlessRule{
             shared.ServerlessRule{
                 Action: shared.ServerlessRuleActionAllow,
-                Name: "infrastructures",
+                Name: "string",
                 Rule: shared.ServerlessRuleType{
                     ServerlessFunctionValidation: &shared.ServerlessFunctionValidation{},
-                    ServerlessRuleType: shared.ServerlessRuleTypeServerlessRuleTypeFunctionAnyServerlessRuleType,
+                    ServerlessRuleType: shared.ServerlessRuleTypeServerlessRuleTypeFunctionNameServerlessRuleType,
                 },
                 Scope: []shared.ServerlessRuleScope{
                     shared.ServerlessRuleScope{
-                        CloudAccount: "granular",
+                        CloudAccount: "string",
                         Regions: []string{
-                            "Keys",
+                            "string",
                         },
                     },
                 },
-                Status: shared.ServerlessRuleStatusDisabled,
+                Status: shared.ServerlessRuleStatusEnabled,
             },
         },
     })

@@ -195,9 +195,9 @@ func main() {
     ctx := context.Background()
     res, err := s.Bfla.PostAPISecurityInternalCatalogCatalogIDBflaDetection(ctx, operations.PostAPISecurityInternalCatalogCatalogIDBflaDetectionRequest{
         BflaDurationConfiguration: shared.BflaDurationConfiguration{
-            Duration: "Garden",
+            Duration: "string",
         },
-        CatalogID: "e94464b0-ff0e-46fe-94ca-29162fc27770",
+        CatalogID: "35e94464-b0ff-40e6-be14-ca29162fc277",
     })
     if err != nil {
         log.Fatal(err)
@@ -250,9 +250,9 @@ func main() {
     ctx := context.Background()
     res, err := s.Bfla.PostAPISecurityInternalCatalogCatalogIDBflaLearning(ctx, operations.PostAPISecurityInternalCatalogCatalogIDBflaLearningRequest{
         BflaDurationConfiguration: shared.BflaDurationConfiguration{
-            Duration: "South",
+            Duration: "string",
         },
-        CatalogID: "fbc82f2c-9ea8-45a3-a6b5-2d888f26e15a",
+        CatalogID: "08fbc82f-2c9e-4a85-a326-b52d888f26e1",
     })
     if err != nil {
         log.Fatal(err)
@@ -360,29 +360,29 @@ func main() {
             Status: shared.APIServiceBflaInfoStatusNoSpec,
             Tags: []shared.APIServiceBflaTagInfo{
                 shared.APIServiceBflaTagInfo{
-                    Name: "International",
+                    Name: "string",
                     Paths: []shared.APIServiceBflaPathInfo{
                         shared.APIServiceBflaPathInfo{
                             Clients: []shared.APIServiceBflaClientInfo{
                                 shared.APIServiceBflaClientInfo{
-                                    Name: "Human",
+                                    Name: "string",
                                     Principles: []shared.APIServiceBflaPrincipleInfo{
                                         shared.APIServiceBflaPrincipleInfo{
-                                            IP: "252.50.185.52",
-                                            Name: "sherbet",
-                                            PrincipleType: "Technician",
+                                            IP: "169.172.185.96",
+                                            Name: "string",
+                                            PrincipleType: "string",
                                         },
                                     },
                                 },
                             },
-                            Method: shared.HTTPMethodTrace,
-                            Path: "/usr/sbin",
+                            Method: shared.HTTPMethodPut,
+                            Path: "/tmp",
                         },
                     },
                 },
             },
         },
-        CatalogID: "442012ad-1459-4f87-a9c2-0110831cf060",
+        CatalogID: "ef3b3fca-add4-4420-92ad-1459f8769c20",
     })
     if err != nil {
         log.Fatal(err)

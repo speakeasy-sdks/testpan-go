@@ -49,3 +49,13 @@ Based on:
 - [go v0.3.2] .
 ### Releases
 - [Go v0.3.2] https://github.com/speakeasy-sdks/testpan-go/releases/tag/v0.3.2 - .
+
+## 2023-10-21 01:09:52
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 
+- Speakeasy CLI 1.104.0 (2.169.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [go v0.4.0] .
+### Releases
+- [Go v0.4.0] https://github.com/speakeasy-sdks/testpan-go/releases/tag/v0.4.0 - .

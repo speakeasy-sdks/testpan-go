@@ -41,7 +41,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Apps.GetApps(ctx, operations.GetAppsRequest{
         Type: []string{
-            "Bermuda",
+            "string",
         },
     })
     if err != nil {
@@ -156,7 +156,7 @@ func main() {
         Labels: []shared.Label{
             shared.Label{
                 Key: "<key>",
-                Value: "Pennsylvania",
+                Value: "string",
             },
         },
         Name: "AccountingApp",
@@ -277,14 +277,14 @@ func main() {
             Labels: []shared.Label{
                 shared.Label{
                     Key: "<key>",
-                    Value: "invoice",
+                    Value: "string",
                 },
             },
             Name: "AccountingApp",
             ProcessName: testpango.String("accounting_app"),
             Type: "frontend",
         },
-        AppID: "a0b1a3d7-8ca7-4d0e-a8bc-a8a0d7f81190",
+        AppID: "7da0b1a3-d78c-4a7d-8e68-bca8a0d7f811",
     })
     if err != nil {
         log.Fatal(err)

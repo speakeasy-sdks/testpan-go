@@ -786,13 +786,13 @@ func main() {
             MaxParallelism: 752536,
             MinimumSeverity: shared.VulnerabilitySeverityLow,
             Namespaces: []string{
-                "synthesizing",
+                "string",
             },
             PeriodicJobExpression: &shared.PeriodicJobExpression{
-                PeriodicJobType: shared.PeriodicJobExpressionPeriodicJobTypeNonPeriodicJobExpression,
+                PeriodicJobType: shared.PeriodicJobExpressionPeriodicJobTypeByHoursPeriodicJobExpression,
             },
         },
-        KubernetesClusterID: "a0c9884d-ef8c-417b-9484-5665df2f730e",
+        KubernetesClusterID: "c1a0c988-4def-48c1-bbd4-845665df2f73",
     })
     if err != nil {
         log.Fatal(err)
@@ -849,13 +849,13 @@ func main() {
                 EnforcementOption: shared.EnforcementOptionFail,
                 PermissibleDockerfileScanSeverity: shared.DockerfileScanSeverityInfo,
             },
-            Name: "too",
+            Name: "string",
             VulnerabilityCiPolicy: &shared.VulnerabilityCiPolicy{
-                EnforcementOption: shared.EnforcementOptionFail,
-                PermissibleVulnerabilityLevel: shared.VulnerabilitySeverityHigh,
+                EnforcementOption: shared.EnforcementOptionIgnore,
+                PermissibleVulnerabilityLevel: shared.VulnerabilitySeverityCritical,
             },
         },
-        IgnoredRiskID: "78a3a52b-6ef1-46d3-9fdf-8529c311ad61",
+        IgnoredRiskID: "1978a3a5-2b6e-4f16-935f-df8529c311ad",
     })
     if err != nil {
         log.Fatal(err)
