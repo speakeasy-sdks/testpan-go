@@ -9,20 +9,20 @@ import (
 	"net/http"
 )
 
-type GetGatewaysClustersGatewayType string
+type GatewayType string
 
 const (
-	GetGatewaysClustersGatewayTypeApigeeX      GetGatewaysClustersGatewayType = "APIGEE_X"
-	GetGatewaysClustersGatewayTypeKongInternal GetGatewaysClustersGatewayType = "KONG_INTERNAL"
-	GetGatewaysClustersGatewayTypeTykInternal  GetGatewaysClustersGatewayType = "TYK_INTERNAL"
-	GetGatewaysClustersGatewayTypeF5BigIP      GetGatewaysClustersGatewayType = "F5_BIG_IP"
+	GatewayTypeApigeeX      GatewayType = "APIGEE_X"
+	GatewayTypeKongInternal GatewayType = "KONG_INTERNAL"
+	GatewayTypeTykInternal  GatewayType = "TYK_INTERNAL"
+	GatewayTypeF5BigIP      GatewayType = "F5_BIG_IP"
 )
 
-func (e GetGatewaysClustersGatewayType) ToPointer() *GetGatewaysClustersGatewayType {
+func (e GatewayType) ToPointer() *GatewayType {
 	return &e
 }
 
-func (e *GetGatewaysClustersGatewayType) UnmarshalJSON(data []byte) error {
+func (e *GatewayType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -35,20 +35,20 @@ func (e *GetGatewaysClustersGatewayType) UnmarshalJSON(data []byte) error {
 	case "TYK_INTERNAL":
 		fallthrough
 	case "F5_BIG_IP":
-		*e = GetGatewaysClustersGatewayType(v)
+		*e = GatewayType(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetGatewaysClustersGatewayType: %v", v)
+		return fmt.Errorf("invalid value for GatewayType: %v", v)
 	}
 }
 
 type GetGatewaysClustersRequest struct {
-	GatewayType GetGatewaysClustersGatewayType `queryParam:"style=form,explode=true,name=gatewayType"`
+	GatewayType GatewayType `queryParam:"style=form,explode=true,name=gatewayType"`
 }
 
-func (o *GetGatewaysClustersRequest) GetGatewayType() GetGatewaysClustersGatewayType {
+func (o *GetGatewaysClustersRequest) GetGatewayType() GatewayType {
 	if o == nil {
-		return GetGatewaysClustersGatewayType("")
+		return GatewayType("")
 	}
 	return o.GatewayType
 }
@@ -56,12 +56,12 @@ func (o *GetGatewaysClustersRequest) GetGatewayType() GetGatewaysClustersGateway
 type GetGatewaysClustersResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// Success
-	GatewayClusterInfos []shared.GatewayClusterInfo
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Success
+	Classes []shared.GatewayClusterInfo
 }
 
 func (o *GetGatewaysClustersResponse) GetContentType() string {
@@ -69,13 +69,6 @@ func (o *GetGatewaysClustersResponse) GetContentType() string {
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *GetGatewaysClustersResponse) GetGatewayClusterInfos() []shared.GatewayClusterInfo {
-	if o == nil {
-		return nil
-	}
-	return o.GatewayClusterInfos
 }
 
 func (o *GetGatewaysClustersResponse) GetStatusCode() int {
@@ -90,4 +83,11 @@ func (o *GetGatewaysClustersResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetGatewaysClustersResponse) GetClasses() []shared.GatewayClusterInfo {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

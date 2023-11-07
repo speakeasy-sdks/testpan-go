@@ -10,19 +10,19 @@ import (
 	"net/http"
 )
 
-// GetKubernetesClustersKubernetesClusterIDNamespacesSortDir - sorting direction
-type GetKubernetesClustersKubernetesClusterIDNamespacesSortDir string
+// GetKubernetesClustersKubernetesClusterIDNamespacesQueryParamSortDir - sorting direction
+type GetKubernetesClustersKubernetesClusterIDNamespacesQueryParamSortDir string
 
 const (
-	GetKubernetesClustersKubernetesClusterIDNamespacesSortDirAsc  GetKubernetesClustersKubernetesClusterIDNamespacesSortDir = "ASC"
-	GetKubernetesClustersKubernetesClusterIDNamespacesSortDirDesc GetKubernetesClustersKubernetesClusterIDNamespacesSortDir = "DESC"
+	GetKubernetesClustersKubernetesClusterIDNamespacesQueryParamSortDirAsc  GetKubernetesClustersKubernetesClusterIDNamespacesQueryParamSortDir = "ASC"
+	GetKubernetesClustersKubernetesClusterIDNamespacesQueryParamSortDirDesc GetKubernetesClustersKubernetesClusterIDNamespacesQueryParamSortDir = "DESC"
 )
 
-func (e GetKubernetesClustersKubernetesClusterIDNamespacesSortDir) ToPointer() *GetKubernetesClustersKubernetesClusterIDNamespacesSortDir {
+func (e GetKubernetesClustersKubernetesClusterIDNamespacesQueryParamSortDir) ToPointer() *GetKubernetesClustersKubernetesClusterIDNamespacesQueryParamSortDir {
 	return &e
 }
 
-func (e *GetKubernetesClustersKubernetesClusterIDNamespacesSortDir) UnmarshalJSON(data []byte) error {
+func (e *GetKubernetesClustersKubernetesClusterIDNamespacesQueryParamSortDir) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -31,26 +31,26 @@ func (e *GetKubernetesClustersKubernetesClusterIDNamespacesSortDir) UnmarshalJSO
 	case "ASC":
 		fallthrough
 	case "DESC":
-		*e = GetKubernetesClustersKubernetesClusterIDNamespacesSortDir(v)
+		*e = GetKubernetesClustersKubernetesClusterIDNamespacesQueryParamSortDir(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetKubernetesClustersKubernetesClusterIDNamespacesSortDir: %v", v)
+		return fmt.Errorf("invalid value for GetKubernetesClustersKubernetesClusterIDNamespacesQueryParamSortDir: %v", v)
 	}
 }
 
-// GetKubernetesClustersKubernetesClusterIDNamespacesSortKey - sort key
-type GetKubernetesClustersKubernetesClusterIDNamespacesSortKey string
+// GetKubernetesClustersKubernetesClusterIDNamespacesQueryParamSortKey - sort key
+type GetKubernetesClustersKubernetesClusterIDNamespacesQueryParamSortKey string
 
 const (
-	GetKubernetesClustersKubernetesClusterIDNamespacesSortKeyName   GetKubernetesClustersKubernetesClusterIDNamespacesSortKey = "name"
-	GetKubernetesClustersKubernetesClusterIDNamespacesSortKeyStatus GetKubernetesClustersKubernetesClusterIDNamespacesSortKey = "status"
+	GetKubernetesClustersKubernetesClusterIDNamespacesQueryParamSortKeyName   GetKubernetesClustersKubernetesClusterIDNamespacesQueryParamSortKey = "name"
+	GetKubernetesClustersKubernetesClusterIDNamespacesQueryParamSortKeyStatus GetKubernetesClustersKubernetesClusterIDNamespacesQueryParamSortKey = "status"
 )
 
-func (e GetKubernetesClustersKubernetesClusterIDNamespacesSortKey) ToPointer() *GetKubernetesClustersKubernetesClusterIDNamespacesSortKey {
+func (e GetKubernetesClustersKubernetesClusterIDNamespacesQueryParamSortKey) ToPointer() *GetKubernetesClustersKubernetesClusterIDNamespacesQueryParamSortKey {
 	return &e
 }
 
-func (e *GetKubernetesClustersKubernetesClusterIDNamespacesSortKey) UnmarshalJSON(data []byte) error {
+func (e *GetKubernetesClustersKubernetesClusterIDNamespacesQueryParamSortKey) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -59,10 +59,10 @@ func (e *GetKubernetesClustersKubernetesClusterIDNamespacesSortKey) UnmarshalJSO
 	case "name":
 		fallthrough
 	case "status":
-		*e = GetKubernetesClustersKubernetesClusterIDNamespacesSortKey(v)
+		*e = GetKubernetesClustersKubernetesClusterIDNamespacesQueryParamSortKey(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetKubernetesClustersKubernetesClusterIDNamespacesSortKey: %v", v)
+		return fmt.Errorf("invalid value for GetKubernetesClustersKubernetesClusterIDNamespacesQueryParamSortKey: %v", v)
 	}
 }
 
@@ -72,9 +72,9 @@ type GetKubernetesClustersKubernetesClusterIDNamespacesRequest struct {
 	// Secure Application Kubernetes cluster ID
 	KubernetesClusterID string `pathParam:"style=simple,explode=false,name=kubernetesClusterId"`
 	// sorting direction
-	SortDir *GetKubernetesClustersKubernetesClusterIDNamespacesSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
+	SortDir *GetKubernetesClustersKubernetesClusterIDNamespacesQueryParamSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
 	// sort key
-	SortKey *GetKubernetesClustersKubernetesClusterIDNamespacesSortKey `default:"name" queryParam:"style=form,explode=true,name=sortKey"`
+	SortKey *GetKubernetesClustersKubernetesClusterIDNamespacesQueryParamSortKey `default:"name" queryParam:"style=form,explode=true,name=sortKey"`
 }
 
 func (g GetKubernetesClustersKubernetesClusterIDNamespacesRequest) MarshalJSON() ([]byte, error) {
@@ -102,14 +102,14 @@ func (o *GetKubernetesClustersKubernetesClusterIDNamespacesRequest) GetKubernete
 	return o.KubernetesClusterID
 }
 
-func (o *GetKubernetesClustersKubernetesClusterIDNamespacesRequest) GetSortDir() *GetKubernetesClustersKubernetesClusterIDNamespacesSortDir {
+func (o *GetKubernetesClustersKubernetesClusterIDNamespacesRequest) GetSortDir() *GetKubernetesClustersKubernetesClusterIDNamespacesQueryParamSortDir {
 	if o == nil {
 		return nil
 	}
 	return o.SortDir
 }
 
-func (o *GetKubernetesClustersKubernetesClusterIDNamespacesRequest) GetSortKey() *GetKubernetesClustersKubernetesClusterIDNamespacesSortKey {
+func (o *GetKubernetesClustersKubernetesClusterIDNamespacesRequest) GetSortKey() *GetKubernetesClustersKubernetesClusterIDNamespacesQueryParamSortKey {
 	if o == nil {
 		return nil
 	}
@@ -121,12 +121,12 @@ type GetKubernetesClustersKubernetesClusterIDNamespacesResponse struct {
 	APIResponse *shared.APIResponse
 	// HTTP response content type for this operation
 	ContentType string
-	// success
-	KubernetesNamespaceResponses []shared.KubernetesNamespace
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// success
+	Classes []shared.KubernetesNamespace
 }
 
 func (o *GetKubernetesClustersKubernetesClusterIDNamespacesResponse) GetAPIResponse() *shared.APIResponse {
@@ -143,13 +143,6 @@ func (o *GetKubernetesClustersKubernetesClusterIDNamespacesResponse) GetContentT
 	return o.ContentType
 }
 
-func (o *GetKubernetesClustersKubernetesClusterIDNamespacesResponse) GetKubernetesNamespaceResponses() []shared.KubernetesNamespace {
-	if o == nil {
-		return nil
-	}
-	return o.KubernetesNamespaceResponses
-}
-
 func (o *GetKubernetesClustersKubernetesClusterIDNamespacesResponse) GetStatusCode() int {
 	if o == nil {
 		return 0
@@ -162,4 +155,11 @@ func (o *GetKubernetesClustersKubernetesClusterIDNamespacesResponse) GetRawRespo
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetKubernetesClustersKubernetesClusterIDNamespacesResponse) GetClasses() []shared.KubernetesNamespace {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

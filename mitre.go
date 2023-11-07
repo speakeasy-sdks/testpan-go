@@ -15,18 +15,18 @@ import (
 	"strings"
 )
 
-type mitre struct {
+type Mitre struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newMitre(sdkConfig sdkConfiguration) *mitre {
-	return &mitre{
+func newMitre(sdkConfig sdkConfiguration) *Mitre {
+	return &Mitre{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // GetMitreDashboard - Get data for MITRE dashboard for all clusters
-func (s *mitre) GetMitreDashboard(ctx context.Context, request operations.GetMitreDashboardRequest) (*operations.GetMitreDashboardResponse, error) {
+func (s *Mitre) GetMitreDashboard(ctx context.Context, request operations.GetMitreDashboardRequest) (*operations.GetMitreDashboardResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/mitre/dashboard"
 
@@ -88,7 +88,7 @@ func (s *mitre) GetMitreDashboard(ctx context.Context, request operations.GetMit
 }
 
 // GetMitreReportDownload - Download Mitre security report
-func (s *mitre) GetMitreReportDownload(ctx context.Context) (*operations.GetMitreReportDownloadResponse, error) {
+func (s *Mitre) GetMitreReportDownload(ctx context.Context) (*operations.GetMitreReportDownloadResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/mitre/report/download"
 
@@ -118,7 +118,7 @@ func (s *mitre) GetMitreReportDownload(ctx context.Context) (*operations.GetMitr
 	}
 
 	if (httpRes.StatusCode == 200) && utils.MatchContentType(contentType, `application/json`) {
-		res.GetMitreReportDownload200ApplicationJSONBinaryString = httpRes.Body
+		res.Stream = httpRes.Body
 
 		return res, nil
 	}
@@ -145,7 +145,7 @@ func (s *mitre) GetMitreReportDownload(ctx context.Context) (*operations.GetMitr
 }
 
 // GetMitreReportStatus - Get Mitre report status
-func (s *mitre) GetMitreReportStatus(ctx context.Context) (*operations.GetMitreReportStatusResponse, error) {
+func (s *Mitre) GetMitreReportStatus(ctx context.Context) (*operations.GetMitreReportStatusResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/mitre/report/status"
 
@@ -203,7 +203,7 @@ func (s *mitre) GetMitreReportStatus(ctx context.Context) (*operations.GetMitreR
 }
 
 // GetMitreTechnique - Get data for MITRE technique of the given mitreTechniqueType
-func (s *mitre) GetMitreTechnique(ctx context.Context, request operations.GetMitreTechniqueRequest) (*operations.GetMitreTechniqueResponse, error) {
+func (s *Mitre) GetMitreTechnique(ctx context.Context, request operations.GetMitreTechniqueRequest) (*operations.GetMitreTechniqueResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/mitre/technique"
 
@@ -265,7 +265,7 @@ func (s *mitre) GetMitreTechnique(ctx context.Context, request operations.GetMit
 }
 
 // PostMitreReportGenerate - Generate Mitre report
-func (s *mitre) PostMitreReportGenerate(ctx context.Context) (*operations.PostMitreReportGenerateResponse, error) {
+func (s *Mitre) PostMitreReportGenerate(ctx context.Context) (*operations.PostMitreReportGenerateResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/mitre/report/generate"
 
@@ -312,7 +312,7 @@ func (s *mitre) PostMitreReportGenerate(ctx context.Context) (*operations.PostMi
 }
 
 // PostMitreTechniqueFix - Post fix for MITRE technique of the given mitreTechniqueType
-func (s *mitre) PostMitreTechniqueFix(ctx context.Context, request operations.PostMitreTechniqueFixRequest) (*operations.PostMitreTechniqueFixResponse, error) {
+func (s *Mitre) PostMitreTechniqueFix(ctx context.Context, request operations.PostMitreTechniqueFixRequest) (*operations.PostMitreTechniqueFixResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/mitre/technique/fix"
 

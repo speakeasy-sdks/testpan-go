@@ -26,7 +26,7 @@ type PostRiskAssessmentKubernetesClusterIDScanResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Scan with the returned scanId was added to execution queue.
-	PostRiskAssessmentKubernetesClusterIDScan201ApplicationJSONUUIDString *string
+	Res *string
 }
 
 func (o *PostRiskAssessmentKubernetesClusterIDScanResponse) GetContentType() string {
@@ -50,9 +50,9 @@ func (o *PostRiskAssessmentKubernetesClusterIDScanResponse) GetRawResponse() *ht
 	return o.RawResponse
 }
 
-func (o *PostRiskAssessmentKubernetesClusterIDScanResponse) GetPostRiskAssessmentKubernetesClusterIDScan201ApplicationJSONUUIDString() *string {
+func (o *PostRiskAssessmentKubernetesClusterIDScanResponse) GetRes() *string {
 	if o == nil {
 		return nil
 	}
-	return o.PostRiskAssessmentKubernetesClusterIDScan201ApplicationJSONUUIDString
+	return o.Res
 }

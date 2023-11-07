@@ -10,19 +10,19 @@ import (
 	"net/http"
 )
 
-// GetServerlessZipFilesSortDir - sorting direction
-type GetServerlessZipFilesSortDir string
+// GetServerlessZipFilesQueryParamSortDir - sorting direction
+type GetServerlessZipFilesQueryParamSortDir string
 
 const (
-	GetServerlessZipFilesSortDirAsc  GetServerlessZipFilesSortDir = "ASC"
-	GetServerlessZipFilesSortDirDesc GetServerlessZipFilesSortDir = "DESC"
+	GetServerlessZipFilesQueryParamSortDirAsc  GetServerlessZipFilesQueryParamSortDir = "ASC"
+	GetServerlessZipFilesQueryParamSortDirDesc GetServerlessZipFilesQueryParamSortDir = "DESC"
 )
 
-func (e GetServerlessZipFilesSortDir) ToPointer() *GetServerlessZipFilesSortDir {
+func (e GetServerlessZipFilesQueryParamSortDir) ToPointer() *GetServerlessZipFilesQueryParamSortDir {
 	return &e
 }
 
-func (e *GetServerlessZipFilesSortDir) UnmarshalJSON(data []byte) error {
+func (e *GetServerlessZipFilesQueryParamSortDir) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -31,26 +31,26 @@ func (e *GetServerlessZipFilesSortDir) UnmarshalJSON(data []byte) error {
 	case "ASC":
 		fallthrough
 	case "DESC":
-		*e = GetServerlessZipFilesSortDir(v)
+		*e = GetServerlessZipFilesQueryParamSortDir(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetServerlessZipFilesSortDir: %v", v)
+		return fmt.Errorf("invalid value for GetServerlessZipFilesQueryParamSortDir: %v", v)
 	}
 }
 
-// GetServerlessZipFilesSortKey - sort key
-type GetServerlessZipFilesSortKey string
+// GetServerlessZipFilesQueryParamSortKey - sort key
+type GetServerlessZipFilesQueryParamSortKey string
 
 const (
-	GetServerlessZipFilesSortKeyTime            GetServerlessZipFilesSortKey = "TIME"
-	GetServerlessZipFilesSortKeyVulnerabilities GetServerlessZipFilesSortKey = "VULNERABILITIES"
+	GetServerlessZipFilesQueryParamSortKeyTime            GetServerlessZipFilesQueryParamSortKey = "TIME"
+	GetServerlessZipFilesQueryParamSortKeyVulnerabilities GetServerlessZipFilesQueryParamSortKey = "VULNERABILITIES"
 )
 
-func (e GetServerlessZipFilesSortKey) ToPointer() *GetServerlessZipFilesSortKey {
+func (e GetServerlessZipFilesQueryParamSortKey) ToPointer() *GetServerlessZipFilesQueryParamSortKey {
 	return &e
 }
 
-func (e *GetServerlessZipFilesSortKey) UnmarshalJSON(data []byte) error {
+func (e *GetServerlessZipFilesQueryParamSortKey) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -59,10 +59,10 @@ func (e *GetServerlessZipFilesSortKey) UnmarshalJSON(data []byte) error {
 	case "TIME":
 		fallthrough
 	case "VULNERABILITIES":
-		*e = GetServerlessZipFilesSortKey(v)
+		*e = GetServerlessZipFilesQueryParamSortKey(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetServerlessZipFilesSortKey: %v", v)
+		return fmt.Errorf("invalid value for GetServerlessZipFilesQueryParamSortKey: %v", v)
 	}
 }
 
@@ -72,11 +72,11 @@ type GetServerlessZipFilesRequest struct {
 	// Return entries from this offset (pagination)
 	Offset *float64 `default:"0" queryParam:"style=form,explode=true,name=offset"`
 	// sorting direction
-	SortDir *GetServerlessZipFilesSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
+	SortDir *GetServerlessZipFilesQueryParamSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
 	// sort key
-	SortKey         *GetServerlessZipFilesSortKey `default:"VULNERABILITIES" queryParam:"style=form,explode=true,name=sortKey"`
-	ZipNameFilter   *string                       `queryParam:"style=form,explode=true,name=zipNameFilter"`
-	ZipSha256Filter *string                       `queryParam:"style=form,explode=true,name=zipSha256Filter"`
+	SortKey         *GetServerlessZipFilesQueryParamSortKey `default:"VULNERABILITIES" queryParam:"style=form,explode=true,name=sortKey"`
+	ZipNameFilter   *string                                 `queryParam:"style=form,explode=true,name=zipNameFilter"`
+	ZipSha256Filter *string                                 `queryParam:"style=form,explode=true,name=zipSha256Filter"`
 }
 
 func (g GetServerlessZipFilesRequest) MarshalJSON() ([]byte, error) {
@@ -104,14 +104,14 @@ func (o *GetServerlessZipFilesRequest) GetOffset() *float64 {
 	return o.Offset
 }
 
-func (o *GetServerlessZipFilesRequest) GetSortDir() *GetServerlessZipFilesSortDir {
+func (o *GetServerlessZipFilesRequest) GetSortDir() *GetServerlessZipFilesQueryParamSortDir {
 	if o == nil {
 		return nil
 	}
 	return o.SortDir
 }
 
-func (o *GetServerlessZipFilesRequest) GetSortKey() *GetServerlessZipFilesSortKey {
+func (o *GetServerlessZipFilesRequest) GetSortKey() *GetServerlessZipFilesQueryParamSortKey {
 	if o == nil {
 		return nil
 	}
@@ -135,12 +135,12 @@ func (o *GetServerlessZipFilesRequest) GetZipSha256Filter() *string {
 type GetServerlessZipFilesResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// Success
-	ServerlessZips []shared.ServerlessZip
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Success
+	Classes []shared.ServerlessZip
 }
 
 func (o *GetServerlessZipFilesResponse) GetContentType() string {
@@ -148,13 +148,6 @@ func (o *GetServerlessZipFilesResponse) GetContentType() string {
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *GetServerlessZipFilesResponse) GetServerlessZips() []shared.ServerlessZip {
-	if o == nil {
-		return nil
-	}
-	return o.ServerlessZips
 }
 
 func (o *GetServerlessZipFilesResponse) GetStatusCode() int {
@@ -169,4 +162,11 @@ func (o *GetServerlessZipFilesResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetServerlessZipFilesResponse) GetClasses() []shared.ServerlessZip {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

@@ -1,5 +1,5 @@
 # K8sCisBenchmark
-(*K8sCisBenchmark*)
+(*.K8sCisBenchmark*)
 
 ## Overview
 
@@ -48,7 +48,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.K8sCISBenchmarkClustersSummaries != nil {
+    if res.Classes != nil {
         // handle response
     }
 }

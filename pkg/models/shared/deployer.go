@@ -7,18 +7,18 @@ import (
 	"fmt"
 )
 
-type DeployerDeployerType string
+type DeployerType string
 
 const (
-	DeployerDeployerTypeOperatorDeployer DeployerDeployerType = "OperatorDeployer"
-	DeployerDeployerTypeSecureCnDeployer DeployerDeployerType = "SecureCnDeployer"
+	DeployerTypeOperatorDeployer DeployerType = "OperatorDeployer"
+	DeployerTypeSecureCnDeployer DeployerType = "SecureCnDeployer"
 )
 
-func (e DeployerDeployerType) ToPointer() *DeployerDeployerType {
+func (e DeployerType) ToPointer() *DeployerType {
 	return &e
 }
 
-func (e *DeployerDeployerType) UnmarshalJSON(data []byte) error {
+func (e *DeployerType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -27,18 +27,18 @@ func (e *DeployerDeployerType) UnmarshalJSON(data []byte) error {
 	case "OperatorDeployer":
 		fallthrough
 	case "SecureCnDeployer":
-		*e = DeployerDeployerType(v)
+		*e = DeployerType(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for DeployerDeployerType: %v", v)
+		return fmt.Errorf("invalid value for DeployerType: %v", v)
 	}
 }
 
 // DeployerInput - represent deployer object
 type DeployerInput struct {
-	Deployer     *string              `json:"deployer,omitempty"`
-	DeployerID   string               `json:"deployerId"`
-	DeployerType DeployerDeployerType `json:"deployerType"`
+	Deployer     *string      `json:"deployer,omitempty"`
+	DeployerID   string       `json:"deployerId"`
+	DeployerType DeployerType `json:"deployerType"`
 }
 
 func (o *DeployerInput) GetDeployer() *string {
@@ -55,19 +55,19 @@ func (o *DeployerInput) GetDeployerID() string {
 	return o.DeployerID
 }
 
-func (o *DeployerInput) GetDeployerType() DeployerDeployerType {
+func (o *DeployerInput) GetDeployerType() DeployerType {
 	if o == nil {
-		return DeployerDeployerType("")
+		return DeployerType("")
 	}
 	return o.DeployerType
 }
 
 // Deployer - represent deployer object
 type Deployer struct {
-	Deployer     *string              `json:"deployer,omitempty"`
-	DeployerID   string               `json:"deployerId"`
-	DeployerType DeployerDeployerType `json:"deployerType"`
-	ID           *string              `json:"id,omitempty"`
+	Deployer     *string      `json:"deployer,omitempty"`
+	DeployerID   string       `json:"deployerId"`
+	DeployerType DeployerType `json:"deployerType"`
+	ID           *string      `json:"id,omitempty"`
 }
 
 func (o *Deployer) GetDeployer() *string {
@@ -84,9 +84,9 @@ func (o *Deployer) GetDeployerID() string {
 	return o.DeployerID
 }
 
-func (o *Deployer) GetDeployerType() DeployerDeployerType {
+func (o *Deployer) GetDeployerType() DeployerType {
 	if o == nil {
-		return DeployerDeployerType("")
+		return DeployerType("")
 	}
 	return o.DeployerType
 }

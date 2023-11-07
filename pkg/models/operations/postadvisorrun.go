@@ -8,22 +8,22 @@ import (
 	"net/http"
 )
 
-// PostAdvisorRunPolicyAdvisorType - policy advisor type
-type PostAdvisorRunPolicyAdvisorType string
+// PolicyAdvisorType - policy advisor type
+type PolicyAdvisorType string
 
 const (
-	PostAdvisorRunPolicyAdvisorTypeEnvironment         PostAdvisorRunPolicyAdvisorType = "ENVIRONMENT"
-	PostAdvisorRunPolicyAdvisorTypePodSecurityStandard PostAdvisorRunPolicyAdvisorType = "POD_SECURITY_STANDARD"
-	PostAdvisorRunPolicyAdvisorTypeConnectionRules     PostAdvisorRunPolicyAdvisorType = "CONNECTION_RULES"
-	PostAdvisorRunPolicyAdvisorTypeDeploymentRules     PostAdvisorRunPolicyAdvisorType = "DEPLOYMENT_RULES"
-	PostAdvisorRunPolicyAdvisorTypeAPIRules            PostAdvisorRunPolicyAdvisorType = "API_RULES"
+	PolicyAdvisorTypeEnvironment         PolicyAdvisorType = "ENVIRONMENT"
+	PolicyAdvisorTypePodSecurityStandard PolicyAdvisorType = "POD_SECURITY_STANDARD"
+	PolicyAdvisorTypeConnectionRules     PolicyAdvisorType = "CONNECTION_RULES"
+	PolicyAdvisorTypeDeploymentRules     PolicyAdvisorType = "DEPLOYMENT_RULES"
+	PolicyAdvisorTypeAPIRules            PolicyAdvisorType = "API_RULES"
 )
 
-func (e PostAdvisorRunPolicyAdvisorType) ToPointer() *PostAdvisorRunPolicyAdvisorType {
+func (e PolicyAdvisorType) ToPointer() *PolicyAdvisorType {
 	return &e
 }
 
-func (e *PostAdvisorRunPolicyAdvisorType) UnmarshalJSON(data []byte) error {
+func (e *PolicyAdvisorType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -38,21 +38,21 @@ func (e *PostAdvisorRunPolicyAdvisorType) UnmarshalJSON(data []byte) error {
 	case "DEPLOYMENT_RULES":
 		fallthrough
 	case "API_RULES":
-		*e = PostAdvisorRunPolicyAdvisorType(v)
+		*e = PolicyAdvisorType(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for PostAdvisorRunPolicyAdvisorType: %v", v)
+		return fmt.Errorf("invalid value for PolicyAdvisorType: %v", v)
 	}
 }
 
 type PostAdvisorRunRequest struct {
 	// policy advisor type
-	PolicyAdvisorType PostAdvisorRunPolicyAdvisorType `queryParam:"style=form,explode=true,name=policyAdvisorType"`
+	PolicyAdvisorType PolicyAdvisorType `queryParam:"style=form,explode=true,name=policyAdvisorType"`
 }
 
-func (o *PostAdvisorRunRequest) GetPolicyAdvisorType() PostAdvisorRunPolicyAdvisorType {
+func (o *PostAdvisorRunRequest) GetPolicyAdvisorType() PolicyAdvisorType {
 	if o == nil {
-		return PostAdvisorRunPolicyAdvisorType("")
+		return PolicyAdvisorType("")
 	}
 	return o.PolicyAdvisorType
 }

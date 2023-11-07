@@ -8,21 +8,14 @@ import (
 )
 
 type GetSettingsIntegrationsCaResponse struct {
-	// Success
-	CaIntegrationResponseWithClusters []shared.CaIntegrationResponseWithClusters
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-}
-
-func (o *GetSettingsIntegrationsCaResponse) GetCaIntegrationResponseWithClusters() []shared.CaIntegrationResponseWithClusters {
-	if o == nil {
-		return nil
-	}
-	return o.CaIntegrationResponseWithClusters
+	// Success
+	Classes []shared.CaIntegrationResponseWithClusters
 }
 
 func (o *GetSettingsIntegrationsCaResponse) GetContentType() string {
@@ -44,4 +37,11 @@ func (o *GetSettingsIntegrationsCaResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetSettingsIntegrationsCaResponse) GetClasses() []shared.CaIntegrationResponseWithClusters {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

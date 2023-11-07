@@ -1,5 +1,5 @@
 # Performance
-(*Performance*)
+(*.Performance*)
 
 ### Available Operations
 
@@ -35,7 +35,7 @@ func main() {
     res, err := s.Performance.GetAPISecurityAPICatalogIDHitCountGraph(ctx, operations.GetAPISecurityAPICatalogIDHitCountGraphRequest{
         CatalogID: "6b535753-b47a-42be-a003-f45375c0bae8",
         SpecPath: "string",
-        SpecPathMethod: operations.GetAPISecurityAPICatalogIDHitCountGraphSpecPathMethodConnect,
+        SpecPathMethod: operations.SpecPathMethodConnect,
     })
     if err != nil {
         log.Fatal(err)

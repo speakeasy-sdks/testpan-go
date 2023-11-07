@@ -10,19 +10,19 @@ import (
 	"net/http"
 )
 
-// GetImagesImageIDVulnerabilitiesSortDir - sorting direction
-type GetImagesImageIDVulnerabilitiesSortDir string
+// GetImagesImageIDVulnerabilitiesQueryParamSortDir - sorting direction
+type GetImagesImageIDVulnerabilitiesQueryParamSortDir string
 
 const (
-	GetImagesImageIDVulnerabilitiesSortDirAsc  GetImagesImageIDVulnerabilitiesSortDir = "ASC"
-	GetImagesImageIDVulnerabilitiesSortDirDesc GetImagesImageIDVulnerabilitiesSortDir = "DESC"
+	GetImagesImageIDVulnerabilitiesQueryParamSortDirAsc  GetImagesImageIDVulnerabilitiesQueryParamSortDir = "ASC"
+	GetImagesImageIDVulnerabilitiesQueryParamSortDirDesc GetImagesImageIDVulnerabilitiesQueryParamSortDir = "DESC"
 )
 
-func (e GetImagesImageIDVulnerabilitiesSortDir) ToPointer() *GetImagesImageIDVulnerabilitiesSortDir {
+func (e GetImagesImageIDVulnerabilitiesQueryParamSortDir) ToPointer() *GetImagesImageIDVulnerabilitiesQueryParamSortDir {
 	return &e
 }
 
-func (e *GetImagesImageIDVulnerabilitiesSortDir) UnmarshalJSON(data []byte) error {
+func (e *GetImagesImageIDVulnerabilitiesQueryParamSortDir) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -31,10 +31,10 @@ func (e *GetImagesImageIDVulnerabilitiesSortDir) UnmarshalJSON(data []byte) erro
 	case "ASC":
 		fallthrough
 	case "DESC":
-		*e = GetImagesImageIDVulnerabilitiesSortDir(v)
+		*e = GetImagesImageIDVulnerabilitiesQueryParamSortDir(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetImagesImageIDVulnerabilitiesSortDir: %v", v)
+		return fmt.Errorf("invalid value for GetImagesImageIDVulnerabilitiesQueryParamSortDir: %v", v)
 	}
 }
 
@@ -49,7 +49,7 @@ type GetImagesImageIDVulnerabilitiesRequest struct {
 	Offset                         *float64 `default:"0" queryParam:"style=form,explode=true,name=offset"`
 	ShowOnlyVulnerabilitiesWithFix *bool    `default:"false" queryParam:"style=form,explode=true,name=showOnlyVulnerabilitiesWithFix"`
 	// sorting direction
-	SortDir *GetImagesImageIDVulnerabilitiesSortDir `default:"DESC" queryParam:"style=form,explode=true,name=sortDir"`
+	SortDir *GetImagesImageIDVulnerabilitiesQueryParamSortDir `default:"DESC" queryParam:"style=form,explode=true,name=sortDir"`
 }
 
 func (g GetImagesImageIDVulnerabilitiesRequest) MarshalJSON() ([]byte, error) {
@@ -105,7 +105,7 @@ func (o *GetImagesImageIDVulnerabilitiesRequest) GetShowOnlyVulnerabilitiesWithF
 	return o.ShowOnlyVulnerabilitiesWithFix
 }
 
-func (o *GetImagesImageIDVulnerabilitiesRequest) GetSortDir() *GetImagesImageIDVulnerabilitiesSortDir {
+func (o *GetImagesImageIDVulnerabilitiesRequest) GetSortDir() *GetImagesImageIDVulnerabilitiesQueryParamSortDir {
 	if o == nil {
 		return nil
 	}
@@ -120,7 +120,7 @@ type GetImagesImageIDVulnerabilitiesResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// OK
-	Vulnerabilities []shared.Vulnerability
+	Classes []shared.Vulnerability
 }
 
 func (o *GetImagesImageIDVulnerabilitiesResponse) GetContentType() string {
@@ -144,9 +144,9 @@ func (o *GetImagesImageIDVulnerabilitiesResponse) GetRawResponse() *http.Respons
 	return o.RawResponse
 }
 
-func (o *GetImagesImageIDVulnerabilitiesResponse) GetVulnerabilities() []shared.Vulnerability {
+func (o *GetImagesImageIDVulnerabilitiesResponse) GetClasses() []shared.Vulnerability {
 	if o == nil {
 		return nil
 	}
-	return o.Vulnerabilities
+	return o.Classes
 }

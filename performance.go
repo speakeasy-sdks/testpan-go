@@ -15,18 +15,18 @@ import (
 	"strings"
 )
 
-type performance struct {
+type Performance struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newPerformance(sdkConfig sdkConfiguration) *performance {
-	return &performance{
+func newPerformance(sdkConfig sdkConfiguration) *Performance {
+	return &Performance{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // GetAPISecurityAPICatalogIDHitCountGraph - Get hit count for specific spec path
-func (s *performance) GetAPISecurityAPICatalogIDHitCountGraph(ctx context.Context, request operations.GetAPISecurityAPICatalogIDHitCountGraphRequest) (*operations.GetAPISecurityAPICatalogIDHitCountGraphResponse, error) {
+func (s *Performance) GetAPISecurityAPICatalogIDHitCountGraph(ctx context.Context, request operations.GetAPISecurityAPICatalogIDHitCountGraphRequest) (*operations.GetAPISecurityAPICatalogIDHitCountGraphResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/api/{catalogId}/hitCountGraph", request, nil)
 	if err != nil {
@@ -91,7 +91,7 @@ func (s *performance) GetAPISecurityAPICatalogIDHitCountGraph(ctx context.Contex
 }
 
 // GetPerformanceMetrics - Get performance metrics for a connection between workloads
-func (s *performance) GetPerformanceMetrics(ctx context.Context, request operations.GetPerformanceMetricsRequest) (*operations.GetPerformanceMetricsResponse, error) {
+func (s *Performance) GetPerformanceMetrics(ctx context.Context, request operations.GetPerformanceMetricsRequest) (*operations.GetPerformanceMetricsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/performanceMetrics"
 

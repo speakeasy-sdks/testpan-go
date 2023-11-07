@@ -9,18 +9,18 @@ import (
 	"time"
 )
 
-type TokenAttributeType string
+type AttributeType string
 
 const (
-	TokenAttributeTypeRequestHeader TokenAttributeType = "REQUEST_HEADER"
-	TokenAttributeTypeQueryParam    TokenAttributeType = "QUERY_PARAM"
+	AttributeTypeRequestHeader AttributeType = "REQUEST_HEADER"
+	AttributeTypeQueryParam    AttributeType = "QUERY_PARAM"
 )
 
-func (e TokenAttributeType) ToPointer() *TokenAttributeType {
+func (e AttributeType) ToPointer() *AttributeType {
 	return &e
 }
 
-func (e *TokenAttributeType) UnmarshalJSON(data []byte) error {
+func (e *AttributeType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -29,22 +29,22 @@ func (e *TokenAttributeType) UnmarshalJSON(data []byte) error {
 	case "REQUEST_HEADER":
 		fallthrough
 	case "QUERY_PARAM":
-		*e = TokenAttributeType(v)
+		*e = AttributeType(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for TokenAttributeType: %v", v)
+		return fmt.Errorf("invalid value for AttributeType: %v", v)
 	}
 }
 
 type Token struct {
-	Apis            []string            `json:"apis,omitempty"`
-	AttributeName   *string             `json:"attributeName,omitempty"`
-	AttributeType   *TokenAttributeType `json:"attributeType,omitempty"`
-	ExpirationDate  *time.Time          `json:"expirationDate,omitempty"`
-	HTTPPath        *string             `json:"httpPath,omitempty"`
-	ID              *string             `json:"id,omitempty"`
-	Name            string              `json:"name"`
-	VaultSecretPath string              `json:"vaultSecretPath"`
+	Apis            []string       `json:"apis,omitempty"`
+	AttributeName   *string        `json:"attributeName,omitempty"`
+	AttributeType   *AttributeType `json:"attributeType,omitempty"`
+	ExpirationDate  *time.Time     `json:"expirationDate,omitempty"`
+	HTTPPath        *string        `json:"httpPath,omitempty"`
+	ID              *string        `json:"id,omitempty"`
+	Name            string         `json:"name"`
+	VaultSecretPath string         `json:"vaultSecretPath"`
 }
 
 func (t Token) MarshalJSON() ([]byte, error) {
@@ -72,7 +72,7 @@ func (o *Token) GetAttributeName() *string {
 	return o.AttributeName
 }
 
-func (o *Token) GetAttributeType() *TokenAttributeType {
+func (o *Token) GetAttributeType() *AttributeType {
 	if o == nil {
 		return nil
 	}

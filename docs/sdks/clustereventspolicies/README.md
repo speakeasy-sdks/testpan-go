@@ -1,5 +1,5 @@
 # ClusterEventsPolicies
-(*ClusterEventsPolicies*)
+(*.ClusterEventsPolicies*)
 
 ## Overview
 
@@ -92,7 +92,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.KubernetesAPIPolicyHistories != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -140,7 +140,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.KubernetesResources != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -188,7 +188,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.KubernetesUsersByTypes != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -236,7 +236,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.RecommendedKubernetesAPIRules != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -283,7 +283,7 @@ func main() {
         DefaultRule: &shared.DefaultKubernetesAPIRule{},
         UserRules: []shared.KubernetesAPIRule{
             shared.KubernetesAPIRule{
-                KubernetesAPIRuleType: shared.KubernetesAPIRuleKubernetesAPIRuleTypeKubernetesAPIRecommendedRule,
+                KubernetesAPIRuleType: shared.KubernetesAPIRuleTypeKubernetesAPIRecommendedRule,
             },
         },
     })

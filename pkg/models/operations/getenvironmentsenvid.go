@@ -21,12 +21,12 @@ func (o *GetEnvironmentsEnvIDRequest) GetEnvID() string {
 type GetEnvironmentsEnvIDResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// Success
-	Environments []shared.Environment
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Success
+	Classes []shared.Environment
 }
 
 func (o *GetEnvironmentsEnvIDResponse) GetContentType() string {
@@ -34,13 +34,6 @@ func (o *GetEnvironmentsEnvIDResponse) GetContentType() string {
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *GetEnvironmentsEnvIDResponse) GetEnvironments() []shared.Environment {
-	if o == nil {
-		return nil
-	}
-	return o.Environments
 }
 
 func (o *GetEnvironmentsEnvIDResponse) GetStatusCode() int {
@@ -55,4 +48,11 @@ func (o *GetEnvironmentsEnvIDResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetEnvironmentsEnvIDResponse) GetClasses() []shared.Environment {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

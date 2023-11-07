@@ -14,7 +14,7 @@ type GetIstioSupportedVersionsResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Success
-	GetIstioSupportedVersions200ApplicationJSONStrings []string
+	Strings []string
 }
 
 func (o *GetIstioSupportedVersionsResponse) GetContentType() string {
@@ -38,9 +38,9 @@ func (o *GetIstioSupportedVersionsResponse) GetRawResponse() *http.Response {
 	return o.RawResponse
 }
 
-func (o *GetIstioSupportedVersionsResponse) GetGetIstioSupportedVersions200ApplicationJSONStrings() []string {
+func (o *GetIstioSupportedVersionsResponse) GetStrings() []string {
 	if o == nil {
 		return nil
 	}
-	return o.GetIstioSupportedVersions200ApplicationJSONStrings
+	return o.Strings
 }

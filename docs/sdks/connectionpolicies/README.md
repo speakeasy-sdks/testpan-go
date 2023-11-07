@@ -1,5 +1,5 @@
 # ConnectionPolicies
-(*ConnectionPolicies*)
+(*.ConnectionPolicies*)
 
 ## Overview
 
@@ -96,7 +96,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.ConnectionPolicyHistories != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -144,7 +144,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetConnectionsPolicyKafkaActions200ApplicationJSONStrings != nil {
+    if res.Strings != nil {
         // handle response
     }
 }
@@ -195,7 +195,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetConnectionsPolicyKafkaKubernetesClusterIDBrokers200ApplicationJSONStrings != nil {
+    if res.Strings != nil {
         // handle response
     }
 }
@@ -247,7 +247,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetConnectionsPolicyKafkaKubernetesClusterIDTopics200ApplicationJSONStrings != nil {
+    if res.Strings != nil {
         // handle response
     }
 }
@@ -346,7 +346,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.ConnectionPolicyHistories != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -398,12 +398,12 @@ func main() {
             shared.ConnectionsRule{
                 Action: shared.ConnectionRuleActionEncryptDirect,
                 Destination: &shared.ConnectionRulePart{
-                    ConnectionRulePartType: shared.ConnectionRulePartConnectionRulePartTypeKafkaConnectionRulePart,
+                    ConnectionRulePartType: shared.ConnectionRulePartTypeKafkaConnectionRulePart,
                 },
                 Layer7Settings: &shared.Layer7SettingsPart{},
                 Name: "string",
                 Source: &shared.ConnectionRulePart{
-                    ConnectionRulePartType: shared.ConnectionRulePartConnectionRulePartTypeAnyConnectionRulePart,
+                    ConnectionRulePartType: shared.ConnectionRulePartTypeAnyConnectionRulePart,
                 },
             },
         },

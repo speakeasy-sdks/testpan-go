@@ -7,8 +7,8 @@ import (
 	"time"
 )
 
-// ImageDefInput - Authorized image hash
-type ImageDefInput struct {
+// ImageDef - Authorized image hash
+type ImageDef struct {
 	// Valid hash for the image. * will authorize image name without validating hash
 	ImageHash *string    `json:"imageHash,omitempty"`
 	ImageName *string    `json:"imageName,omitempty"`
@@ -16,39 +16,39 @@ type ImageDefInput struct {
 	TimeAdded *time.Time `json:"timeAdded,omitempty"`
 }
 
-func (i ImageDefInput) MarshalJSON() ([]byte, error) {
+func (i ImageDef) MarshalJSON() ([]byte, error) {
 	return utils.MarshalJSON(i, "", false)
 }
 
-func (i *ImageDefInput) UnmarshalJSON(data []byte) error {
+func (i *ImageDef) UnmarshalJSON(data []byte) error {
 	if err := utils.UnmarshalJSON(data, &i, "", false, false); err != nil {
 		return err
 	}
 	return nil
 }
 
-func (o *ImageDefInput) GetImageHash() *string {
+func (o *ImageDef) GetImageHash() *string {
 	if o == nil {
 		return nil
 	}
 	return o.ImageHash
 }
 
-func (o *ImageDefInput) GetImageName() *string {
+func (o *ImageDef) GetImageName() *string {
 	if o == nil {
 		return nil
 	}
 	return o.ImageName
 }
 
-func (o *ImageDefInput) GetImageTags() []string {
+func (o *ImageDef) GetImageTags() []string {
 	if o == nil {
 		return nil
 	}
 	return o.ImageTags
 }
 
-func (o *ImageDefInput) GetTimeAdded() *time.Time {
+func (o *ImageDef) GetTimeAdded() *time.Time {
 	if o == nil {
 		return nil
 	}

@@ -10,19 +10,19 @@ import (
 	"net/http"
 )
 
-// GetRiskAssessmentKubernetesClusterIDPodsSortDir - sorting direction
-type GetRiskAssessmentKubernetesClusterIDPodsSortDir string
+// GetRiskAssessmentKubernetesClusterIDPodsQueryParamSortDir - sorting direction
+type GetRiskAssessmentKubernetesClusterIDPodsQueryParamSortDir string
 
 const (
-	GetRiskAssessmentKubernetesClusterIDPodsSortDirAsc  GetRiskAssessmentKubernetesClusterIDPodsSortDir = "ASC"
-	GetRiskAssessmentKubernetesClusterIDPodsSortDirDesc GetRiskAssessmentKubernetesClusterIDPodsSortDir = "DESC"
+	GetRiskAssessmentKubernetesClusterIDPodsQueryParamSortDirAsc  GetRiskAssessmentKubernetesClusterIDPodsQueryParamSortDir = "ASC"
+	GetRiskAssessmentKubernetesClusterIDPodsQueryParamSortDirDesc GetRiskAssessmentKubernetesClusterIDPodsQueryParamSortDir = "DESC"
 )
 
-func (e GetRiskAssessmentKubernetesClusterIDPodsSortDir) ToPointer() *GetRiskAssessmentKubernetesClusterIDPodsSortDir {
+func (e GetRiskAssessmentKubernetesClusterIDPodsQueryParamSortDir) ToPointer() *GetRiskAssessmentKubernetesClusterIDPodsQueryParamSortDir {
 	return &e
 }
 
-func (e *GetRiskAssessmentKubernetesClusterIDPodsSortDir) UnmarshalJSON(data []byte) error {
+func (e *GetRiskAssessmentKubernetesClusterIDPodsQueryParamSortDir) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -31,26 +31,26 @@ func (e *GetRiskAssessmentKubernetesClusterIDPodsSortDir) UnmarshalJSON(data []b
 	case "ASC":
 		fallthrough
 	case "DESC":
-		*e = GetRiskAssessmentKubernetesClusterIDPodsSortDir(v)
+		*e = GetRiskAssessmentKubernetesClusterIDPodsQueryParamSortDir(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetRiskAssessmentKubernetesClusterIDPodsSortDir: %v", v)
+		return fmt.Errorf("invalid value for GetRiskAssessmentKubernetesClusterIDPodsQueryParamSortDir: %v", v)
 	}
 }
 
-// GetRiskAssessmentKubernetesClusterIDPodsSortKey - risk assessment pod sort key.
-type GetRiskAssessmentKubernetesClusterIDPodsSortKey string
+// GetRiskAssessmentKubernetesClusterIDPodsQueryParamSortKey - risk assessment pod sort key.
+type GetRiskAssessmentKubernetesClusterIDPodsQueryParamSortKey string
 
 const (
-	GetRiskAssessmentKubernetesClusterIDPodsSortKeyName GetRiskAssessmentKubernetesClusterIDPodsSortKey = "NAME"
-	GetRiskAssessmentKubernetesClusterIDPodsSortKeyRisk GetRiskAssessmentKubernetesClusterIDPodsSortKey = "RISK"
+	GetRiskAssessmentKubernetesClusterIDPodsQueryParamSortKeyName GetRiskAssessmentKubernetesClusterIDPodsQueryParamSortKey = "NAME"
+	GetRiskAssessmentKubernetesClusterIDPodsQueryParamSortKeyRisk GetRiskAssessmentKubernetesClusterIDPodsQueryParamSortKey = "RISK"
 )
 
-func (e GetRiskAssessmentKubernetesClusterIDPodsSortKey) ToPointer() *GetRiskAssessmentKubernetesClusterIDPodsSortKey {
+func (e GetRiskAssessmentKubernetesClusterIDPodsQueryParamSortKey) ToPointer() *GetRiskAssessmentKubernetesClusterIDPodsQueryParamSortKey {
 	return &e
 }
 
-func (e *GetRiskAssessmentKubernetesClusterIDPodsSortKey) UnmarshalJSON(data []byte) error {
+func (e *GetRiskAssessmentKubernetesClusterIDPodsQueryParamSortKey) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -59,10 +59,10 @@ func (e *GetRiskAssessmentKubernetesClusterIDPodsSortKey) UnmarshalJSON(data []b
 	case "NAME":
 		fallthrough
 	case "RISK":
-		*e = GetRiskAssessmentKubernetesClusterIDPodsSortKey(v)
+		*e = GetRiskAssessmentKubernetesClusterIDPodsQueryParamSortKey(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetRiskAssessmentKubernetesClusterIDPodsSortKey: %v", v)
+		return fmt.Errorf("invalid value for GetRiskAssessmentKubernetesClusterIDPodsQueryParamSortKey: %v", v)
 	}
 }
 
@@ -78,9 +78,9 @@ type GetRiskAssessmentKubernetesClusterIDPodsRequest struct {
 	// Return entries from this offset (pagination)
 	Offset *float64 `default:"0" queryParam:"style=form,explode=true,name=offset"`
 	// sorting direction
-	SortDir *GetRiskAssessmentKubernetesClusterIDPodsSortDir `default:"DESC" queryParam:"style=form,explode=true,name=sortDir"`
+	SortDir *GetRiskAssessmentKubernetesClusterIDPodsQueryParamSortDir `default:"DESC" queryParam:"style=form,explode=true,name=sortDir"`
 	// risk assessment pod sort key.
-	SortKey GetRiskAssessmentKubernetesClusterIDPodsSortKey `default:"RISK" queryParam:"style=form,explode=true,name=sortKey"`
+	SortKey GetRiskAssessmentKubernetesClusterIDPodsQueryParamSortKey `default:"RISK" queryParam:"style=form,explode=true,name=sortKey"`
 }
 
 func (g GetRiskAssessmentKubernetesClusterIDPodsRequest) MarshalJSON() ([]byte, error) {
@@ -129,16 +129,16 @@ func (o *GetRiskAssessmentKubernetesClusterIDPodsRequest) GetOffset() *float64 {
 	return o.Offset
 }
 
-func (o *GetRiskAssessmentKubernetesClusterIDPodsRequest) GetSortDir() *GetRiskAssessmentKubernetesClusterIDPodsSortDir {
+func (o *GetRiskAssessmentKubernetesClusterIDPodsRequest) GetSortDir() *GetRiskAssessmentKubernetesClusterIDPodsQueryParamSortDir {
 	if o == nil {
 		return nil
 	}
 	return o.SortDir
 }
 
-func (o *GetRiskAssessmentKubernetesClusterIDPodsRequest) GetSortKey() GetRiskAssessmentKubernetesClusterIDPodsSortKey {
+func (o *GetRiskAssessmentKubernetesClusterIDPodsRequest) GetSortKey() GetRiskAssessmentKubernetesClusterIDPodsQueryParamSortKey {
 	if o == nil {
-		return GetRiskAssessmentKubernetesClusterIDPodsSortKey("")
+		return GetRiskAssessmentKubernetesClusterIDPodsQueryParamSortKey("")
 	}
 	return o.SortKey
 }
@@ -146,12 +146,12 @@ func (o *GetRiskAssessmentKubernetesClusterIDPodsRequest) GetSortKey() GetRiskAs
 type GetRiskAssessmentKubernetesClusterIDPodsResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// Success
-	RiskAssessmentPods []shared.RiskAssessmentPod
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Success
+	Classes []shared.RiskAssessmentPod
 }
 
 func (o *GetRiskAssessmentKubernetesClusterIDPodsResponse) GetContentType() string {
@@ -159,13 +159,6 @@ func (o *GetRiskAssessmentKubernetesClusterIDPodsResponse) GetContentType() stri
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *GetRiskAssessmentKubernetesClusterIDPodsResponse) GetRiskAssessmentPods() []shared.RiskAssessmentPod {
-	if o == nil {
-		return nil
-	}
-	return o.RiskAssessmentPods
 }
 
 func (o *GetRiskAssessmentKubernetesClusterIDPodsResponse) GetStatusCode() int {
@@ -180,4 +173,11 @@ func (o *GetRiskAssessmentKubernetesClusterIDPodsResponse) GetRawResponse() *htt
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetRiskAssessmentKubernetesClusterIDPodsResponse) GetClasses() []shared.RiskAssessmentPod {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

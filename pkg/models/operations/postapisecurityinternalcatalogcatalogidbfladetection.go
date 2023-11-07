@@ -34,7 +34,7 @@ type PostAPISecurityInternalCatalogCatalogIDBflaDetectionResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Created
-	PostAPISecurityInternalCatalogCatalogIDBflaDetection201ApplicationJSONUUIDString *string
+	Res *string
 }
 
 func (o *PostAPISecurityInternalCatalogCatalogIDBflaDetectionResponse) GetContentType() string {
@@ -58,9 +58,9 @@ func (o *PostAPISecurityInternalCatalogCatalogIDBflaDetectionResponse) GetRawRes
 	return o.RawResponse
 }
 
-func (o *PostAPISecurityInternalCatalogCatalogIDBflaDetectionResponse) GetPostAPISecurityInternalCatalogCatalogIDBflaDetection201ApplicationJSONUUIDString() *string {
+func (o *PostAPISecurityInternalCatalogCatalogIDBflaDetectionResponse) GetRes() *string {
 	if o == nil {
 		return nil
 	}
-	return o.PostAPISecurityInternalCatalogCatalogIDBflaDetection201ApplicationJSONUUIDString
+	return o.Res
 }

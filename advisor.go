@@ -15,19 +15,19 @@ import (
 	"strings"
 )
 
-// advisor - APIs used to get policy recommendations
-type advisor struct {
+// Advisor - APIs used to get policy recommendations
+type Advisor struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newAdvisor(sdkConfig sdkConfiguration) *advisor {
-	return &advisor{
+func newAdvisor(sdkConfig sdkConfiguration) *Advisor {
+	return &Advisor{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // GetAdvisorClusterEventRules - Returns a list of suggested cluster event rules
-func (s *advisor) GetAdvisorClusterEventRules(ctx context.Context) (*operations.GetAdvisorClusterEventRulesResponse, error) {
+func (s *Advisor) GetAdvisorClusterEventRules(ctx context.Context) (*operations.GetAdvisorClusterEventRulesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/advisor/clusterEventRules"
 
@@ -71,7 +71,7 @@ func (s *advisor) GetAdvisorClusterEventRules(ctx context.Context) (*operations.
 				return nil, err
 			}
 
-			res.ClusterEventRuleRecommendationPeriods = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -87,7 +87,7 @@ func (s *advisor) GetAdvisorClusterEventRules(ctx context.Context) (*operations.
 }
 
 // GetAdvisorConnectionRules - Returns a list of suggested connection rules
-func (s *advisor) GetAdvisorConnectionRules(ctx context.Context) (*operations.GetAdvisorConnectionRulesResponse, error) {
+func (s *Advisor) GetAdvisorConnectionRules(ctx context.Context) (*operations.GetAdvisorConnectionRulesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/advisor/connectionRules"
 
@@ -131,7 +131,7 @@ func (s *advisor) GetAdvisorConnectionRules(ctx context.Context) (*operations.Ge
 				return nil, err
 			}
 
-			res.ConnectionsRuleRecommendationPeriods = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -147,7 +147,7 @@ func (s *advisor) GetAdvisorConnectionRules(ctx context.Context) (*operations.Ge
 }
 
 // GetAdvisorEnvironment - Returns a list of suggested kubernetes environments
-func (s *advisor) GetAdvisorEnvironment(ctx context.Context) (*operations.GetAdvisorEnvironmentResponse, error) {
+func (s *Advisor) GetAdvisorEnvironment(ctx context.Context) (*operations.GetAdvisorEnvironmentResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/advisor/environment"
 
@@ -191,7 +191,7 @@ func (s *advisor) GetAdvisorEnvironment(ctx context.Context) (*operations.GetAdv
 				return nil, err
 			}
 
-			res.EnvironmentRecommendationPeriods = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -207,7 +207,7 @@ func (s *advisor) GetAdvisorEnvironment(ctx context.Context) (*operations.GetAdv
 }
 
 // GetAdvisorEnvironmentRules - Returns a list of suggested environment rules
-func (s *advisor) GetAdvisorEnvironmentRules(ctx context.Context) (*operations.GetAdvisorEnvironmentRulesResponse, error) {
+func (s *Advisor) GetAdvisorEnvironmentRules(ctx context.Context) (*operations.GetAdvisorEnvironmentRulesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/advisor/environmentRules"
 
@@ -251,7 +251,7 @@ func (s *advisor) GetAdvisorEnvironmentRules(ctx context.Context) (*operations.G
 				return nil, err
 			}
 
-			res.EnvironmentRulesRecommendationPeriods = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -267,7 +267,7 @@ func (s *advisor) GetAdvisorEnvironmentRules(ctx context.Context) (*operations.G
 }
 
 // GetAdvisorPodSecurityPolicy - Returns a list of suggested kubernetes Pod Security Standards
-func (s *advisor) GetAdvisorPodSecurityPolicy(ctx context.Context) (*operations.GetAdvisorPodSecurityPolicyResponse, error) {
+func (s *Advisor) GetAdvisorPodSecurityPolicy(ctx context.Context) (*operations.GetAdvisorPodSecurityPolicyResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/advisor/podSecurityPolicy"
 
@@ -311,7 +311,7 @@ func (s *advisor) GetAdvisorPodSecurityPolicy(ctx context.Context) (*operations.
 				return nil, err
 			}
 
-			res.PodSecurityPolicyRecommendationPeriods = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -327,7 +327,7 @@ func (s *advisor) GetAdvisorPodSecurityPolicy(ctx context.Context) (*operations.
 }
 
 // GetAdvisorQueueAdvisorType - Get status for policy advisor background job
-func (s *advisor) GetAdvisorQueueAdvisorType(ctx context.Context, request operations.GetAdvisorQueueAdvisorTypeRequest) (*operations.GetAdvisorQueueAdvisorTypeResponse, error) {
+func (s *Advisor) GetAdvisorQueueAdvisorType(ctx context.Context, request operations.GetAdvisorQueueAdvisorTypeRequest) (*operations.GetAdvisorQueueAdvisorTypeResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/advisor/queue/{advisorType}", request, nil)
 	if err != nil {
@@ -388,7 +388,7 @@ func (s *advisor) GetAdvisorQueueAdvisorType(ctx context.Context, request operat
 }
 
 // PostAdvisorRun - Runs the policy advisor
-func (s *advisor) PostAdvisorRun(ctx context.Context, request operations.PostAdvisorRunRequest) (*operations.PostAdvisorRunResponse, error) {
+func (s *Advisor) PostAdvisorRun(ctx context.Context, request operations.PostAdvisorRunRequest) (*operations.PostAdvisorRunResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/advisor/run"
 

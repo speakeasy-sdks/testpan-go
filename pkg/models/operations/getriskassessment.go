@@ -10,12 +10,12 @@ import (
 type GetRiskAssessmentResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// Success
-	RiskAssessmentClusters []shared.RiskAssessmentCluster
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Success
+	Classes []shared.RiskAssessmentCluster
 }
 
 func (o *GetRiskAssessmentResponse) GetContentType() string {
@@ -23,13 +23,6 @@ func (o *GetRiskAssessmentResponse) GetContentType() string {
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *GetRiskAssessmentResponse) GetRiskAssessmentClusters() []shared.RiskAssessmentCluster {
-	if o == nil {
-		return nil
-	}
-	return o.RiskAssessmentClusters
 }
 
 func (o *GetRiskAssessmentResponse) GetStatusCode() int {
@@ -44,4 +37,11 @@ func (o *GetRiskAssessmentResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetRiskAssessmentResponse) GetClasses() []shared.RiskAssessmentCluster {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

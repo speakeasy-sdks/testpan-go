@@ -15,19 +15,19 @@ import (
 	"strings"
 )
 
-// clusterEventsPolicies - APIs used to  define and manage cluster events policies
-type clusterEventsPolicies struct {
+// ClusterEventsPolicies - APIs used to  define and manage cluster events policies
+type ClusterEventsPolicies struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newClusterEventsPolicies(sdkConfig sdkConfiguration) *clusterEventsPolicies {
-	return &clusterEventsPolicies{
+func newClusterEventsPolicies(sdkConfig sdkConfiguration) *ClusterEventsPolicies {
+	return &ClusterEventsPolicies{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // GetKubernetesAPIPolicy - Get current Kubernetes API policy
-func (s *clusterEventsPolicies) GetKubernetesAPIPolicy(ctx context.Context) (*operations.GetKubernetesAPIPolicyResponse, error) {
+func (s *ClusterEventsPolicies) GetKubernetesAPIPolicy(ctx context.Context) (*operations.GetKubernetesAPIPolicyResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/kubernetesApiPolicy"
 
@@ -87,7 +87,7 @@ func (s *clusterEventsPolicies) GetKubernetesAPIPolicy(ctx context.Context) (*op
 }
 
 // GetKubernetesAPIPolicyHistory - Get the history of the Kubernetes API policies
-func (s *clusterEventsPolicies) GetKubernetesAPIPolicyHistory(ctx context.Context) (*operations.GetKubernetesAPIPolicyHistoryResponse, error) {
+func (s *ClusterEventsPolicies) GetKubernetesAPIPolicyHistory(ctx context.Context) (*operations.GetKubernetesAPIPolicyHistoryResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/kubernetesApiPolicy/history"
 
@@ -131,7 +131,7 @@ func (s *clusterEventsPolicies) GetKubernetesAPIPolicyHistory(ctx context.Contex
 				return nil, err
 			}
 
-			res.KubernetesAPIPolicyHistories = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -147,7 +147,7 @@ func (s *clusterEventsPolicies) GetKubernetesAPIPolicyHistory(ctx context.Contex
 }
 
 // GetKubernetesAPIPolicyKubernetesResources - Get the Kubernetes resource list
-func (s *clusterEventsPolicies) GetKubernetesAPIPolicyKubernetesResources(ctx context.Context) (*operations.GetKubernetesAPIPolicyKubernetesResourcesResponse, error) {
+func (s *ClusterEventsPolicies) GetKubernetesAPIPolicyKubernetesResources(ctx context.Context) (*operations.GetKubernetesAPIPolicyKubernetesResourcesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/kubernetesApiPolicy/kubernetesResources"
 
@@ -191,7 +191,7 @@ func (s *clusterEventsPolicies) GetKubernetesAPIPolicyKubernetesResources(ctx co
 				return nil, err
 			}
 
-			res.KubernetesResources = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -207,7 +207,7 @@ func (s *clusterEventsPolicies) GetKubernetesAPIPolicyKubernetesResources(ctx co
 }
 
 // GetKubernetesAPIPolicyKubernetesUsers - Get the Kubernetes user list
-func (s *clusterEventsPolicies) GetKubernetesAPIPolicyKubernetesUsers(ctx context.Context) (*operations.GetKubernetesAPIPolicyKubernetesUsersResponse, error) {
+func (s *ClusterEventsPolicies) GetKubernetesAPIPolicyKubernetesUsers(ctx context.Context) (*operations.GetKubernetesAPIPolicyKubernetesUsersResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/kubernetesApiPolicy/kubernetesUsers"
 
@@ -251,7 +251,7 @@ func (s *clusterEventsPolicies) GetKubernetesAPIPolicyKubernetesUsers(ctx contex
 				return nil, err
 			}
 
-			res.KubernetesUsersByTypes = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -267,7 +267,7 @@ func (s *clusterEventsPolicies) GetKubernetesAPIPolicyKubernetesUsers(ctx contex
 }
 
 // GetKubernetesAPIPolicyRecommendedRules - Get the recommended Kubernetes API rules
-func (s *clusterEventsPolicies) GetKubernetesAPIPolicyRecommendedRules(ctx context.Context) (*operations.GetKubernetesAPIPolicyRecommendedRulesResponse, error) {
+func (s *ClusterEventsPolicies) GetKubernetesAPIPolicyRecommendedRules(ctx context.Context) (*operations.GetKubernetesAPIPolicyRecommendedRulesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/kubernetesApiPolicy/recommendedRules"
 
@@ -311,7 +311,7 @@ func (s *clusterEventsPolicies) GetKubernetesAPIPolicyRecommendedRules(ctx conte
 				return nil, err
 			}
 
-			res.RecommendedKubernetesAPIRules = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -327,7 +327,7 @@ func (s *clusterEventsPolicies) GetKubernetesAPIPolicyRecommendedRules(ctx conte
 }
 
 // PutKubernetesAPIPolicy - set the current Kubernetes API policy
-func (s *clusterEventsPolicies) PutKubernetesAPIPolicy(ctx context.Context, request shared.KubernetesAPIPolicy) (*operations.PutKubernetesAPIPolicyResponse, error) {
+func (s *ClusterEventsPolicies) PutKubernetesAPIPolicy(ctx context.Context, request shared.KubernetesAPIPolicy) (*operations.PutKubernetesAPIPolicyResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/kubernetesApiPolicy"
 

@@ -7,22 +7,22 @@ import (
 	"fmt"
 )
 
-type TrialUserHowDidYouHearAboutUs string
+type HowDidYouHearAboutUs string
 
 const (
-	TrialUserHowDidYouHearAboutUsColleaguesRecommendation TrialUserHowDidYouHearAboutUs = "COLLEAGUES_RECOMMENDATION"
-	TrialUserHowDidYouHearAboutUsKubeconConference        TrialUserHowDidYouHearAboutUs = "KUBECON_CONFERENCE"
-	TrialUserHowDidYouHearAboutUsPastClient               TrialUserHowDidYouHearAboutUs = "PAST_CLIENT"
-	TrialUserHowDidYouHearAboutUsAdvertising              TrialUserHowDidYouHearAboutUs = "ADVERTISING"
-	TrialUserHowDidYouHearAboutUsSearchEngine             TrialUserHowDidYouHearAboutUs = "SEARCH_ENGINE"
-	TrialUserHowDidYouHearAboutUsBlog                     TrialUserHowDidYouHearAboutUs = "BLOG"
+	HowDidYouHearAboutUsColleaguesRecommendation HowDidYouHearAboutUs = "COLLEAGUES_RECOMMENDATION"
+	HowDidYouHearAboutUsKubeconConference        HowDidYouHearAboutUs = "KUBECON_CONFERENCE"
+	HowDidYouHearAboutUsPastClient               HowDidYouHearAboutUs = "PAST_CLIENT"
+	HowDidYouHearAboutUsAdvertising              HowDidYouHearAboutUs = "ADVERTISING"
+	HowDidYouHearAboutUsSearchEngine             HowDidYouHearAboutUs = "SEARCH_ENGINE"
+	HowDidYouHearAboutUsBlog                     HowDidYouHearAboutUs = "BLOG"
 )
 
-func (e TrialUserHowDidYouHearAboutUs) ToPointer() *TrialUserHowDidYouHearAboutUs {
+func (e HowDidYouHearAboutUs) ToPointer() *HowDidYouHearAboutUs {
 	return &e
 }
 
-func (e *TrialUserHowDidYouHearAboutUs) UnmarshalJSON(data []byte) error {
+func (e *HowDidYouHearAboutUs) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -39,21 +39,21 @@ func (e *TrialUserHowDidYouHearAboutUs) UnmarshalJSON(data []byte) error {
 	case "SEARCH_ENGINE":
 		fallthrough
 	case "BLOG":
-		*e = TrialUserHowDidYouHearAboutUs(v)
+		*e = HowDidYouHearAboutUs(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for TrialUserHowDidYouHearAboutUs: %v", v)
+		return fmt.Errorf("invalid value for HowDidYouHearAboutUs: %v", v)
 	}
 }
 
 type TrialUser struct {
-	Company                                     *string                        `json:"company,omitempty"`
-	Email                                       string                         `json:"email"`
-	FirstName                                   string                         `json:"firstName"`
-	HowDidYouHearAboutUs                        *TrialUserHowDidYouHearAboutUs `json:"howDidYouHearAboutUs,omitempty"`
-	JobTitle                                    *string                        `json:"jobTitle,omitempty"`
-	LastName                                    string                         `json:"lastName"`
-	PrivacyPolicyAndTermsAndConditionsAgreement bool                           `json:"privacyPolicyAndTermsAndConditionsAgreement"`
+	Company                                     *string               `json:"company,omitempty"`
+	Email                                       string                `json:"email"`
+	FirstName                                   string                `json:"firstName"`
+	HowDidYouHearAboutUs                        *HowDidYouHearAboutUs `json:"howDidYouHearAboutUs,omitempty"`
+	JobTitle                                    *string               `json:"jobTitle,omitempty"`
+	LastName                                    string                `json:"lastName"`
+	PrivacyPolicyAndTermsAndConditionsAgreement bool                  `json:"privacyPolicyAndTermsAndConditionsAgreement"`
 }
 
 func (o *TrialUser) GetCompany() *string {
@@ -77,7 +77,7 @@ func (o *TrialUser) GetFirstName() string {
 	return o.FirstName
 }
 
-func (o *TrialUser) GetHowDidYouHearAboutUs() *TrialUserHowDidYouHearAboutUs {
+func (o *TrialUser) GetHowDidYouHearAboutUs() *HowDidYouHearAboutUs {
 	if o == nil {
 		return nil
 	}

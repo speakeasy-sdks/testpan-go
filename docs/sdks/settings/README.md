@@ -1,5 +1,5 @@
 # Settings
-(*Settings*)
+(*.Settings*)
 
 ## Overview
 
@@ -209,7 +209,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.CaIntegrationResponseWithClusters != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -397,7 +397,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Settings.PostSettingsIntegrationsCa(ctx, shared.CaIntegrationRequestInput{
+    res, err := s.Settings.PostSettingsIntegrationsCa(ctx, shared.CaIntegrationRequest{
         Certificate: "string",
         IssuerName: "string",
         Name: "string",
@@ -414,10 +414,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
-| `request`                                                                            | [shared.CaIntegrationRequestInput](../../models/shared/caintegrationrequestinput.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `ctx`                                                                      | [context.Context](https://pkg.go.dev/context#Context)                      | :heavy_check_mark:                                                         | The context to use for the request.                                        |
+| `request`                                                                  | [shared.CaIntegrationRequest](../../models/shared/caintegrationrequest.md) | :heavy_check_mark:                                                         | The request object to use for the request.                                 |
 
 
 ### Response
@@ -914,7 +914,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Settings.PutSettingsIntegrationsCaID(ctx, operations.PutSettingsIntegrationsCaIDRequest{
-        CaIntegrationRequestInput: shared.CaIntegrationRequestInput{
+        CaIntegrationRequest: shared.CaIntegrationRequest{
             Certificate: "string",
             IssuerName: "string",
             Name: "string",
@@ -971,7 +971,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Settings.PutSettingsIntegrationsEventForwardingEventForwardingID(ctx, operations.PutSettingsIntegrationsEventForwardingEventForwardingIDRequest{
-        SplunkEventsForwardingDetailsInput: shared.SplunkEventsForwardingDetailsInput{
+        SplunkEventsForwardingDetails: shared.SplunkEventsForwardingDetails{
             EventsForwardingDetailsType: shared.EventsForwardingDetailsTypeEnumWebexEventsForwardingDetails,
             EventsToForward: []shared.EventsToForward{
                 shared.EventsToForwardNotification,

@@ -30,7 +30,7 @@ type GetExpansionsExpansionIDInstallExpansionTarGzResponse struct {
 	RawResponse *http.Response
 	// OK
 	// The Close method must be called on this field, even if it is not used, to prevent resource leaks.
-	GetExpansionsExpansionIDInstallExpansionTarGz200ApplicationJSONBinaryString io.ReadCloser
+	Stream io.ReadCloser
 }
 
 func (o *GetExpansionsExpansionIDInstallExpansionTarGzResponse) GetAPIResponse() *shared.APIResponse {
@@ -61,9 +61,9 @@ func (o *GetExpansionsExpansionIDInstallExpansionTarGzResponse) GetRawResponse()
 	return o.RawResponse
 }
 
-func (o *GetExpansionsExpansionIDInstallExpansionTarGzResponse) GetGetExpansionsExpansionIDInstallExpansionTarGz200ApplicationJSONBinaryString() io.ReadCloser {
+func (o *GetExpansionsExpansionIDInstallExpansionTarGzResponse) GetStream() io.ReadCloser {
 	if o == nil {
 		return nil
 	}
-	return o.GetExpansionsExpansionIDInstallExpansionTarGz200ApplicationJSONBinaryString
+	return o.Stream
 }

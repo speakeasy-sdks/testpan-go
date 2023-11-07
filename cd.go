@@ -15,19 +15,19 @@ import (
 	"strings"
 )
 
-// cd - APIs used to query for CD pipelines results
-type cd struct {
+// Cd - APIs used to query for CD pipelines results
+type Cd struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newCd(sdkConfig sdkConfiguration) *cd {
-	return &cd{
+func newCd(sdkConfig sdkConfiguration) *Cd {
+	return &Cd{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // DeleteCdRuleIDConnectionsRule - delete a cd connection rule.
-func (s *cd) DeleteCdRuleIDConnectionsRule(ctx context.Context, request operations.DeleteCdRuleIDConnectionsRuleRequest) (*operations.DeleteCdRuleIDConnectionsRuleResponse, error) {
+func (s *Cd) DeleteCdRuleIDConnectionsRule(ctx context.Context, request operations.DeleteCdRuleIDConnectionsRuleRequest) (*operations.DeleteCdRuleIDConnectionsRuleResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/cd/{ruleId}/connectionsRule", request, nil)
 	if err != nil {
@@ -77,7 +77,7 @@ func (s *cd) DeleteCdRuleIDConnectionsRule(ctx context.Context, request operatio
 }
 
 // DeleteCdRuleIDServerlessRule - delete a cd serverless rule.
-func (s *cd) DeleteCdRuleIDServerlessRule(ctx context.Context, request operations.DeleteCdRuleIDServerlessRuleRequest) (*operations.DeleteCdRuleIDServerlessRuleResponse, error) {
+func (s *Cd) DeleteCdRuleIDServerlessRule(ctx context.Context, request operations.DeleteCdRuleIDServerlessRuleRequest) (*operations.DeleteCdRuleIDServerlessRuleResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/cd/{ruleId}/serverlessRule", request, nil)
 	if err != nil {
@@ -127,7 +127,7 @@ func (s *cd) DeleteCdRuleIDServerlessRule(ctx context.Context, request operation
 }
 
 // GetCd - Get all the CD pipelines results
-func (s *cd) GetCd(ctx context.Context, request operations.GetCdRequest) (*operations.GetCdResponse, error) {
+func (s *Cd) GetCd(ctx context.Context, request operations.GetCdRequest) (*operations.GetCdResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/cd"
 
@@ -175,7 +175,7 @@ func (s *cd) GetCd(ctx context.Context, request operations.GetCdRequest) (*opera
 				return nil, err
 			}
 
-			res.CDPipelineResults = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -191,7 +191,7 @@ func (s *cd) GetCd(ctx context.Context, request operations.GetCdRequest) (*opera
 }
 
 // GetCdResourceID - Get A single CD pipeline results
-func (s *cd) GetCdResourceID(ctx context.Context, request operations.GetCdResourceIDRequest) (*operations.GetCdResourceIDResponse, error) {
+func (s *Cd) GetCdResourceID(ctx context.Context, request operations.GetCdResourceIDRequest) (*operations.GetCdResourceIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/cd/{resourceId}", request, nil)
 	if err != nil {
@@ -258,7 +258,7 @@ func (s *cd) GetCdResourceID(ctx context.Context, request operations.GetCdResour
 }
 
 // GetCdRuleIDConnectionsRule - get a cd connection rule.
-func (s *cd) GetCdRuleIDConnectionsRule(ctx context.Context, request operations.GetCdRuleIDConnectionsRuleRequest) (*operations.GetCdRuleIDConnectionsRuleResponse, error) {
+func (s *Cd) GetCdRuleIDConnectionsRule(ctx context.Context, request operations.GetCdRuleIDConnectionsRuleRequest) (*operations.GetCdRuleIDConnectionsRuleResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/cd/{ruleId}/connectionsRule", request, nil)
 	if err != nil {
@@ -319,7 +319,7 @@ func (s *cd) GetCdRuleIDConnectionsRule(ctx context.Context, request operations.
 }
 
 // GetCdRuleIDServerlessRule - get a cd serverless rule.
-func (s *cd) GetCdRuleIDServerlessRule(ctx context.Context, request operations.GetCdRuleIDServerlessRuleRequest) (*operations.GetCdRuleIDServerlessRuleResponse, error) {
+func (s *Cd) GetCdRuleIDServerlessRule(ctx context.Context, request operations.GetCdRuleIDServerlessRuleRequest) (*operations.GetCdRuleIDServerlessRuleResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/cd/{ruleId}/serverlessRule", request, nil)
 	if err != nil {
@@ -380,7 +380,7 @@ func (s *cd) GetCdRuleIDServerlessRule(ctx context.Context, request operations.G
 }
 
 // PostCdConnectionsRule - Adds cd connection rule.
-func (s *cd) PostCdConnectionsRule(ctx context.Context, request shared.CdConnectionRule) (*operations.PostCdConnectionsRuleResponse, error) {
+func (s *Cd) PostCdConnectionsRule(ctx context.Context, request shared.CdConnectionRule) (*operations.PostCdConnectionsRuleResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/cd/connectionsRule"
 
@@ -448,7 +448,7 @@ func (s *cd) PostCdConnectionsRule(ctx context.Context, request shared.CdConnect
 }
 
 // PostCdServerlessRule - Adds cd serverless rule.
-func (s *cd) PostCdServerlessRule(ctx context.Context, request shared.CdServerlessRule) (*operations.PostCdServerlessRuleResponse, error) {
+func (s *Cd) PostCdServerlessRule(ctx context.Context, request shared.CdServerlessRule) (*operations.PostCdServerlessRuleResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/cd/serverlessRule"
 
@@ -516,7 +516,7 @@ func (s *cd) PostCdServerlessRule(ctx context.Context, request shared.CdServerle
 }
 
 // PutCdRuleIDConnectionsRule - update a cd connection rule.
-func (s *cd) PutCdRuleIDConnectionsRule(ctx context.Context, request operations.PutCdRuleIDConnectionsRuleRequest) (*operations.PutCdRuleIDConnectionsRuleResponse, error) {
+func (s *Cd) PutCdRuleIDConnectionsRule(ctx context.Context, request operations.PutCdRuleIDConnectionsRuleRequest) (*operations.PutCdRuleIDConnectionsRuleResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/cd/{ruleId}/connectionsRule", request, nil)
 	if err != nil {
@@ -587,7 +587,7 @@ func (s *cd) PutCdRuleIDConnectionsRule(ctx context.Context, request operations.
 }
 
 // PutCdRuleIDServerlessRule - update a cd serverless rule.
-func (s *cd) PutCdRuleIDServerlessRule(ctx context.Context, request operations.PutCdRuleIDServerlessRuleRequest) (*operations.PutCdRuleIDServerlessRuleResponse, error) {
+func (s *Cd) PutCdRuleIDServerlessRule(ctx context.Context, request operations.PutCdRuleIDServerlessRuleRequest) (*operations.PutCdRuleIDServerlessRuleResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/cd/{ruleId}/serverlessRule", request, nil)
 	if err != nil {

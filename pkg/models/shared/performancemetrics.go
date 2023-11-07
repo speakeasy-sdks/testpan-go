@@ -7,18 +7,18 @@ import (
 	"fmt"
 )
 
-type PerformanceMetricsConnectionProtocol string
+type ConnectionProtocol string
 
 const (
-	PerformanceMetricsConnectionProtocolTCPPerformanceMetrics  PerformanceMetricsConnectionProtocol = "TcpPerformanceMetrics"
-	PerformanceMetricsConnectionProtocolHTTPPerformanceMetrics PerformanceMetricsConnectionProtocol = "HttpPerformanceMetrics"
+	ConnectionProtocolTCPPerformanceMetrics  ConnectionProtocol = "TcpPerformanceMetrics"
+	ConnectionProtocolHTTPPerformanceMetrics ConnectionProtocol = "HttpPerformanceMetrics"
 )
 
-func (e PerformanceMetricsConnectionProtocol) ToPointer() *PerformanceMetricsConnectionProtocol {
+func (e ConnectionProtocol) ToPointer() *ConnectionProtocol {
 	return &e
 }
 
-func (e *PerformanceMetricsConnectionProtocol) UnmarshalJSON(data []byte) error {
+func (e *ConnectionProtocol) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -27,22 +27,22 @@ func (e *PerformanceMetricsConnectionProtocol) UnmarshalJSON(data []byte) error 
 	case "TcpPerformanceMetrics":
 		fallthrough
 	case "HttpPerformanceMetrics":
-		*e = PerformanceMetricsConnectionProtocol(v)
+		*e = ConnectionProtocol(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for PerformanceMetricsConnectionProtocol: %v", v)
+		return fmt.Errorf("invalid value for ConnectionProtocol: %v", v)
 	}
 }
 
 type PerformanceMetrics struct {
-	ConnectionProtocol *PerformanceMetricsConnectionProtocol `json:"connectionProtocol,omitempty"`
+	ConnectionProtocol *ConnectionProtocol `json:"connectionProtocol,omitempty"`
 	// Return a list of total received bytes per connection
 	TotalReceivedBytes []PerformanceMetricsGraphPoint `json:"totalReceivedBytes,omitempty"`
 	// Return a list of total sent bytes per connection
 	TotalSentBytes []PerformanceMetricsGraphPoint `json:"totalSentBytes,omitempty"`
 }
 
-func (o *PerformanceMetrics) GetConnectionProtocol() *PerformanceMetricsConnectionProtocol {
+func (o *PerformanceMetrics) GetConnectionProtocol() *ConnectionProtocol {
 	if o == nil {
 		return nil
 	}

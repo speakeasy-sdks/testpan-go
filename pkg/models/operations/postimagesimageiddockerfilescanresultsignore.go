@@ -9,19 +9,19 @@ import (
 	"net/http"
 )
 
-// PostImagesImageIDDockerfileScanResultsIgnoreActionType - The ignore action type (ADD/REMOVE)
-type PostImagesImageIDDockerfileScanResultsIgnoreActionType string
+// ActionType - The ignore action type (ADD/REMOVE)
+type ActionType string
 
 const (
-	PostImagesImageIDDockerfileScanResultsIgnoreActionTypeAdd    PostImagesImageIDDockerfileScanResultsIgnoreActionType = "ADD"
-	PostImagesImageIDDockerfileScanResultsIgnoreActionTypeRemove PostImagesImageIDDockerfileScanResultsIgnoreActionType = "REMOVE"
+	ActionTypeAdd    ActionType = "ADD"
+	ActionTypeRemove ActionType = "REMOVE"
 )
 
-func (e PostImagesImageIDDockerfileScanResultsIgnoreActionType) ToPointer() *PostImagesImageIDDockerfileScanResultsIgnoreActionType {
+func (e ActionType) ToPointer() *ActionType {
 	return &e
 }
 
-func (e *PostImagesImageIDDockerfileScanResultsIgnoreActionType) UnmarshalJSON(data []byte) error {
+func (e *ActionType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -30,18 +30,18 @@ func (e *PostImagesImageIDDockerfileScanResultsIgnoreActionType) UnmarshalJSON(d
 	case "ADD":
 		fallthrough
 	case "REMOVE":
-		*e = PostImagesImageIDDockerfileScanResultsIgnoreActionType(v)
+		*e = ActionType(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for PostImagesImageIDDockerfileScanResultsIgnoreActionType: %v", v)
+		return fmt.Errorf("invalid value for ActionType: %v", v)
 	}
 }
 
 type PostImagesImageIDDockerfileScanResultsIgnoreRequest struct {
 	UUIDList shared.UUIDList `request:"mediaType=application/json"`
 	// The ignore action type (ADD/REMOVE)
-	ActionType PostImagesImageIDDockerfileScanResultsIgnoreActionType `queryParam:"style=form,explode=true,name=actionType"`
-	ImageID    string                                                 `pathParam:"style=simple,explode=false,name=imageId"`
+	ActionType ActionType `queryParam:"style=form,explode=true,name=actionType"`
+	ImageID    string     `pathParam:"style=simple,explode=false,name=imageId"`
 }
 
 func (o *PostImagesImageIDDockerfileScanResultsIgnoreRequest) GetUUIDList() shared.UUIDList {
@@ -51,9 +51,9 @@ func (o *PostImagesImageIDDockerfileScanResultsIgnoreRequest) GetUUIDList() shar
 	return o.UUIDList
 }
 
-func (o *PostImagesImageIDDockerfileScanResultsIgnoreRequest) GetActionType() PostImagesImageIDDockerfileScanResultsIgnoreActionType {
+func (o *PostImagesImageIDDockerfileScanResultsIgnoreRequest) GetActionType() ActionType {
 	if o == nil {
-		return PostImagesImageIDDockerfileScanResultsIgnoreActionType("")
+		return ActionType("")
 	}
 	return o.ActionType
 }

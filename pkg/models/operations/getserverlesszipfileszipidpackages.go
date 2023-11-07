@@ -26,7 +26,7 @@ type GetServerlessZipFilesZipIDPackagesResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// OK
-	ImagePackageDetails []shared.ImagePackageDetails
+	Classes []shared.ImagePackageDetails
 }
 
 func (o *GetServerlessZipFilesZipIDPackagesResponse) GetContentType() string {
@@ -50,9 +50,9 @@ func (o *GetServerlessZipFilesZipIDPackagesResponse) GetRawResponse() *http.Resp
 	return o.RawResponse
 }
 
-func (o *GetServerlessZipFilesZipIDPackagesResponse) GetImagePackageDetails() []shared.ImagePackageDetails {
+func (o *GetServerlessZipFilesZipIDPackagesResponse) GetClasses() []shared.ImagePackageDetails {
 	if o == nil {
 		return nil
 	}
-	return o.ImagePackageDetails
+	return o.Classes
 }

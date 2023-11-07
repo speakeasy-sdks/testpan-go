@@ -15,19 +15,19 @@ import (
 	"strings"
 )
 
-// apps - APIs used to define apps
-type apps struct {
+// Apps - APIs used to define apps
+type Apps struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newApps(sdkConfig sdkConfiguration) *apps {
-	return &apps{
+func newApps(sdkConfig sdkConfiguration) *Apps {
+	return &Apps{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // GetApps - Returns a list of defined Apps
-func (s *apps) GetApps(ctx context.Context, request operations.GetAppsRequest) (*operations.GetAppsResponse, error) {
+func (s *Apps) GetApps(ctx context.Context, request operations.GetAppsRequest) (*operations.GetAppsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/apps"
 
@@ -75,7 +75,7 @@ func (s *apps) GetApps(ctx context.Context, request operations.GetAppsRequest) (
 				return nil, err
 			}
 
-			res.Apps = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -91,7 +91,7 @@ func (s *apps) GetApps(ctx context.Context, request operations.GetAppsRequest) (
 }
 
 // GetAppsAppID - Returns an App by its ID
-func (s *apps) GetAppsAppID(ctx context.Context, request operations.GetAppsAppIDRequest) (*operations.GetAppsAppIDResponse, error) {
+func (s *Apps) GetAppsAppID(ctx context.Context, request operations.GetAppsAppIDRequest) (*operations.GetAppsAppIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apps/{appId}", request, nil)
 	if err != nil {
@@ -154,7 +154,7 @@ func (s *apps) GetAppsAppID(ctx context.Context, request operations.GetAppsAppID
 }
 
 // PostApps - Define a New App
-func (s *apps) PostApps(ctx context.Context, request shared.App) (*operations.PostAppsResponse, error) {
+func (s *Apps) PostApps(ctx context.Context, request shared.App) (*operations.PostAppsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/apps"
 
@@ -229,7 +229,7 @@ func (s *apps) PostApps(ctx context.Context, request shared.App) (*operations.Po
 
 // PostAppsDelete - Delete several Apps
 // Delete several apps.
-func (s *apps) PostAppsDelete(ctx context.Context, request []string) (*operations.PostAppsDeleteResponse, error) {
+func (s *Apps) PostAppsDelete(ctx context.Context, request []string) (*operations.PostAppsDeleteResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/apps/delete"
 
@@ -288,7 +288,7 @@ func (s *apps) PostAppsDelete(ctx context.Context, request []string) (*operation
 }
 
 // PutAppsAppID - Edit the existing App
-func (s *apps) PutAppsAppID(ctx context.Context, request operations.PutAppsAppIDRequest) (*operations.PutAppsAppIDResponse, error) {
+func (s *Apps) PutAppsAppID(ctx context.Context, request operations.PutAppsAppIDRequest) (*operations.PutAppsAppIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apps/{appId}", request, nil)
 	if err != nil {

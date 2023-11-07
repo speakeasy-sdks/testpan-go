@@ -10,20 +10,20 @@ import (
 	"net/http"
 )
 
-// GetRiskAssessmentPermissionsClusterIDOwnerType - owner type
-type GetRiskAssessmentPermissionsClusterIDOwnerType string
+// OwnerType - owner type
+type OwnerType string
 
 const (
-	GetRiskAssessmentPermissionsClusterIDOwnerTypeServiceaccount GetRiskAssessmentPermissionsClusterIDOwnerType = "SERVICEACCOUNT"
-	GetRiskAssessmentPermissionsClusterIDOwnerTypeUser           GetRiskAssessmentPermissionsClusterIDOwnerType = "USER"
-	GetRiskAssessmentPermissionsClusterIDOwnerTypeGroup          GetRiskAssessmentPermissionsClusterIDOwnerType = "GROUP"
+	OwnerTypeServiceaccount OwnerType = "SERVICEACCOUNT"
+	OwnerTypeUser           OwnerType = "USER"
+	OwnerTypeGroup          OwnerType = "GROUP"
 )
 
-func (e GetRiskAssessmentPermissionsClusterIDOwnerType) ToPointer() *GetRiskAssessmentPermissionsClusterIDOwnerType {
+func (e OwnerType) ToPointer() *OwnerType {
 	return &e
 }
 
-func (e *GetRiskAssessmentPermissionsClusterIDOwnerType) UnmarshalJSON(data []byte) error {
+func (e *OwnerType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -34,28 +34,28 @@ func (e *GetRiskAssessmentPermissionsClusterIDOwnerType) UnmarshalJSON(data []by
 	case "USER":
 		fallthrough
 	case "GROUP":
-		*e = GetRiskAssessmentPermissionsClusterIDOwnerType(v)
+		*e = OwnerType(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetRiskAssessmentPermissionsClusterIDOwnerType: %v", v)
+		return fmt.Errorf("invalid value for OwnerType: %v", v)
 	}
 }
 
-// GetRiskAssessmentPermissionsClusterIDPermissionRisk - the risk to filter by
-type GetRiskAssessmentPermissionsClusterIDPermissionRisk string
+// PermissionRisk - the risk to filter by
+type PermissionRisk string
 
 const (
-	GetRiskAssessmentPermissionsClusterIDPermissionRiskNoRisk   GetRiskAssessmentPermissionsClusterIDPermissionRisk = "NO_RISK"
-	GetRiskAssessmentPermissionsClusterIDPermissionRiskMedium   GetRiskAssessmentPermissionsClusterIDPermissionRisk = "MEDIUM"
-	GetRiskAssessmentPermissionsClusterIDPermissionRiskHigh     GetRiskAssessmentPermissionsClusterIDPermissionRisk = "HIGH"
-	GetRiskAssessmentPermissionsClusterIDPermissionRiskApproved GetRiskAssessmentPermissionsClusterIDPermissionRisk = "APPROVED"
+	PermissionRiskNoRisk   PermissionRisk = "NO_RISK"
+	PermissionRiskMedium   PermissionRisk = "MEDIUM"
+	PermissionRiskHigh     PermissionRisk = "HIGH"
+	PermissionRiskApproved PermissionRisk = "APPROVED"
 )
 
-func (e GetRiskAssessmentPermissionsClusterIDPermissionRisk) ToPointer() *GetRiskAssessmentPermissionsClusterIDPermissionRisk {
+func (e PermissionRisk) ToPointer() *PermissionRisk {
 	return &e
 }
 
-func (e *GetRiskAssessmentPermissionsClusterIDPermissionRisk) UnmarshalJSON(data []byte) error {
+func (e *PermissionRisk) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -68,26 +68,26 @@ func (e *GetRiskAssessmentPermissionsClusterIDPermissionRisk) UnmarshalJSON(data
 	case "HIGH":
 		fallthrough
 	case "APPROVED":
-		*e = GetRiskAssessmentPermissionsClusterIDPermissionRisk(v)
+		*e = PermissionRisk(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetRiskAssessmentPermissionsClusterIDPermissionRisk: %v", v)
+		return fmt.Errorf("invalid value for PermissionRisk: %v", v)
 	}
 }
 
-// GetRiskAssessmentPermissionsClusterIDSortDir - sorting direction
-type GetRiskAssessmentPermissionsClusterIDSortDir string
+// GetRiskAssessmentPermissionsClusterIDQueryParamSortDir - sorting direction
+type GetRiskAssessmentPermissionsClusterIDQueryParamSortDir string
 
 const (
-	GetRiskAssessmentPermissionsClusterIDSortDirAsc  GetRiskAssessmentPermissionsClusterIDSortDir = "ASC"
-	GetRiskAssessmentPermissionsClusterIDSortDirDesc GetRiskAssessmentPermissionsClusterIDSortDir = "DESC"
+	GetRiskAssessmentPermissionsClusterIDQueryParamSortDirAsc  GetRiskAssessmentPermissionsClusterIDQueryParamSortDir = "ASC"
+	GetRiskAssessmentPermissionsClusterIDQueryParamSortDirDesc GetRiskAssessmentPermissionsClusterIDQueryParamSortDir = "DESC"
 )
 
-func (e GetRiskAssessmentPermissionsClusterIDSortDir) ToPointer() *GetRiskAssessmentPermissionsClusterIDSortDir {
+func (e GetRiskAssessmentPermissionsClusterIDQueryParamSortDir) ToPointer() *GetRiskAssessmentPermissionsClusterIDQueryParamSortDir {
 	return &e
 }
 
-func (e *GetRiskAssessmentPermissionsClusterIDSortDir) UnmarshalJSON(data []byte) error {
+func (e *GetRiskAssessmentPermissionsClusterIDQueryParamSortDir) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -96,26 +96,26 @@ func (e *GetRiskAssessmentPermissionsClusterIDSortDir) UnmarshalJSON(data []byte
 	case "ASC":
 		fallthrough
 	case "DESC":
-		*e = GetRiskAssessmentPermissionsClusterIDSortDir(v)
+		*e = GetRiskAssessmentPermissionsClusterIDQueryParamSortDir(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetRiskAssessmentPermissionsClusterIDSortDir: %v", v)
+		return fmt.Errorf("invalid value for GetRiskAssessmentPermissionsClusterIDQueryParamSortDir: %v", v)
 	}
 }
 
-// GetRiskAssessmentPermissionsClusterIDSortKey - sort key
-type GetRiskAssessmentPermissionsClusterIDSortKey string
+// GetRiskAssessmentPermissionsClusterIDQueryParamSortKey - sort key
+type GetRiskAssessmentPermissionsClusterIDQueryParamSortKey string
 
 const (
-	GetRiskAssessmentPermissionsClusterIDSortKeyOwner     GetRiskAssessmentPermissionsClusterIDSortKey = "owner"
-	GetRiskAssessmentPermissionsClusterIDSortKeyOwnerType GetRiskAssessmentPermissionsClusterIDSortKey = "ownerType"
+	GetRiskAssessmentPermissionsClusterIDQueryParamSortKeyOwner     GetRiskAssessmentPermissionsClusterIDQueryParamSortKey = "owner"
+	GetRiskAssessmentPermissionsClusterIDQueryParamSortKeyOwnerType GetRiskAssessmentPermissionsClusterIDQueryParamSortKey = "ownerType"
 )
 
-func (e GetRiskAssessmentPermissionsClusterIDSortKey) ToPointer() *GetRiskAssessmentPermissionsClusterIDSortKey {
+func (e GetRiskAssessmentPermissionsClusterIDQueryParamSortKey) ToPointer() *GetRiskAssessmentPermissionsClusterIDQueryParamSortKey {
 	return &e
 }
 
-func (e *GetRiskAssessmentPermissionsClusterIDSortKey) UnmarshalJSON(data []byte) error {
+func (e *GetRiskAssessmentPermissionsClusterIDQueryParamSortKey) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -124,10 +124,10 @@ func (e *GetRiskAssessmentPermissionsClusterIDSortKey) UnmarshalJSON(data []byte
 	case "owner":
 		fallthrough
 	case "ownerType":
-		*e = GetRiskAssessmentPermissionsClusterIDSortKey(v)
+		*e = GetRiskAssessmentPermissionsClusterIDQueryParamSortKey(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetRiskAssessmentPermissionsClusterIDSortKey: %v", v)
+		return fmt.Errorf("invalid value for GetRiskAssessmentPermissionsClusterIDQueryParamSortKey: %v", v)
 	}
 }
 
@@ -146,13 +146,13 @@ type GetRiskAssessmentPermissionsClusterIDRequest struct {
 	// owner name
 	Owner *string `queryParam:"style=form,explode=true,name=owner"`
 	// owner type
-	OwnerType *GetRiskAssessmentPermissionsClusterIDOwnerType `queryParam:"style=form,explode=true,name=ownerType"`
+	OwnerType *OwnerType `queryParam:"style=form,explode=true,name=ownerType"`
 	// the risk to filter by
-	PermissionRisk *GetRiskAssessmentPermissionsClusterIDPermissionRisk `queryParam:"style=form,explode=true,name=permissionRisk"`
+	PermissionRisk *PermissionRisk `queryParam:"style=form,explode=true,name=permissionRisk"`
 	// sorting direction
-	SortDir *GetRiskAssessmentPermissionsClusterIDSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
+	SortDir *GetRiskAssessmentPermissionsClusterIDQueryParamSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
 	// sort key
-	SortKey *GetRiskAssessmentPermissionsClusterIDSortKey `default:"owner" queryParam:"style=form,explode=true,name=sortKey"`
+	SortKey *GetRiskAssessmentPermissionsClusterIDQueryParamSortKey `default:"owner" queryParam:"style=form,explode=true,name=sortKey"`
 }
 
 func (g GetRiskAssessmentPermissionsClusterIDRequest) MarshalJSON() ([]byte, error) {
@@ -215,28 +215,28 @@ func (o *GetRiskAssessmentPermissionsClusterIDRequest) GetOwner() *string {
 	return o.Owner
 }
 
-func (o *GetRiskAssessmentPermissionsClusterIDRequest) GetOwnerType() *GetRiskAssessmentPermissionsClusterIDOwnerType {
+func (o *GetRiskAssessmentPermissionsClusterIDRequest) GetOwnerType() *OwnerType {
 	if o == nil {
 		return nil
 	}
 	return o.OwnerType
 }
 
-func (o *GetRiskAssessmentPermissionsClusterIDRequest) GetPermissionRisk() *GetRiskAssessmentPermissionsClusterIDPermissionRisk {
+func (o *GetRiskAssessmentPermissionsClusterIDRequest) GetPermissionRisk() *PermissionRisk {
 	if o == nil {
 		return nil
 	}
 	return o.PermissionRisk
 }
 
-func (o *GetRiskAssessmentPermissionsClusterIDRequest) GetSortDir() *GetRiskAssessmentPermissionsClusterIDSortDir {
+func (o *GetRiskAssessmentPermissionsClusterIDRequest) GetSortDir() *GetRiskAssessmentPermissionsClusterIDQueryParamSortDir {
 	if o == nil {
 		return nil
 	}
 	return o.SortDir
 }
 
-func (o *GetRiskAssessmentPermissionsClusterIDRequest) GetSortKey() *GetRiskAssessmentPermissionsClusterIDSortKey {
+func (o *GetRiskAssessmentPermissionsClusterIDRequest) GetSortKey() *GetRiskAssessmentPermissionsClusterIDQueryParamSortKey {
 	if o == nil {
 		return nil
 	}

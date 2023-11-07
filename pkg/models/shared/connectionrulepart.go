@@ -7,35 +7,35 @@ import (
 	"fmt"
 )
 
-type ConnectionRulePartConnectionRulePartType string
+type ConnectionRulePartType string
 
 const (
-	ConnectionRulePartConnectionRulePartTypeAppNameConnectionRulePart         ConnectionRulePartConnectionRulePartType = "AppNameConnectionRulePart"
-	ConnectionRulePartConnectionRulePartTypeAppTypeConnectionRulePart         ConnectionRulePartConnectionRulePartType = "AppTypeConnectionRulePart"
-	ConnectionRulePartConnectionRulePartTypeAppLabelConnectionRulePart        ConnectionRulePartConnectionRulePartType = "AppLabelConnectionRulePart"
-	ConnectionRulePartConnectionRulePartTypeAppAnyConnectionRulePart          ConnectionRulePartConnectionRulePartType = "AppAnyConnectionRulePart"
-	ConnectionRulePartConnectionRulePartTypePodNameConnectionRulePart         ConnectionRulePartConnectionRulePartType = "PodNameConnectionRulePart"
-	ConnectionRulePartConnectionRulePartTypePodLablesConnectionRulePart       ConnectionRulePartConnectionRulePartType = "PodLablesConnectionRulePart"
-	ConnectionRulePartConnectionRulePartTypePodAnyConnectionRulePart          ConnectionRulePartConnectionRulePartType = "PodAnyConnectionRulePart"
-	ConnectionRulePartConnectionRulePartTypeEnvironmentNameConnectionRulePart ConnectionRulePartConnectionRulePartType = "EnvironmentNameConnectionRulePart"
-	ConnectionRulePartConnectionRulePartTypeEnvironmentAnyConnectionRulePart  ConnectionRulePartConnectionRulePartType = "EnvironmentAnyConnectionRulePart"
-	ConnectionRulePartConnectionRulePartTypeIPRangeConnectionRulePart         ConnectionRulePartConnectionRulePartType = "IpRangeConnectionRulePart"
-	ConnectionRulePartConnectionRulePartTypeExternalConnectionRulePart        ConnectionRulePartConnectionRulePartType = "ExternalConnectionRulePart"
-	ConnectionRulePartConnectionRulePartTypeFqdnConnectionRulePart            ConnectionRulePartConnectionRulePartType = "FqdnConnectionRulePart"
-	ConnectionRulePartConnectionRulePartTypeServiceNameConnectionRulePart     ConnectionRulePartConnectionRulePartType = "ServiceNameConnectionRulePart"
-	ConnectionRulePartConnectionRulePartTypeAnyConnectionRulePart             ConnectionRulePartConnectionRulePartType = "AnyConnectionRulePart"
-	ConnectionRulePartConnectionRulePartTypeExpansionNameConnectionRulePart   ConnectionRulePartConnectionRulePartType = "ExpansionNameConnectionRulePart"
-	ConnectionRulePartConnectionRulePartTypeExpansionLabelsConnectionRulePart ConnectionRulePartConnectionRulePartType = "ExpansionLabelsConnectionRulePart"
-	ConnectionRulePartConnectionRulePartTypeExpansionAnyConnectionRulePart    ConnectionRulePartConnectionRulePartType = "ExpansionAnyConnectionRulePart"
-	ConnectionRulePartConnectionRulePartTypeKafkaConnectionRulePart           ConnectionRulePartConnectionRulePartType = "KafkaConnectionRulePart"
-	ConnectionRulePartConnectionRulePartTypeAPIServiceConnectionRulePart      ConnectionRulePartConnectionRulePartType = "ApiServiceConnectionRulePart"
+	ConnectionRulePartTypeAppNameConnectionRulePart         ConnectionRulePartType = "AppNameConnectionRulePart"
+	ConnectionRulePartTypeAppTypeConnectionRulePart         ConnectionRulePartType = "AppTypeConnectionRulePart"
+	ConnectionRulePartTypeAppLabelConnectionRulePart        ConnectionRulePartType = "AppLabelConnectionRulePart"
+	ConnectionRulePartTypeAppAnyConnectionRulePart          ConnectionRulePartType = "AppAnyConnectionRulePart"
+	ConnectionRulePartTypePodNameConnectionRulePart         ConnectionRulePartType = "PodNameConnectionRulePart"
+	ConnectionRulePartTypePodLablesConnectionRulePart       ConnectionRulePartType = "PodLablesConnectionRulePart"
+	ConnectionRulePartTypePodAnyConnectionRulePart          ConnectionRulePartType = "PodAnyConnectionRulePart"
+	ConnectionRulePartTypeEnvironmentNameConnectionRulePart ConnectionRulePartType = "EnvironmentNameConnectionRulePart"
+	ConnectionRulePartTypeEnvironmentAnyConnectionRulePart  ConnectionRulePartType = "EnvironmentAnyConnectionRulePart"
+	ConnectionRulePartTypeIPRangeConnectionRulePart         ConnectionRulePartType = "IpRangeConnectionRulePart"
+	ConnectionRulePartTypeExternalConnectionRulePart        ConnectionRulePartType = "ExternalConnectionRulePart"
+	ConnectionRulePartTypeFqdnConnectionRulePart            ConnectionRulePartType = "FqdnConnectionRulePart"
+	ConnectionRulePartTypeServiceNameConnectionRulePart     ConnectionRulePartType = "ServiceNameConnectionRulePart"
+	ConnectionRulePartTypeAnyConnectionRulePart             ConnectionRulePartType = "AnyConnectionRulePart"
+	ConnectionRulePartTypeExpansionNameConnectionRulePart   ConnectionRulePartType = "ExpansionNameConnectionRulePart"
+	ConnectionRulePartTypeExpansionLabelsConnectionRulePart ConnectionRulePartType = "ExpansionLabelsConnectionRulePart"
+	ConnectionRulePartTypeExpansionAnyConnectionRulePart    ConnectionRulePartType = "ExpansionAnyConnectionRulePart"
+	ConnectionRulePartTypeKafkaConnectionRulePart           ConnectionRulePartType = "KafkaConnectionRulePart"
+	ConnectionRulePartTypeAPIServiceConnectionRulePart      ConnectionRulePartType = "ApiServiceConnectionRulePart"
 )
 
-func (e ConnectionRulePartConnectionRulePartType) ToPointer() *ConnectionRulePartConnectionRulePartType {
+func (e ConnectionRulePartType) ToPointer() *ConnectionRulePartType {
 	return &e
 }
 
-func (e *ConnectionRulePartConnectionRulePartType) UnmarshalJSON(data []byte) error {
+func (e *ConnectionRulePartType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -78,20 +78,20 @@ func (e *ConnectionRulePartConnectionRulePartType) UnmarshalJSON(data []byte) er
 	case "KafkaConnectionRulePart":
 		fallthrough
 	case "ApiServiceConnectionRulePart":
-		*e = ConnectionRulePartConnectionRulePartType(v)
+		*e = ConnectionRulePartType(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for ConnectionRulePartConnectionRulePartType: %v", v)
+		return fmt.Errorf("invalid value for ConnectionRulePartType: %v", v)
 	}
 }
 
 type ConnectionRulePart struct {
-	ConnectionRulePartType ConnectionRulePartConnectionRulePartType `json:"connectionRulePartType"`
+	ConnectionRulePartType ConnectionRulePartType `json:"connectionRulePartType"`
 }
 
-func (o *ConnectionRulePart) GetConnectionRulePartType() ConnectionRulePartConnectionRulePartType {
+func (o *ConnectionRulePart) GetConnectionRulePartType() ConnectionRulePartType {
 	if o == nil {
-		return ConnectionRulePartConnectionRulePartType("")
+		return ConnectionRulePartType("")
 	}
 	return o.ConnectionRulePartType
 }

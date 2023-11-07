@@ -8,21 +8,14 @@ import (
 )
 
 type GetCdPolicyResponse struct {
-	// Success
-	CdPolicies []shared.CdPolicy
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-}
-
-func (o *GetCdPolicyResponse) GetCdPolicies() []shared.CdPolicy {
-	if o == nil {
-		return nil
-	}
-	return o.CdPolicies
+	// Success
+	Classes []shared.CdPolicy
 }
 
 func (o *GetCdPolicyResponse) GetContentType() string {
@@ -44,4 +37,11 @@ func (o *GetCdPolicyResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetCdPolicyResponse) GetClasses() []shared.CdPolicy {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

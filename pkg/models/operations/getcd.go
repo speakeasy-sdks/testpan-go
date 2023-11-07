@@ -11,19 +11,19 @@ import (
 	"time"
 )
 
-// GetCdSortDir - sorting direction
-type GetCdSortDir string
+// QueryParamSortDir - sorting direction
+type QueryParamSortDir string
 
 const (
-	GetCdSortDirAsc  GetCdSortDir = "ASC"
-	GetCdSortDirDesc GetCdSortDir = "DESC"
+	QueryParamSortDirAsc  QueryParamSortDir = "ASC"
+	QueryParamSortDirDesc QueryParamSortDir = "DESC"
 )
 
-func (e GetCdSortDir) ToPointer() *GetCdSortDir {
+func (e QueryParamSortDir) ToPointer() *QueryParamSortDir {
 	return &e
 }
 
-func (e *GetCdSortDir) UnmarshalJSON(data []byte) error {
+func (e *QueryParamSortDir) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -32,26 +32,26 @@ func (e *GetCdSortDir) UnmarshalJSON(data []byte) error {
 	case "ASC":
 		fallthrough
 	case "DESC":
-		*e = GetCdSortDir(v)
+		*e = QueryParamSortDir(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetCdSortDir: %v", v)
+		return fmt.Errorf("invalid value for QueryParamSortDir: %v", v)
 	}
 }
 
-// GetCdSortKey - sort key
-type GetCdSortKey string
+// QueryParamSortKey - sort key
+type QueryParamSortKey string
 
 const (
-	GetCdSortKeyTime   GetCdSortKey = "time"
-	GetCdSortKeyStatus GetCdSortKey = "status"
+	QueryParamSortKeyTime   QueryParamSortKey = "time"
+	QueryParamSortKeyStatus QueryParamSortKey = "status"
 )
 
-func (e GetCdSortKey) ToPointer() *GetCdSortKey {
+func (e QueryParamSortKey) ToPointer() *QueryParamSortKey {
 	return &e
 }
 
-func (e *GetCdSortKey) UnmarshalJSON(data []byte) error {
+func (e *QueryParamSortKey) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -60,10 +60,10 @@ func (e *GetCdSortKey) UnmarshalJSON(data []byte) error {
 	case "time":
 		fallthrough
 	case "status":
-		*e = GetCdSortKey(v)
+		*e = QueryParamSortKey(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetCdSortKey: %v", v)
+		return fmt.Errorf("invalid value for QueryParamSortKey: %v", v)
 	}
 }
 
@@ -77,9 +77,9 @@ type GetCdRequest struct {
 	// Resource name
 	ResourceName *string `queryParam:"style=form,explode=true,name=resourceName"`
 	// sorting direction
-	SortDir *GetCdSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
+	SortDir *QueryParamSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
 	// sort key
-	SortKey *GetCdSortKey `default:"time" queryParam:"style=form,explode=true,name=sortKey"`
+	SortKey *QueryParamSortKey `default:"time" queryParam:"style=form,explode=true,name=sortKey"`
 	// Start date of the query
 	StartTime time.Time `queryParam:"style=form,explode=true,name=startTime"`
 }
@@ -123,14 +123,14 @@ func (o *GetCdRequest) GetResourceName() *string {
 	return o.ResourceName
 }
 
-func (o *GetCdRequest) GetSortDir() *GetCdSortDir {
+func (o *GetCdRequest) GetSortDir() *QueryParamSortDir {
 	if o == nil {
 		return nil
 	}
 	return o.SortDir
 }
 
-func (o *GetCdRequest) GetSortKey() *GetCdSortKey {
+func (o *GetCdRequest) GetSortKey() *QueryParamSortKey {
 	if o == nil {
 		return nil
 	}
@@ -145,21 +145,14 @@ func (o *GetCdRequest) GetStartTime() time.Time {
 }
 
 type GetCdResponse struct {
-	// Success
-	CDPipelineResults []shared.CDPipelineResult
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-}
-
-func (o *GetCdResponse) GetCDPipelineResults() []shared.CDPipelineResult {
-	if o == nil {
-		return nil
-	}
-	return o.CDPipelineResults
+	// Success
+	Classes []shared.CDPipelineResult
 }
 
 func (o *GetCdResponse) GetContentType() string {
@@ -181,4 +174,11 @@ func (o *GetCdResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetCdResponse) GetClasses() []shared.CDPipelineResult {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

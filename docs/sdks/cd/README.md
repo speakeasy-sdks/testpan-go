@@ -1,5 +1,5 @@
 # Cd
-(*Cd*)
+(*.Cd*)
 
 ## Overview
 
@@ -157,7 +157,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.CDPipelineResults != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -359,10 +359,10 @@ func main() {
     ctx := context.Background()
     res, err := s.Cd.PostCdConnectionsRule(ctx, shared.CdConnectionRule{
         Destination: &shared.ConnectionRulePart{
-            ConnectionRulePartType: shared.ConnectionRulePartConnectionRulePartTypePodNameConnectionRulePart,
+            ConnectionRulePartType: shared.ConnectionRulePartTypePodNameConnectionRulePart,
         },
         Source: &shared.ConnectionRulePart{
-            ConnectionRulePartType: shared.ConnectionRulePartConnectionRulePartTypeAppTypeConnectionRulePart,
+            ConnectionRulePartType: shared.ConnectionRulePartTypeAppTypeConnectionRulePart,
         },
     })
     if err != nil {
@@ -482,10 +482,10 @@ func main() {
     res, err := s.Cd.PutCdRuleIDConnectionsRule(ctx, operations.PutCdRuleIDConnectionsRuleRequest{
         CdConnectionRule: shared.CdConnectionRule{
             Destination: &shared.ConnectionRulePart{
-                ConnectionRulePartType: shared.ConnectionRulePartConnectionRulePartTypeAppNameConnectionRulePart,
+                ConnectionRulePartType: shared.ConnectionRulePartTypeAppNameConnectionRulePart,
             },
             Source: &shared.ConnectionRulePart{
-                ConnectionRulePartType: shared.ConnectionRulePartConnectionRulePartTypeExpansionAnyConnectionRulePart,
+                ConnectionRulePartType: shared.ConnectionRulePartTypeExpansionAnyConnectionRulePart,
             },
         },
         RuleID: "3491c83a-5adc-4392-92ee-d6713c48128c",

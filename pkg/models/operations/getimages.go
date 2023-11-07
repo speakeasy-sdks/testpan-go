@@ -10,19 +10,19 @@ import (
 	"net/http"
 )
 
-// GetImagesSortDir - sorting direction
-type GetImagesSortDir string
+// GetImagesQueryParamSortDir - sorting direction
+type GetImagesQueryParamSortDir string
 
 const (
-	GetImagesSortDirAsc  GetImagesSortDir = "ASC"
-	GetImagesSortDirDesc GetImagesSortDir = "DESC"
+	GetImagesQueryParamSortDirAsc  GetImagesQueryParamSortDir = "ASC"
+	GetImagesQueryParamSortDirDesc GetImagesQueryParamSortDir = "DESC"
 )
 
-func (e GetImagesSortDir) ToPointer() *GetImagesSortDir {
+func (e GetImagesQueryParamSortDir) ToPointer() *GetImagesQueryParamSortDir {
 	return &e
 }
 
-func (e *GetImagesSortDir) UnmarshalJSON(data []byte) error {
+func (e *GetImagesQueryParamSortDir) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -31,27 +31,27 @@ func (e *GetImagesSortDir) UnmarshalJSON(data []byte) error {
 	case "ASC":
 		fallthrough
 	case "DESC":
-		*e = GetImagesSortDir(v)
+		*e = GetImagesQueryParamSortDir(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetImagesSortDir: %v", v)
+		return fmt.Errorf("invalid value for GetImagesQueryParamSortDir: %v", v)
 	}
 }
 
-// GetImagesSortKey - image sort key. enum description in image sort key definition
-type GetImagesSortKey string
+// GetImagesQueryParamSortKey - image sort key. enum description in image sort key definition
+type GetImagesQueryParamSortKey string
 
 const (
-	GetImagesSortKeyImageName GetImagesSortKey = "IMAGE_NAME"
-	GetImagesSortKeyTime      GetImagesSortKey = "TIME"
-	GetImagesSortKeyRisk      GetImagesSortKey = "RISK"
+	GetImagesQueryParamSortKeyImageName GetImagesQueryParamSortKey = "IMAGE_NAME"
+	GetImagesQueryParamSortKeyTime      GetImagesQueryParamSortKey = "TIME"
+	GetImagesQueryParamSortKeyRisk      GetImagesQueryParamSortKey = "RISK"
 )
 
-func (e GetImagesSortKey) ToPointer() *GetImagesSortKey {
+func (e GetImagesQueryParamSortKey) ToPointer() *GetImagesQueryParamSortKey {
 	return &e
 }
 
-func (e *GetImagesSortKey) UnmarshalJSON(data []byte) error {
+func (e *GetImagesQueryParamSortKey) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -62,10 +62,10 @@ func (e *GetImagesSortKey) UnmarshalJSON(data []byte) error {
 	case "TIME":
 		fallthrough
 	case "RISK":
-		*e = GetImagesSortKey(v)
+		*e = GetImagesQueryParamSortKey(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetImagesSortKey: %v", v)
+		return fmt.Errorf("invalid value for GetImagesQueryParamSortKey: %v", v)
 	}
 }
 
@@ -83,9 +83,9 @@ type GetImagesRequest struct {
 	// Return entries from this offset (pagination)
 	Offset *float64 `default:"0" queryParam:"style=form,explode=true,name=offset"`
 	// sorting direction
-	SortDir *GetImagesSortDir `default:"DESC" queryParam:"style=form,explode=true,name=sortDir"`
+	SortDir *GetImagesQueryParamSortDir `default:"DESC" queryParam:"style=form,explode=true,name=sortDir"`
 	// image sort key. enum description in image sort key definition
-	SortKey GetImagesSortKey `default:"RISK" queryParam:"style=form,explode=true,name=sortKey"`
+	SortKey GetImagesQueryParamSortKey `default:"RISK" queryParam:"style=form,explode=true,name=sortKey"`
 	// Filter images by vulnerability name
 	VulnerabilityName *string `queryParam:"style=form,explode=true,name=vulnerabilityName"`
 }
@@ -143,16 +143,16 @@ func (o *GetImagesRequest) GetOffset() *float64 {
 	return o.Offset
 }
 
-func (o *GetImagesRequest) GetSortDir() *GetImagesSortDir {
+func (o *GetImagesRequest) GetSortDir() *GetImagesQueryParamSortDir {
 	if o == nil {
 		return nil
 	}
 	return o.SortDir
 }
 
-func (o *GetImagesRequest) GetSortKey() GetImagesSortKey {
+func (o *GetImagesRequest) GetSortKey() GetImagesQueryParamSortKey {
 	if o == nil {
-		return GetImagesSortKey("")
+		return GetImagesQueryParamSortKey("")
 	}
 	return o.SortKey
 }
@@ -167,12 +167,12 @@ func (o *GetImagesRequest) GetVulnerabilityName() *string {
 type GetImagesResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// OK
-	ImageDefGets []shared.ImageDefGet
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// OK
+	Classes []shared.ImageDefGet
 }
 
 func (o *GetImagesResponse) GetContentType() string {
@@ -180,13 +180,6 @@ func (o *GetImagesResponse) GetContentType() string {
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *GetImagesResponse) GetImageDefGets() []shared.ImageDefGet {
-	if o == nil {
-		return nil
-	}
-	return o.ImageDefGets
 }
 
 func (o *GetImagesResponse) GetStatusCode() int {
@@ -201,4 +194,11 @@ func (o *GetImagesResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetImagesResponse) GetClasses() []shared.ImageDefGet {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

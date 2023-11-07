@@ -30,12 +30,12 @@ func (o *GetDeployersServiceAccountsRequest) GetNamespaceName() *string {
 type GetDeployersServiceAccountsResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// Success
-	ServiceAccountInfos []shared.ServiceAccountInfo
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Success
+	Classes []shared.ServiceAccountInfo
 }
 
 func (o *GetDeployersServiceAccountsResponse) GetContentType() string {
@@ -43,13 +43,6 @@ func (o *GetDeployersServiceAccountsResponse) GetContentType() string {
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *GetDeployersServiceAccountsResponse) GetServiceAccountInfos() []shared.ServiceAccountInfo {
-	if o == nil {
-		return nil
-	}
-	return o.ServiceAccountInfos
 }
 
 func (o *GetDeployersServiceAccountsResponse) GetStatusCode() int {
@@ -64,4 +57,11 @@ func (o *GetDeployersServiceAccountsResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetDeployersServiceAccountsResponse) GetClasses() []shared.ServiceAccountInfo {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

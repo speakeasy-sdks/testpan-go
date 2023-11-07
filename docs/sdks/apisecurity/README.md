@@ -1,5 +1,5 @@
 # APISecurity
-(*APISecurity*)
+(*.APISecurity*)
 
 ## Overview
 
@@ -148,7 +148,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.DeleteAPISecurityInternalCatalogCatalogIDBflaDetection204ApplicationJSONUUIDString != nil {
+    if res.Res != nil {
         // handle response
     }
 }
@@ -200,7 +200,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.DeleteAPISecurityInternalCatalogCatalogIDBflaLearning204ApplicationJSONUUIDString != nil {
+    if res.Res != nil {
         // handle response
     }
 }
@@ -408,7 +408,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetAPISecurityExternalCatalogCount200ApplicationJSONInteger != nil {
+    if res.Integer != nil {
         // handle response
     }
 }
@@ -567,7 +567,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetAPISecurityInternalCatalogCount200ApplicationJSONInteger != nil {
+    if res.Integer != nil {
         // handle response
     }
 }
@@ -778,7 +778,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.APIServiceFuzzingTests != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -1038,7 +1038,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetAPISecurityOpenAPISpecsCatalogIDOpenAPISpecSwaggerJSON200ApplicationJSONString != nil {
+    if res.Res != nil {
         // handle response
     }
 }
@@ -1194,7 +1194,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecJSON200ApplicationJSONString != nil {
+    if res.Res != nil {
         // handle response
     }
 }
@@ -1240,11 +1240,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.GetAPISecurityRiskFindings(ctx, operations.GetAPISecurityRiskFindingsRequest{
-        APISecSource: operations.GetAPISecurityRiskFindingsAPISecSourceExternal,
-        Risks: []operations.GetAPISecurityRiskFindingsRisks{
-            operations.GetAPISecurityRiskFindingsRisksLow,
+        APISecSource: operations.APISecSourceExternal,
+        Risks: []operations.Risks{
+            operations.RisksLow,
         },
-        SortKey: operations.GetAPISecurityRiskFindingsSortKeyRisk,
+        SortKey: operations.GetAPISecurityRiskFindingsQueryParamSortKeyRisk,
     })
     if err != nil {
         log.Fatal(err)
@@ -1299,7 +1299,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetAPISecurityRiskFindingsCategories200ApplicationJSONStrings != nil {
+    if res.Strings != nil {
         // handle response
     }
 }
@@ -1347,7 +1347,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetAPISecurityRiskFindingsSources200ApplicationJSONStrings != nil {
+    if res.Strings != nil {
         // handle response
     }
 }
@@ -1505,7 +1505,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.APIServiceMethods != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -1603,7 +1603,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.GetDashboardApisecRiskFindings(ctx, operations.GetDashboardApisecRiskFindingsRequest{
-        APISecSource: operations.GetDashboardApisecRiskFindingsAPISecSourceInternal,
+        APISecSource: operations.QueryParamAPISecSourceInternal,
     })
     if err != nil {
         log.Fatal(err)
@@ -1655,7 +1655,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.GetDashboardApisecRiskFindingsTrend(ctx, operations.GetDashboardApisecRiskFindingsTrendRequest{
-        APISecSource: operations.GetDashboardApisecRiskFindingsTrendAPISecSourceInternal,
+        APISecSource: operations.GetDashboardApisecRiskFindingsTrendQueryParamAPISecSourceInternal,
     })
     if err != nil {
         log.Fatal(err)
@@ -1707,7 +1707,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.GetDashboardApisecSpecsAndOperationsDiffs(ctx, operations.GetDashboardApisecSpecsAndOperationsDiffsRequest{
-        APISecSource: operations.GetDashboardApisecSpecsAndOperationsDiffsAPISecSourceExternal,
+        APISecSource: operations.GetDashboardApisecSpecsAndOperationsDiffsQueryParamAPISecSourceExternal,
     })
     if err != nil {
         log.Fatal(err)
@@ -1759,7 +1759,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.GetDashboardApisecTopRiskyApis(ctx, operations.GetDashboardApisecTopRiskyApisRequest{
-        APISecSource: operations.GetDashboardApisecTopRiskyApisAPISecSourceExternal,
+        APISecSource: operations.GetDashboardApisecTopRiskyApisQueryParamAPISecSourceExternal,
     })
     if err != nil {
         log.Fatal(err)
@@ -1811,7 +1811,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.GetDashboardApisecTopRiskyFindings(ctx, operations.GetDashboardApisecTopRiskyFindingsRequest{
-        APISecSource: operations.GetDashboardApisecTopRiskyFindingsAPISecSourceInternal,
+        APISecSource: operations.GetDashboardApisecTopRiskyFindingsQueryParamAPISecSourceInternal,
     })
     if err != nil {
         log.Fatal(err)
@@ -1867,7 +1867,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.Gateways != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -1913,13 +1913,13 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.GetGatewaysClusters(ctx, operations.GetGatewaysClustersRequest{
-        GatewayType: operations.GetGatewaysClustersGatewayTypeTykInternal,
+        GatewayType: operations.GatewayTypeTykInternal,
     })
     if err != nil {
         log.Fatal(err)
     }
 
-    if res.GatewayClusterInfos != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -1971,7 +1971,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetGatewaysGatewayIDDownloadBundle200ApplicationJSONBinaryString != nil {
+    if res.Stream != nil {
         // handle response
     }
 }
@@ -2022,7 +2022,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.PostAPISecurityAPI201ApplicationJSONUUIDString != nil {
+    if res.Res != nil {
         // handle response
     }
 }
@@ -2077,7 +2077,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.PostAPISecurityInternalCatalogCatalogIDBflaDetection201ApplicationJSONUUIDString != nil {
+    if res.Res != nil {
         // handle response
     }
 }
@@ -2132,7 +2132,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.PostAPISecurityInternalCatalogCatalogIDBflaLearning201ApplicationJSONUUIDString != nil {
+    if res.Res != nil {
         // handle response
     }
 }
@@ -2184,7 +2184,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.PostAPISecurityInternalCatalogCatalogIDBflaReset201ApplicationJSONUUIDString != nil {
+    if res.Res != nil {
         // handle response
     }
 }
@@ -2284,7 +2284,7 @@ func main() {
     res, err := s.APISecurity.PostAPISecurityInternalCatalogCatalogIDStartFuzzing(ctx, operations.PostAPISecurityInternalCatalogCatalogIDStartFuzzingRequest{
         APIFuzzingTestConfiguration: shared.APIFuzzingTestConfiguration{
             Auth: shared.AuthorizationScheme{
-                AuthorizationSchemeType: shared.AuthorizationSchemeAuthorizationSchemeTypeAuthorizationSchemeAPIToken,
+                AuthorizationSchemeType: shared.AuthorizationSchemeTypeAuthorizationSchemeAPIToken,
             },
             Depth: shared.TestInputDepthEnumDeep,
         },
@@ -2605,7 +2605,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReviewApprove(ctx, operations.PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReviewApproveRequest{
-        APIReconstructedSpecInput: shared.APIReconstructedSpecInput{
+        APIReconstructedSpec: shared.APIReconstructedSpecInput{
             OASVersion: shared.OASVersionOaSv30,
             ReviewPathItems: []shared.ReviewPathItem{
                 shared.ReviewPathItem{
@@ -2673,7 +2673,7 @@ func main() {
     res, err := s.APISecurity.PostAPISecurityOpenAPISpecsCatalogIDStartDiffsDetection(ctx, operations.PostAPISecurityOpenAPISpecsCatalogIDStartDiffsDetectionRequest{
         ActionDuration: shared.ActionDuration{
             Duration: 672614,
-            TimeUnit: shared.ActionDurationTimeUnitHours,
+            TimeUnit: shared.TimeUnitHours,
         },
         CatalogID: "84658317-7e1f-4e27-b84c-670056ef2d95",
     })
@@ -2864,7 +2864,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.PutAPISecurityInternalCatalogCatalogIDBfla200ApplicationJSONUUIDString != nil {
+    if res.Res != nil {
         // handle response
     }
 }

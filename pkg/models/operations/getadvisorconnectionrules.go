@@ -8,21 +8,14 @@ import (
 )
 
 type GetAdvisorConnectionRulesResponse struct {
-	// OK
-	ConnectionsRuleRecommendationPeriods []shared.ConnectionsRuleRecommendationPeriod
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-}
-
-func (o *GetAdvisorConnectionRulesResponse) GetConnectionsRuleRecommendationPeriods() []shared.ConnectionsRuleRecommendationPeriod {
-	if o == nil {
-		return nil
-	}
-	return o.ConnectionsRuleRecommendationPeriods
+	// OK
+	Classes []shared.ConnectionsRuleRecommendationPeriod
 }
 
 func (o *GetAdvisorConnectionRulesResponse) GetContentType() string {
@@ -44,4 +37,11 @@ func (o *GetAdvisorConnectionRulesResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetAdvisorConnectionRulesResponse) GetClasses() []shared.ConnectionsRuleRecommendationPeriod {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

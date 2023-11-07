@@ -16,7 +16,7 @@ type GetMitreReportDownloadResponse struct {
 	RawResponse *http.Response
 	// The Mitre report
 	// The Close method must be called on this field, even if it is not used, to prevent resource leaks.
-	GetMitreReportDownload200ApplicationJSONBinaryString io.ReadCloser
+	Stream io.ReadCloser
 }
 
 func (o *GetMitreReportDownloadResponse) GetContentType() string {
@@ -40,9 +40,9 @@ func (o *GetMitreReportDownloadResponse) GetRawResponse() *http.Response {
 	return o.RawResponse
 }
 
-func (o *GetMitreReportDownloadResponse) GetGetMitreReportDownload200ApplicationJSONBinaryString() io.ReadCloser {
+func (o *GetMitreReportDownloadResponse) GetStream() io.ReadCloser {
 	if o == nil {
 		return nil
 	}
-	return o.GetMitreReportDownload200ApplicationJSONBinaryString
+	return o.Stream
 }

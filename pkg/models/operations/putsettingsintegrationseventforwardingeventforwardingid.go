@@ -8,15 +8,15 @@ import (
 )
 
 type PutSettingsIntegrationsEventForwardingEventForwardingIDRequest struct {
-	SplunkEventsForwardingDetailsInput shared.SplunkEventsForwardingDetailsInput `request:"mediaType=application/json"`
-	EventForwardingID                  string                                    `pathParam:"style=simple,explode=false,name=eventForwardingId"`
+	SplunkEventsForwardingDetails shared.SplunkEventsForwardingDetails `request:"mediaType=application/json"`
+	EventForwardingID             string                               `pathParam:"style=simple,explode=false,name=eventForwardingId"`
 }
 
-func (o *PutSettingsIntegrationsEventForwardingEventForwardingIDRequest) GetSplunkEventsForwardingDetailsInput() shared.SplunkEventsForwardingDetailsInput {
+func (o *PutSettingsIntegrationsEventForwardingEventForwardingIDRequest) GetSplunkEventsForwardingDetails() shared.SplunkEventsForwardingDetails {
 	if o == nil {
-		return shared.SplunkEventsForwardingDetailsInput{}
+		return shared.SplunkEventsForwardingDetails{}
 	}
-	return o.SplunkEventsForwardingDetailsInput
+	return o.SplunkEventsForwardingDetails
 }
 
 func (o *PutSettingsIntegrationsEventForwardingEventForwardingIDRequest) GetEventForwardingID() string {

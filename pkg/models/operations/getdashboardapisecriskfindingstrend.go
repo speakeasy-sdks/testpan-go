@@ -10,19 +10,19 @@ import (
 	"net/http"
 )
 
-// GetDashboardApisecRiskFindingsTrendAPISecSource - source filter. an enum representing the source of the APIs service in scope
-type GetDashboardApisecRiskFindingsTrendAPISecSource string
+// GetDashboardApisecRiskFindingsTrendQueryParamAPISecSource - source filter. an enum representing the source of the APIs service in scope
+type GetDashboardApisecRiskFindingsTrendQueryParamAPISecSource string
 
 const (
-	GetDashboardApisecRiskFindingsTrendAPISecSourceInternal GetDashboardApisecRiskFindingsTrendAPISecSource = "INTERNAL"
-	GetDashboardApisecRiskFindingsTrendAPISecSourceExternal GetDashboardApisecRiskFindingsTrendAPISecSource = "EXTERNAL"
+	GetDashboardApisecRiskFindingsTrendQueryParamAPISecSourceInternal GetDashboardApisecRiskFindingsTrendQueryParamAPISecSource = "INTERNAL"
+	GetDashboardApisecRiskFindingsTrendQueryParamAPISecSourceExternal GetDashboardApisecRiskFindingsTrendQueryParamAPISecSource = "EXTERNAL"
 )
 
-func (e GetDashboardApisecRiskFindingsTrendAPISecSource) ToPointer() *GetDashboardApisecRiskFindingsTrendAPISecSource {
+func (e GetDashboardApisecRiskFindingsTrendQueryParamAPISecSource) ToPointer() *GetDashboardApisecRiskFindingsTrendQueryParamAPISecSource {
 	return &e
 }
 
-func (e *GetDashboardApisecRiskFindingsTrendAPISecSource) UnmarshalJSON(data []byte) error {
+func (e *GetDashboardApisecRiskFindingsTrendQueryParamAPISecSource) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -31,16 +31,16 @@ func (e *GetDashboardApisecRiskFindingsTrendAPISecSource) UnmarshalJSON(data []b
 	case "INTERNAL":
 		fallthrough
 	case "EXTERNAL":
-		*e = GetDashboardApisecRiskFindingsTrendAPISecSource(v)
+		*e = GetDashboardApisecRiskFindingsTrendQueryParamAPISecSource(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetDashboardApisecRiskFindingsTrendAPISecSource: %v", v)
+		return fmt.Errorf("invalid value for GetDashboardApisecRiskFindingsTrendQueryParamAPISecSource: %v", v)
 	}
 }
 
 type GetDashboardApisecRiskFindingsTrendRequest struct {
 	// source filter. an enum representing the source of the APIs service in scope
-	APISecSource GetDashboardApisecRiskFindingsTrendAPISecSource `default:"INTERNAL" queryParam:"style=form,explode=true,name=apiSecSource"`
+	APISecSource GetDashboardApisecRiskFindingsTrendQueryParamAPISecSource `default:"INTERNAL" queryParam:"style=form,explode=true,name=apiSecSource"`
 	// the desired number of days in graph
 	NumOfDays *int64 `default:"30" queryParam:"style=form,explode=true,name=numOfDays"`
 }
@@ -56,9 +56,9 @@ func (g *GetDashboardApisecRiskFindingsTrendRequest) UnmarshalJSON(data []byte) 
 	return nil
 }
 
-func (o *GetDashboardApisecRiskFindingsTrendRequest) GetAPISecSource() GetDashboardApisecRiskFindingsTrendAPISecSource {
+func (o *GetDashboardApisecRiskFindingsTrendRequest) GetAPISecSource() GetDashboardApisecRiskFindingsTrendQueryParamAPISecSource {
 	if o == nil {
-		return GetDashboardApisecRiskFindingsTrendAPISecSource("")
+		return GetDashboardApisecRiskFindingsTrendQueryParamAPISecSource("")
 	}
 	return o.APISecSource
 }

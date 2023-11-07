@@ -8,15 +8,15 @@ import (
 )
 
 type PutCdPolicyPolicyIDRequest struct {
-	CdPolicyInput shared.CdPolicyInput `request:"mediaType=application/json"`
-	PolicyID      string               `pathParam:"style=simple,explode=false,name=policyId"`
+	CdPolicy shared.CdPolicyInput `request:"mediaType=application/json"`
+	PolicyID string               `pathParam:"style=simple,explode=false,name=policyId"`
 }
 
-func (o *PutCdPolicyPolicyIDRequest) GetCdPolicyInput() shared.CdPolicyInput {
+func (o *PutCdPolicyPolicyIDRequest) GetCdPolicy() shared.CdPolicyInput {
 	if o == nil {
 		return shared.CdPolicyInput{}
 	}
-	return o.CdPolicyInput
+	return o.CdPolicy
 }
 
 func (o *PutCdPolicyPolicyIDRequest) GetPolicyID() string {

@@ -61,12 +61,12 @@ func (o *GetK8sCISBenchmarkRequest) GetOffset() *float64 {
 type GetK8sCISBenchmarkResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// Success
-	K8sCISBenchmarkClustersSummaries []shared.K8sCISBenchmarkClustersSummary
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Success
+	Classes []shared.K8sCISBenchmarkClustersSummary
 }
 
 func (o *GetK8sCISBenchmarkResponse) GetContentType() string {
@@ -74,13 +74,6 @@ func (o *GetK8sCISBenchmarkResponse) GetContentType() string {
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *GetK8sCISBenchmarkResponse) GetK8sCISBenchmarkClustersSummaries() []shared.K8sCISBenchmarkClustersSummary {
-	if o == nil {
-		return nil
-	}
-	return o.K8sCISBenchmarkClustersSummaries
 }
 
 func (o *GetK8sCISBenchmarkResponse) GetStatusCode() int {
@@ -95,4 +88,11 @@ func (o *GetK8sCISBenchmarkResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetK8sCISBenchmarkResponse) GetClasses() []shared.K8sCISBenchmarkClustersSummary {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

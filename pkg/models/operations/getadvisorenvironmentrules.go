@@ -10,12 +10,12 @@ import (
 type GetAdvisorEnvironmentRulesResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// OK
-	EnvironmentRulesRecommendationPeriods []shared.EnvironmentRulesRecommendationPeriod
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// OK
+	Classes []shared.EnvironmentRulesRecommendationPeriod
 }
 
 func (o *GetAdvisorEnvironmentRulesResponse) GetContentType() string {
@@ -23,13 +23,6 @@ func (o *GetAdvisorEnvironmentRulesResponse) GetContentType() string {
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *GetAdvisorEnvironmentRulesResponse) GetEnvironmentRulesRecommendationPeriods() []shared.EnvironmentRulesRecommendationPeriod {
-	if o == nil {
-		return nil
-	}
-	return o.EnvironmentRulesRecommendationPeriods
 }
 
 func (o *GetAdvisorEnvironmentRulesResponse) GetStatusCode() int {
@@ -44,4 +37,11 @@ func (o *GetAdvisorEnvironmentRulesResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetAdvisorEnvironmentRulesResponse) GetClasses() []shared.EnvironmentRulesRecommendationPeriod {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

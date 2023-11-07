@@ -8,15 +8,15 @@ import (
 )
 
 type PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReviewApproveRequest struct {
-	APIReconstructedSpecInput shared.APIReconstructedSpecInput `request:"mediaType=application/json"`
-	CatalogID                 string                           `pathParam:"style=simple,explode=false,name=catalogId"`
+	APIReconstructedSpec shared.APIReconstructedSpecInput `request:"mediaType=application/json"`
+	CatalogID            string                           `pathParam:"style=simple,explode=false,name=catalogId"`
 }
 
-func (o *PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReviewApproveRequest) GetAPIReconstructedSpecInput() shared.APIReconstructedSpecInput {
+func (o *PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReviewApproveRequest) GetAPIReconstructedSpec() shared.APIReconstructedSpecInput {
 	if o == nil {
 		return shared.APIReconstructedSpecInput{}
 	}
-	return o.APIReconstructedSpecInput
+	return o.APIReconstructedSpec
 }
 
 func (o *PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReviewApproveRequest) GetCatalogID() string {

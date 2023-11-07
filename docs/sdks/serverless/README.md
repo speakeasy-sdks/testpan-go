@@ -1,5 +1,5 @@
 # Serverless
-(*Serverless*)
+(*.Serverless*)
 
 ### Available Operations
 
@@ -103,13 +103,13 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Serverless.GetCloudAccounts(ctx, operations.GetCloudAccountsRequest{
-        SortKey: operations.GetCloudAccountsSortKeyLastScanned,
+        SortKey: operations.GetCloudAccountsQueryParamSortKeyLastScanned,
     })
     if err != nil {
         log.Fatal(err)
     }
 
-    if res.CloudAccounts != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -254,7 +254,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.AwsRegions != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -302,7 +302,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetCloudAccountsRegionsAzure200ApplicationJSONStrings != nil {
+    if res.Strings != nil {
         // handle response
     }
 }
@@ -405,7 +405,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetCloudAccountsCloudAccountIDDownloadBundle200ApplicationJSONBinaryString != nil {
+    if res.Stream != nil {
         // handle response
     }
 }
@@ -457,24 +457,24 @@ func main() {
         FuncName: []string{
             "string",
         },
-        PolicyRisk: []operations.GetServerlessFunctionsPolicyRisk{
-            operations.GetServerlessFunctionsPolicyRiskLow,
+        PolicyRisk: []operations.PolicyRisk{
+            operations.PolicyRiskLow,
         },
-        Result: []operations.GetServerlessFunctionsResult{
-            operations.GetServerlessFunctionsResultAllow,
+        Result: []operations.QueryParamResult{
+            operations.QueryParamResultAllow,
         },
-        Risk: []operations.GetServerlessFunctionsRisk{
-            operations.GetServerlessFunctionsRiskHigh,
+        Risk: []operations.QueryParamRisk{
+            operations.QueryParamRiskHigh,
         },
-        SecretsRisk: []operations.GetServerlessFunctionsSecretsRisk{
-            operations.GetServerlessFunctionsSecretsRiskRiskIdentified,
+        SecretsRisk: []operations.SecretsRisk{
+            operations.SecretsRiskRiskIdentified,
         },
     })
     if err != nil {
         log.Fatal(err)
     }
 
-    if res.ServerlessFunctions != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -528,7 +528,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.ServerlessFunctionArns != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -582,7 +582,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.ServerlessFunctionNames != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -686,7 +686,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.ServerlessFunctionSecretIssues != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -738,7 +738,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.Vulnerabilities != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -788,7 +788,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.ServerlessZips != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -892,7 +892,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.ImagePackageDetails != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -944,7 +944,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.Vulnerabilities != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -1043,7 +1043,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Serverless.PutCloudAccountsCloudAccountID(ctx, operations.PutCloudAccountsCloudAccountIDRequest{
-        CloudAccountInput: shared.CloudAccountInput{
+        CloudAccount: shared.CloudAccountInput{
             PeriodicJobExpression: shared.ServerlessPeriodicJobExpression{
                 PeriodicJobType: shared.ServerlessPeriodicJobExpressionPeriodicJobTypeServerlessByHoursPeriodicJobExpression,
             },

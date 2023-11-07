@@ -10,22 +10,22 @@ import (
 	"net/http"
 )
 
-// GetNamespacesProtectionStatus - When true, the API will return only protected pods
-type GetNamespacesProtectionStatus string
+// ProtectionStatus - When true, the API will return only protected pods
+type ProtectionStatus string
 
 const (
-	GetNamespacesProtectionStatusFull           GetNamespacesProtectionStatus = "FULL"
-	GetNamespacesProtectionStatusDeploymentOnly GetNamespacesProtectionStatus = "DEPLOYMENT_ONLY"
-	GetNamespacesProtectionStatusConnectionOnly GetNamespacesProtectionStatus = "CONNECTION_ONLY"
-	GetNamespacesProtectionStatusDisabled       GetNamespacesProtectionStatus = "DISABLED"
-	GetNamespacesProtectionStatusAll            GetNamespacesProtectionStatus = "ALL"
+	ProtectionStatusFull           ProtectionStatus = "FULL"
+	ProtectionStatusDeploymentOnly ProtectionStatus = "DEPLOYMENT_ONLY"
+	ProtectionStatusConnectionOnly ProtectionStatus = "CONNECTION_ONLY"
+	ProtectionStatusDisabled       ProtectionStatus = "DISABLED"
+	ProtectionStatusAll            ProtectionStatus = "ALL"
 )
 
-func (e GetNamespacesProtectionStatus) ToPointer() *GetNamespacesProtectionStatus {
+func (e ProtectionStatus) ToPointer() *ProtectionStatus {
 	return &e
 }
 
-func (e *GetNamespacesProtectionStatus) UnmarshalJSON(data []byte) error {
+func (e *ProtectionStatus) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -40,26 +40,26 @@ func (e *GetNamespacesProtectionStatus) UnmarshalJSON(data []byte) error {
 	case "DISABLED":
 		fallthrough
 	case "ALL":
-		*e = GetNamespacesProtectionStatus(v)
+		*e = ProtectionStatus(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetNamespacesProtectionStatus: %v", v)
+		return fmt.Errorf("invalid value for ProtectionStatus: %v", v)
 	}
 }
 
-// GetNamespacesSortDir - sorting direction
-type GetNamespacesSortDir string
+// GetNamespacesQueryParamSortDir - sorting direction
+type GetNamespacesQueryParamSortDir string
 
 const (
-	GetNamespacesSortDirAsc  GetNamespacesSortDir = "ASC"
-	GetNamespacesSortDirDesc GetNamespacesSortDir = "DESC"
+	GetNamespacesQueryParamSortDirAsc  GetNamespacesQueryParamSortDir = "ASC"
+	GetNamespacesQueryParamSortDirDesc GetNamespacesQueryParamSortDir = "DESC"
 )
 
-func (e GetNamespacesSortDir) ToPointer() *GetNamespacesSortDir {
+func (e GetNamespacesQueryParamSortDir) ToPointer() *GetNamespacesQueryParamSortDir {
 	return &e
 }
 
-func (e *GetNamespacesSortDir) UnmarshalJSON(data []byte) error {
+func (e *GetNamespacesQueryParamSortDir) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -68,28 +68,28 @@ func (e *GetNamespacesSortDir) UnmarshalJSON(data []byte) error {
 	case "ASC":
 		fallthrough
 	case "DESC":
-		*e = GetNamespacesSortDir(v)
+		*e = GetNamespacesQueryParamSortDir(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetNamespacesSortDir: %v", v)
+		return fmt.Errorf("invalid value for GetNamespacesQueryParamSortDir: %v", v)
 	}
 }
 
-// GetNamespacesSortKey - the namespaces sort key
-type GetNamespacesSortKey string
+// GetNamespacesQueryParamSortKey - the namespaces sort key
+type GetNamespacesQueryParamSortKey string
 
 const (
-	GetNamespacesSortKeyNamespaceName    GetNamespacesSortKey = "namespaceName"
-	GetNamespacesSortKeyClusterName      GetNamespacesSortKey = "clusterName"
-	GetNamespacesSortKeyRunningPods      GetNamespacesSortKey = "runningPods"
-	GetNamespacesSortKeyProtectionStatus GetNamespacesSortKey = "protectionStatus"
+	GetNamespacesQueryParamSortKeyNamespaceName    GetNamespacesQueryParamSortKey = "namespaceName"
+	GetNamespacesQueryParamSortKeyClusterName      GetNamespacesQueryParamSortKey = "clusterName"
+	GetNamespacesQueryParamSortKeyRunningPods      GetNamespacesQueryParamSortKey = "runningPods"
+	GetNamespacesQueryParamSortKeyProtectionStatus GetNamespacesQueryParamSortKey = "protectionStatus"
 )
 
-func (e GetNamespacesSortKey) ToPointer() *GetNamespacesSortKey {
+func (e GetNamespacesQueryParamSortKey) ToPointer() *GetNamespacesQueryParamSortKey {
 	return &e
 }
 
-func (e *GetNamespacesSortKey) UnmarshalJSON(data []byte) error {
+func (e *GetNamespacesQueryParamSortKey) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -102,10 +102,10 @@ func (e *GetNamespacesSortKey) UnmarshalJSON(data []byte) error {
 	case "runningPods":
 		fallthrough
 	case "protectionStatus":
-		*e = GetNamespacesSortKey(v)
+		*e = GetNamespacesQueryParamSortKey(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetNamespacesSortKey: %v", v)
+		return fmt.Errorf("invalid value for GetNamespacesQueryParamSortKey: %v", v)
 	}
 }
 
@@ -121,11 +121,11 @@ type GetNamespacesRequest struct {
 	// Return entries from this offset (pagination)
 	Offset *float64 `default:"0" queryParam:"style=form,explode=true,name=offset"`
 	// When true, the API will return only protected pods
-	ProtectionStatus *GetNamespacesProtectionStatus `default:"ALL" queryParam:"style=form,explode=true,name=protectionStatus"`
+	ProtectionStatus *ProtectionStatus `default:"ALL" queryParam:"style=form,explode=true,name=protectionStatus"`
 	// sorting direction
-	SortDir *GetNamespacesSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
+	SortDir *GetNamespacesQueryParamSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
 	// the namespaces sort key
-	SortKey *GetNamespacesSortKey `default:"namespaceName" queryParam:"style=form,explode=true,name=sortKey"`
+	SortKey *GetNamespacesQueryParamSortKey `default:"namespaceName" queryParam:"style=form,explode=true,name=sortKey"`
 }
 
 func (g GetNamespacesRequest) MarshalJSON() ([]byte, error) {
@@ -174,21 +174,21 @@ func (o *GetNamespacesRequest) GetOffset() *float64 {
 	return o.Offset
 }
 
-func (o *GetNamespacesRequest) GetProtectionStatus() *GetNamespacesProtectionStatus {
+func (o *GetNamespacesRequest) GetProtectionStatus() *ProtectionStatus {
 	if o == nil {
 		return nil
 	}
 	return o.ProtectionStatus
 }
 
-func (o *GetNamespacesRequest) GetSortDir() *GetNamespacesSortDir {
+func (o *GetNamespacesRequest) GetSortDir() *GetNamespacesQueryParamSortDir {
 	if o == nil {
 		return nil
 	}
 	return o.SortDir
 }
 
-func (o *GetNamespacesRequest) GetSortKey() *GetNamespacesSortKey {
+func (o *GetNamespacesRequest) GetSortKey() *GetNamespacesQueryParamSortKey {
 	if o == nil {
 		return nil
 	}
@@ -200,12 +200,12 @@ type GetNamespacesResponse struct {
 	APIResponse *shared.APIResponse
 	// HTTP response content type for this operation
 	ContentType string
-	// Success
-	Namespaces []shared.Namespace
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Success
+	Classes []shared.Namespace
 }
 
 func (o *GetNamespacesResponse) GetAPIResponse() *shared.APIResponse {
@@ -222,13 +222,6 @@ func (o *GetNamespacesResponse) GetContentType() string {
 	return o.ContentType
 }
 
-func (o *GetNamespacesResponse) GetNamespaces() []shared.Namespace {
-	if o == nil {
-		return nil
-	}
-	return o.Namespaces
-}
-
 func (o *GetNamespacesResponse) GetStatusCode() int {
 	if o == nil {
 		return 0
@@ -241,4 +234,11 @@ func (o *GetNamespacesResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetNamespacesResponse) GetClasses() []shared.Namespace {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

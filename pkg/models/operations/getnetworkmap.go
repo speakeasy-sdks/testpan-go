@@ -11,23 +11,23 @@ import (
 	"time"
 )
 
-// GetNetworkMapAPIRisk - minimum api risk level
-type GetNetworkMapAPIRisk string
+// APIRisk - minimum api risk level
+type APIRisk string
 
 const (
-	GetNetworkMapAPIRiskLow      GetNetworkMapAPIRisk = "LOW"
-	GetNetworkMapAPIRiskMedium   GetNetworkMapAPIRisk = "MEDIUM"
-	GetNetworkMapAPIRiskHigh     GetNetworkMapAPIRisk = "HIGH"
-	GetNetworkMapAPIRiskCritical GetNetworkMapAPIRisk = "CRITICAL"
-	GetNetworkMapAPIRiskNeutral  GetNetworkMapAPIRisk = "NEUTRAL"
-	GetNetworkMapAPIRiskUnknown  GetNetworkMapAPIRisk = "UNKNOWN"
+	APIRiskLow      APIRisk = "LOW"
+	APIRiskMedium   APIRisk = "MEDIUM"
+	APIRiskHigh     APIRisk = "HIGH"
+	APIRiskCritical APIRisk = "CRITICAL"
+	APIRiskNeutral  APIRisk = "NEUTRAL"
+	APIRiskUnknown  APIRisk = "UNKNOWN"
 )
 
-func (e GetNetworkMapAPIRisk) ToPointer() *GetNetworkMapAPIRisk {
+func (e APIRisk) ToPointer() *APIRisk {
 	return &e
 }
 
-func (e *GetNetworkMapAPIRisk) UnmarshalJSON(data []byte) error {
+func (e *APIRisk) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -44,16 +44,16 @@ func (e *GetNetworkMapAPIRisk) UnmarshalJSON(data []byte) error {
 	case "NEUTRAL":
 		fallthrough
 	case "UNKNOWN":
-		*e = GetNetworkMapAPIRisk(v)
+		*e = APIRisk(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetNetworkMapAPIRisk: %v", v)
+		return fmt.Errorf("invalid value for APIRisk: %v", v)
 	}
 }
 
 type GetNetworkMapRequest struct {
 	// minimum api risk level
-	APIRisk *GetNetworkMapAPIRisk `queryParam:"style=form,explode=true,name=apiRisk"`
+	APIRisk *APIRisk `queryParam:"style=form,explode=true,name=apiRisk"`
 	// Array of App names
 	Apps []string `queryParam:"style=form,explode=false,name=apps"`
 	// End date of the query
@@ -95,7 +95,7 @@ func (g *GetNetworkMapRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *GetNetworkMapRequest) GetAPIRisk() *GetNetworkMapAPIRisk {
+func (o *GetNetworkMapRequest) GetAPIRisk() *APIRisk {
 	if o == nil {
 		return nil
 	}

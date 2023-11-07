@@ -8,15 +8,15 @@ import (
 )
 
 type PutUsersUserIDRequest struct {
-	EditUserInput shared.EditUserInput `request:"mediaType=application/json"`
-	UserID        string               `pathParam:"style=simple,explode=false,name=userId"`
+	EditUser shared.EditUser `request:"mediaType=application/json"`
+	UserID   string          `pathParam:"style=simple,explode=false,name=userId"`
 }
 
-func (o *PutUsersUserIDRequest) GetEditUserInput() shared.EditUserInput {
+func (o *PutUsersUserIDRequest) GetEditUser() shared.EditUser {
 	if o == nil {
-		return shared.EditUserInput{}
+		return shared.EditUser{}
 	}
-	return o.EditUserInput
+	return o.EditUser
 }
 
 func (o *PutUsersUserIDRequest) GetUserID() string {

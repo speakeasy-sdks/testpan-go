@@ -13,7 +13,7 @@ import (
 
 // ServerList contains the list of servers available to the SDK
 var ServerList = []string{
-	"/api",
+	"https:///api",
 }
 
 // HTTPClient provides an interface for suplying the SDK with a custom HTTP client
@@ -65,74 +65,74 @@ func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
 //
 // https://panoptica.readme.io/reference - Product Documentation
 type Pan struct {
-	// APIs used to  define and manage api security policies
-	APISecurityPolicies *apiSecurityPolicies
-	// APIs used to query for CD pipelines results
-	Cd *cd
-	// APIs used to  define and manage CI/CD policies
-	CICDPolicies *ciCDPolicies
-	// APIs used to get policy recommendations
-	Advisor *advisor
-	// APIs use to  interact with  agents
-	AgentManagement *agentManagement
-	// APIs to get the Secure Application API specification file
-	API *api
-	// APIs used to manage Api Security
-	APISecurity *apiSecurity
-	// APIs used to define apps
-	Apps *apps
-	// APIs used to retrieve  audit logs
-	AuditLogs *auditLogs
-	// APIs used to change  credentials or return details about the  user's AWS environment
-	Aws  *aws
-	Bfla *bfla
-	// APIs to get the Secure Application CLI
-	Cli *cli
-	// APIs used to  define and manage cluster events policies
-	ClusterEventsPolicies *clusterEventsPolicies
-	// APIs used to  define and manage connection policies
-	ConnectionPolicies *connectionPolicies
-	// APIs to get dashboard statistics
-	Dashboard *dashboard
-	// APIs used to manage deployers on Secure Application
-	Deployers *deployers
-	// APIs used to  define and manage environment policies
-	EnvironmentPolicies *environmentPolicies
-	// APIs used to define environments
-	Envs *envs
-	// APIs used to manage expansions on Secure Application
-	Expansions *expansions
-	Gateways   *gateways
-	// APIs used to define and manage  image hashes
-	ImagesAndVulnerabilities *imagesAndVulnerabilities
-	// APIs to get the kubernetes cis benchmark data
-	K8sCisBenchmark *k8sCisBenchmark
-	// APIs used to manage Kubernetes clusters on Secure Application
-	Kubernetes  *kubernetes
-	Mitre       *mitre
-	Performance *performance
-	// APIs used to manage pod security standards profiles on Secure Application
-	PspProfiles *pspProfiles
-	// APIs used to  define and manage registries
-	Registries *registries
-	// APIs used to manage risk assessment on Kubernetes clusters
-	RiskAssessment *riskAssessment
-	// APIs used to  query for network map
-	RuntimeMap         *runtimeMap
-	Serverless         *serverless
-	ServerlessPolicies *serverlessPolicies
-	// APIs used  to configure system settings
-	Settings *settings
-	// APIs used to query for telemetries
-	Telemetries *telemetries
-	Tokens      *tokens
-	// APIs to delete workloads
-	Truncation *truncation
-	// APIs used to  define and manage trusted signers
-	TrustedSigners *trustedSigners
 	// APIs used for login and password management
-	Users           *users
-	Vulnerabilities *vulnerabilities
+	Users *Users
+	// APIs used to define and manage  image hashes
+	ImagesAndVulnerabilities *ImagesAndVulnerabilities
+	// APIs used to get policy recommendations
+	Advisor *Advisor
+	// APIs use to  interact with  agents
+	AgentManagement *AgentManagement
+	// APIs to get the Secure Application API specification file
+	API *API
+	// APIs used to manage Api Security
+	APISecurity *APISecurity
+	Performance *Performance
+	Bfla        *Bfla
+	// APIs used to  define and manage api security policies
+	APISecurityPolicies *APISecurityPolicies
+	// APIs used to query for telemetries
+	Telemetries *Telemetries
+	// APIs used to define apps
+	Apps *Apps
+	// APIs used to  define and manage environment policies
+	EnvironmentPolicies *EnvironmentPolicies
+	// APIs used to retrieve  audit logs
+	AuditLogs *AuditLogs
+	// APIs used to change  credentials or return details about the  user's AWS environment
+	Aws *Aws
+	// APIs used to query for CD pipelines results
+	Cd *Cd
+	// APIs used to  define and manage CI/CD policies
+	CICDPolicies *CICDPolicies
+	Serverless   *Serverless
+	// APIs used to  define and manage connection policies
+	ConnectionPolicies *ConnectionPolicies
+	// APIs to get dashboard statistics
+	Dashboard *Dashboard
+	// APIs used to manage deployers on Secure Application
+	Deployers *Deployers
+	// APIs used to define environments
+	Envs *Envs
+	// APIs used to manage expansions on Secure Application
+	Expansions *Expansions
+	Gateways   *Gateways
+	// APIs used to manage Kubernetes clusters on Secure Application
+	Kubernetes *Kubernetes
+	// APIs to get the kubernetes cis benchmark data
+	K8sCisBenchmark *K8sCisBenchmark
+	// APIs used to  define and manage cluster events policies
+	ClusterEventsPolicies *ClusterEventsPolicies
+	Mitre                 *Mitre
+	// APIs used to  query for network map
+	RuntimeMap *RuntimeMap
+	// APIs used to manage pod security standards profiles on Secure Application
+	PspProfiles *PspProfiles
+	// APIs used to  define and manage registries
+	Registries *Registries
+	// APIs used to manage risk assessment on Kubernetes clusters
+	RiskAssessment *RiskAssessment
+	// APIs used  to configure system settings
+	Settings           *Settings
+	ServerlessPolicies *ServerlessPolicies
+	Tokens             *Tokens
+	// APIs to get the Secure Application CLI
+	Cli *Cli
+	// APIs to delete workloads
+	Truncation *Truncation
+	// APIs used to  define and manage trusted signers
+	TrustedSigners  *TrustedSigners
+	Vulnerabilities *Vulnerabilities
 
 	sdkConfiguration sdkConfiguration
 }
@@ -210,9 +210,9 @@ func New(opts ...SDKOption) *Pan {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "1.0.0",
-			SDKVersion:        "0.4.0",
-			GenVersion:        "2.169.0",
-			UserAgent:         "speakeasy-sdk/go 0.4.0 2.169.0 1.0.0 github.com/speakeasy-sdks/testpan-go",
+			SDKVersion:        "0.5.0",
+			GenVersion:        "2.181.1",
+			UserAgent:         "speakeasy-sdk/go 0.5.0 2.181.1 1.0.0 github.com/speakeasy-sdks/testpan-go",
 		},
 	}
 	for _, opt := range opts {
@@ -231,11 +231,9 @@ func New(opts ...SDKOption) *Pan {
 		}
 	}
 
-	sdk.APISecurityPolicies = newAPISecurityPolicies(sdk.sdkConfiguration)
+	sdk.Users = newUsers(sdk.sdkConfiguration)
 
-	sdk.Cd = newCd(sdk.sdkConfiguration)
-
-	sdk.CICDPolicies = newCICDPolicies(sdk.sdkConfiguration)
+	sdk.ImagesAndVulnerabilities = newImagesAndVulnerabilities(sdk.sdkConfiguration)
 
 	sdk.Advisor = newAdvisor(sdk.sdkConfiguration)
 
@@ -245,17 +243,27 @@ func New(opts ...SDKOption) *Pan {
 
 	sdk.APISecurity = newAPISecurity(sdk.sdkConfiguration)
 
+	sdk.Performance = newPerformance(sdk.sdkConfiguration)
+
+	sdk.Bfla = newBfla(sdk.sdkConfiguration)
+
+	sdk.APISecurityPolicies = newAPISecurityPolicies(sdk.sdkConfiguration)
+
+	sdk.Telemetries = newTelemetries(sdk.sdkConfiguration)
+
 	sdk.Apps = newApps(sdk.sdkConfiguration)
+
+	sdk.EnvironmentPolicies = newEnvironmentPolicies(sdk.sdkConfiguration)
 
 	sdk.AuditLogs = newAuditLogs(sdk.sdkConfiguration)
 
 	sdk.Aws = newAws(sdk.sdkConfiguration)
 
-	sdk.Bfla = newBfla(sdk.sdkConfiguration)
+	sdk.Cd = newCd(sdk.sdkConfiguration)
 
-	sdk.Cli = newCli(sdk.sdkConfiguration)
+	sdk.CICDPolicies = newCICDPolicies(sdk.sdkConfiguration)
 
-	sdk.ClusterEventsPolicies = newClusterEventsPolicies(sdk.sdkConfiguration)
+	sdk.Serverless = newServerless(sdk.sdkConfiguration)
 
 	sdk.ConnectionPolicies = newConnectionPolicies(sdk.sdkConfiguration)
 
@@ -263,23 +271,21 @@ func New(opts ...SDKOption) *Pan {
 
 	sdk.Deployers = newDeployers(sdk.sdkConfiguration)
 
-	sdk.EnvironmentPolicies = newEnvironmentPolicies(sdk.sdkConfiguration)
-
 	sdk.Envs = newEnvs(sdk.sdkConfiguration)
 
 	sdk.Expansions = newExpansions(sdk.sdkConfiguration)
 
 	sdk.Gateways = newGateways(sdk.sdkConfiguration)
 
-	sdk.ImagesAndVulnerabilities = newImagesAndVulnerabilities(sdk.sdkConfiguration)
+	sdk.Kubernetes = newKubernetes(sdk.sdkConfiguration)
 
 	sdk.K8sCisBenchmark = newK8sCisBenchmark(sdk.sdkConfiguration)
 
-	sdk.Kubernetes = newKubernetes(sdk.sdkConfiguration)
+	sdk.ClusterEventsPolicies = newClusterEventsPolicies(sdk.sdkConfiguration)
 
 	sdk.Mitre = newMitre(sdk.sdkConfiguration)
 
-	sdk.Performance = newPerformance(sdk.sdkConfiguration)
+	sdk.RuntimeMap = newRuntimeMap(sdk.sdkConfiguration)
 
 	sdk.PspProfiles = newPspProfiles(sdk.sdkConfiguration)
 
@@ -287,23 +293,17 @@ func New(opts ...SDKOption) *Pan {
 
 	sdk.RiskAssessment = newRiskAssessment(sdk.sdkConfiguration)
 
-	sdk.RuntimeMap = newRuntimeMap(sdk.sdkConfiguration)
-
-	sdk.Serverless = newServerless(sdk.sdkConfiguration)
+	sdk.Settings = newSettings(sdk.sdkConfiguration)
 
 	sdk.ServerlessPolicies = newServerlessPolicies(sdk.sdkConfiguration)
 
-	sdk.Settings = newSettings(sdk.sdkConfiguration)
-
-	sdk.Telemetries = newTelemetries(sdk.sdkConfiguration)
-
 	sdk.Tokens = newTokens(sdk.sdkConfiguration)
+
+	sdk.Cli = newCli(sdk.sdkConfiguration)
 
 	sdk.Truncation = newTruncation(sdk.sdkConfiguration)
 
 	sdk.TrustedSigners = newTrustedSigners(sdk.sdkConfiguration)
-
-	sdk.Users = newUsers(sdk.sdkConfiguration)
 
 	sdk.Vulnerabilities = newVulnerabilities(sdk.sdkConfiguration)
 

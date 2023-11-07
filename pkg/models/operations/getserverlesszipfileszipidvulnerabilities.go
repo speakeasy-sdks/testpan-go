@@ -10,19 +10,19 @@ import (
 	"net/http"
 )
 
-// GetServerlessZipFilesZipIDVulnerabilitiesSortDir - sorting direction
-type GetServerlessZipFilesZipIDVulnerabilitiesSortDir string
+// GetServerlessZipFilesZipIDVulnerabilitiesQueryParamSortDir - sorting direction
+type GetServerlessZipFilesZipIDVulnerabilitiesQueryParamSortDir string
 
 const (
-	GetServerlessZipFilesZipIDVulnerabilitiesSortDirAsc  GetServerlessZipFilesZipIDVulnerabilitiesSortDir = "ASC"
-	GetServerlessZipFilesZipIDVulnerabilitiesSortDirDesc GetServerlessZipFilesZipIDVulnerabilitiesSortDir = "DESC"
+	GetServerlessZipFilesZipIDVulnerabilitiesQueryParamSortDirAsc  GetServerlessZipFilesZipIDVulnerabilitiesQueryParamSortDir = "ASC"
+	GetServerlessZipFilesZipIDVulnerabilitiesQueryParamSortDirDesc GetServerlessZipFilesZipIDVulnerabilitiesQueryParamSortDir = "DESC"
 )
 
-func (e GetServerlessZipFilesZipIDVulnerabilitiesSortDir) ToPointer() *GetServerlessZipFilesZipIDVulnerabilitiesSortDir {
+func (e GetServerlessZipFilesZipIDVulnerabilitiesQueryParamSortDir) ToPointer() *GetServerlessZipFilesZipIDVulnerabilitiesQueryParamSortDir {
 	return &e
 }
 
-func (e *GetServerlessZipFilesZipIDVulnerabilitiesSortDir) UnmarshalJSON(data []byte) error {
+func (e *GetServerlessZipFilesZipIDVulnerabilitiesQueryParamSortDir) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -31,10 +31,10 @@ func (e *GetServerlessZipFilesZipIDVulnerabilitiesSortDir) UnmarshalJSON(data []
 	case "ASC":
 		fallthrough
 	case "DESC":
-		*e = GetServerlessZipFilesZipIDVulnerabilitiesSortDir(v)
+		*e = GetServerlessZipFilesZipIDVulnerabilitiesQueryParamSortDir(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetServerlessZipFilesZipIDVulnerabilitiesSortDir: %v", v)
+		return fmt.Errorf("invalid value for GetServerlessZipFilesZipIDVulnerabilitiesQueryParamSortDir: %v", v)
 	}
 }
 
@@ -44,8 +44,8 @@ type GetServerlessZipFilesZipIDVulnerabilitiesRequest struct {
 	// Return entries from this offset (pagination)
 	Offset *float64 `default:"0" queryParam:"style=form,explode=true,name=offset"`
 	// sorting direction
-	SortDir *GetServerlessZipFilesZipIDVulnerabilitiesSortDir `default:"DESC" queryParam:"style=form,explode=true,name=sortDir"`
-	ZipID   string                                            `pathParam:"style=simple,explode=false,name=zipId"`
+	SortDir *GetServerlessZipFilesZipIDVulnerabilitiesQueryParamSortDir `default:"DESC" queryParam:"style=form,explode=true,name=sortDir"`
+	ZipID   string                                                      `pathParam:"style=simple,explode=false,name=zipId"`
 }
 
 func (g GetServerlessZipFilesZipIDVulnerabilitiesRequest) MarshalJSON() ([]byte, error) {
@@ -73,7 +73,7 @@ func (o *GetServerlessZipFilesZipIDVulnerabilitiesRequest) GetOffset() *float64 
 	return o.Offset
 }
 
-func (o *GetServerlessZipFilesZipIDVulnerabilitiesRequest) GetSortDir() *GetServerlessZipFilesZipIDVulnerabilitiesSortDir {
+func (o *GetServerlessZipFilesZipIDVulnerabilitiesRequest) GetSortDir() *GetServerlessZipFilesZipIDVulnerabilitiesQueryParamSortDir {
 	if o == nil {
 		return nil
 	}
@@ -95,7 +95,7 @@ type GetServerlessZipFilesZipIDVulnerabilitiesResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// OK
-	Vulnerabilities []shared.Vulnerability
+	Classes []shared.Vulnerability
 }
 
 func (o *GetServerlessZipFilesZipIDVulnerabilitiesResponse) GetContentType() string {
@@ -119,9 +119,9 @@ func (o *GetServerlessZipFilesZipIDVulnerabilitiesResponse) GetRawResponse() *ht
 	return o.RawResponse
 }
 
-func (o *GetServerlessZipFilesZipIDVulnerabilitiesResponse) GetVulnerabilities() []shared.Vulnerability {
+func (o *GetServerlessZipFilesZipIDVulnerabilitiesResponse) GetClasses() []shared.Vulnerability {
 	if o == nil {
 		return nil
 	}
-	return o.Vulnerabilities
+	return o.Classes
 }

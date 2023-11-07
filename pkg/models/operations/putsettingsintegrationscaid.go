@@ -8,15 +8,15 @@ import (
 )
 
 type PutSettingsIntegrationsCaIDRequest struct {
-	CaIntegrationRequestInput shared.CaIntegrationRequestInput `request:"mediaType=application/json"`
-	ID                        string                           `pathParam:"style=simple,explode=false,name=id"`
+	CaIntegrationRequest shared.CaIntegrationRequest `request:"mediaType=application/json"`
+	ID                   string                      `pathParam:"style=simple,explode=false,name=id"`
 }
 
-func (o *PutSettingsIntegrationsCaIDRequest) GetCaIntegrationRequestInput() shared.CaIntegrationRequestInput {
+func (o *PutSettingsIntegrationsCaIDRequest) GetCaIntegrationRequest() shared.CaIntegrationRequest {
 	if o == nil {
-		return shared.CaIntegrationRequestInput{}
+		return shared.CaIntegrationRequest{}
 	}
-	return o.CaIntegrationRequestInput
+	return o.CaIntegrationRequest
 }
 
 func (o *PutSettingsIntegrationsCaIDRequest) GetID() string {

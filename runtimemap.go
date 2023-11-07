@@ -15,19 +15,19 @@ import (
 	"strings"
 )
 
-// runtimeMap - APIs used to  query for network map
-type runtimeMap struct {
+// RuntimeMap - APIs used to  query for network map
+type RuntimeMap struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newRuntimeMap(sdkConfig sdkConfiguration) *runtimeMap {
-	return &runtimeMap{
+func newRuntimeMap(sdkConfig sdkConfiguration) *RuntimeMap {
+	return &RuntimeMap{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // DeleteNetworkMapQueueRequestID - Cancel the network map background job
-func (s *runtimeMap) DeleteNetworkMapQueueRequestID(ctx context.Context, request operations.DeleteNetworkMapQueueRequestIDRequest) (*operations.DeleteNetworkMapQueueRequestIDResponse, error) {
+func (s *RuntimeMap) DeleteNetworkMapQueueRequestID(ctx context.Context, request operations.DeleteNetworkMapQueueRequestIDRequest) (*operations.DeleteNetworkMapQueueRequestIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/networkMap/queue/{requestId}", request, nil)
 	if err != nil {
@@ -79,7 +79,7 @@ func (s *runtimeMap) DeleteNetworkMapQueueRequestID(ctx context.Context, request
 }
 
 // GetNetworkMap - Get data for network map
-func (s *runtimeMap) GetNetworkMap(ctx context.Context, request operations.GetNetworkMapRequest) (*operations.GetNetworkMapResponse, error) {
+func (s *RuntimeMap) GetNetworkMap(ctx context.Context, request operations.GetNetworkMapRequest) (*operations.GetNetworkMapResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/networkMap"
 
@@ -153,7 +153,7 @@ func (s *runtimeMap) GetNetworkMap(ctx context.Context, request operations.GetNe
 }
 
 // GetNetworkMapQueueRequestID - Get status for network map background job
-func (s *runtimeMap) GetNetworkMapQueueRequestID(ctx context.Context, request operations.GetNetworkMapQueueRequestIDRequest) (*operations.GetNetworkMapQueueRequestIDResponse, error) {
+func (s *RuntimeMap) GetNetworkMapQueueRequestID(ctx context.Context, request operations.GetNetworkMapQueueRequestIDRequest) (*operations.GetNetworkMapQueueRequestIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/networkMap/queue/{requestId}", request, nil)
 	if err != nil {
@@ -214,7 +214,7 @@ func (s *runtimeMap) GetNetworkMapQueueRequestID(ctx context.Context, request op
 }
 
 // GetNetworkMapResultsRequestID - Get result for network map background job
-func (s *runtimeMap) GetNetworkMapResultsRequestID(ctx context.Context, request operations.GetNetworkMapResultsRequestIDRequest) (*operations.GetNetworkMapResultsRequestIDResponse, error) {
+func (s *RuntimeMap) GetNetworkMapResultsRequestID(ctx context.Context, request operations.GetNetworkMapResultsRequestIDRequest) (*operations.GetNetworkMapResultsRequestIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/networkMap/results/{requestId}", request, nil)
 	if err != nil {
@@ -261,7 +261,7 @@ func (s *runtimeMap) GetNetworkMapResultsRequestID(ctx context.Context, request 
 				return nil, err
 			}
 
-			res.NetworkMaps = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}

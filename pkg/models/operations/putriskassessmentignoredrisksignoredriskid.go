@@ -8,15 +8,15 @@ import (
 )
 
 type PutRiskAssessmentIgnoredRisksIgnoredRiskIDRequest struct {
-	CiPolicyInput shared.CiPolicyInput `request:"mediaType=application/json"`
+	CiPolicy      shared.CiPolicyInput `request:"mediaType=application/json"`
 	IgnoredRiskID string               `pathParam:"style=simple,explode=false,name=ignoredRiskId"`
 }
 
-func (o *PutRiskAssessmentIgnoredRisksIgnoredRiskIDRequest) GetCiPolicyInput() shared.CiPolicyInput {
+func (o *PutRiskAssessmentIgnoredRisksIgnoredRiskIDRequest) GetCiPolicy() shared.CiPolicyInput {
 	if o == nil {
 		return shared.CiPolicyInput{}
 	}
-	return o.CiPolicyInput
+	return o.CiPolicy
 }
 
 func (o *PutRiskAssessmentIgnoredRisksIgnoredRiskIDRequest) GetIgnoredRiskID() string {

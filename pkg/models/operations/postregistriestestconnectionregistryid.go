@@ -8,15 +8,15 @@ import (
 )
 
 type PostRegistriesTestConnectionRegistryIDRequest struct {
-	RegistryInput shared.RegistryInput `request:"mediaType=application/json"`
-	RegistryID    string               `pathParam:"style=simple,explode=false,name=registryId"`
+	Registry   shared.RegistryInput `request:"mediaType=application/json"`
+	RegistryID string               `pathParam:"style=simple,explode=false,name=registryId"`
 }
 
-func (o *PostRegistriesTestConnectionRegistryIDRequest) GetRegistryInput() shared.RegistryInput {
+func (o *PostRegistriesTestConnectionRegistryIDRequest) GetRegistry() shared.RegistryInput {
 	if o == nil {
 		return shared.RegistryInput{}
 	}
-	return o.RegistryInput
+	return o.Registry
 }
 
 func (o *PostRegistriesTestConnectionRegistryIDRequest) GetRegistryID() string {

@@ -10,19 +10,19 @@ import (
 	"net/http"
 )
 
-// GetExpansionsSortDir - sorting direction
-type GetExpansionsSortDir string
+// GetExpansionsQueryParamSortDir - sorting direction
+type GetExpansionsQueryParamSortDir string
 
 const (
-	GetExpansionsSortDirAsc  GetExpansionsSortDir = "ASC"
-	GetExpansionsSortDirDesc GetExpansionsSortDir = "DESC"
+	GetExpansionsQueryParamSortDirAsc  GetExpansionsQueryParamSortDir = "ASC"
+	GetExpansionsQueryParamSortDirDesc GetExpansionsQueryParamSortDir = "DESC"
 )
 
-func (e GetExpansionsSortDir) ToPointer() *GetExpansionsSortDir {
+func (e GetExpansionsQueryParamSortDir) ToPointer() *GetExpansionsQueryParamSortDir {
 	return &e
 }
 
-func (e *GetExpansionsSortDir) UnmarshalJSON(data []byte) error {
+func (e *GetExpansionsQueryParamSortDir) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -31,35 +31,35 @@ func (e *GetExpansionsSortDir) UnmarshalJSON(data []byte) error {
 	case "ASC":
 		fallthrough
 	case "DESC":
-		*e = GetExpansionsSortDir(v)
+		*e = GetExpansionsQueryParamSortDir(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetExpansionsSortDir: %v", v)
+		return fmt.Errorf("invalid value for GetExpansionsQueryParamSortDir: %v", v)
 	}
 }
 
-// GetExpansionsSortKey - sort key
-type GetExpansionsSortKey string
+// GetExpansionsQueryParamSortKey - sort key
+type GetExpansionsQueryParamSortKey string
 
 const (
-	GetExpansionsSortKeyName GetExpansionsSortKey = "name"
+	GetExpansionsQueryParamSortKeyName GetExpansionsQueryParamSortKey = "name"
 )
 
-func (e GetExpansionsSortKey) ToPointer() *GetExpansionsSortKey {
+func (e GetExpansionsQueryParamSortKey) ToPointer() *GetExpansionsQueryParamSortKey {
 	return &e
 }
 
-func (e *GetExpansionsSortKey) UnmarshalJSON(data []byte) error {
+func (e *GetExpansionsQueryParamSortKey) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
 	}
 	switch v {
 	case "name":
-		*e = GetExpansionsSortKey(v)
+		*e = GetExpansionsQueryParamSortKey(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetExpansionsSortKey: %v", v)
+		return fmt.Errorf("invalid value for GetExpansionsQueryParamSortKey: %v", v)
 	}
 }
 
@@ -83,9 +83,9 @@ type GetExpansionsRequest struct {
 	// Return entries from this offset (pagination)
 	Offset *float64 `default:"0" queryParam:"style=form,explode=true,name=offset"`
 	// sorting direction
-	SortDir *GetExpansionsSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
+	SortDir *GetExpansionsQueryParamSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
 	// sort key
-	SortKey GetExpansionsSortKey `queryParam:"style=form,explode=true,name=sortKey"`
+	SortKey GetExpansionsQueryParamSortKey `queryParam:"style=form,explode=true,name=sortKey"`
 }
 
 func (g GetExpansionsRequest) MarshalJSON() ([]byte, error) {
@@ -162,16 +162,16 @@ func (o *GetExpansionsRequest) GetOffset() *float64 {
 	return o.Offset
 }
 
-func (o *GetExpansionsRequest) GetSortDir() *GetExpansionsSortDir {
+func (o *GetExpansionsRequest) GetSortDir() *GetExpansionsQueryParamSortDir {
 	if o == nil {
 		return nil
 	}
 	return o.SortDir
 }
 
-func (o *GetExpansionsRequest) GetSortKey() GetExpansionsSortKey {
+func (o *GetExpansionsRequest) GetSortKey() GetExpansionsQueryParamSortKey {
 	if o == nil {
-		return GetExpansionsSortKey("")
+		return GetExpansionsQueryParamSortKey("")
 	}
 	return o.SortKey
 }
@@ -179,12 +179,12 @@ func (o *GetExpansionsRequest) GetSortKey() GetExpansionsSortKey {
 type GetExpansionsResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// Success
-	Expansions []shared.Expansion
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Success
+	Classes []shared.Expansion
 }
 
 func (o *GetExpansionsResponse) GetContentType() string {
@@ -192,13 +192,6 @@ func (o *GetExpansionsResponse) GetContentType() string {
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *GetExpansionsResponse) GetExpansions() []shared.Expansion {
-	if o == nil {
-		return nil
-	}
-	return o.Expansions
 }
 
 func (o *GetExpansionsResponse) GetStatusCode() int {
@@ -213,4 +206,11 @@ func (o *GetExpansionsResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetExpansionsResponse) GetClasses() []shared.Expansion {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

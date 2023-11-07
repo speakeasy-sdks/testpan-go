@@ -1,5 +1,5 @@
 # APISecurityPolicies
-(*APISecurityPolicies*)
+(*.APISecurityPolicies*)
 
 ## Overview
 
@@ -95,7 +95,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.APISecurityPolicies != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -254,7 +254,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurityPolicies.PutAPISecurityPolicyPolicyID(ctx, operations.PutAPISecurityPolicyPolicyIDRequest{
-        APISecurityPolicyInput: shared.APISecurityPolicyInput{
+        APISecurityPolicy: shared.APISecurityPolicyInput{
             CategoryConditions: &shared.APISecurityPolicyCategoryConditions{
                 Conditions: []shared.APISecurityPolicyCategoryCondition{
                     shared.APISecurityPolicyCategoryCondition{

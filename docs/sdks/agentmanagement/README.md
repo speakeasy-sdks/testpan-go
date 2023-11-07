@@ -1,5 +1,5 @@
 # AgentManagement
-(*AgentManagement*)
+(*.AgentManagement*)
 
 ## Overview
 
@@ -44,11 +44,11 @@ func main() {
         HostName: []string{
             "string",
         },
-        Risk: []operations.GetAgentsRisk{
-            operations.GetAgentsRiskMedium,
+        Risk: []operations.Risk{
+            operations.RiskMedium,
         },
-        Status: []operations.GetAgentsStatus{
-            operations.GetAgentsStatusActive,
+        Status: []operations.Status{
+            operations.StatusActive,
         },
     })
     if err != nil {

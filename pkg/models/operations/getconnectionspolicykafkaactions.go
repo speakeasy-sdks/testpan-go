@@ -14,7 +14,7 @@ type GetConnectionsPolicyKafkaActionsResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Success
-	GetConnectionsPolicyKafkaActions200ApplicationJSONStrings []string
+	Strings []string
 }
 
 func (o *GetConnectionsPolicyKafkaActionsResponse) GetContentType() string {
@@ -38,9 +38,9 @@ func (o *GetConnectionsPolicyKafkaActionsResponse) GetRawResponse() *http.Respon
 	return o.RawResponse
 }
 
-func (o *GetConnectionsPolicyKafkaActionsResponse) GetGetConnectionsPolicyKafkaActions200ApplicationJSONStrings() []string {
+func (o *GetConnectionsPolicyKafkaActionsResponse) GetStrings() []string {
 	if o == nil {
 		return nil
 	}
-	return o.GetConnectionsPolicyKafkaActions200ApplicationJSONStrings
+	return o.Strings
 }

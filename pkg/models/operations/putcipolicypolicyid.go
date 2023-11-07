@@ -8,15 +8,15 @@ import (
 )
 
 type PutCiPolicyPolicyIDRequest struct {
-	CiPolicyInput shared.CiPolicyInput `request:"mediaType=application/json"`
-	PolicyID      string               `pathParam:"style=simple,explode=false,name=policyId"`
+	CiPolicy shared.CiPolicyInput `request:"mediaType=application/json"`
+	PolicyID string               `pathParam:"style=simple,explode=false,name=policyId"`
 }
 
-func (o *PutCiPolicyPolicyIDRequest) GetCiPolicyInput() shared.CiPolicyInput {
+func (o *PutCiPolicyPolicyIDRequest) GetCiPolicy() shared.CiPolicyInput {
 	if o == nil {
 		return shared.CiPolicyInput{}
 	}
-	return o.CiPolicyInput
+	return o.CiPolicy
 }
 
 func (o *PutCiPolicyPolicyIDRequest) GetPolicyID() string {

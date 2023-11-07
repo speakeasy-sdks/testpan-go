@@ -1,5 +1,5 @@
 # Envs
-(*Envs*)
+(*.Envs*)
 
 ## Overview
 
@@ -97,7 +97,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.Environments != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -149,7 +149,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.Environments != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -365,7 +365,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.Environments != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -461,7 +461,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Envs.PutEnvironmentsEnvID(ctx, operations.PutEnvironmentsEnvIDRequest{
-        EnvironmentInput: shared.EnvironmentInput{
+        Environment: shared.EnvironmentInput{
             AwsEnvironments: []shared.AwsEnvironmentInput{
                 shared.AwsEnvironmentInput{
                     Tags: []shared.Tag{

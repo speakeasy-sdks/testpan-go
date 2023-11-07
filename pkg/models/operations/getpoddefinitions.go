@@ -67,12 +67,12 @@ func (o *GetPodDefinitionsRequest) GetTemplateSource() []string {
 type GetPodDefinitionsResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// Success
-	PodDefinitions []shared.PodDefinition
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Success
+	Classes []shared.PodDefinition
 }
 
 func (o *GetPodDefinitionsResponse) GetContentType() string {
@@ -80,13 +80,6 @@ func (o *GetPodDefinitionsResponse) GetContentType() string {
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *GetPodDefinitionsResponse) GetPodDefinitions() []shared.PodDefinition {
-	if o == nil {
-		return nil
-	}
-	return o.PodDefinitions
 }
 
 func (o *GetPodDefinitionsResponse) GetStatusCode() int {
@@ -101,4 +94,11 @@ func (o *GetPodDefinitionsResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetPodDefinitionsResponse) GetClasses() []shared.PodDefinition {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

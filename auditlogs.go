@@ -15,19 +15,19 @@ import (
 	"strings"
 )
 
-// auditLogs - APIs used to retrieve  audit logs
-type auditLogs struct {
+// AuditLogs - APIs used to retrieve  audit logs
+type AuditLogs struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newAuditLogs(sdkConfig sdkConfiguration) *auditLogs {
-	return &auditLogs{
+func newAuditLogs(sdkConfig sdkConfiguration) *AuditLogs {
+	return &AuditLogs{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // GetAuditLogs - Get audit logs
-func (s *auditLogs) GetAuditLogs(ctx context.Context, request operations.GetAuditLogsRequest) (*operations.GetAuditLogsResponse, error) {
+func (s *AuditLogs) GetAuditLogs(ctx context.Context, request operations.GetAuditLogsRequest) (*operations.GetAuditLogsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/auditLogs"
 
@@ -75,7 +75,7 @@ func (s *auditLogs) GetAuditLogs(ctx context.Context, request operations.GetAudi
 				return nil, err
 			}
 
-			res.AuditLogs = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -91,7 +91,7 @@ func (s *auditLogs) GetAuditLogs(ctx context.Context, request operations.GetAudi
 }
 
 // GetAuditLogsActions - Get all the audit logs actions
-func (s *auditLogs) GetAuditLogsActions(ctx context.Context) (*operations.GetAuditLogsActionsResponse, error) {
+func (s *AuditLogs) GetAuditLogsActions(ctx context.Context) (*operations.GetAuditLogsActionsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/auditLogs/actions"
 
@@ -135,7 +135,7 @@ func (s *auditLogs) GetAuditLogsActions(ctx context.Context) (*operations.GetAud
 				return nil, err
 			}
 
-			res.GetAuditLogsActions200ApplicationJSONStrings = out
+			res.Strings = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -151,7 +151,7 @@ func (s *auditLogs) GetAuditLogsActions(ctx context.Context) (*operations.GetAud
 }
 
 // GetAuditLogsKubernetes - Get audit logs
-func (s *auditLogs) GetAuditLogsKubernetes(ctx context.Context, request operations.GetAuditLogsKubernetesRequest) (*operations.GetAuditLogsKubernetesResponse, error) {
+func (s *AuditLogs) GetAuditLogsKubernetes(ctx context.Context, request operations.GetAuditLogsKubernetesRequest) (*operations.GetAuditLogsKubernetesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/auditLogs/kubernetes"
 
@@ -199,7 +199,7 @@ func (s *auditLogs) GetAuditLogsKubernetes(ctx context.Context, request operatio
 				return nil, err
 			}
 
-			res.KubernetesAuditLogs = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -215,7 +215,7 @@ func (s *auditLogs) GetAuditLogsKubernetes(ctx context.Context, request operatio
 }
 
 // GetAuditLogsKubernetesActions - Get all the kubernetes audit logs actions
-func (s *auditLogs) GetAuditLogsKubernetesActions(ctx context.Context) (*operations.GetAuditLogsKubernetesActionsResponse, error) {
+func (s *AuditLogs) GetAuditLogsKubernetesActions(ctx context.Context) (*operations.GetAuditLogsKubernetesActionsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/auditLogs/kubernetes/actions"
 
@@ -259,7 +259,7 @@ func (s *auditLogs) GetAuditLogsKubernetesActions(ctx context.Context) (*operati
 				return nil, err
 			}
 
-			res.GetAuditLogsKubernetesActions200ApplicationJSONStrings = out
+			res.Strings = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}

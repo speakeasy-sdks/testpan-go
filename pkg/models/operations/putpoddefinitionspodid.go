@@ -8,15 +8,15 @@ import (
 )
 
 type PutPodDefinitionsPodIDRequest struct {
-	PodDefinitionInput shared.PodDefinitionInput `request:"mediaType=application/json"`
-	PodID              string                    `pathParam:"style=simple,explode=false,name=podId"`
+	PodDefinition shared.PodDefinitionInput `request:"mediaType=application/json"`
+	PodID         string                    `pathParam:"style=simple,explode=false,name=podId"`
 }
 
-func (o *PutPodDefinitionsPodIDRequest) GetPodDefinitionInput() shared.PodDefinitionInput {
+func (o *PutPodDefinitionsPodIDRequest) GetPodDefinition() shared.PodDefinitionInput {
 	if o == nil {
 		return shared.PodDefinitionInput{}
 	}
-	return o.PodDefinitionInput
+	return o.PodDefinition
 }
 
 func (o *PutPodDefinitionsPodIDRequest) GetPodID() string {

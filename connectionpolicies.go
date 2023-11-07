@@ -15,19 +15,19 @@ import (
 	"strings"
 )
 
-// connectionPolicies - APIs used to  define and manage connection policies
-type connectionPolicies struct {
+// ConnectionPolicies - APIs used to  define and manage connection policies
+type ConnectionPolicies struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newConnectionPolicies(sdkConfig sdkConfiguration) *connectionPolicies {
-	return &connectionPolicies{
+func newConnectionPolicies(sdkConfig sdkConfiguration) *ConnectionPolicies {
+	return &ConnectionPolicies{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // GetConnectionsPolicy - Get current connection policy
-func (s *connectionPolicies) GetConnectionsPolicy(ctx context.Context, request operations.GetConnectionsPolicyRequest) (*operations.GetConnectionsPolicyResponse, error) {
+func (s *ConnectionPolicies) GetConnectionsPolicy(ctx context.Context, request operations.GetConnectionsPolicyRequest) (*operations.GetConnectionsPolicyResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/connectionsPolicy"
 
@@ -91,7 +91,7 @@ func (s *connectionPolicies) GetConnectionsPolicy(ctx context.Context, request o
 }
 
 // GetConnectionsPolicyHistory - Get the history of the connection policies
-func (s *connectionPolicies) GetConnectionsPolicyHistory(ctx context.Context) (*operations.GetConnectionsPolicyHistoryResponse, error) {
+func (s *ConnectionPolicies) GetConnectionsPolicyHistory(ctx context.Context) (*operations.GetConnectionsPolicyHistoryResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/connectionsPolicy/history"
 
@@ -135,7 +135,7 @@ func (s *connectionPolicies) GetConnectionsPolicyHistory(ctx context.Context) (*
 				return nil, err
 			}
 
-			res.ConnectionPolicyHistories = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -151,7 +151,7 @@ func (s *connectionPolicies) GetConnectionsPolicyHistory(ctx context.Context) (*
 }
 
 // GetConnectionsPolicyKafkaActions - Get the a list of kafka actions
-func (s *connectionPolicies) GetConnectionsPolicyKafkaActions(ctx context.Context) (*operations.GetConnectionsPolicyKafkaActionsResponse, error) {
+func (s *ConnectionPolicies) GetConnectionsPolicyKafkaActions(ctx context.Context) (*operations.GetConnectionsPolicyKafkaActionsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/connectionsPolicy/kafka/actions"
 
@@ -195,7 +195,7 @@ func (s *connectionPolicies) GetConnectionsPolicyKafkaActions(ctx context.Contex
 				return nil, err
 			}
 
-			res.GetConnectionsPolicyKafkaActions200ApplicationJSONStrings = out
+			res.Strings = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -211,7 +211,7 @@ func (s *connectionPolicies) GetConnectionsPolicyKafkaActions(ctx context.Contex
 }
 
 // GetConnectionsPolicyKafkaKubernetesClusterIDBrokers - Get the a list of kafka brokers
-func (s *connectionPolicies) GetConnectionsPolicyKafkaKubernetesClusterIDBrokers(ctx context.Context, request operations.GetConnectionsPolicyKafkaKubernetesClusterIDBrokersRequest) (*operations.GetConnectionsPolicyKafkaKubernetesClusterIDBrokersResponse, error) {
+func (s *ConnectionPolicies) GetConnectionsPolicyKafkaKubernetesClusterIDBrokers(ctx context.Context, request operations.GetConnectionsPolicyKafkaKubernetesClusterIDBrokersRequest) (*operations.GetConnectionsPolicyKafkaKubernetesClusterIDBrokersResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/connectionsPolicy/kafka/{kubernetesClusterId}/brokers", request, nil)
 	if err != nil {
@@ -258,7 +258,7 @@ func (s *connectionPolicies) GetConnectionsPolicyKafkaKubernetesClusterIDBrokers
 				return nil, err
 			}
 
-			res.GetConnectionsPolicyKafkaKubernetesClusterIDBrokers200ApplicationJSONStrings = out
+			res.Strings = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -274,7 +274,7 @@ func (s *connectionPolicies) GetConnectionsPolicyKafkaKubernetesClusterIDBrokers
 }
 
 // GetConnectionsPolicyKafkaKubernetesClusterIDTopics - Get the a list of kafka topics
-func (s *connectionPolicies) GetConnectionsPolicyKafkaKubernetesClusterIDTopics(ctx context.Context, request operations.GetConnectionsPolicyKafkaKubernetesClusterIDTopicsRequest) (*operations.GetConnectionsPolicyKafkaKubernetesClusterIDTopicsResponse, error) {
+func (s *ConnectionPolicies) GetConnectionsPolicyKafkaKubernetesClusterIDTopics(ctx context.Context, request operations.GetConnectionsPolicyKafkaKubernetesClusterIDTopicsRequest) (*operations.GetConnectionsPolicyKafkaKubernetesClusterIDTopicsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/connectionsPolicy/kafka/{kubernetesClusterId}/topics", request, nil)
 	if err != nil {
@@ -321,7 +321,7 @@ func (s *connectionPolicies) GetConnectionsPolicyKafkaKubernetesClusterIDTopics(
 				return nil, err
 			}
 
-			res.GetConnectionsPolicyKafkaKubernetesClusterIDTopics200ApplicationJSONStrings = out
+			res.Strings = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -337,7 +337,7 @@ func (s *connectionPolicies) GetConnectionsPolicyKafkaKubernetesClusterIDTopics(
 }
 
 // GetConnectionsPolicySearchOptions - Get the current connection policy filter option
-func (s *connectionPolicies) GetConnectionsPolicySearchOptions(ctx context.Context, request operations.GetConnectionsPolicySearchOptionsRequest) (*operations.GetConnectionsPolicySearchOptionsResponse, error) {
+func (s *ConnectionPolicies) GetConnectionsPolicySearchOptions(ctx context.Context, request operations.GetConnectionsPolicySearchOptionsRequest) (*operations.GetConnectionsPolicySearchOptionsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/connectionsPolicy/searchOptions"
 
@@ -401,7 +401,7 @@ func (s *connectionPolicies) GetConnectionsPolicySearchOptions(ctx context.Conte
 }
 
 // GetServerlessPolicyHistory - Get the history of the serverless policies
-func (s *connectionPolicies) GetServerlessPolicyHistory(ctx context.Context) (*operations.GetServerlessPolicyHistoryResponse, error) {
+func (s *ConnectionPolicies) GetServerlessPolicyHistory(ctx context.Context) (*operations.GetServerlessPolicyHistoryResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/serverlessPolicy/history"
 
@@ -445,7 +445,7 @@ func (s *connectionPolicies) GetServerlessPolicyHistory(ctx context.Context) (*o
 				return nil, err
 			}
 
-			res.ConnectionPolicyHistories = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -461,7 +461,7 @@ func (s *connectionPolicies) GetServerlessPolicyHistory(ctx context.Context) (*o
 }
 
 // PutConnectionsPolicy - Set the current connection policy
-func (s *connectionPolicies) PutConnectionsPolicy(ctx context.Context, request shared.ConnectionsPolicy) (*operations.PutConnectionsPolicyResponse, error) {
+func (s *ConnectionPolicies) PutConnectionsPolicy(ctx context.Context, request shared.ConnectionsPolicy) (*operations.PutConnectionsPolicyResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/connectionsPolicy"
 

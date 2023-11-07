@@ -10,19 +10,19 @@ import (
 	"net/http"
 )
 
-// GetTrustedSignersSortDir - sorting direction
-type GetTrustedSignersSortDir string
+// GetTrustedSignersQueryParamSortDir - sorting direction
+type GetTrustedSignersQueryParamSortDir string
 
 const (
-	GetTrustedSignersSortDirAsc  GetTrustedSignersSortDir = "ASC"
-	GetTrustedSignersSortDirDesc GetTrustedSignersSortDir = "DESC"
+	GetTrustedSignersQueryParamSortDirAsc  GetTrustedSignersQueryParamSortDir = "ASC"
+	GetTrustedSignersQueryParamSortDirDesc GetTrustedSignersQueryParamSortDir = "DESC"
 )
 
-func (e GetTrustedSignersSortDir) ToPointer() *GetTrustedSignersSortDir {
+func (e GetTrustedSignersQueryParamSortDir) ToPointer() *GetTrustedSignersQueryParamSortDir {
 	return &e
 }
 
-func (e *GetTrustedSignersSortDir) UnmarshalJSON(data []byte) error {
+func (e *GetTrustedSignersQueryParamSortDir) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -31,43 +31,43 @@ func (e *GetTrustedSignersSortDir) UnmarshalJSON(data []byte) error {
 	case "ASC":
 		fallthrough
 	case "DESC":
-		*e = GetTrustedSignersSortDir(v)
+		*e = GetTrustedSignersQueryParamSortDir(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetTrustedSignersSortDir: %v", v)
+		return fmt.Errorf("invalid value for GetTrustedSignersQueryParamSortDir: %v", v)
 	}
 }
 
-// GetTrustedSignersSortKey - sort key
-type GetTrustedSignersSortKey string
+// GetTrustedSignersQueryParamSortKey - sort key
+type GetTrustedSignersQueryParamSortKey string
 
 const (
-	GetTrustedSignersSortKeyName GetTrustedSignersSortKey = "name"
+	GetTrustedSignersQueryParamSortKeyName GetTrustedSignersQueryParamSortKey = "name"
 )
 
-func (e GetTrustedSignersSortKey) ToPointer() *GetTrustedSignersSortKey {
+func (e GetTrustedSignersQueryParamSortKey) ToPointer() *GetTrustedSignersQueryParamSortKey {
 	return &e
 }
 
-func (e *GetTrustedSignersSortKey) UnmarshalJSON(data []byte) error {
+func (e *GetTrustedSignersQueryParamSortKey) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
 	}
 	switch v {
 	case "name":
-		*e = GetTrustedSignersSortKey(v)
+		*e = GetTrustedSignersQueryParamSortKey(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetTrustedSignersSortKey: %v", v)
+		return fmt.Errorf("invalid value for GetTrustedSignersQueryParamSortKey: %v", v)
 	}
 }
 
 type GetTrustedSignersRequest struct {
 	// sorting direction
-	SortDir *GetTrustedSignersSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
+	SortDir *GetTrustedSignersQueryParamSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
 	// sort key
-	SortKey *GetTrustedSignersSortKey `default:"name" queryParam:"style=form,explode=true,name=sortKey"`
+	SortKey *GetTrustedSignersQueryParamSortKey `default:"name" queryParam:"style=form,explode=true,name=sortKey"`
 }
 
 func (g GetTrustedSignersRequest) MarshalJSON() ([]byte, error) {
@@ -81,14 +81,14 @@ func (g *GetTrustedSignersRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *GetTrustedSignersRequest) GetSortDir() *GetTrustedSignersSortDir {
+func (o *GetTrustedSignersRequest) GetSortDir() *GetTrustedSignersQueryParamSortDir {
 	if o == nil {
 		return nil
 	}
 	return o.SortDir
 }
 
-func (o *GetTrustedSignersRequest) GetSortKey() *GetTrustedSignersSortKey {
+func (o *GetTrustedSignersRequest) GetSortKey() *GetTrustedSignersQueryParamSortKey {
 	if o == nil {
 		return nil
 	}
@@ -103,7 +103,7 @@ type GetTrustedSignersResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Success
-	TrustedSigners []shared.TrustedSigner
+	Classes []shared.TrustedSigner
 }
 
 func (o *GetTrustedSignersResponse) GetContentType() string {
@@ -127,9 +127,9 @@ func (o *GetTrustedSignersResponse) GetRawResponse() *http.Response {
 	return o.RawResponse
 }
 
-func (o *GetTrustedSignersResponse) GetTrustedSigners() []shared.TrustedSigner {
+func (o *GetTrustedSignersResponse) GetClasses() []shared.TrustedSigner {
 	if o == nil {
 		return nil
 	}
-	return o.TrustedSigners
+	return o.Classes
 }

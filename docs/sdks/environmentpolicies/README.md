@@ -1,5 +1,5 @@
 # EnvironmentPolicies
-(*EnvironmentPolicies*)
+(*.EnvironmentPolicies*)
 
 ## Overview
 
@@ -92,7 +92,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.AppPolicyHistories != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -196,7 +196,7 @@ func main() {
                 },
                 Name: "string",
                 RuleTypeProperties: shared.AppRuleType{
-                    RuleType: shared.AppRuleTypeRuleTypeViolationRuleType,
+                    RuleType: shared.RuleTypeViolationRuleType,
                 },
                 Scope: &shared.WorkloadRuleScopeType{
                     WorkloadRuleScopeType: shared.WorkloadRuleScopeTypeEnumAnyRuleType,

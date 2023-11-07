@@ -1,5 +1,5 @@
 # Deployers
-(*Deployers*)
+(*.Deployers*)
 
 ## Overview
 
@@ -93,13 +93,13 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Deployers.GetDeployers(ctx, operations.GetDeployersRequest{
-        SortKey: operations.GetDeployersSortKeyDeployer,
+        SortKey: operations.GetDeployersQueryParamSortKeyDeployer,
     })
     if err != nil {
         log.Fatal(err)
     }
 
-    if res.Deployers != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -151,7 +151,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.ServiceAccountInfos != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -249,7 +249,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Deployers.PostDeployers(ctx, shared.DeployerInput{
         DeployerID: "589c2d6b-f948-4feb-95d2-afb538f00cdb",
-        DeployerType: shared.DeployerDeployerTypeSecureCnDeployer,
+        DeployerType: shared.DeployerTypeSecureCnDeployer,
     })
     if err != nil {
         log.Fatal(err)
@@ -301,9 +301,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Deployers.PutDeployersDeployerID(ctx, operations.PutDeployersDeployerIDRequest{
-        DeployerInput: shared.DeployerInput{
+        Deployer: shared.DeployerInput{
             DeployerID: "bfd0fb57-ae2a-4efa-9ee4-175ba71bdf48",
-            DeployerType: shared.DeployerDeployerTypeOperatorDeployer,
+            DeployerType: shared.DeployerTypeOperatorDeployer,
         },
         DeployerID: "87529aca-1222-401f-98e6-927bec6fe116",
     })

@@ -8,21 +8,14 @@ import (
 )
 
 type GetAPISecurityPolicyResponse struct {
-	// Success
-	APISecurityPolicies []shared.APISecurityPolicy
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-}
-
-func (o *GetAPISecurityPolicyResponse) GetAPISecurityPolicies() []shared.APISecurityPolicy {
-	if o == nil {
-		return nil
-	}
-	return o.APISecurityPolicies
+	// Success
+	Classes []shared.APISecurityPolicy
 }
 
 func (o *GetAPISecurityPolicyResponse) GetContentType() string {
@@ -44,4 +37,11 @@ func (o *GetAPISecurityPolicyResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetAPISecurityPolicyResponse) GetClasses() []shared.APISecurityPolicy {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

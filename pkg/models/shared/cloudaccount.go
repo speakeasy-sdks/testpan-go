@@ -9,19 +9,19 @@ import (
 	"time"
 )
 
-type CloudAccountValidateFunction string
+type ValidateFunction string
 
 const (
-	CloudAccountValidateFunctionHashValidation      CloudAccountValidateFunction = "HASH_VALIDATION"
-	CloudAccountValidateFunctionSignatureValidation CloudAccountValidateFunction = "SIGNATURE_VALIDATION"
-	CloudAccountValidateFunctionNone                CloudAccountValidateFunction = "NONE"
+	ValidateFunctionHashValidation      ValidateFunction = "HASH_VALIDATION"
+	ValidateFunctionSignatureValidation ValidateFunction = "SIGNATURE_VALIDATION"
+	ValidateFunctionNone                ValidateFunction = "NONE"
 )
 
-func (e CloudAccountValidateFunction) ToPointer() *CloudAccountValidateFunction {
+func (e ValidateFunction) ToPointer() *ValidateFunction {
 	return &e
 }
 
-func (e *CloudAccountValidateFunction) UnmarshalJSON(data []byte) error {
+func (e *ValidateFunction) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -32,10 +32,10 @@ func (e *CloudAccountValidateFunction) UnmarshalJSON(data []byte) error {
 	case "SIGNATURE_VALIDATION":
 		fallthrough
 	case "NONE":
-		*e = CloudAccountValidateFunction(v)
+		*e = ValidateFunction(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for CloudAccountValidateFunction: %v", v)
+		return fmt.Errorf("invalid value for ValidateFunction: %v", v)
 	}
 }
 
@@ -47,7 +47,7 @@ type CloudAccountInput struct {
 	PeriodicJobExpression       ServerlessPeriodicJobExpression `json:"periodicJobExpression"`
 	Regions                     []string                        `json:"regions,omitempty"`
 	SecurityThreats             *CloudAccountSecurityThreats    `json:"securityThreats,omitempty"`
-	ValidateFunction            *CloudAccountValidateFunction   `json:"validateFunction,omitempty"`
+	ValidateFunction            *ValidateFunction               `json:"validateFunction,omitempty"`
 	// Vulnerabilities summary by severity
 	VulnerabilitiesSummary *VulnerabilitiesSummary `json:"vulnerabilitiesSummary,omitempty"`
 }
@@ -105,7 +105,7 @@ func (o *CloudAccountInput) GetSecurityThreats() *CloudAccountSecurityThreats {
 	return o.SecurityThreats
 }
 
-func (o *CloudAccountInput) GetValidateFunction() *CloudAccountValidateFunction {
+func (o *CloudAccountInput) GetValidateFunction() *ValidateFunction {
 	if o == nil {
 		return nil
 	}
@@ -119,19 +119,19 @@ func (o *CloudAccountInput) GetVulnerabilitiesSummary() *VulnerabilitiesSummary 
 	return o.VulnerabilitiesSummary
 }
 
-type CloudAccountInstallationStatus string
+type InstallationStatus string
 
 const (
-	CloudAccountInstallationStatusInstalled           CloudAccountInstallationStatus = "INSTALLED"
-	CloudAccountInstallationStatusPendingInstallation CloudAccountInstallationStatus = "PENDING_INSTALLATION"
-	CloudAccountInstallationStatusFailed              CloudAccountInstallationStatus = "FAILED"
+	InstallationStatusInstalled           InstallationStatus = "INSTALLED"
+	InstallationStatusPendingInstallation InstallationStatus = "PENDING_INSTALLATION"
+	InstallationStatusFailed              InstallationStatus = "FAILED"
 )
 
-func (e CloudAccountInstallationStatus) ToPointer() *CloudAccountInstallationStatus {
+func (e InstallationStatus) ToPointer() *InstallationStatus {
 	return &e
 }
 
-func (e *CloudAccountInstallationStatus) UnmarshalJSON(data []byte) error {
+func (e *InstallationStatus) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -142,10 +142,10 @@ func (e *CloudAccountInstallationStatus) UnmarshalJSON(data []byte) error {
 	case "PENDING_INSTALLATION":
 		fallthrough
 	case "FAILED":
-		*e = CloudAccountInstallationStatus(v)
+		*e = InstallationStatus(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for CloudAccountInstallationStatus: %v", v)
+		return fmt.Errorf("invalid value for InstallationStatus: %v", v)
 	}
 }
 
@@ -156,13 +156,13 @@ type CloudAccount struct {
 	CloudProvider               *CloudProviderType              `json:"cloudProvider,omitempty"`
 	ID                          *string                         `json:"id,omitempty"`
 	InstallVulnerabilityScanner *bool                           `default:"false" json:"installVulnerabilityScanner"`
-	InstallationStatus          *CloudAccountInstallationStatus `json:"installationStatus,omitempty"`
+	InstallationStatus          *InstallationStatus             `json:"installationStatus,omitempty"`
 	LastScanned                 *time.Time                      `json:"lastScanned,omitempty"`
 	Name                        *string                         `json:"name,omitempty"`
 	PeriodicJobExpression       ServerlessPeriodicJobExpression `json:"periodicJobExpression"`
 	Regions                     []string                        `json:"regions,omitempty"`
 	SecurityThreats             *CloudAccountSecurityThreats    `json:"securityThreats,omitempty"`
-	ValidateFunction            *CloudAccountValidateFunction   `json:"validateFunction,omitempty"`
+	ValidateFunction            *ValidateFunction               `json:"validateFunction,omitempty"`
 	// Vulnerabilities summary by severity
 	VulnerabilitiesSummary *VulnerabilitiesSummary `json:"vulnerabilitiesSummary,omitempty"`
 }
@@ -206,7 +206,7 @@ func (o *CloudAccount) GetInstallVulnerabilityScanner() *bool {
 	return o.InstallVulnerabilityScanner
 }
 
-func (o *CloudAccount) GetInstallationStatus() *CloudAccountInstallationStatus {
+func (o *CloudAccount) GetInstallationStatus() *InstallationStatus {
 	if o == nil {
 		return nil
 	}
@@ -248,7 +248,7 @@ func (o *CloudAccount) GetSecurityThreats() *CloudAccountSecurityThreats {
 	return o.SecurityThreats
 }
 
-func (o *CloudAccount) GetValidateFunction() *CloudAccountValidateFunction {
+func (o *CloudAccount) GetValidateFunction() *ValidateFunction {
 	if o == nil {
 		return nil
 	}

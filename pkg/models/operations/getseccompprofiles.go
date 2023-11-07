@@ -10,12 +10,12 @@ import (
 type GetSeccompProfilesResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// Success
-	SeccompProfiles []shared.SeccompProfile
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Success
+	Classes []shared.SeccompProfile
 }
 
 func (o *GetSeccompProfilesResponse) GetContentType() string {
@@ -23,13 +23,6 @@ func (o *GetSeccompProfilesResponse) GetContentType() string {
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *GetSeccompProfilesResponse) GetSeccompProfiles() []shared.SeccompProfile {
-	if o == nil {
-		return nil
-	}
-	return o.SeccompProfiles
 }
 
 func (o *GetSeccompProfilesResponse) GetStatusCode() int {
@@ -44,4 +37,11 @@ func (o *GetSeccompProfilesResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetSeccompProfilesResponse) GetClasses() []shared.SeccompProfile {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

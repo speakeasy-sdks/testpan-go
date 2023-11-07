@@ -1,5 +1,5 @@
 # Bfla
-(*Bfla*)
+(*.Bfla*)
 
 ### Available Operations
 
@@ -44,7 +44,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.DeleteAPISecurityInternalCatalogCatalogIDBflaDetection204ApplicationJSONUUIDString != nil {
+    if res.Res != nil {
         // handle response
     }
 }
@@ -96,7 +96,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.DeleteAPISecurityInternalCatalogCatalogIDBflaLearning204ApplicationJSONUUIDString != nil {
+    if res.Res != nil {
         // handle response
     }
 }
@@ -203,7 +203,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.PostAPISecurityInternalCatalogCatalogIDBflaDetection201ApplicationJSONUUIDString != nil {
+    if res.Res != nil {
         // handle response
     }
 }
@@ -258,7 +258,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.PostAPISecurityInternalCatalogCatalogIDBflaLearning201ApplicationJSONUUIDString != nil {
+    if res.Res != nil {
         // handle response
     }
 }
@@ -310,7 +310,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.PostAPISecurityInternalCatalogCatalogIDBflaReset201ApplicationJSONUUIDString != nil {
+    if res.Res != nil {
         // handle response
     }
 }
@@ -388,7 +388,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.PutAPISecurityInternalCatalogCatalogIDBfla200ApplicationJSONUUIDString != nil {
+    if res.Res != nil {
         // handle response
     }
 }

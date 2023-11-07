@@ -11,20 +11,20 @@ import (
 	"time"
 )
 
-type GetAuditLogsKubernetesResult string
+type Result string
 
 const (
-	GetAuditLogsKubernetesResultAllow  GetAuditLogsKubernetesResult = "ALLOW"
-	GetAuditLogsKubernetesResultDetect GetAuditLogsKubernetesResult = "DETECT"
-	GetAuditLogsKubernetesResultBlock  GetAuditLogsKubernetesResult = "BLOCK"
-	GetAuditLogsKubernetesResultRisky  GetAuditLogsKubernetesResult = "RISKY"
+	ResultAllow  Result = "ALLOW"
+	ResultDetect Result = "DETECT"
+	ResultBlock  Result = "BLOCK"
+	ResultRisky  Result = "RISKY"
 )
 
-func (e GetAuditLogsKubernetesResult) ToPointer() *GetAuditLogsKubernetesResult {
+func (e Result) ToPointer() *Result {
 	return &e
 }
 
-func (e *GetAuditLogsKubernetesResult) UnmarshalJSON(data []byte) error {
+func (e *Result) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -37,26 +37,26 @@ func (e *GetAuditLogsKubernetesResult) UnmarshalJSON(data []byte) error {
 	case "BLOCK":
 		fallthrough
 	case "RISKY":
-		*e = GetAuditLogsKubernetesResult(v)
+		*e = Result(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetAuditLogsKubernetesResult: %v", v)
+		return fmt.Errorf("invalid value for Result: %v", v)
 	}
 }
 
-// GetAuditLogsKubernetesSortDir - sorting direction
-type GetAuditLogsKubernetesSortDir string
+// GetAuditLogsKubernetesQueryParamSortDir - sorting direction
+type GetAuditLogsKubernetesQueryParamSortDir string
 
 const (
-	GetAuditLogsKubernetesSortDirAsc  GetAuditLogsKubernetesSortDir = "ASC"
-	GetAuditLogsKubernetesSortDirDesc GetAuditLogsKubernetesSortDir = "DESC"
+	GetAuditLogsKubernetesQueryParamSortDirAsc  GetAuditLogsKubernetesQueryParamSortDir = "ASC"
+	GetAuditLogsKubernetesQueryParamSortDirDesc GetAuditLogsKubernetesQueryParamSortDir = "DESC"
 )
 
-func (e GetAuditLogsKubernetesSortDir) ToPointer() *GetAuditLogsKubernetesSortDir {
+func (e GetAuditLogsKubernetesQueryParamSortDir) ToPointer() *GetAuditLogsKubernetesQueryParamSortDir {
 	return &e
 }
 
-func (e *GetAuditLogsKubernetesSortDir) UnmarshalJSON(data []byte) error {
+func (e *GetAuditLogsKubernetesQueryParamSortDir) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -65,29 +65,29 @@ func (e *GetAuditLogsKubernetesSortDir) UnmarshalJSON(data []byte) error {
 	case "ASC":
 		fallthrough
 	case "DESC":
-		*e = GetAuditLogsKubernetesSortDir(v)
+		*e = GetAuditLogsKubernetesQueryParamSortDir(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetAuditLogsKubernetesSortDir: %v", v)
+		return fmt.Errorf("invalid value for GetAuditLogsKubernetesQueryParamSortDir: %v", v)
 	}
 }
 
-// GetAuditLogsKubernetesSortKey - sort key
-type GetAuditLogsKubernetesSortKey string
+// GetAuditLogsKubernetesQueryParamSortKey - sort key
+type GetAuditLogsKubernetesQueryParamSortKey string
 
 const (
-	GetAuditLogsKubernetesSortKeyFirstSeen GetAuditLogsKubernetesSortKey = "firstSeen"
-	GetAuditLogsKubernetesSortKeyLastSeen  GetAuditLogsKubernetesSortKey = "lastSeen"
-	GetAuditLogsKubernetesSortKeyAction    GetAuditLogsKubernetesSortKey = "action"
-	GetAuditLogsKubernetesSortKeyUser      GetAuditLogsKubernetesSortKey = "user"
-	GetAuditLogsKubernetesSortKeyTotal     GetAuditLogsKubernetesSortKey = "total"
+	GetAuditLogsKubernetesQueryParamSortKeyFirstSeen GetAuditLogsKubernetesQueryParamSortKey = "firstSeen"
+	GetAuditLogsKubernetesQueryParamSortKeyLastSeen  GetAuditLogsKubernetesQueryParamSortKey = "lastSeen"
+	GetAuditLogsKubernetesQueryParamSortKeyAction    GetAuditLogsKubernetesQueryParamSortKey = "action"
+	GetAuditLogsKubernetesQueryParamSortKeyUser      GetAuditLogsKubernetesQueryParamSortKey = "user"
+	GetAuditLogsKubernetesQueryParamSortKeyTotal     GetAuditLogsKubernetesQueryParamSortKey = "total"
 )
 
-func (e GetAuditLogsKubernetesSortKey) ToPointer() *GetAuditLogsKubernetesSortKey {
+func (e GetAuditLogsKubernetesQueryParamSortKey) ToPointer() *GetAuditLogsKubernetesQueryParamSortKey {
 	return &e
 }
 
-func (e *GetAuditLogsKubernetesSortKey) UnmarshalJSON(data []byte) error {
+func (e *GetAuditLogsKubernetesQueryParamSortKey) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -102,10 +102,10 @@ func (e *GetAuditLogsKubernetesSortKey) UnmarshalJSON(data []byte) error {
 	case "user":
 		fallthrough
 	case "total":
-		*e = GetAuditLogsKubernetesSortKey(v)
+		*e = GetAuditLogsKubernetesQueryParamSortKey(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetAuditLogsKubernetesSortKey: %v", v)
+		return fmt.Errorf("invalid value for GetAuditLogsKubernetesQueryParamSortKey: %v", v)
 	}
 }
 
@@ -131,11 +131,11 @@ type GetAuditLogsKubernetesRequest struct {
 	// Resource name
 	ResourceName *string `queryParam:"style=form,explode=true,name=resourceName"`
 	// event result filter
-	Result []GetAuditLogsKubernetesResult `queryParam:"style=form,explode=false,name=result"`
+	Result []Result `queryParam:"style=form,explode=false,name=result"`
 	// sorting direction
-	SortDir *GetAuditLogsKubernetesSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
+	SortDir *GetAuditLogsKubernetesQueryParamSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
 	// sort key
-	SortKey *GetAuditLogsKubernetesSortKey `default:"lastSeen" queryParam:"style=form,explode=true,name=sortKey"`
+	SortKey *GetAuditLogsKubernetesQueryParamSortKey `default:"lastSeen" queryParam:"style=form,explode=true,name=sortKey"`
 	// Start date of the query
 	StartTime time.Time `queryParam:"style=form,explode=true,name=startTime"`
 	// User name
@@ -223,21 +223,21 @@ func (o *GetAuditLogsKubernetesRequest) GetResourceName() *string {
 	return o.ResourceName
 }
 
-func (o *GetAuditLogsKubernetesRequest) GetResult() []GetAuditLogsKubernetesResult {
+func (o *GetAuditLogsKubernetesRequest) GetResult() []Result {
 	if o == nil {
 		return nil
 	}
 	return o.Result
 }
 
-func (o *GetAuditLogsKubernetesRequest) GetSortDir() *GetAuditLogsKubernetesSortDir {
+func (o *GetAuditLogsKubernetesRequest) GetSortDir() *GetAuditLogsKubernetesQueryParamSortDir {
 	if o == nil {
 		return nil
 	}
 	return o.SortDir
 }
 
-func (o *GetAuditLogsKubernetesRequest) GetSortKey() *GetAuditLogsKubernetesSortKey {
+func (o *GetAuditLogsKubernetesRequest) GetSortKey() *GetAuditLogsKubernetesQueryParamSortKey {
 	if o == nil {
 		return nil
 	}
@@ -261,12 +261,12 @@ func (o *GetAuditLogsKubernetesRequest) GetUser() *string {
 type GetAuditLogsKubernetesResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// Success
-	KubernetesAuditLogs []shared.KubernetesAuditLog
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Success
+	Classes []shared.KubernetesAuditLog
 }
 
 func (o *GetAuditLogsKubernetesResponse) GetContentType() string {
@@ -274,13 +274,6 @@ func (o *GetAuditLogsKubernetesResponse) GetContentType() string {
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *GetAuditLogsKubernetesResponse) GetKubernetesAuditLogs() []shared.KubernetesAuditLog {
-	if o == nil {
-		return nil
-	}
-	return o.KubernetesAuditLogs
 }
 
 func (o *GetAuditLogsKubernetesResponse) GetStatusCode() int {
@@ -295,4 +288,11 @@ func (o *GetAuditLogsKubernetesResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetAuditLogsKubernetesResponse) GetClasses() []shared.KubernetesAuditLog {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

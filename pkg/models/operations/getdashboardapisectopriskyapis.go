@@ -10,19 +10,19 @@ import (
 	"net/http"
 )
 
-// GetDashboardApisecTopRiskyApisAPISecSource - source filter. an enum representing the source of the APIs service in scope
-type GetDashboardApisecTopRiskyApisAPISecSource string
+// GetDashboardApisecTopRiskyApisQueryParamAPISecSource - source filter. an enum representing the source of the APIs service in scope
+type GetDashboardApisecTopRiskyApisQueryParamAPISecSource string
 
 const (
-	GetDashboardApisecTopRiskyApisAPISecSourceInternal GetDashboardApisecTopRiskyApisAPISecSource = "INTERNAL"
-	GetDashboardApisecTopRiskyApisAPISecSourceExternal GetDashboardApisecTopRiskyApisAPISecSource = "EXTERNAL"
+	GetDashboardApisecTopRiskyApisQueryParamAPISecSourceInternal GetDashboardApisecTopRiskyApisQueryParamAPISecSource = "INTERNAL"
+	GetDashboardApisecTopRiskyApisQueryParamAPISecSourceExternal GetDashboardApisecTopRiskyApisQueryParamAPISecSource = "EXTERNAL"
 )
 
-func (e GetDashboardApisecTopRiskyApisAPISecSource) ToPointer() *GetDashboardApisecTopRiskyApisAPISecSource {
+func (e GetDashboardApisecTopRiskyApisQueryParamAPISecSource) ToPointer() *GetDashboardApisecTopRiskyApisQueryParamAPISecSource {
 	return &e
 }
 
-func (e *GetDashboardApisecTopRiskyApisAPISecSource) UnmarshalJSON(data []byte) error {
+func (e *GetDashboardApisecTopRiskyApisQueryParamAPISecSource) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -31,16 +31,16 @@ func (e *GetDashboardApisecTopRiskyApisAPISecSource) UnmarshalJSON(data []byte) 
 	case "INTERNAL":
 		fallthrough
 	case "EXTERNAL":
-		*e = GetDashboardApisecTopRiskyApisAPISecSource(v)
+		*e = GetDashboardApisecTopRiskyApisQueryParamAPISecSource(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetDashboardApisecTopRiskyApisAPISecSource: %v", v)
+		return fmt.Errorf("invalid value for GetDashboardApisecTopRiskyApisQueryParamAPISecSource: %v", v)
 	}
 }
 
 type GetDashboardApisecTopRiskyApisRequest struct {
 	// source filter. an enum representing the source of the APIs service in scope
-	APISecSource GetDashboardApisecTopRiskyApisAPISecSource `default:"INTERNAL" queryParam:"style=form,explode=true,name=apiSecSource"`
+	APISecSource GetDashboardApisecTopRiskyApisQueryParamAPISecSource `default:"INTERNAL" queryParam:"style=form,explode=true,name=apiSecSource"`
 	// The number of entries to return (pagination)
 	MaxResults *float64 `default:"100" queryParam:"style=form,explode=true,name=maxResults"`
 }
@@ -56,9 +56,9 @@ func (g *GetDashboardApisecTopRiskyApisRequest) UnmarshalJSON(data []byte) error
 	return nil
 }
 
-func (o *GetDashboardApisecTopRiskyApisRequest) GetAPISecSource() GetDashboardApisecTopRiskyApisAPISecSource {
+func (o *GetDashboardApisecTopRiskyApisRequest) GetAPISecSource() GetDashboardApisecTopRiskyApisQueryParamAPISecSource {
 	if o == nil {
-		return GetDashboardApisecTopRiskyApisAPISecSource("")
+		return GetDashboardApisecTopRiskyApisQueryParamAPISecSource("")
 	}
 	return o.APISecSource
 }

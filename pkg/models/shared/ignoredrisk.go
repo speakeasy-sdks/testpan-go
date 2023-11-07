@@ -7,21 +7,21 @@ import (
 	"fmt"
 )
 
-type IgnoredRiskIgnoredRiskType string
+type IgnoredRiskType string
 
 const (
-	IgnoredRiskIgnoredRiskTypeClusterIgnoredRisk        IgnoredRiskIgnoredRiskType = "ClusterIgnoredRisk"
-	IgnoredRiskIgnoredRiskTypeAnyClusterIgnoredRisk     IgnoredRiskIgnoredRiskType = "AnyClusterIgnoredRisk"
-	IgnoredRiskIgnoredRiskTypeAnyEnvironmentIgnoredRisk IgnoredRiskIgnoredRiskType = "AnyEnvironmentIgnoredRisk"
-	IgnoredRiskIgnoredRiskTypeEnvironmentIgnoredRisk    IgnoredRiskIgnoredRiskType = "EnvironmentIgnoredRisk"
-	IgnoredRiskIgnoredRiskTypeWorkloadIgnoredRisk       IgnoredRiskIgnoredRiskType = "WorkloadIgnoredRisk"
+	IgnoredRiskTypeClusterIgnoredRisk        IgnoredRiskType = "ClusterIgnoredRisk"
+	IgnoredRiskTypeAnyClusterIgnoredRisk     IgnoredRiskType = "AnyClusterIgnoredRisk"
+	IgnoredRiskTypeAnyEnvironmentIgnoredRisk IgnoredRiskType = "AnyEnvironmentIgnoredRisk"
+	IgnoredRiskTypeEnvironmentIgnoredRisk    IgnoredRiskType = "EnvironmentIgnoredRisk"
+	IgnoredRiskTypeWorkloadIgnoredRisk       IgnoredRiskType = "WorkloadIgnoredRisk"
 )
 
-func (e IgnoredRiskIgnoredRiskType) ToPointer() *IgnoredRiskIgnoredRiskType {
+func (e IgnoredRiskType) ToPointer() *IgnoredRiskType {
 	return &e
 }
 
-func (e *IgnoredRiskIgnoredRiskType) UnmarshalJSON(data []byte) error {
+func (e *IgnoredRiskType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -36,18 +36,18 @@ func (e *IgnoredRiskIgnoredRiskType) UnmarshalJSON(data []byte) error {
 	case "EnvironmentIgnoredRisk":
 		fallthrough
 	case "WorkloadIgnoredRisk":
-		*e = IgnoredRiskIgnoredRiskType(v)
+		*e = IgnoredRiskType(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for IgnoredRiskIgnoredRiskType: %v", v)
+		return fmt.Errorf("invalid value for IgnoredRiskType: %v", v)
 	}
 }
 
 // IgnoredRisk - represent ignore risk object
 type IgnoredRisk struct {
-	ID                *string                    `json:"id,omitempty"`
-	IgnoredRiskType   IgnoredRiskIgnoredRiskType `json:"ignoredRiskType"`
-	WorkloadRisksType []WorkloadRiskReasonType   `json:"workloadRisksType"`
+	ID                *string                  `json:"id,omitempty"`
+	IgnoredRiskType   IgnoredRiskType          `json:"ignoredRiskType"`
+	WorkloadRisksType []WorkloadRiskReasonType `json:"workloadRisksType"`
 }
 
 func (o *IgnoredRisk) GetID() *string {
@@ -57,9 +57,9 @@ func (o *IgnoredRisk) GetID() *string {
 	return o.ID
 }
 
-func (o *IgnoredRisk) GetIgnoredRiskType() IgnoredRiskIgnoredRiskType {
+func (o *IgnoredRisk) GetIgnoredRiskType() IgnoredRiskType {
 	if o == nil {
-		return IgnoredRiskIgnoredRiskType("")
+		return IgnoredRiskType("")
 	}
 	return o.IgnoredRiskType
 }

@@ -10,19 +10,19 @@ import (
 	"net/http"
 )
 
-// GetRiskAssessmentImageIDVulnerabilitiesSortDir - sorting direction
-type GetRiskAssessmentImageIDVulnerabilitiesSortDir string
+// GetRiskAssessmentImageIDVulnerabilitiesQueryParamSortDir - sorting direction
+type GetRiskAssessmentImageIDVulnerabilitiesQueryParamSortDir string
 
 const (
-	GetRiskAssessmentImageIDVulnerabilitiesSortDirAsc  GetRiskAssessmentImageIDVulnerabilitiesSortDir = "ASC"
-	GetRiskAssessmentImageIDVulnerabilitiesSortDirDesc GetRiskAssessmentImageIDVulnerabilitiesSortDir = "DESC"
+	GetRiskAssessmentImageIDVulnerabilitiesQueryParamSortDirAsc  GetRiskAssessmentImageIDVulnerabilitiesQueryParamSortDir = "ASC"
+	GetRiskAssessmentImageIDVulnerabilitiesQueryParamSortDirDesc GetRiskAssessmentImageIDVulnerabilitiesQueryParamSortDir = "DESC"
 )
 
-func (e GetRiskAssessmentImageIDVulnerabilitiesSortDir) ToPointer() *GetRiskAssessmentImageIDVulnerabilitiesSortDir {
+func (e GetRiskAssessmentImageIDVulnerabilitiesQueryParamSortDir) ToPointer() *GetRiskAssessmentImageIDVulnerabilitiesQueryParamSortDir {
 	return &e
 }
 
-func (e *GetRiskAssessmentImageIDVulnerabilitiesSortDir) UnmarshalJSON(data []byte) error {
+func (e *GetRiskAssessmentImageIDVulnerabilitiesQueryParamSortDir) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -31,35 +31,35 @@ func (e *GetRiskAssessmentImageIDVulnerabilitiesSortDir) UnmarshalJSON(data []by
 	case "ASC":
 		fallthrough
 	case "DESC":
-		*e = GetRiskAssessmentImageIDVulnerabilitiesSortDir(v)
+		*e = GetRiskAssessmentImageIDVulnerabilitiesQueryParamSortDir(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetRiskAssessmentImageIDVulnerabilitiesSortDir: %v", v)
+		return fmt.Errorf("invalid value for GetRiskAssessmentImageIDVulnerabilitiesQueryParamSortDir: %v", v)
 	}
 }
 
-// GetRiskAssessmentImageIDVulnerabilitiesSortKey - risk assessment image sort key.
-type GetRiskAssessmentImageIDVulnerabilitiesSortKey string
+// GetRiskAssessmentImageIDVulnerabilitiesQueryParamSortKey - risk assessment image sort key.
+type GetRiskAssessmentImageIDVulnerabilitiesQueryParamSortKey string
 
 const (
-	GetRiskAssessmentImageIDVulnerabilitiesSortKeySeverity GetRiskAssessmentImageIDVulnerabilitiesSortKey = "SEVERITY"
+	GetRiskAssessmentImageIDVulnerabilitiesQueryParamSortKeySeverity GetRiskAssessmentImageIDVulnerabilitiesQueryParamSortKey = "SEVERITY"
 )
 
-func (e GetRiskAssessmentImageIDVulnerabilitiesSortKey) ToPointer() *GetRiskAssessmentImageIDVulnerabilitiesSortKey {
+func (e GetRiskAssessmentImageIDVulnerabilitiesQueryParamSortKey) ToPointer() *GetRiskAssessmentImageIDVulnerabilitiesQueryParamSortKey {
 	return &e
 }
 
-func (e *GetRiskAssessmentImageIDVulnerabilitiesSortKey) UnmarshalJSON(data []byte) error {
+func (e *GetRiskAssessmentImageIDVulnerabilitiesQueryParamSortKey) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
 	}
 	switch v {
 	case "SEVERITY":
-		*e = GetRiskAssessmentImageIDVulnerabilitiesSortKey(v)
+		*e = GetRiskAssessmentImageIDVulnerabilitiesQueryParamSortKey(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetRiskAssessmentImageIDVulnerabilitiesSortKey: %v", v)
+		return fmt.Errorf("invalid value for GetRiskAssessmentImageIDVulnerabilitiesQueryParamSortKey: %v", v)
 	}
 }
 
@@ -71,9 +71,9 @@ type GetRiskAssessmentImageIDVulnerabilitiesRequest struct {
 	// Return entries from this offset (pagination)
 	Offset *float64 `default:"0" queryParam:"style=form,explode=true,name=offset"`
 	// sorting direction
-	SortDir *GetRiskAssessmentImageIDVulnerabilitiesSortDir `default:"DESC" queryParam:"style=form,explode=true,name=sortDir"`
+	SortDir *GetRiskAssessmentImageIDVulnerabilitiesQueryParamSortDir `default:"DESC" queryParam:"style=form,explode=true,name=sortDir"`
 	// risk assessment image sort key.
-	SortKey GetRiskAssessmentImageIDVulnerabilitiesSortKey `default:"SEVERITY" queryParam:"style=form,explode=true,name=sortKey"`
+	SortKey GetRiskAssessmentImageIDVulnerabilitiesQueryParamSortKey `default:"SEVERITY" queryParam:"style=form,explode=true,name=sortKey"`
 }
 
 func (g GetRiskAssessmentImageIDVulnerabilitiesRequest) MarshalJSON() ([]byte, error) {
@@ -108,16 +108,16 @@ func (o *GetRiskAssessmentImageIDVulnerabilitiesRequest) GetOffset() *float64 {
 	return o.Offset
 }
 
-func (o *GetRiskAssessmentImageIDVulnerabilitiesRequest) GetSortDir() *GetRiskAssessmentImageIDVulnerabilitiesSortDir {
+func (o *GetRiskAssessmentImageIDVulnerabilitiesRequest) GetSortDir() *GetRiskAssessmentImageIDVulnerabilitiesQueryParamSortDir {
 	if o == nil {
 		return nil
 	}
 	return o.SortDir
 }
 
-func (o *GetRiskAssessmentImageIDVulnerabilitiesRequest) GetSortKey() GetRiskAssessmentImageIDVulnerabilitiesSortKey {
+func (o *GetRiskAssessmentImageIDVulnerabilitiesRequest) GetSortKey() GetRiskAssessmentImageIDVulnerabilitiesQueryParamSortKey {
 	if o == nil {
-		return GetRiskAssessmentImageIDVulnerabilitiesSortKey("")
+		return GetRiskAssessmentImageIDVulnerabilitiesQueryParamSortKey("")
 	}
 	return o.SortKey
 }
@@ -125,12 +125,12 @@ func (o *GetRiskAssessmentImageIDVulnerabilitiesRequest) GetSortKey() GetRiskAss
 type GetRiskAssessmentImageIDVulnerabilitiesResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// Success
-	RiskAssessmentVulnerabilities []shared.RiskAssessmentVulnerability
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Success
+	Classes []shared.RiskAssessmentVulnerability
 }
 
 func (o *GetRiskAssessmentImageIDVulnerabilitiesResponse) GetContentType() string {
@@ -138,13 +138,6 @@ func (o *GetRiskAssessmentImageIDVulnerabilitiesResponse) GetContentType() strin
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *GetRiskAssessmentImageIDVulnerabilitiesResponse) GetRiskAssessmentVulnerabilities() []shared.RiskAssessmentVulnerability {
-	if o == nil {
-		return nil
-	}
-	return o.RiskAssessmentVulnerabilities
 }
 
 func (o *GetRiskAssessmentImageIDVulnerabilitiesResponse) GetStatusCode() int {
@@ -159,4 +152,11 @@ func (o *GetRiskAssessmentImageIDVulnerabilitiesResponse) GetRawResponse() *http
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetRiskAssessmentImageIDVulnerabilitiesResponse) GetClasses() []shared.RiskAssessmentVulnerability {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

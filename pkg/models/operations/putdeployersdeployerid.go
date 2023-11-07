@@ -8,15 +8,15 @@ import (
 )
 
 type PutDeployersDeployerIDRequest struct {
-	DeployerInput shared.DeployerInput `request:"mediaType=application/json"`
-	DeployerID    string               `pathParam:"style=simple,explode=false,name=deployerId"`
+	Deployer   shared.DeployerInput `request:"mediaType=application/json"`
+	DeployerID string               `pathParam:"style=simple,explode=false,name=deployerId"`
 }
 
-func (o *PutDeployersDeployerIDRequest) GetDeployerInput() shared.DeployerInput {
+func (o *PutDeployersDeployerIDRequest) GetDeployer() shared.DeployerInput {
 	if o == nil {
 		return shared.DeployerInput{}
 	}
-	return o.DeployerInput
+	return o.Deployer
 }
 
 func (o *PutDeployersDeployerIDRequest) GetDeployerID() string {

@@ -7,46 +7,46 @@ import (
 	"time"
 )
 
-type NetworkConnectionViolation struct {
+type Violation struct {
 	EncryptRule      *ConnectionRuleBasic `json:"encryptRule,omitempty"`
 	EncryptionReason *EncryptionReason    `json:"encryptionReason,omitempty"`
 	LastViolation    *time.Time           `json:"lastViolation,omitempty"`
 	Rule             *ConnectionRuleBasic `json:"rule,omitempty"`
 }
 
-func (n NetworkConnectionViolation) MarshalJSON() ([]byte, error) {
-	return utils.MarshalJSON(n, "", false)
+func (v Violation) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(v, "", false)
 }
 
-func (n *NetworkConnectionViolation) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &n, "", false, false); err != nil {
+func (v *Violation) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &v, "", false, false); err != nil {
 		return err
 	}
 	return nil
 }
 
-func (o *NetworkConnectionViolation) GetEncryptRule() *ConnectionRuleBasic {
+func (o *Violation) GetEncryptRule() *ConnectionRuleBasic {
 	if o == nil {
 		return nil
 	}
 	return o.EncryptRule
 }
 
-func (o *NetworkConnectionViolation) GetEncryptionReason() *EncryptionReason {
+func (o *Violation) GetEncryptionReason() *EncryptionReason {
 	if o == nil {
 		return nil
 	}
 	return o.EncryptionReason
 }
 
-func (o *NetworkConnectionViolation) GetLastViolation() *time.Time {
+func (o *Violation) GetLastViolation() *time.Time {
 	if o == nil {
 		return nil
 	}
 	return o.LastViolation
 }
 
-func (o *NetworkConnectionViolation) GetRule() *ConnectionRuleBasic {
+func (o *Violation) GetRule() *ConnectionRuleBasic {
 	if o == nil {
 		return nil
 	}
@@ -61,9 +61,9 @@ type NetworkConnection struct {
 	NumberOfConnections   *int64  `json:"numberOfConnections,omitempty"`
 	Protocol              *string `json:"protocol,omitempty"`
 	// Source App id
-	SourceID  *string                     `json:"sourceId,omitempty"`
-	StartTime *time.Time                  `json:"startTime,omitempty"`
-	Violation *NetworkConnectionViolation `json:"violation,omitempty"`
+	SourceID  *string    `json:"sourceId,omitempty"`
+	StartTime *time.Time `json:"startTime,omitempty"`
+	Violation *Violation `json:"violation,omitempty"`
 }
 
 func (n NetworkConnection) MarshalJSON() ([]byte, error) {
@@ -126,7 +126,7 @@ func (o *NetworkConnection) GetStartTime() *time.Time {
 	return o.StartTime
 }
 
-func (o *NetworkConnection) GetViolation() *NetworkConnectionViolation {
+func (o *NetworkConnection) GetViolation() *Violation {
 	if o == nil {
 		return nil
 	}

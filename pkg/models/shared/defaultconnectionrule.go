@@ -7,19 +7,19 @@ import (
 	"fmt"
 )
 
-type DefaultConnectionRuleType string
+type Type string
 
 const (
-	DefaultConnectionRuleTypeAllowAll        DefaultConnectionRuleType = "ALLOW_ALL"
-	DefaultConnectionRuleTypeEnvironmentOnly DefaultConnectionRuleType = "ENVIRONMENT_ONLY"
-	DefaultConnectionRuleTypeDenyAll         DefaultConnectionRuleType = "DENY_ALL"
+	TypeAllowAll        Type = "ALLOW_ALL"
+	TypeEnvironmentOnly Type = "ENVIRONMENT_ONLY"
+	TypeDenyAll         Type = "DENY_ALL"
 )
 
-func (e DefaultConnectionRuleType) ToPointer() *DefaultConnectionRuleType {
+func (e Type) ToPointer() *Type {
 	return &e
 }
 
-func (e *DefaultConnectionRuleType) UnmarshalJSON(data []byte) error {
+func (e *Type) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -30,17 +30,17 @@ func (e *DefaultConnectionRuleType) UnmarshalJSON(data []byte) error {
 	case "ENVIRONMENT_ONLY":
 		fallthrough
 	case "DENY_ALL":
-		*e = DefaultConnectionRuleType(v)
+		*e = Type(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for DefaultConnectionRuleType: %v", v)
+		return fmt.Errorf("invalid value for Type: %v", v)
 	}
 }
 
 type DefaultConnectionRule struct {
 	// ENCRYPT is not allowed in default rule
-	Action *ConnectionRuleAction      `json:"action,omitempty"`
-	Type   *DefaultConnectionRuleType `json:"type,omitempty"`
+	Action *ConnectionRuleAction `json:"action,omitempty"`
+	Type   *Type                 `json:"type,omitempty"`
 }
 
 func (o *DefaultConnectionRule) GetAction() *ConnectionRuleAction {
@@ -50,7 +50,7 @@ func (o *DefaultConnectionRule) GetAction() *ConnectionRuleAction {
 	return o.Action
 }
 
-func (o *DefaultConnectionRule) GetType() *DefaultConnectionRuleType {
+func (o *DefaultConnectionRule) GetType() *Type {
 	if o == nil {
 		return nil
 	}

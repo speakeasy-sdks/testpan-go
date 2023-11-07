@@ -1,5 +1,5 @@
 # Tokens
-(*Tokens*)
+(*.Tokens*)
 
 ### Available Operations
 
@@ -93,7 +93,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.Tokens != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -147,7 +147,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.APITokenInfos != nil {
+    if res.Classes != nil {
         // handle response
     }
 }

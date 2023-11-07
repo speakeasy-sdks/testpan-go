@@ -28,21 +28,14 @@ func (o *GetAPISecurityCatalogIDMethodsRequest) GetTags() []string {
 }
 
 type GetAPISecurityCatalogIDMethodsResponse struct {
-	// Success
-	APIServiceMethods []shared.APIServiceMethod
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-}
-
-func (o *GetAPISecurityCatalogIDMethodsResponse) GetAPIServiceMethods() []shared.APIServiceMethod {
-	if o == nil {
-		return nil
-	}
-	return o.APIServiceMethods
+	// Success
+	Classes []shared.APIServiceMethod
 }
 
 func (o *GetAPISecurityCatalogIDMethodsResponse) GetContentType() string {
@@ -64,4 +57,11 @@ func (o *GetAPISecurityCatalogIDMethodsResponse) GetRawResponse() *http.Response
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetAPISecurityCatalogIDMethodsResponse) GetClasses() []shared.APIServiceMethod {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

@@ -15,19 +15,19 @@ import (
 	"strings"
 )
 
-// apiSecurityPolicies - APIs used to  define and manage api security policies
-type apiSecurityPolicies struct {
+// APISecurityPolicies - APIs used to  define and manage api security policies
+type APISecurityPolicies struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newAPISecurityPolicies(sdkConfig sdkConfiguration) *apiSecurityPolicies {
-	return &apiSecurityPolicies{
+func newAPISecurityPolicies(sdkConfig sdkConfiguration) *APISecurityPolicies {
+	return &APISecurityPolicies{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // DeleteAPISecurityPolicyPolicyID - Delete api security policy
-func (s *apiSecurityPolicies) DeleteAPISecurityPolicyPolicyID(ctx context.Context, request operations.DeleteAPISecurityPolicyPolicyIDRequest) (*operations.DeleteAPISecurityPolicyPolicyIDResponse, error) {
+func (s *APISecurityPolicies) DeleteAPISecurityPolicyPolicyID(ctx context.Context, request operations.DeleteAPISecurityPolicyPolicyIDRequest) (*operations.DeleteAPISecurityPolicyPolicyIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurityPolicy/{policyId}", request, nil)
 	if err != nil {
@@ -77,7 +77,7 @@ func (s *apiSecurityPolicies) DeleteAPISecurityPolicyPolicyID(ctx context.Contex
 }
 
 // GetAPISecurityPolicy - Get a list of API security policies
-func (s *apiSecurityPolicies) GetAPISecurityPolicy(ctx context.Context) (*operations.GetAPISecurityPolicyResponse, error) {
+func (s *APISecurityPolicies) GetAPISecurityPolicy(ctx context.Context) (*operations.GetAPISecurityPolicyResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/apiSecurityPolicy"
 
@@ -121,7 +121,7 @@ func (s *apiSecurityPolicies) GetAPISecurityPolicy(ctx context.Context) (*operat
 				return nil, err
 			}
 
-			res.APISecurityPolicies = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -137,7 +137,7 @@ func (s *apiSecurityPolicies) GetAPISecurityPolicy(ctx context.Context) (*operat
 }
 
 // GetAPISecurityPolicyPolicyIDDeleteDependencies - get dependencies which need to be handled in order to delete specified api security service
-func (s *apiSecurityPolicies) GetAPISecurityPolicyPolicyIDDeleteDependencies(ctx context.Context, request operations.GetAPISecurityPolicyPolicyIDDeleteDependenciesRequest) (*operations.GetAPISecurityPolicyPolicyIDDeleteDependenciesResponse, error) {
+func (s *APISecurityPolicies) GetAPISecurityPolicyPolicyIDDeleteDependencies(ctx context.Context, request operations.GetAPISecurityPolicyPolicyIDDeleteDependenciesRequest) (*operations.GetAPISecurityPolicyPolicyIDDeleteDependenciesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurityPolicy/{policyId}/deleteDependencies", request, nil)
 	if err != nil {
@@ -210,7 +210,7 @@ func (s *apiSecurityPolicies) GetAPISecurityPolicyPolicyIDDeleteDependencies(ctx
 }
 
 // PostAPISecurityPolicy - Add new API security policy
-func (s *apiSecurityPolicies) PostAPISecurityPolicy(ctx context.Context, request shared.APISecurityPolicyInput) (*operations.PostAPISecurityPolicyResponse, error) {
+func (s *APISecurityPolicies) PostAPISecurityPolicy(ctx context.Context, request shared.APISecurityPolicyInput) (*operations.PostAPISecurityPolicyResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/apiSecurityPolicy"
 
@@ -280,14 +280,14 @@ func (s *apiSecurityPolicies) PostAPISecurityPolicy(ctx context.Context, request
 }
 
 // PutAPISecurityPolicyPolicyID - Edit Api security policy.
-func (s *apiSecurityPolicies) PutAPISecurityPolicyPolicyID(ctx context.Context, request operations.PutAPISecurityPolicyPolicyIDRequest) (*operations.PutAPISecurityPolicyPolicyIDResponse, error) {
+func (s *APISecurityPolicies) PutAPISecurityPolicyPolicyID(ctx context.Context, request operations.PutAPISecurityPolicyPolicyIDRequest) (*operations.PutAPISecurityPolicyPolicyIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurityPolicy/{policyId}", request, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "APISecurityPolicyInput", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "APISecurityPolicy", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, fmt.Errorf("error serializing request body: %w", err)
 	}

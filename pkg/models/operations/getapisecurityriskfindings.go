@@ -10,19 +10,19 @@ import (
 	"net/http"
 )
 
-// GetAPISecurityRiskFindingsAPISecSource - source filter. an enum representing the source of the APIs service in scope
-type GetAPISecurityRiskFindingsAPISecSource string
+// APISecSource - source filter. an enum representing the source of the APIs service in scope
+type APISecSource string
 
 const (
-	GetAPISecurityRiskFindingsAPISecSourceInternal GetAPISecurityRiskFindingsAPISecSource = "INTERNAL"
-	GetAPISecurityRiskFindingsAPISecSourceExternal GetAPISecurityRiskFindingsAPISecSource = "EXTERNAL"
+	APISecSourceInternal APISecSource = "INTERNAL"
+	APISecSourceExternal APISecSource = "EXTERNAL"
 )
 
-func (e GetAPISecurityRiskFindingsAPISecSource) ToPointer() *GetAPISecurityRiskFindingsAPISecSource {
+func (e APISecSource) ToPointer() *APISecSource {
 	return &e
 }
 
-func (e *GetAPISecurityRiskFindingsAPISecSource) UnmarshalJSON(data []byte) error {
+func (e *APISecSource) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -31,28 +31,28 @@ func (e *GetAPISecurityRiskFindingsAPISecSource) UnmarshalJSON(data []byte) erro
 	case "INTERNAL":
 		fallthrough
 	case "EXTERNAL":
-		*e = GetAPISecurityRiskFindingsAPISecSource(v)
+		*e = APISecSource(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetAPISecurityRiskFindingsAPISecSource: %v", v)
+		return fmt.Errorf("invalid value for APISecSource: %v", v)
 	}
 }
 
-type GetAPISecurityRiskFindingsRisks string
+type Risks string
 
 const (
-	GetAPISecurityRiskFindingsRisksLow      GetAPISecurityRiskFindingsRisks = "LOW"
-	GetAPISecurityRiskFindingsRisksMedium   GetAPISecurityRiskFindingsRisks = "MEDIUM"
-	GetAPISecurityRiskFindingsRisksHigh     GetAPISecurityRiskFindingsRisks = "HIGH"
-	GetAPISecurityRiskFindingsRisksCritical GetAPISecurityRiskFindingsRisks = "CRITICAL"
-	GetAPISecurityRiskFindingsRisksAll      GetAPISecurityRiskFindingsRisks = "ALL"
+	RisksLow      Risks = "LOW"
+	RisksMedium   Risks = "MEDIUM"
+	RisksHigh     Risks = "HIGH"
+	RisksCritical Risks = "CRITICAL"
+	RisksAll      Risks = "ALL"
 )
 
-func (e GetAPISecurityRiskFindingsRisks) ToPointer() *GetAPISecurityRiskFindingsRisks {
+func (e Risks) ToPointer() *Risks {
 	return &e
 }
 
-func (e *GetAPISecurityRiskFindingsRisks) UnmarshalJSON(data []byte) error {
+func (e *Risks) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -67,26 +67,26 @@ func (e *GetAPISecurityRiskFindingsRisks) UnmarshalJSON(data []byte) error {
 	case "CRITICAL":
 		fallthrough
 	case "ALL":
-		*e = GetAPISecurityRiskFindingsRisks(v)
+		*e = Risks(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetAPISecurityRiskFindingsRisks: %v", v)
+		return fmt.Errorf("invalid value for Risks: %v", v)
 	}
 }
 
-// GetAPISecurityRiskFindingsSortDir - sorting direction
-type GetAPISecurityRiskFindingsSortDir string
+// GetAPISecurityRiskFindingsQueryParamSortDir - sorting direction
+type GetAPISecurityRiskFindingsQueryParamSortDir string
 
 const (
-	GetAPISecurityRiskFindingsSortDirAsc  GetAPISecurityRiskFindingsSortDir = "ASC"
-	GetAPISecurityRiskFindingsSortDirDesc GetAPISecurityRiskFindingsSortDir = "DESC"
+	GetAPISecurityRiskFindingsQueryParamSortDirAsc  GetAPISecurityRiskFindingsQueryParamSortDir = "ASC"
+	GetAPISecurityRiskFindingsQueryParamSortDirDesc GetAPISecurityRiskFindingsQueryParamSortDir = "DESC"
 )
 
-func (e GetAPISecurityRiskFindingsSortDir) ToPointer() *GetAPISecurityRiskFindingsSortDir {
+func (e GetAPISecurityRiskFindingsQueryParamSortDir) ToPointer() *GetAPISecurityRiskFindingsQueryParamSortDir {
 	return &e
 }
 
-func (e *GetAPISecurityRiskFindingsSortDir) UnmarshalJSON(data []byte) error {
+func (e *GetAPISecurityRiskFindingsQueryParamSortDir) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -95,26 +95,26 @@ func (e *GetAPISecurityRiskFindingsSortDir) UnmarshalJSON(data []byte) error {
 	case "ASC":
 		fallthrough
 	case "DESC":
-		*e = GetAPISecurityRiskFindingsSortDir(v)
+		*e = GetAPISecurityRiskFindingsQueryParamSortDir(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetAPISecurityRiskFindingsSortDir: %v", v)
+		return fmt.Errorf("invalid value for GetAPISecurityRiskFindingsQueryParamSortDir: %v", v)
 	}
 }
 
-// GetAPISecurityRiskFindingsSortKey - Risk finding sort key.
-type GetAPISecurityRiskFindingsSortKey string
+// GetAPISecurityRiskFindingsQueryParamSortKey - Risk finding sort key.
+type GetAPISecurityRiskFindingsQueryParamSortKey string
 
 const (
-	GetAPISecurityRiskFindingsSortKeyName GetAPISecurityRiskFindingsSortKey = "NAME"
-	GetAPISecurityRiskFindingsSortKeyRisk GetAPISecurityRiskFindingsSortKey = "RISK"
+	GetAPISecurityRiskFindingsQueryParamSortKeyName GetAPISecurityRiskFindingsQueryParamSortKey = "NAME"
+	GetAPISecurityRiskFindingsQueryParamSortKeyRisk GetAPISecurityRiskFindingsQueryParamSortKey = "RISK"
 )
 
-func (e GetAPISecurityRiskFindingsSortKey) ToPointer() *GetAPISecurityRiskFindingsSortKey {
+func (e GetAPISecurityRiskFindingsQueryParamSortKey) ToPointer() *GetAPISecurityRiskFindingsQueryParamSortKey {
 	return &e
 }
 
-func (e *GetAPISecurityRiskFindingsSortKey) UnmarshalJSON(data []byte) error {
+func (e *GetAPISecurityRiskFindingsQueryParamSortKey) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -123,16 +123,16 @@ func (e *GetAPISecurityRiskFindingsSortKey) UnmarshalJSON(data []byte) error {
 	case "NAME":
 		fallthrough
 	case "RISK":
-		*e = GetAPISecurityRiskFindingsSortKey(v)
+		*e = GetAPISecurityRiskFindingsQueryParamSortKey(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetAPISecurityRiskFindingsSortKey: %v", v)
+		return fmt.Errorf("invalid value for GetAPISecurityRiskFindingsQueryParamSortKey: %v", v)
 	}
 }
 
 type GetAPISecurityRiskFindingsRequest struct {
 	// source filter. an enum representing the source of the APIs service in scope
-	APISecSource GetAPISecurityRiskFindingsAPISecSource `default:"INTERNAL" queryParam:"style=form,explode=true,name=apiSecSource"`
+	APISecSource APISecSource `default:"INTERNAL" queryParam:"style=form,explode=true,name=apiSecSource"`
 	// Category of the risk finding
 	Category *string `queryParam:"style=form,explode=true,name=category"`
 	// Show finding with detect elements only
@@ -146,11 +146,11 @@ type GetAPISecurityRiskFindingsRequest struct {
 	// Return entries from this offset (pagination)
 	Offset *float64 `default:"0" queryParam:"style=form,explode=true,name=offset"`
 	// The API risk filter
-	Risks []GetAPISecurityRiskFindingsRisks `queryParam:"style=form,explode=false,name=risks"`
+	Risks []Risks `queryParam:"style=form,explode=false,name=risks"`
 	// sorting direction
-	SortDir *GetAPISecurityRiskFindingsSortDir `default:"DESC" queryParam:"style=form,explode=true,name=sortDir"`
+	SortDir *GetAPISecurityRiskFindingsQueryParamSortDir `default:"DESC" queryParam:"style=form,explode=true,name=sortDir"`
 	// Risk finding sort key.
-	SortKey GetAPISecurityRiskFindingsSortKey `default:"RISK" queryParam:"style=form,explode=true,name=sortKey"`
+	SortKey GetAPISecurityRiskFindingsQueryParamSortKey `default:"RISK" queryParam:"style=form,explode=true,name=sortKey"`
 	// Source of the risk finding
 	Source *string `queryParam:"style=form,explode=true,name=source"`
 }
@@ -166,9 +166,9 @@ func (g *GetAPISecurityRiskFindingsRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *GetAPISecurityRiskFindingsRequest) GetAPISecSource() GetAPISecurityRiskFindingsAPISecSource {
+func (o *GetAPISecurityRiskFindingsRequest) GetAPISecSource() APISecSource {
 	if o == nil {
-		return GetAPISecurityRiskFindingsAPISecSource("")
+		return APISecSource("")
 	}
 	return o.APISecSource
 }
@@ -215,23 +215,23 @@ func (o *GetAPISecurityRiskFindingsRequest) GetOffset() *float64 {
 	return o.Offset
 }
 
-func (o *GetAPISecurityRiskFindingsRequest) GetRisks() []GetAPISecurityRiskFindingsRisks {
+func (o *GetAPISecurityRiskFindingsRequest) GetRisks() []Risks {
 	if o == nil {
 		return nil
 	}
 	return o.Risks
 }
 
-func (o *GetAPISecurityRiskFindingsRequest) GetSortDir() *GetAPISecurityRiskFindingsSortDir {
+func (o *GetAPISecurityRiskFindingsRequest) GetSortDir() *GetAPISecurityRiskFindingsQueryParamSortDir {
 	if o == nil {
 		return nil
 	}
 	return o.SortDir
 }
 
-func (o *GetAPISecurityRiskFindingsRequest) GetSortKey() GetAPISecurityRiskFindingsSortKey {
+func (o *GetAPISecurityRiskFindingsRequest) GetSortKey() GetAPISecurityRiskFindingsQueryParamSortKey {
 	if o == nil {
-		return GetAPISecurityRiskFindingsSortKey("")
+		return GetAPISecurityRiskFindingsQueryParamSortKey("")
 	}
 	return o.SortKey
 }

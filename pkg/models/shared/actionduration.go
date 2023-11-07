@@ -7,19 +7,19 @@ import (
 	"fmt"
 )
 
-type ActionDurationTimeUnit string
+type TimeUnit string
 
 const (
-	ActionDurationTimeUnitMinutes ActionDurationTimeUnit = "MINUTES"
-	ActionDurationTimeUnitHours   ActionDurationTimeUnit = "HOURS"
-	ActionDurationTimeUnitDays    ActionDurationTimeUnit = "DAYS"
+	TimeUnitMinutes TimeUnit = "MINUTES"
+	TimeUnitHours   TimeUnit = "HOURS"
+	TimeUnitDays    TimeUnit = "DAYS"
 )
 
-func (e ActionDurationTimeUnit) ToPointer() *ActionDurationTimeUnit {
+func (e TimeUnit) ToPointer() *TimeUnit {
 	return &e
 }
 
-func (e *ActionDurationTimeUnit) UnmarshalJSON(data []byte) error {
+func (e *TimeUnit) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -30,16 +30,16 @@ func (e *ActionDurationTimeUnit) UnmarshalJSON(data []byte) error {
 	case "HOURS":
 		fallthrough
 	case "DAYS":
-		*e = ActionDurationTimeUnit(v)
+		*e = TimeUnit(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for ActionDurationTimeUnit: %v", v)
+		return fmt.Errorf("invalid value for TimeUnit: %v", v)
 	}
 }
 
 type ActionDuration struct {
-	Duration int64                  `json:"duration"`
-	TimeUnit ActionDurationTimeUnit `json:"timeUnit"`
+	Duration int64    `json:"duration"`
+	TimeUnit TimeUnit `json:"timeUnit"`
 }
 
 func (o *ActionDuration) GetDuration() int64 {
@@ -49,9 +49,9 @@ func (o *ActionDuration) GetDuration() int64 {
 	return o.Duration
 }
 
-func (o *ActionDuration) GetTimeUnit() ActionDurationTimeUnit {
+func (o *ActionDuration) GetTimeUnit() TimeUnit {
 	if o == nil {
-		return ActionDurationTimeUnit("")
+		return TimeUnit("")
 	}
 	return o.TimeUnit
 }

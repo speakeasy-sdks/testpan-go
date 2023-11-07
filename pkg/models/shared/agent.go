@@ -7,21 +7,21 @@ import (
 	"fmt"
 )
 
-type AgentGatherInformationState string
+type GatherInformationState string
 
 const (
-	AgentGatherInformationStateNew        AgentGatherInformationState = "NEW"
-	AgentGatherInformationStateProcessing AgentGatherInformationState = "PROCESSING"
-	AgentGatherInformationStateDone       AgentGatherInformationState = "DONE"
-	AgentGatherInformationStateFailed     AgentGatherInformationState = "FAILED"
-	AgentGatherInformationStateNone       AgentGatherInformationState = "NONE"
+	GatherInformationStateNew        GatherInformationState = "NEW"
+	GatherInformationStateProcessing GatherInformationState = "PROCESSING"
+	GatherInformationStateDone       GatherInformationState = "DONE"
+	GatherInformationStateFailed     GatherInformationState = "FAILED"
+	GatherInformationStateNone       GatherInformationState = "NONE"
 )
 
-func (e AgentGatherInformationState) ToPointer() *AgentGatherInformationState {
+func (e GatherInformationState) ToPointer() *GatherInformationState {
 	return &e
 }
 
-func (e *AgentGatherInformationState) UnmarshalJSON(data []byte) error {
+func (e *GatherInformationState) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -36,16 +36,16 @@ func (e *AgentGatherInformationState) UnmarshalJSON(data []byte) error {
 	case "FAILED":
 		fallthrough
 	case "NONE":
-		*e = AgentGatherInformationState(v)
+		*e = GatherInformationState(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for AgentGatherInformationState: %v", v)
+		return fmt.Errorf("invalid value for GatherInformationState: %v", v)
 	}
 }
 
 type Agent struct {
-	Environments           []AgentEnvironment           `json:"environments,omitempty"`
-	GatherInformationState *AgentGatherInformationState `json:"gatherInformationState,omitempty"`
+	Environments           []AgentEnvironment      `json:"environments,omitempty"`
+	GatherInformationState *GatherInformationState `json:"gatherInformationState,omitempty"`
 	// sha2 of the content of the public key pem. The fingerprint format is xx:xx:xx...
 	ID                *string        `json:"id,omitempty"`
 	Info              *AgentInfo     `json:"info,omitempty"`
@@ -67,7 +67,7 @@ func (o *Agent) GetEnvironments() []AgentEnvironment {
 	return o.Environments
 }
 
-func (o *Agent) GetGatherInformationState() *AgentGatherInformationState {
+func (o *Agent) GetGatherInformationState() *GatherInformationState {
 	if o == nil {
 		return nil
 	}

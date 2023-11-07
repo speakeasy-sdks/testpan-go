@@ -8,15 +8,15 @@ import (
 )
 
 type PutAPISecurityPolicyPolicyIDRequest struct {
-	APISecurityPolicyInput shared.APISecurityPolicyInput `request:"mediaType=application/json"`
-	PolicyID               string                        `pathParam:"style=simple,explode=false,name=policyId"`
+	APISecurityPolicy shared.APISecurityPolicyInput `request:"mediaType=application/json"`
+	PolicyID          string                        `pathParam:"style=simple,explode=false,name=policyId"`
 }
 
-func (o *PutAPISecurityPolicyPolicyIDRequest) GetAPISecurityPolicyInput() shared.APISecurityPolicyInput {
+func (o *PutAPISecurityPolicyPolicyIDRequest) GetAPISecurityPolicy() shared.APISecurityPolicyInput {
 	if o == nil {
 		return shared.APISecurityPolicyInput{}
 	}
-	return o.APISecurityPolicyInput
+	return o.APISecurityPolicy
 }
 
 func (o *PutAPISecurityPolicyPolicyIDRequest) GetPolicyID() string {

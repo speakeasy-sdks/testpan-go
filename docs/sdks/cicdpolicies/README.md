@@ -1,5 +1,5 @@
 # CICDPolicies
-(*CICDPolicies*)
+(*.CICDPolicies*)
 
 ## Overview
 
@@ -150,7 +150,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.CdPolicies != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -372,7 +372,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.CICDPolicies.PutCdPolicyPolicyID(ctx, operations.PutCdPolicyPolicyIDRequest{
-        CdPolicyInput: shared.CdPolicyInput{
+        CdPolicy: shared.CdPolicyInput{
             APISecurityCdPolicy: &shared.APISecurityCdPolicyElement{
                 APISecurityProfile: "75218fad-dbdc-48d5-b27f-e1d8ecd9e791",
                 EnforcementOption: shared.EnforcementOptionFail,
@@ -446,7 +446,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.CICDPolicies.PutCiPolicyPolicyID(ctx, operations.PutCiPolicyPolicyIDRequest{
-        CiPolicyInput: shared.CiPolicyInput{
+        CiPolicy: shared.CiPolicyInput{
             DockerfileScanCiPolicy: &shared.DockerfileScanCiPolicy{
                 EnforcementOption: shared.EnforcementOptionIgnore,
                 PermissibleDockerfileScanSeverity: shared.DockerfileScanSeverityInfo,

@@ -8,21 +8,14 @@ import (
 )
 
 type GetAppsPolicyHistoryResponse struct {
-	// Success
-	AppPolicyHistories []shared.AppPolicyHistory
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-}
-
-func (o *GetAppsPolicyHistoryResponse) GetAppPolicyHistories() []shared.AppPolicyHistory {
-	if o == nil {
-		return nil
-	}
-	return o.AppPolicyHistories
+	// Success
+	Classes []shared.AppPolicyHistory
 }
 
 func (o *GetAppsPolicyHistoryResponse) GetContentType() string {
@@ -44,4 +37,11 @@ func (o *GetAppsPolicyHistoryResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetAppsPolicyHistoryResponse) GetClasses() []shared.AppPolicyHistory {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

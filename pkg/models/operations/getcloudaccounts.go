@@ -10,19 +10,19 @@ import (
 	"net/http"
 )
 
-// GetCloudAccountsSortDir - sorting direction
-type GetCloudAccountsSortDir string
+// GetCloudAccountsQueryParamSortDir - sorting direction
+type GetCloudAccountsQueryParamSortDir string
 
 const (
-	GetCloudAccountsSortDirAsc  GetCloudAccountsSortDir = "ASC"
-	GetCloudAccountsSortDirDesc GetCloudAccountsSortDir = "DESC"
+	GetCloudAccountsQueryParamSortDirAsc  GetCloudAccountsQueryParamSortDir = "ASC"
+	GetCloudAccountsQueryParamSortDirDesc GetCloudAccountsQueryParamSortDir = "DESC"
 )
 
-func (e GetCloudAccountsSortDir) ToPointer() *GetCloudAccountsSortDir {
+func (e GetCloudAccountsQueryParamSortDir) ToPointer() *GetCloudAccountsQueryParamSortDir {
 	return &e
 }
 
-func (e *GetCloudAccountsSortDir) UnmarshalJSON(data []byte) error {
+func (e *GetCloudAccountsQueryParamSortDir) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -31,26 +31,26 @@ func (e *GetCloudAccountsSortDir) UnmarshalJSON(data []byte) error {
 	case "ASC":
 		fallthrough
 	case "DESC":
-		*e = GetCloudAccountsSortDir(v)
+		*e = GetCloudAccountsQueryParamSortDir(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetCloudAccountsSortDir: %v", v)
+		return fmt.Errorf("invalid value for GetCloudAccountsQueryParamSortDir: %v", v)
 	}
 }
 
-// GetCloudAccountsSortKey - sort key
-type GetCloudAccountsSortKey string
+// GetCloudAccountsQueryParamSortKey - sort key
+type GetCloudAccountsQueryParamSortKey string
 
 const (
-	GetCloudAccountsSortKeyLastScanned GetCloudAccountsSortKey = "lastScanned"
-	GetCloudAccountsSortKeyName        GetCloudAccountsSortKey = "name"
+	GetCloudAccountsQueryParamSortKeyLastScanned GetCloudAccountsQueryParamSortKey = "lastScanned"
+	GetCloudAccountsQueryParamSortKeyName        GetCloudAccountsQueryParamSortKey = "name"
 )
 
-func (e GetCloudAccountsSortKey) ToPointer() *GetCloudAccountsSortKey {
+func (e GetCloudAccountsQueryParamSortKey) ToPointer() *GetCloudAccountsQueryParamSortKey {
 	return &e
 }
 
-func (e *GetCloudAccountsSortKey) UnmarshalJSON(data []byte) error {
+func (e *GetCloudAccountsQueryParamSortKey) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -59,10 +59,10 @@ func (e *GetCloudAccountsSortKey) UnmarshalJSON(data []byte) error {
 	case "lastScanned":
 		fallthrough
 	case "name":
-		*e = GetCloudAccountsSortKey(v)
+		*e = GetCloudAccountsQueryParamSortKey(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetCloudAccountsSortKey: %v", v)
+		return fmt.Errorf("invalid value for GetCloudAccountsQueryParamSortKey: %v", v)
 	}
 }
 
@@ -78,9 +78,9 @@ type GetCloudAccountsRequest struct {
 	// Filter cloud accounts by region
 	Region *string `queryParam:"style=form,explode=true,name=region"`
 	// sorting direction
-	SortDir *GetCloudAccountsSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
+	SortDir *GetCloudAccountsQueryParamSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
 	// sort key
-	SortKey GetCloudAccountsSortKey `queryParam:"style=form,explode=true,name=sortKey"`
+	SortKey GetCloudAccountsQueryParamSortKey `queryParam:"style=form,explode=true,name=sortKey"`
 }
 
 func (g GetCloudAccountsRequest) MarshalJSON() ([]byte, error) {
@@ -129,36 +129,29 @@ func (o *GetCloudAccountsRequest) GetRegion() *string {
 	return o.Region
 }
 
-func (o *GetCloudAccountsRequest) GetSortDir() *GetCloudAccountsSortDir {
+func (o *GetCloudAccountsRequest) GetSortDir() *GetCloudAccountsQueryParamSortDir {
 	if o == nil {
 		return nil
 	}
 	return o.SortDir
 }
 
-func (o *GetCloudAccountsRequest) GetSortKey() GetCloudAccountsSortKey {
+func (o *GetCloudAccountsRequest) GetSortKey() GetCloudAccountsQueryParamSortKey {
 	if o == nil {
-		return GetCloudAccountsSortKey("")
+		return GetCloudAccountsQueryParamSortKey("")
 	}
 	return o.SortKey
 }
 
 type GetCloudAccountsResponse struct {
-	// Success
-	CloudAccounts []shared.CloudAccount
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-}
-
-func (o *GetCloudAccountsResponse) GetCloudAccounts() []shared.CloudAccount {
-	if o == nil {
-		return nil
-	}
-	return o.CloudAccounts
+	// Success
+	Classes []shared.CloudAccount
 }
 
 func (o *GetCloudAccountsResponse) GetContentType() string {
@@ -180,4 +173,11 @@ func (o *GetCloudAccountsResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetCloudAccountsResponse) GetClasses() []shared.CloudAccount {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

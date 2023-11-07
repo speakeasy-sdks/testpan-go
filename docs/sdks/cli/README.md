@@ -1,5 +1,5 @@
 # Cli
-(*Cli*)
+(*.Cli*)
 
 ## Overview
 
@@ -39,7 +39,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetToolsCliSecurecnDeploymentCli200ApplicationJSONBinaryString != nil {
+    if res.Stream != nil {
         // handle response
     }
 }

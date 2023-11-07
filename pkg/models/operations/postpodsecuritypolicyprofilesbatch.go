@@ -10,12 +10,12 @@ import (
 type PostPodSecurityPolicyProfilesBatchResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// Added
-	PodSecurityPolicies []shared.PodSecurityPolicy
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Added
+	Classes []shared.PodSecurityPolicy
 }
 
 func (o *PostPodSecurityPolicyProfilesBatchResponse) GetContentType() string {
@@ -23,13 +23,6 @@ func (o *PostPodSecurityPolicyProfilesBatchResponse) GetContentType() string {
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *PostPodSecurityPolicyProfilesBatchResponse) GetPodSecurityPolicies() []shared.PodSecurityPolicy {
-	if o == nil {
-		return nil
-	}
-	return o.PodSecurityPolicies
 }
 
 func (o *PostPodSecurityPolicyProfilesBatchResponse) GetStatusCode() int {
@@ -44,4 +37,11 @@ func (o *PostPodSecurityPolicyProfilesBatchResponse) GetRawResponse() *http.Resp
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *PostPodSecurityPolicyProfilesBatchResponse) GetClasses() []shared.PodSecurityPolicy {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

@@ -2,28 +2,28 @@
 
 package shared
 
-type APIReconstructionResponseResponse struct {
+type Response struct {
 	LearningDurationLeft *string  `json:"learningDurationLeft,omitempty"`
 	Messages             []string `json:"messages,omitempty"`
 	// Status of an ongoing API reconstruction phase.
 	Status *APIReconstructionStatus `json:"status,omitempty"`
 }
 
-func (o *APIReconstructionResponseResponse) GetLearningDurationLeft() *string {
+func (o *Response) GetLearningDurationLeft() *string {
 	if o == nil {
 		return nil
 	}
 	return o.LearningDurationLeft
 }
 
-func (o *APIReconstructionResponseResponse) GetMessages() []string {
+func (o *Response) GetMessages() []string {
 	if o == nil {
 		return nil
 	}
 	return o.Messages
 }
 
-func (o *APIReconstructionResponseResponse) GetStatus() *APIReconstructionStatus {
+func (o *Response) GetStatus() *APIReconstructionStatus {
 	if o == nil {
 		return nil
 	}
@@ -31,12 +31,12 @@ func (o *APIReconstructionResponseResponse) GetStatus() *APIReconstructionStatus
 }
 
 type APIReconstructionResponse struct {
-	Response *APIReconstructionResponseResponse `json:"response,omitempty"`
+	Response *Response `json:"response,omitempty"`
 	// Status of an ongoing API reconstruction.
 	Type *APIReconstructionType `json:"type,omitempty"`
 }
 
-func (o *APIReconstructionResponse) GetResponse() *APIReconstructionResponseResponse {
+func (o *APIReconstructionResponse) GetResponse() *Response {
 	if o == nil {
 		return nil
 	}

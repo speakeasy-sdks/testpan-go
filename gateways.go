@@ -15,18 +15,18 @@ import (
 	"strings"
 )
 
-type gateways struct {
+type Gateways struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newGateways(sdkConfig sdkConfiguration) *gateways {
-	return &gateways{
+func newGateways(sdkConfig sdkConfiguration) *Gateways {
+	return &Gateways{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // DeleteGatewaysGatewayID - Delete gateway
-func (s *gateways) DeleteGatewaysGatewayID(ctx context.Context, request operations.DeleteGatewaysGatewayIDRequest) (*operations.DeleteGatewaysGatewayIDResponse, error) {
+func (s *Gateways) DeleteGatewaysGatewayID(ctx context.Context, request operations.DeleteGatewaysGatewayIDRequest) (*operations.DeleteGatewaysGatewayIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/gateways/{gatewayId}", request, nil)
 	if err != nil {
@@ -76,7 +76,7 @@ func (s *gateways) DeleteGatewaysGatewayID(ctx context.Context, request operatio
 }
 
 // GetGateways - Get gateways
-func (s *gateways) GetGateways(ctx context.Context, request operations.GetGatewaysRequest) (*operations.GetGatewaysResponse, error) {
+func (s *Gateways) GetGateways(ctx context.Context, request operations.GetGatewaysRequest) (*operations.GetGatewaysResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/gateways"
 
@@ -124,7 +124,7 @@ func (s *gateways) GetGateways(ctx context.Context, request operations.GetGatewa
 				return nil, err
 			}
 
-			res.Gateways = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -140,7 +140,7 @@ func (s *gateways) GetGateways(ctx context.Context, request operations.GetGatewa
 }
 
 // GetGatewaysClusters - Get clusters info
-func (s *gateways) GetGatewaysClusters(ctx context.Context, request operations.GetGatewaysClustersRequest) (*operations.GetGatewaysClustersResponse, error) {
+func (s *Gateways) GetGatewaysClusters(ctx context.Context, request operations.GetGatewaysClustersRequest) (*operations.GetGatewaysClustersResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/gateways/clusters"
 
@@ -188,7 +188,7 @@ func (s *gateways) GetGatewaysClusters(ctx context.Context, request operations.G
 				return nil, err
 			}
 
-			res.GatewayClusterInfos = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -205,7 +205,7 @@ func (s *gateways) GetGatewaysClusters(ctx context.Context, request operations.G
 
 // GetGatewaysGatewayIDDownloadBundle - Get a GW installation script
 // In order to install,  extract and run "./install_bundle.sh"
-func (s *gateways) GetGatewaysGatewayIDDownloadBundle(ctx context.Context, request operations.GetGatewaysGatewayIDDownloadBundleRequest) (*operations.GetGatewaysGatewayIDDownloadBundleResponse, error) {
+func (s *Gateways) GetGatewaysGatewayIDDownloadBundle(ctx context.Context, request operations.GetGatewaysGatewayIDDownloadBundleRequest) (*operations.GetGatewaysGatewayIDDownloadBundleResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/gateways/{gatewayId}/download_bundle", request, nil)
 	if err != nil {
@@ -238,7 +238,7 @@ func (s *gateways) GetGatewaysGatewayIDDownloadBundle(ctx context.Context, reque
 	}
 
 	if (httpRes.StatusCode == 200) && utils.MatchContentType(contentType, `application/json`) {
-		res.GetGatewaysGatewayIDDownloadBundle200ApplicationJSONBinaryString = httpRes.Body
+		res.Stream = httpRes.Body
 
 		return res, nil
 	}
@@ -277,7 +277,7 @@ func (s *gateways) GetGatewaysGatewayIDDownloadBundle(ctx context.Context, reque
 }
 
 // PostGateways - Add new gateway
-func (s *gateways) PostGateways(ctx context.Context, request shared.Gateway) (*operations.PostGatewaysResponse, error) {
+func (s *Gateways) PostGateways(ctx context.Context, request shared.Gateway) (*operations.PostGatewaysResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/gateways"
 
@@ -347,7 +347,7 @@ func (s *gateways) PostGateways(ctx context.Context, request shared.Gateway) (*o
 }
 
 // PutGatewaysGatewayID - Edit gateway
-func (s *gateways) PutGatewaysGatewayID(ctx context.Context, request operations.PutGatewaysGatewayIDRequest) (*operations.PutGatewaysGatewayIDResponse, error) {
+func (s *Gateways) PutGatewaysGatewayID(ctx context.Context, request operations.PutGatewaysGatewayIDRequest) (*operations.PutGatewaysGatewayIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/gateways/{gatewayId}", request, nil)
 	if err != nil {

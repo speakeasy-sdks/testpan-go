@@ -14,19 +14,19 @@ import (
 	"strings"
 )
 
-// cli - APIs to get the Secure Application CLI
-type cli struct {
+// Cli - APIs to get the Secure Application CLI
+type Cli struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newCli(sdkConfig sdkConfiguration) *cli {
-	return &cli{
+func newCli(sdkConfig sdkConfiguration) *Cli {
+	return &Cli{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // GetToolsCliSecurecnDeploymentCli - Get the Secure Application deployment cli
-func (s *cli) GetToolsCliSecurecnDeploymentCli(ctx context.Context) (*operations.GetToolsCliSecurecnDeploymentCliResponse, error) {
+func (s *Cli) GetToolsCliSecurecnDeploymentCli(ctx context.Context) (*operations.GetToolsCliSecurecnDeploymentCliResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/tools/cli/securecn_deployment_cli"
 
@@ -56,7 +56,7 @@ func (s *cli) GetToolsCliSecurecnDeploymentCli(ctx context.Context) (*operations
 	}
 
 	if (httpRes.StatusCode == 200) && utils.MatchContentType(contentType, `application/json`) {
-		res.GetToolsCliSecurecnDeploymentCli200ApplicationJSONBinaryString = httpRes.Body
+		res.Stream = httpRes.Body
 
 		return res, nil
 	}

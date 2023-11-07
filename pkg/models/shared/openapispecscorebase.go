@@ -7,18 +7,18 @@ import (
 	"fmt"
 )
 
-type OpenAPISpecScoreBaseOapIVersion string
+type OapIVersion string
 
 const (
-	OpenAPISpecScoreBaseOapIVersionOpenAPISpecScoreV2 OpenAPISpecScoreBaseOapIVersion = "OpenApiSpecScoreV2"
-	OpenAPISpecScoreBaseOapIVersionOpenAPISpecScoreV3 OpenAPISpecScoreBaseOapIVersion = "OpenApiSpecScoreV3"
+	OapIVersionOpenAPISpecScoreV2 OapIVersion = "OpenApiSpecScoreV2"
+	OapIVersionOpenAPISpecScoreV3 OapIVersion = "OpenApiSpecScoreV3"
 )
 
-func (e OpenAPISpecScoreBaseOapIVersion) ToPointer() *OpenAPISpecScoreBaseOapIVersion {
+func (e OapIVersion) ToPointer() *OapIVersion {
 	return &e
 }
 
-func (e *OpenAPISpecScoreBaseOapIVersion) UnmarshalJSON(data []byte) error {
+func (e *OapIVersion) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -27,18 +27,18 @@ func (e *OpenAPISpecScoreBaseOapIVersion) UnmarshalJSON(data []byte) error {
 	case "OpenApiSpecScoreV2":
 		fallthrough
 	case "OpenApiSpecScoreV3":
-		*e = OpenAPISpecScoreBaseOapIVersion(v)
+		*e = OapIVersion(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for OpenAPISpecScoreBaseOapIVersion: %v", v)
+		return fmt.Errorf("invalid value for OapIVersion: %v", v)
 	}
 }
 
 type OpenAPISpecScoreBase struct {
-	General     *OpenAPISpecScoreElementsList    `json:"general,omitempty"`
-	OapIVersion *OpenAPISpecScoreBaseOapIVersion `json:"oapIVersion,omitempty"`
-	Security    *OpenAPISpecScoreElementsList    `json:"security,omitempty"`
-	Tags        *OpenAPISpecTags                 `json:"tags,omitempty"`
+	General     *OpenAPISpecScoreElementsList `json:"general,omitempty"`
+	OapIVersion *OapIVersion                  `json:"oapIVersion,omitempty"`
+	Security    *OpenAPISpecScoreElementsList `json:"security,omitempty"`
+	Tags        *OpenAPISpecTags              `json:"tags,omitempty"`
 }
 
 func (o *OpenAPISpecScoreBase) GetGeneral() *OpenAPISpecScoreElementsList {
@@ -48,7 +48,7 @@ func (o *OpenAPISpecScoreBase) GetGeneral() *OpenAPISpecScoreElementsList {
 	return o.General
 }
 
-func (o *OpenAPISpecScoreBase) GetOapIVersion() *OpenAPISpecScoreBaseOapIVersion {
+func (o *OpenAPISpecScoreBase) GetOapIVersion() *OapIVersion {
 	if o == nil {
 		return nil
 	}

@@ -7,21 +7,21 @@ import (
 	"fmt"
 )
 
-type PeriodicJobExpressionPeriodicJobType string
+type PeriodicJobType string
 
 const (
-	PeriodicJobExpressionPeriodicJobTypeNonPeriodicJobExpression     PeriodicJobExpressionPeriodicJobType = "NonPeriodicJobExpression"
-	PeriodicJobExpressionPeriodicJobTypeSinglePeriodicJobExpression  PeriodicJobExpressionPeriodicJobType = "SinglePeriodicJobExpression"
-	PeriodicJobExpressionPeriodicJobTypeByHoursPeriodicJobExpression PeriodicJobExpressionPeriodicJobType = "ByHoursPeriodicJobExpression"
-	PeriodicJobExpressionPeriodicJobTypeByDaysPeriodicJobExpression  PeriodicJobExpressionPeriodicJobType = "ByDaysPeriodicJobExpression"
-	PeriodicJobExpressionPeriodicJobTypeWeeklyPeriodicJobExpression  PeriodicJobExpressionPeriodicJobType = "WeeklyPeriodicJobExpression"
+	PeriodicJobTypeNonPeriodicJobExpression     PeriodicJobType = "NonPeriodicJobExpression"
+	PeriodicJobTypeSinglePeriodicJobExpression  PeriodicJobType = "SinglePeriodicJobExpression"
+	PeriodicJobTypeByHoursPeriodicJobExpression PeriodicJobType = "ByHoursPeriodicJobExpression"
+	PeriodicJobTypeByDaysPeriodicJobExpression  PeriodicJobType = "ByDaysPeriodicJobExpression"
+	PeriodicJobTypeWeeklyPeriodicJobExpression  PeriodicJobType = "WeeklyPeriodicJobExpression"
 )
 
-func (e PeriodicJobExpressionPeriodicJobType) ToPointer() *PeriodicJobExpressionPeriodicJobType {
+func (e PeriodicJobType) ToPointer() *PeriodicJobType {
 	return &e
 }
 
-func (e *PeriodicJobExpressionPeriodicJobType) UnmarshalJSON(data []byte) error {
+func (e *PeriodicJobType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -36,20 +36,20 @@ func (e *PeriodicJobExpressionPeriodicJobType) UnmarshalJSON(data []byte) error 
 	case "ByDaysPeriodicJobExpression":
 		fallthrough
 	case "WeeklyPeriodicJobExpression":
-		*e = PeriodicJobExpressionPeriodicJobType(v)
+		*e = PeriodicJobType(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for PeriodicJobExpressionPeriodicJobType: %v", v)
+		return fmt.Errorf("invalid value for PeriodicJobType: %v", v)
 	}
 }
 
 type PeriodicJobExpression struct {
-	PeriodicJobType PeriodicJobExpressionPeriodicJobType `json:"PeriodicJobType"`
+	PeriodicJobType PeriodicJobType `json:"PeriodicJobType"`
 }
 
-func (o *PeriodicJobExpression) GetPeriodicJobType() PeriodicJobExpressionPeriodicJobType {
+func (o *PeriodicJobExpression) GetPeriodicJobType() PeriodicJobType {
 	if o == nil {
-		return PeriodicJobExpressionPeriodicJobType("")
+		return PeriodicJobType("")
 	}
 	return o.PeriodicJobType
 }

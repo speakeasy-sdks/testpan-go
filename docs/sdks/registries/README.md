@@ -1,5 +1,5 @@
 # Registries
-(*Registries*)
+(*.Registries*)
 
 ## Overview
 
@@ -97,7 +97,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.Registries != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -146,7 +146,7 @@ func main() {
             "95b632a5-fe89-4e35-884b-fdb5be5f9972",
         },
         Credentials: &shared.RegistryCredentials{
-            RegistryCredentialsType: shared.RegistryCredentialsRegistryCredentialsTypeAwsRegistryCredentials,
+            RegistryCredentialsType: shared.RegistryCredentialsTypeAwsRegistryCredentials,
         },
         Type: shared.RegistryTypeAzure,
         URL: "http://svelte-curio.org",
@@ -204,7 +204,7 @@ func main() {
             "146c9745-4e65-4c13-96b3-e4e8e106ebca",
         },
         Credentials: &shared.RegistryCredentials{
-            RegistryCredentialsType: shared.RegistryCredentialsRegistryCredentialsTypeAwsRegistryCredentials,
+            RegistryCredentialsType: shared.RegistryCredentialsTypeAwsRegistryCredentials,
         },
         Type: shared.RegistryTypeOther,
         URL: "http://handy-energy.net",
@@ -259,12 +259,12 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Registries.PostRegistriesTestConnectionRegistryID(ctx, operations.PostRegistriesTestConnectionRegistryIDRequest{
-        RegistryInput: shared.RegistryInput{
+        Registry: shared.RegistryInput{
             ClusterIds: []string{
                 "309c9980-a8e5-4df0-8f7a-f1c1e7dae13c",
             },
             Credentials: &shared.RegistryCredentials{
-                RegistryCredentialsType: shared.RegistryCredentialsRegistryCredentialsTypeStandardRegistryCredentials,
+                RegistryCredentialsType: shared.RegistryCredentialsTypeStandardRegistryCredentials,
             },
             Type: shared.RegistryTypeAws,
             URL: "http://blond-horror.org",
@@ -321,12 +321,12 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Registries.PutRegistriesRegistryID(ctx, operations.PutRegistriesRegistryIDRequest{
-        RegistryInput: shared.RegistryInput{
+        Registry: shared.RegistryInput{
             ClusterIds: []string{
                 "bb846b91-90fe-4927-838c-5cc07f3bb118",
             },
             Credentials: &shared.RegistryCredentials{
-                RegistryCredentialsType: shared.RegistryCredentialsRegistryCredentialsTypeAwsRegistryCredentials,
+                RegistryCredentialsType: shared.RegistryCredentialsTypeAwsRegistryCredentials,
             },
             Type: shared.RegistryTypeAws,
             URL: "https://mixed-affiliate.info",

@@ -6,19 +6,19 @@ import (
 	"github.com/speakeasy-sdks/testpan-go/pkg/utils"
 )
 
-type AppTelemetryCluster struct {
+type Cluster struct {
 	ID   *string `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 }
 
-func (o *AppTelemetryCluster) GetID() *string {
+func (o *Cluster) GetID() *string {
 	if o == nil {
 		return nil
 	}
 	return o.ID
 }
 
-func (o *AppTelemetryCluster) GetName() *string {
+func (o *Cluster) GetName() *string {
 	if o == nil {
 		return nil
 	}
@@ -106,19 +106,19 @@ func (o *AppTelemetryNamespace) GetName() *string {
 	return o.Name
 }
 
-type AppTelemetryNetwork struct {
+type Network struct {
 	ID   *string `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 }
 
-func (o *AppTelemetryNetwork) GetID() *string {
+func (o *Network) GetID() *string {
 	if o == nil {
 		return nil
 	}
 	return o.ID
 }
 
-func (o *AppTelemetryNetwork) GetName() *string {
+func (o *Network) GetName() *string {
 	if o == nil {
 		return nil
 	}
@@ -131,7 +131,7 @@ type AppTelemetry struct {
 	App *AppProcessInfo `json:"app,omitempty"`
 	// runtime info of the App (if it is an App)
 	AppRuntimeInfo              *AppRuntimeInfo          `json:"appRuntimeInfo,omitempty"`
-	Cluster                     *AppTelemetryCluster     `json:"cluster,omitempty"`
+	Cluster                     *Cluster                 `json:"cluster,omitempty"`
 	Environment                 *AppTelemetryEnvironment `json:"environment,omitempty"`
 	Expansion                   *ExpansionTelemetryInfo  `json:"expansion,omitempty"`
 	HighestDockerfileScanResult *DockerfileScanSeverity  `json:"highestDockerfileScanResult,omitempty"`
@@ -142,7 +142,7 @@ type AppTelemetry struct {
 	IsPodProtected              *bool                    `default:"false" json:"isPodProtected"`
 	IsPublicFacing              *bool                    `json:"isPublicFacing,omitempty"`
 	Namespace                   *AppTelemetryNamespace   `json:"namespace,omitempty"`
-	Network                     *AppTelemetryNetwork     `json:"network,omitempty"`
+	Network                     *Network                 `json:"network,omitempty"`
 	Pod                         *PodTelemetryInfo        `json:"pod,omitempty"`
 	PodIdentification           *PodIdentification       `json:"podIdentification,omitempty"`
 	// runtime info of the pod (if is a pod)
@@ -190,7 +190,7 @@ func (o *AppTelemetry) GetAppRuntimeInfo() *AppRuntimeInfo {
 	return o.AppRuntimeInfo
 }
 
-func (o *AppTelemetry) GetCluster() *AppTelemetryCluster {
+func (o *AppTelemetry) GetCluster() *Cluster {
 	if o == nil {
 		return nil
 	}
@@ -267,7 +267,7 @@ func (o *AppTelemetry) GetNamespace() *AppTelemetryNamespace {
 	return o.Namespace
 }
 
-func (o *AppTelemetry) GetNetwork() *AppTelemetryNetwork {
+func (o *AppTelemetry) GetNetwork() *Network {
 	if o == nil {
 		return nil
 	}

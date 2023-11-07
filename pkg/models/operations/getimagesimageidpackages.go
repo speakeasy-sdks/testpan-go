@@ -27,7 +27,7 @@ type GetImagesImageIDPackagesResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// OK
-	ImagePackageDetails []shared.ImagePackageDetails
+	Classes []shared.ImagePackageDetails
 }
 
 func (o *GetImagesImageIDPackagesResponse) GetContentType() string {
@@ -51,9 +51,9 @@ func (o *GetImagesImageIDPackagesResponse) GetRawResponse() *http.Response {
 	return o.RawResponse
 }
 
-func (o *GetImagesImageIDPackagesResponse) GetImagePackageDetails() []shared.ImagePackageDetails {
+func (o *GetImagesImageIDPackagesResponse) GetClasses() []shared.ImagePackageDetails {
 	if o == nil {
 		return nil
 	}
-	return o.ImagePackageDetails
+	return o.Classes
 }

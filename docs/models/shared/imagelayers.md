@@ -5,7 +5,7 @@ image layers
 
 ## Fields
 
-| Field                                             | Type                                              | Required                                          | Description                                       |
-| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
-| `SafeLayers`                                      | [][ImageLayer](../../models/shared/imagelayer.md) | :heavy_minus_sign:                                | N/A                                               |
-| `VulnerableLayers`                                | [][ImageLayer](../../models/shared/imagelayer.md) | :heavy_minus_sign:                                | N/A                                               |
+| Field                                                    | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `SafeLayers`                                             | [][shared.ImageLayer](../../models/shared/imagelayer.md) | :heavy_minus_sign:                                       | N/A                                                      |
+| `VulnerableLayers`                                       | [][shared.ImageLayer](../../models/shared/imagelayer.md) | :heavy_minus_sign:                                       | N/A                                                      |

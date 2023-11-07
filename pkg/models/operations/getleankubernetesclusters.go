@@ -24,12 +24,12 @@ type GetLeanKubernetesClustersResponse struct {
 	APIResponse *shared.APIResponse
 	// HTTP response content type for this operation
 	ContentType string
-	// Success
-	LeanKubernetesClusters []shared.LeanKubernetesCluster
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Success
+	Classes []shared.LeanKubernetesCluster
 }
 
 func (o *GetLeanKubernetesClustersResponse) GetAPIResponse() *shared.APIResponse {
@@ -46,13 +46,6 @@ func (o *GetLeanKubernetesClustersResponse) GetContentType() string {
 	return o.ContentType
 }
 
-func (o *GetLeanKubernetesClustersResponse) GetLeanKubernetesClusters() []shared.LeanKubernetesCluster {
-	if o == nil {
-		return nil
-	}
-	return o.LeanKubernetesClusters
-}
-
 func (o *GetLeanKubernetesClustersResponse) GetStatusCode() int {
 	if o == nil {
 		return 0
@@ -65,4 +58,11 @@ func (o *GetLeanKubernetesClustersResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetLeanKubernetesClustersResponse) GetClasses() []shared.LeanKubernetesCluster {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

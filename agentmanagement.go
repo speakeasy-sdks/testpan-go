@@ -15,19 +15,19 @@ import (
 	"strings"
 )
 
-// agentManagement - APIs use to  interact with  agents
-type agentManagement struct {
+// AgentManagement - APIs use to  interact with  agents
+type AgentManagement struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newAgentManagement(sdkConfig sdkConfiguration) *agentManagement {
-	return &agentManagement{
+func newAgentManagement(sdkConfig sdkConfiguration) *AgentManagement {
+	return &AgentManagement{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // GetAgents - List all installed agents
-func (s *agentManagement) GetAgents(ctx context.Context, request operations.GetAgentsRequest) (*operations.GetAgentsResponse, error) {
+func (s *AgentManagement) GetAgents(ctx context.Context, request operations.GetAgentsRequest) (*operations.GetAgentsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/agents"
 
@@ -91,7 +91,7 @@ func (s *agentManagement) GetAgents(ctx context.Context, request operations.GetA
 }
 
 // PostAgentsAgentIDUpdate - Update the agent with the given id to the latest agent version
-func (s *agentManagement) PostAgentsAgentIDUpdate(ctx context.Context, request operations.PostAgentsAgentIDUpdateRequest) (*operations.PostAgentsAgentIDUpdateResponse, error) {
+func (s *AgentManagement) PostAgentsAgentIDUpdate(ctx context.Context, request operations.PostAgentsAgentIDUpdateRequest) (*operations.PostAgentsAgentIDUpdateResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/agents/{agentId}/update", request, nil)
 	if err != nil {
@@ -164,7 +164,7 @@ func (s *agentManagement) PostAgentsAgentIDUpdate(ctx context.Context, request o
 }
 
 // PostAgentsAgentIDUpdateState - Update the status of an agent with the given id
-func (s *agentManagement) PostAgentsAgentIDUpdateState(ctx context.Context, request operations.PostAgentsAgentIDUpdateStateRequest) (*operations.PostAgentsAgentIDUpdateStateResponse, error) {
+func (s *AgentManagement) PostAgentsAgentIDUpdateState(ctx context.Context, request operations.PostAgentsAgentIDUpdateStateRequest) (*operations.PostAgentsAgentIDUpdateStateResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/agents/{agentId}/updateState", request, nil)
 	if err != nil {

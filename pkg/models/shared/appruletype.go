@@ -7,18 +7,18 @@ import (
 	"fmt"
 )
 
-type AppRuleTypeRuleType string
+type RuleType string
 
 const (
-	AppRuleTypeRuleTypeInjectionRuleType AppRuleTypeRuleType = "InjectionRuleType"
-	AppRuleTypeRuleTypeViolationRuleType AppRuleTypeRuleType = "ViolationRuleType"
+	RuleTypeInjectionRuleType RuleType = "InjectionRuleType"
+	RuleTypeViolationRuleType RuleType = "ViolationRuleType"
 )
 
-func (e AppRuleTypeRuleType) ToPointer() *AppRuleTypeRuleType {
+func (e RuleType) ToPointer() *RuleType {
 	return &e
 }
 
-func (e *AppRuleTypeRuleType) UnmarshalJSON(data []byte) error {
+func (e *RuleType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -27,21 +27,21 @@ func (e *AppRuleTypeRuleType) UnmarshalJSON(data []byte) error {
 	case "InjectionRuleType":
 		fallthrough
 	case "ViolationRuleType":
-		*e = AppRuleTypeRuleType(v)
+		*e = RuleType(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for AppRuleTypeRuleType: %v", v)
+		return fmt.Errorf("invalid value for RuleType: %v", v)
 	}
 }
 
 // AppRuleType - identify the app rule type. Only one of the below should be not null, and  used.
 type AppRuleType struct {
-	RuleType AppRuleTypeRuleType `json:"ruleType"`
+	RuleType RuleType `json:"ruleType"`
 }
 
-func (o *AppRuleType) GetRuleType() AppRuleTypeRuleType {
+func (o *AppRuleType) GetRuleType() RuleType {
 	if o == nil {
-		return AppRuleTypeRuleType("")
+		return RuleType("")
 	}
 	return o.RuleType
 }

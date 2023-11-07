@@ -15,19 +15,19 @@ import (
 	"strings"
 )
 
-// apiSecurity - APIs used to manage Api Security
-type apiSecurity struct {
+// APISecurity - APIs used to manage Api Security
+type APISecurity struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newAPISecurity(sdkConfig sdkConfiguration) *apiSecurity {
-	return &apiSecurity{
+func newAPISecurity(sdkConfig sdkConfiguration) *APISecurity {
+	return &APISecurity{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // DeleteAPISecurityAPICatalogID - Delete an API
-func (s *apiSecurity) DeleteAPISecurityAPICatalogID(ctx context.Context, request operations.DeleteAPISecurityAPICatalogIDRequest) (*operations.DeleteAPISecurityAPICatalogIDResponse, error) {
+func (s *APISecurity) DeleteAPISecurityAPICatalogID(ctx context.Context, request operations.DeleteAPISecurityAPICatalogIDRequest) (*operations.DeleteAPISecurityAPICatalogIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/api/{catalogId}", request, nil)
 	if err != nil {
@@ -79,7 +79,7 @@ func (s *apiSecurity) DeleteAPISecurityAPICatalogID(ctx context.Context, request
 }
 
 // DeleteAPISecurityInternalCatalogCatalogIDBflaDetection - stop bfla detection phase
-func (s *apiSecurity) DeleteAPISecurityInternalCatalogCatalogIDBflaDetection(ctx context.Context, request operations.DeleteAPISecurityInternalCatalogCatalogIDBflaDetectionRequest) (*operations.DeleteAPISecurityInternalCatalogCatalogIDBflaDetectionResponse, error) {
+func (s *APISecurity) DeleteAPISecurityInternalCatalogCatalogIDBflaDetection(ctx context.Context, request operations.DeleteAPISecurityInternalCatalogCatalogIDBflaDetectionRequest) (*operations.DeleteAPISecurityInternalCatalogCatalogIDBflaDetectionResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/bfla/detection", request, nil)
 	if err != nil {
@@ -122,7 +122,7 @@ func (s *apiSecurity) DeleteAPISecurityInternalCatalogCatalogIDBflaDetection(ctx
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
 			out := string(rawBody)
-			res.DeleteAPISecurityInternalCatalogCatalogIDBflaDetection204ApplicationJSONUUIDString = &out
+			res.Res = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -138,7 +138,7 @@ func (s *apiSecurity) DeleteAPISecurityInternalCatalogCatalogIDBflaDetection(ctx
 }
 
 // DeleteAPISecurityInternalCatalogCatalogIDBflaLearning - stop bfla learning phase
-func (s *apiSecurity) DeleteAPISecurityInternalCatalogCatalogIDBflaLearning(ctx context.Context, request operations.DeleteAPISecurityInternalCatalogCatalogIDBflaLearningRequest) (*operations.DeleteAPISecurityInternalCatalogCatalogIDBflaLearningResponse, error) {
+func (s *APISecurity) DeleteAPISecurityInternalCatalogCatalogIDBflaLearning(ctx context.Context, request operations.DeleteAPISecurityInternalCatalogCatalogIDBflaLearningRequest) (*operations.DeleteAPISecurityInternalCatalogCatalogIDBflaLearningResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/bfla/learning", request, nil)
 	if err != nil {
@@ -181,7 +181,7 @@ func (s *apiSecurity) DeleteAPISecurityInternalCatalogCatalogIDBflaLearning(ctx 
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
 			out := string(rawBody)
-			res.DeleteAPISecurityInternalCatalogCatalogIDBflaLearning204ApplicationJSONUUIDString = &out
+			res.Res = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -197,7 +197,7 @@ func (s *apiSecurity) DeleteAPISecurityInternalCatalogCatalogIDBflaLearning(ctx 
 }
 
 // DeleteAPISecurityOpenAPISpecsCatalogID - delete open api spec include all of it findings and scores
-func (s *apiSecurity) DeleteAPISecurityOpenAPISpecsCatalogID(ctx context.Context, request operations.DeleteAPISecurityOpenAPISpecsCatalogIDRequest) (*operations.DeleteAPISecurityOpenAPISpecsCatalogIDResponse, error) {
+func (s *APISecurity) DeleteAPISecurityOpenAPISpecsCatalogID(ctx context.Context, request operations.DeleteAPISecurityOpenAPISpecsCatalogIDRequest) (*operations.DeleteAPISecurityOpenAPISpecsCatalogIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/openApiSpecs/{catalogId}", request, nil)
 	if err != nil {
@@ -260,7 +260,7 @@ func (s *apiSecurity) DeleteAPISecurityOpenAPISpecsCatalogID(ctx context.Context
 }
 
 // DeleteGatewaysGatewayID - Delete gateway
-func (s *apiSecurity) DeleteGatewaysGatewayID(ctx context.Context, request operations.DeleteGatewaysGatewayIDRequest) (*operations.DeleteGatewaysGatewayIDResponse, error) {
+func (s *APISecurity) DeleteGatewaysGatewayID(ctx context.Context, request operations.DeleteGatewaysGatewayIDRequest) (*operations.DeleteGatewaysGatewayIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/gateways/{gatewayId}", request, nil)
 	if err != nil {
@@ -310,7 +310,7 @@ func (s *apiSecurity) DeleteGatewaysGatewayID(ctx context.Context, request opera
 }
 
 // GetAPISecurityExternalCatalog - Get a list of APIs and their compliance
-func (s *apiSecurity) GetAPISecurityExternalCatalog(ctx context.Context, request operations.GetAPISecurityExternalCatalogRequest) (*operations.GetAPISecurityExternalCatalogResponse, error) {
+func (s *APISecurity) GetAPISecurityExternalCatalog(ctx context.Context, request operations.GetAPISecurityExternalCatalogRequest) (*operations.GetAPISecurityExternalCatalogResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/apiSecurity/externalCatalog"
 
@@ -374,7 +374,7 @@ func (s *apiSecurity) GetAPISecurityExternalCatalog(ctx context.Context, request
 }
 
 // GetAPISecurityExternalCatalogCount - Get the number of existing 3rd party APIs in the inventory
-func (s *apiSecurity) GetAPISecurityExternalCatalogCount(ctx context.Context, request operations.GetAPISecurityExternalCatalogCountRequest) (*operations.GetAPISecurityExternalCatalogCountResponse, error) {
+func (s *APISecurity) GetAPISecurityExternalCatalogCount(ctx context.Context, request operations.GetAPISecurityExternalCatalogCountRequest) (*operations.GetAPISecurityExternalCatalogCountResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/apiSecurity/externalCatalog/count"
 
@@ -422,7 +422,7 @@ func (s *apiSecurity) GetAPISecurityExternalCatalogCount(ctx context.Context, re
 				return nil, err
 			}
 
-			res.GetAPISecurityExternalCatalogCount200ApplicationJSONInteger = &out
+			res.Integer = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -438,7 +438,7 @@ func (s *apiSecurity) GetAPISecurityExternalCatalogCount(ctx context.Context, re
 }
 
 // GetAPISecurityExternalCatalogCatalogID - Get information about a specific API
-func (s *apiSecurity) GetAPISecurityExternalCatalogCatalogID(ctx context.Context, request operations.GetAPISecurityExternalCatalogCatalogIDRequest) (*operations.GetAPISecurityExternalCatalogCatalogIDResponse, error) {
+func (s *APISecurity) GetAPISecurityExternalCatalogCatalogID(ctx context.Context, request operations.GetAPISecurityExternalCatalogCatalogIDRequest) (*operations.GetAPISecurityExternalCatalogCatalogIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/externalCatalog/{catalogId}", request, nil)
 	if err != nil {
@@ -505,7 +505,7 @@ func (s *apiSecurity) GetAPISecurityExternalCatalogCatalogID(ctx context.Context
 }
 
 // GetAPISecurityInternalCatalog - Get a list of APIs and their compliance
-func (s *apiSecurity) GetAPISecurityInternalCatalog(ctx context.Context, request operations.GetAPISecurityInternalCatalogRequest) (*operations.GetAPISecurityInternalCatalogResponse, error) {
+func (s *APISecurity) GetAPISecurityInternalCatalog(ctx context.Context, request operations.GetAPISecurityInternalCatalogRequest) (*operations.GetAPISecurityInternalCatalogResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/apiSecurity/internalCatalog"
 
@@ -569,7 +569,7 @@ func (s *apiSecurity) GetAPISecurityInternalCatalog(ctx context.Context, request
 }
 
 // GetAPISecurityInternalCatalogCount - Get the number of existing 3rd party APIs in the inventory
-func (s *apiSecurity) GetAPISecurityInternalCatalogCount(ctx context.Context, request operations.GetAPISecurityInternalCatalogCountRequest) (*operations.GetAPISecurityInternalCatalogCountResponse, error) {
+func (s *APISecurity) GetAPISecurityInternalCatalogCount(ctx context.Context, request operations.GetAPISecurityInternalCatalogCountRequest) (*operations.GetAPISecurityInternalCatalogCountResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/apiSecurity/internalCatalog/count"
 
@@ -617,7 +617,7 @@ func (s *apiSecurity) GetAPISecurityInternalCatalogCount(ctx context.Context, re
 				return nil, err
 			}
 
-			res.GetAPISecurityInternalCatalogCount200ApplicationJSONInteger = &out
+			res.Integer = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -633,7 +633,7 @@ func (s *apiSecurity) GetAPISecurityInternalCatalogCount(ctx context.Context, re
 }
 
 // GetAPISecurityInternalCatalogCatalogID - Get information about a specific API
-func (s *apiSecurity) GetAPISecurityInternalCatalogCatalogID(ctx context.Context, request operations.GetAPISecurityInternalCatalogCatalogIDRequest) (*operations.GetAPISecurityInternalCatalogCatalogIDResponse, error) {
+func (s *APISecurity) GetAPISecurityInternalCatalogCatalogID(ctx context.Context, request operations.GetAPISecurityInternalCatalogCatalogIDRequest) (*operations.GetAPISecurityInternalCatalogCatalogIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}", request, nil)
 	if err != nil {
@@ -700,7 +700,7 @@ func (s *apiSecurity) GetAPISecurityInternalCatalogCatalogID(ctx context.Context
 }
 
 // GetAPISecurityInternalCatalogCatalogIDBfla - Get bfla info for given catalogId
-func (s *apiSecurity) GetAPISecurityInternalCatalogCatalogIDBfla(ctx context.Context, request operations.GetAPISecurityInternalCatalogCatalogIDBflaRequest) (*operations.GetAPISecurityInternalCatalogCatalogIDBflaResponse, error) {
+func (s *APISecurity) GetAPISecurityInternalCatalogCatalogIDBfla(ctx context.Context, request operations.GetAPISecurityInternalCatalogCatalogIDBflaRequest) (*operations.GetAPISecurityInternalCatalogCatalogIDBflaResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/bfla", request, nil)
 	if err != nil {
@@ -763,7 +763,7 @@ func (s *apiSecurity) GetAPISecurityInternalCatalogCatalogIDBfla(ctx context.Con
 }
 
 // GetAPISecurityInternalCatalogCatalogIDFuzzingStatus - Get status of the last/running fuzzing test
-func (s *apiSecurity) GetAPISecurityInternalCatalogCatalogIDFuzzingStatus(ctx context.Context, request operations.GetAPISecurityInternalCatalogCatalogIDFuzzingStatusRequest) (*operations.GetAPISecurityInternalCatalogCatalogIDFuzzingStatusResponse, error) {
+func (s *APISecurity) GetAPISecurityInternalCatalogCatalogIDFuzzingStatus(ctx context.Context, request operations.GetAPISecurityInternalCatalogCatalogIDFuzzingStatusRequest) (*operations.GetAPISecurityInternalCatalogCatalogIDFuzzingStatusResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/fuzzingStatus", request, nil)
 	if err != nil {
@@ -826,7 +826,7 @@ func (s *apiSecurity) GetAPISecurityInternalCatalogCatalogIDFuzzingStatus(ctx co
 }
 
 // GetAPISecurityInternalCatalogCatalogIDFuzzingTests - Get list of fuzzing tests
-func (s *apiSecurity) GetAPISecurityInternalCatalogCatalogIDFuzzingTests(ctx context.Context, request operations.GetAPISecurityInternalCatalogCatalogIDFuzzingTestsRequest) (*operations.GetAPISecurityInternalCatalogCatalogIDFuzzingTestsResponse, error) {
+func (s *APISecurity) GetAPISecurityInternalCatalogCatalogIDFuzzingTests(ctx context.Context, request operations.GetAPISecurityInternalCatalogCatalogIDFuzzingTestsRequest) (*operations.GetAPISecurityInternalCatalogCatalogIDFuzzingTestsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/fuzzingTests", request, nil)
 	if err != nil {
@@ -873,7 +873,7 @@ func (s *apiSecurity) GetAPISecurityInternalCatalogCatalogIDFuzzingTests(ctx con
 				return nil, err
 			}
 
-			res.APIServiceFuzzingTests = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -889,7 +889,7 @@ func (s *apiSecurity) GetAPISecurityInternalCatalogCatalogIDFuzzingTests(ctx con
 }
 
 // GetAPISecurityInternalCatalogCatalogIDTraceAnalysis - Get trace analysis details
-func (s *apiSecurity) GetAPISecurityInternalCatalogCatalogIDTraceAnalysis(ctx context.Context, request operations.GetAPISecurityInternalCatalogCatalogIDTraceAnalysisRequest) (*operations.GetAPISecurityInternalCatalogCatalogIDTraceAnalysisResponse, error) {
+func (s *APISecurity) GetAPISecurityInternalCatalogCatalogIDTraceAnalysis(ctx context.Context, request operations.GetAPISecurityInternalCatalogCatalogIDTraceAnalysisRequest) (*operations.GetAPISecurityInternalCatalogCatalogIDTraceAnalysisResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/traceAnalysis", request, nil)
 	if err != nil {
@@ -956,7 +956,7 @@ func (s *apiSecurity) GetAPISecurityInternalCatalogCatalogIDTraceAnalysis(ctx co
 }
 
 // GetAPISecurityOpenAPISpecsCatalogID - Get provided and reconstructed open api specs for specific API
-func (s *apiSecurity) GetAPISecurityOpenAPISpecsCatalogID(ctx context.Context, request operations.GetAPISecurityOpenAPISpecsCatalogIDRequest) (*operations.GetAPISecurityOpenAPISpecsCatalogIDResponse, error) {
+func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogID(ctx context.Context, request operations.GetAPISecurityOpenAPISpecsCatalogIDRequest) (*operations.GetAPISecurityOpenAPISpecsCatalogIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/openApiSpecs/{catalogId}", request, nil)
 	if err != nil {
@@ -1019,7 +1019,7 @@ func (s *apiSecurity) GetAPISecurityOpenAPISpecsCatalogID(ctx context.Context, r
 }
 
 // GetAPISecurityOpenAPISpecsCatalogIDDiffDetectionStatus - Get provided and reconstructed open api specs for specific API
-func (s *apiSecurity) GetAPISecurityOpenAPISpecsCatalogIDDiffDetectionStatus(ctx context.Context, request operations.GetAPISecurityOpenAPISpecsCatalogIDDiffDetectionStatusRequest) (*operations.GetAPISecurityOpenAPISpecsCatalogIDDiffDetectionStatusResponse, error) {
+func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDDiffDetectionStatus(ctx context.Context, request operations.GetAPISecurityOpenAPISpecsCatalogIDDiffDetectionStatusRequest) (*operations.GetAPISecurityOpenAPISpecsCatalogIDDiffDetectionStatusResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/openApiSpecs/{catalogId}/diffDetectionStatus", request, nil)
 	if err != nil {
@@ -1082,7 +1082,7 @@ func (s *apiSecurity) GetAPISecurityOpenAPISpecsCatalogIDDiffDetectionStatus(ctx
 }
 
 // GetAPISecurityOpenAPISpecsCatalogIDGetOpenAPISpecScoreStatus - Get open api spec score status
-func (s *apiSecurity) GetAPISecurityOpenAPISpecsCatalogIDGetOpenAPISpecScoreStatus(ctx context.Context, request operations.GetAPISecurityOpenAPISpecsCatalogIDGetOpenAPISpecScoreStatusRequest) (*operations.GetAPISecurityOpenAPISpecsCatalogIDGetOpenAPISpecScoreStatusResponse, error) {
+func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDGetOpenAPISpecScoreStatus(ctx context.Context, request operations.GetAPISecurityOpenAPISpecsCatalogIDGetOpenAPISpecScoreStatusRequest) (*operations.GetAPISecurityOpenAPISpecsCatalogIDGetOpenAPISpecScoreStatusResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/openApiSpecs/{catalogId}/getOpenApiSpecScoreStatus", request, nil)
 	if err != nil {
@@ -1145,7 +1145,7 @@ func (s *apiSecurity) GetAPISecurityOpenAPISpecsCatalogIDGetOpenAPISpecScoreStat
 }
 
 // GetAPISecurityOpenAPISpecsCatalogIDOpenAPISpecSwaggerJSON - Get provided spec content as json
-func (s *apiSecurity) GetAPISecurityOpenAPISpecsCatalogIDOpenAPISpecSwaggerJSON(ctx context.Context, request operations.GetAPISecurityOpenAPISpecsCatalogIDOpenAPISpecSwaggerJSONRequest) (*operations.GetAPISecurityOpenAPISpecsCatalogIDOpenAPISpecSwaggerJSONResponse, error) {
+func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDOpenAPISpecSwaggerJSON(ctx context.Context, request operations.GetAPISecurityOpenAPISpecsCatalogIDOpenAPISpecSwaggerJSONRequest) (*operations.GetAPISecurityOpenAPISpecsCatalogIDOpenAPISpecSwaggerJSONResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/openApiSpecs/{catalogId}/openApiSpecSwagger.json", request, nil)
 	if err != nil {
@@ -1188,7 +1188,7 @@ func (s *apiSecurity) GetAPISecurityOpenAPISpecsCatalogIDOpenAPISpecSwaggerJSON(
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
 			out := string(rawBody)
-			res.GetAPISecurityOpenAPISpecsCatalogIDOpenAPISpecSwaggerJSON200ApplicationJSONString = &out
+			res.Res = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -1204,7 +1204,7 @@ func (s *apiSecurity) GetAPISecurityOpenAPISpecsCatalogIDOpenAPISpecSwaggerJSON(
 }
 
 // GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReview - Get the suggestions of a spec reconstruction (or previously cached info)
-func (s *apiSecurity) GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReview(ctx context.Context, request operations.GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReviewRequest) (*operations.GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReviewResponse, error) {
+func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReview(ctx context.Context, request operations.GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReviewRequest) (*operations.GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReviewResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/openApiSpecs/{catalogId}/reconstructedSpec/review", request, nil)
 	if err != nil {
@@ -1267,7 +1267,7 @@ func (s *apiSecurity) GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReview
 }
 
 // GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecStatus - Get the status of a spec reconstruction
-func (s *apiSecurity) GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecStatus(ctx context.Context, request operations.GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecStatusRequest) (*operations.GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecStatusResponse, error) {
+func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecStatus(ctx context.Context, request operations.GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecStatusRequest) (*operations.GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecStatusResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/openApiSpecs/{catalogId}/reconstructedSpec/status", request, nil)
 	if err != nil {
@@ -1330,7 +1330,7 @@ func (s *apiSecurity) GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecStatus
 }
 
 // GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecJSON - Get reconstructed open api spec as json for specific API
-func (s *apiSecurity) GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecJSON(ctx context.Context, request operations.GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecJSONRequest) (*operations.GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecJSONResponse, error) {
+func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecJSON(ctx context.Context, request operations.GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecJSONRequest) (*operations.GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecJSONResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/openApiSpecs/{catalogId}/reconstructedSpecJson", request, nil)
 	if err != nil {
@@ -1377,7 +1377,7 @@ func (s *apiSecurity) GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecJSON(c
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
 			out := string(rawBody)
-			res.GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecJSON200ApplicationJSONString = &out
+			res.Res = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -1393,7 +1393,7 @@ func (s *apiSecurity) GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecJSON(c
 }
 
 // GetAPISecurityRiskFindings - Get a list of risk findings
-func (s *apiSecurity) GetAPISecurityRiskFindings(ctx context.Context, request operations.GetAPISecurityRiskFindingsRequest) (*operations.GetAPISecurityRiskFindingsResponse, error) {
+func (s *APISecurity) GetAPISecurityRiskFindings(ctx context.Context, request operations.GetAPISecurityRiskFindingsRequest) (*operations.GetAPISecurityRiskFindingsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/apiSecurity/riskFindings"
 
@@ -1457,7 +1457,7 @@ func (s *apiSecurity) GetAPISecurityRiskFindings(ctx context.Context, request op
 }
 
 // GetAPISecurityRiskFindingsCategories - Get a list of risk findings categories
-func (s *apiSecurity) GetAPISecurityRiskFindingsCategories(ctx context.Context) (*operations.GetAPISecurityRiskFindingsCategoriesResponse, error) {
+func (s *APISecurity) GetAPISecurityRiskFindingsCategories(ctx context.Context) (*operations.GetAPISecurityRiskFindingsCategoriesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/apiSecurity/riskFindings/categories"
 
@@ -1501,7 +1501,7 @@ func (s *apiSecurity) GetAPISecurityRiskFindingsCategories(ctx context.Context) 
 				return nil, err
 			}
 
-			res.GetAPISecurityRiskFindingsCategories200ApplicationJSONStrings = out
+			res.Strings = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -1517,7 +1517,7 @@ func (s *apiSecurity) GetAPISecurityRiskFindingsCategories(ctx context.Context) 
 }
 
 // GetAPISecurityRiskFindingsSources - Get a list of risk findings sources
-func (s *apiSecurity) GetAPISecurityRiskFindingsSources(ctx context.Context) (*operations.GetAPISecurityRiskFindingsSourcesResponse, error) {
+func (s *APISecurity) GetAPISecurityRiskFindingsSources(ctx context.Context) (*operations.GetAPISecurityRiskFindingsSourcesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/apiSecurity/riskFindings/sources"
 
@@ -1561,7 +1561,7 @@ func (s *apiSecurity) GetAPISecurityRiskFindingsSources(ctx context.Context) (*o
 				return nil, err
 			}
 
-			res.GetAPISecurityRiskFindingsSources200ApplicationJSONStrings = out
+			res.Strings = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -1577,7 +1577,7 @@ func (s *apiSecurity) GetAPISecurityRiskFindingsSources(ctx context.Context) (*o
 }
 
 // GetAPISecurityRiskFindingsRiskFindingID - Get a specific risk findings
-func (s *apiSecurity) GetAPISecurityRiskFindingsRiskFindingID(ctx context.Context, request operations.GetAPISecurityRiskFindingsRiskFindingIDRequest) (*operations.GetAPISecurityRiskFindingsRiskFindingIDResponse, error) {
+func (s *APISecurity) GetAPISecurityRiskFindingsRiskFindingID(ctx context.Context, request operations.GetAPISecurityRiskFindingsRiskFindingIDRequest) (*operations.GetAPISecurityRiskFindingsRiskFindingIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/riskFindings/{riskFindingId}", request, nil)
 	if err != nil {
@@ -1640,7 +1640,7 @@ func (s *apiSecurity) GetAPISecurityRiskFindingsRiskFindingID(ctx context.Contex
 }
 
 // GetAPISecurityCatalogIDDeleteDependencies - get dependencies which need to be handled in order to delete specified api security service
-func (s *apiSecurity) GetAPISecurityCatalogIDDeleteDependencies(ctx context.Context, request operations.GetAPISecurityCatalogIDDeleteDependenciesRequest) (*operations.GetAPISecurityCatalogIDDeleteDependenciesResponse, error) {
+func (s *APISecurity) GetAPISecurityCatalogIDDeleteDependencies(ctx context.Context, request operations.GetAPISecurityCatalogIDDeleteDependenciesRequest) (*operations.GetAPISecurityCatalogIDDeleteDependenciesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/{catalogId}/deleteDependencies", request, nil)
 	if err != nil {
@@ -1713,7 +1713,7 @@ func (s *apiSecurity) GetAPISecurityCatalogIDDeleteDependencies(ctx context.Cont
 }
 
 // GetAPISecurityCatalogIDMethods - Get a list of an API spec methods for a specific API and its spec's tags
-func (s *apiSecurity) GetAPISecurityCatalogIDMethods(ctx context.Context, request operations.GetAPISecurityCatalogIDMethodsRequest) (*operations.GetAPISecurityCatalogIDMethodsResponse, error) {
+func (s *APISecurity) GetAPISecurityCatalogIDMethods(ctx context.Context, request operations.GetAPISecurityCatalogIDMethodsRequest) (*operations.GetAPISecurityCatalogIDMethodsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/{catalogId}/methods", request, nil)
 	if err != nil {
@@ -1764,7 +1764,7 @@ func (s *apiSecurity) GetAPISecurityCatalogIDMethods(ctx context.Context, reques
 				return nil, err
 			}
 
-			res.APIServiceMethods = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -1780,7 +1780,7 @@ func (s *apiSecurity) GetAPISecurityCatalogIDMethods(ctx context.Context, reques
 }
 
 // GetAPISecurityCatalogIDTags - Get a list of an API spec tags or a specific API
-func (s *apiSecurity) GetAPISecurityCatalogIDTags(ctx context.Context, request operations.GetAPISecurityCatalogIDTagsRequest) (*operations.GetAPISecurityCatalogIDTagsResponse, error) {
+func (s *APISecurity) GetAPISecurityCatalogIDTags(ctx context.Context, request operations.GetAPISecurityCatalogIDTagsRequest) (*operations.GetAPISecurityCatalogIDTagsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/{catalogId}/tags", request, nil)
 	if err != nil {
@@ -1843,7 +1843,7 @@ func (s *apiSecurity) GetAPISecurityCatalogIDTags(ctx context.Context, request o
 }
 
 // GetDashboardApisecRiskFindings - Get API sec risk findings widget
-func (s *apiSecurity) GetDashboardApisecRiskFindings(ctx context.Context, request operations.GetDashboardApisecRiskFindingsRequest) (*operations.GetDashboardApisecRiskFindingsResponse, error) {
+func (s *APISecurity) GetDashboardApisecRiskFindings(ctx context.Context, request operations.GetDashboardApisecRiskFindingsRequest) (*operations.GetDashboardApisecRiskFindingsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/dashboard/apisec/riskFindings"
 
@@ -1905,7 +1905,7 @@ func (s *apiSecurity) GetDashboardApisecRiskFindings(ctx context.Context, reques
 }
 
 // GetDashboardApisecRiskFindingsTrend - Get API sec risk findings trend graph widget for the last 30 days
-func (s *apiSecurity) GetDashboardApisecRiskFindingsTrend(ctx context.Context, request operations.GetDashboardApisecRiskFindingsTrendRequest) (*operations.GetDashboardApisecRiskFindingsTrendResponse, error) {
+func (s *APISecurity) GetDashboardApisecRiskFindingsTrend(ctx context.Context, request operations.GetDashboardApisecRiskFindingsTrendRequest) (*operations.GetDashboardApisecRiskFindingsTrendResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/dashboard/apisec/riskFindingsTrend"
 
@@ -1967,7 +1967,7 @@ func (s *apiSecurity) GetDashboardApisecRiskFindingsTrend(ctx context.Context, r
 }
 
 // GetDashboardApisecSpecsAndOperationsDiffs - Get API sec specs and operations diffs widget
-func (s *apiSecurity) GetDashboardApisecSpecsAndOperationsDiffs(ctx context.Context, request operations.GetDashboardApisecSpecsAndOperationsDiffsRequest) (*operations.GetDashboardApisecSpecsAndOperationsDiffsResponse, error) {
+func (s *APISecurity) GetDashboardApisecSpecsAndOperationsDiffs(ctx context.Context, request operations.GetDashboardApisecSpecsAndOperationsDiffsRequest) (*operations.GetDashboardApisecSpecsAndOperationsDiffsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/dashboard/apisec/specsAndOperationsDiffs"
 
@@ -2029,7 +2029,7 @@ func (s *apiSecurity) GetDashboardApisecSpecsAndOperationsDiffs(ctx context.Cont
 }
 
 // GetDashboardApisecTopRiskyApis - Get API sec top risky APIs widget
-func (s *apiSecurity) GetDashboardApisecTopRiskyApis(ctx context.Context, request operations.GetDashboardApisecTopRiskyApisRequest) (*operations.GetDashboardApisecTopRiskyApisResponse, error) {
+func (s *APISecurity) GetDashboardApisecTopRiskyApis(ctx context.Context, request operations.GetDashboardApisecTopRiskyApisRequest) (*operations.GetDashboardApisecTopRiskyApisResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/dashboard/apisec/topRiskyApis"
 
@@ -2091,7 +2091,7 @@ func (s *apiSecurity) GetDashboardApisecTopRiskyApis(ctx context.Context, reques
 }
 
 // GetDashboardApisecTopRiskyFindings - Get API sec top risky findings widget
-func (s *apiSecurity) GetDashboardApisecTopRiskyFindings(ctx context.Context, request operations.GetDashboardApisecTopRiskyFindingsRequest) (*operations.GetDashboardApisecTopRiskyFindingsResponse, error) {
+func (s *APISecurity) GetDashboardApisecTopRiskyFindings(ctx context.Context, request operations.GetDashboardApisecTopRiskyFindingsRequest) (*operations.GetDashboardApisecTopRiskyFindingsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/dashboard/apisec/topRiskyFindings"
 
@@ -2153,7 +2153,7 @@ func (s *apiSecurity) GetDashboardApisecTopRiskyFindings(ctx context.Context, re
 }
 
 // GetGateways - Get gateways
-func (s *apiSecurity) GetGateways(ctx context.Context, request operations.GetGatewaysRequest) (*operations.GetGatewaysResponse, error) {
+func (s *APISecurity) GetGateways(ctx context.Context, request operations.GetGatewaysRequest) (*operations.GetGatewaysResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/gateways"
 
@@ -2201,7 +2201,7 @@ func (s *apiSecurity) GetGateways(ctx context.Context, request operations.GetGat
 				return nil, err
 			}
 
-			res.Gateways = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -2217,7 +2217,7 @@ func (s *apiSecurity) GetGateways(ctx context.Context, request operations.GetGat
 }
 
 // GetGatewaysClusters - Get clusters info
-func (s *apiSecurity) GetGatewaysClusters(ctx context.Context, request operations.GetGatewaysClustersRequest) (*operations.GetGatewaysClustersResponse, error) {
+func (s *APISecurity) GetGatewaysClusters(ctx context.Context, request operations.GetGatewaysClustersRequest) (*operations.GetGatewaysClustersResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/gateways/clusters"
 
@@ -2265,7 +2265,7 @@ func (s *apiSecurity) GetGatewaysClusters(ctx context.Context, request operation
 				return nil, err
 			}
 
-			res.GatewayClusterInfos = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -2282,7 +2282,7 @@ func (s *apiSecurity) GetGatewaysClusters(ctx context.Context, request operation
 
 // GetGatewaysGatewayIDDownloadBundle - Get a GW installation script
 // In order to install,  extract and run "./install_bundle.sh"
-func (s *apiSecurity) GetGatewaysGatewayIDDownloadBundle(ctx context.Context, request operations.GetGatewaysGatewayIDDownloadBundleRequest) (*operations.GetGatewaysGatewayIDDownloadBundleResponse, error) {
+func (s *APISecurity) GetGatewaysGatewayIDDownloadBundle(ctx context.Context, request operations.GetGatewaysGatewayIDDownloadBundleRequest) (*operations.GetGatewaysGatewayIDDownloadBundleResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/gateways/{gatewayId}/download_bundle", request, nil)
 	if err != nil {
@@ -2315,7 +2315,7 @@ func (s *apiSecurity) GetGatewaysGatewayIDDownloadBundle(ctx context.Context, re
 	}
 
 	if (httpRes.StatusCode == 200) && utils.MatchContentType(contentType, `application/json`) {
-		res.GetGatewaysGatewayIDDownloadBundle200ApplicationJSONBinaryString = httpRes.Body
+		res.Stream = httpRes.Body
 
 		return res, nil
 	}
@@ -2354,7 +2354,7 @@ func (s *apiSecurity) GetGatewaysGatewayIDDownloadBundle(ctx context.Context, re
 }
 
 // PostAPISecurityAPI - Register an API for scoring
-func (s *apiSecurity) PostAPISecurityAPI(ctx context.Context, request shared.APISecurityAPI) (*operations.PostAPISecurityAPIResponse, error) {
+func (s *APISecurity) PostAPISecurityAPI(ctx context.Context, request shared.APISecurityAPI) (*operations.PostAPISecurityAPIResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/apiSecurity/api"
 
@@ -2404,7 +2404,7 @@ func (s *apiSecurity) PostAPISecurityAPI(ctx context.Context, request shared.API
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
 			out := string(rawBody)
-			res.PostAPISecurityAPI201ApplicationJSONUUIDString = &out
+			res.Res = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -2424,7 +2424,7 @@ func (s *apiSecurity) PostAPISecurityAPI(ctx context.Context, request shared.API
 }
 
 // PostAPISecurityInternalCatalogCatalogIDBflaDetection - Start new bfla detection phase
-func (s *apiSecurity) PostAPISecurityInternalCatalogCatalogIDBflaDetection(ctx context.Context, request operations.PostAPISecurityInternalCatalogCatalogIDBflaDetectionRequest) (*operations.PostAPISecurityInternalCatalogCatalogIDBflaDetectionResponse, error) {
+func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDBflaDetection(ctx context.Context, request operations.PostAPISecurityInternalCatalogCatalogIDBflaDetectionRequest) (*operations.PostAPISecurityInternalCatalogCatalogIDBflaDetectionResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/bfla/detection", request, nil)
 	if err != nil {
@@ -2477,7 +2477,7 @@ func (s *apiSecurity) PostAPISecurityInternalCatalogCatalogIDBflaDetection(ctx c
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
 			out := string(rawBody)
-			res.PostAPISecurityInternalCatalogCatalogIDBflaDetection201ApplicationJSONUUIDString = &out
+			res.Res = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -2493,7 +2493,7 @@ func (s *apiSecurity) PostAPISecurityInternalCatalogCatalogIDBflaDetection(ctx c
 }
 
 // PostAPISecurityInternalCatalogCatalogIDBflaLearning - Start new bfla learning phase
-func (s *apiSecurity) PostAPISecurityInternalCatalogCatalogIDBflaLearning(ctx context.Context, request operations.PostAPISecurityInternalCatalogCatalogIDBflaLearningRequest) (*operations.PostAPISecurityInternalCatalogCatalogIDBflaLearningResponse, error) {
+func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDBflaLearning(ctx context.Context, request operations.PostAPISecurityInternalCatalogCatalogIDBflaLearningRequest) (*operations.PostAPISecurityInternalCatalogCatalogIDBflaLearningResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/bfla/learning", request, nil)
 	if err != nil {
@@ -2546,7 +2546,7 @@ func (s *apiSecurity) PostAPISecurityInternalCatalogCatalogIDBflaLearning(ctx co
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
 			out := string(rawBody)
-			res.PostAPISecurityInternalCatalogCatalogIDBflaLearning201ApplicationJSONUUIDString = &out
+			res.Res = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -2562,7 +2562,7 @@ func (s *apiSecurity) PostAPISecurityInternalCatalogCatalogIDBflaLearning(ctx co
 }
 
 // PostAPISecurityInternalCatalogCatalogIDBflaReset - Reset bfla model
-func (s *apiSecurity) PostAPISecurityInternalCatalogCatalogIDBflaReset(ctx context.Context, request operations.PostAPISecurityInternalCatalogCatalogIDBflaResetRequest) (*operations.PostAPISecurityInternalCatalogCatalogIDBflaResetResponse, error) {
+func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDBflaReset(ctx context.Context, request operations.PostAPISecurityInternalCatalogCatalogIDBflaResetRequest) (*operations.PostAPISecurityInternalCatalogCatalogIDBflaResetResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/bfla/reset", request, nil)
 	if err != nil {
@@ -2605,7 +2605,7 @@ func (s *apiSecurity) PostAPISecurityInternalCatalogCatalogIDBflaReset(ctx conte
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
 			out := string(rawBody)
-			res.PostAPISecurityInternalCatalogCatalogIDBflaReset201ApplicationJSONUUIDString = &out
+			res.Res = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -2621,7 +2621,7 @@ func (s *apiSecurity) PostAPISecurityInternalCatalogCatalogIDBflaReset(ctx conte
 }
 
 // PostAPISecurityInternalCatalogCatalogIDResetTraceAnalysis - Reset trace analysis
-func (s *apiSecurity) PostAPISecurityInternalCatalogCatalogIDResetTraceAnalysis(ctx context.Context, request operations.PostAPISecurityInternalCatalogCatalogIDResetTraceAnalysisRequest) (*operations.PostAPISecurityInternalCatalogCatalogIDResetTraceAnalysisResponse, error) {
+func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDResetTraceAnalysis(ctx context.Context, request operations.PostAPISecurityInternalCatalogCatalogIDResetTraceAnalysisRequest) (*operations.PostAPISecurityInternalCatalogCatalogIDResetTraceAnalysisResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/resetTraceAnalysis", request, nil)
 	if err != nil {
@@ -2673,7 +2673,7 @@ func (s *apiSecurity) PostAPISecurityInternalCatalogCatalogIDResetTraceAnalysis(
 }
 
 // PostAPISecurityInternalCatalogCatalogIDStartFuzzing - Start new fuzzing test
-func (s *apiSecurity) PostAPISecurityInternalCatalogCatalogIDStartFuzzing(ctx context.Context, request operations.PostAPISecurityInternalCatalogCatalogIDStartFuzzingRequest) (*operations.PostAPISecurityInternalCatalogCatalogIDStartFuzzingResponse, error) {
+func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDStartFuzzing(ctx context.Context, request operations.PostAPISecurityInternalCatalogCatalogIDStartFuzzingRequest) (*operations.PostAPISecurityInternalCatalogCatalogIDStartFuzzingResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/startFuzzing", request, nil)
 	if err != nil {
@@ -2746,7 +2746,7 @@ func (s *apiSecurity) PostAPISecurityInternalCatalogCatalogIDStartFuzzing(ctx co
 }
 
 // PostAPISecurityInternalCatalogCatalogIDStartTraceAnalysis - Start trace analysis
-func (s *apiSecurity) PostAPISecurityInternalCatalogCatalogIDStartTraceAnalysis(ctx context.Context, request operations.PostAPISecurityInternalCatalogCatalogIDStartTraceAnalysisRequest) (*operations.PostAPISecurityInternalCatalogCatalogIDStartTraceAnalysisResponse, error) {
+func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDStartTraceAnalysis(ctx context.Context, request operations.PostAPISecurityInternalCatalogCatalogIDStartTraceAnalysisRequest) (*operations.PostAPISecurityInternalCatalogCatalogIDStartTraceAnalysisResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/startTraceAnalysis", request, nil)
 	if err != nil {
@@ -2808,7 +2808,7 @@ func (s *apiSecurity) PostAPISecurityInternalCatalogCatalogIDStartTraceAnalysis(
 }
 
 // PostAPISecurityInternalCatalogCatalogIDStopFuzzing - Stop fuzzing test
-func (s *apiSecurity) PostAPISecurityInternalCatalogCatalogIDStopFuzzing(ctx context.Context, request operations.PostAPISecurityInternalCatalogCatalogIDStopFuzzingRequest) (*operations.PostAPISecurityInternalCatalogCatalogIDStopFuzzingResponse, error) {
+func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDStopFuzzing(ctx context.Context, request operations.PostAPISecurityInternalCatalogCatalogIDStopFuzzingRequest) (*operations.PostAPISecurityInternalCatalogCatalogIDStopFuzzingResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/stopFuzzing", request, nil)
 	if err != nil {
@@ -2860,7 +2860,7 @@ func (s *apiSecurity) PostAPISecurityInternalCatalogCatalogIDStopFuzzing(ctx con
 }
 
 // PostAPISecurityInternalCatalogCatalogIDStopTraceAnalysis - Stop trace analysis
-func (s *apiSecurity) PostAPISecurityInternalCatalogCatalogIDStopTraceAnalysis(ctx context.Context, request operations.PostAPISecurityInternalCatalogCatalogIDStopTraceAnalysisRequest) (*operations.PostAPISecurityInternalCatalogCatalogIDStopTraceAnalysisResponse, error) {
+func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDStopTraceAnalysis(ctx context.Context, request operations.PostAPISecurityInternalCatalogCatalogIDStopTraceAnalysisRequest) (*operations.PostAPISecurityInternalCatalogCatalogIDStopTraceAnalysisResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/stopTraceAnalysis", request, nil)
 	if err != nil {
@@ -2912,7 +2912,7 @@ func (s *apiSecurity) PostAPISecurityInternalCatalogCatalogIDStopTraceAnalysis(c
 }
 
 // PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecAbort - abort learning and reconstructing an API via API Clarity
-func (s *apiSecurity) PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecAbort(ctx context.Context, request operations.PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecAbortRequest) (*operations.PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecAbortResponse, error) {
+func (s *APISecurity) PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecAbort(ctx context.Context, request operations.PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecAbortRequest) (*operations.PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecAbortResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/openApiSpecs/{catalogId}/reconstructedSpec/abort", request, nil)
 	if err != nil {
@@ -2964,7 +2964,7 @@ func (s *apiSecurity) PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecAbort
 }
 
 // PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecLearn - Start learning and reconstructing an API via API Clarity
-func (s *apiSecurity) PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecLearn(ctx context.Context, request operations.PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecLearnRequest) (*operations.PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecLearnResponse, error) {
+func (s *APISecurity) PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecLearn(ctx context.Context, request operations.PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecLearnRequest) (*operations.PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecLearnResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/openApiSpecs/{catalogId}/reconstructedSpec/learn", request, nil)
 	if err != nil {
@@ -3023,14 +3023,14 @@ func (s *apiSecurity) PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecLearn
 }
 
 // PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReviewApprove - Approve reconstructed spec suggestions (only 1 approval per catalogId)
-func (s *apiSecurity) PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReviewApprove(ctx context.Context, request operations.PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReviewApproveRequest) (*operations.PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReviewApproveResponse, error) {
+func (s *APISecurity) PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReviewApprove(ctx context.Context, request operations.PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReviewApproveRequest) (*operations.PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReviewApproveResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/openApiSpecs/{catalogId}/reconstructedSpec/review/approve", request, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "APIReconstructedSpecInput", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "APIReconstructedSpec", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, fmt.Errorf("error serializing request body: %w", err)
 	}
@@ -3085,7 +3085,7 @@ func (s *apiSecurity) PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecRevie
 }
 
 // PostAPISecurityOpenAPISpecsCatalogIDStartDiffsDetection - Start spec diffs detection
-func (s *apiSecurity) PostAPISecurityOpenAPISpecsCatalogIDStartDiffsDetection(ctx context.Context, request operations.PostAPISecurityOpenAPISpecsCatalogIDStartDiffsDetectionRequest) (*operations.PostAPISecurityOpenAPISpecsCatalogIDStartDiffsDetectionResponse, error) {
+func (s *APISecurity) PostAPISecurityOpenAPISpecsCatalogIDStartDiffsDetection(ctx context.Context, request operations.PostAPISecurityOpenAPISpecsCatalogIDStartDiffsDetectionRequest) (*operations.PostAPISecurityOpenAPISpecsCatalogIDStartDiffsDetectionResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/openApiSpecs/{catalogId}/startDiffsDetection", request, nil)
 	if err != nil {
@@ -3147,7 +3147,7 @@ func (s *apiSecurity) PostAPISecurityOpenAPISpecsCatalogIDStartDiffsDetection(ct
 }
 
 // PostAPISecurityOpenAPISpecsCatalogIDStopDiffsDetection - stop spec diffs detection
-func (s *apiSecurity) PostAPISecurityOpenAPISpecsCatalogIDStopDiffsDetection(ctx context.Context, request operations.PostAPISecurityOpenAPISpecsCatalogIDStopDiffsDetectionRequest) (*operations.PostAPISecurityOpenAPISpecsCatalogIDStopDiffsDetectionResponse, error) {
+func (s *APISecurity) PostAPISecurityOpenAPISpecsCatalogIDStopDiffsDetection(ctx context.Context, request operations.PostAPISecurityOpenAPISpecsCatalogIDStopDiffsDetectionRequest) (*operations.PostAPISecurityOpenAPISpecsCatalogIDStopDiffsDetectionResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/openApiSpecs/{catalogId}/stopDiffsDetection", request, nil)
 	if err != nil {
@@ -3199,7 +3199,7 @@ func (s *apiSecurity) PostAPISecurityOpenAPISpecsCatalogIDStopDiffsDetection(ctx
 }
 
 // PostGateways - Add new gateway
-func (s *apiSecurity) PostGateways(ctx context.Context, request shared.Gateway) (*operations.PostGatewaysResponse, error) {
+func (s *APISecurity) PostGateways(ctx context.Context, request shared.Gateway) (*operations.PostGatewaysResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/gateways"
 
@@ -3269,7 +3269,7 @@ func (s *apiSecurity) PostGateways(ctx context.Context, request shared.Gateway) 
 }
 
 // PutAPISecurityInternalCatalogCatalogIDBfla - update BFLA info for this catalogId
-func (s *apiSecurity) PutAPISecurityInternalCatalogCatalogIDBfla(ctx context.Context, request operations.PutAPISecurityInternalCatalogCatalogIDBflaRequest) (*operations.PutAPISecurityInternalCatalogCatalogIDBflaResponse, error) {
+func (s *APISecurity) PutAPISecurityInternalCatalogCatalogIDBfla(ctx context.Context, request operations.PutAPISecurityInternalCatalogCatalogIDBflaRequest) (*operations.PutAPISecurityInternalCatalogCatalogIDBflaResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/bfla", request, nil)
 	if err != nil {
@@ -3322,7 +3322,7 @@ func (s *apiSecurity) PutAPISecurityInternalCatalogCatalogIDBfla(ctx context.Con
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
 			out := string(rawBody)
-			res.PutAPISecurityInternalCatalogCatalogIDBfla200ApplicationJSONUUIDString = &out
+			res.Res = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -3338,7 +3338,7 @@ func (s *apiSecurity) PutAPISecurityInternalCatalogCatalogIDBfla(ctx context.Con
 }
 
 // PutAPISecurityOpenAPISpecsCatalogID - Add or edit a spec about a specific API for the account
-func (s *apiSecurity) PutAPISecurityOpenAPISpecsCatalogID(ctx context.Context, request operations.PutAPISecurityOpenAPISpecsCatalogIDRequest) (*operations.PutAPISecurityOpenAPISpecsCatalogIDResponse, error) {
+func (s *APISecurity) PutAPISecurityOpenAPISpecsCatalogID(ctx context.Context, request operations.PutAPISecurityOpenAPISpecsCatalogIDRequest) (*operations.PutAPISecurityOpenAPISpecsCatalogIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/openApiSpecs/{catalogId}", request, nil)
 	if err != nil {
@@ -3411,7 +3411,7 @@ func (s *apiSecurity) PutAPISecurityOpenAPISpecsCatalogID(ctx context.Context, r
 }
 
 // PutGatewaysGatewayID - Edit gateway
-func (s *apiSecurity) PutGatewaysGatewayID(ctx context.Context, request operations.PutGatewaysGatewayIDRequest) (*operations.PutGatewaysGatewayIDResponse, error) {
+func (s *APISecurity) PutGatewaysGatewayID(ctx context.Context, request operations.PutGatewaysGatewayIDRequest) (*operations.PutGatewaysGatewayIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/gateways/{gatewayId}", request, nil)
 	if err != nil {

@@ -10,19 +10,19 @@ import (
 	"net/http"
 )
 
-// GetRegistriesSortDir - sorting direction
-type GetRegistriesSortDir string
+// GetRegistriesQueryParamSortDir - sorting direction
+type GetRegistriesQueryParamSortDir string
 
 const (
-	GetRegistriesSortDirAsc  GetRegistriesSortDir = "ASC"
-	GetRegistriesSortDirDesc GetRegistriesSortDir = "DESC"
+	GetRegistriesQueryParamSortDirAsc  GetRegistriesQueryParamSortDir = "ASC"
+	GetRegistriesQueryParamSortDirDesc GetRegistriesQueryParamSortDir = "DESC"
 )
 
-func (e GetRegistriesSortDir) ToPointer() *GetRegistriesSortDir {
+func (e GetRegistriesQueryParamSortDir) ToPointer() *GetRegistriesQueryParamSortDir {
 	return &e
 }
 
-func (e *GetRegistriesSortDir) UnmarshalJSON(data []byte) error {
+func (e *GetRegistriesQueryParamSortDir) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -31,43 +31,43 @@ func (e *GetRegistriesSortDir) UnmarshalJSON(data []byte) error {
 	case "ASC":
 		fallthrough
 	case "DESC":
-		*e = GetRegistriesSortDir(v)
+		*e = GetRegistriesQueryParamSortDir(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetRegistriesSortDir: %v", v)
+		return fmt.Errorf("invalid value for GetRegistriesQueryParamSortDir: %v", v)
 	}
 }
 
-// GetRegistriesSortKey - sort key
-type GetRegistriesSortKey string
+// GetRegistriesQueryParamSortKey - sort key
+type GetRegistriesQueryParamSortKey string
 
 const (
-	GetRegistriesSortKeyURL GetRegistriesSortKey = "url"
+	GetRegistriesQueryParamSortKeyURL GetRegistriesQueryParamSortKey = "url"
 )
 
-func (e GetRegistriesSortKey) ToPointer() *GetRegistriesSortKey {
+func (e GetRegistriesQueryParamSortKey) ToPointer() *GetRegistriesQueryParamSortKey {
 	return &e
 }
 
-func (e *GetRegistriesSortKey) UnmarshalJSON(data []byte) error {
+func (e *GetRegistriesQueryParamSortKey) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
 	}
 	switch v {
 	case "url":
-		*e = GetRegistriesSortKey(v)
+		*e = GetRegistriesQueryParamSortKey(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetRegistriesSortKey: %v", v)
+		return fmt.Errorf("invalid value for GetRegistriesQueryParamSortKey: %v", v)
 	}
 }
 
 type GetRegistriesRequest struct {
 	// sorting direction
-	SortDir *GetRegistriesSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
+	SortDir *GetRegistriesQueryParamSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
 	// sort key
-	SortKey *GetRegistriesSortKey `default:"url" queryParam:"style=form,explode=true,name=sortKey"`
+	SortKey *GetRegistriesQueryParamSortKey `default:"url" queryParam:"style=form,explode=true,name=sortKey"`
 }
 
 func (g GetRegistriesRequest) MarshalJSON() ([]byte, error) {
@@ -81,14 +81,14 @@ func (g *GetRegistriesRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *GetRegistriesRequest) GetSortDir() *GetRegistriesSortDir {
+func (o *GetRegistriesRequest) GetSortDir() *GetRegistriesQueryParamSortDir {
 	if o == nil {
 		return nil
 	}
 	return o.SortDir
 }
 
-func (o *GetRegistriesRequest) GetSortKey() *GetRegistriesSortKey {
+func (o *GetRegistriesRequest) GetSortKey() *GetRegistriesQueryParamSortKey {
 	if o == nil {
 		return nil
 	}
@@ -98,12 +98,12 @@ func (o *GetRegistriesRequest) GetSortKey() *GetRegistriesSortKey {
 type GetRegistriesResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// Success
-	Registries []shared.Registry
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Success
+	Classes []shared.Registry
 }
 
 func (o *GetRegistriesResponse) GetContentType() string {
@@ -111,13 +111,6 @@ func (o *GetRegistriesResponse) GetContentType() string {
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *GetRegistriesResponse) GetRegistries() []shared.Registry {
-	if o == nil {
-		return nil
-	}
-	return o.Registries
 }
 
 func (o *GetRegistriesResponse) GetStatusCode() int {
@@ -132,4 +125,11 @@ func (o *GetRegistriesResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetRegistriesResponse) GetClasses() []shared.Registry {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

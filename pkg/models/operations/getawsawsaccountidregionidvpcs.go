@@ -36,7 +36,7 @@ type GetAwsAwsAccountIDRegionIDVpcsResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Success
-	VpcResponses []shared.VpcResponse
+	Classes []shared.VpcResponse
 }
 
 func (o *GetAwsAwsAccountIDRegionIDVpcsResponse) GetContentType() string {
@@ -60,9 +60,9 @@ func (o *GetAwsAwsAccountIDRegionIDVpcsResponse) GetRawResponse() *http.Response
 	return o.RawResponse
 }
 
-func (o *GetAwsAwsAccountIDRegionIDVpcsResponse) GetVpcResponses() []shared.VpcResponse {
+func (o *GetAwsAwsAccountIDRegionIDVpcsResponse) GetClasses() []shared.VpcResponse {
 	if o == nil {
 		return nil
 	}
-	return o.VpcResponses
+	return o.Classes
 }

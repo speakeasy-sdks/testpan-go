@@ -15,18 +15,18 @@ import (
 	"strings"
 )
 
-type tokens struct {
+type Tokens struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newTokens(sdkConfig sdkConfiguration) *tokens {
-	return &tokens{
+func newTokens(sdkConfig sdkConfiguration) *Tokens {
+	return &Tokens{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // DeleteTokensTokenID - Delete token
-func (s *tokens) DeleteTokensTokenID(ctx context.Context, request operations.DeleteTokensTokenIDRequest) (*operations.DeleteTokensTokenIDResponse, error) {
+func (s *Tokens) DeleteTokensTokenID(ctx context.Context, request operations.DeleteTokensTokenIDRequest) (*operations.DeleteTokensTokenIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/tokens/{tokenId}", request, nil)
 	if err != nil {
@@ -76,7 +76,7 @@ func (s *tokens) DeleteTokensTokenID(ctx context.Context, request operations.Del
 }
 
 // GetTokens - Get tokens
-func (s *tokens) GetTokens(ctx context.Context, request operations.GetTokensRequest) (*operations.GetTokensResponse, error) {
+func (s *Tokens) GetTokens(ctx context.Context, request operations.GetTokensRequest) (*operations.GetTokensResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/tokens"
 
@@ -124,7 +124,7 @@ func (s *tokens) GetTokens(ctx context.Context, request operations.GetTokensRequ
 				return nil, err
 			}
 
-			res.Tokens = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -140,7 +140,7 @@ func (s *tokens) GetTokens(ctx context.Context, request operations.GetTokensRequ
 }
 
 // GetTokensInfo - Get tokens by Ids
-func (s *tokens) GetTokensInfo(ctx context.Context, request operations.GetTokensInfoRequest) (*operations.GetTokensInfoResponse, error) {
+func (s *Tokens) GetTokensInfo(ctx context.Context, request operations.GetTokensInfoRequest) (*operations.GetTokensInfoResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/tokens/info"
 
@@ -188,7 +188,7 @@ func (s *tokens) GetTokensInfo(ctx context.Context, request operations.GetTokens
 				return nil, err
 			}
 
-			res.APITokenInfos = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -204,7 +204,7 @@ func (s *tokens) GetTokensInfo(ctx context.Context, request operations.GetTokens
 }
 
 // GetTokensTokenIDDeleteDependencies - get dependancies which need to be handled in order to delete specified token
-func (s *tokens) GetTokensTokenIDDeleteDependencies(ctx context.Context, request operations.GetTokensTokenIDDeleteDependenciesRequest) (*operations.GetTokensTokenIDDeleteDependenciesResponse, error) {
+func (s *Tokens) GetTokensTokenIDDeleteDependencies(ctx context.Context, request operations.GetTokensTokenIDDeleteDependenciesRequest) (*operations.GetTokensTokenIDDeleteDependenciesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/tokens/{tokenId}/deleteDependencies", request, nil)
 	if err != nil {
@@ -277,7 +277,7 @@ func (s *tokens) GetTokensTokenIDDeleteDependencies(ctx context.Context, request
 }
 
 // PostTokens - Add new token
-func (s *tokens) PostTokens(ctx context.Context, request shared.Token) (*operations.PostTokensResponse, error) {
+func (s *Tokens) PostTokens(ctx context.Context, request shared.Token) (*operations.PostTokensResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/tokens"
 
@@ -347,7 +347,7 @@ func (s *tokens) PostTokens(ctx context.Context, request shared.Token) (*operati
 }
 
 // PutTokensTokenID - Edit token
-func (s *tokens) PutTokensTokenID(ctx context.Context, request operations.PutTokensTokenIDRequest) (*operations.PutTokensTokenIDResponse, error) {
+func (s *Tokens) PutTokensTokenID(ctx context.Context, request operations.PutTokensTokenIDRequest) (*operations.PutTokensTokenIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/tokens/{tokenId}", request, nil)
 	if err != nil {

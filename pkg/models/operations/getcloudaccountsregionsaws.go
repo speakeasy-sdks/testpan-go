@@ -8,21 +8,14 @@ import (
 )
 
 type GetCloudAccountsRegionsAWSResponse struct {
-	// Success
-	AwsRegions []shared.AwsRegion
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-}
-
-func (o *GetCloudAccountsRegionsAWSResponse) GetAwsRegions() []shared.AwsRegion {
-	if o == nil {
-		return nil
-	}
-	return o.AwsRegions
+	// Success
+	Classes []shared.AwsRegion
 }
 
 func (o *GetCloudAccountsRegionsAWSResponse) GetContentType() string {
@@ -44,4 +37,11 @@ func (o *GetCloudAccountsRegionsAWSResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetCloudAccountsRegionsAWSResponse) GetClasses() []shared.AwsRegion {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

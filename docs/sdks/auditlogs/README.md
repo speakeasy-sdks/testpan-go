@@ -1,5 +1,5 @@
 # AuditLogs
-(*AuditLogs*)
+(*.AuditLogs*)
 
 ## Overview
 
@@ -50,7 +50,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.AuditLogs != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -99,7 +99,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetAuditLogsActions200ApplicationJSONStrings != nil {
+    if res.Strings != nil {
         // handle response
     }
 }
@@ -149,8 +149,8 @@ func main() {
         KubernetesAuditAction: []string{
             "string",
         },
-        Result: []operations.GetAuditLogsKubernetesResult{
-            operations.GetAuditLogsKubernetesResultRisky,
+        Result: []operations.Result{
+            operations.ResultRisky,
         },
         StartTime: types.MustTimeFromString("2021-10-10T01:17:52.269Z"),
     })
@@ -158,7 +158,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.KubernetesAuditLogs != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -207,7 +207,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetAuditLogsKubernetesActions200ApplicationJSONStrings != nil {
+    if res.Strings != nil {
         // handle response
     }
 }

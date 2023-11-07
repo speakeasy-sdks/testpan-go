@@ -2,14 +2,14 @@
 
 package shared
 
-type ScoreFindingData struct {
+type Data struct {
 }
 
 type ScoreFinding struct {
 	// Finding instance additional attributes
 	AdditionalInfo []AdditionalInfo `json:"additional_info,omitempty"`
 	// Raw data filled in only for unclassified findings, when allowed
-	Data []ScoreFindingData `json:"data,omitempty"`
+	Data []Data `json:"data,omitempty"`
 	// Finding description if finding has been classified, None otherwise
 	Description *string `json:"description,omitempty"`
 	// Finding mitigation if finding has been classified, None otherwise
@@ -33,7 +33,7 @@ func (o *ScoreFinding) GetAdditionalInfo() []AdditionalInfo {
 	return o.AdditionalInfo
 }
 
-func (o *ScoreFinding) GetData() []ScoreFindingData {
+func (o *ScoreFinding) GetData() []Data {
 	if o == nil {
 		return nil
 	}

@@ -7,19 +7,19 @@ import (
 	"fmt"
 )
 
-type CdConnectionRuleStatus string
+type Status string
 
 const (
-	CdConnectionRuleStatusEnabled  CdConnectionRuleStatus = "ENABLED"
-	CdConnectionRuleStatusDisabled CdConnectionRuleStatus = "DISABLED"
-	CdConnectionRuleStatusDeleted  CdConnectionRuleStatus = "DELETED"
+	StatusEnabled  Status = "ENABLED"
+	StatusDisabled Status = "DISABLED"
+	StatusDeleted  Status = "DELETED"
 )
 
-func (e CdConnectionRuleStatus) ToPointer() *CdConnectionRuleStatus {
+func (e Status) ToPointer() *Status {
 	return &e
 }
 
-func (e *CdConnectionRuleStatus) UnmarshalJSON(data []byte) error {
+func (e *Status) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -30,23 +30,23 @@ func (e *CdConnectionRuleStatus) UnmarshalJSON(data []byte) error {
 	case "DISABLED":
 		fallthrough
 	case "DELETED":
-		*e = CdConnectionRuleStatus(v)
+		*e = Status(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for CdConnectionRuleStatus: %v", v)
+		return fmt.Errorf("invalid value for Status: %v", v)
 	}
 }
 
 // CdConnectionRule - A rule that states what apps are allowed to communicate with each other.
 type CdConnectionRule struct {
 	// ENCRYPT is not allowed in default rule
-	Action      *ConnectionRuleAction   `json:"action,omitempty"`
-	Destination *ConnectionRulePart     `json:"destination,omitempty"`
-	GroupName   *string                 `json:"groupName,omitempty"`
-	ID          *string                 `json:"id,omitempty"`
-	Name        *string                 `json:"name,omitempty"`
-	Source      *ConnectionRulePart     `json:"source,omitempty"`
-	Status      *CdConnectionRuleStatus `json:"status,omitempty"`
+	Action      *ConnectionRuleAction `json:"action,omitempty"`
+	Destination *ConnectionRulePart   `json:"destination,omitempty"`
+	GroupName   *string               `json:"groupName,omitempty"`
+	ID          *string               `json:"id,omitempty"`
+	Name        *string               `json:"name,omitempty"`
+	Source      *ConnectionRulePart   `json:"source,omitempty"`
+	Status      *Status               `json:"status,omitempty"`
 }
 
 func (o *CdConnectionRule) GetAction() *ConnectionRuleAction {
@@ -91,7 +91,7 @@ func (o *CdConnectionRule) GetSource() *ConnectionRulePart {
 	return o.Source
 }
 
-func (o *CdConnectionRule) GetStatus() *CdConnectionRuleStatus {
+func (o *CdConnectionRule) GetStatus() *Status {
 	if o == nil {
 		return nil
 	}

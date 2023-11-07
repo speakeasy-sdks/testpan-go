@@ -1,5 +1,5 @@
 # Mitre
-(*Mitre*)
+(*.Mitre*)
 
 ### Available Operations
 
@@ -94,7 +94,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetMitreReportDownload200ApplicationJSONBinaryString != nil {
+    if res.Stream != nil {
         // handle response
     }
 }
@@ -190,7 +190,7 @@ func main() {
         ClustersIds: []string{
             "15c243dc-adda-4d62-b64a-acf9b6fc450a",
         },
-        MitreTechniqueType: operations.GetMitreTechniqueMitreTechniqueTypeDeployContainer,
+        MitreTechniqueType: operations.MitreTechniqueTypeDeployContainer,
     })
     if err != nil {
         log.Fatal(err)
@@ -298,7 +298,7 @@ func main() {
         ClustersIds: []string{
             "684b4b2c-63c2-4f7d-9896-83947da0e326",
         },
-        MitreTechniqueType: operations.PostMitreTechniqueFixMitreTechniqueTypeClearK8SEvents,
+        MitreTechniqueType: operations.QueryParamMitreTechniqueTypeClearK8SEvents,
     })
     if err != nil {
         log.Fatal(err)

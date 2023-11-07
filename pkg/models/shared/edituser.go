@@ -34,7 +34,7 @@ func (e *EditUserStatus) UnmarshalJSON(data []byte) error {
 	}
 }
 
-type EditUserInput struct {
+type EditUser struct {
 	Description *string `json:"description,omitempty"`
 	FullName    string  `json:"fullName"`
 	// ID of the user as created by Secure Application management.
@@ -44,35 +44,35 @@ type EditUserInput struct {
 	Status EditUserStatus `json:"status"`
 }
 
-func (o *EditUserInput) GetDescription() *string {
+func (o *EditUser) GetDescription() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Description
 }
 
-func (o *EditUserInput) GetFullName() string {
+func (o *EditUser) GetFullName() string {
 	if o == nil {
 		return ""
 	}
 	return o.FullName
 }
 
-func (o *EditUserInput) GetID() *string {
+func (o *EditUser) GetID() *string {
 	if o == nil {
 		return nil
 	}
 	return o.ID
 }
 
-func (o *EditUserInput) GetRole() *Role {
+func (o *EditUser) GetRole() *Role {
 	if o == nil {
 		return nil
 	}
 	return o.Role
 }
 
-func (o *EditUserInput) GetStatus() EditUserStatus {
+func (o *EditUser) GetStatus() EditUserStatus {
 	if o == nil {
 		return EditUserStatus("")
 	}

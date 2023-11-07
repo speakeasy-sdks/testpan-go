@@ -47,7 +47,7 @@ type GetVulnerabilitiesResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Success
-	GetVulnerabilities200ApplicationJSONStrings []string
+	Strings []string
 }
 
 func (o *GetVulnerabilitiesResponse) GetContentType() string {
@@ -71,9 +71,9 @@ func (o *GetVulnerabilitiesResponse) GetRawResponse() *http.Response {
 	return o.RawResponse
 }
 
-func (o *GetVulnerabilitiesResponse) GetGetVulnerabilities200ApplicationJSONStrings() []string {
+func (o *GetVulnerabilitiesResponse) GetStrings() []string {
 	if o == nil {
 		return nil
 	}
-	return o.GetVulnerabilities200ApplicationJSONStrings
+	return o.Strings
 }

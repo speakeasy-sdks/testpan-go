@@ -10,12 +10,12 @@ import (
 type GetKubernetesAPIPolicyKubernetesUsersResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// Success
-	KubernetesUsersByTypes []shared.KubernetesUsersByType
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Success
+	Classes []shared.KubernetesUsersByType
 }
 
 func (o *GetKubernetesAPIPolicyKubernetesUsersResponse) GetContentType() string {
@@ -23,13 +23,6 @@ func (o *GetKubernetesAPIPolicyKubernetesUsersResponse) GetContentType() string 
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *GetKubernetesAPIPolicyKubernetesUsersResponse) GetKubernetesUsersByTypes() []shared.KubernetesUsersByType {
-	if o == nil {
-		return nil
-	}
-	return o.KubernetesUsersByTypes
 }
 
 func (o *GetKubernetesAPIPolicyKubernetesUsersResponse) GetStatusCode() int {
@@ -44,4 +37,11 @@ func (o *GetKubernetesAPIPolicyKubernetesUsersResponse) GetRawResponse() *http.R
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetKubernetesAPIPolicyKubernetesUsersResponse) GetClasses() []shared.KubernetesUsersByType {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

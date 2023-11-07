@@ -10,19 +10,19 @@ import (
 	"net/http"
 )
 
-// GetImagesImageIDDockerfileScanResultsSortDir - sorting direction
-type GetImagesImageIDDockerfileScanResultsSortDir string
+// GetImagesImageIDDockerfileScanResultsQueryParamSortDir - sorting direction
+type GetImagesImageIDDockerfileScanResultsQueryParamSortDir string
 
 const (
-	GetImagesImageIDDockerfileScanResultsSortDirAsc  GetImagesImageIDDockerfileScanResultsSortDir = "ASC"
-	GetImagesImageIDDockerfileScanResultsSortDirDesc GetImagesImageIDDockerfileScanResultsSortDir = "DESC"
+	GetImagesImageIDDockerfileScanResultsQueryParamSortDirAsc  GetImagesImageIDDockerfileScanResultsQueryParamSortDir = "ASC"
+	GetImagesImageIDDockerfileScanResultsQueryParamSortDirDesc GetImagesImageIDDockerfileScanResultsQueryParamSortDir = "DESC"
 )
 
-func (e GetImagesImageIDDockerfileScanResultsSortDir) ToPointer() *GetImagesImageIDDockerfileScanResultsSortDir {
+func (e GetImagesImageIDDockerfileScanResultsQueryParamSortDir) ToPointer() *GetImagesImageIDDockerfileScanResultsQueryParamSortDir {
 	return &e
 }
 
-func (e *GetImagesImageIDDockerfileScanResultsSortDir) UnmarshalJSON(data []byte) error {
+func (e *GetImagesImageIDDockerfileScanResultsQueryParamSortDir) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -31,10 +31,10 @@ func (e *GetImagesImageIDDockerfileScanResultsSortDir) UnmarshalJSON(data []byte
 	case "ASC":
 		fallthrough
 	case "DESC":
-		*e = GetImagesImageIDDockerfileScanResultsSortDir(v)
+		*e = GetImagesImageIDDockerfileScanResultsQueryParamSortDir(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetImagesImageIDDockerfileScanResultsSortDir: %v", v)
+		return fmt.Errorf("invalid value for GetImagesImageIDDockerfileScanResultsQueryParamSortDir: %v", v)
 	}
 }
 
@@ -47,7 +47,7 @@ type GetImagesImageIDDockerfileScanResultsRequest struct {
 	// Return entries from this offset (pagination)
 	Offset *float64 `default:"0" queryParam:"style=form,explode=true,name=offset"`
 	// sorting direction
-	SortDir *GetImagesImageIDDockerfileScanResultsSortDir `default:"DESC" queryParam:"style=form,explode=true,name=sortDir"`
+	SortDir *GetImagesImageIDDockerfileScanResultsQueryParamSortDir `default:"DESC" queryParam:"style=form,explode=true,name=sortDir"`
 }
 
 func (g GetImagesImageIDDockerfileScanResultsRequest) MarshalJSON() ([]byte, error) {
@@ -89,7 +89,7 @@ func (o *GetImagesImageIDDockerfileScanResultsRequest) GetOffset() *float64 {
 	return o.Offset
 }
 
-func (o *GetImagesImageIDDockerfileScanResultsRequest) GetSortDir() *GetImagesImageIDDockerfileScanResultsSortDir {
+func (o *GetImagesImageIDDockerfileScanResultsRequest) GetSortDir() *GetImagesImageIDDockerfileScanResultsQueryParamSortDir {
 	if o == nil {
 		return nil
 	}
@@ -99,12 +99,12 @@ func (o *GetImagesImageIDDockerfileScanResultsRequest) GetSortDir() *GetImagesIm
 type GetImagesImageIDDockerfileScanResultsResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// OK
-	DockerfileScanResults []shared.DockerfileScanResult
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// OK
+	Classes []shared.DockerfileScanResult
 }
 
 func (o *GetImagesImageIDDockerfileScanResultsResponse) GetContentType() string {
@@ -112,13 +112,6 @@ func (o *GetImagesImageIDDockerfileScanResultsResponse) GetContentType() string 
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *GetImagesImageIDDockerfileScanResultsResponse) GetDockerfileScanResults() []shared.DockerfileScanResult {
-	if o == nil {
-		return nil
-	}
-	return o.DockerfileScanResults
 }
 
 func (o *GetImagesImageIDDockerfileScanResultsResponse) GetStatusCode() int {
@@ -133,4 +126,11 @@ func (o *GetImagesImageIDDockerfileScanResultsResponse) GetRawResponse() *http.R
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetImagesImageIDDockerfileScanResultsResponse) GetClasses() []shared.DockerfileScanResult {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

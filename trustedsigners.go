@@ -15,19 +15,19 @@ import (
 	"strings"
 )
 
-// trustedSigners - APIs used to  define and manage trusted signers
-type trustedSigners struct {
+// TrustedSigners - APIs used to  define and manage trusted signers
+type TrustedSigners struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newTrustedSigners(sdkConfig sdkConfiguration) *trustedSigners {
-	return &trustedSigners{
+func newTrustedSigners(sdkConfig sdkConfiguration) *TrustedSigners {
+	return &TrustedSigners{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // DeleteTrustedSignersTrustedSignerID - Delete a trusted signer
-func (s *trustedSigners) DeleteTrustedSignersTrustedSignerID(ctx context.Context, request operations.DeleteTrustedSignersTrustedSignerIDRequest) (*operations.DeleteTrustedSignersTrustedSignerIDResponse, error) {
+func (s *TrustedSigners) DeleteTrustedSignersTrustedSignerID(ctx context.Context, request operations.DeleteTrustedSignersTrustedSignerIDRequest) (*operations.DeleteTrustedSignersTrustedSignerIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/trustedSigners/{trustedSignerId}", request, nil)
 	if err != nil {
@@ -77,7 +77,7 @@ func (s *trustedSigners) DeleteTrustedSignersTrustedSignerID(ctx context.Context
 }
 
 // GetTrustedSigners - Get a list of defined trusted signers
-func (s *trustedSigners) GetTrustedSigners(ctx context.Context, request operations.GetTrustedSignersRequest) (*operations.GetTrustedSignersResponse, error) {
+func (s *TrustedSigners) GetTrustedSigners(ctx context.Context, request operations.GetTrustedSignersRequest) (*operations.GetTrustedSignersResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/trustedSigners"
 
@@ -125,7 +125,7 @@ func (s *trustedSigners) GetTrustedSigners(ctx context.Context, request operatio
 				return nil, err
 			}
 
-			res.TrustedSigners = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -141,7 +141,7 @@ func (s *trustedSigners) GetTrustedSigners(ctx context.Context, request operatio
 }
 
 // GetTrustedSignersTrustedSignerID - get existing trusted signer
-func (s *trustedSigners) GetTrustedSignersTrustedSignerID(ctx context.Context, request operations.GetTrustedSignersTrustedSignerIDRequest) (*operations.GetTrustedSignersTrustedSignerIDResponse, error) {
+func (s *TrustedSigners) GetTrustedSignersTrustedSignerID(ctx context.Context, request operations.GetTrustedSignersTrustedSignerIDRequest) (*operations.GetTrustedSignersTrustedSignerIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/trustedSigners/{trustedSignerId}", request, nil)
 	if err != nil {
@@ -202,7 +202,7 @@ func (s *trustedSigners) GetTrustedSignersTrustedSignerID(ctx context.Context, r
 }
 
 // PostTrustedSigners - Add new trusted signer
-func (s *trustedSigners) PostTrustedSigners(ctx context.Context, request shared.TrustedSignerInput) (*operations.PostTrustedSignersResponse, error) {
+func (s *TrustedSigners) PostTrustedSigners(ctx context.Context, request shared.TrustedSignerInput) (*operations.PostTrustedSignersResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/trustedSigners"
 
@@ -270,14 +270,14 @@ func (s *trustedSigners) PostTrustedSigners(ctx context.Context, request shared.
 }
 
 // PutTrustedSignersTrustedSignerID - edit existing trusted signer
-func (s *trustedSigners) PutTrustedSignersTrustedSignerID(ctx context.Context, request operations.PutTrustedSignersTrustedSignerIDRequest) (*operations.PutTrustedSignersTrustedSignerIDResponse, error) {
+func (s *TrustedSigners) PutTrustedSignersTrustedSignerID(ctx context.Context, request operations.PutTrustedSignersTrustedSignerIDRequest) (*operations.PutTrustedSignersTrustedSignerIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/trustedSigners/{trustedSignerId}", request, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "TrustedSignerInput", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "TrustedSigner", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, fmt.Errorf("error serializing request body: %w", err)
 	}

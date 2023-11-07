@@ -7,20 +7,20 @@ import (
 	"fmt"
 )
 
-type MitreTechniqueAffectedElementMitreTechniqueAffectedElementType string
+type MitreTechniqueAffectedElementType string
 
 const (
-	MitreTechniqueAffectedElementMitreTechniqueAffectedElementTypeMitreTechniqueAffectedOwner     MitreTechniqueAffectedElementMitreTechniqueAffectedElementType = "MitreTechniqueAffectedOwner"
-	MitreTechniqueAffectedElementMitreTechniqueAffectedElementTypeMitreTechniqueAffectedWorkload  MitreTechniqueAffectedElementMitreTechniqueAffectedElementType = "MitreTechniqueAffectedWorkload"
-	MitreTechniqueAffectedElementMitreTechniqueAffectedElementTypeMitreTechniqueAffectedNamespace MitreTechniqueAffectedElementMitreTechniqueAffectedElementType = "MitreTechniqueAffectedNamespace"
-	MitreTechniqueAffectedElementMitreTechniqueAffectedElementTypeMitreTechniqueAffectedCluster   MitreTechniqueAffectedElementMitreTechniqueAffectedElementType = "MitreTechniqueAffectedCluster"
+	MitreTechniqueAffectedElementTypeMitreTechniqueAffectedOwner     MitreTechniqueAffectedElementType = "MitreTechniqueAffectedOwner"
+	MitreTechniqueAffectedElementTypeMitreTechniqueAffectedWorkload  MitreTechniqueAffectedElementType = "MitreTechniqueAffectedWorkload"
+	MitreTechniqueAffectedElementTypeMitreTechniqueAffectedNamespace MitreTechniqueAffectedElementType = "MitreTechniqueAffectedNamespace"
+	MitreTechniqueAffectedElementTypeMitreTechniqueAffectedCluster   MitreTechniqueAffectedElementType = "MitreTechniqueAffectedCluster"
 )
 
-func (e MitreTechniqueAffectedElementMitreTechniqueAffectedElementType) ToPointer() *MitreTechniqueAffectedElementMitreTechniqueAffectedElementType {
+func (e MitreTechniqueAffectedElementType) ToPointer() *MitreTechniqueAffectedElementType {
 	return &e
 }
 
-func (e *MitreTechniqueAffectedElementMitreTechniqueAffectedElementType) UnmarshalJSON(data []byte) error {
+func (e *MitreTechniqueAffectedElementType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -33,18 +33,18 @@ func (e *MitreTechniqueAffectedElementMitreTechniqueAffectedElementType) Unmarsh
 	case "MitreTechniqueAffectedNamespace":
 		fallthrough
 	case "MitreTechniqueAffectedCluster":
-		*e = MitreTechniqueAffectedElementMitreTechniqueAffectedElementType(v)
+		*e = MitreTechniqueAffectedElementType(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for MitreTechniqueAffectedElementMitreTechniqueAffectedElementType: %v", v)
+		return fmt.Errorf("invalid value for MitreTechniqueAffectedElementType: %v", v)
 	}
 }
 
 type MitreTechniqueAffectedElement struct {
-	MitreTechniqueAffectedElementType *MitreTechniqueAffectedElementMitreTechniqueAffectedElementType `json:"MitreTechniqueAffectedElementType,omitempty"`
+	MitreTechniqueAffectedElementType *MitreTechniqueAffectedElementType `json:"MitreTechniqueAffectedElementType,omitempty"`
 }
 
-func (o *MitreTechniqueAffectedElement) GetMitreTechniqueAffectedElementType() *MitreTechniqueAffectedElementMitreTechniqueAffectedElementType {
+func (o *MitreTechniqueAffectedElement) GetMitreTechniqueAffectedElementType() *MitreTechniqueAffectedElementType {
 	if o == nil {
 		return nil
 	}

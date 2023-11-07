@@ -15,19 +15,19 @@ import (
 	"strings"
 )
 
-// riskAssessment - APIs used to manage risk assessment on Kubernetes clusters
-type riskAssessment struct {
+// RiskAssessment - APIs used to manage risk assessment on Kubernetes clusters
+type RiskAssessment struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newRiskAssessment(sdkConfig sdkConfiguration) *riskAssessment {
-	return &riskAssessment{
+func newRiskAssessment(sdkConfig sdkConfiguration) *RiskAssessment {
+	return &RiskAssessment{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // DeleteRiskAssessmentIgnoredRisksIgnoredRiskID - Delete ignored risk
-func (s *riskAssessment) DeleteRiskAssessmentIgnoredRisksIgnoredRiskID(ctx context.Context, request operations.DeleteRiskAssessmentIgnoredRisksIgnoredRiskIDRequest) (*operations.DeleteRiskAssessmentIgnoredRisksIgnoredRiskIDResponse, error) {
+func (s *RiskAssessment) DeleteRiskAssessmentIgnoredRisksIgnoredRiskID(ctx context.Context, request operations.DeleteRiskAssessmentIgnoredRisksIgnoredRiskIDRequest) (*operations.DeleteRiskAssessmentIgnoredRisksIgnoredRiskIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/riskAssessment/ignoredRisks/{ignoredRiskId}", request, nil)
 	if err != nil {
@@ -77,7 +77,7 @@ func (s *riskAssessment) DeleteRiskAssessmentIgnoredRisksIgnoredRiskID(ctx conte
 }
 
 // DeleteRiskAssessmentKubernetesClusterIDCancel - Cancel the runtime scan on the given cluster with the given id
-func (s *riskAssessment) DeleteRiskAssessmentKubernetesClusterIDCancel(ctx context.Context, request operations.DeleteRiskAssessmentKubernetesClusterIDCancelRequest) (*operations.DeleteRiskAssessmentKubernetesClusterIDCancelResponse, error) {
+func (s *RiskAssessment) DeleteRiskAssessmentKubernetesClusterIDCancel(ctx context.Context, request operations.DeleteRiskAssessmentKubernetesClusterIDCancelRequest) (*operations.DeleteRiskAssessmentKubernetesClusterIDCancelResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/riskAssessment/{kubernetesClusterId}/cancel", request, nil)
 	if err != nil {
@@ -127,7 +127,7 @@ func (s *riskAssessment) DeleteRiskAssessmentKubernetesClusterIDCancel(ctx conte
 }
 
 // GetRiskAssessment - Get risk assessment data for all clusters
-func (s *riskAssessment) GetRiskAssessment(ctx context.Context) (*operations.GetRiskAssessmentResponse, error) {
+func (s *RiskAssessment) GetRiskAssessment(ctx context.Context) (*operations.GetRiskAssessmentResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/riskAssessment"
 
@@ -171,7 +171,7 @@ func (s *riskAssessment) GetRiskAssessment(ctx context.Context) (*operations.Get
 				return nil, err
 			}
 
-			res.RiskAssessmentClusters = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -185,7 +185,7 @@ func (s *riskAssessment) GetRiskAssessment(ctx context.Context) (*operations.Get
 }
 
 // GetRiskAssessmentIgnoredRisks - Get all the ignored risks
-func (s *riskAssessment) GetRiskAssessmentIgnoredRisks(ctx context.Context) (*operations.GetRiskAssessmentIgnoredRisksResponse, error) {
+func (s *RiskAssessment) GetRiskAssessmentIgnoredRisks(ctx context.Context) (*operations.GetRiskAssessmentIgnoredRisksResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/riskAssessment/ignoredRisks"
 
@@ -229,7 +229,7 @@ func (s *riskAssessment) GetRiskAssessmentIgnoredRisks(ctx context.Context) (*op
 				return nil, err
 			}
 
-			res.IgnoredRisks = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -243,7 +243,7 @@ func (s *riskAssessment) GetRiskAssessmentIgnoredRisks(ctx context.Context) (*op
 }
 
 // GetRiskAssessmentPermissions - Get list of clusters and their permissions
-func (s *riskAssessment) GetRiskAssessmentPermissions(ctx context.Context, request operations.GetRiskAssessmentPermissionsRequest) (*operations.GetRiskAssessmentPermissionsResponse, error) {
+func (s *RiskAssessment) GetRiskAssessmentPermissions(ctx context.Context, request operations.GetRiskAssessmentPermissionsRequest) (*operations.GetRiskAssessmentPermissionsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/riskAssessment/permissions"
 
@@ -291,7 +291,7 @@ func (s *riskAssessment) GetRiskAssessmentPermissions(ctx context.Context, reque
 				return nil, err
 			}
 
-			res.ClusterPermissions = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -307,7 +307,7 @@ func (s *riskAssessment) GetRiskAssessmentPermissions(ctx context.Context, reque
 }
 
 // GetRiskAssessmentPermissionsClusterID - Get all of the users permissions
-func (s *riskAssessment) GetRiskAssessmentPermissionsClusterID(ctx context.Context, request operations.GetRiskAssessmentPermissionsClusterIDRequest) (*operations.GetRiskAssessmentPermissionsClusterIDResponse, error) {
+func (s *RiskAssessment) GetRiskAssessmentPermissionsClusterID(ctx context.Context, request operations.GetRiskAssessmentPermissionsClusterIDRequest) (*operations.GetRiskAssessmentPermissionsClusterIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/riskAssessment/permissions/{clusterId}", request, nil)
 	if err != nil {
@@ -374,7 +374,7 @@ func (s *riskAssessment) GetRiskAssessmentPermissionsClusterID(ctx context.Conte
 }
 
 // GetRiskAssessmentPermissionsClusterIDOwnerID - Get the owner permissions
-func (s *riskAssessment) GetRiskAssessmentPermissionsClusterIDOwnerID(ctx context.Context, request operations.GetRiskAssessmentPermissionsClusterIDOwnerIDRequest) (*operations.GetRiskAssessmentPermissionsClusterIDOwnerIDResponse, error) {
+func (s *RiskAssessment) GetRiskAssessmentPermissionsClusterIDOwnerID(ctx context.Context, request operations.GetRiskAssessmentPermissionsClusterIDOwnerIDRequest) (*operations.GetRiskAssessmentPermissionsClusterIDOwnerIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/riskAssessment/permissions/{clusterId}/{ownerId}", request, nil)
 	if err != nil {
@@ -441,7 +441,7 @@ func (s *riskAssessment) GetRiskAssessmentPermissionsClusterIDOwnerID(ctx contex
 }
 
 // GetRiskAssessmentPermissionsClusterIDOwnerIDRoleID - Get the owner permissions
-func (s *riskAssessment) GetRiskAssessmentPermissionsClusterIDOwnerIDRoleID(ctx context.Context, request operations.GetRiskAssessmentPermissionsClusterIDOwnerIDRoleIDRequest) (*operations.GetRiskAssessmentPermissionsClusterIDOwnerIDRoleIDResponse, error) {
+func (s *RiskAssessment) GetRiskAssessmentPermissionsClusterIDOwnerIDRoleID(ctx context.Context, request operations.GetRiskAssessmentPermissionsClusterIDOwnerIDRoleIDRequest) (*operations.GetRiskAssessmentPermissionsClusterIDOwnerIDRoleIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/riskAssessment/permissions/{clusterId}/{ownerId}/{roleId}", request, nil)
 	if err != nil {
@@ -504,7 +504,7 @@ func (s *riskAssessment) GetRiskAssessmentPermissionsClusterIDOwnerIDRoleID(ctx 
 }
 
 // GetRiskAssessmentPoll - Poll running scans
-func (s *riskAssessment) GetRiskAssessmentPoll(ctx context.Context, request operations.GetRiskAssessmentPollRequest) (*operations.GetRiskAssessmentPollResponse, error) {
+func (s *RiskAssessment) GetRiskAssessmentPoll(ctx context.Context, request operations.GetRiskAssessmentPollRequest) (*operations.GetRiskAssessmentPollResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/riskAssessment/poll"
 
@@ -552,7 +552,7 @@ func (s *riskAssessment) GetRiskAssessmentPoll(ctx context.Context, request oper
 				return nil, err
 			}
 
-			res.RiskAssessmentClusters = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -566,7 +566,7 @@ func (s *riskAssessment) GetRiskAssessmentPoll(ctx context.Context, request oper
 }
 
 // GetRiskAssessmentImageIDVulnerabilities - Get all images of given risk assessment pod
-func (s *riskAssessment) GetRiskAssessmentImageIDVulnerabilities(ctx context.Context, request operations.GetRiskAssessmentImageIDVulnerabilitiesRequest) (*operations.GetRiskAssessmentImageIDVulnerabilitiesResponse, error) {
+func (s *RiskAssessment) GetRiskAssessmentImageIDVulnerabilities(ctx context.Context, request operations.GetRiskAssessmentImageIDVulnerabilitiesRequest) (*operations.GetRiskAssessmentImageIDVulnerabilitiesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/riskAssessment/{imageId}/vulnerabilities", request, nil)
 	if err != nil {
@@ -617,7 +617,7 @@ func (s *riskAssessment) GetRiskAssessmentImageIDVulnerabilities(ctx context.Con
 				return nil, err
 			}
 
-			res.RiskAssessmentVulnerabilities = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -631,7 +631,7 @@ func (s *riskAssessment) GetRiskAssessmentImageIDVulnerabilities(ctx context.Con
 }
 
 // GetRiskAssessmentKubernetesClusterIDPods - Get all risk assessments of all pods of given cluster
-func (s *riskAssessment) GetRiskAssessmentKubernetesClusterIDPods(ctx context.Context, request operations.GetRiskAssessmentKubernetesClusterIDPodsRequest) (*operations.GetRiskAssessmentKubernetesClusterIDPodsResponse, error) {
+func (s *RiskAssessment) GetRiskAssessmentKubernetesClusterIDPods(ctx context.Context, request operations.GetRiskAssessmentKubernetesClusterIDPodsRequest) (*operations.GetRiskAssessmentKubernetesClusterIDPodsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/riskAssessment/{kubernetesClusterId}/pods", request, nil)
 	if err != nil {
@@ -682,7 +682,7 @@ func (s *riskAssessment) GetRiskAssessmentKubernetesClusterIDPods(ctx context.Co
 				return nil, err
 			}
 
-			res.RiskAssessmentPods = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -696,7 +696,7 @@ func (s *riskAssessment) GetRiskAssessmentKubernetesClusterIDPods(ctx context.Co
 }
 
 // PostRiskAssessmentIgnoredRisks - Add ignore risk
-func (s *riskAssessment) PostRiskAssessmentIgnoredRisks(ctx context.Context) (*operations.PostRiskAssessmentIgnoredRisksResponse, error) {
+func (s *RiskAssessment) PostRiskAssessmentIgnoredRisks(ctx context.Context) (*operations.PostRiskAssessmentIgnoredRisksResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/riskAssessment/ignoredRisks"
 
@@ -754,7 +754,7 @@ func (s *riskAssessment) PostRiskAssessmentIgnoredRisks(ctx context.Context) (*o
 }
 
 // PostRiskAssessmentPermissionsOwnerIDApprove - add / remove permissions to /from the approved permissions list
-func (s *riskAssessment) PostRiskAssessmentPermissionsOwnerIDApprove(ctx context.Context, request operations.PostRiskAssessmentPermissionsOwnerIDApproveRequest) (*operations.PostRiskAssessmentPermissionsOwnerIDApproveResponse, error) {
+func (s *RiskAssessment) PostRiskAssessmentPermissionsOwnerIDApprove(ctx context.Context, request operations.PostRiskAssessmentPermissionsOwnerIDApproveRequest) (*operations.PostRiskAssessmentPermissionsOwnerIDApproveResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/riskAssessment/permissions/{ownerId}/approve", request, nil)
 	if err != nil {
@@ -818,7 +818,7 @@ func (s *riskAssessment) PostRiskAssessmentPermissionsOwnerIDApprove(ctx context
 }
 
 // PostRiskAssessmentKubernetesClusterIDScan - Execute a new runtime scan on the given cluster with the given configuration
-func (s *riskAssessment) PostRiskAssessmentKubernetesClusterIDScan(ctx context.Context, request operations.PostRiskAssessmentKubernetesClusterIDScanRequest) (*operations.PostRiskAssessmentKubernetesClusterIDScanResponse, error) {
+func (s *RiskAssessment) PostRiskAssessmentKubernetesClusterIDScan(ctx context.Context, request operations.PostRiskAssessmentKubernetesClusterIDScanRequest) (*operations.PostRiskAssessmentKubernetesClusterIDScanResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/riskAssessment/{kubernetesClusterId}/scan", request, nil)
 	if err != nil {
@@ -861,7 +861,7 @@ func (s *riskAssessment) PostRiskAssessmentKubernetesClusterIDScan(ctx context.C
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
 			out := string(rawBody)
-			res.PostRiskAssessmentKubernetesClusterIDScan201ApplicationJSONUUIDString = &out
+			res.Res = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -875,7 +875,7 @@ func (s *riskAssessment) PostRiskAssessmentKubernetesClusterIDScan(ctx context.C
 }
 
 // PostRiskAssessmentKubernetesClusterIDSettings - Save the runtime scan configuration on the given cluster
-func (s *riskAssessment) PostRiskAssessmentKubernetesClusterIDSettings(ctx context.Context, request operations.PostRiskAssessmentKubernetesClusterIDSettingsRequest) (*operations.PostRiskAssessmentKubernetesClusterIDSettingsResponse, error) {
+func (s *RiskAssessment) PostRiskAssessmentKubernetesClusterIDSettings(ctx context.Context, request operations.PostRiskAssessmentKubernetesClusterIDSettingsRequest) (*operations.PostRiskAssessmentKubernetesClusterIDSettingsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/riskAssessment/{kubernetesClusterId}/settings", request, nil)
 	if err != nil {
@@ -928,7 +928,7 @@ func (s *riskAssessment) PostRiskAssessmentKubernetesClusterIDSettings(ctx conte
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
 			out := string(rawBody)
-			res.PostRiskAssessmentKubernetesClusterIDSettings201ApplicationJSONUUIDString = &out
+			res.Res = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -942,14 +942,14 @@ func (s *riskAssessment) PostRiskAssessmentKubernetesClusterIDSettings(ctx conte
 }
 
 // PutRiskAssessmentIgnoredRisksIgnoredRiskID - Edit ignore risk
-func (s *riskAssessment) PutRiskAssessmentIgnoredRisksIgnoredRiskID(ctx context.Context, request operations.PutRiskAssessmentIgnoredRisksIgnoredRiskIDRequest) (*operations.PutRiskAssessmentIgnoredRisksIgnoredRiskIDResponse, error) {
+func (s *RiskAssessment) PutRiskAssessmentIgnoredRisksIgnoredRiskID(ctx context.Context, request operations.PutRiskAssessmentIgnoredRisksIgnoredRiskIDRequest) (*operations.PutRiskAssessmentIgnoredRisksIgnoredRiskIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/riskAssessment/ignoredRisks/{ignoredRiskId}", request, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CiPolicyInput", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CiPolicy", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, fmt.Errorf("error serializing request body: %w", err)
 	}

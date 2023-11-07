@@ -19,21 +19,14 @@ func (o *GetTokensInfoRequest) GetTokensIds() []string {
 }
 
 type GetTokensInfoResponse struct {
-	// Success
-	APITokenInfos []shared.APITokenInfo
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-}
-
-func (o *GetTokensInfoResponse) GetAPITokenInfos() []shared.APITokenInfo {
-	if o == nil {
-		return nil
-	}
-	return o.APITokenInfos
+	// Success
+	Classes []shared.APITokenInfo
 }
 
 func (o *GetTokensInfoResponse) GetContentType() string {
@@ -55,4 +48,11 @@ func (o *GetTokensInfoResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetTokensInfoResponse) GetClasses() []shared.APITokenInfo {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

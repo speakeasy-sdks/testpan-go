@@ -22,12 +22,12 @@ func (o *GetAppTelemetriesAppTelemetryIDImagePackagesRequest) GetAppTelemetryID(
 type GetAppTelemetriesAppTelemetryIDImagePackagesResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// Success
-	ImagesWithLicenses []shared.ImagesWithLicenses
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Success
+	Classes []shared.ImagesWithLicenses
 }
 
 func (o *GetAppTelemetriesAppTelemetryIDImagePackagesResponse) GetContentType() string {
@@ -35,13 +35,6 @@ func (o *GetAppTelemetriesAppTelemetryIDImagePackagesResponse) GetContentType() 
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *GetAppTelemetriesAppTelemetryIDImagePackagesResponse) GetImagesWithLicenses() []shared.ImagesWithLicenses {
-	if o == nil {
-		return nil
-	}
-	return o.ImagesWithLicenses
 }
 
 func (o *GetAppTelemetriesAppTelemetryIDImagePackagesResponse) GetStatusCode() int {
@@ -56,4 +49,11 @@ func (o *GetAppTelemetriesAppTelemetryIDImagePackagesResponse) GetRawResponse() 
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetAppTelemetriesAppTelemetryIDImagePackagesResponse) GetClasses() []shared.ImagesWithLicenses {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

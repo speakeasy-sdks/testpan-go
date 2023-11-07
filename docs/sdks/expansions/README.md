@@ -1,5 +1,5 @@
 # Expansions
-(*Expansions*)
+(*.Expansions*)
 
 ## Overview
 
@@ -92,13 +92,13 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Expansions.GetExpansions(ctx, operations.GetExpansionsRequest{
-        SortKey: operations.GetExpansionsSortKeyName,
+        SortKey: operations.GetExpansionsQueryParamSortKeyName,
     })
     if err != nil {
         log.Fatal(err)
     }
 
-    if res.Expansions != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -150,7 +150,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetExpansionsExpansionIDInstallExpansionTarGz200ApplicationJSONBinaryString != nil {
+    if res.Stream != nil {
         // handle response
     }
 }

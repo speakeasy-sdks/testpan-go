@@ -15,19 +15,19 @@ import (
 	"strings"
 )
 
-// imagesAndVulnerabilities - APIs used to define and manage  image hashes
-type imagesAndVulnerabilities struct {
+// ImagesAndVulnerabilities - APIs used to define and manage  image hashes
+type ImagesAndVulnerabilities struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newImagesAndVulnerabilities(sdkConfig sdkConfiguration) *imagesAndVulnerabilities {
-	return &imagesAndVulnerabilities{
+func newImagesAndVulnerabilities(sdkConfig sdkConfiguration) *ImagesAndVulnerabilities {
+	return &ImagesAndVulnerabilities{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // DeleteImagesID - Delete an image hash
-func (s *imagesAndVulnerabilities) DeleteImagesID(ctx context.Context, request operations.DeleteImagesIDRequest) (*operations.DeleteImagesIDResponse, error) {
+func (s *ImagesAndVulnerabilities) DeleteImagesID(ctx context.Context, request operations.DeleteImagesIDRequest) (*operations.DeleteImagesIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/images/{id}", request, nil)
 	if err != nil {
@@ -79,7 +79,7 @@ func (s *imagesAndVulnerabilities) DeleteImagesID(ctx context.Context, request o
 }
 
 // GetAccountVulnerabilitiesXlsx - Returns a xlsx file of images alongside to their vulnerabilities.
-func (s *imagesAndVulnerabilities) GetAccountVulnerabilitiesXlsx(ctx context.Context, request operations.GetAccountVulnerabilitiesXlsxRequest) (*operations.GetAccountVulnerabilitiesXlsxResponse, error) {
+func (s *ImagesAndVulnerabilities) GetAccountVulnerabilitiesXlsx(ctx context.Context, request operations.GetAccountVulnerabilitiesXlsxRequest) (*operations.GetAccountVulnerabilitiesXlsxResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/accountVulnerabilitiesXlsx"
 
@@ -132,7 +132,7 @@ func (s *imagesAndVulnerabilities) GetAccountVulnerabilitiesXlsx(ctx context.Con
 }
 
 // GetImages - Returns a list of images
-func (s *imagesAndVulnerabilities) GetImages(ctx context.Context, request operations.GetImagesRequest) (*operations.GetImagesResponse, error) {
+func (s *ImagesAndVulnerabilities) GetImages(ctx context.Context, request operations.GetImagesRequest) (*operations.GetImagesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/images"
 
@@ -180,7 +180,7 @@ func (s *imagesAndVulnerabilities) GetImages(ctx context.Context, request operat
 				return nil, err
 			}
 
-			res.ImageDefGets = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -196,7 +196,7 @@ func (s *imagesAndVulnerabilities) GetImages(ctx context.Context, request operat
 }
 
 // GetImagesImagesHash - search for image hash in the account
-func (s *imagesAndVulnerabilities) GetImagesImagesHash(ctx context.Context, request operations.GetImagesImagesHashRequest) (*operations.GetImagesImagesHashResponse, error) {
+func (s *ImagesAndVulnerabilities) GetImagesImagesHash(ctx context.Context, request operations.GetImagesImagesHashRequest) (*operations.GetImagesImagesHashResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/images/imagesHash"
 
@@ -244,7 +244,7 @@ func (s *imagesAndVulnerabilities) GetImagesImagesHash(ctx context.Context, requ
 				return nil, err
 			}
 
-			res.GetImagesImagesHash200ApplicationJSONStrings = out
+			res.Strings = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -258,7 +258,7 @@ func (s *imagesAndVulnerabilities) GetImagesImagesHash(ctx context.Context, requ
 }
 
 // GetImagesVulnerabilitiesByImageNameAndHash - Returns a list of vulnerabilities detected in the image
-func (s *imagesAndVulnerabilities) GetImagesVulnerabilitiesByImageNameAndHash(ctx context.Context, request operations.GetImagesVulnerabilitiesByImageNameAndHashRequest) (*operations.GetImagesVulnerabilitiesByImageNameAndHashResponse, error) {
+func (s *ImagesAndVulnerabilities) GetImagesVulnerabilitiesByImageNameAndHash(ctx context.Context, request operations.GetImagesVulnerabilitiesByImageNameAndHashRequest) (*operations.GetImagesVulnerabilitiesByImageNameAndHashResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/images/vulnerabilitiesByImageNameAndHash"
 
@@ -306,7 +306,7 @@ func (s *imagesAndVulnerabilities) GetImagesVulnerabilitiesByImageNameAndHash(ct
 				return nil, err
 			}
 
-			res.Vulnerabilities = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -320,7 +320,7 @@ func (s *imagesAndVulnerabilities) GetImagesVulnerabilitiesByImageNameAndHash(ct
 }
 
 // GetImagesID - get an image
-func (s *imagesAndVulnerabilities) GetImagesID(ctx context.Context, request operations.GetImagesIDRequest) (*operations.GetImagesIDResponse, error) {
+func (s *ImagesAndVulnerabilities) GetImagesID(ctx context.Context, request operations.GetImagesIDRequest) (*operations.GetImagesIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/images/{id}", request, nil)
 	if err != nil {
@@ -381,7 +381,7 @@ func (s *imagesAndVulnerabilities) GetImagesID(ctx context.Context, request oper
 }
 
 // GetImagesImageIDDockerfileScanResults - Returns a list of vulnerabilities detected in the  image
-func (s *imagesAndVulnerabilities) GetImagesImageIDDockerfileScanResults(ctx context.Context, request operations.GetImagesImageIDDockerfileScanResultsRequest) (*operations.GetImagesImageIDDockerfileScanResultsResponse, error) {
+func (s *ImagesAndVulnerabilities) GetImagesImageIDDockerfileScanResults(ctx context.Context, request operations.GetImagesImageIDDockerfileScanResultsRequest) (*operations.GetImagesImageIDDockerfileScanResultsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/images/{imageId}/dockerfileScanResults", request, nil)
 	if err != nil {
@@ -432,7 +432,7 @@ func (s *imagesAndVulnerabilities) GetImagesImageIDDockerfileScanResults(ctx con
 				return nil, err
 			}
 
-			res.DockerfileScanResults = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -446,7 +446,7 @@ func (s *imagesAndVulnerabilities) GetImagesImageIDDockerfileScanResults(ctx con
 }
 
 // GetImagesImageIDImageLayers - Returns a list of image layers
-func (s *imagesAndVulnerabilities) GetImagesImageIDImageLayers(ctx context.Context, request operations.GetImagesImageIDImageLayersRequest) (*operations.GetImagesImageIDImageLayersResponse, error) {
+func (s *ImagesAndVulnerabilities) GetImagesImageIDImageLayers(ctx context.Context, request operations.GetImagesImageIDImageLayersRequest) (*operations.GetImagesImageIDImageLayersResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/images/{imageId}/imageLayers", request, nil)
 	if err != nil {
@@ -511,7 +511,7 @@ func (s *imagesAndVulnerabilities) GetImagesImageIDImageLayers(ctx context.Conte
 }
 
 // GetImagesImageIDPackages - Returns a list of packages for a specific image
-func (s *imagesAndVulnerabilities) GetImagesImageIDPackages(ctx context.Context, request operations.GetImagesImageIDPackagesRequest) (*operations.GetImagesImageIDPackagesResponse, error) {
+func (s *ImagesAndVulnerabilities) GetImagesImageIDPackages(ctx context.Context, request operations.GetImagesImageIDPackagesRequest) (*operations.GetImagesImageIDPackagesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/images/{imageId}/packages", request, nil)
 	if err != nil {
@@ -558,7 +558,7 @@ func (s *imagesAndVulnerabilities) GetImagesImageIDPackages(ctx context.Context,
 				return nil, err
 			}
 
-			res.ImagePackageDetails = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -574,7 +574,7 @@ func (s *imagesAndVulnerabilities) GetImagesImageIDPackages(ctx context.Context,
 }
 
 // GetImagesImageIDSbomPath - Returns the path to the SBOM in cloud storage
-func (s *imagesAndVulnerabilities) GetImagesImageIDSbomPath(ctx context.Context, request operations.GetImagesImageIDSbomPathRequest) (*operations.GetImagesImageIDSbomPathResponse, error) {
+func (s *ImagesAndVulnerabilities) GetImagesImageIDSbomPath(ctx context.Context, request operations.GetImagesImageIDSbomPathRequest) (*operations.GetImagesImageIDSbomPathResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/images/{imageId}/sbomPath", request, nil)
 	if err != nil {
@@ -635,7 +635,7 @@ func (s *imagesAndVulnerabilities) GetImagesImageIDSbomPath(ctx context.Context,
 }
 
 // GetImagesImageIDVulnerabilities - Returns a list of vulnerabilities detected in the image
-func (s *imagesAndVulnerabilities) GetImagesImageIDVulnerabilities(ctx context.Context, request operations.GetImagesImageIDVulnerabilitiesRequest) (*operations.GetImagesImageIDVulnerabilitiesResponse, error) {
+func (s *ImagesAndVulnerabilities) GetImagesImageIDVulnerabilities(ctx context.Context, request operations.GetImagesImageIDVulnerabilitiesRequest) (*operations.GetImagesImageIDVulnerabilitiesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/images/{imageId}/vulnerabilities", request, nil)
 	if err != nil {
@@ -686,7 +686,7 @@ func (s *imagesAndVulnerabilities) GetImagesImageIDVulnerabilities(ctx context.C
 				return nil, err
 			}
 
-			res.Vulnerabilities = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -700,7 +700,7 @@ func (s *imagesAndVulnerabilities) GetImagesImageIDVulnerabilities(ctx context.C
 }
 
 // PostImages - Define a New image hash
-func (s *imagesAndVulnerabilities) PostImages(ctx context.Context, request shared.ImageDefInput) (*operations.PostImagesResponse, error) {
+func (s *ImagesAndVulnerabilities) PostImages(ctx context.Context, request shared.ImageDef) (*operations.PostImagesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/images"
 
@@ -774,7 +774,7 @@ func (s *imagesAndVulnerabilities) PostImages(ctx context.Context, request share
 }
 
 // PostImagesApprove - Approve an image hash
-func (s *imagesAndVulnerabilities) PostImagesApprove(ctx context.Context, request operations.PostImagesApproveRequest) (*operations.PostImagesApproveResponse, error) {
+func (s *ImagesAndVulnerabilities) PostImagesApprove(ctx context.Context, request operations.PostImagesApproveRequest) (*operations.PostImagesApproveResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/images/approve"
 
@@ -837,7 +837,7 @@ func (s *imagesAndVulnerabilities) PostImagesApprove(ctx context.Context, reques
 }
 
 // PostImagesImageIDDockerfileScanResultsIgnore - Add / remove a list of  UUIDs of dockerfileScanResults from ignored list
-func (s *imagesAndVulnerabilities) PostImagesImageIDDockerfileScanResultsIgnore(ctx context.Context, request operations.PostImagesImageIDDockerfileScanResultsIgnoreRequest) (*operations.PostImagesImageIDDockerfileScanResultsIgnoreResponse, error) {
+func (s *ImagesAndVulnerabilities) PostImagesImageIDDockerfileScanResultsIgnore(ctx context.Context, request operations.PostImagesImageIDDockerfileScanResultsIgnoreRequest) (*operations.PostImagesImageIDDockerfileScanResultsIgnoreResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/images/{imageId}/dockerfileScanResults/ignore", request, nil)
 	if err != nil {
@@ -901,7 +901,7 @@ func (s *imagesAndVulnerabilities) PostImagesImageIDDockerfileScanResultsIgnore(
 }
 
 // PostImagesImageIDVulnerabilitiesIgnore - Add / remove a list of  UUIDs of vulnerabilities from ignored list
-func (s *imagesAndVulnerabilities) PostImagesImageIDVulnerabilitiesIgnore(ctx context.Context, request operations.PostImagesImageIDVulnerabilitiesIgnoreRequest) (*operations.PostImagesImageIDVulnerabilitiesIgnoreResponse, error) {
+func (s *ImagesAndVulnerabilities) PostImagesImageIDVulnerabilitiesIgnore(ctx context.Context, request operations.PostImagesImageIDVulnerabilitiesIgnoreRequest) (*operations.PostImagesImageIDVulnerabilitiesIgnoreResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/images/{imageId}/vulnerabilities/ignore", request, nil)
 	if err != nil {

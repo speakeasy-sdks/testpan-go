@@ -7,20 +7,20 @@ import (
 	"fmt"
 )
 
-type APIRiskInfoServiceRisk string
+type ServiceRisk string
 
 const (
-	APIRiskInfoServiceRiskCritical APIRiskInfoServiceRisk = "CRITICAL"
-	APIRiskInfoServiceRiskHigh     APIRiskInfoServiceRisk = "HIGH"
-	APIRiskInfoServiceRiskMedium   APIRiskInfoServiceRisk = "MEDIUM"
-	APIRiskInfoServiceRiskLow      APIRiskInfoServiceRisk = "LOW"
+	ServiceRiskCritical ServiceRisk = "CRITICAL"
+	ServiceRiskHigh     ServiceRisk = "HIGH"
+	ServiceRiskMedium   ServiceRisk = "MEDIUM"
+	ServiceRiskLow      ServiceRisk = "LOW"
 )
 
-func (e APIRiskInfoServiceRisk) ToPointer() *APIRiskInfoServiceRisk {
+func (e ServiceRisk) ToPointer() *ServiceRisk {
 	return &e
 }
 
-func (e *APIRiskInfoServiceRisk) UnmarshalJSON(data []byte) error {
+func (e *ServiceRisk) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -33,17 +33,17 @@ func (e *APIRiskInfoServiceRisk) UnmarshalJSON(data []byte) error {
 	case "MEDIUM":
 		fallthrough
 	case "LOW":
-		*e = APIRiskInfoServiceRisk(v)
+		*e = ServiceRisk(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for APIRiskInfoServiceRisk: %v", v)
+		return fmt.Errorf("invalid value for ServiceRisk: %v", v)
 	}
 }
 
 type APIRiskInfo struct {
-	ServiceID   *string                 `json:"serviceId,omitempty"`
-	ServiceName *string                 `json:"serviceName,omitempty"`
-	ServiceRisk *APIRiskInfoServiceRisk `json:"serviceRisk,omitempty"`
+	ServiceID   *string      `json:"serviceId,omitempty"`
+	ServiceName *string      `json:"serviceName,omitempty"`
+	ServiceRisk *ServiceRisk `json:"serviceRisk,omitempty"`
 	// An `enum`eration.
 	ServiceType *APIServiceType `json:"serviceType,omitempty"`
 }
@@ -62,7 +62,7 @@ func (o *APIRiskInfo) GetServiceName() *string {
 	return o.ServiceName
 }
 
-func (o *APIRiskInfo) GetServiceRisk() *APIRiskInfoServiceRisk {
+func (o *APIRiskInfo) GetServiceRisk() *ServiceRisk {
 	if o == nil {
 		return nil
 	}

@@ -14,7 +14,7 @@ type GetAuditLogsKubernetesActionsResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Success
-	GetAuditLogsKubernetesActions200ApplicationJSONStrings []string
+	Strings []string
 }
 
 func (o *GetAuditLogsKubernetesActionsResponse) GetContentType() string {
@@ -38,9 +38,9 @@ func (o *GetAuditLogsKubernetesActionsResponse) GetRawResponse() *http.Response 
 	return o.RawResponse
 }
 
-func (o *GetAuditLogsKubernetesActionsResponse) GetGetAuditLogsKubernetesActions200ApplicationJSONStrings() []string {
+func (o *GetAuditLogsKubernetesActionsResponse) GetStrings() []string {
 	if o == nil {
 		return nil
 	}
-	return o.GetAuditLogsKubernetesActions200ApplicationJSONStrings
+	return o.Strings
 }

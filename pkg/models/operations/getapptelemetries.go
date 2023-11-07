@@ -11,22 +11,22 @@ import (
 	"time"
 )
 
-// GetAppTelemetriesProtectionStatus - When true, the API will return only protected pods
-type GetAppTelemetriesProtectionStatus string
+// QueryParamProtectionStatus - When true, the API will return only protected pods
+type QueryParamProtectionStatus string
 
 const (
-	GetAppTelemetriesProtectionStatusFull           GetAppTelemetriesProtectionStatus = "FULL"
-	GetAppTelemetriesProtectionStatusDeploymentOnly GetAppTelemetriesProtectionStatus = "DEPLOYMENT_ONLY"
-	GetAppTelemetriesProtectionStatusConnectionOnly GetAppTelemetriesProtectionStatus = "CONNECTION_ONLY"
-	GetAppTelemetriesProtectionStatusDisabled       GetAppTelemetriesProtectionStatus = "DISABLED"
-	GetAppTelemetriesProtectionStatusAll            GetAppTelemetriesProtectionStatus = "ALL"
+	QueryParamProtectionStatusFull           QueryParamProtectionStatus = "FULL"
+	QueryParamProtectionStatusDeploymentOnly QueryParamProtectionStatus = "DEPLOYMENT_ONLY"
+	QueryParamProtectionStatusConnectionOnly QueryParamProtectionStatus = "CONNECTION_ONLY"
+	QueryParamProtectionStatusDisabled       QueryParamProtectionStatus = "DISABLED"
+	QueryParamProtectionStatusAll            QueryParamProtectionStatus = "ALL"
 )
 
-func (e GetAppTelemetriesProtectionStatus) ToPointer() *GetAppTelemetriesProtectionStatus {
+func (e QueryParamProtectionStatus) ToPointer() *QueryParamProtectionStatus {
 	return &e
 }
 
-func (e *GetAppTelemetriesProtectionStatus) UnmarshalJSON(data []byte) error {
+func (e *QueryParamProtectionStatus) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -41,26 +41,26 @@ func (e *GetAppTelemetriesProtectionStatus) UnmarshalJSON(data []byte) error {
 	case "DISABLED":
 		fallthrough
 	case "ALL":
-		*e = GetAppTelemetriesProtectionStatus(v)
+		*e = QueryParamProtectionStatus(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetAppTelemetriesProtectionStatus: %v", v)
+		return fmt.Errorf("invalid value for QueryParamProtectionStatus: %v", v)
 	}
 }
 
-type GetAppTelemetriesResult string
+type GetAppTelemetriesQueryParamResult string
 
 const (
-	GetAppTelemetriesResultAllow  GetAppTelemetriesResult = "ALLOW"
-	GetAppTelemetriesResultDetect GetAppTelemetriesResult = "DETECT"
-	GetAppTelemetriesResultBlock  GetAppTelemetriesResult = "BLOCK"
+	GetAppTelemetriesQueryParamResultAllow  GetAppTelemetriesQueryParamResult = "ALLOW"
+	GetAppTelemetriesQueryParamResultDetect GetAppTelemetriesQueryParamResult = "DETECT"
+	GetAppTelemetriesQueryParamResultBlock  GetAppTelemetriesQueryParamResult = "BLOCK"
 )
 
-func (e GetAppTelemetriesResult) ToPointer() *GetAppTelemetriesResult {
+func (e GetAppTelemetriesQueryParamResult) ToPointer() *GetAppTelemetriesQueryParamResult {
 	return &e
 }
 
-func (e *GetAppTelemetriesResult) UnmarshalJSON(data []byte) error {
+func (e *GetAppTelemetriesQueryParamResult) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -71,26 +71,26 @@ func (e *GetAppTelemetriesResult) UnmarshalJSON(data []byte) error {
 	case "DETECT":
 		fallthrough
 	case "BLOCK":
-		*e = GetAppTelemetriesResult(v)
+		*e = GetAppTelemetriesQueryParamResult(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetAppTelemetriesResult: %v", v)
+		return fmt.Errorf("invalid value for GetAppTelemetriesQueryParamResult: %v", v)
 	}
 }
 
-// GetAppTelemetriesSortDir - sorting direction
-type GetAppTelemetriesSortDir string
+// GetAppTelemetriesQueryParamSortDir - sorting direction
+type GetAppTelemetriesQueryParamSortDir string
 
 const (
-	GetAppTelemetriesSortDirAsc  GetAppTelemetriesSortDir = "ASC"
-	GetAppTelemetriesSortDirDesc GetAppTelemetriesSortDir = "DESC"
+	GetAppTelemetriesQueryParamSortDirAsc  GetAppTelemetriesQueryParamSortDir = "ASC"
+	GetAppTelemetriesQueryParamSortDirDesc GetAppTelemetriesQueryParamSortDir = "DESC"
 )
 
-func (e GetAppTelemetriesSortDir) ToPointer() *GetAppTelemetriesSortDir {
+func (e GetAppTelemetriesQueryParamSortDir) ToPointer() *GetAppTelemetriesQueryParamSortDir {
 	return &e
 }
 
-func (e *GetAppTelemetriesSortDir) UnmarshalJSON(data []byte) error {
+func (e *GetAppTelemetriesQueryParamSortDir) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -99,33 +99,33 @@ func (e *GetAppTelemetriesSortDir) UnmarshalJSON(data []byte) error {
 	case "ASC":
 		fallthrough
 	case "DESC":
-		*e = GetAppTelemetriesSortDir(v)
+		*e = GetAppTelemetriesQueryParamSortDir(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetAppTelemetriesSortDir: %v", v)
+		return fmt.Errorf("invalid value for GetAppTelemetriesQueryParamSortDir: %v", v)
 	}
 }
 
-// GetAppTelemetriesSortKey - sort key
-type GetAppTelemetriesSortKey string
+// GetAppTelemetriesQueryParamSortKey - sort key
+type GetAppTelemetriesQueryParamSortKey string
 
 const (
-	GetAppTelemetriesSortKeyAppName         GetAppTelemetriesSortKey = "appName"
-	GetAppTelemetriesSortKeyAppType         GetAppTelemetriesSortKey = "appType"
-	GetAppTelemetriesSortKeyExecutable      GetAppTelemetriesSortKey = "executable"
-	GetAppTelemetriesSortKeyEnvironmentName GetAppTelemetriesSortKey = "environmentName"
-	GetAppTelemetriesSortKeyRisk            GetAppTelemetriesSortKey = "risk"
-	GetAppTelemetriesSortKeyStatus          GetAppTelemetriesSortKey = "status"
-	GetAppTelemetriesSortKeyStartTime       GetAppTelemetriesSortKey = "startTime"
-	GetAppTelemetriesSortKeyFinishTime      GetAppTelemetriesSortKey = "finishTime"
-	GetAppTelemetriesSortKeyWorkloadRisk    GetAppTelemetriesSortKey = "workloadRisk"
+	GetAppTelemetriesQueryParamSortKeyAppName         GetAppTelemetriesQueryParamSortKey = "appName"
+	GetAppTelemetriesQueryParamSortKeyAppType         GetAppTelemetriesQueryParamSortKey = "appType"
+	GetAppTelemetriesQueryParamSortKeyExecutable      GetAppTelemetriesQueryParamSortKey = "executable"
+	GetAppTelemetriesQueryParamSortKeyEnvironmentName GetAppTelemetriesQueryParamSortKey = "environmentName"
+	GetAppTelemetriesQueryParamSortKeyRisk            GetAppTelemetriesQueryParamSortKey = "risk"
+	GetAppTelemetriesQueryParamSortKeyStatus          GetAppTelemetriesQueryParamSortKey = "status"
+	GetAppTelemetriesQueryParamSortKeyStartTime       GetAppTelemetriesQueryParamSortKey = "startTime"
+	GetAppTelemetriesQueryParamSortKeyFinishTime      GetAppTelemetriesQueryParamSortKey = "finishTime"
+	GetAppTelemetriesQueryParamSortKeyWorkloadRisk    GetAppTelemetriesQueryParamSortKey = "workloadRisk"
 )
 
-func (e GetAppTelemetriesSortKey) ToPointer() *GetAppTelemetriesSortKey {
+func (e GetAppTelemetriesQueryParamSortKey) ToPointer() *GetAppTelemetriesQueryParamSortKey {
 	return &e
 }
 
-func (e *GetAppTelemetriesSortKey) UnmarshalJSON(data []byte) error {
+func (e *GetAppTelemetriesQueryParamSortKey) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -148,27 +148,27 @@ func (e *GetAppTelemetriesSortKey) UnmarshalJSON(data []byte) error {
 	case "finishTime":
 		fallthrough
 	case "workloadRisk":
-		*e = GetAppTelemetriesSortKey(v)
+		*e = GetAppTelemetriesQueryParamSortKey(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetAppTelemetriesSortKey: %v", v)
+		return fmt.Errorf("invalid value for GetAppTelemetriesQueryParamSortKey: %v", v)
 	}
 }
 
-type GetAppTelemetriesWorkloadRisks string
+type WorkloadRisks string
 
 const (
-	GetAppTelemetriesWorkloadRisksLow      GetAppTelemetriesWorkloadRisks = "LOW"
-	GetAppTelemetriesWorkloadRisksMedium   GetAppTelemetriesWorkloadRisks = "MEDIUM"
-	GetAppTelemetriesWorkloadRisksHigh     GetAppTelemetriesWorkloadRisks = "HIGH"
-	GetAppTelemetriesWorkloadRisksCritical GetAppTelemetriesWorkloadRisks = "CRITICAL"
+	WorkloadRisksLow      WorkloadRisks = "LOW"
+	WorkloadRisksMedium   WorkloadRisks = "MEDIUM"
+	WorkloadRisksHigh     WorkloadRisks = "HIGH"
+	WorkloadRisksCritical WorkloadRisks = "CRITICAL"
 )
 
-func (e GetAppTelemetriesWorkloadRisks) ToPointer() *GetAppTelemetriesWorkloadRisks {
+func (e WorkloadRisks) ToPointer() *WorkloadRisks {
 	return &e
 }
 
-func (e *GetAppTelemetriesWorkloadRisks) UnmarshalJSON(data []byte) error {
+func (e *WorkloadRisks) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -181,10 +181,10 @@ func (e *GetAppTelemetriesWorkloadRisks) UnmarshalJSON(data []byte) error {
 	case "HIGH":
 		fallthrough
 	case "CRITICAL":
-		*e = GetAppTelemetriesWorkloadRisks(v)
+		*e = WorkloadRisks(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetAppTelemetriesWorkloadRisks: %v", v)
+		return fmt.Errorf("invalid value for WorkloadRisks: %v", v)
 	}
 }
 
@@ -217,9 +217,9 @@ type GetAppTelemetriesRequest struct {
 	// Return entries from this offset (pagination)
 	Offset *float64 `default:"0" queryParam:"style=form,explode=true,name=offset"`
 	// When true, the API will return only protected pods
-	ProtectionStatus *GetAppTelemetriesProtectionStatus `default:"ALL" queryParam:"style=form,explode=true,name=protectionStatus"`
+	ProtectionStatus *QueryParamProtectionStatus `default:"ALL" queryParam:"style=form,explode=true,name=protectionStatus"`
 	// app result filter
-	Result []GetAppTelemetriesResult `queryParam:"style=form,explode=false,name=result"`
+	Result []GetAppTelemetriesQueryParamResult `queryParam:"style=form,explode=false,name=result"`
 	// When true, the telemetries API will only return entries with the App name
 	ShowOnlyEntriesWithAppName *bool `default:"false" queryParam:"style=form,explode=true,name=showOnlyEntriesWithAppName"`
 	// When true, the API will only return entries that violate the active policy
@@ -227,9 +227,9 @@ type GetAppTelemetriesRequest struct {
 	// When true, the telemetries API will also return workloads that are part of the Kubernetes system
 	ShowSystemPods *bool `default:"false" queryParam:"style=form,explode=true,name=showSystemPods"`
 	// sorting direction
-	SortDir *GetAppTelemetriesSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
+	SortDir *GetAppTelemetriesQueryParamSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
 	// sort key
-	SortKey GetAppTelemetriesSortKey `queryParam:"style=form,explode=true,name=sortKey"`
+	SortKey GetAppTelemetriesQueryParamSortKey `queryParam:"style=form,explode=true,name=sortKey"`
 	// Start date of the query
 	StartTime time.Time `queryParam:"style=form,explode=true,name=startTime"`
 	// App status
@@ -237,7 +237,7 @@ type GetAppTelemetriesRequest struct {
 	// Highest vulnerability
 	VulnerabilityLevelsFilter []string `queryParam:"style=form,explode=false,name=vulnerabilityLevelsFilter"`
 	// workloadRisk filter
-	WorkloadRisks []GetAppTelemetriesWorkloadRisks `queryParam:"style=form,explode=false,name=workloadRisks"`
+	WorkloadRisks []WorkloadRisks `queryParam:"style=form,explode=false,name=workloadRisks"`
 }
 
 func (g GetAppTelemetriesRequest) MarshalJSON() ([]byte, error) {
@@ -349,14 +349,14 @@ func (o *GetAppTelemetriesRequest) GetOffset() *float64 {
 	return o.Offset
 }
 
-func (o *GetAppTelemetriesRequest) GetProtectionStatus() *GetAppTelemetriesProtectionStatus {
+func (o *GetAppTelemetriesRequest) GetProtectionStatus() *QueryParamProtectionStatus {
 	if o == nil {
 		return nil
 	}
 	return o.ProtectionStatus
 }
 
-func (o *GetAppTelemetriesRequest) GetResult() []GetAppTelemetriesResult {
+func (o *GetAppTelemetriesRequest) GetResult() []GetAppTelemetriesQueryParamResult {
 	if o == nil {
 		return nil
 	}
@@ -384,16 +384,16 @@ func (o *GetAppTelemetriesRequest) GetShowSystemPods() *bool {
 	return o.ShowSystemPods
 }
 
-func (o *GetAppTelemetriesRequest) GetSortDir() *GetAppTelemetriesSortDir {
+func (o *GetAppTelemetriesRequest) GetSortDir() *GetAppTelemetriesQueryParamSortDir {
 	if o == nil {
 		return nil
 	}
 	return o.SortDir
 }
 
-func (o *GetAppTelemetriesRequest) GetSortKey() GetAppTelemetriesSortKey {
+func (o *GetAppTelemetriesRequest) GetSortKey() GetAppTelemetriesQueryParamSortKey {
 	if o == nil {
-		return GetAppTelemetriesSortKey("")
+		return GetAppTelemetriesQueryParamSortKey("")
 	}
 	return o.SortKey
 }
@@ -419,7 +419,7 @@ func (o *GetAppTelemetriesRequest) GetVulnerabilityLevelsFilter() []string {
 	return o.VulnerabilityLevelsFilter
 }
 
-func (o *GetAppTelemetriesRequest) GetWorkloadRisks() []GetAppTelemetriesWorkloadRisks {
+func (o *GetAppTelemetriesRequest) GetWorkloadRisks() []WorkloadRisks {
 	if o == nil {
 		return nil
 	}
@@ -427,21 +427,14 @@ func (o *GetAppTelemetriesRequest) GetWorkloadRisks() []GetAppTelemetriesWorkloa
 }
 
 type GetAppTelemetriesResponse struct {
-	// Success
-	AppTelemetries []shared.AppTelemetry
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-}
-
-func (o *GetAppTelemetriesResponse) GetAppTelemetries() []shared.AppTelemetry {
-	if o == nil {
-		return nil
-	}
-	return o.AppTelemetries
+	// Success
+	Classes []shared.AppTelemetry
 }
 
 func (o *GetAppTelemetriesResponse) GetContentType() string {
@@ -463,4 +456,11 @@ func (o *GetAppTelemetriesResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetAppTelemetriesResponse) GetClasses() []shared.AppTelemetry {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

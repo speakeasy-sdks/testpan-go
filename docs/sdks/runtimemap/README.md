@@ -1,5 +1,5 @@
 # RuntimeMap
-(*RuntimeMap*)
+(*.RuntimeMap*)
 
 ## Overview
 
@@ -218,7 +218,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.NetworkMaps != nil {
+    if res.Classes != nil {
         // handle response
     }
 }

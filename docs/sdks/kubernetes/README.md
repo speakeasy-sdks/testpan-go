@@ -1,5 +1,5 @@
 # Kubernetes
-(*Kubernetes*)
+(*.Kubernetes*)
 
 ## Overview
 
@@ -213,7 +213,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetIstioSupportedVersions200ApplicationJSONStrings != nil {
+    if res.Strings != nil {
         // handle response
     }
 }
@@ -262,7 +262,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.KubernetesClusterControllers != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -418,7 +418,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetKubernetesClustersKubernetesClusterIDDownloadBundle200ApplicationJSONBinaryString != nil {
+    if res.Stream != nil {
         // handle response
     }
 }
@@ -522,7 +522,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.KubernetesNamespaceResponses != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -574,7 +574,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.KubernetesServices != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -624,7 +624,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.LeanKubernetesClusters != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -674,7 +674,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.Namespaces != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -731,7 +731,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.PodDefinitions != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -1038,7 +1038,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Kubernetes.PutPodDefinitionsPodID(ctx, operations.PutPodDefinitionsPodIDRequest{
-        PodDefinitionInput: shared.PodDefinitionInput{
+        PodDefinition: shared.PodDefinitionInput{
             ClusterID: "8813d860-716a-4bd1-be6a-f36d0732a688",
             Containers: []shared.Container{
                 shared.Container{

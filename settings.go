@@ -15,19 +15,19 @@ import (
 	"strings"
 )
 
-// settings - APIs used  to configure system settings
-type settings struct {
+// Settings - APIs used  to configure system settings
+type Settings struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newSettings(sdkConfig sdkConfiguration) *settings {
-	return &settings{
+func newSettings(sdkConfig sdkConfiguration) *Settings {
+	return &Settings{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // DeleteSettingsIntegrationsCaID - Delete the CA integration details
-func (s *settings) DeleteSettingsIntegrationsCaID(ctx context.Context, request operations.DeleteSettingsIntegrationsCaIDRequest) (*operations.DeleteSettingsIntegrationsCaIDResponse, error) {
+func (s *Settings) DeleteSettingsIntegrationsCaID(ctx context.Context, request operations.DeleteSettingsIntegrationsCaIDRequest) (*operations.DeleteSettingsIntegrationsCaIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/settings/integrations/ca/{id}", request, nil)
 	if err != nil {
@@ -89,7 +89,7 @@ func (s *settings) DeleteSettingsIntegrationsCaID(ctx context.Context, request o
 }
 
 // DeleteSettingsIntegrationsEventForwardingEventForwardingID - Delete the event forwarding integration details with the given id
-func (s *settings) DeleteSettingsIntegrationsEventForwardingEventForwardingID(ctx context.Context, request operations.DeleteSettingsIntegrationsEventForwardingEventForwardingIDRequest) (*operations.DeleteSettingsIntegrationsEventForwardingEventForwardingIDResponse, error) {
+func (s *Settings) DeleteSettingsIntegrationsEventForwardingEventForwardingID(ctx context.Context, request operations.DeleteSettingsIntegrationsEventForwardingEventForwardingIDRequest) (*operations.DeleteSettingsIntegrationsEventForwardingEventForwardingIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/settings/integrations/eventForwarding/{eventForwardingId}", request, nil)
 	if err != nil {
@@ -151,7 +151,7 @@ func (s *settings) DeleteSettingsIntegrationsEventForwardingEventForwardingID(ct
 }
 
 // GetSettingsAgentsUpdate - Get the agents update configurations
-func (s *settings) GetSettingsAgentsUpdate(ctx context.Context) (*operations.GetSettingsAgentsUpdateResponse, error) {
+func (s *Settings) GetSettingsAgentsUpdate(ctx context.Context) (*operations.GetSettingsAgentsUpdateResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/settings/agentsUpdate"
 
@@ -209,7 +209,7 @@ func (s *settings) GetSettingsAgentsUpdate(ctx context.Context) (*operations.Get
 }
 
 // GetSettingsIntegrationsCa - Get the CA integration details
-func (s *settings) GetSettingsIntegrationsCa(ctx context.Context) (*operations.GetSettingsIntegrationsCaResponse, error) {
+func (s *Settings) GetSettingsIntegrationsCa(ctx context.Context) (*operations.GetSettingsIntegrationsCaResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/settings/integrations/ca"
 
@@ -253,7 +253,7 @@ func (s *settings) GetSettingsIntegrationsCa(ctx context.Context) (*operations.G
 				return nil, err
 			}
 
-			res.CaIntegrationResponseWithClusters = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -267,7 +267,7 @@ func (s *settings) GetSettingsIntegrationsCa(ctx context.Context) (*operations.G
 }
 
 // GetSettingsIntegrationsEventForwarding - Get the event forwarding integration details
-func (s *settings) GetSettingsIntegrationsEventForwarding(ctx context.Context) (*operations.GetSettingsIntegrationsEventForwardingResponse, error) {
+func (s *Settings) GetSettingsIntegrationsEventForwarding(ctx context.Context) (*operations.GetSettingsIntegrationsEventForwardingResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/settings/integrations/eventForwarding"
 
@@ -325,7 +325,7 @@ func (s *settings) GetSettingsIntegrationsEventForwarding(ctx context.Context) (
 }
 
 // PostSeccompProfilesValidateData - Test the seccomp profile data
-func (s *settings) PostSeccompProfilesValidateData(ctx context.Context, request shared.SeccompProfileData) (*operations.PostSeccompProfilesValidateDataResponse, error) {
+func (s *Settings) PostSeccompProfilesValidateData(ctx context.Context, request shared.SeccompProfileData) (*operations.PostSeccompProfilesValidateDataResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/seccompProfiles/validateData"
 
@@ -384,7 +384,7 @@ func (s *settings) PostSeccompProfilesValidateData(ctx context.Context, request 
 }
 
 // PostSettingsAgentsUpdateUpdateNow - Update the agents of the account now
-func (s *settings) PostSettingsAgentsUpdateUpdateNow(ctx context.Context) (*operations.PostSettingsAgentsUpdateUpdateNowResponse, error) {
+func (s *Settings) PostSettingsAgentsUpdateUpdateNow(ctx context.Context) (*operations.PostSettingsAgentsUpdateUpdateNowResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/settings/agentsUpdate/updateNow"
 
@@ -431,7 +431,7 @@ func (s *settings) PostSettingsAgentsUpdateUpdateNow(ctx context.Context) (*oper
 }
 
 // PostSettingsIntegrationsCa - Set the CA integration details
-func (s *settings) PostSettingsIntegrationsCa(ctx context.Context, request shared.CaIntegrationRequestInput) (*operations.PostSettingsIntegrationsCaResponse, error) {
+func (s *Settings) PostSettingsIntegrationsCa(ctx context.Context, request shared.CaIntegrationRequest) (*operations.PostSettingsIntegrationsCaResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/settings/integrations/ca"
 
@@ -499,7 +499,7 @@ func (s *settings) PostSettingsIntegrationsCa(ctx context.Context, request share
 }
 
 // PostSettingsIntegrationsEventForwarding - Set the event forwarding integration details
-func (s *settings) PostSettingsIntegrationsEventForwarding(ctx context.Context, request shared.EventsForwardingDetailsInput) (*operations.PostSettingsIntegrationsEventForwardingResponse, error) {
+func (s *Settings) PostSettingsIntegrationsEventForwarding(ctx context.Context, request shared.EventsForwardingDetailsInput) (*operations.PostSettingsIntegrationsEventForwardingResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/settings/integrations/eventForwarding"
 
@@ -567,7 +567,7 @@ func (s *settings) PostSettingsIntegrationsEventForwarding(ctx context.Context, 
 }
 
 // PostSettingsIntegrationsOpsgenieTestIntegration - Test the connection to Opsgenie
-func (s *settings) PostSettingsIntegrationsOpsgenieTestIntegration(ctx context.Context, request shared.TestOpsgenieConnectionRequest) (*operations.PostSettingsIntegrationsOpsgenieTestIntegrationResponse, error) {
+func (s *Settings) PostSettingsIntegrationsOpsgenieTestIntegration(ctx context.Context, request shared.TestOpsgenieConnectionRequest) (*operations.PostSettingsIntegrationsOpsgenieTestIntegrationResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/settings/integrations/opsgenie/testIntegration"
 
@@ -626,7 +626,7 @@ func (s *settings) PostSettingsIntegrationsOpsgenieTestIntegration(ctx context.C
 }
 
 // PostSettingsIntegrationsSecurexTestIntegration - Test the SecureX integration by sending test message to the provided URL
-func (s *settings) PostSettingsIntegrationsSecurexTestIntegration(ctx context.Context, request shared.TestSecureXIntegrationRequest) (*operations.PostSettingsIntegrationsSecurexTestIntegrationResponse, error) {
+func (s *Settings) PostSettingsIntegrationsSecurexTestIntegration(ctx context.Context, request shared.TestSecureXIntegrationRequest) (*operations.PostSettingsIntegrationsSecurexTestIntegrationResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/settings/integrations/securex/testIntegration"
 
@@ -685,7 +685,7 @@ func (s *settings) PostSettingsIntegrationsSecurexTestIntegration(ctx context.Co
 }
 
 // PostSettingsIntegrationsSlackTestIntegration - Test the Slack integration by sending test message to the provided URL
-func (s *settings) PostSettingsIntegrationsSlackTestIntegration(ctx context.Context, request shared.TestSlackIntegrationRequest) (*operations.PostSettingsIntegrationsSlackTestIntegrationResponse, error) {
+func (s *Settings) PostSettingsIntegrationsSlackTestIntegration(ctx context.Context, request shared.TestSlackIntegrationRequest) (*operations.PostSettingsIntegrationsSlackTestIntegrationResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/settings/integrations/slack/testIntegration"
 
@@ -744,7 +744,7 @@ func (s *settings) PostSettingsIntegrationsSlackTestIntegration(ctx context.Cont
 }
 
 // PostSettingsIntegrationsSplunkTestIntegration - Test the connection to Splunk
-func (s *settings) PostSettingsIntegrationsSplunkTestIntegration(ctx context.Context, request shared.TestSplunkConnectionRequest) (*operations.PostSettingsIntegrationsSplunkTestIntegrationResponse, error) {
+func (s *Settings) PostSettingsIntegrationsSplunkTestIntegration(ctx context.Context, request shared.TestSplunkConnectionRequest) (*operations.PostSettingsIntegrationsSplunkTestIntegrationResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/settings/integrations/splunk/testIntegration"
 
@@ -803,7 +803,7 @@ func (s *settings) PostSettingsIntegrationsSplunkTestIntegration(ctx context.Con
 }
 
 // PostSettingsIntegrationsSumoLogicTestIntegration - Test the Sumo Logic integration by sending test message to the provided URL
-func (s *settings) PostSettingsIntegrationsSumoLogicTestIntegration(ctx context.Context, request shared.TestSumoLogicIntegrationRequest) (*operations.PostSettingsIntegrationsSumoLogicTestIntegrationResponse, error) {
+func (s *Settings) PostSettingsIntegrationsSumoLogicTestIntegration(ctx context.Context, request shared.TestSumoLogicIntegrationRequest) (*operations.PostSettingsIntegrationsSumoLogicTestIntegrationResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/settings/integrations/sumoLogic/testIntegration"
 
@@ -862,7 +862,7 @@ func (s *settings) PostSettingsIntegrationsSumoLogicTestIntegration(ctx context.
 }
 
 // PostSettingsIntegrationsTeamsTestIntegration - Test the connection to Teams
-func (s *settings) PostSettingsIntegrationsTeamsTestIntegration(ctx context.Context, request shared.TestTeamsIntegrationRequest) (*operations.PostSettingsIntegrationsTeamsTestIntegrationResponse, error) {
+func (s *Settings) PostSettingsIntegrationsTeamsTestIntegration(ctx context.Context, request shared.TestTeamsIntegrationRequest) (*operations.PostSettingsIntegrationsTeamsTestIntegrationResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/settings/integrations/teams/testIntegration"
 
@@ -921,7 +921,7 @@ func (s *settings) PostSettingsIntegrationsTeamsTestIntegration(ctx context.Cont
 }
 
 // PostSettingsIntegrationsWebexTestIntegration - Test the Webex integration by sending test message to the provided URL
-func (s *settings) PostSettingsIntegrationsWebexTestIntegration(ctx context.Context, request shared.TestWebexIntegrationRequest) (*operations.PostSettingsIntegrationsWebexTestIntegrationResponse, error) {
+func (s *Settings) PostSettingsIntegrationsWebexTestIntegration(ctx context.Context, request shared.TestWebexIntegrationRequest) (*operations.PostSettingsIntegrationsWebexTestIntegrationResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/settings/integrations/webex/testIntegration"
 
@@ -980,7 +980,7 @@ func (s *settings) PostSettingsIntegrationsWebexTestIntegration(ctx context.Cont
 }
 
 // PutSettingsAgentsUpdate - get the agents update configurations.
-func (s *settings) PutSettingsAgentsUpdate(ctx context.Context, request shared.AgentsUpdateSettingsInput) (*operations.PutSettingsAgentsUpdateResponse, error) {
+func (s *Settings) PutSettingsAgentsUpdate(ctx context.Context, request shared.AgentsUpdateSettingsInput) (*operations.PutSettingsAgentsUpdateResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/settings/agentsUpdate"
 
@@ -1048,14 +1048,14 @@ func (s *settings) PutSettingsAgentsUpdate(ctx context.Context, request shared.A
 }
 
 // PutSettingsIntegrationsCaID - Edit the CA integration details
-func (s *settings) PutSettingsIntegrationsCaID(ctx context.Context, request operations.PutSettingsIntegrationsCaIDRequest) (*operations.PutSettingsIntegrationsCaIDResponse, error) {
+func (s *Settings) PutSettingsIntegrationsCaID(ctx context.Context, request operations.PutSettingsIntegrationsCaIDRequest) (*operations.PutSettingsIntegrationsCaIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/settings/integrations/ca/{id}", request, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CaIntegrationRequestInput", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CaIntegrationRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, fmt.Errorf("error serializing request body: %w", err)
 	}
@@ -1119,14 +1119,14 @@ func (s *settings) PutSettingsIntegrationsCaID(ctx context.Context, request oper
 }
 
 // PutSettingsIntegrationsEventForwardingEventForwardingID - Edit the event forwarding integration details
-func (s *settings) PutSettingsIntegrationsEventForwardingEventForwardingID(ctx context.Context, request operations.PutSettingsIntegrationsEventForwardingEventForwardingIDRequest) (*operations.PutSettingsIntegrationsEventForwardingEventForwardingIDResponse, error) {
+func (s *Settings) PutSettingsIntegrationsEventForwardingEventForwardingID(ctx context.Context, request operations.PutSettingsIntegrationsEventForwardingEventForwardingIDRequest) (*operations.PutSettingsIntegrationsEventForwardingEventForwardingIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/settings/integrations/eventForwarding/{eventForwardingId}", request, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "SplunkEventsForwardingDetailsInput", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "SplunkEventsForwardingDetails", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, fmt.Errorf("error serializing request body: %w", err)
 	}

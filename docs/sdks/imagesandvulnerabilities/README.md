@@ -1,5 +1,5 @@
 # ImagesAndVulnerabilities
-(*ImagesAndVulnerabilities*)
+(*.ImagesAndVulnerabilities*)
 
 ## Overview
 
@@ -171,13 +171,13 @@ func main() {
         ImageTag: []string{
             "string",
         },
-        SortKey: operations.GetImagesSortKeyImageName,
+        SortKey: operations.GetImagesQueryParamSortKeyImageName,
     })
     if err != nil {
         log.Fatal(err)
     }
 
-    if res.ImageDefGets != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -227,7 +227,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetImagesImagesHash200ApplicationJSONStrings != nil {
+    if res.Strings != nil {
         // handle response
     }
 }
@@ -280,7 +280,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.Vulnerabilities != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -384,7 +384,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.DockerfileScanResults != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -488,7 +488,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.ImagePackageDetails != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -592,7 +592,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.Vulnerabilities != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -636,7 +636,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.ImagesAndVulnerabilities.PostImages(ctx, shared.ImageDefInput{
+    res, err := s.ImagesAndVulnerabilities.PostImages(ctx, shared.ImageDef{
         ImageTags: []string{
             "string",
         },
@@ -653,10 +653,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `ctx`                                                        | [context.Context](https://pkg.go.dev/context#Context)        | :heavy_check_mark:                                           | The context to use for the request.                          |
-| `request`                                                    | [shared.ImageDefInput](../../models/shared/imagedefinput.md) | :heavy_check_mark:                                           | The request object to use for the request.                   |
+| Parameter                                             | Type                                                  | Required                                              | Description                                           |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `ctx`                                                 | [context.Context](https://pkg.go.dev/context#Context) | :heavy_check_mark:                                    | The context to use for the request.                   |
+| `request`                                             | [shared.ImageDef](../../models/shared/imagedef.md)    | :heavy_check_mark:                                    | The request object to use for the request.            |
 
 
 ### Response
@@ -753,7 +753,7 @@ func main() {
                 "7d411c9e-43ee-4529-bae8-7474b2c192fe",
             },
         },
-        ActionType: operations.PostImagesImageIDDockerfileScanResultsIgnoreActionTypeAdd,
+        ActionType: operations.ActionTypeAdd,
         ImageID: "fcccfe79-79d3-4058-b255-f4d4f301de39",
     })
     if err != nil {
@@ -811,7 +811,7 @@ func main() {
                 "0f457328-8079-4ea1-b64e-d7631fc85bb9",
             },
         },
-        ActionType: operations.PostImagesImageIDVulnerabilitiesIgnoreActionTypeRemove,
+        ActionType: operations.QueryParamActionTypeRemove,
         ImageID: "95b06784-3712-40b3-827e-08cfaaddc5ee",
     })
     if err != nil {

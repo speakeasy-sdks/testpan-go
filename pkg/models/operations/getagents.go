@@ -10,20 +10,20 @@ import (
 	"net/http"
 )
 
-type GetAgentsRisk string
+type Risk string
 
 const (
-	GetAgentsRiskHigh      GetAgentsRisk = "HIGH"
-	GetAgentsRiskMedium    GetAgentsRisk = "MEDIUM"
-	GetAgentsRiskLow       GetAgentsRisk = "LOW"
-	GetAgentsRiskUndefined GetAgentsRisk = "UNDEFINED"
+	RiskHigh      Risk = "HIGH"
+	RiskMedium    Risk = "MEDIUM"
+	RiskLow       Risk = "LOW"
+	RiskUndefined Risk = "UNDEFINED"
 )
 
-func (e GetAgentsRisk) ToPointer() *GetAgentsRisk {
+func (e Risk) ToPointer() *Risk {
 	return &e
 }
 
-func (e *GetAgentsRisk) UnmarshalJSON(data []byte) error {
+func (e *Risk) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -36,26 +36,26 @@ func (e *GetAgentsRisk) UnmarshalJSON(data []byte) error {
 	case "LOW":
 		fallthrough
 	case "UNDEFINED":
-		*e = GetAgentsRisk(v)
+		*e = Risk(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetAgentsRisk: %v", v)
+		return fmt.Errorf("invalid value for Risk: %v", v)
 	}
 }
 
-// GetAgentsSortDir - sorting direction
-type GetAgentsSortDir string
+// GetAgentsQueryParamSortDir - sorting direction
+type GetAgentsQueryParamSortDir string
 
 const (
-	GetAgentsSortDirAsc  GetAgentsSortDir = "ASC"
-	GetAgentsSortDirDesc GetAgentsSortDir = "DESC"
+	GetAgentsQueryParamSortDirAsc  GetAgentsQueryParamSortDir = "ASC"
+	GetAgentsQueryParamSortDirDesc GetAgentsQueryParamSortDir = "DESC"
 )
 
-func (e GetAgentsSortDir) ToPointer() *GetAgentsSortDir {
+func (e GetAgentsQueryParamSortDir) ToPointer() *GetAgentsQueryParamSortDir {
 	return &e
 }
 
-func (e *GetAgentsSortDir) UnmarshalJSON(data []byte) error {
+func (e *GetAgentsQueryParamSortDir) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -64,29 +64,29 @@ func (e *GetAgentsSortDir) UnmarshalJSON(data []byte) error {
 	case "ASC":
 		fallthrough
 	case "DESC":
-		*e = GetAgentsSortDir(v)
+		*e = GetAgentsQueryParamSortDir(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetAgentsSortDir: %v", v)
+		return fmt.Errorf("invalid value for GetAgentsQueryParamSortDir: %v", v)
 	}
 }
 
-// GetAgentsSortKey - sort key
-type GetAgentsSortKey string
+// GetAgentsQueryParamSortKey - sort key
+type GetAgentsQueryParamSortKey string
 
 const (
-	GetAgentsSortKeyHostName        GetAgentsSortKey = "hostName"
-	GetAgentsSortKeyEnvironmentName GetAgentsSortKey = "environmentName"
-	GetAgentsSortKeyRisk            GetAgentsSortKey = "risk"
-	GetAgentsSortKeyStatus          GetAgentsSortKey = "status"
-	GetAgentsSortKeyLastActive      GetAgentsSortKey = "lastActive"
+	GetAgentsQueryParamSortKeyHostName        GetAgentsQueryParamSortKey = "hostName"
+	GetAgentsQueryParamSortKeyEnvironmentName GetAgentsQueryParamSortKey = "environmentName"
+	GetAgentsQueryParamSortKeyRisk            GetAgentsQueryParamSortKey = "risk"
+	GetAgentsQueryParamSortKeyStatus          GetAgentsQueryParamSortKey = "status"
+	GetAgentsQueryParamSortKeyLastActive      GetAgentsQueryParamSortKey = "lastActive"
 )
 
-func (e GetAgentsSortKey) ToPointer() *GetAgentsSortKey {
+func (e GetAgentsQueryParamSortKey) ToPointer() *GetAgentsQueryParamSortKey {
 	return &e
 }
 
-func (e *GetAgentsSortKey) UnmarshalJSON(data []byte) error {
+func (e *GetAgentsQueryParamSortKey) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -101,27 +101,27 @@ func (e *GetAgentsSortKey) UnmarshalJSON(data []byte) error {
 	case "status":
 		fallthrough
 	case "lastActive":
-		*e = GetAgentsSortKey(v)
+		*e = GetAgentsQueryParamSortKey(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetAgentsSortKey: %v", v)
+		return fmt.Errorf("invalid value for GetAgentsQueryParamSortKey: %v", v)
 	}
 }
 
-type GetAgentsStatus string
+type Status string
 
 const (
-	GetAgentsStatusActive     GetAgentsStatus = "ACTIVE"
-	GetAgentsStatusInactive   GetAgentsStatus = "INACTIVE"
-	GetAgentsStatusStopped    GetAgentsStatus = "STOPPED"
-	GetAgentsStatusTerminated GetAgentsStatus = "TERMINATED"
+	StatusActive     Status = "ACTIVE"
+	StatusInactive   Status = "INACTIVE"
+	StatusStopped    Status = "STOPPED"
+	StatusTerminated Status = "TERMINATED"
 )
 
-func (e GetAgentsStatus) ToPointer() *GetAgentsStatus {
+func (e Status) ToPointer() *Status {
 	return &e
 }
 
-func (e *GetAgentsStatus) UnmarshalJSON(data []byte) error {
+func (e *Status) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -134,10 +134,10 @@ func (e *GetAgentsStatus) UnmarshalJSON(data []byte) error {
 	case "STOPPED":
 		fallthrough
 	case "TERMINATED":
-		*e = GetAgentsStatus(v)
+		*e = Status(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetAgentsStatus: %v", v)
+		return fmt.Errorf("invalid value for Status: %v", v)
 	}
 }
 
@@ -149,13 +149,13 @@ type GetAgentsRequest struct {
 	// The name of the host
 	HostName []string `queryParam:"style=form,explode=false,name=hostName"`
 	// The risk of the environment for attack
-	Risk []GetAgentsRisk `queryParam:"style=form,explode=false,name=risk"`
+	Risk []Risk `queryParam:"style=form,explode=false,name=risk"`
 	// sorting direction
-	SortDir *GetAgentsSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
+	SortDir *GetAgentsQueryParamSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
 	// sort key
-	SortKey *GetAgentsSortKey `default:"hostName" queryParam:"style=form,explode=true,name=sortKey"`
+	SortKey *GetAgentsQueryParamSortKey `default:"hostName" queryParam:"style=form,explode=true,name=sortKey"`
 	// Agent status
-	Status []GetAgentsStatus `queryParam:"style=form,explode=false,name=status"`
+	Status []Status `queryParam:"style=form,explode=false,name=status"`
 }
 
 func (g GetAgentsRequest) MarshalJSON() ([]byte, error) {
@@ -190,28 +190,28 @@ func (o *GetAgentsRequest) GetHostName() []string {
 	return o.HostName
 }
 
-func (o *GetAgentsRequest) GetRisk() []GetAgentsRisk {
+func (o *GetAgentsRequest) GetRisk() []Risk {
 	if o == nil {
 		return nil
 	}
 	return o.Risk
 }
 
-func (o *GetAgentsRequest) GetSortDir() *GetAgentsSortDir {
+func (o *GetAgentsRequest) GetSortDir() *GetAgentsQueryParamSortDir {
 	if o == nil {
 		return nil
 	}
 	return o.SortDir
 }
 
-func (o *GetAgentsRequest) GetSortKey() *GetAgentsSortKey {
+func (o *GetAgentsRequest) GetSortKey() *GetAgentsQueryParamSortKey {
 	if o == nil {
 		return nil
 	}
 	return o.SortKey
 }
 
-func (o *GetAgentsRequest) GetStatus() []GetAgentsStatus {
+func (o *GetAgentsRequest) GetStatus() []Status {
 	if o == nil {
 		return nil
 	}

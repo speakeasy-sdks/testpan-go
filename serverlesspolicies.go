@@ -15,18 +15,18 @@ import (
 	"strings"
 )
 
-type serverlessPolicies struct {
+type ServerlessPolicies struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newServerlessPolicies(sdkConfig sdkConfiguration) *serverlessPolicies {
-	return &serverlessPolicies{
+func newServerlessPolicies(sdkConfig sdkConfiguration) *ServerlessPolicies {
+	return &ServerlessPolicies{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // GetServerlessPolicy - Get current serverless policy
-func (s *serverlessPolicies) GetServerlessPolicy(ctx context.Context) (*operations.GetServerlessPolicyResponse, error) {
+func (s *ServerlessPolicies) GetServerlessPolicy(ctx context.Context) (*operations.GetServerlessPolicyResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/serverlessPolicy"
 
@@ -86,7 +86,7 @@ func (s *serverlessPolicies) GetServerlessPolicy(ctx context.Context) (*operatio
 }
 
 // PutServerlessPolicy - Set the current serverless policy
-func (s *serverlessPolicies) PutServerlessPolicy(ctx context.Context, request shared.ServerlessPolicy) (*operations.PutServerlessPolicyResponse, error) {
+func (s *ServerlessPolicies) PutServerlessPolicy(ctx context.Context, request shared.ServerlessPolicy) (*operations.PutServerlessPolicyResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/serverlessPolicy"
 

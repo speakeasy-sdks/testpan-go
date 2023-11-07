@@ -10,19 +10,19 @@ import (
 	"net/http"
 )
 
-// GetDashboardApisecSpecsAndOperationsDiffsAPISecSource - source filter. an enum representing the source of the APIs service in scope
-type GetDashboardApisecSpecsAndOperationsDiffsAPISecSource string
+// GetDashboardApisecSpecsAndOperationsDiffsQueryParamAPISecSource - source filter. an enum representing the source of the APIs service in scope
+type GetDashboardApisecSpecsAndOperationsDiffsQueryParamAPISecSource string
 
 const (
-	GetDashboardApisecSpecsAndOperationsDiffsAPISecSourceInternal GetDashboardApisecSpecsAndOperationsDiffsAPISecSource = "INTERNAL"
-	GetDashboardApisecSpecsAndOperationsDiffsAPISecSourceExternal GetDashboardApisecSpecsAndOperationsDiffsAPISecSource = "EXTERNAL"
+	GetDashboardApisecSpecsAndOperationsDiffsQueryParamAPISecSourceInternal GetDashboardApisecSpecsAndOperationsDiffsQueryParamAPISecSource = "INTERNAL"
+	GetDashboardApisecSpecsAndOperationsDiffsQueryParamAPISecSourceExternal GetDashboardApisecSpecsAndOperationsDiffsQueryParamAPISecSource = "EXTERNAL"
 )
 
-func (e GetDashboardApisecSpecsAndOperationsDiffsAPISecSource) ToPointer() *GetDashboardApisecSpecsAndOperationsDiffsAPISecSource {
+func (e GetDashboardApisecSpecsAndOperationsDiffsQueryParamAPISecSource) ToPointer() *GetDashboardApisecSpecsAndOperationsDiffsQueryParamAPISecSource {
 	return &e
 }
 
-func (e *GetDashboardApisecSpecsAndOperationsDiffsAPISecSource) UnmarshalJSON(data []byte) error {
+func (e *GetDashboardApisecSpecsAndOperationsDiffsQueryParamAPISecSource) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -31,16 +31,16 @@ func (e *GetDashboardApisecSpecsAndOperationsDiffsAPISecSource) UnmarshalJSON(da
 	case "INTERNAL":
 		fallthrough
 	case "EXTERNAL":
-		*e = GetDashboardApisecSpecsAndOperationsDiffsAPISecSource(v)
+		*e = GetDashboardApisecSpecsAndOperationsDiffsQueryParamAPISecSource(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetDashboardApisecSpecsAndOperationsDiffsAPISecSource: %v", v)
+		return fmt.Errorf("invalid value for GetDashboardApisecSpecsAndOperationsDiffsQueryParamAPISecSource: %v", v)
 	}
 }
 
 type GetDashboardApisecSpecsAndOperationsDiffsRequest struct {
 	// source filter. an enum representing the source of the APIs service in scope
-	APISecSource GetDashboardApisecSpecsAndOperationsDiffsAPISecSource `default:"INTERNAL" queryParam:"style=form,explode=true,name=apiSecSource"`
+	APISecSource GetDashboardApisecSpecsAndOperationsDiffsQueryParamAPISecSource `default:"INTERNAL" queryParam:"style=form,explode=true,name=apiSecSource"`
 }
 
 func (g GetDashboardApisecSpecsAndOperationsDiffsRequest) MarshalJSON() ([]byte, error) {
@@ -54,9 +54,9 @@ func (g *GetDashboardApisecSpecsAndOperationsDiffsRequest) UnmarshalJSON(data []
 	return nil
 }
 
-func (o *GetDashboardApisecSpecsAndOperationsDiffsRequest) GetAPISecSource() GetDashboardApisecSpecsAndOperationsDiffsAPISecSource {
+func (o *GetDashboardApisecSpecsAndOperationsDiffsRequest) GetAPISecSource() GetDashboardApisecSpecsAndOperationsDiffsQueryParamAPISecSource {
 	if o == nil {
-		return GetDashboardApisecSpecsAndOperationsDiffsAPISecSource("")
+		return GetDashboardApisecSpecsAndOperationsDiffsQueryParamAPISecSource("")
 	}
 	return o.APISecSource
 }

@@ -16,7 +16,7 @@ type GetToolsCliSecurecnDeploymentCliResponse struct {
 	RawResponse *http.Response
 	// Success
 	// The Close method must be called on this field, even if it is not used, to prevent resource leaks.
-	GetToolsCliSecurecnDeploymentCli200ApplicationJSONBinaryString io.ReadCloser
+	Stream io.ReadCloser
 }
 
 func (o *GetToolsCliSecurecnDeploymentCliResponse) GetContentType() string {
@@ -40,9 +40,9 @@ func (o *GetToolsCliSecurecnDeploymentCliResponse) GetRawResponse() *http.Respon
 	return o.RawResponse
 }
 
-func (o *GetToolsCliSecurecnDeploymentCliResponse) GetGetToolsCliSecurecnDeploymentCli200ApplicationJSONBinaryString() io.ReadCloser {
+func (o *GetToolsCliSecurecnDeploymentCliResponse) GetStream() io.ReadCloser {
 	if o == nil {
 		return nil
 	}
-	return o.GetToolsCliSecurecnDeploymentCli200ApplicationJSONBinaryString
+	return o.Stream
 }

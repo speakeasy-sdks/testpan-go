@@ -36,8 +36,8 @@ func main() {
 	)
 
 	ctx := context.Background()
-	res, err := s.APISecurityPolicies.DeleteAPISecurityPolicyPolicyID(ctx, operations.DeleteAPISecurityPolicyPolicyIDRequest{
-		PolicyID: "04ae1a0e-dcb7-4d2b-b7a6-f7ca105f8c92",
+	res, err := s.Users.DeleteUsersUserID(ctx, operations.DeleteUsersUserIDRequest{
+		UserID: "2d4aef6d-76db-4c57-a2a3-fe8efd3db6e2",
 	})
 	if err != nil {
 		log.Fatal(err)
@@ -55,39 +55,42 @@ func main() {
 ## Available Resources and Operations
 
 
-### [APISecurityPolicies](docs/sdks/apisecuritypolicies/README.md)
+### [.Users](docs/sdks/users/README.md)
 
-* [DeleteAPISecurityPolicyPolicyID](docs/sdks/apisecuritypolicies/README.md#deleteapisecuritypolicypolicyid) - Delete api security policy
-* [GetAPISecurityPolicy](docs/sdks/apisecuritypolicies/README.md#getapisecuritypolicy) - Get a list of API security policies
-* [GetAPISecurityPolicyPolicyIDDeleteDependencies](docs/sdks/apisecuritypolicies/README.md#getapisecuritypolicypolicyiddeletedependencies) - get dependencies which need to be handled in order to delete specified api security service
-* [PostAPISecurityPolicy](docs/sdks/apisecuritypolicies/README.md#postapisecuritypolicy) - Add new API security policy
-* [PutAPISecurityPolicyPolicyID](docs/sdks/apisecuritypolicies/README.md#putapisecuritypolicypolicyid) - Edit Api security policy.
+* [DeleteUsersUserID](docs/sdks/users/README.md#deleteusersuserid) - Delete a user
+* [GetOperatorCredentials](docs/sdks/users/README.md#getoperatorcredentials) - get the credentials of the Secure Application Operator service user
+* [GetUsers](docs/sdks/users/README.md#getusers) - List current users
+* [GetUsersUserIDAccessTokens](docs/sdks/users/README.md#getusersuseridaccesstokens) - Get the  access tokens for the user
+* [GetUsersUserIDDeleteDependencies](docs/sdks/users/README.md#getusersuseriddeletedependencies) - get dependencies which need to be handled in order to delete specified user
+* [PostAccountUsageStatus](docs/sdks/users/README.md#postaccountusagestatus) - an api to get the account usage status
+* [PostChangePassword](docs/sdks/users/README.md#postchangepassword) - Change the password for the current user
+* [PostLogin](docs/sdks/users/README.md#postlogin) - Login
+* [PostLogout](docs/sdks/users/README.md#postlogout) - Log out
+* [PostMe](docs/sdks/users/README.md#postme) - an api to get current logged in user info
+* [PostUsers](docs/sdks/users/README.md#postusers) - Create a user
+* [PostUsersAcceptEula](docs/sdks/users/README.md#postusersaccepteula) - Accept the EULA
+* [PostUsersTrial](docs/sdks/users/README.md#postuserstrial) - Create a trail user
+* [PutUsersUserID](docs/sdks/users/README.md#putusersuserid) - Change user details
 
-### [Cd](docs/sdks/cd/README.md)
+### [.ImagesAndVulnerabilities](docs/sdks/imagesandvulnerabilities/README.md)
 
-* [DeleteCdRuleIDConnectionsRule](docs/sdks/cd/README.md#deletecdruleidconnectionsrule) - delete a cd connection rule.
-* [DeleteCdRuleIDServerlessRule](docs/sdks/cd/README.md#deletecdruleidserverlessrule) - delete a cd serverless rule.
-* [GetCd](docs/sdks/cd/README.md#getcd) - Get all the CD pipelines results
-* [GetCdResourceID](docs/sdks/cd/README.md#getcdresourceid) - Get A single CD pipeline results
-* [GetCdRuleIDConnectionsRule](docs/sdks/cd/README.md#getcdruleidconnectionsrule) - get a cd connection rule.
-* [GetCdRuleIDServerlessRule](docs/sdks/cd/README.md#getcdruleidserverlessrule) - get a cd serverless rule.
-* [PostCdConnectionsRule](docs/sdks/cd/README.md#postcdconnectionsrule) - Adds cd connection rule.
-* [PostCdServerlessRule](docs/sdks/cd/README.md#postcdserverlessrule) - Adds cd serverless rule.
-* [PutCdRuleIDConnectionsRule](docs/sdks/cd/README.md#putcdruleidconnectionsrule) - update a cd connection rule.
-* [PutCdRuleIDServerlessRule](docs/sdks/cd/README.md#putcdruleidserverlessrule) - update a cd serverless rule.
+* [DeleteImagesID](docs/sdks/imagesandvulnerabilities/README.md#deleteimagesid) - Delete an image hash
+* [GetAccountVulnerabilitiesXlsx](docs/sdks/imagesandvulnerabilities/README.md#getaccountvulnerabilitiesxlsx) - Returns a xlsx file of images alongside to their vulnerabilities.
+* [GetImages](docs/sdks/imagesandvulnerabilities/README.md#getimages) - Returns a list of images
+* [GetImagesImagesHash](docs/sdks/imagesandvulnerabilities/README.md#getimagesimageshash) - search for image hash in the account
+* [GetImagesVulnerabilitiesByImageNameAndHash](docs/sdks/imagesandvulnerabilities/README.md#getimagesvulnerabilitiesbyimagenameandhash) - Returns a list of vulnerabilities detected in the image
+* [GetImagesID](docs/sdks/imagesandvulnerabilities/README.md#getimagesid) - get an image
+* [GetImagesImageIDDockerfileScanResults](docs/sdks/imagesandvulnerabilities/README.md#getimagesimageiddockerfilescanresults) - Returns a list of vulnerabilities detected in the  image
+* [GetImagesImageIDImageLayers](docs/sdks/imagesandvulnerabilities/README.md#getimagesimageidimagelayers) - Returns a list of image layers
+* [GetImagesImageIDPackages](docs/sdks/imagesandvulnerabilities/README.md#getimagesimageidpackages) - Returns a list of packages for a specific image
+* [GetImagesImageIDSbomPath](docs/sdks/imagesandvulnerabilities/README.md#getimagesimageidsbompath) - Returns the path to the SBOM in cloud storage
+* [GetImagesImageIDVulnerabilities](docs/sdks/imagesandvulnerabilities/README.md#getimagesimageidvulnerabilities) - Returns a list of vulnerabilities detected in the image
+* [PostImages](docs/sdks/imagesandvulnerabilities/README.md#postimages) - Define a New image hash
+* [PostImagesApprove](docs/sdks/imagesandvulnerabilities/README.md#postimagesapprove) - Approve an image hash
+* [PostImagesImageIDDockerfileScanResultsIgnore](docs/sdks/imagesandvulnerabilities/README.md#postimagesimageiddockerfilescanresultsignore) - Add / remove a list of  UUIDs of dockerfileScanResults from ignored list
+* [PostImagesImageIDVulnerabilitiesIgnore](docs/sdks/imagesandvulnerabilities/README.md#postimagesimageidvulnerabilitiesignore) - Add / remove a list of  UUIDs of vulnerabilities from ignored list
 
-### [CICDPolicies](docs/sdks/cicdpolicies/README.md)
-
-* [DeleteCdPolicyPolicyID](docs/sdks/cicdpolicies/README.md#deletecdpolicypolicyid) - Delete CD policy
-* [DeleteCiPolicyPolicyID](docs/sdks/cicdpolicies/README.md#deletecipolicypolicyid) - Delete CI policy
-* [GetCdPolicy](docs/sdks/cicdpolicies/README.md#getcdpolicy) - Get the current CD policy
-* [GetCiPolicy](docs/sdks/cicdpolicies/README.md#getcipolicy) - Get the current CI policy
-* [PostCdPolicy](docs/sdks/cicdpolicies/README.md#postcdpolicy) - Set the current CD policy. At least one CdPolicyElement should be present
-* [PostCiPolicy](docs/sdks/cicdpolicies/README.md#postcipolicy) - Set the current CI policy
-* [PutCdPolicyPolicyID](docs/sdks/cicdpolicies/README.md#putcdpolicypolicyid) - Edit CD policy. At least one CdPolicyElement should be present
-* [PutCiPolicyPolicyID](docs/sdks/cicdpolicies/README.md#putcipolicypolicyid) - Edit CI policy
-
-### [Advisor](docs/sdks/advisor/README.md)
+### [.Advisor](docs/sdks/advisor/README.md)
 
 * [GetAdvisorClusterEventRules](docs/sdks/advisor/README.md#getadvisorclustereventrules) - Returns a list of suggested cluster event rules
 * [GetAdvisorConnectionRules](docs/sdks/advisor/README.md#getadvisorconnectionrules) - Returns a list of suggested connection rules
@@ -97,17 +100,17 @@ func main() {
 * [GetAdvisorQueueAdvisorType](docs/sdks/advisor/README.md#getadvisorqueueadvisortype) - Get status for policy advisor background job
 * [PostAdvisorRun](docs/sdks/advisor/README.md#postadvisorrun) - Runs the policy advisor
 
-### [AgentManagement](docs/sdks/agentmanagement/README.md)
+### [.AgentManagement](docs/sdks/agentmanagement/README.md)
 
 * [GetAgents](docs/sdks/agentmanagement/README.md#getagents) - List all installed agents
 * [PostAgentsAgentIDUpdate](docs/sdks/agentmanagement/README.md#postagentsagentidupdate) - Update the agent with the given id to the latest agent version
 * [PostAgentsAgentIDUpdateState](docs/sdks/agentmanagement/README.md#postagentsagentidupdatestate) - Update the status of an agent with the given id
 
-### [API](docs/sdks/api/README.md)
+### [.API](docs/sdks/api/README.md)
 
 * [GetAPI](docs/sdks/api/README.md#getapi) - Get Secure Application API as a Swagger file
 
-### [APISecurity](docs/sdks/apisecurity/README.md)
+### [.APISecurity](docs/sdks/apisecurity/README.md)
 
 * [DeleteAPISecurityAPICatalogID](docs/sdks/apisecurity/README.md#deleteapisecurityapicatalogid) - Delete an API
 * [DeleteAPISecurityInternalCatalogCatalogIDBflaDetection](docs/sdks/apisecurity/README.md#deleteapisecurityinternalcatalogcatalogidbfladetection) - stop bfla detection phase
@@ -165,7 +168,40 @@ func main() {
 * [PutAPISecurityOpenAPISpecsCatalogID](docs/sdks/apisecurity/README.md#putapisecurityopenapispecscatalogid) - Add or edit a spec about a specific API for the account
 * [PutGatewaysGatewayID](docs/sdks/apisecurity/README.md#putgatewaysgatewayid) - Edit gateway
 
-### [Apps](docs/sdks/apps/README.md)
+### [.Performance](docs/sdks/performance/README.md)
+
+* [GetAPISecurityAPICatalogIDHitCountGraph](docs/sdks/performance/README.md#getapisecurityapicatalogidhitcountgraph) - Get hit count for specific spec path
+* [GetPerformanceMetrics](docs/sdks/performance/README.md#getperformancemetrics) - Get performance metrics for a connection between workloads
+
+### [.Bfla](docs/sdks/bfla/README.md)
+
+* [DeleteAPISecurityInternalCatalogCatalogIDBflaDetection](docs/sdks/bfla/README.md#deleteapisecurityinternalcatalogcatalogidbfladetection) - stop bfla detection phase
+* [DeleteAPISecurityInternalCatalogCatalogIDBflaLearning](docs/sdks/bfla/README.md#deleteapisecurityinternalcatalogcatalogidbflalearning) - stop bfla learning phase
+* [GetAPISecurityInternalCatalogCatalogIDBfla](docs/sdks/bfla/README.md#getapisecurityinternalcatalogcatalogidbfla) - Get bfla info for given catalogId
+* [PostAPISecurityInternalCatalogCatalogIDBflaDetection](docs/sdks/bfla/README.md#postapisecurityinternalcatalogcatalogidbfladetection) - Start new bfla detection phase
+* [PostAPISecurityInternalCatalogCatalogIDBflaLearning](docs/sdks/bfla/README.md#postapisecurityinternalcatalogcatalogidbflalearning) - Start new bfla learning phase
+* [PostAPISecurityInternalCatalogCatalogIDBflaReset](docs/sdks/bfla/README.md#postapisecurityinternalcatalogcatalogidbflareset) - Reset bfla model
+* [PutAPISecurityInternalCatalogCatalogIDBfla](docs/sdks/bfla/README.md#putapisecurityinternalcatalogcatalogidbfla) - update BFLA info for this catalogId
+
+### [.APISecurityPolicies](docs/sdks/apisecuritypolicies/README.md)
+
+* [DeleteAPISecurityPolicyPolicyID](docs/sdks/apisecuritypolicies/README.md#deleteapisecuritypolicypolicyid) - Delete api security policy
+* [GetAPISecurityPolicy](docs/sdks/apisecuritypolicies/README.md#getapisecuritypolicy) - Get a list of API security policies
+* [GetAPISecurityPolicyPolicyIDDeleteDependencies](docs/sdks/apisecuritypolicies/README.md#getapisecuritypolicypolicyiddeletedependencies) - get dependencies which need to be handled in order to delete specified api security service
+* [PostAPISecurityPolicy](docs/sdks/apisecuritypolicies/README.md#postapisecuritypolicy) - Add new API security policy
+* [PutAPISecurityPolicyPolicyID](docs/sdks/apisecuritypolicies/README.md#putapisecuritypolicypolicyid) - Edit Api security policy.
+
+### [.Telemetries](docs/sdks/telemetries/README.md)
+
+* [GetAppTelemetries](docs/sdks/telemetries/README.md#getapptelemetries) - Get App telemetries
+* [GetAppTelemetriesAppTelemetryID](docs/sdks/telemetries/README.md#getapptelemetriesapptelemetryid) - Get App telemetry by ID
+* [GetAppTelemetriesAppTelemetryIDAPIRiskInfo](docs/sdks/telemetries/README.md#getapptelemetriesapptelemetryidapiriskinfo) - Get API risks info of given app telemetry
+* [GetAppTelemetriesAppTelemetryIDImagePackages](docs/sdks/telemetries/README.md#getapptelemetriesapptelemetryidimagepackages) - list packages with licenses runnin on a pod
+* [GetAppTelemetriesAppTelemetryIDInjectionInfo](docs/sdks/telemetries/README.md#getapptelemetriesapptelemetryidinjectioninfo) - Get token injection info of given app telemetry
+* [GetConnectionTelemetries](docs/sdks/telemetries/README.md#getconnectiontelemetries) - Get connection telemetries
+* [GetConnectionTelemetriesConnectionTelemetryID](docs/sdks/telemetries/README.md#getconnectiontelemetriesconnectiontelemetryid) - get details for a single connection telemetry
+
+### [.Apps](docs/sdks/apps/README.md)
 
 * [GetApps](docs/sdks/apps/README.md#getapps) - Returns a list of defined Apps
 * [GetAppsAppID](docs/sdks/apps/README.md#getappsappid) - Returns an App by its ID
@@ -173,14 +209,21 @@ func main() {
 * [PostAppsDelete](docs/sdks/apps/README.md#postappsdelete) - Delete several Apps
 * [PutAppsAppID](docs/sdks/apps/README.md#putappsappid) - Edit the existing App
 
-### [AuditLogs](docs/sdks/auditlogs/README.md)
+### [.EnvironmentPolicies](docs/sdks/environmentpolicies/README.md)
+
+* [GetAppsPolicy](docs/sdks/environmentpolicies/README.md#getappspolicy) - Get the current Apps policy
+* [GetAppsPolicyHistory](docs/sdks/environmentpolicies/README.md#getappspolicyhistory) - Get the history of Apps policies
+* [GetAppsPolicySearchOptions](docs/sdks/environmentpolicies/README.md#getappspolicysearchoptions) - Get the current Apps policy filter option
+* [PutAppsPolicy](docs/sdks/environmentpolicies/README.md#putappspolicy) - Set the current Apps policy
+
+### [.AuditLogs](docs/sdks/auditlogs/README.md)
 
 * [GetAuditLogs](docs/sdks/auditlogs/README.md#getauditlogs) - Get audit logs
 * [GetAuditLogsActions](docs/sdks/auditlogs/README.md#getauditlogsactions) - Get all the audit logs actions
 * [GetAuditLogsKubernetes](docs/sdks/auditlogs/README.md#getauditlogskubernetes) - Get audit logs
 * [GetAuditLogsKubernetesActions](docs/sdks/auditlogs/README.md#getauditlogskubernetesactions) - Get all the kubernetes audit logs actions
 
-### [Aws](docs/sdks/aws/README.md)
+### [.Aws](docs/sdks/aws/README.md)
 
 * [GetAwsAccounts](docs/sdks/aws/README.md#getawsaccounts) - Get a list of AWS accounts
 * [GetAwsRoles](docs/sdks/aws/README.md#getawsroles) - Lists AWS role ARNs for the account
@@ -191,30 +234,54 @@ func main() {
 * [PostAwsRoles](docs/sdks/aws/README.md#postawsroles) - Add AWS role to the account
 * [PutAwsRolesRoleID](docs/sdks/aws/README.md#putawsrolesroleid) - Change AWS role name
 
-### [Bfla](docs/sdks/bfla/README.md)
+### [.Cd](docs/sdks/cd/README.md)
 
-* [DeleteAPISecurityInternalCatalogCatalogIDBflaDetection](docs/sdks/bfla/README.md#deleteapisecurityinternalcatalogcatalogidbfladetection) - stop bfla detection phase
-* [DeleteAPISecurityInternalCatalogCatalogIDBflaLearning](docs/sdks/bfla/README.md#deleteapisecurityinternalcatalogcatalogidbflalearning) - stop bfla learning phase
-* [GetAPISecurityInternalCatalogCatalogIDBfla](docs/sdks/bfla/README.md#getapisecurityinternalcatalogcatalogidbfla) - Get bfla info for given catalogId
-* [PostAPISecurityInternalCatalogCatalogIDBflaDetection](docs/sdks/bfla/README.md#postapisecurityinternalcatalogcatalogidbfladetection) - Start new bfla detection phase
-* [PostAPISecurityInternalCatalogCatalogIDBflaLearning](docs/sdks/bfla/README.md#postapisecurityinternalcatalogcatalogidbflalearning) - Start new bfla learning phase
-* [PostAPISecurityInternalCatalogCatalogIDBflaReset](docs/sdks/bfla/README.md#postapisecurityinternalcatalogcatalogidbflareset) - Reset bfla model
-* [PutAPISecurityInternalCatalogCatalogIDBfla](docs/sdks/bfla/README.md#putapisecurityinternalcatalogcatalogidbfla) - update BFLA info for this catalogId
+* [DeleteCdRuleIDConnectionsRule](docs/sdks/cd/README.md#deletecdruleidconnectionsrule) - delete a cd connection rule.
+* [DeleteCdRuleIDServerlessRule](docs/sdks/cd/README.md#deletecdruleidserverlessrule) - delete a cd serverless rule.
+* [GetCd](docs/sdks/cd/README.md#getcd) - Get all the CD pipelines results
+* [GetCdResourceID](docs/sdks/cd/README.md#getcdresourceid) - Get A single CD pipeline results
+* [GetCdRuleIDConnectionsRule](docs/sdks/cd/README.md#getcdruleidconnectionsrule) - get a cd connection rule.
+* [GetCdRuleIDServerlessRule](docs/sdks/cd/README.md#getcdruleidserverlessrule) - get a cd serverless rule.
+* [PostCdConnectionsRule](docs/sdks/cd/README.md#postcdconnectionsrule) - Adds cd connection rule.
+* [PostCdServerlessRule](docs/sdks/cd/README.md#postcdserverlessrule) - Adds cd serverless rule.
+* [PutCdRuleIDConnectionsRule](docs/sdks/cd/README.md#putcdruleidconnectionsrule) - update a cd connection rule.
+* [PutCdRuleIDServerlessRule](docs/sdks/cd/README.md#putcdruleidserverlessrule) - update a cd serverless rule.
 
-### [Cli](docs/sdks/cli/README.md)
+### [.CICDPolicies](docs/sdks/cicdpolicies/README.md)
 
-* [GetToolsCliSecurecnDeploymentCli](docs/sdks/cli/README.md#gettoolsclisecurecndeploymentcli) - Get the Secure Application deployment cli
+* [DeleteCdPolicyPolicyID](docs/sdks/cicdpolicies/README.md#deletecdpolicypolicyid) - Delete CD policy
+* [DeleteCiPolicyPolicyID](docs/sdks/cicdpolicies/README.md#deletecipolicypolicyid) - Delete CI policy
+* [GetCdPolicy](docs/sdks/cicdpolicies/README.md#getcdpolicy) - Get the current CD policy
+* [GetCiPolicy](docs/sdks/cicdpolicies/README.md#getcipolicy) - Get the current CI policy
+* [PostCdPolicy](docs/sdks/cicdpolicies/README.md#postcdpolicy) - Set the current CD policy. At least one CdPolicyElement should be present
+* [PostCiPolicy](docs/sdks/cicdpolicies/README.md#postcipolicy) - Set the current CI policy
+* [PutCdPolicyPolicyID](docs/sdks/cicdpolicies/README.md#putcdpolicypolicyid) - Edit CD policy. At least one CdPolicyElement should be present
+* [PutCiPolicyPolicyID](docs/sdks/cicdpolicies/README.md#putcipolicypolicyid) - Edit CI policy
 
-### [ClusterEventsPolicies](docs/sdks/clustereventspolicies/README.md)
+### [.Serverless](docs/sdks/serverless/README.md)
 
-* [GetKubernetesAPIPolicy](docs/sdks/clustereventspolicies/README.md#getkubernetesapipolicy) - Get current Kubernetes API policy
-* [GetKubernetesAPIPolicyHistory](docs/sdks/clustereventspolicies/README.md#getkubernetesapipolicyhistory) - Get the history of the Kubernetes API policies
-* [GetKubernetesAPIPolicyKubernetesResources](docs/sdks/clustereventspolicies/README.md#getkubernetesapipolicykubernetesresources) - Get the Kubernetes resource list
-* [GetKubernetesAPIPolicyKubernetesUsers](docs/sdks/clustereventspolicies/README.md#getkubernetesapipolicykubernetesusers) - Get the Kubernetes user list
-* [GetKubernetesAPIPolicyRecommendedRules](docs/sdks/clustereventspolicies/README.md#getkubernetesapipolicyrecommendedrules) - Get the recommended Kubernetes API rules
-* [PutKubernetesAPIPolicy](docs/sdks/clustereventspolicies/README.md#putkubernetesapipolicy) - set the current Kubernetes API policy
+* [DeleteCloudAccountsCloudAccountID](docs/sdks/serverless/README.md#deletecloudaccountscloudaccountid) - Delete a cloud account
+* [GetCloudAccounts](docs/sdks/serverless/README.md#getcloudaccounts) - List all the cloud accounts on the system
+* [GetCloudAccountsAzureInstallationDetails](docs/sdks/serverless/README.md#getcloudaccountsazureinstallationdetails) - Get the Azure installation details
+* [GetCloudAccountsInstallationDetails](docs/sdks/serverless/README.md#getcloudaccountsinstallationdetails) - Get the installation details
+* [GetCloudAccountsRegionsAWS](docs/sdks/serverless/README.md#getcloudaccountsregionsaws) - List all the possible regions of AWS
+* [GetCloudAccountsRegionsAzure](docs/sdks/serverless/README.md#getcloudaccountsregionsazure) - List all the possible regions of Azure
+* [GetCloudAccountsCloudAccountIDDeleteDependencies](docs/sdks/serverless/README.md#getcloudaccountscloudaccountiddeletedependencies) - get dependencies which need to be handled in order to delete specified cloud account
+* [GetCloudAccountsCloudAccountIDDownloadBundle](docs/sdks/serverless/README.md#getcloudaccountscloudaccountiddownloadbundle) - Get Secure Application installation script
+* [GetServerlessFunctions](docs/sdks/serverless/README.md#getserverlessfunctions) - Get serverless functions
+* [GetServerlessFunctionsArns](docs/sdks/serverless/README.md#getserverlessfunctionsarns) - Get serverless functions names
+* [GetServerlessFunctionsNames](docs/sdks/serverless/README.md#getserverlessfunctionsnames) - Get serverless functions names
+* [GetServerlessFunctionsFunctionID](docs/sdks/serverless/README.md#getserverlessfunctionsfunctionid) - Get Serverless Function by ID
+* [GetServerlessFunctionsFunctionIDSecrets](docs/sdks/serverless/README.md#getserverlessfunctionsfunctionidsecrets) - Get Serverless Function secrets issues
+* [GetServerlessFunctionsFunctionIDVulnerabilities](docs/sdks/serverless/README.md#getserverlessfunctionsfunctionidvulnerabilities) - Get Serverless Function Vulnerabilities by ID
+* [GetServerlessZipFiles](docs/sdks/serverless/README.md#getserverlesszipfiles) - Get serverless zip files that was scanned by cli
+* [GetServerlessZipFilesZipID](docs/sdks/serverless/README.md#getserverlesszipfileszipid) - Get specific zip file record
+* [GetServerlessZipFilesZipIDPackages](docs/sdks/serverless/README.md#getserverlesszipfileszipidpackages) - Returns a list of packages for a specific serverless zip
+* [GetServerlessZipFilesZipIDVulnerabilities](docs/sdks/serverless/README.md#getserverlesszipfileszipidvulnerabilities) - Returns a list of vulnerabilities detected in the serverless zip
+* [PostCloudAccountsScan](docs/sdks/serverless/README.md#postcloudaccountsscan) - invoke cloud account scan
+* [PutCloudAccountsCloudAccountID](docs/sdks/serverless/README.md#putcloudaccountscloudaccountid) - Edit cloud account definition
 
-### [ConnectionPolicies](docs/sdks/connectionpolicies/README.md)
+### [.ConnectionPolicies](docs/sdks/connectionpolicies/README.md)
 
 * [GetConnectionsPolicy](docs/sdks/connectionpolicies/README.md#getconnectionspolicy) - Get current connection policy
 * [GetConnectionsPolicyHistory](docs/sdks/connectionpolicies/README.md#getconnectionspolicyhistory) - Get the history of the connection policies
@@ -225,7 +292,7 @@ func main() {
 * [GetServerlessPolicyHistory](docs/sdks/connectionpolicies/README.md#getserverlesspolicyhistory) - Get the history of the serverless policies
 * [PutConnectionsPolicy](docs/sdks/connectionpolicies/README.md#putconnectionspolicy) - Set the current connection policy
 
-### [Dashboard](docs/sdks/dashboard/README.md)
+### [.Dashboard](docs/sdks/dashboard/README.md)
 
 * [GetDashboardApisecRiskFindings](docs/sdks/dashboard/README.md#getdashboardapisecriskfindings) - Get API sec risk findings widget
 * [GetDashboardApisecRiskFindingsTrend](docs/sdks/dashboard/README.md#getdashboardapisecriskfindingstrend) - Get API sec risk findings trend graph widget for the last 30 days
@@ -249,7 +316,7 @@ func main() {
 * [GetLicensingDashboard](docs/sdks/dashboard/README.md#getlicensingdashboard) - Get licensing dashboard data
 * [PostDashboardReportGenerate](docs/sdks/dashboard/README.md#postdashboardreportgenerate) - Generate Secure Application security report
 
-### [Deployers](docs/sdks/deployers/README.md)
+### [.Deployers](docs/sdks/deployers/README.md)
 
 * [DeleteDeployersDeployerID](docs/sdks/deployers/README.md#deletedeployersdeployerid) - Delete an deployer
 * [GetDeployers](docs/sdks/deployers/README.md#getdeployers) - List all the deployers on the system
@@ -258,14 +325,7 @@ func main() {
 * [PostDeployers](docs/sdks/deployers/README.md#postdeployers) - Create a new deployer
 * [PutDeployersDeployerID](docs/sdks/deployers/README.md#putdeployersdeployerid) - Edit deployer definition
 
-### [EnvironmentPolicies](docs/sdks/environmentpolicies/README.md)
-
-* [GetAppsPolicy](docs/sdks/environmentpolicies/README.md#getappspolicy) - Get the current Apps policy
-* [GetAppsPolicyHistory](docs/sdks/environmentpolicies/README.md#getappspolicyhistory) - Get the history of Apps policies
-* [GetAppsPolicySearchOptions](docs/sdks/environmentpolicies/README.md#getappspolicysearchoptions) - Get the current Apps policy filter option
-* [PutAppsPolicy](docs/sdks/environmentpolicies/README.md#putappspolicy) - Set the current Apps policy
-
-### [Envs](docs/sdks/envs/README.md)
+### [.Envs](docs/sdks/envs/README.md)
 
 * [DeleteEnvironmentsEnvID](docs/sdks/envs/README.md#deleteenvironmentsenvid)
 * [GetEnvironments](docs/sdks/envs/README.md#getenvironments) - List all defined Secure Application environments
@@ -276,7 +336,7 @@ func main() {
 * [PostEnvironmentsDelete](docs/sdks/envs/README.md#postenvironmentsdelete) - Delete multiple Secure Application environments
 * [PutEnvironmentsEnvID](docs/sdks/envs/README.md#putenvironmentsenvid) - Edit an existing Secure Application environment
 
-### [Expansions](docs/sdks/expansions/README.md)
+### [.Expansions](docs/sdks/expansions/README.md)
 
 * [DeleteExpansionsExpansionID](docs/sdks/expansions/README.md#deleteexpansionsexpansionid) - Delete an expansion
 * [GetExpansions](docs/sdks/expansions/README.md#getexpansions) - List all the expansions on the system
@@ -284,7 +344,7 @@ func main() {
 * [PostExpansions](docs/sdks/expansions/README.md#postexpansions) - Create a new expansion
 * [PutExpansionsExpansionID](docs/sdks/expansions/README.md#putexpansionsexpansionid) - Edit expansion definition
 
-### [Gateways](docs/sdks/gateways/README.md)
+### [.Gateways](docs/sdks/gateways/README.md)
 
 * [DeleteGatewaysGatewayID](docs/sdks/gateways/README.md#deletegatewaysgatewayid) - Delete gateway
 * [GetGateways](docs/sdks/gateways/README.md#getgateways) - Get gateways
@@ -293,33 +353,7 @@ func main() {
 * [PostGateways](docs/sdks/gateways/README.md#postgateways) - Add new gateway
 * [PutGatewaysGatewayID](docs/sdks/gateways/README.md#putgatewaysgatewayid) - Edit gateway
 
-### [ImagesAndVulnerabilities](docs/sdks/imagesandvulnerabilities/README.md)
-
-* [DeleteImagesID](docs/sdks/imagesandvulnerabilities/README.md#deleteimagesid) - Delete an image hash
-* [GetAccountVulnerabilitiesXlsx](docs/sdks/imagesandvulnerabilities/README.md#getaccountvulnerabilitiesxlsx) - Returns a xlsx file of images alongside to their vulnerabilities.
-* [GetImages](docs/sdks/imagesandvulnerabilities/README.md#getimages) - Returns a list of images
-* [GetImagesImagesHash](docs/sdks/imagesandvulnerabilities/README.md#getimagesimageshash) - search for image hash in the account
-* [GetImagesVulnerabilitiesByImageNameAndHash](docs/sdks/imagesandvulnerabilities/README.md#getimagesvulnerabilitiesbyimagenameandhash) - Returns a list of vulnerabilities detected in the image
-* [GetImagesID](docs/sdks/imagesandvulnerabilities/README.md#getimagesid) - get an image
-* [GetImagesImageIDDockerfileScanResults](docs/sdks/imagesandvulnerabilities/README.md#getimagesimageiddockerfilescanresults) - Returns a list of vulnerabilities detected in the  image
-* [GetImagesImageIDImageLayers](docs/sdks/imagesandvulnerabilities/README.md#getimagesimageidimagelayers) - Returns a list of image layers
-* [GetImagesImageIDPackages](docs/sdks/imagesandvulnerabilities/README.md#getimagesimageidpackages) - Returns a list of packages for a specific image
-* [GetImagesImageIDSbomPath](docs/sdks/imagesandvulnerabilities/README.md#getimagesimageidsbompath) - Returns the path to the SBOM in cloud storage
-* [GetImagesImageIDVulnerabilities](docs/sdks/imagesandvulnerabilities/README.md#getimagesimageidvulnerabilities) - Returns a list of vulnerabilities detected in the image
-* [PostImages](docs/sdks/imagesandvulnerabilities/README.md#postimages) - Define a New image hash
-* [PostImagesApprove](docs/sdks/imagesandvulnerabilities/README.md#postimagesapprove) - Approve an image hash
-* [PostImagesImageIDDockerfileScanResultsIgnore](docs/sdks/imagesandvulnerabilities/README.md#postimagesimageiddockerfilescanresultsignore) - Add / remove a list of  UUIDs of dockerfileScanResults from ignored list
-* [PostImagesImageIDVulnerabilitiesIgnore](docs/sdks/imagesandvulnerabilities/README.md#postimagesimageidvulnerabilitiesignore) - Add / remove a list of  UUIDs of vulnerabilities from ignored list
-
-### [K8sCisBenchmark](docs/sdks/k8scisbenchmark/README.md)
-
-* [GetK8sCISBenchmark](docs/sdks/k8scisbenchmark/README.md#getk8scisbenchmark) - Get k8s cis benchmark for clusters
-* [GetK8sCISBenchmarkSummary](docs/sdks/k8scisbenchmark/README.md#getk8scisbenchmarksummary) - Get k8s cis benchmark summary of account
-* [GetK8sCISBenchmarkClusterID](docs/sdks/k8scisbenchmark/README.md#getk8scisbenchmarkclusterid) - Get k8s cis benchmark for a specific cluster
-* [PostK8sCISBenchmarkClusterID](docs/sdks/k8scisbenchmark/README.md#postk8scisbenchmarkclusterid) - initiate k8s cis benchmark scan for a specific cluster
-* [PutK8sCISBenchmarkClusterID](docs/sdks/k8scisbenchmark/README.md#putk8scisbenchmarkclusterid) - edit k8s cis benchmark for a specific cluster with test statuses
-
-### [Kubernetes](docs/sdks/kubernetes/README.md)
+### [.Kubernetes](docs/sdks/kubernetes/README.md)
 
 * [DeleteKubernetesClustersKubernetesClusterID](docs/sdks/kubernetes/README.md#deletekubernetesclusterskubernetesclusterid) - Delete a Kubernetes cluster
 * [DeletePodDefinitionsPodID](docs/sdks/kubernetes/README.md#deletepoddefinitionspodid) - Delete a pod definition
@@ -341,7 +375,24 @@ func main() {
 * [PutKubernetesClustersKubernetesClusterIDManagedByHelm](docs/sdks/kubernetes/README.md#putkubernetesclusterskubernetesclusteridmanagedbyhelm) - Update the Kubernetes cluster which managed by HELM
 * [PutPodDefinitionsPodID](docs/sdks/kubernetes/README.md#putpoddefinitionspodid) - Change pod definition
 
-### [Mitre](docs/sdks/mitre/README.md)
+### [.K8sCisBenchmark](docs/sdks/k8scisbenchmark/README.md)
+
+* [GetK8sCISBenchmark](docs/sdks/k8scisbenchmark/README.md#getk8scisbenchmark) - Get k8s cis benchmark for clusters
+* [GetK8sCISBenchmarkSummary](docs/sdks/k8scisbenchmark/README.md#getk8scisbenchmarksummary) - Get k8s cis benchmark summary of account
+* [GetK8sCISBenchmarkClusterID](docs/sdks/k8scisbenchmark/README.md#getk8scisbenchmarkclusterid) - Get k8s cis benchmark for a specific cluster
+* [PostK8sCISBenchmarkClusterID](docs/sdks/k8scisbenchmark/README.md#postk8scisbenchmarkclusterid) - initiate k8s cis benchmark scan for a specific cluster
+* [PutK8sCISBenchmarkClusterID](docs/sdks/k8scisbenchmark/README.md#putk8scisbenchmarkclusterid) - edit k8s cis benchmark for a specific cluster with test statuses
+
+### [.ClusterEventsPolicies](docs/sdks/clustereventspolicies/README.md)
+
+* [GetKubernetesAPIPolicy](docs/sdks/clustereventspolicies/README.md#getkubernetesapipolicy) - Get current Kubernetes API policy
+* [GetKubernetesAPIPolicyHistory](docs/sdks/clustereventspolicies/README.md#getkubernetesapipolicyhistory) - Get the history of the Kubernetes API policies
+* [GetKubernetesAPIPolicyKubernetesResources](docs/sdks/clustereventspolicies/README.md#getkubernetesapipolicykubernetesresources) - Get the Kubernetes resource list
+* [GetKubernetesAPIPolicyKubernetesUsers](docs/sdks/clustereventspolicies/README.md#getkubernetesapipolicykubernetesusers) - Get the Kubernetes user list
+* [GetKubernetesAPIPolicyRecommendedRules](docs/sdks/clustereventspolicies/README.md#getkubernetesapipolicyrecommendedrules) - Get the recommended Kubernetes API rules
+* [PutKubernetesAPIPolicy](docs/sdks/clustereventspolicies/README.md#putkubernetesapipolicy) - set the current Kubernetes API policy
+
+### [.Mitre](docs/sdks/mitre/README.md)
 
 * [GetMitreDashboard](docs/sdks/mitre/README.md#getmitredashboard) - Get data for MITRE dashboard for all clusters
 * [GetMitreReportDownload](docs/sdks/mitre/README.md#getmitrereportdownload) - Download Mitre security report
@@ -350,12 +401,14 @@ func main() {
 * [PostMitreReportGenerate](docs/sdks/mitre/README.md#postmitrereportgenerate) - Generate Mitre report
 * [PostMitreTechniqueFix](docs/sdks/mitre/README.md#postmitretechniquefix) - Post fix for MITRE technique of the given mitreTechniqueType
 
-### [Performance](docs/sdks/performance/README.md)
+### [.RuntimeMap](docs/sdks/runtimemap/README.md)
 
-* [GetAPISecurityAPICatalogIDHitCountGraph](docs/sdks/performance/README.md#getapisecurityapicatalogidhitcountgraph) - Get hit count for specific spec path
-* [GetPerformanceMetrics](docs/sdks/performance/README.md#getperformancemetrics) - Get performance metrics for a connection between workloads
+* [DeleteNetworkMapQueueRequestID](docs/sdks/runtimemap/README.md#deletenetworkmapqueuerequestid) - Cancel the network map background job
+* [GetNetworkMap](docs/sdks/runtimemap/README.md#getnetworkmap) - Get data for network map
+* [GetNetworkMapQueueRequestID](docs/sdks/runtimemap/README.md#getnetworkmapqueuerequestid) - Get status for network map background job
+* [GetNetworkMapResultsRequestID](docs/sdks/runtimemap/README.md#getnetworkmapresultsrequestid) - Get result for network map background job
 
-### [PspProfiles](docs/sdks/pspprofiles/README.md)
+### [.PspProfiles](docs/sdks/pspprofiles/README.md)
 
 * [DeletePodSecurityPolicyProfilesProfileID](docs/sdks/pspprofiles/README.md#deletepodsecuritypolicyprofilesprofileid) - Delete a pod security policy standards
 * [DeleteSeccompProfilesProfileID](docs/sdks/pspprofiles/README.md#deleteseccompprofilesprofileid) - Delete a seccomp profile
@@ -367,7 +420,7 @@ func main() {
 * [PutPodSecurityPolicyProfilesProfileID](docs/sdks/pspprofiles/README.md#putpodsecuritypolicyprofilesprofileid) - Change pod security standards profile
 * [PutSeccompProfilesProfileID](docs/sdks/pspprofiles/README.md#putseccompprofilesprofileid) - Change seccomp profile
 
-### [Registries](docs/sdks/registries/README.md)
+### [.Registries](docs/sdks/registries/README.md)
 
 * [DeleteRegistriesRegistryID](docs/sdks/registries/README.md#deleteregistriesregistryid) - Delete a registry
 * [GetRegistries](docs/sdks/registries/README.md#getregistries) - Get a list of defined registries
@@ -376,7 +429,7 @@ func main() {
 * [PostRegistriesTestConnectionRegistryID](docs/sdks/registries/README.md#postregistriestestconnectionregistryid) - test registry connection
 * [PutRegistriesRegistryID](docs/sdks/registries/README.md#putregistriesregistryid) - edit existing registry
 
-### [RiskAssessment](docs/sdks/riskassessment/README.md)
+### [.RiskAssessment](docs/sdks/riskassessment/README.md)
 
 * [DeleteRiskAssessmentIgnoredRisksIgnoredRiskID](docs/sdks/riskassessment/README.md#deleteriskassessmentignoredrisksignoredriskid) - Delete ignored risk
 * [DeleteRiskAssessmentKubernetesClusterIDCancel](docs/sdks/riskassessment/README.md#deleteriskassessmentkubernetesclusteridcancel) - Cancel the runtime scan on the given cluster with the given id
@@ -395,42 +448,7 @@ func main() {
 * [PostRiskAssessmentKubernetesClusterIDSettings](docs/sdks/riskassessment/README.md#postriskassessmentkubernetesclusteridsettings) - Save the runtime scan configuration on the given cluster
 * [PutRiskAssessmentIgnoredRisksIgnoredRiskID](docs/sdks/riskassessment/README.md#putriskassessmentignoredrisksignoredriskid) - Edit ignore risk
 
-### [RuntimeMap](docs/sdks/runtimemap/README.md)
-
-* [DeleteNetworkMapQueueRequestID](docs/sdks/runtimemap/README.md#deletenetworkmapqueuerequestid) - Cancel the network map background job
-* [GetNetworkMap](docs/sdks/runtimemap/README.md#getnetworkmap) - Get data for network map
-* [GetNetworkMapQueueRequestID](docs/sdks/runtimemap/README.md#getnetworkmapqueuerequestid) - Get status for network map background job
-* [GetNetworkMapResultsRequestID](docs/sdks/runtimemap/README.md#getnetworkmapresultsrequestid) - Get result for network map background job
-
-### [Serverless](docs/sdks/serverless/README.md)
-
-* [DeleteCloudAccountsCloudAccountID](docs/sdks/serverless/README.md#deletecloudaccountscloudaccountid) - Delete a cloud account
-* [GetCloudAccounts](docs/sdks/serverless/README.md#getcloudaccounts) - List all the cloud accounts on the system
-* [GetCloudAccountsAzureInstallationDetails](docs/sdks/serverless/README.md#getcloudaccountsazureinstallationdetails) - Get the Azure installation details
-* [GetCloudAccountsInstallationDetails](docs/sdks/serverless/README.md#getcloudaccountsinstallationdetails) - Get the installation details
-* [GetCloudAccountsRegionsAWS](docs/sdks/serverless/README.md#getcloudaccountsregionsaws) - List all the possible regions of AWS
-* [GetCloudAccountsRegionsAzure](docs/sdks/serverless/README.md#getcloudaccountsregionsazure) - List all the possible regions of Azure
-* [GetCloudAccountsCloudAccountIDDeleteDependencies](docs/sdks/serverless/README.md#getcloudaccountscloudaccountiddeletedependencies) - get dependencies which need to be handled in order to delete specified cloud account
-* [GetCloudAccountsCloudAccountIDDownloadBundle](docs/sdks/serverless/README.md#getcloudaccountscloudaccountiddownloadbundle) - Get Secure Application installation script
-* [GetServerlessFunctions](docs/sdks/serverless/README.md#getserverlessfunctions) - Get serverless functions
-* [GetServerlessFunctionsArns](docs/sdks/serverless/README.md#getserverlessfunctionsarns) - Get serverless functions names
-* [GetServerlessFunctionsNames](docs/sdks/serverless/README.md#getserverlessfunctionsnames) - Get serverless functions names
-* [GetServerlessFunctionsFunctionID](docs/sdks/serverless/README.md#getserverlessfunctionsfunctionid) - Get Serverless Function by ID
-* [GetServerlessFunctionsFunctionIDSecrets](docs/sdks/serverless/README.md#getserverlessfunctionsfunctionidsecrets) - Get Serverless Function secrets issues
-* [GetServerlessFunctionsFunctionIDVulnerabilities](docs/sdks/serverless/README.md#getserverlessfunctionsfunctionidvulnerabilities) - Get Serverless Function Vulnerabilities by ID
-* [GetServerlessZipFiles](docs/sdks/serverless/README.md#getserverlesszipfiles) - Get serverless zip files that was scanned by cli
-* [GetServerlessZipFilesZipID](docs/sdks/serverless/README.md#getserverlesszipfileszipid) - Get specific zip file record
-* [GetServerlessZipFilesZipIDPackages](docs/sdks/serverless/README.md#getserverlesszipfileszipidpackages) - Returns a list of packages for a specific serverless zip
-* [GetServerlessZipFilesZipIDVulnerabilities](docs/sdks/serverless/README.md#getserverlesszipfileszipidvulnerabilities) - Returns a list of vulnerabilities detected in the serverless zip
-* [PostCloudAccountsScan](docs/sdks/serverless/README.md#postcloudaccountsscan) - invoke cloud account scan
-* [PutCloudAccountsCloudAccountID](docs/sdks/serverless/README.md#putcloudaccountscloudaccountid) - Edit cloud account definition
-
-### [ServerlessPolicies](docs/sdks/serverlesspolicies/README.md)
-
-* [GetServerlessPolicy](docs/sdks/serverlesspolicies/README.md#getserverlesspolicy) - Get current serverless policy
-* [PutServerlessPolicy](docs/sdks/serverlesspolicies/README.md#putserverlesspolicy) - Set the current serverless policy
-
-### [Settings](docs/sdks/settings/README.md)
+### [.Settings](docs/sdks/settings/README.md)
 
 * [DeleteSettingsIntegrationsCaID](docs/sdks/settings/README.md#deletesettingsintegrationscaid) - Delete the CA integration details
 * [DeleteSettingsIntegrationsEventForwardingEventForwardingID](docs/sdks/settings/README.md#deletesettingsintegrationseventforwardingeventforwardingid) - Delete the event forwarding integration details with the given id
@@ -452,17 +470,12 @@ func main() {
 * [PutSettingsIntegrationsCaID](docs/sdks/settings/README.md#putsettingsintegrationscaid) - Edit the CA integration details
 * [PutSettingsIntegrationsEventForwardingEventForwardingID](docs/sdks/settings/README.md#putsettingsintegrationseventforwardingeventforwardingid) - Edit the event forwarding integration details
 
-### [Telemetries](docs/sdks/telemetries/README.md)
+### [.ServerlessPolicies](docs/sdks/serverlesspolicies/README.md)
 
-* [GetAppTelemetries](docs/sdks/telemetries/README.md#getapptelemetries) - Get App telemetries
-* [GetAppTelemetriesAppTelemetryID](docs/sdks/telemetries/README.md#getapptelemetriesapptelemetryid) - Get App telemetry by ID
-* [GetAppTelemetriesAppTelemetryIDAPIRiskInfo](docs/sdks/telemetries/README.md#getapptelemetriesapptelemetryidapiriskinfo) - Get API risks info of given app telemetry
-* [GetAppTelemetriesAppTelemetryIDImagePackages](docs/sdks/telemetries/README.md#getapptelemetriesapptelemetryidimagepackages) - list packages with licenses runnin on a pod
-* [GetAppTelemetriesAppTelemetryIDInjectionInfo](docs/sdks/telemetries/README.md#getapptelemetriesapptelemetryidinjectioninfo) - Get token injection info of given app telemetry
-* [GetConnectionTelemetries](docs/sdks/telemetries/README.md#getconnectiontelemetries) - Get connection telemetries
-* [GetConnectionTelemetriesConnectionTelemetryID](docs/sdks/telemetries/README.md#getconnectiontelemetriesconnectiontelemetryid) - get details for a single connection telemetry
+* [GetServerlessPolicy](docs/sdks/serverlesspolicies/README.md#getserverlesspolicy) - Get current serverless policy
+* [PutServerlessPolicy](docs/sdks/serverlesspolicies/README.md#putserverlesspolicy) - Set the current serverless policy
 
-### [Tokens](docs/sdks/tokens/README.md)
+### [.Tokens](docs/sdks/tokens/README.md)
 
 * [DeleteTokensTokenID](docs/sdks/tokens/README.md#deletetokenstokenid) - Delete token
 * [GetTokens](docs/sdks/tokens/README.md#gettokens) - Get tokens
@@ -471,14 +484,18 @@ func main() {
 * [PostTokens](docs/sdks/tokens/README.md#posttokens) - Add new token
 * [PutTokensTokenID](docs/sdks/tokens/README.md#puttokenstokenid) - Edit token
 
-### [Truncation](docs/sdks/truncation/README.md)
+### [.Cli](docs/sdks/cli/README.md)
+
+* [GetToolsCliSecurecnDeploymentCli](docs/sdks/cli/README.md#gettoolsclisecurecndeploymentcli) - Get the Secure Application deployment cli
+
+### [.Truncation](docs/sdks/truncation/README.md)
 
 * [GetTruncationImages](docs/sdks/truncation/README.md#gettruncationimages) - Get workloads truncation time for account
 * [GetTruncationWorkloads](docs/sdks/truncation/README.md#gettruncationworkloads) - Get workloads truncation time for account
 * [PostTruncationImages](docs/sdks/truncation/README.md#posttruncationimages) - Update workloads truncation status for account
 * [PostTruncationWorkloads](docs/sdks/truncation/README.md#posttruncationworkloads) - Update workloads truncation status for account
 
-### [TrustedSigners](docs/sdks/trustedsigners/README.md)
+### [.TrustedSigners](docs/sdks/trustedsigners/README.md)
 
 * [DeleteTrustedSignersTrustedSignerID](docs/sdks/trustedsigners/README.md#deletetrustedsignerstrustedsignerid) - Delete a trusted signer
 * [GetTrustedSigners](docs/sdks/trustedsigners/README.md#gettrustedsigners) - Get a list of defined trusted signers
@@ -486,24 +503,7 @@ func main() {
 * [PostTrustedSigners](docs/sdks/trustedsigners/README.md#posttrustedsigners) - Add new trusted signer
 * [PutTrustedSignersTrustedSignerID](docs/sdks/trustedsigners/README.md#puttrustedsignerstrustedsignerid) - edit existing trusted signer
 
-### [Users](docs/sdks/users/README.md)
-
-* [DeleteUsersUserID](docs/sdks/users/README.md#deleteusersuserid) - Delete a user
-* [GetOperatorCredentials](docs/sdks/users/README.md#getoperatorcredentials) - get the credentials of the Secure Application Operator service user
-* [GetUsers](docs/sdks/users/README.md#getusers) - List current users
-* [GetUsersUserIDAccessTokens](docs/sdks/users/README.md#getusersuseridaccesstokens) - Get the  access tokens for the user
-* [GetUsersUserIDDeleteDependencies](docs/sdks/users/README.md#getusersuseriddeletedependencies) - get dependencies which need to be handled in order to delete specified user
-* [PostAccountUsageStatus](docs/sdks/users/README.md#postaccountusagestatus) - an api to get the account usage status
-* [PostChangePassword](docs/sdks/users/README.md#postchangepassword) - Change the password for the current user
-* [PostLogin](docs/sdks/users/README.md#postlogin) - Login
-* [PostLogout](docs/sdks/users/README.md#postlogout) - Log out
-* [PostMe](docs/sdks/users/README.md#postme) - an api to get current logged in user info
-* [PostUsers](docs/sdks/users/README.md#postusers) - Create a user
-* [PostUsersAcceptEula](docs/sdks/users/README.md#postusersaccepteula) - Accept the EULA
-* [PostUsersTrial](docs/sdks/users/README.md#postuserstrial) - Create a trail user
-* [PutUsersUserID](docs/sdks/users/README.md#putusersuserid) - Change user details
-
-### [Vulnerabilities](docs/sdks/vulnerabilities/README.md)
+### [.Vulnerabilities](docs/sdks/vulnerabilities/README.md)
 
 * [GetVulnerabilities](docs/sdks/vulnerabilities/README.md#getvulnerabilities) - search for vulnerability names in the account
 <!-- End SDK Available Operations -->
@@ -525,6 +525,225 @@ Here's an example of one such pagination call:
 <!-- Start Go Types -->
 
 <!-- End Go Types -->
+
+
+
+<!-- Start Error Handling -->
+# Error Handling
+
+Handling errors in your SDK should largely match your expectations.  All operations return a response object or an error, they will never return both.  When specified by the OpenAPI spec document, the SDK will return the appropriate subclass.
+
+
+## Example
+
+```go
+package main
+
+import (
+	"context"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	"log"
+)
+
+func main() {
+	s := testpango.New(
+		testpango.WithSecurity(shared.Security{
+			Password: "",
+			Username: "",
+		}),
+	)
+
+	ctx := context.Background()
+	res, err := s.Users.PostLogin(ctx, operations.PostLoginRequest{})
+	if err != nil {
+
+		var e *sdkerrors.APIResponse
+		if errors.As(err, &e) {
+			// handle error
+			log.Fatal(e.Error())
+		}
+
+	}
+}
+
+```
+<!-- End Error Handling -->
+
+
+
+<!-- Start Server Selection -->
+# Server Selection
+
+## Select Server by Index
+
+You can override the default server globally using the `WithServerIndex` option when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
+
+| # | Server | Variables |
+| - | ------ | --------- |
+| 0 | `https:///api` | None |
+
+For example:
+
+```go
+package main
+
+import (
+	"context"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	"log"
+)
+
+func main() {
+	s := testpango.New(
+		testpango.WithServerIndex(0),
+		testpango.WithSecurity(shared.Security{
+			Password: "",
+			Username: "",
+		}),
+	)
+
+	ctx := context.Background()
+	res, err := s.Users.DeleteUsersUserID(ctx, operations.DeleteUsersUserIDRequest{
+		UserID: "2d4aef6d-76db-4c57-a2a3-fe8efd3db6e2",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if res.StatusCode == http.StatusOK {
+		// handle response
+	}
+}
+
+```
+
+
+## Override Server URL Per-Client
+
+The default server can also be overridden globally using the `WithServerURL` option when initializing the SDK client instance. For example:
+
+```go
+package main
+
+import (
+	"context"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	"log"
+)
+
+func main() {
+	s := testpango.New(
+		testpango.WithServerURL("https:///api"),
+		testpango.WithSecurity(shared.Security{
+			Password: "",
+			Username: "",
+		}),
+	)
+
+	ctx := context.Background()
+	res, err := s.Users.DeleteUsersUserID(ctx, operations.DeleteUsersUserIDRequest{
+		UserID: "2d4aef6d-76db-4c57-a2a3-fe8efd3db6e2",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if res.StatusCode == http.StatusOK {
+		// handle response
+	}
+}
+
+```
+<!-- End Server Selection -->
+
+
+
+<!-- Start Custom HTTP Client -->
+# Custom HTTP Client
+
+The Go SDK makes API calls that wrap an internal HTTP client. The requirements for the HTTP client are very simple. It must match this interface:
+
+```go
+type HTTPClient interface {
+	Do(req *http.Request) (*http.Response, error)
+}
+```
+
+The built-in `net/http` client satisfies this interface and a default client based on the built-in is provided by default. To replace this default with a client of your own, you can implement this interface yourself or provide your own client configured as desired. Here's a simple example, which adds a client with a 30 second timeout.
+
+```go
+import (
+	"net/http"
+	"time"
+	"github.com/myorg/your-go-sdk"
+)
+
+var (
+	httpClient = &http.Client{Timeout: 30 * time.Second}
+	sdkClient  = sdk.New(sdk.WithClient(httpClient))
+)
+```
+
+This can be a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration.
+<!-- End Custom HTTP Client -->
+
+
+
+<!-- Start Authentication -->
+
+# Authentication
+
+## Per-Client Security Schemes
+
+Your SDK supports the following security schemes globally:
+
+| Name       | Type       | Scheme     |
+| ---------- | ---------- | ---------- |
+| `Password` | http       | HTTP Basic |
+| `Username` | http       | HTTP Basic |
+
+You can set the security parameters through the `WithSecurity` option when initializing the SDK client instance. The selected scheme will be used by default to authenticate with the API for all operations that support it. For example:
+
+```go
+package main
+
+import (
+	"context"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	"log"
+)
+
+func main() {
+	s := testpango.New(
+		testpango.WithSecurity(shared.Security{
+			Password: "",
+			Username: "",
+		}),
+	)
+
+	ctx := context.Background()
+	res, err := s.Users.DeleteUsersUserID(ctx, operations.DeleteUsersUserIDRequest{
+		UserID: "2d4aef6d-76db-4c57-a2a3-fe8efd3db6e2",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if res.StatusCode == http.StatusOK {
+		// handle response
+	}
+}
+
+```
+<!-- End Authentication -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

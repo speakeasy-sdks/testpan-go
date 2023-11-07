@@ -15,19 +15,19 @@ import (
 	"strings"
 )
 
-// environmentPolicies - APIs used to  define and manage environment policies
-type environmentPolicies struct {
+// EnvironmentPolicies - APIs used to  define and manage environment policies
+type EnvironmentPolicies struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newEnvironmentPolicies(sdkConfig sdkConfiguration) *environmentPolicies {
-	return &environmentPolicies{
+func newEnvironmentPolicies(sdkConfig sdkConfiguration) *EnvironmentPolicies {
+	return &EnvironmentPolicies{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // GetAppsPolicy - Get the current Apps policy
-func (s *environmentPolicies) GetAppsPolicy(ctx context.Context, request operations.GetAppsPolicyRequest) (*operations.GetAppsPolicyResponse, error) {
+func (s *EnvironmentPolicies) GetAppsPolicy(ctx context.Context, request operations.GetAppsPolicyRequest) (*operations.GetAppsPolicyResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/appsPolicy"
 
@@ -91,7 +91,7 @@ func (s *environmentPolicies) GetAppsPolicy(ctx context.Context, request operati
 }
 
 // GetAppsPolicyHistory - Get the history of Apps policies
-func (s *environmentPolicies) GetAppsPolicyHistory(ctx context.Context) (*operations.GetAppsPolicyHistoryResponse, error) {
+func (s *EnvironmentPolicies) GetAppsPolicyHistory(ctx context.Context) (*operations.GetAppsPolicyHistoryResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/appsPolicy/history"
 
@@ -135,7 +135,7 @@ func (s *environmentPolicies) GetAppsPolicyHistory(ctx context.Context) (*operat
 				return nil, err
 			}
 
-			res.AppPolicyHistories = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -151,7 +151,7 @@ func (s *environmentPolicies) GetAppsPolicyHistory(ctx context.Context) (*operat
 }
 
 // GetAppsPolicySearchOptions - Get the current Apps policy filter option
-func (s *environmentPolicies) GetAppsPolicySearchOptions(ctx context.Context, request operations.GetAppsPolicySearchOptionsRequest) (*operations.GetAppsPolicySearchOptionsResponse, error) {
+func (s *EnvironmentPolicies) GetAppsPolicySearchOptions(ctx context.Context, request operations.GetAppsPolicySearchOptionsRequest) (*operations.GetAppsPolicySearchOptionsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/appsPolicy/searchOptions"
 
@@ -215,7 +215,7 @@ func (s *environmentPolicies) GetAppsPolicySearchOptions(ctx context.Context, re
 }
 
 // PutAppsPolicy - Set the current Apps policy
-func (s *environmentPolicies) PutAppsPolicy(ctx context.Context, request shared.AppPolicy) (*operations.PutAppsPolicyResponse, error) {
+func (s *EnvironmentPolicies) PutAppsPolicy(ctx context.Context, request shared.AppPolicy) (*operations.PutAppsPolicyResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/appsPolicy"
 

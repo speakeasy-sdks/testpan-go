@@ -15,19 +15,19 @@ import (
 	"strings"
 )
 
-// pspProfiles - APIs used to manage pod security standards profiles on Secure Application
-type pspProfiles struct {
+// PspProfiles - APIs used to manage pod security standards profiles on Secure Application
+type PspProfiles struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newPspProfiles(sdkConfig sdkConfiguration) *pspProfiles {
-	return &pspProfiles{
+func newPspProfiles(sdkConfig sdkConfiguration) *PspProfiles {
+	return &PspProfiles{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // DeletePodSecurityPolicyProfilesProfileID - Delete a pod security policy standards
-func (s *pspProfiles) DeletePodSecurityPolicyProfilesProfileID(ctx context.Context, request operations.DeletePodSecurityPolicyProfilesProfileIDRequest) (*operations.DeletePodSecurityPolicyProfilesProfileIDResponse, error) {
+func (s *PspProfiles) DeletePodSecurityPolicyProfilesProfileID(ctx context.Context, request operations.DeletePodSecurityPolicyProfilesProfileIDRequest) (*operations.DeletePodSecurityPolicyProfilesProfileIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/podSecurityPolicyProfiles/{profileId}", request, nil)
 	if err != nil {
@@ -77,7 +77,7 @@ func (s *pspProfiles) DeletePodSecurityPolicyProfilesProfileID(ctx context.Conte
 }
 
 // DeleteSeccompProfilesProfileID - Delete a seccomp profile
-func (s *pspProfiles) DeleteSeccompProfilesProfileID(ctx context.Context, request operations.DeleteSeccompProfilesProfileIDRequest) (*operations.DeleteSeccompProfilesProfileIDResponse, error) {
+func (s *PspProfiles) DeleteSeccompProfilesProfileID(ctx context.Context, request operations.DeleteSeccompProfilesProfileIDRequest) (*operations.DeleteSeccompProfilesProfileIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/seccompProfiles/{profileId}", request, nil)
 	if err != nil {
@@ -127,7 +127,7 @@ func (s *pspProfiles) DeleteSeccompProfilesProfileID(ctx context.Context, reques
 }
 
 // GetPodSecurityPolicyProfiles - Get all the pod security standards profiles on the system
-func (s *pspProfiles) GetPodSecurityPolicyProfiles(ctx context.Context) (*operations.GetPodSecurityPolicyProfilesResponse, error) {
+func (s *PspProfiles) GetPodSecurityPolicyProfiles(ctx context.Context) (*operations.GetPodSecurityPolicyProfilesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/podSecurityPolicyProfiles"
 
@@ -171,7 +171,7 @@ func (s *pspProfiles) GetPodSecurityPolicyProfiles(ctx context.Context) (*operat
 				return nil, err
 			}
 
-			res.PodSecurityPolicies = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -185,7 +185,7 @@ func (s *pspProfiles) GetPodSecurityPolicyProfiles(ctx context.Context) (*operat
 }
 
 // GetSeccompProfiles - Get all the seccomp profiles on the system
-func (s *pspProfiles) GetSeccompProfiles(ctx context.Context) (*operations.GetSeccompProfilesResponse, error) {
+func (s *PspProfiles) GetSeccompProfiles(ctx context.Context) (*operations.GetSeccompProfilesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/seccompProfiles"
 
@@ -229,7 +229,7 @@ func (s *pspProfiles) GetSeccompProfiles(ctx context.Context) (*operations.GetSe
 				return nil, err
 			}
 
-			res.SeccompProfiles = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -243,7 +243,7 @@ func (s *pspProfiles) GetSeccompProfiles(ctx context.Context) (*operations.GetSe
 }
 
 // PostPodSecurityPolicyProfiles - Create a new pod security standards
-func (s *pspProfiles) PostPodSecurityPolicyProfiles(ctx context.Context, request shared.PodSecurityPolicy) (*operations.PostPodSecurityPolicyProfilesResponse, error) {
+func (s *PspProfiles) PostPodSecurityPolicyProfiles(ctx context.Context, request shared.PodSecurityPolicy) (*operations.PostPodSecurityPolicyProfilesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/podSecurityPolicyProfiles"
 
@@ -314,7 +314,7 @@ func (s *pspProfiles) PostPodSecurityPolicyProfiles(ctx context.Context, request
 
 // PostPodSecurityPolicyProfilesBatch - Add a number of Pod Security Standards
 // Add a number of new Pod Security Standards Profiles.
-func (s *pspProfiles) PostPodSecurityPolicyProfilesBatch(ctx context.Context, request []shared.PodSecurityPolicy) (*operations.PostPodSecurityPolicyProfilesBatchResponse, error) {
+func (s *PspProfiles) PostPodSecurityPolicyProfilesBatch(ctx context.Context, request []shared.PodSecurityPolicy) (*operations.PostPodSecurityPolicyProfilesBatchResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/podSecurityPolicyProfiles/batch"
 
@@ -368,7 +368,7 @@ func (s *pspProfiles) PostPodSecurityPolicyProfilesBatch(ctx context.Context, re
 				return nil, err
 			}
 
-			res.PodSecurityPolicies = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -384,7 +384,7 @@ func (s *pspProfiles) PostPodSecurityPolicyProfilesBatch(ctx context.Context, re
 }
 
 // PostSeccompProfiles - Add seccomp profile
-func (s *pspProfiles) PostSeccompProfiles(ctx context.Context, request shared.SeccompProfileInput) (*operations.PostSeccompProfilesResponse, error) {
+func (s *PspProfiles) PostSeccompProfiles(ctx context.Context, request shared.SeccompProfileInput) (*operations.PostSeccompProfilesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/seccompProfiles"
 
@@ -454,7 +454,7 @@ func (s *pspProfiles) PostSeccompProfiles(ctx context.Context, request shared.Se
 }
 
 // PutPodSecurityPolicyProfilesProfileID - Change pod security standards profile
-func (s *pspProfiles) PutPodSecurityPolicyProfilesProfileID(ctx context.Context, request operations.PutPodSecurityPolicyProfilesProfileIDRequest) (*operations.PutPodSecurityPolicyProfilesProfileIDResponse, error) {
+func (s *PspProfiles) PutPodSecurityPolicyProfilesProfileID(ctx context.Context, request operations.PutPodSecurityPolicyProfilesProfileIDRequest) (*operations.PutPodSecurityPolicyProfilesProfileIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/podSecurityPolicyProfiles/{profileId}", request, nil)
 	if err != nil {
@@ -525,14 +525,14 @@ func (s *pspProfiles) PutPodSecurityPolicyProfilesProfileID(ctx context.Context,
 }
 
 // PutSeccompProfilesProfileID - Change seccomp profile
-func (s *pspProfiles) PutSeccompProfilesProfileID(ctx context.Context, request operations.PutSeccompProfilesProfileIDRequest) (*operations.PutSeccompProfilesProfileIDResponse, error) {
+func (s *PspProfiles) PutSeccompProfilesProfileID(ctx context.Context, request operations.PutSeccompProfilesProfileIDRequest) (*operations.PutSeccompProfilesProfileIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/seccompProfiles/{profileId}", request, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "SeccompProfileInput", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "SeccompProfile", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, fmt.Errorf("error serializing request body: %w", err)
 	}

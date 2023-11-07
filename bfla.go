@@ -14,18 +14,18 @@ import (
 	"net/http"
 )
 
-type bfla struct {
+type Bfla struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newBfla(sdkConfig sdkConfiguration) *bfla {
-	return &bfla{
+func newBfla(sdkConfig sdkConfiguration) *Bfla {
+	return &Bfla{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // DeleteAPISecurityInternalCatalogCatalogIDBflaDetection - stop bfla detection phase
-func (s *bfla) DeleteAPISecurityInternalCatalogCatalogIDBflaDetection(ctx context.Context, request operations.DeleteAPISecurityInternalCatalogCatalogIDBflaDetectionRequest) (*operations.DeleteAPISecurityInternalCatalogCatalogIDBflaDetectionResponse, error) {
+func (s *Bfla) DeleteAPISecurityInternalCatalogCatalogIDBflaDetection(ctx context.Context, request operations.DeleteAPISecurityInternalCatalogCatalogIDBflaDetectionRequest) (*operations.DeleteAPISecurityInternalCatalogCatalogIDBflaDetectionResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/bfla/detection", request, nil)
 	if err != nil {
@@ -68,7 +68,7 @@ func (s *bfla) DeleteAPISecurityInternalCatalogCatalogIDBflaDetection(ctx contex
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
 			out := string(rawBody)
-			res.DeleteAPISecurityInternalCatalogCatalogIDBflaDetection204ApplicationJSONUUIDString = &out
+			res.Res = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -84,7 +84,7 @@ func (s *bfla) DeleteAPISecurityInternalCatalogCatalogIDBflaDetection(ctx contex
 }
 
 // DeleteAPISecurityInternalCatalogCatalogIDBflaLearning - stop bfla learning phase
-func (s *bfla) DeleteAPISecurityInternalCatalogCatalogIDBflaLearning(ctx context.Context, request operations.DeleteAPISecurityInternalCatalogCatalogIDBflaLearningRequest) (*operations.DeleteAPISecurityInternalCatalogCatalogIDBflaLearningResponse, error) {
+func (s *Bfla) DeleteAPISecurityInternalCatalogCatalogIDBflaLearning(ctx context.Context, request operations.DeleteAPISecurityInternalCatalogCatalogIDBflaLearningRequest) (*operations.DeleteAPISecurityInternalCatalogCatalogIDBflaLearningResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/bfla/learning", request, nil)
 	if err != nil {
@@ -127,7 +127,7 @@ func (s *bfla) DeleteAPISecurityInternalCatalogCatalogIDBflaLearning(ctx context
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
 			out := string(rawBody)
-			res.DeleteAPISecurityInternalCatalogCatalogIDBflaLearning204ApplicationJSONUUIDString = &out
+			res.Res = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -143,7 +143,7 @@ func (s *bfla) DeleteAPISecurityInternalCatalogCatalogIDBflaLearning(ctx context
 }
 
 // GetAPISecurityInternalCatalogCatalogIDBfla - Get bfla info for given catalogId
-func (s *bfla) GetAPISecurityInternalCatalogCatalogIDBfla(ctx context.Context, request operations.GetAPISecurityInternalCatalogCatalogIDBflaRequest) (*operations.GetAPISecurityInternalCatalogCatalogIDBflaResponse, error) {
+func (s *Bfla) GetAPISecurityInternalCatalogCatalogIDBfla(ctx context.Context, request operations.GetAPISecurityInternalCatalogCatalogIDBflaRequest) (*operations.GetAPISecurityInternalCatalogCatalogIDBflaResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/bfla", request, nil)
 	if err != nil {
@@ -206,7 +206,7 @@ func (s *bfla) GetAPISecurityInternalCatalogCatalogIDBfla(ctx context.Context, r
 }
 
 // PostAPISecurityInternalCatalogCatalogIDBflaDetection - Start new bfla detection phase
-func (s *bfla) PostAPISecurityInternalCatalogCatalogIDBflaDetection(ctx context.Context, request operations.PostAPISecurityInternalCatalogCatalogIDBflaDetectionRequest) (*operations.PostAPISecurityInternalCatalogCatalogIDBflaDetectionResponse, error) {
+func (s *Bfla) PostAPISecurityInternalCatalogCatalogIDBflaDetection(ctx context.Context, request operations.PostAPISecurityInternalCatalogCatalogIDBflaDetectionRequest) (*operations.PostAPISecurityInternalCatalogCatalogIDBflaDetectionResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/bfla/detection", request, nil)
 	if err != nil {
@@ -259,7 +259,7 @@ func (s *bfla) PostAPISecurityInternalCatalogCatalogIDBflaDetection(ctx context.
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
 			out := string(rawBody)
-			res.PostAPISecurityInternalCatalogCatalogIDBflaDetection201ApplicationJSONUUIDString = &out
+			res.Res = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -275,7 +275,7 @@ func (s *bfla) PostAPISecurityInternalCatalogCatalogIDBflaDetection(ctx context.
 }
 
 // PostAPISecurityInternalCatalogCatalogIDBflaLearning - Start new bfla learning phase
-func (s *bfla) PostAPISecurityInternalCatalogCatalogIDBflaLearning(ctx context.Context, request operations.PostAPISecurityInternalCatalogCatalogIDBflaLearningRequest) (*operations.PostAPISecurityInternalCatalogCatalogIDBflaLearningResponse, error) {
+func (s *Bfla) PostAPISecurityInternalCatalogCatalogIDBflaLearning(ctx context.Context, request operations.PostAPISecurityInternalCatalogCatalogIDBflaLearningRequest) (*operations.PostAPISecurityInternalCatalogCatalogIDBflaLearningResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/bfla/learning", request, nil)
 	if err != nil {
@@ -328,7 +328,7 @@ func (s *bfla) PostAPISecurityInternalCatalogCatalogIDBflaLearning(ctx context.C
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
 			out := string(rawBody)
-			res.PostAPISecurityInternalCatalogCatalogIDBflaLearning201ApplicationJSONUUIDString = &out
+			res.Res = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -344,7 +344,7 @@ func (s *bfla) PostAPISecurityInternalCatalogCatalogIDBflaLearning(ctx context.C
 }
 
 // PostAPISecurityInternalCatalogCatalogIDBflaReset - Reset bfla model
-func (s *bfla) PostAPISecurityInternalCatalogCatalogIDBflaReset(ctx context.Context, request operations.PostAPISecurityInternalCatalogCatalogIDBflaResetRequest) (*operations.PostAPISecurityInternalCatalogCatalogIDBflaResetResponse, error) {
+func (s *Bfla) PostAPISecurityInternalCatalogCatalogIDBflaReset(ctx context.Context, request operations.PostAPISecurityInternalCatalogCatalogIDBflaResetRequest) (*operations.PostAPISecurityInternalCatalogCatalogIDBflaResetResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/bfla/reset", request, nil)
 	if err != nil {
@@ -387,7 +387,7 @@ func (s *bfla) PostAPISecurityInternalCatalogCatalogIDBflaReset(ctx context.Cont
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
 			out := string(rawBody)
-			res.PostAPISecurityInternalCatalogCatalogIDBflaReset201ApplicationJSONUUIDString = &out
+			res.Res = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -403,7 +403,7 @@ func (s *bfla) PostAPISecurityInternalCatalogCatalogIDBflaReset(ctx context.Cont
 }
 
 // PutAPISecurityInternalCatalogCatalogIDBfla - update BFLA info for this catalogId
-func (s *bfla) PutAPISecurityInternalCatalogCatalogIDBfla(ctx context.Context, request operations.PutAPISecurityInternalCatalogCatalogIDBflaRequest) (*operations.PutAPISecurityInternalCatalogCatalogIDBflaResponse, error) {
+func (s *Bfla) PutAPISecurityInternalCatalogCatalogIDBfla(ctx context.Context, request operations.PutAPISecurityInternalCatalogCatalogIDBflaRequest) (*operations.PutAPISecurityInternalCatalogCatalogIDBflaResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/bfla", request, nil)
 	if err != nil {
@@ -456,7 +456,7 @@ func (s *bfla) PutAPISecurityInternalCatalogCatalogIDBfla(ctx context.Context, r
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
 			out := string(rawBody)
-			res.PutAPISecurityInternalCatalogCatalogIDBfla200ApplicationJSONUUIDString = &out
+			res.Res = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}

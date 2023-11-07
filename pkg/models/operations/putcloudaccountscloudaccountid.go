@@ -8,16 +8,16 @@ import (
 )
 
 type PutCloudAccountsCloudAccountIDRequest struct {
-	CloudAccountInput shared.CloudAccountInput `request:"mediaType=application/json"`
+	CloudAccount shared.CloudAccountInput `request:"mediaType=application/json"`
 	// cloud account ID
 	CloudAccountID string `pathParam:"style=simple,explode=false,name=cloudAccountId"`
 }
 
-func (o *PutCloudAccountsCloudAccountIDRequest) GetCloudAccountInput() shared.CloudAccountInput {
+func (o *PutCloudAccountsCloudAccountIDRequest) GetCloudAccount() shared.CloudAccountInput {
 	if o == nil {
 		return shared.CloudAccountInput{}
 	}
-	return o.CloudAccountInput
+	return o.CloudAccount
 }
 
 func (o *PutCloudAccountsCloudAccountIDRequest) GetCloudAccountID() string {

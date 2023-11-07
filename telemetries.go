@@ -15,19 +15,19 @@ import (
 	"strings"
 )
 
-// telemetries - APIs used to query for telemetries
-type telemetries struct {
+// Telemetries - APIs used to query for telemetries
+type Telemetries struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newTelemetries(sdkConfig sdkConfiguration) *telemetries {
-	return &telemetries{
+func newTelemetries(sdkConfig sdkConfiguration) *Telemetries {
+	return &Telemetries{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // GetAppTelemetries - Get App telemetries
-func (s *telemetries) GetAppTelemetries(ctx context.Context, request operations.GetAppTelemetriesRequest) (*operations.GetAppTelemetriesResponse, error) {
+func (s *Telemetries) GetAppTelemetries(ctx context.Context, request operations.GetAppTelemetriesRequest) (*operations.GetAppTelemetriesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/appTelemetries"
 
@@ -75,7 +75,7 @@ func (s *telemetries) GetAppTelemetries(ctx context.Context, request operations.
 				return nil, err
 			}
 
-			res.AppTelemetries = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -91,7 +91,7 @@ func (s *telemetries) GetAppTelemetries(ctx context.Context, request operations.
 }
 
 // GetAppTelemetriesAppTelemetryID - Get App telemetry by ID
-func (s *telemetries) GetAppTelemetriesAppTelemetryID(ctx context.Context, request operations.GetAppTelemetriesAppTelemetryIDRequest) (*operations.GetAppTelemetriesAppTelemetryIDResponse, error) {
+func (s *Telemetries) GetAppTelemetriesAppTelemetryID(ctx context.Context, request operations.GetAppTelemetriesAppTelemetryIDRequest) (*operations.GetAppTelemetriesAppTelemetryIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/appTelemetries/{appTelemetryId}", request, nil)
 	if err != nil {
@@ -154,7 +154,7 @@ func (s *telemetries) GetAppTelemetriesAppTelemetryID(ctx context.Context, reque
 }
 
 // GetAppTelemetriesAppTelemetryIDAPIRiskInfo - Get API risks info of given app telemetry
-func (s *telemetries) GetAppTelemetriesAppTelemetryIDAPIRiskInfo(ctx context.Context, request operations.GetAppTelemetriesAppTelemetryIDAPIRiskInfoRequest) (*operations.GetAppTelemetriesAppTelemetryIDAPIRiskInfoResponse, error) {
+func (s *Telemetries) GetAppTelemetriesAppTelemetryIDAPIRiskInfo(ctx context.Context, request operations.GetAppTelemetriesAppTelemetryIDAPIRiskInfoRequest) (*operations.GetAppTelemetriesAppTelemetryIDAPIRiskInfoResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/appTelemetries/{appTelemetryId}/apiRiskInfo", request, nil)
 	if err != nil {
@@ -201,7 +201,7 @@ func (s *telemetries) GetAppTelemetriesAppTelemetryIDAPIRiskInfo(ctx context.Con
 				return nil, err
 			}
 
-			res.APIRiskInfos = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -215,7 +215,7 @@ func (s *telemetries) GetAppTelemetriesAppTelemetryIDAPIRiskInfo(ctx context.Con
 }
 
 // GetAppTelemetriesAppTelemetryIDImagePackages - list packages with licenses runnin on a pod
-func (s *telemetries) GetAppTelemetriesAppTelemetryIDImagePackages(ctx context.Context, request operations.GetAppTelemetriesAppTelemetryIDImagePackagesRequest) (*operations.GetAppTelemetriesAppTelemetryIDImagePackagesResponse, error) {
+func (s *Telemetries) GetAppTelemetriesAppTelemetryIDImagePackages(ctx context.Context, request operations.GetAppTelemetriesAppTelemetryIDImagePackagesRequest) (*operations.GetAppTelemetriesAppTelemetryIDImagePackagesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/appTelemetries/{appTelemetryId}/imagePackages", request, nil)
 	if err != nil {
@@ -262,7 +262,7 @@ func (s *telemetries) GetAppTelemetriesAppTelemetryIDImagePackages(ctx context.C
 				return nil, err
 			}
 
-			res.ImagesWithLicenses = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -278,7 +278,7 @@ func (s *telemetries) GetAppTelemetriesAppTelemetryIDImagePackages(ctx context.C
 }
 
 // GetAppTelemetriesAppTelemetryIDInjectionInfo - Get token injection info of given app telemetry
-func (s *telemetries) GetAppTelemetriesAppTelemetryIDInjectionInfo(ctx context.Context, request operations.GetAppTelemetriesAppTelemetryIDInjectionInfoRequest) (*operations.GetAppTelemetriesAppTelemetryIDInjectionInfoResponse, error) {
+func (s *Telemetries) GetAppTelemetriesAppTelemetryIDInjectionInfo(ctx context.Context, request operations.GetAppTelemetriesAppTelemetryIDInjectionInfoRequest) (*operations.GetAppTelemetriesAppTelemetryIDInjectionInfoResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/appTelemetries/{appTelemetryId}/injectionInfo", request, nil)
 	if err != nil {
@@ -325,7 +325,7 @@ func (s *telemetries) GetAppTelemetriesAppTelemetryIDInjectionInfo(ctx context.C
 				return nil, err
 			}
 
-			res.TokenInjectionInfos = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -339,7 +339,7 @@ func (s *telemetries) GetAppTelemetriesAppTelemetryIDInjectionInfo(ctx context.C
 }
 
 // GetConnectionTelemetries - Get connection telemetries
-func (s *telemetries) GetConnectionTelemetries(ctx context.Context, request operations.GetConnectionTelemetriesRequest) (*operations.GetConnectionTelemetriesResponse, error) {
+func (s *Telemetries) GetConnectionTelemetries(ctx context.Context, request operations.GetConnectionTelemetriesRequest) (*operations.GetConnectionTelemetriesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/connectionTelemetries"
 
@@ -387,7 +387,7 @@ func (s *telemetries) GetConnectionTelemetries(ctx context.Context, request oper
 				return nil, err
 			}
 
-			res.ConnectionTelemetries = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -403,7 +403,7 @@ func (s *telemetries) GetConnectionTelemetries(ctx context.Context, request oper
 }
 
 // GetConnectionTelemetriesConnectionTelemetryID - get details for a single connection telemetry
-func (s *telemetries) GetConnectionTelemetriesConnectionTelemetryID(ctx context.Context, request operations.GetConnectionTelemetriesConnectionTelemetryIDRequest) (*operations.GetConnectionTelemetriesConnectionTelemetryIDResponse, error) {
+func (s *Telemetries) GetConnectionTelemetriesConnectionTelemetryID(ctx context.Context, request operations.GetConnectionTelemetriesConnectionTelemetryIDRequest) (*operations.GetConnectionTelemetriesConnectionTelemetryIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/connectionTelemetries/{connectionTelemetryId}", request, nil)
 	if err != nil {

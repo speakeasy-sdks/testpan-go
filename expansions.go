@@ -15,19 +15,19 @@ import (
 	"strings"
 )
 
-// expansions - APIs used to manage expansions on Secure Application
-type expansions struct {
+// Expansions - APIs used to manage expansions on Secure Application
+type Expansions struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newExpansions(sdkConfig sdkConfiguration) *expansions {
-	return &expansions{
+func newExpansions(sdkConfig sdkConfiguration) *Expansions {
+	return &Expansions{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // DeleteExpansionsExpansionID - Delete an expansion
-func (s *expansions) DeleteExpansionsExpansionID(ctx context.Context, request operations.DeleteExpansionsExpansionIDRequest) (*operations.DeleteExpansionsExpansionIDResponse, error) {
+func (s *Expansions) DeleteExpansionsExpansionID(ctx context.Context, request operations.DeleteExpansionsExpansionIDRequest) (*operations.DeleteExpansionsExpansionIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/expansions/{expansionId}", request, nil)
 	if err != nil {
@@ -77,7 +77,7 @@ func (s *expansions) DeleteExpansionsExpansionID(ctx context.Context, request op
 }
 
 // GetExpansions - List all the expansions on the system
-func (s *expansions) GetExpansions(ctx context.Context, request operations.GetExpansionsRequest) (*operations.GetExpansionsResponse, error) {
+func (s *Expansions) GetExpansions(ctx context.Context, request operations.GetExpansionsRequest) (*operations.GetExpansionsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/expansions"
 
@@ -125,7 +125,7 @@ func (s *expansions) GetExpansions(ctx context.Context, request operations.GetEx
 				return nil, err
 			}
 
-			res.Expansions = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -139,7 +139,7 @@ func (s *expansions) GetExpansions(ctx context.Context, request operations.GetEx
 }
 
 // GetExpansionsExpansionIDInstallExpansionTarGz - Get the expansion installation
-func (s *expansions) GetExpansionsExpansionIDInstallExpansionTarGz(ctx context.Context, request operations.GetExpansionsExpansionIDInstallExpansionTarGzRequest) (*operations.GetExpansionsExpansionIDInstallExpansionTarGzResponse, error) {
+func (s *Expansions) GetExpansionsExpansionIDInstallExpansionTarGz(ctx context.Context, request operations.GetExpansionsExpansionIDInstallExpansionTarGzRequest) (*operations.GetExpansionsExpansionIDInstallExpansionTarGzResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/expansions/{expansionId}/install_expansion.tar.gz", request, nil)
 	if err != nil {
@@ -172,7 +172,7 @@ func (s *expansions) GetExpansionsExpansionIDInstallExpansionTarGz(ctx context.C
 	}
 
 	if (httpRes.StatusCode == 200) && utils.MatchContentType(contentType, `application/json`) {
-		res.GetExpansionsExpansionIDInstallExpansionTarGz200ApplicationJSONBinaryString = httpRes.Body
+		res.Stream = httpRes.Body
 
 		return res, nil
 	}
@@ -211,7 +211,7 @@ func (s *expansions) GetExpansionsExpansionIDInstallExpansionTarGz(ctx context.C
 }
 
 // PostExpansions - Create a new expansion
-func (s *expansions) PostExpansions(ctx context.Context, request shared.ExpansionInput) (*operations.PostExpansionsResponse, error) {
+func (s *Expansions) PostExpansions(ctx context.Context, request shared.ExpansionInput) (*operations.PostExpansionsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/expansions"
 
@@ -281,7 +281,7 @@ func (s *expansions) PostExpansions(ctx context.Context, request shared.Expansio
 }
 
 // PutExpansionsExpansionID - Edit expansion definition
-func (s *expansions) PutExpansionsExpansionID(ctx context.Context, request operations.PutExpansionsExpansionIDRequest) (*operations.PutExpansionsExpansionIDResponse, error) {
+func (s *Expansions) PutExpansionsExpansionID(ctx context.Context, request operations.PutExpansionsExpansionIDRequest) (*operations.PutExpansionsExpansionIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/expansions/{expansionId}", request, nil)
 	if err != nil {

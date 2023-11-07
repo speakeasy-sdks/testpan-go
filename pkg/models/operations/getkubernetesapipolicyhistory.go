@@ -10,12 +10,12 @@ import (
 type GetKubernetesAPIPolicyHistoryResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// Success
-	KubernetesAPIPolicyHistories []shared.KubernetesAPIPolicyHistory
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Success
+	Classes []shared.KubernetesAPIPolicyHistory
 }
 
 func (o *GetKubernetesAPIPolicyHistoryResponse) GetContentType() string {
@@ -23,13 +23,6 @@ func (o *GetKubernetesAPIPolicyHistoryResponse) GetContentType() string {
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *GetKubernetesAPIPolicyHistoryResponse) GetKubernetesAPIPolicyHistories() []shared.KubernetesAPIPolicyHistory {
-	if o == nil {
-		return nil
-	}
-	return o.KubernetesAPIPolicyHistories
 }
 
 func (o *GetKubernetesAPIPolicyHistoryResponse) GetStatusCode() int {
@@ -44,4 +37,11 @@ func (o *GetKubernetesAPIPolicyHistoryResponse) GetRawResponse() *http.Response 
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetKubernetesAPIPolicyHistoryResponse) GetClasses() []shared.KubernetesAPIPolicyHistory {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

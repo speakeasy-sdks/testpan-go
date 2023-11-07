@@ -10,19 +10,19 @@ import (
 	"net/http"
 )
 
-// GetKubernetesClustersSortDir - sorting direction
-type GetKubernetesClustersSortDir string
+// GetKubernetesClustersQueryParamSortDir - sorting direction
+type GetKubernetesClustersQueryParamSortDir string
 
 const (
-	GetKubernetesClustersSortDirAsc  GetKubernetesClustersSortDir = "ASC"
-	GetKubernetesClustersSortDirDesc GetKubernetesClustersSortDir = "DESC"
+	GetKubernetesClustersQueryParamSortDirAsc  GetKubernetesClustersQueryParamSortDir = "ASC"
+	GetKubernetesClustersQueryParamSortDirDesc GetKubernetesClustersQueryParamSortDir = "DESC"
 )
 
-func (e GetKubernetesClustersSortDir) ToPointer() *GetKubernetesClustersSortDir {
+func (e GetKubernetesClustersQueryParamSortDir) ToPointer() *GetKubernetesClustersQueryParamSortDir {
 	return &e
 }
 
-func (e *GetKubernetesClustersSortDir) UnmarshalJSON(data []byte) error {
+func (e *GetKubernetesClustersQueryParamSortDir) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -31,10 +31,10 @@ func (e *GetKubernetesClustersSortDir) UnmarshalJSON(data []byte) error {
 	case "ASC":
 		fallthrough
 	case "DESC":
-		*e = GetKubernetesClustersSortDir(v)
+		*e = GetKubernetesClustersQueryParamSortDir(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetKubernetesClustersSortDir: %v", v)
+		return fmt.Errorf("invalid value for GetKubernetesClustersQueryParamSortDir: %v", v)
 	}
 }
 
@@ -56,7 +56,7 @@ type GetKubernetesClustersRequest struct {
 	// retrive only clusters that configured as spec reconstruction enabled.
 	OnlySpecReconstructionEnabledFilter *bool `queryParam:"style=form,explode=true,name=onlySpecReconstructionEnabledFilter"`
 	// sorting direction
-	SortDir *GetKubernetesClustersSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
+	SortDir *GetKubernetesClustersQueryParamSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
 	// sort key
 	SortKey *string `queryParam:"style=form,explode=true,name=sortKey"`
 }
@@ -128,7 +128,7 @@ func (o *GetKubernetesClustersRequest) GetOnlySpecReconstructionEnabledFilter() 
 	return o.OnlySpecReconstructionEnabledFilter
 }
 
-func (o *GetKubernetesClustersRequest) GetSortDir() *GetKubernetesClustersSortDir {
+func (o *GetKubernetesClustersRequest) GetSortDir() *GetKubernetesClustersQueryParamSortDir {
 	if o == nil {
 		return nil
 	}
@@ -147,12 +147,12 @@ type GetKubernetesClustersResponse struct {
 	APIResponse *shared.APIResponse
 	// HTTP response content type for this operation
 	ContentType string
-	// Success
-	KubernetesClusterControllers []shared.KubernetesClusterController
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Success
+	Classes []shared.KubernetesClusterController
 }
 
 func (o *GetKubernetesClustersResponse) GetAPIResponse() *shared.APIResponse {
@@ -169,13 +169,6 @@ func (o *GetKubernetesClustersResponse) GetContentType() string {
 	return o.ContentType
 }
 
-func (o *GetKubernetesClustersResponse) GetKubernetesClusterControllers() []shared.KubernetesClusterController {
-	if o == nil {
-		return nil
-	}
-	return o.KubernetesClusterControllers
-}
-
 func (o *GetKubernetesClustersResponse) GetStatusCode() int {
 	if o == nil {
 		return 0
@@ -188,4 +181,11 @@ func (o *GetKubernetesClustersResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetKubernetesClustersResponse) GetClasses() []shared.KubernetesClusterController {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

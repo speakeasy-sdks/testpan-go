@@ -9,41 +9,41 @@ import (
 	"net/http"
 )
 
-// GetMitreTechniqueMitreTechniqueType - MITRE technique type
-type GetMitreTechniqueMitreTechniqueType string
+// MitreTechniqueType - MITRE technique type
+type MitreTechniqueType string
 
 const (
-	GetMitreTechniqueMitreTechniqueTypeCompromisedImages               GetMitreTechniqueMitreTechniqueType = "COMPROMISED_IMAGES"
-	GetMitreTechniqueMitreTechniqueTypeUnauthorisedRegistriesUsage     GetMitreTechniqueMitreTechniqueType = "UNAUTHORISED_REGISTRIES_USAGE"
-	GetMitreTechniqueMitreTechniqueTypeSuspiciousDeployment            GetMitreTechniqueMitreTechniqueType = "SUSPICIOUS_DEPLOYMENT"
-	GetMitreTechniqueMitreTechniqueTypeVulnerableApplication           GetMitreTechniqueMitreTechniqueType = "VULNERABLE_APPLICATION"
-	GetMitreTechniqueMitreTechniqueTypeExposedK8SDashboard             GetMitreTechniqueMitreTechniqueType = "EXPOSED_K8S_DASHBOARD"
-	GetMitreTechniqueMitreTechniqueTypeExploitPublicFacingApplication  GetMitreTechniqueMitreTechniqueType = "EXPLOIT_PUBLIC_FACING_APPLICATION"
-	GetMitreTechniqueMitreTechniqueTypeContainerService                GetMitreTechniqueMitreTechniqueType = "CONTAINER_SERVICE"
-	GetMitreTechniqueMitreTechniqueTypeDeployContainer                 GetMitreTechniqueMitreTechniqueType = "DEPLOY_CONTAINER"
-	GetMitreTechniqueMitreTechniqueTypeSSHConnection                   GetMitreTechniqueMitreTechniqueType = "SSH_CONNECTION"
-	GetMitreTechniqueMitreTechniqueTypeWriteableHostPath               GetMitreTechniqueMitreTechniqueType = "WRITEABLE_HOST_PATH"
-	GetMitreTechniqueMitreTechniqueTypeCronJobs                        GetMitreTechniqueMitreTechniqueType = "CRON_JOBS"
-	GetMitreTechniqueMitreTechniqueTypePrivilegedOrRootContainer       GetMitreTechniqueMitreTechniqueType = "PRIVILEGED_OR_ROOT_CONTAINER"
-	GetMitreTechniqueMitreTechniqueTypePrivilegeEscalationEnabled      GetMitreTechniqueMitreTechniqueType = "PRIVILEGE_ESCALATION_ENABLED"
-	GetMitreTechniqueMitreTechniqueTypeClusterAdminBinding             GetMitreTechniqueMitreTechniqueType = "CLUSTER_ADMIN_BINDING"
-	GetMitreTechniqueMitreTechniqueTypeUnauthorizedClusterAdminBinding GetMitreTechniqueMitreTechniqueType = "UNAUTHORIZED_CLUSTER_ADMIN_BINDING"
-	GetMitreTechniqueMitreTechniqueTypeAccessClusterResources          GetMitreTechniqueMitreTechniqueType = "ACCESS_CLUSTER_RESOURCES"
-	GetMitreTechniqueMitreTechniqueTypeClearContainerLogs              GetMitreTechniqueMitreTechniqueType = "CLEAR_CONTAINER_LOGS"
-	GetMitreTechniqueMitreTechniqueTypeClearK8SEvents                  GetMitreTechniqueMitreTechniqueType = "CLEAR_K8S_EVENTS"
-	GetMitreTechniqueMitreTechniqueTypeListSecrets                     GetMitreTechniqueMitreTechniqueType = "LIST_SECRETS"
-	GetMitreTechniqueMitreTechniqueTypeServiceAccountAccess            GetMitreTechniqueMitreTechniqueType = "SERVICE_ACCOUNT_ACCESS"
-	GetMitreTechniqueMitreTechniqueTypeContainerResourceDiscovery      GetMitreTechniqueMitreTechniqueType = "CONTAINER_RESOURCE_DISCOVERY"
-	GetMitreTechniqueMitreTechniqueTypeClusterInternalNetworking       GetMitreTechniqueMitreTechniqueType = "CLUSTER_INTERNAL_NETWORKING"
-	GetMitreTechniqueMitreTechniqueTypeTillerEndpointAccess            GetMitreTechniqueMitreTechniqueType = "TILLER_ENDPOINT_ACCESS"
-	GetMitreTechniqueMitreTechniqueTypeDataDestruction                 GetMitreTechniqueMitreTechniqueType = "DATA_DESTRUCTION"
+	MitreTechniqueTypeCompromisedImages               MitreTechniqueType = "COMPROMISED_IMAGES"
+	MitreTechniqueTypeUnauthorisedRegistriesUsage     MitreTechniqueType = "UNAUTHORISED_REGISTRIES_USAGE"
+	MitreTechniqueTypeSuspiciousDeployment            MitreTechniqueType = "SUSPICIOUS_DEPLOYMENT"
+	MitreTechniqueTypeVulnerableApplication           MitreTechniqueType = "VULNERABLE_APPLICATION"
+	MitreTechniqueTypeExposedK8SDashboard             MitreTechniqueType = "EXPOSED_K8S_DASHBOARD"
+	MitreTechniqueTypeExploitPublicFacingApplication  MitreTechniqueType = "EXPLOIT_PUBLIC_FACING_APPLICATION"
+	MitreTechniqueTypeContainerService                MitreTechniqueType = "CONTAINER_SERVICE"
+	MitreTechniqueTypeDeployContainer                 MitreTechniqueType = "DEPLOY_CONTAINER"
+	MitreTechniqueTypeSSHConnection                   MitreTechniqueType = "SSH_CONNECTION"
+	MitreTechniqueTypeWriteableHostPath               MitreTechniqueType = "WRITEABLE_HOST_PATH"
+	MitreTechniqueTypeCronJobs                        MitreTechniqueType = "CRON_JOBS"
+	MitreTechniqueTypePrivilegedOrRootContainer       MitreTechniqueType = "PRIVILEGED_OR_ROOT_CONTAINER"
+	MitreTechniqueTypePrivilegeEscalationEnabled      MitreTechniqueType = "PRIVILEGE_ESCALATION_ENABLED"
+	MitreTechniqueTypeClusterAdminBinding             MitreTechniqueType = "CLUSTER_ADMIN_BINDING"
+	MitreTechniqueTypeUnauthorizedClusterAdminBinding MitreTechniqueType = "UNAUTHORIZED_CLUSTER_ADMIN_BINDING"
+	MitreTechniqueTypeAccessClusterResources          MitreTechniqueType = "ACCESS_CLUSTER_RESOURCES"
+	MitreTechniqueTypeClearContainerLogs              MitreTechniqueType = "CLEAR_CONTAINER_LOGS"
+	MitreTechniqueTypeClearK8SEvents                  MitreTechniqueType = "CLEAR_K8S_EVENTS"
+	MitreTechniqueTypeListSecrets                     MitreTechniqueType = "LIST_SECRETS"
+	MitreTechniqueTypeServiceAccountAccess            MitreTechniqueType = "SERVICE_ACCOUNT_ACCESS"
+	MitreTechniqueTypeContainerResourceDiscovery      MitreTechniqueType = "CONTAINER_RESOURCE_DISCOVERY"
+	MitreTechniqueTypeClusterInternalNetworking       MitreTechniqueType = "CLUSTER_INTERNAL_NETWORKING"
+	MitreTechniqueTypeTillerEndpointAccess            MitreTechniqueType = "TILLER_ENDPOINT_ACCESS"
+	MitreTechniqueTypeDataDestruction                 MitreTechniqueType = "DATA_DESTRUCTION"
 )
 
-func (e GetMitreTechniqueMitreTechniqueType) ToPointer() *GetMitreTechniqueMitreTechniqueType {
+func (e MitreTechniqueType) ToPointer() *MitreTechniqueType {
 	return &e
 }
 
-func (e *GetMitreTechniqueMitreTechniqueType) UnmarshalJSON(data []byte) error {
+func (e *MitreTechniqueType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -96,10 +96,10 @@ func (e *GetMitreTechniqueMitreTechniqueType) UnmarshalJSON(data []byte) error {
 	case "TILLER_ENDPOINT_ACCESS":
 		fallthrough
 	case "DATA_DESTRUCTION":
-		*e = GetMitreTechniqueMitreTechniqueType(v)
+		*e = MitreTechniqueType(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetMitreTechniqueMitreTechniqueType: %v", v)
+		return fmt.Errorf("invalid value for MitreTechniqueType: %v", v)
 	}
 }
 
@@ -107,7 +107,7 @@ type GetMitreTechniqueRequest struct {
 	// the clusters ids to filter by
 	ClustersIds []string `queryParam:"style=form,explode=true,name=clustersIds"`
 	// MITRE technique type
-	MitreTechniqueType GetMitreTechniqueMitreTechniqueType `queryParam:"style=form,explode=true,name=mitreTechniqueType"`
+	MitreTechniqueType MitreTechniqueType `queryParam:"style=form,explode=true,name=mitreTechniqueType"`
 }
 
 func (o *GetMitreTechniqueRequest) GetClustersIds() []string {
@@ -117,9 +117,9 @@ func (o *GetMitreTechniqueRequest) GetClustersIds() []string {
 	return o.ClustersIds
 }
 
-func (o *GetMitreTechniqueRequest) GetMitreTechniqueType() GetMitreTechniqueMitreTechniqueType {
+func (o *GetMitreTechniqueRequest) GetMitreTechniqueType() MitreTechniqueType {
 	if o == nil {
-		return GetMitreTechniqueMitreTechniqueType("")
+		return MitreTechniqueType("")
 	}
 	return o.MitreTechniqueType
 }

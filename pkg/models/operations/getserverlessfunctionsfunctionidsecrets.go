@@ -22,12 +22,12 @@ func (o *GetServerlessFunctionsFunctionIDSecretsRequest) GetFunctionID() string 
 type GetServerlessFunctionsFunctionIDSecretsResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// Success
-	ServerlessFunctionSecretIssues []shared.ServerlessFunctionSecretIssue
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Success
+	Classes []shared.ServerlessFunctionSecretIssue
 }
 
 func (o *GetServerlessFunctionsFunctionIDSecretsResponse) GetContentType() string {
@@ -35,13 +35,6 @@ func (o *GetServerlessFunctionsFunctionIDSecretsResponse) GetContentType() strin
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *GetServerlessFunctionsFunctionIDSecretsResponse) GetServerlessFunctionSecretIssues() []shared.ServerlessFunctionSecretIssue {
-	if o == nil {
-		return nil
-	}
-	return o.ServerlessFunctionSecretIssues
 }
 
 func (o *GetServerlessFunctionsFunctionIDSecretsResponse) GetStatusCode() int {
@@ -56,4 +49,11 @@ func (o *GetServerlessFunctionsFunctionIDSecretsResponse) GetRawResponse() *http
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetServerlessFunctionsFunctionIDSecretsResponse) GetClasses() []shared.ServerlessFunctionSecretIssue {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

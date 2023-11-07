@@ -40,12 +40,12 @@ func (o *GetServerlessFunctionsNamesRequest) GetRegion() *string {
 type GetServerlessFunctionsNamesResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// Success
-	ServerlessFunctionNames []shared.ServerlessFunctionNames
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Success
+	Classes []shared.ServerlessFunctionNames
 }
 
 func (o *GetServerlessFunctionsNamesResponse) GetContentType() string {
@@ -53,13 +53,6 @@ func (o *GetServerlessFunctionsNamesResponse) GetContentType() string {
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *GetServerlessFunctionsNamesResponse) GetServerlessFunctionNames() []shared.ServerlessFunctionNames {
-	if o == nil {
-		return nil
-	}
-	return o.ServerlessFunctionNames
 }
 
 func (o *GetServerlessFunctionsNamesResponse) GetStatusCode() int {
@@ -74,4 +67,11 @@ func (o *GetServerlessFunctionsNamesResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetServerlessFunctionsNamesResponse) GetClasses() []shared.ServerlessFunctionNames {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

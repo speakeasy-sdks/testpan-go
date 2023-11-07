@@ -1,5 +1,5 @@
 # RiskAssessment
-(*RiskAssessment*)
+(*.RiskAssessment*)
 
 ## Overview
 
@@ -158,7 +158,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.RiskAssessmentClusters != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -206,7 +206,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.IgnoredRisks != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -259,7 +259,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.ClusterPermissions != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -472,7 +472,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.RiskAssessmentClusters != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -519,13 +519,13 @@ func main() {
     ctx := context.Background()
     res, err := s.RiskAssessment.GetRiskAssessmentImageIDVulnerabilities(ctx, operations.GetRiskAssessmentImageIDVulnerabilitiesRequest{
         ImageID: "6cbcdb90-f642-47ed-b640-ae8227deac5c",
-        SortKey: operations.GetRiskAssessmentImageIDVulnerabilitiesSortKeySeverity,
+        SortKey: operations.GetRiskAssessmentImageIDVulnerabilitiesQueryParamSortKeySeverity,
     })
     if err != nil {
         log.Fatal(err)
     }
 
-    if res.RiskAssessmentVulnerabilities != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -572,13 +572,13 @@ func main() {
     ctx := context.Background()
     res, err := s.RiskAssessment.GetRiskAssessmentKubernetesClusterIDPods(ctx, operations.GetRiskAssessmentKubernetesClusterIDPodsRequest{
         KubernetesClusterID: "764514eb-01d8-4d87-972e-7065c0075222",
-        SortKey: operations.GetRiskAssessmentKubernetesClusterIDPodsSortKeyName,
+        SortKey: operations.GetRiskAssessmentKubernetesClusterIDPodsQueryParamSortKeyName,
     })
     if err != nil {
         log.Fatal(err)
     }
 
-    if res.RiskAssessmentPods != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -677,7 +677,7 @@ func main() {
                 "fda4268f-7c78-46d3-87e2-782993d8ba4d",
             },
         },
-        ActionType: operations.PostRiskAssessmentPermissionsOwnerIDApproveActionTypeRemove,
+        ActionType: operations.PostRiskAssessmentPermissionsOwnerIDApproveQueryParamActionTypeRemove,
         OwnerID: "c3b8ad34-72d2-4f81-a59b-f81c3cc9c10e",
     })
     if err != nil {
@@ -736,7 +736,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.PostRiskAssessmentKubernetesClusterIDScan201ApplicationJSONUUIDString != nil {
+    if res.Res != nil {
         // handle response
     }
 }
@@ -789,7 +789,7 @@ func main() {
                 "string",
             },
             PeriodicJobExpression: &shared.PeriodicJobExpression{
-                PeriodicJobType: shared.PeriodicJobExpressionPeriodicJobTypeByHoursPeriodicJobExpression,
+                PeriodicJobType: shared.PeriodicJobTypeByHoursPeriodicJobExpression,
             },
         },
         KubernetesClusterID: "c1a0c988-4def-48c1-bbd4-845665df2f73",
@@ -798,7 +798,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.PostRiskAssessmentKubernetesClusterIDSettings201ApplicationJSONUUIDString != nil {
+    if res.Res != nil {
         // handle response
     }
 }
@@ -844,7 +844,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RiskAssessment.PutRiskAssessmentIgnoredRisksIgnoredRiskID(ctx, operations.PutRiskAssessmentIgnoredRisksIgnoredRiskIDRequest{
-        CiPolicyInput: shared.CiPolicyInput{
+        CiPolicy: shared.CiPolicyInput{
             DockerfileScanCiPolicy: &shared.DockerfileScanCiPolicy{
                 EnforcementOption: shared.EnforcementOptionFail,
                 PermissibleDockerfileScanSeverity: shared.DockerfileScanSeverityInfo,

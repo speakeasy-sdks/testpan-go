@@ -1,5 +1,5 @@
 # Apps
-(*Apps*)
+(*.Apps*)
 
 ## Overview
 
@@ -48,7 +48,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.Apps != nil {
+    if res.Classes != nil {
         // handle response
     }
 }

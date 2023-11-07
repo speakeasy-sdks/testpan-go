@@ -9,24 +9,24 @@ import (
 	"net/http"
 )
 
-type GetUsersRoles string
+type Roles string
 
 const (
-	GetUsersRolesLightspinAdmin   GetUsersRoles = "LIGHTSPIN_ADMIN"
-	GetUsersRolesSelfProvisioning GetUsersRoles = "SELF_PROVISIONING"
-	GetUsersRolesCiCdScanner      GetUsersRoles = "CI_CD_SCANNER"
-	GetUsersRolesPortshiftAdmin   GetUsersRoles = "PORTSHIFT_ADMIN"
-	GetUsersRolesPortshiftAuditor GetUsersRoles = "PORTSHIFT_AUDITOR"
-	GetUsersRolesAccountAdmin     GetUsersRoles = "ACCOUNT_ADMIN"
-	GetUsersRolesService          GetUsersRoles = "SERVICE"
-	GetUsersRolesAccountAuditor   GetUsersRoles = "ACCOUNT_AUDITOR"
+	RolesLightspinAdmin   Roles = "LIGHTSPIN_ADMIN"
+	RolesSelfProvisioning Roles = "SELF_PROVISIONING"
+	RolesCiCdScanner      Roles = "CI_CD_SCANNER"
+	RolesPortshiftAdmin   Roles = "PORTSHIFT_ADMIN"
+	RolesPortshiftAuditor Roles = "PORTSHIFT_AUDITOR"
+	RolesAccountAdmin     Roles = "ACCOUNT_ADMIN"
+	RolesService          Roles = "SERVICE"
+	RolesAccountAuditor   Roles = "ACCOUNT_AUDITOR"
 )
 
-func (e GetUsersRoles) ToPointer() *GetUsersRoles {
+func (e Roles) ToPointer() *Roles {
 	return &e
 }
 
-func (e *GetUsersRoles) UnmarshalJSON(data []byte) error {
+func (e *Roles) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -47,10 +47,10 @@ func (e *GetUsersRoles) UnmarshalJSON(data []byte) error {
 	case "SERVICE":
 		fallthrough
 	case "ACCOUNT_AUDITOR":
-		*e = GetUsersRoles(v)
+		*e = Roles(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetUsersRoles: %v", v)
+		return fmt.Errorf("invalid value for Roles: %v", v)
 	}
 }
 
@@ -58,7 +58,7 @@ type GetUsersRequest struct {
 	// the email to filter by
 	Email *string `queryParam:"style=form,explode=true,name=email"`
 	// the roles to filter by
-	Roles []GetUsersRoles `queryParam:"style=form,explode=true,name=roles"`
+	Roles []Roles `queryParam:"style=form,explode=true,name=roles"`
 	// the user name to filter by
 	Username *string `queryParam:"style=form,explode=true,name=username"`
 }
@@ -70,7 +70,7 @@ func (o *GetUsersRequest) GetEmail() *string {
 	return o.Email
 }
 
-func (o *GetUsersRequest) GetRoles() []GetUsersRoles {
+func (o *GetUsersRequest) GetRoles() []Roles {
 	if o == nil {
 		return nil
 	}
@@ -92,7 +92,7 @@ type GetUsersResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Success
-	UserDisplays []shared.UserDisplay
+	Classes []shared.UserDisplay
 }
 
 func (o *GetUsersResponse) GetContentType() string {
@@ -116,9 +116,9 @@ func (o *GetUsersResponse) GetRawResponse() *http.Response {
 	return o.RawResponse
 }
 
-func (o *GetUsersResponse) GetUserDisplays() []shared.UserDisplay {
+func (o *GetUsersResponse) GetClasses() []shared.UserDisplay {
 	if o == nil {
 		return nil
 	}
-	return o.UserDisplays
+	return o.Classes
 }

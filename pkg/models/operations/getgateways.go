@@ -10,19 +10,19 @@ import (
 	"net/http"
 )
 
-// GetGatewaysSortDir - sorting direction
-type GetGatewaysSortDir string
+// GetGatewaysQueryParamSortDir - sorting direction
+type GetGatewaysQueryParamSortDir string
 
 const (
-	GetGatewaysSortDirAsc  GetGatewaysSortDir = "ASC"
-	GetGatewaysSortDirDesc GetGatewaysSortDir = "DESC"
+	GetGatewaysQueryParamSortDirAsc  GetGatewaysQueryParamSortDir = "ASC"
+	GetGatewaysQueryParamSortDirDesc GetGatewaysQueryParamSortDir = "DESC"
 )
 
-func (e GetGatewaysSortDir) ToPointer() *GetGatewaysSortDir {
+func (e GetGatewaysQueryParamSortDir) ToPointer() *GetGatewaysQueryParamSortDir {
 	return &e
 }
 
-func (e *GetGatewaysSortDir) UnmarshalJSON(data []byte) error {
+func (e *GetGatewaysQueryParamSortDir) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -31,10 +31,10 @@ func (e *GetGatewaysSortDir) UnmarshalJSON(data []byte) error {
 	case "ASC":
 		fallthrough
 	case "DESC":
-		*e = GetGatewaysSortDir(v)
+		*e = GetGatewaysQueryParamSortDir(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetGatewaysSortDir: %v", v)
+		return fmt.Errorf("invalid value for GetGatewaysQueryParamSortDir: %v", v)
 	}
 }
 
@@ -48,7 +48,7 @@ type GetGatewaysRequest struct {
 	// Return entries from this offset (pagination)
 	Offset *float64 `default:"0" queryParam:"style=form,explode=true,name=offset"`
 	// sorting direction
-	SortDir *GetGatewaysSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
+	SortDir *GetGatewaysQueryParamSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
 }
 
 func (g GetGatewaysRequest) MarshalJSON() ([]byte, error) {
@@ -90,7 +90,7 @@ func (o *GetGatewaysRequest) GetOffset() *float64 {
 	return o.Offset
 }
 
-func (o *GetGatewaysRequest) GetSortDir() *GetGatewaysSortDir {
+func (o *GetGatewaysRequest) GetSortDir() *GetGatewaysQueryParamSortDir {
 	if o == nil {
 		return nil
 	}
@@ -100,12 +100,12 @@ func (o *GetGatewaysRequest) GetSortDir() *GetGatewaysSortDir {
 type GetGatewaysResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// Success
-	Gateways []shared.Gateway
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Success
+	Classes []shared.Gateway
 }
 
 func (o *GetGatewaysResponse) GetContentType() string {
@@ -113,13 +113,6 @@ func (o *GetGatewaysResponse) GetContentType() string {
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *GetGatewaysResponse) GetGateways() []shared.Gateway {
-	if o == nil {
-		return nil
-	}
-	return o.Gateways
 }
 
 func (o *GetGatewaysResponse) GetStatusCode() int {
@@ -134,4 +127,11 @@ func (o *GetGatewaysResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetGatewaysResponse) GetClasses() []shared.Gateway {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

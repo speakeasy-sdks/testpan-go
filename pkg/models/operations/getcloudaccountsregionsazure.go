@@ -14,7 +14,7 @@ type GetCloudAccountsRegionsAzureResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Success
-	GetCloudAccountsRegionsAzure200ApplicationJSONStrings []string
+	Strings []string
 }
 
 func (o *GetCloudAccountsRegionsAzureResponse) GetContentType() string {
@@ -38,9 +38,9 @@ func (o *GetCloudAccountsRegionsAzureResponse) GetRawResponse() *http.Response {
 	return o.RawResponse
 }
 
-func (o *GetCloudAccountsRegionsAzureResponse) GetGetCloudAccountsRegionsAzure200ApplicationJSONStrings() []string {
+func (o *GetCloudAccountsRegionsAzureResponse) GetStrings() []string {
 	if o == nil {
 		return nil
 	}
-	return o.GetCloudAccountsRegionsAzure200ApplicationJSONStrings
+	return o.Strings
 }

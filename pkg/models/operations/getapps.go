@@ -10,19 +10,19 @@ import (
 	"net/http"
 )
 
-// GetAppsSortDir - sorting direction
-type GetAppsSortDir string
+// GetAppsQueryParamSortDir - sorting direction
+type GetAppsQueryParamSortDir string
 
 const (
-	GetAppsSortDirAsc  GetAppsSortDir = "ASC"
-	GetAppsSortDirDesc GetAppsSortDir = "DESC"
+	GetAppsQueryParamSortDirAsc  GetAppsQueryParamSortDir = "ASC"
+	GetAppsQueryParamSortDirDesc GetAppsQueryParamSortDir = "DESC"
 )
 
-func (e GetAppsSortDir) ToPointer() *GetAppsSortDir {
+func (e GetAppsQueryParamSortDir) ToPointer() *GetAppsQueryParamSortDir {
 	return &e
 }
 
-func (e *GetAppsSortDir) UnmarshalJSON(data []byte) error {
+func (e *GetAppsQueryParamSortDir) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -31,26 +31,26 @@ func (e *GetAppsSortDir) UnmarshalJSON(data []byte) error {
 	case "ASC":
 		fallthrough
 	case "DESC":
-		*e = GetAppsSortDir(v)
+		*e = GetAppsQueryParamSortDir(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetAppsSortDir: %v", v)
+		return fmt.Errorf("invalid value for GetAppsQueryParamSortDir: %v", v)
 	}
 }
 
-// GetAppsSortKey - App sort key
-type GetAppsSortKey string
+// GetAppsQueryParamSortKey - App sort key
+type GetAppsQueryParamSortKey string
 
 const (
-	GetAppsSortKeyName GetAppsSortKey = "name"
-	GetAppsSortKeyType GetAppsSortKey = "type"
+	GetAppsQueryParamSortKeyName GetAppsQueryParamSortKey = "name"
+	GetAppsQueryParamSortKeyType GetAppsQueryParamSortKey = "type"
 )
 
-func (e GetAppsSortKey) ToPointer() *GetAppsSortKey {
+func (e GetAppsQueryParamSortKey) ToPointer() *GetAppsQueryParamSortKey {
 	return &e
 }
 
-func (e *GetAppsSortKey) UnmarshalJSON(data []byte) error {
+func (e *GetAppsQueryParamSortKey) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -59,10 +59,10 @@ func (e *GetAppsSortKey) UnmarshalJSON(data []byte) error {
 	case "name":
 		fallthrough
 	case "type":
-		*e = GetAppsSortKey(v)
+		*e = GetAppsQueryParamSortKey(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetAppsSortKey: %v", v)
+		return fmt.Errorf("invalid value for GetAppsQueryParamSortKey: %v", v)
 	}
 }
 
@@ -74,9 +74,9 @@ type GetAppsRequest struct {
 	// When true, the pagination params will be ignored
 	NoPagination *bool `queryParam:"style=form,explode=true,name=noPagination"`
 	// sorting direction
-	SortDir *GetAppsSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
+	SortDir *GetAppsQueryParamSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
 	// App sort key
-	SortKey *GetAppsSortKey `queryParam:"style=form,explode=true,name=sortKey"`
+	SortKey *GetAppsQueryParamSortKey `queryParam:"style=form,explode=true,name=sortKey"`
 	// Filter Apps by type
 	Type []string `queryParam:"style=form,explode=false,name=type"`
 }
@@ -113,14 +113,14 @@ func (o *GetAppsRequest) GetNoPagination() *bool {
 	return o.NoPagination
 }
 
-func (o *GetAppsRequest) GetSortDir() *GetAppsSortDir {
+func (o *GetAppsRequest) GetSortDir() *GetAppsQueryParamSortDir {
 	if o == nil {
 		return nil
 	}
 	return o.SortDir
 }
 
-func (o *GetAppsRequest) GetSortKey() *GetAppsSortKey {
+func (o *GetAppsRequest) GetSortKey() *GetAppsQueryParamSortKey {
 	if o == nil {
 		return nil
 	}
@@ -135,21 +135,14 @@ func (o *GetAppsRequest) GetType() []string {
 }
 
 type GetAppsResponse struct {
-	// Created
-	Apps []shared.App
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-}
-
-func (o *GetAppsResponse) GetApps() []shared.App {
-	if o == nil {
-		return nil
-	}
-	return o.Apps
+	// Created
+	Classes []shared.App
 }
 
 func (o *GetAppsResponse) GetContentType() string {
@@ -171,4 +164,11 @@ func (o *GetAppsResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetAppsResponse) GetClasses() []shared.App {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

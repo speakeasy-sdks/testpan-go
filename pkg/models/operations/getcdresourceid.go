@@ -10,19 +10,19 @@ import (
 	"net/http"
 )
 
-// GetCdResourceIDSortDir - sorting direction
-type GetCdResourceIDSortDir string
+// SortDir - sorting direction
+type SortDir string
 
 const (
-	GetCdResourceIDSortDirAsc  GetCdResourceIDSortDir = "ASC"
-	GetCdResourceIDSortDirDesc GetCdResourceIDSortDir = "DESC"
+	SortDirAsc  SortDir = "ASC"
+	SortDirDesc SortDir = "DESC"
 )
 
-func (e GetCdResourceIDSortDir) ToPointer() *GetCdResourceIDSortDir {
+func (e SortDir) ToPointer() *SortDir {
 	return &e
 }
 
-func (e *GetCdResourceIDSortDir) UnmarshalJSON(data []byte) error {
+func (e *SortDir) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -31,44 +31,44 @@ func (e *GetCdResourceIDSortDir) UnmarshalJSON(data []byte) error {
 	case "ASC":
 		fallthrough
 	case "DESC":
-		*e = GetCdResourceIDSortDir(v)
+		*e = SortDir(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetCdResourceIDSortDir: %v", v)
+		return fmt.Errorf("invalid value for SortDir: %v", v)
 	}
 }
 
-// GetCdResourceIDSortKey - sort key
-type GetCdResourceIDSortKey string
+// SortKey - sort key
+type SortKey string
 
 const (
-	GetCdResourceIDSortKeyRisk GetCdResourceIDSortKey = "risk"
+	SortKeyRisk SortKey = "risk"
 )
 
-func (e GetCdResourceIDSortKey) ToPointer() *GetCdResourceIDSortKey {
+func (e SortKey) ToPointer() *SortKey {
 	return &e
 }
 
-func (e *GetCdResourceIDSortKey) UnmarshalJSON(data []byte) error {
+func (e *SortKey) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
 	}
 	switch v {
 	case "risk":
-		*e = GetCdResourceIDSortKey(v)
+		*e = SortKey(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetCdResourceIDSortKey: %v", v)
+		return fmt.Errorf("invalid value for SortKey: %v", v)
 	}
 }
 
 type GetCdResourceIDRequest struct {
 	ResourceID string `pathParam:"style=simple,explode=false,name=resourceId"`
 	// sorting direction
-	SortDir *GetCdResourceIDSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
+	SortDir *SortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
 	// sort key
-	SortKey *GetCdResourceIDSortKey `default:"risk" queryParam:"style=form,explode=true,name=sortKey"`
+	SortKey *SortKey `default:"risk" queryParam:"style=form,explode=true,name=sortKey"`
 }
 
 func (g GetCdResourceIDRequest) MarshalJSON() ([]byte, error) {
@@ -89,14 +89,14 @@ func (o *GetCdResourceIDRequest) GetResourceID() string {
 	return o.ResourceID
 }
 
-func (o *GetCdResourceIDRequest) GetSortDir() *GetCdResourceIDSortDir {
+func (o *GetCdResourceIDRequest) GetSortDir() *SortDir {
 	if o == nil {
 		return nil
 	}
 	return o.SortDir
 }
 
-func (o *GetCdResourceIDRequest) GetSortKey() *GetCdResourceIDSortKey {
+func (o *GetCdResourceIDRequest) GetSortKey() *SortKey {
 	if o == nil {
 		return nil
 	}

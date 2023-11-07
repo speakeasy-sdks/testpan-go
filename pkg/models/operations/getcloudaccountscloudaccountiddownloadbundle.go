@@ -31,7 +31,7 @@ type GetCloudAccountsCloudAccountIDDownloadBundleResponse struct {
 	RawResponse *http.Response
 	// OK
 	// The Close method must be called on this field, even if it is not used, to prevent resource leaks.
-	GetCloudAccountsCloudAccountIDDownloadBundle200ApplicationJSONBinaryString io.ReadCloser
+	Stream io.ReadCloser
 }
 
 func (o *GetCloudAccountsCloudAccountIDDownloadBundleResponse) GetAPIResponse() *shared.APIResponse {
@@ -62,9 +62,9 @@ func (o *GetCloudAccountsCloudAccountIDDownloadBundleResponse) GetRawResponse() 
 	return o.RawResponse
 }
 
-func (o *GetCloudAccountsCloudAccountIDDownloadBundleResponse) GetGetCloudAccountsCloudAccountIDDownloadBundle200ApplicationJSONBinaryString() io.ReadCloser {
+func (o *GetCloudAccountsCloudAccountIDDownloadBundleResponse) GetStream() io.ReadCloser {
 	if o == nil {
 		return nil
 	}
-	return o.GetCloudAccountsCloudAccountIDDownloadBundle200ApplicationJSONBinaryString
+	return o.Stream
 }

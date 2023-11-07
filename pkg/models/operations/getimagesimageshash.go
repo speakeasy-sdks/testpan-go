@@ -47,7 +47,7 @@ type GetImagesImagesHashResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Success
-	GetImagesImagesHash200ApplicationJSONStrings []string
+	Strings []string
 }
 
 func (o *GetImagesImagesHashResponse) GetContentType() string {
@@ -71,9 +71,9 @@ func (o *GetImagesImagesHashResponse) GetRawResponse() *http.Response {
 	return o.RawResponse
 }
 
-func (o *GetImagesImagesHashResponse) GetGetImagesImagesHash200ApplicationJSONStrings() []string {
+func (o *GetImagesImagesHashResponse) GetStrings() []string {
 	if o == nil {
 		return nil
 	}
-	return o.GetImagesImagesHash200ApplicationJSONStrings
+	return o.Strings
 }

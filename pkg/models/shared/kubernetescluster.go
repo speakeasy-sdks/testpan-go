@@ -8,23 +8,23 @@ import (
 	"github.com/speakeasy-sdks/testpan-go/pkg/utils"
 )
 
-type KubernetesClusterOrchestrationType string
+type OrchestrationType string
 
 const (
-	KubernetesClusterOrchestrationTypeGke        KubernetesClusterOrchestrationType = "GKE"
-	KubernetesClusterOrchestrationTypeOpenshift  KubernetesClusterOrchestrationType = "OPENSHIFT"
-	KubernetesClusterOrchestrationTypeRancher    KubernetesClusterOrchestrationType = "RANCHER"
-	KubernetesClusterOrchestrationTypeAks        KubernetesClusterOrchestrationType = "AKS"
-	KubernetesClusterOrchestrationTypeEks        KubernetesClusterOrchestrationType = "EKS"
-	KubernetesClusterOrchestrationTypeKubernetes KubernetesClusterOrchestrationType = "KUBERNETES"
-	KubernetesClusterOrchestrationTypeIks        KubernetesClusterOrchestrationType = "IKS"
+	OrchestrationTypeGke        OrchestrationType = "GKE"
+	OrchestrationTypeOpenshift  OrchestrationType = "OPENSHIFT"
+	OrchestrationTypeRancher    OrchestrationType = "RANCHER"
+	OrchestrationTypeAks        OrchestrationType = "AKS"
+	OrchestrationTypeEks        OrchestrationType = "EKS"
+	OrchestrationTypeKubernetes OrchestrationType = "KUBERNETES"
+	OrchestrationTypeIks        OrchestrationType = "IKS"
 )
 
-func (e KubernetesClusterOrchestrationType) ToPointer() *KubernetesClusterOrchestrationType {
+func (e OrchestrationType) ToPointer() *OrchestrationType {
 	return &e
 }
 
-func (e *KubernetesClusterOrchestrationType) UnmarshalJSON(data []byte) error {
+func (e *OrchestrationType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -43,10 +43,10 @@ func (e *KubernetesClusterOrchestrationType) UnmarshalJSON(data []byte) error {
 	case "KUBERNETES":
 		fallthrough
 	case "IKS":
-		*e = KubernetesClusterOrchestrationType(v)
+		*e = OrchestrationType(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for KubernetesClusterOrchestrationType: %v", v)
+		return fmt.Errorf("invalid value for OrchestrationType: %v", v)
 	}
 }
 
@@ -98,10 +98,10 @@ type KubernetesCluster struct {
 	// indicates whether kubernetes events sending is enabled
 	K8sEventsEnabled *bool `default:"false" json:"k8sEventsEnabled"`
 	// indicates whether kubernetes security is enabled
-	KubernetesSecurity                *bool                               `default:"false" json:"kubernetesSecurity"`
-	MinimalNumberOfControllerReplicas *int64                              `json:"minimalNumberOfControllerReplicas,omitempty"`
-	Name                              string                              `json:"name"`
-	OrchestrationType                 *KubernetesClusterOrchestrationType `default:"GKE" json:"orchestrationType"`
+	KubernetesSecurity                *bool              `default:"false" json:"kubernetesSecurity"`
+	MinimalNumberOfControllerReplicas *int64             `json:"minimalNumberOfControllerReplicas,omitempty"`
+	Name                              string             `json:"name"`
+	OrchestrationType                 *OrchestrationType `default:"GKE" json:"orchestrationType"`
 	// indicates whether the agent should preserve the original source ip
 	PreserveOriginalSourceIP *bool               `default:"false" json:"preserveOriginalSourceIp"`
 	ProxyConfiguration       *ProxyConfiguration `json:"proxyConfiguration,omitempty"`
@@ -331,7 +331,7 @@ func (o *KubernetesCluster) GetName() string {
 	return o.Name
 }
 
-func (o *KubernetesCluster) GetOrchestrationType() *KubernetesClusterOrchestrationType {
+func (o *KubernetesCluster) GetOrchestrationType() *OrchestrationType {
 	if o == nil {
 		return nil
 	}

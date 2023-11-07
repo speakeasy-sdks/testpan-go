@@ -9,15 +9,15 @@ import (
 
 type PutEnvironmentsEnvIDRequest struct {
 	// Environment definition
-	EnvironmentInput shared.EnvironmentInput `request:"mediaType=application/json"`
-	EnvID            string                  `pathParam:"style=simple,explode=false,name=envId"`
+	Environment shared.EnvironmentInput `request:"mediaType=application/json"`
+	EnvID       string                  `pathParam:"style=simple,explode=false,name=envId"`
 }
 
-func (o *PutEnvironmentsEnvIDRequest) GetEnvironmentInput() shared.EnvironmentInput {
+func (o *PutEnvironmentsEnvIDRequest) GetEnvironment() shared.EnvironmentInput {
 	if o == nil {
 		return shared.EnvironmentInput{}
 	}
-	return o.EnvironmentInput
+	return o.Environment
 }
 
 func (o *PutEnvironmentsEnvIDRequest) GetEnvID() string {

@@ -26,7 +26,7 @@ type GetAwsAwsAccountIDRegionsResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Success
-	GetAwsAwsAccountIDRegions200ApplicationJSONStrings []string
+	Strings []string
 }
 
 func (o *GetAwsAwsAccountIDRegionsResponse) GetContentType() string {
@@ -50,9 +50,9 @@ func (o *GetAwsAwsAccountIDRegionsResponse) GetRawResponse() *http.Response {
 	return o.RawResponse
 }
 
-func (o *GetAwsAwsAccountIDRegionsResponse) GetGetAwsAwsAccountIDRegions200ApplicationJSONStrings() []string {
+func (o *GetAwsAwsAccountIDRegionsResponse) GetStrings() []string {
 	if o == nil {
 		return nil
 	}
-	return o.GetAwsAwsAccountIDRegions200ApplicationJSONStrings
+	return o.Strings
 }

@@ -7,35 +7,35 @@ import (
 	"fmt"
 )
 
-type ChallengeRequestChallengeName string
+type ChallengeName string
 
 const (
-	ChallengeRequestChallengeNameGoogleLogin ChallengeRequestChallengeName = "GOOGLE_LOGIN"
+	ChallengeNameGoogleLogin ChallengeName = "GOOGLE_LOGIN"
 )
 
-func (e ChallengeRequestChallengeName) ToPointer() *ChallengeRequestChallengeName {
+func (e ChallengeName) ToPointer() *ChallengeName {
 	return &e
 }
 
-func (e *ChallengeRequestChallengeName) UnmarshalJSON(data []byte) error {
+func (e *ChallengeName) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
 	}
 	switch v {
 	case "GOOGLE_LOGIN":
-		*e = ChallengeRequestChallengeName(v)
+		*e = ChallengeName(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for ChallengeRequestChallengeName: %v", v)
+		return fmt.Errorf("invalid value for ChallengeName: %v", v)
 	}
 }
 
 type ChallengeRequest struct {
-	ChallengeName *ChallengeRequestChallengeName `json:"ChallengeName,omitempty"`
+	ChallengeName *ChallengeName `json:"ChallengeName,omitempty"`
 }
 
-func (o *ChallengeRequest) GetChallengeName() *ChallengeRequestChallengeName {
+func (o *ChallengeRequest) GetChallengeName() *ChallengeName {
 	if o == nil {
 		return nil
 	}

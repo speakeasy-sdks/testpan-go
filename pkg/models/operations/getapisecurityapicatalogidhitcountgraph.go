@@ -10,26 +10,26 @@ import (
 	"net/http"
 )
 
-// GetAPISecurityAPICatalogIDHitCountGraphSpecPathMethod - spec path method
-type GetAPISecurityAPICatalogIDHitCountGraphSpecPathMethod string
+// SpecPathMethod - spec path method
+type SpecPathMethod string
 
 const (
-	GetAPISecurityAPICatalogIDHitCountGraphSpecPathMethodGet     GetAPISecurityAPICatalogIDHitCountGraphSpecPathMethod = "GET"
-	GetAPISecurityAPICatalogIDHitCountGraphSpecPathMethodPost    GetAPISecurityAPICatalogIDHitCountGraphSpecPathMethod = "POST"
-	GetAPISecurityAPICatalogIDHitCountGraphSpecPathMethodPut     GetAPISecurityAPICatalogIDHitCountGraphSpecPathMethod = "PUT"
-	GetAPISecurityAPICatalogIDHitCountGraphSpecPathMethodDelete  GetAPISecurityAPICatalogIDHitCountGraphSpecPathMethod = "DELETE"
-	GetAPISecurityAPICatalogIDHitCountGraphSpecPathMethodHead    GetAPISecurityAPICatalogIDHitCountGraphSpecPathMethod = "HEAD"
-	GetAPISecurityAPICatalogIDHitCountGraphSpecPathMethodConnect GetAPISecurityAPICatalogIDHitCountGraphSpecPathMethod = "CONNECT"
-	GetAPISecurityAPICatalogIDHitCountGraphSpecPathMethodOptions GetAPISecurityAPICatalogIDHitCountGraphSpecPathMethod = "OPTIONS"
-	GetAPISecurityAPICatalogIDHitCountGraphSpecPathMethodTrace   GetAPISecurityAPICatalogIDHitCountGraphSpecPathMethod = "TRACE"
-	GetAPISecurityAPICatalogIDHitCountGraphSpecPathMethodPatch   GetAPISecurityAPICatalogIDHitCountGraphSpecPathMethod = "PATCH"
+	SpecPathMethodGet     SpecPathMethod = "GET"
+	SpecPathMethodPost    SpecPathMethod = "POST"
+	SpecPathMethodPut     SpecPathMethod = "PUT"
+	SpecPathMethodDelete  SpecPathMethod = "DELETE"
+	SpecPathMethodHead    SpecPathMethod = "HEAD"
+	SpecPathMethodConnect SpecPathMethod = "CONNECT"
+	SpecPathMethodOptions SpecPathMethod = "OPTIONS"
+	SpecPathMethodTrace   SpecPathMethod = "TRACE"
+	SpecPathMethodPatch   SpecPathMethod = "PATCH"
 )
 
-func (e GetAPISecurityAPICatalogIDHitCountGraphSpecPathMethod) ToPointer() *GetAPISecurityAPICatalogIDHitCountGraphSpecPathMethod {
+func (e SpecPathMethod) ToPointer() *SpecPathMethod {
 	return &e
 }
 
-func (e *GetAPISecurityAPICatalogIDHitCountGraphSpecPathMethod) UnmarshalJSON(data []byte) error {
+func (e *SpecPathMethod) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -52,10 +52,10 @@ func (e *GetAPISecurityAPICatalogIDHitCountGraphSpecPathMethod) UnmarshalJSON(da
 	case "TRACE":
 		fallthrough
 	case "PATCH":
-		*e = GetAPISecurityAPICatalogIDHitCountGraphSpecPathMethod(v)
+		*e = SpecPathMethod(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetAPISecurityAPICatalogIDHitCountGraphSpecPathMethod: %v", v)
+		return fmt.Errorf("invalid value for SpecPathMethod: %v", v)
 	}
 }
 
@@ -66,7 +66,7 @@ type GetAPISecurityAPICatalogIDHitCountGraphRequest struct {
 	// spec path
 	SpecPath string `queryParam:"style=form,explode=true,name=specPath"`
 	// spec path method
-	SpecPathMethod GetAPISecurityAPICatalogIDHitCountGraphSpecPathMethod `queryParam:"style=form,explode=true,name=specPathMethod"`
+	SpecPathMethod SpecPathMethod `queryParam:"style=form,explode=true,name=specPathMethod"`
 }
 
 func (g GetAPISecurityAPICatalogIDHitCountGraphRequest) MarshalJSON() ([]byte, error) {
@@ -101,9 +101,9 @@ func (o *GetAPISecurityAPICatalogIDHitCountGraphRequest) GetSpecPath() string {
 	return o.SpecPath
 }
 
-func (o *GetAPISecurityAPICatalogIDHitCountGraphRequest) GetSpecPathMethod() GetAPISecurityAPICatalogIDHitCountGraphSpecPathMethod {
+func (o *GetAPISecurityAPICatalogIDHitCountGraphRequest) GetSpecPathMethod() SpecPathMethod {
 	if o == nil {
-		return GetAPISecurityAPICatalogIDHitCountGraphSpecPathMethod("")
+		return SpecPathMethod("")
 	}
 	return o.SpecPathMethod
 }

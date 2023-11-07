@@ -26,7 +26,7 @@ type GetConnectionsPolicyKafkaKubernetesClusterIDTopicsResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Success
-	GetConnectionsPolicyKafkaKubernetesClusterIDTopics200ApplicationJSONStrings []string
+	Strings []string
 }
 
 func (o *GetConnectionsPolicyKafkaKubernetesClusterIDTopicsResponse) GetContentType() string {
@@ -50,9 +50,9 @@ func (o *GetConnectionsPolicyKafkaKubernetesClusterIDTopicsResponse) GetRawRespo
 	return o.RawResponse
 }
 
-func (o *GetConnectionsPolicyKafkaKubernetesClusterIDTopicsResponse) GetGetConnectionsPolicyKafkaKubernetesClusterIDTopics200ApplicationJSONStrings() []string {
+func (o *GetConnectionsPolicyKafkaKubernetesClusterIDTopicsResponse) GetStrings() []string {
 	if o == nil {
 		return nil
 	}
-	return o.GetConnectionsPolicyKafkaKubernetesClusterIDTopics200ApplicationJSONStrings
+	return o.Strings
 }

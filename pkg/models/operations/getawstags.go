@@ -15,7 +15,7 @@ type GetAwsTagsResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Success
-	Tags []shared.Tag
+	Classes []shared.Tag
 }
 
 func (o *GetAwsTagsResponse) GetContentType() string {
@@ -39,9 +39,9 @@ func (o *GetAwsTagsResponse) GetRawResponse() *http.Response {
 	return o.RawResponse
 }
 
-func (o *GetAwsTagsResponse) GetTags() []shared.Tag {
+func (o *GetAwsTagsResponse) GetClasses() []shared.Tag {
 	if o == nil {
 		return nil
 	}
-	return o.Tags
+	return o.Classes
 }

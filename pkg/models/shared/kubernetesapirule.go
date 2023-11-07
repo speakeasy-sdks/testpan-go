@@ -8,18 +8,18 @@ import (
 	"github.com/speakeasy-sdks/testpan-go/pkg/utils"
 )
 
-type KubernetesAPIRuleKubernetesAPIRuleType string
+type KubernetesAPIRuleType string
 
 const (
-	KubernetesAPIRuleKubernetesAPIRuleTypeKubernetesAPICustomRule      KubernetesAPIRuleKubernetesAPIRuleType = "KubernetesApiCustomRule"
-	KubernetesAPIRuleKubernetesAPIRuleTypeKubernetesAPIRecommendedRule KubernetesAPIRuleKubernetesAPIRuleType = "KubernetesApiRecommendedRule"
+	KubernetesAPIRuleTypeKubernetesAPICustomRule      KubernetesAPIRuleType = "KubernetesApiCustomRule"
+	KubernetesAPIRuleTypeKubernetesAPIRecommendedRule KubernetesAPIRuleType = "KubernetesApiRecommendedRule"
 )
 
-func (e KubernetesAPIRuleKubernetesAPIRuleType) ToPointer() *KubernetesAPIRuleKubernetesAPIRuleType {
+func (e KubernetesAPIRuleType) ToPointer() *KubernetesAPIRuleType {
 	return &e
 }
 
-func (e *KubernetesAPIRuleKubernetesAPIRuleType) UnmarshalJSON(data []byte) error {
+func (e *KubernetesAPIRuleType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -28,16 +28,16 @@ func (e *KubernetesAPIRuleKubernetesAPIRuleType) UnmarshalJSON(data []byte) erro
 	case "KubernetesApiCustomRule":
 		fallthrough
 	case "KubernetesApiRecommendedRule":
-		*e = KubernetesAPIRuleKubernetesAPIRuleType(v)
+		*e = KubernetesAPIRuleType(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for KubernetesAPIRuleKubernetesAPIRuleType: %v", v)
+		return fmt.Errorf("invalid value for KubernetesAPIRuleType: %v", v)
 	}
 }
 
 type KubernetesAPIRule struct {
-	KubernetesAPIRuleType KubernetesAPIRuleKubernetesAPIRuleType `json:"kubernetesApiRuleType"`
-	RuleOrigin            *KubernetesAPIRuleOrigin               `default:"USER" json:"ruleOrigin"`
+	KubernetesAPIRuleType KubernetesAPIRuleType    `json:"kubernetesApiRuleType"`
+	RuleOrigin            *KubernetesAPIRuleOrigin `default:"USER" json:"ruleOrigin"`
 }
 
 func (k KubernetesAPIRule) MarshalJSON() ([]byte, error) {
@@ -51,9 +51,9 @@ func (k *KubernetesAPIRule) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *KubernetesAPIRule) GetKubernetesAPIRuleType() KubernetesAPIRuleKubernetesAPIRuleType {
+func (o *KubernetesAPIRule) GetKubernetesAPIRuleType() KubernetesAPIRuleType {
 	if o == nil {
-		return KubernetesAPIRuleKubernetesAPIRuleType("")
+		return KubernetesAPIRuleType("")
 	}
 	return o.KubernetesAPIRuleType
 }

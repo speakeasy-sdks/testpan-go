@@ -14,18 +14,18 @@ import (
 	"strings"
 )
 
-type vulnerabilities struct {
+type Vulnerabilities struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newVulnerabilities(sdkConfig sdkConfiguration) *vulnerabilities {
-	return &vulnerabilities{
+func newVulnerabilities(sdkConfig sdkConfiguration) *Vulnerabilities {
+	return &Vulnerabilities{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // GetVulnerabilities - search for vulnerability names in the account
-func (s *vulnerabilities) GetVulnerabilities(ctx context.Context, request operations.GetVulnerabilitiesRequest) (*operations.GetVulnerabilitiesResponse, error) {
+func (s *Vulnerabilities) GetVulnerabilities(ctx context.Context, request operations.GetVulnerabilitiesRequest) (*operations.GetVulnerabilitiesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/vulnerabilities"
 
@@ -73,7 +73,7 @@ func (s *vulnerabilities) GetVulnerabilities(ctx context.Context, request operat
 				return nil, err
 			}
 
-			res.GetVulnerabilities200ApplicationJSONStrings = out
+			res.Strings = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}

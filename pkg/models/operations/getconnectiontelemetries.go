@@ -11,19 +11,19 @@ import (
 	"time"
 )
 
-// GetConnectionTelemetriesLogicalOperator - Logical operator between the source group and the target group filters
-type GetConnectionTelemetriesLogicalOperator string
+// LogicalOperator - Logical operator between the source group and the target group filters
+type LogicalOperator string
 
 const (
-	GetConnectionTelemetriesLogicalOperatorAnd GetConnectionTelemetriesLogicalOperator = "and"
-	GetConnectionTelemetriesLogicalOperatorOr  GetConnectionTelemetriesLogicalOperator = "or"
+	LogicalOperatorAnd LogicalOperator = "and"
+	LogicalOperatorOr  LogicalOperator = "or"
 )
 
-func (e GetConnectionTelemetriesLogicalOperator) ToPointer() *GetConnectionTelemetriesLogicalOperator {
+func (e LogicalOperator) ToPointer() *LogicalOperator {
 	return &e
 }
 
-func (e *GetConnectionTelemetriesLogicalOperator) UnmarshalJSON(data []byte) error {
+func (e *LogicalOperator) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -32,27 +32,27 @@ func (e *GetConnectionTelemetriesLogicalOperator) UnmarshalJSON(data []byte) err
 	case "and":
 		fallthrough
 	case "or":
-		*e = GetConnectionTelemetriesLogicalOperator(v)
+		*e = LogicalOperator(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetConnectionTelemetriesLogicalOperator: %v", v)
+		return fmt.Errorf("invalid value for LogicalOperator: %v", v)
 	}
 }
 
-type GetConnectionTelemetriesResult string
+type GetConnectionTelemetriesQueryParamResult string
 
 const (
-	GetConnectionTelemetriesResultDetect  GetConnectionTelemetriesResult = "DETECT"
-	GetConnectionTelemetriesResultBlock   GetConnectionTelemetriesResult = "BLOCK"
-	GetConnectionTelemetriesResultAllow   GetConnectionTelemetriesResult = "ALLOW"
-	GetConnectionTelemetriesResultEncrypt GetConnectionTelemetriesResult = "ENCRYPT"
+	GetConnectionTelemetriesQueryParamResultDetect  GetConnectionTelemetriesQueryParamResult = "DETECT"
+	GetConnectionTelemetriesQueryParamResultBlock   GetConnectionTelemetriesQueryParamResult = "BLOCK"
+	GetConnectionTelemetriesQueryParamResultAllow   GetConnectionTelemetriesQueryParamResult = "ALLOW"
+	GetConnectionTelemetriesQueryParamResultEncrypt GetConnectionTelemetriesQueryParamResult = "ENCRYPT"
 )
 
-func (e GetConnectionTelemetriesResult) ToPointer() *GetConnectionTelemetriesResult {
+func (e GetConnectionTelemetriesQueryParamResult) ToPointer() *GetConnectionTelemetriesQueryParamResult {
 	return &e
 }
 
-func (e *GetConnectionTelemetriesResult) UnmarshalJSON(data []byte) error {
+func (e *GetConnectionTelemetriesQueryParamResult) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -65,26 +65,26 @@ func (e *GetConnectionTelemetriesResult) UnmarshalJSON(data []byte) error {
 	case "ALLOW":
 		fallthrough
 	case "ENCRYPT":
-		*e = GetConnectionTelemetriesResult(v)
+		*e = GetConnectionTelemetriesQueryParamResult(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetConnectionTelemetriesResult: %v", v)
+		return fmt.Errorf("invalid value for GetConnectionTelemetriesQueryParamResult: %v", v)
 	}
 }
 
-// GetConnectionTelemetriesSortDir - sorting direction
-type GetConnectionTelemetriesSortDir string
+// GetConnectionTelemetriesQueryParamSortDir - sorting direction
+type GetConnectionTelemetriesQueryParamSortDir string
 
 const (
-	GetConnectionTelemetriesSortDirAsc  GetConnectionTelemetriesSortDir = "ASC"
-	GetConnectionTelemetriesSortDirDesc GetConnectionTelemetriesSortDir = "DESC"
+	GetConnectionTelemetriesQueryParamSortDirAsc  GetConnectionTelemetriesQueryParamSortDir = "ASC"
+	GetConnectionTelemetriesQueryParamSortDirDesc GetConnectionTelemetriesQueryParamSortDir = "DESC"
 )
 
-func (e GetConnectionTelemetriesSortDir) ToPointer() *GetConnectionTelemetriesSortDir {
+func (e GetConnectionTelemetriesQueryParamSortDir) ToPointer() *GetConnectionTelemetriesQueryParamSortDir {
 	return &e
 }
 
-func (e *GetConnectionTelemetriesSortDir) UnmarshalJSON(data []byte) error {
+func (e *GetConnectionTelemetriesQueryParamSortDir) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -93,39 +93,39 @@ func (e *GetConnectionTelemetriesSortDir) UnmarshalJSON(data []byte) error {
 	case "ASC":
 		fallthrough
 	case "DESC":
-		*e = GetConnectionTelemetriesSortDir(v)
+		*e = GetConnectionTelemetriesQueryParamSortDir(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetConnectionTelemetriesSortDir: %v", v)
+		return fmt.Errorf("invalid value for GetConnectionTelemetriesQueryParamSortDir: %v", v)
 	}
 }
 
-// GetConnectionTelemetriesSortKey - sort key
-type GetConnectionTelemetriesSortKey string
+// GetConnectionTelemetriesQueryParamSortKey - sort key
+type GetConnectionTelemetriesQueryParamSortKey string
 
 const (
-	GetConnectionTelemetriesSortKeySourceAppName         GetConnectionTelemetriesSortKey = "sourceAppName"
-	GetConnectionTelemetriesSortKeySourceAppType         GetConnectionTelemetriesSortKey = "sourceAppType"
-	GetConnectionTelemetriesSortKeySourceEnvironmentName GetConnectionTelemetriesSortKey = "sourceEnvironmentName"
-	GetConnectionTelemetriesSortKeySourceExecutable      GetConnectionTelemetriesSortKey = "sourceExecutable"
-	GetConnectionTelemetriesSortKeySourceRisk            GetConnectionTelemetriesSortKey = "sourceRisk"
-	GetConnectionTelemetriesSortKeySourceHostName        GetConnectionTelemetriesSortKey = "sourceHostName"
-	GetConnectionTelemetriesSortKeyTargetAppName         GetConnectionTelemetriesSortKey = "targetAppName"
-	GetConnectionTelemetriesSortKeyTargetAppType         GetConnectionTelemetriesSortKey = "targetAppType"
-	GetConnectionTelemetriesSortKeyTargetEnvironmentName GetConnectionTelemetriesSortKey = "targetEnvironmentName"
-	GetConnectionTelemetriesSortKeyTargetExecutable      GetConnectionTelemetriesSortKey = "targetExecutable"
-	GetConnectionTelemetriesSortKeyTargetRisk            GetConnectionTelemetriesSortKey = "targetRisk"
-	GetConnectionTelemetriesSortKeyTargetHostName        GetConnectionTelemetriesSortKey = "targetHostName"
-	GetConnectionTelemetriesSortKeyFirstSeen             GetConnectionTelemetriesSortKey = "firstSeen"
-	GetConnectionTelemetriesSortKeyLastSeen              GetConnectionTelemetriesSortKey = "lastSeen"
-	GetConnectionTelemetriesSortKeyTotal                 GetConnectionTelemetriesSortKey = "total"
+	GetConnectionTelemetriesQueryParamSortKeySourceAppName         GetConnectionTelemetriesQueryParamSortKey = "sourceAppName"
+	GetConnectionTelemetriesQueryParamSortKeySourceAppType         GetConnectionTelemetriesQueryParamSortKey = "sourceAppType"
+	GetConnectionTelemetriesQueryParamSortKeySourceEnvironmentName GetConnectionTelemetriesQueryParamSortKey = "sourceEnvironmentName"
+	GetConnectionTelemetriesQueryParamSortKeySourceExecutable      GetConnectionTelemetriesQueryParamSortKey = "sourceExecutable"
+	GetConnectionTelemetriesQueryParamSortKeySourceRisk            GetConnectionTelemetriesQueryParamSortKey = "sourceRisk"
+	GetConnectionTelemetriesQueryParamSortKeySourceHostName        GetConnectionTelemetriesQueryParamSortKey = "sourceHostName"
+	GetConnectionTelemetriesQueryParamSortKeyTargetAppName         GetConnectionTelemetriesQueryParamSortKey = "targetAppName"
+	GetConnectionTelemetriesQueryParamSortKeyTargetAppType         GetConnectionTelemetriesQueryParamSortKey = "targetAppType"
+	GetConnectionTelemetriesQueryParamSortKeyTargetEnvironmentName GetConnectionTelemetriesQueryParamSortKey = "targetEnvironmentName"
+	GetConnectionTelemetriesQueryParamSortKeyTargetExecutable      GetConnectionTelemetriesQueryParamSortKey = "targetExecutable"
+	GetConnectionTelemetriesQueryParamSortKeyTargetRisk            GetConnectionTelemetriesQueryParamSortKey = "targetRisk"
+	GetConnectionTelemetriesQueryParamSortKeyTargetHostName        GetConnectionTelemetriesQueryParamSortKey = "targetHostName"
+	GetConnectionTelemetriesQueryParamSortKeyFirstSeen             GetConnectionTelemetriesQueryParamSortKey = "firstSeen"
+	GetConnectionTelemetriesQueryParamSortKeyLastSeen              GetConnectionTelemetriesQueryParamSortKey = "lastSeen"
+	GetConnectionTelemetriesQueryParamSortKeyTotal                 GetConnectionTelemetriesQueryParamSortKey = "total"
 )
 
-func (e GetConnectionTelemetriesSortKey) ToPointer() *GetConnectionTelemetriesSortKey {
+func (e GetConnectionTelemetriesQueryParamSortKey) ToPointer() *GetConnectionTelemetriesQueryParamSortKey {
 	return &e
 }
 
-func (e *GetConnectionTelemetriesSortKey) UnmarshalJSON(data []byte) error {
+func (e *GetConnectionTelemetriesQueryParamSortKey) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -160,26 +160,26 @@ func (e *GetConnectionTelemetriesSortKey) UnmarshalJSON(data []byte) error {
 	case "lastSeen":
 		fallthrough
 	case "total":
-		*e = GetConnectionTelemetriesSortKey(v)
+		*e = GetConnectionTelemetriesQueryParamSortKey(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetConnectionTelemetriesSortKey: %v", v)
+		return fmt.Errorf("invalid value for GetConnectionTelemetriesQueryParamSortKey: %v", v)
 	}
 }
 
-type GetConnectionTelemetriesSourceRisk string
+type SourceRisk string
 
 const (
-	GetConnectionTelemetriesSourceRiskHigh   GetConnectionTelemetriesSourceRisk = "HIGH"
-	GetConnectionTelemetriesSourceRiskMedium GetConnectionTelemetriesSourceRisk = "MEDIUM"
-	GetConnectionTelemetriesSourceRiskLow    GetConnectionTelemetriesSourceRisk = "LOW"
+	SourceRiskHigh   SourceRisk = "HIGH"
+	SourceRiskMedium SourceRisk = "MEDIUM"
+	SourceRiskLow    SourceRisk = "LOW"
 )
 
-func (e GetConnectionTelemetriesSourceRisk) ToPointer() *GetConnectionTelemetriesSourceRisk {
+func (e SourceRisk) ToPointer() *SourceRisk {
 	return &e
 }
 
-func (e *GetConnectionTelemetriesSourceRisk) UnmarshalJSON(data []byte) error {
+func (e *SourceRisk) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -190,26 +190,26 @@ func (e *GetConnectionTelemetriesSourceRisk) UnmarshalJSON(data []byte) error {
 	case "MEDIUM":
 		fallthrough
 	case "LOW":
-		*e = GetConnectionTelemetriesSourceRisk(v)
+		*e = SourceRisk(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetConnectionTelemetriesSourceRisk: %v", v)
+		return fmt.Errorf("invalid value for SourceRisk: %v", v)
 	}
 }
 
-type GetConnectionTelemetriesTargetRisk string
+type TargetRisk string
 
 const (
-	GetConnectionTelemetriesTargetRiskHigh   GetConnectionTelemetriesTargetRisk = "HIGH"
-	GetConnectionTelemetriesTargetRiskMedium GetConnectionTelemetriesTargetRisk = "MEDIUM"
-	GetConnectionTelemetriesTargetRiskLow    GetConnectionTelemetriesTargetRisk = "LOW"
+	TargetRiskHigh   TargetRisk = "HIGH"
+	TargetRiskMedium TargetRisk = "MEDIUM"
+	TargetRiskLow    TargetRisk = "LOW"
 )
 
-func (e GetConnectionTelemetriesTargetRisk) ToPointer() *GetConnectionTelemetriesTargetRisk {
+func (e TargetRisk) ToPointer() *TargetRisk {
 	return &e
 }
 
-func (e *GetConnectionTelemetriesTargetRisk) UnmarshalJSON(data []byte) error {
+func (e *TargetRisk) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -220,10 +220,10 @@ func (e *GetConnectionTelemetriesTargetRisk) UnmarshalJSON(data []byte) error {
 	case "MEDIUM":
 		fallthrough
 	case "LOW":
-		*e = GetConnectionTelemetriesTargetRisk(v)
+		*e = TargetRisk(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetConnectionTelemetriesTargetRisk: %v", v)
+		return fmt.Errorf("invalid value for TargetRisk: %v", v)
 	}
 }
 
@@ -233,26 +233,26 @@ type GetConnectionTelemetriesRequest struct {
 	// End date of the query
 	EndTime time.Time `queryParam:"style=form,explode=true,name=endTime"`
 	// Logical operator between the source group and the target group filters
-	LogicalOperator *GetConnectionTelemetriesLogicalOperator `default:"and" queryParam:"style=form,explode=true,name=logicalOperator"`
+	LogicalOperator *LogicalOperator `default:"and" queryParam:"style=form,explode=true,name=logicalOperator"`
 	// The number of entries to return (pagination)
 	MaxResults *float64 `default:"100" queryParam:"style=form,explode=true,name=maxResults"`
 	// Return entries from this offset (pagination)
 	Offset *float64 `default:"0" queryParam:"style=form,explode=true,name=offset"`
 	// connection result filter
-	Result []GetConnectionTelemetriesResult `queryParam:"style=form,explode=false,name=result"`
+	Result []GetConnectionTelemetriesQueryParamResult `queryParam:"style=form,explode=false,name=result"`
 	// When true, the API will only return entries that violate the active policy
 	ShowOnlyViolations *bool `queryParam:"style=form,explode=true,name=showOnlyViolations"`
 	// sorting direction
-	SortDir *GetConnectionTelemetriesSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
+	SortDir *GetConnectionTelemetriesQueryParamSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
 	// sort key
-	SortKey               GetConnectionTelemetriesSortKey `queryParam:"style=form,explode=true,name=sortKey"`
-	SourceAppName         []string                        `queryParam:"style=form,explode=false,name=sourceAppName"`
-	SourceEnvironmentName []string                        `queryParam:"style=form,explode=false,name=sourceEnvironmentName"`
-	SourceExecutable      []string                        `queryParam:"style=form,explode=false,name=sourceExecutable"`
-	SourceHostName        []string                        `queryParam:"style=form,explode=false,name=sourceHostName"`
+	SortKey               GetConnectionTelemetriesQueryParamSortKey `queryParam:"style=form,explode=true,name=sortKey"`
+	SourceAppName         []string                                  `queryParam:"style=form,explode=false,name=sourceAppName"`
+	SourceEnvironmentName []string                                  `queryParam:"style=form,explode=false,name=sourceEnvironmentName"`
+	SourceExecutable      []string                                  `queryParam:"style=form,explode=false,name=sourceExecutable"`
+	SourceHostName        []string                                  `queryParam:"style=form,explode=false,name=sourceHostName"`
 	// namespace filter for source in connection telemetries, a base 64 representation of a NamespacesFilter definition object
-	SourceNamespacesFilter *string                              `queryParam:"style=form,explode=true,name=sourceNamespacesFilter"`
-	SourceRisk             []GetConnectionTelemetriesSourceRisk `queryParam:"style=form,explode=false,name=sourceRisk"`
+	SourceNamespacesFilter *string      `queryParam:"style=form,explode=true,name=sourceNamespacesFilter"`
+	SourceRisk             []SourceRisk `queryParam:"style=form,explode=false,name=sourceRisk"`
 	// Start date of the query
 	StartTime             time.Time `queryParam:"style=form,explode=true,name=startTime"`
 	TargetAppName         []string  `queryParam:"style=form,explode=false,name=targetAppName"`
@@ -260,8 +260,8 @@ type GetConnectionTelemetriesRequest struct {
 	TargetExecutable      []string  `queryParam:"style=form,explode=false,name=targetExecutable"`
 	TargetHostName        []string  `queryParam:"style=form,explode=false,name=targetHostName"`
 	// namespace filter for target in connection telemetries. a base 64 representation of a NamespacesFilter definition object
-	TargetNamespacesFilter *string                              `queryParam:"style=form,explode=true,name=targetNamespacesFilter"`
-	TargetRisk             []GetConnectionTelemetriesTargetRisk `queryParam:"style=form,explode=false,name=targetRisk"`
+	TargetNamespacesFilter *string      `queryParam:"style=form,explode=true,name=targetNamespacesFilter"`
+	TargetRisk             []TargetRisk `queryParam:"style=form,explode=false,name=targetRisk"`
 }
 
 func (g GetConnectionTelemetriesRequest) MarshalJSON() ([]byte, error) {
@@ -289,7 +289,7 @@ func (o *GetConnectionTelemetriesRequest) GetEndTime() time.Time {
 	return o.EndTime
 }
 
-func (o *GetConnectionTelemetriesRequest) GetLogicalOperator() *GetConnectionTelemetriesLogicalOperator {
+func (o *GetConnectionTelemetriesRequest) GetLogicalOperator() *LogicalOperator {
 	if o == nil {
 		return nil
 	}
@@ -310,7 +310,7 @@ func (o *GetConnectionTelemetriesRequest) GetOffset() *float64 {
 	return o.Offset
 }
 
-func (o *GetConnectionTelemetriesRequest) GetResult() []GetConnectionTelemetriesResult {
+func (o *GetConnectionTelemetriesRequest) GetResult() []GetConnectionTelemetriesQueryParamResult {
 	if o == nil {
 		return nil
 	}
@@ -324,16 +324,16 @@ func (o *GetConnectionTelemetriesRequest) GetShowOnlyViolations() *bool {
 	return o.ShowOnlyViolations
 }
 
-func (o *GetConnectionTelemetriesRequest) GetSortDir() *GetConnectionTelemetriesSortDir {
+func (o *GetConnectionTelemetriesRequest) GetSortDir() *GetConnectionTelemetriesQueryParamSortDir {
 	if o == nil {
 		return nil
 	}
 	return o.SortDir
 }
 
-func (o *GetConnectionTelemetriesRequest) GetSortKey() GetConnectionTelemetriesSortKey {
+func (o *GetConnectionTelemetriesRequest) GetSortKey() GetConnectionTelemetriesQueryParamSortKey {
 	if o == nil {
-		return GetConnectionTelemetriesSortKey("")
+		return GetConnectionTelemetriesQueryParamSortKey("")
 	}
 	return o.SortKey
 }
@@ -373,7 +373,7 @@ func (o *GetConnectionTelemetriesRequest) GetSourceNamespacesFilter() *string {
 	return o.SourceNamespacesFilter
 }
 
-func (o *GetConnectionTelemetriesRequest) GetSourceRisk() []GetConnectionTelemetriesSourceRisk {
+func (o *GetConnectionTelemetriesRequest) GetSourceRisk() []SourceRisk {
 	if o == nil {
 		return nil
 	}
@@ -422,7 +422,7 @@ func (o *GetConnectionTelemetriesRequest) GetTargetNamespacesFilter() *string {
 	return o.TargetNamespacesFilter
 }
 
-func (o *GetConnectionTelemetriesRequest) GetTargetRisk() []GetConnectionTelemetriesTargetRisk {
+func (o *GetConnectionTelemetriesRequest) GetTargetRisk() []TargetRisk {
 	if o == nil {
 		return nil
 	}
@@ -430,21 +430,14 @@ func (o *GetConnectionTelemetriesRequest) GetTargetRisk() []GetConnectionTelemet
 }
 
 type GetConnectionTelemetriesResponse struct {
-	// Success
-	ConnectionTelemetries []shared.ConnectionTelemetry
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-}
-
-func (o *GetConnectionTelemetriesResponse) GetConnectionTelemetries() []shared.ConnectionTelemetry {
-	if o == nil {
-		return nil
-	}
-	return o.ConnectionTelemetries
+	// Success
+	Classes []shared.ConnectionTelemetry
 }
 
 func (o *GetConnectionTelemetriesResponse) GetContentType() string {
@@ -466,4 +459,11 @@ func (o *GetConnectionTelemetriesResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetConnectionTelemetriesResponse) GetClasses() []shared.ConnectionTelemetry {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

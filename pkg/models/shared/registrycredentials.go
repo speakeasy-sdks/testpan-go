@@ -7,19 +7,19 @@ import (
 	"fmt"
 )
 
-type RegistryCredentialsRegistryCredentialsType string
+type RegistryCredentialsType string
 
 const (
-	RegistryCredentialsRegistryCredentialsTypeAwsRegistryCredentials      RegistryCredentialsRegistryCredentialsType = "AwsRegistryCredentials"
-	RegistryCredentialsRegistryCredentialsTypeStandardRegistryCredentials RegistryCredentialsRegistryCredentialsType = "StandardRegistryCredentials"
-	RegistryCredentialsRegistryCredentialsTypeJfrogRegistryCredentials    RegistryCredentialsRegistryCredentialsType = "JfrogRegistryCredentials"
+	RegistryCredentialsTypeAwsRegistryCredentials      RegistryCredentialsType = "AwsRegistryCredentials"
+	RegistryCredentialsTypeStandardRegistryCredentials RegistryCredentialsType = "StandardRegistryCredentials"
+	RegistryCredentialsTypeJfrogRegistryCredentials    RegistryCredentialsType = "JfrogRegistryCredentials"
 )
 
-func (e RegistryCredentialsRegistryCredentialsType) ToPointer() *RegistryCredentialsRegistryCredentialsType {
+func (e RegistryCredentialsType) ToPointer() *RegistryCredentialsType {
 	return &e
 }
 
-func (e *RegistryCredentialsRegistryCredentialsType) UnmarshalJSON(data []byte) error {
+func (e *RegistryCredentialsType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -30,20 +30,20 @@ func (e *RegistryCredentialsRegistryCredentialsType) UnmarshalJSON(data []byte) 
 	case "StandardRegistryCredentials":
 		fallthrough
 	case "JfrogRegistryCredentials":
-		*e = RegistryCredentialsRegistryCredentialsType(v)
+		*e = RegistryCredentialsType(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for RegistryCredentialsRegistryCredentialsType: %v", v)
+		return fmt.Errorf("invalid value for RegistryCredentialsType: %v", v)
 	}
 }
 
 type RegistryCredentials struct {
-	RegistryCredentialsType RegistryCredentialsRegistryCredentialsType `json:"registryCredentialsType"`
+	RegistryCredentialsType RegistryCredentialsType `json:"registryCredentialsType"`
 }
 
-func (o *RegistryCredentials) GetRegistryCredentialsType() RegistryCredentialsRegistryCredentialsType {
+func (o *RegistryCredentials) GetRegistryCredentialsType() RegistryCredentialsType {
 	if o == nil {
-		return RegistryCredentialsRegistryCredentialsType("")
+		return RegistryCredentialsType("")
 	}
 	return o.RegistryCredentialsType
 }

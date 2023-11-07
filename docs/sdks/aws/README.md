@@ -1,5 +1,5 @@
 # Aws
-(*Aws*)
+(*.Aws*)
 
 ## Overview
 
@@ -47,7 +47,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.AWSAccounts != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -95,7 +95,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.AWSRoles != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -143,7 +143,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.Tags != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -195,7 +195,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetAwsAwsAccountIDRegions200ApplicationJSONStrings != nil {
+    if res.Strings != nil {
         // handle response
     }
 }
@@ -248,7 +248,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.PortshiftAwsSubnets != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -302,7 +302,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.VpcResponses != nil {
+    if res.Classes != nil {
         // handle response
     }
 }

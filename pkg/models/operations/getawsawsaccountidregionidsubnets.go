@@ -31,12 +31,12 @@ func (o *GetAwsAwsAccountIDRegionIDSubnetsRequest) GetRegionID() string {
 type GetAwsAwsAccountIDRegionIDSubnetsResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// Success
-	PortshiftAwsSubnets []shared.PortshiftAwsSubnet
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Success
+	Classes []shared.PortshiftAwsSubnet
 }
 
 func (o *GetAwsAwsAccountIDRegionIDSubnetsResponse) GetContentType() string {
@@ -44,13 +44,6 @@ func (o *GetAwsAwsAccountIDRegionIDSubnetsResponse) GetContentType() string {
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *GetAwsAwsAccountIDRegionIDSubnetsResponse) GetPortshiftAwsSubnets() []shared.PortshiftAwsSubnet {
-	if o == nil {
-		return nil
-	}
-	return o.PortshiftAwsSubnets
 }
 
 func (o *GetAwsAwsAccountIDRegionIDSubnetsResponse) GetStatusCode() int {
@@ -65,4 +58,11 @@ func (o *GetAwsAwsAccountIDRegionIDSubnetsResponse) GetRawResponse() *http.Respo
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetAwsAwsAccountIDRegionIDSubnetsResponse) GetClasses() []shared.PortshiftAwsSubnet {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

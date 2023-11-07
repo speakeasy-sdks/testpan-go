@@ -10,19 +10,19 @@ import (
 	"net/http"
 )
 
-// GetDashboardApisecTopRiskyFindingsAPISecSource - source filter. an enum representing the source of the APIs service in scope
-type GetDashboardApisecTopRiskyFindingsAPISecSource string
+// GetDashboardApisecTopRiskyFindingsQueryParamAPISecSource - source filter. an enum representing the source of the APIs service in scope
+type GetDashboardApisecTopRiskyFindingsQueryParamAPISecSource string
 
 const (
-	GetDashboardApisecTopRiskyFindingsAPISecSourceInternal GetDashboardApisecTopRiskyFindingsAPISecSource = "INTERNAL"
-	GetDashboardApisecTopRiskyFindingsAPISecSourceExternal GetDashboardApisecTopRiskyFindingsAPISecSource = "EXTERNAL"
+	GetDashboardApisecTopRiskyFindingsQueryParamAPISecSourceInternal GetDashboardApisecTopRiskyFindingsQueryParamAPISecSource = "INTERNAL"
+	GetDashboardApisecTopRiskyFindingsQueryParamAPISecSourceExternal GetDashboardApisecTopRiskyFindingsQueryParamAPISecSource = "EXTERNAL"
 )
 
-func (e GetDashboardApisecTopRiskyFindingsAPISecSource) ToPointer() *GetDashboardApisecTopRiskyFindingsAPISecSource {
+func (e GetDashboardApisecTopRiskyFindingsQueryParamAPISecSource) ToPointer() *GetDashboardApisecTopRiskyFindingsQueryParamAPISecSource {
 	return &e
 }
 
-func (e *GetDashboardApisecTopRiskyFindingsAPISecSource) UnmarshalJSON(data []byte) error {
+func (e *GetDashboardApisecTopRiskyFindingsQueryParamAPISecSource) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -31,16 +31,16 @@ func (e *GetDashboardApisecTopRiskyFindingsAPISecSource) UnmarshalJSON(data []by
 	case "INTERNAL":
 		fallthrough
 	case "EXTERNAL":
-		*e = GetDashboardApisecTopRiskyFindingsAPISecSource(v)
+		*e = GetDashboardApisecTopRiskyFindingsQueryParamAPISecSource(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetDashboardApisecTopRiskyFindingsAPISecSource: %v", v)
+		return fmt.Errorf("invalid value for GetDashboardApisecTopRiskyFindingsQueryParamAPISecSource: %v", v)
 	}
 }
 
 type GetDashboardApisecTopRiskyFindingsRequest struct {
 	// source filter. an enum representing the source of the APIs service in scope
-	APISecSource GetDashboardApisecTopRiskyFindingsAPISecSource `default:"INTERNAL" queryParam:"style=form,explode=true,name=apiSecSource"`
+	APISecSource GetDashboardApisecTopRiskyFindingsQueryParamAPISecSource `default:"INTERNAL" queryParam:"style=form,explode=true,name=apiSecSource"`
 	// The number of entries to return (pagination)
 	MaxResults *float64 `default:"100" queryParam:"style=form,explode=true,name=maxResults"`
 }
@@ -56,9 +56,9 @@ func (g *GetDashboardApisecTopRiskyFindingsRequest) UnmarshalJSON(data []byte) e
 	return nil
 }
 
-func (o *GetDashboardApisecTopRiskyFindingsRequest) GetAPISecSource() GetDashboardApisecTopRiskyFindingsAPISecSource {
+func (o *GetDashboardApisecTopRiskyFindingsRequest) GetAPISecSource() GetDashboardApisecTopRiskyFindingsQueryParamAPISecSource {
 	if o == nil {
-		return GetDashboardApisecTopRiskyFindingsAPISecSource("")
+		return GetDashboardApisecTopRiskyFindingsQueryParamAPISecSource("")
 	}
 	return o.APISecSource
 }

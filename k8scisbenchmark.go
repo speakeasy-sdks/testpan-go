@@ -15,19 +15,19 @@ import (
 	"strings"
 )
 
-// k8sCisBenchmark - APIs to get the kubernetes cis benchmark data
-type k8sCisBenchmark struct {
+// K8sCisBenchmark - APIs to get the kubernetes cis benchmark data
+type K8sCisBenchmark struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newK8sCisBenchmark(sdkConfig sdkConfiguration) *k8sCisBenchmark {
-	return &k8sCisBenchmark{
+func newK8sCisBenchmark(sdkConfig sdkConfiguration) *K8sCisBenchmark {
+	return &K8sCisBenchmark{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // GetK8sCISBenchmark - Get k8s cis benchmark for clusters
-func (s *k8sCisBenchmark) GetK8sCISBenchmark(ctx context.Context, request operations.GetK8sCISBenchmarkRequest) (*operations.GetK8sCISBenchmarkResponse, error) {
+func (s *K8sCisBenchmark) GetK8sCISBenchmark(ctx context.Context, request operations.GetK8sCISBenchmarkRequest) (*operations.GetK8sCISBenchmarkResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/k8sCISBenchmark"
 
@@ -75,7 +75,7 @@ func (s *k8sCisBenchmark) GetK8sCISBenchmark(ctx context.Context, request operat
 				return nil, err
 			}
 
-			res.K8sCISBenchmarkClustersSummaries = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -91,7 +91,7 @@ func (s *k8sCisBenchmark) GetK8sCISBenchmark(ctx context.Context, request operat
 }
 
 // GetK8sCISBenchmarkSummary - Get k8s cis benchmark summary of account
-func (s *k8sCisBenchmark) GetK8sCISBenchmarkSummary(ctx context.Context) (*operations.GetK8sCISBenchmarkSummaryResponse, error) {
+func (s *K8sCisBenchmark) GetK8sCISBenchmarkSummary(ctx context.Context) (*operations.GetK8sCISBenchmarkSummaryResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/k8sCISBenchmark/summary"
 
@@ -151,7 +151,7 @@ func (s *k8sCisBenchmark) GetK8sCISBenchmarkSummary(ctx context.Context) (*opera
 }
 
 // GetK8sCISBenchmarkClusterID - Get k8s cis benchmark for a specific cluster
-func (s *k8sCisBenchmark) GetK8sCISBenchmarkClusterID(ctx context.Context, request operations.GetK8sCISBenchmarkClusterIDRequest) (*operations.GetK8sCISBenchmarkClusterIDResponse, error) {
+func (s *K8sCisBenchmark) GetK8sCISBenchmarkClusterID(ctx context.Context, request operations.GetK8sCISBenchmarkClusterIDRequest) (*operations.GetK8sCISBenchmarkClusterIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/k8sCISBenchmark/{clusterId}", request, nil)
 	if err != nil {
@@ -203,7 +203,7 @@ func (s *k8sCisBenchmark) GetK8sCISBenchmarkClusterID(ctx context.Context, reque
 }
 
 // PostK8sCISBenchmarkClusterID - initiate k8s cis benchmark scan for a specific cluster
-func (s *k8sCisBenchmark) PostK8sCISBenchmarkClusterID(ctx context.Context, request operations.PostK8sCISBenchmarkClusterIDRequest) (*operations.PostK8sCISBenchmarkClusterIDResponse, error) {
+func (s *K8sCisBenchmark) PostK8sCISBenchmarkClusterID(ctx context.Context, request operations.PostK8sCISBenchmarkClusterIDRequest) (*operations.PostK8sCISBenchmarkClusterIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/k8sCISBenchmark/{clusterId}", request, nil)
 	if err != nil {
@@ -266,7 +266,7 @@ func (s *k8sCisBenchmark) PostK8sCISBenchmarkClusterID(ctx context.Context, requ
 }
 
 // PutK8sCISBenchmarkClusterID - edit k8s cis benchmark for a specific cluster with test statuses
-func (s *k8sCisBenchmark) PutK8sCISBenchmarkClusterID(ctx context.Context, request operations.PutK8sCISBenchmarkClusterIDRequest) (*operations.PutK8sCISBenchmarkClusterIDResponse, error) {
+func (s *K8sCisBenchmark) PutK8sCISBenchmarkClusterID(ctx context.Context, request operations.PutK8sCISBenchmarkClusterIDRequest) (*operations.PutK8sCISBenchmarkClusterIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/k8sCISBenchmark/{clusterId}", request, nil)
 	if err != nil {

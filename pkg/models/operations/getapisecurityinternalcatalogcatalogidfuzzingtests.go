@@ -19,21 +19,14 @@ func (o *GetAPISecurityInternalCatalogCatalogIDFuzzingTestsRequest) GetCatalogID
 }
 
 type GetAPISecurityInternalCatalogCatalogIDFuzzingTestsResponse struct {
-	// Success
-	APIServiceFuzzingTests []shared.APIServiceFuzzingTest
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-}
-
-func (o *GetAPISecurityInternalCatalogCatalogIDFuzzingTestsResponse) GetAPIServiceFuzzingTests() []shared.APIServiceFuzzingTest {
-	if o == nil {
-		return nil
-	}
-	return o.APIServiceFuzzingTests
+	// Success
+	Classes []shared.APIServiceFuzzingTest
 }
 
 func (o *GetAPISecurityInternalCatalogCatalogIDFuzzingTestsResponse) GetContentType() string {
@@ -55,4 +48,11 @@ func (o *GetAPISecurityInternalCatalogCatalogIDFuzzingTestsResponse) GetRawRespo
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetAPISecurityInternalCatalogCatalogIDFuzzingTestsResponse) GetClasses() []shared.APIServiceFuzzingTest {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

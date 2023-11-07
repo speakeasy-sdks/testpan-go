@@ -14,7 +14,7 @@ type GetAuditLogsActionsResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Success
-	GetAuditLogsActions200ApplicationJSONStrings []string
+	Strings []string
 }
 
 func (o *GetAuditLogsActionsResponse) GetContentType() string {
@@ -38,9 +38,9 @@ func (o *GetAuditLogsActionsResponse) GetRawResponse() *http.Response {
 	return o.RawResponse
 }
 
-func (o *GetAuditLogsActionsResponse) GetGetAuditLogsActions200ApplicationJSONStrings() []string {
+func (o *GetAuditLogsActionsResponse) GetStrings() []string {
 	if o == nil {
 		return nil
 	}
-	return o.GetAuditLogsActions200ApplicationJSONStrings
+	return o.Strings
 }

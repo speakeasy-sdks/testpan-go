@@ -8,15 +8,15 @@ import (
 )
 
 type PutSeccompProfilesProfileIDRequest struct {
-	SeccompProfileInput shared.SeccompProfileInput `request:"mediaType=application/json"`
-	ProfileID           string                     `pathParam:"style=simple,explode=false,name=profileId"`
+	SeccompProfile shared.SeccompProfileInput `request:"mediaType=application/json"`
+	ProfileID      string                     `pathParam:"style=simple,explode=false,name=profileId"`
 }
 
-func (o *PutSeccompProfilesProfileIDRequest) GetSeccompProfileInput() shared.SeccompProfileInput {
+func (o *PutSeccompProfilesProfileIDRequest) GetSeccompProfile() shared.SeccompProfileInput {
 	if o == nil {
 		return shared.SeccompProfileInput{}
 	}
-	return o.SeccompProfileInput
+	return o.SeccompProfile
 }
 
 func (o *PutSeccompProfilesProfileIDRequest) GetProfileID() string {

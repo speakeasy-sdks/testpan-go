@@ -52,7 +52,7 @@ type GetKubernetesClustersKubernetesClusterIDDownloadBundleResponse struct {
 	RawResponse *http.Response
 	// OK
 	// The Close method must be called on this field, even if it is not used, to prevent resource leaks.
-	GetKubernetesClustersKubernetesClusterIDDownloadBundle200ApplicationJSONBinaryString io.ReadCloser
+	Stream io.ReadCloser
 }
 
 func (o *GetKubernetesClustersKubernetesClusterIDDownloadBundleResponse) GetAPIResponse() *shared.APIResponse {
@@ -83,9 +83,9 @@ func (o *GetKubernetesClustersKubernetesClusterIDDownloadBundleResponse) GetRawR
 	return o.RawResponse
 }
 
-func (o *GetKubernetesClustersKubernetesClusterIDDownloadBundleResponse) GetGetKubernetesClustersKubernetesClusterIDDownloadBundle200ApplicationJSONBinaryString() io.ReadCloser {
+func (o *GetKubernetesClustersKubernetesClusterIDDownloadBundleResponse) GetStream() io.ReadCloser {
 	if o == nil {
 		return nil
 	}
-	return o.GetKubernetesClustersKubernetesClusterIDDownloadBundle200ApplicationJSONBinaryString
+	return o.Stream
 }

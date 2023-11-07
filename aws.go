@@ -15,20 +15,20 @@ import (
 	"strings"
 )
 
-// aws - APIs used to change  credentials or return details about the  user's AWS environment
-type aws struct {
+// Aws - APIs used to change  credentials or return details about the  user's AWS environment
+type Aws struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newAws(sdkConfig sdkConfiguration) *aws {
-	return &aws{
+func newAws(sdkConfig sdkConfiguration) *Aws {
+	return &Aws{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // GetAwsAccounts - Get a list of AWS accounts
 // Returns a list of AWS accounts for this Secure Application account.
-func (s *aws) GetAwsAccounts(ctx context.Context) (*operations.GetAwsAccountsResponse, error) {
+func (s *Aws) GetAwsAccounts(ctx context.Context) (*operations.GetAwsAccountsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/aws/accounts"
 
@@ -72,7 +72,7 @@ func (s *aws) GetAwsAccounts(ctx context.Context) (*operations.GetAwsAccountsRes
 				return nil, err
 			}
 
-			res.AWSAccounts = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -88,7 +88,7 @@ func (s *aws) GetAwsAccounts(ctx context.Context) (*operations.GetAwsAccountsRes
 }
 
 // GetAwsRoles - Lists AWS role ARNs for the account
-func (s *aws) GetAwsRoles(ctx context.Context) (*operations.GetAwsRolesResponse, error) {
+func (s *Aws) GetAwsRoles(ctx context.Context) (*operations.GetAwsRolesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/aws/roles"
 
@@ -132,7 +132,7 @@ func (s *aws) GetAwsRoles(ctx context.Context) (*operations.GetAwsRolesResponse,
 				return nil, err
 			}
 
-			res.AWSRoles = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -146,7 +146,7 @@ func (s *aws) GetAwsRoles(ctx context.Context) (*operations.GetAwsRolesResponse,
 }
 
 // GetAwsTags - Get a list of AWS tag keys
-func (s *aws) GetAwsTags(ctx context.Context) (*operations.GetAwsTagsResponse, error) {
+func (s *Aws) GetAwsTags(ctx context.Context) (*operations.GetAwsTagsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/aws/tags"
 
@@ -190,7 +190,7 @@ func (s *aws) GetAwsTags(ctx context.Context) (*operations.GetAwsTagsResponse, e
 				return nil, err
 			}
 
-			res.Tags = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -207,7 +207,7 @@ func (s *aws) GetAwsTags(ctx context.Context) (*operations.GetAwsTagsResponse, e
 
 // GetAwsAwsAccountIDRegions - Get a list of regions for the  AWS account
 // Returns a list of regions for AWS account.
-func (s *aws) GetAwsAwsAccountIDRegions(ctx context.Context, request operations.GetAwsAwsAccountIDRegionsRequest) (*operations.GetAwsAwsAccountIDRegionsResponse, error) {
+func (s *Aws) GetAwsAwsAccountIDRegions(ctx context.Context, request operations.GetAwsAwsAccountIDRegionsRequest) (*operations.GetAwsAwsAccountIDRegionsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/aws/{awsAccountId}/regions", request, nil)
 	if err != nil {
@@ -254,7 +254,7 @@ func (s *aws) GetAwsAwsAccountIDRegions(ctx context.Context, request operations.
 				return nil, err
 			}
 
-			res.GetAwsAwsAccountIDRegions200ApplicationJSONStrings = out
+			res.Strings = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -270,7 +270,7 @@ func (s *aws) GetAwsAwsAccountIDRegions(ctx context.Context, request operations.
 }
 
 // GetAwsAwsAccountIDRegionIDSubnets - Get a list of AWS subnets for an AWS account and region
-func (s *aws) GetAwsAwsAccountIDRegionIDSubnets(ctx context.Context, request operations.GetAwsAwsAccountIDRegionIDSubnetsRequest) (*operations.GetAwsAwsAccountIDRegionIDSubnetsResponse, error) {
+func (s *Aws) GetAwsAwsAccountIDRegionIDSubnets(ctx context.Context, request operations.GetAwsAwsAccountIDRegionIDSubnetsRequest) (*operations.GetAwsAwsAccountIDRegionIDSubnetsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/aws/{awsAccountId}/{regionId}/subnets", request, nil)
 	if err != nil {
@@ -317,7 +317,7 @@ func (s *aws) GetAwsAwsAccountIDRegionIDSubnets(ctx context.Context, request ope
 				return nil, err
 			}
 
-			res.PortshiftAwsSubnets = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -334,7 +334,7 @@ func (s *aws) GetAwsAwsAccountIDRegionIDSubnets(ctx context.Context, request ope
 
 // GetAwsAwsAccountIDRegionIDVpcs - Get a list of VPCs for AWS accounts.
 // Returns a list of VPCs for an AWS account and region. These values are used to define a Secure Application environment.
-func (s *aws) GetAwsAwsAccountIDRegionIDVpcs(ctx context.Context, request operations.GetAwsAwsAccountIDRegionIDVpcsRequest) (*operations.GetAwsAwsAccountIDRegionIDVpcsResponse, error) {
+func (s *Aws) GetAwsAwsAccountIDRegionIDVpcs(ctx context.Context, request operations.GetAwsAwsAccountIDRegionIDVpcsRequest) (*operations.GetAwsAwsAccountIDRegionIDVpcsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/aws/{awsAccountId}/{regionId}/vpcs", request, nil)
 	if err != nil {
@@ -381,7 +381,7 @@ func (s *aws) GetAwsAwsAccountIDRegionIDVpcs(ctx context.Context, request operat
 				return nil, err
 			}
 
-			res.VpcResponses = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -398,7 +398,7 @@ func (s *aws) GetAwsAwsAccountIDRegionIDVpcs(ctx context.Context, request operat
 
 // PostAwsRoles - Add AWS role to the account
 // Upload a role ARN, that Secure Application will use to connect to the AWS account.
-func (s *aws) PostAwsRoles(ctx context.Context, request shared.AWSRolePost) (*operations.PostAwsRolesResponse, error) {
+func (s *Aws) PostAwsRoles(ctx context.Context, request shared.AWSRolePost) (*operations.PostAwsRolesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/aws/roles"
 
@@ -466,7 +466,7 @@ func (s *aws) PostAwsRoles(ctx context.Context, request shared.AWSRolePost) (*op
 }
 
 // PutAwsRolesRoleID - Change AWS role name
-func (s *aws) PutAwsRolesRoleID(ctx context.Context, request operations.PutAwsRolesRoleIDRequest) (*operations.PutAwsRolesRoleIDResponse, error) {
+func (s *Aws) PutAwsRolesRoleID(ctx context.Context, request operations.PutAwsRolesRoleIDRequest) (*operations.PutAwsRolesRoleIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/aws/roles/{roleId}", request, nil)
 	if err != nil {

@@ -10,12 +10,12 @@ import (
 type GetAdvisorPodSecurityPolicyResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// OK
-	PodSecurityPolicyRecommendationPeriods []shared.PodSecurityPolicyRecommendationPeriod
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// OK
+	Classes []shared.PodSecurityPolicyRecommendationPeriod
 }
 
 func (o *GetAdvisorPodSecurityPolicyResponse) GetContentType() string {
@@ -23,13 +23,6 @@ func (o *GetAdvisorPodSecurityPolicyResponse) GetContentType() string {
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *GetAdvisorPodSecurityPolicyResponse) GetPodSecurityPolicyRecommendationPeriods() []shared.PodSecurityPolicyRecommendationPeriod {
-	if o == nil {
-		return nil
-	}
-	return o.PodSecurityPolicyRecommendationPeriods
 }
 
 func (o *GetAdvisorPodSecurityPolicyResponse) GetStatusCode() int {
@@ -44,4 +37,11 @@ func (o *GetAdvisorPodSecurityPolicyResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetAdvisorPodSecurityPolicyResponse) GetClasses() []shared.PodSecurityPolicyRecommendationPeriod {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

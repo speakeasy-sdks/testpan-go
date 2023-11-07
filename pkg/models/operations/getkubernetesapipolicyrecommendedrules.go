@@ -10,12 +10,12 @@ import (
 type GetKubernetesAPIPolicyRecommendedRulesResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// Success
-	RecommendedKubernetesAPIRules []shared.RecommendedKubernetesAPIRule
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Success
+	Classes []shared.RecommendedKubernetesAPIRule
 }
 
 func (o *GetKubernetesAPIPolicyRecommendedRulesResponse) GetContentType() string {
@@ -23,13 +23,6 @@ func (o *GetKubernetesAPIPolicyRecommendedRulesResponse) GetContentType() string
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *GetKubernetesAPIPolicyRecommendedRulesResponse) GetRecommendedKubernetesAPIRules() []shared.RecommendedKubernetesAPIRule {
-	if o == nil {
-		return nil
-	}
-	return o.RecommendedKubernetesAPIRules
 }
 
 func (o *GetKubernetesAPIPolicyRecommendedRulesResponse) GetStatusCode() int {
@@ -44,4 +37,11 @@ func (o *GetKubernetesAPIPolicyRecommendedRulesResponse) GetRawResponse() *http.
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetKubernetesAPIPolicyRecommendedRulesResponse) GetClasses() []shared.RecommendedKubernetesAPIRule {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

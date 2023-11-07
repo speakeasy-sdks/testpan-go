@@ -14,7 +14,7 @@ type GetAPISecurityRiskFindingsCategoriesResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Success
-	GetAPISecurityRiskFindingsCategories200ApplicationJSONStrings []string
+	Strings []string
 }
 
 func (o *GetAPISecurityRiskFindingsCategoriesResponse) GetContentType() string {
@@ -38,9 +38,9 @@ func (o *GetAPISecurityRiskFindingsCategoriesResponse) GetRawResponse() *http.Re
 	return o.RawResponse
 }
 
-func (o *GetAPISecurityRiskFindingsCategoriesResponse) GetGetAPISecurityRiskFindingsCategories200ApplicationJSONStrings() []string {
+func (o *GetAPISecurityRiskFindingsCategoriesResponse) GetStrings() []string {
 	if o == nil {
 		return nil
 	}
-	return o.GetAPISecurityRiskFindingsCategories200ApplicationJSONStrings
+	return o.Strings
 }

@@ -9,21 +9,21 @@ import (
 	"net/http"
 )
 
-type GetAdvisorQueueAdvisorTypeAdvisorType string
+type AdvisorType string
 
 const (
-	GetAdvisorQueueAdvisorTypeAdvisorTypeEnvironment         GetAdvisorQueueAdvisorTypeAdvisorType = "ENVIRONMENT"
-	GetAdvisorQueueAdvisorTypeAdvisorTypePodSecurityStandard GetAdvisorQueueAdvisorTypeAdvisorType = "POD_SECURITY_STANDARD"
-	GetAdvisorQueueAdvisorTypeAdvisorTypeConnectionRules     GetAdvisorQueueAdvisorTypeAdvisorType = "CONNECTION_RULES"
-	GetAdvisorQueueAdvisorTypeAdvisorTypeDeploymentRules     GetAdvisorQueueAdvisorTypeAdvisorType = "DEPLOYMENT_RULES"
-	GetAdvisorQueueAdvisorTypeAdvisorTypeAPIRules            GetAdvisorQueueAdvisorTypeAdvisorType = "API_RULES"
+	AdvisorTypeEnvironment         AdvisorType = "ENVIRONMENT"
+	AdvisorTypePodSecurityStandard AdvisorType = "POD_SECURITY_STANDARD"
+	AdvisorTypeConnectionRules     AdvisorType = "CONNECTION_RULES"
+	AdvisorTypeDeploymentRules     AdvisorType = "DEPLOYMENT_RULES"
+	AdvisorTypeAPIRules            AdvisorType = "API_RULES"
 )
 
-func (e GetAdvisorQueueAdvisorTypeAdvisorType) ToPointer() *GetAdvisorQueueAdvisorTypeAdvisorType {
+func (e AdvisorType) ToPointer() *AdvisorType {
 	return &e
 }
 
-func (e *GetAdvisorQueueAdvisorTypeAdvisorType) UnmarshalJSON(data []byte) error {
+func (e *AdvisorType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -38,20 +38,20 @@ func (e *GetAdvisorQueueAdvisorTypeAdvisorType) UnmarshalJSON(data []byte) error
 	case "DEPLOYMENT_RULES":
 		fallthrough
 	case "API_RULES":
-		*e = GetAdvisorQueueAdvisorTypeAdvisorType(v)
+		*e = AdvisorType(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetAdvisorQueueAdvisorTypeAdvisorType: %v", v)
+		return fmt.Errorf("invalid value for AdvisorType: %v", v)
 	}
 }
 
 type GetAdvisorQueueAdvisorTypeRequest struct {
-	AdvisorType GetAdvisorQueueAdvisorTypeAdvisorType `pathParam:"style=simple,explode=false,name=advisorType"`
+	AdvisorType AdvisorType `pathParam:"style=simple,explode=false,name=advisorType"`
 }
 
-func (o *GetAdvisorQueueAdvisorTypeRequest) GetAdvisorType() GetAdvisorQueueAdvisorTypeAdvisorType {
+func (o *GetAdvisorQueueAdvisorTypeRequest) GetAdvisorType() AdvisorType {
 	if o == nil {
-		return GetAdvisorQueueAdvisorTypeAdvisorType("")
+		return AdvisorType("")
 	}
 	return o.AdvisorType
 }

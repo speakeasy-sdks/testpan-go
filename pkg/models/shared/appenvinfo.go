@@ -13,7 +13,7 @@ func (o *AppEnvInfoEnvironment) GetName() *string {
 	return o.Name
 }
 
-type AppEnvInfoInstance struct {
+type Instance struct {
 	AgentID        *string `json:"agentId,omitempty"`
 	CloudAccountID *string `json:"cloudAccountId,omitempty"`
 	ID             *string `json:"id,omitempty"`
@@ -25,63 +25,63 @@ type AppEnvInfoInstance struct {
 	Region         *string `json:"region,omitempty"`
 }
 
-func (o *AppEnvInfoInstance) GetAgentID() *string {
+func (o *Instance) GetAgentID() *string {
 	if o == nil {
 		return nil
 	}
 	return o.AgentID
 }
 
-func (o *AppEnvInfoInstance) GetCloudAccountID() *string {
+func (o *Instance) GetCloudAccountID() *string {
 	if o == nil {
 		return nil
 	}
 	return o.CloudAccountID
 }
 
-func (o *AppEnvInfoInstance) GetID() *string {
+func (o *Instance) GetID() *string {
 	if o == nil {
 		return nil
 	}
 	return o.ID
 }
 
-func (o *AppEnvInfoInstance) GetName() *string {
+func (o *Instance) GetName() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Name
 }
 
-func (o *AppEnvInfoInstance) GetNamespace() *string {
+func (o *Instance) GetNamespace() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Namespace
 }
 
-func (o *AppEnvInfoInstance) GetNamespaceID() *string {
+func (o *Instance) GetNamespaceID() *string {
 	if o == nil {
 		return nil
 	}
 	return o.NamespaceID
 }
 
-func (o *AppEnvInfoInstance) GetNetwork() *string {
+func (o *Instance) GetNetwork() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Network
 }
 
-func (o *AppEnvInfoInstance) GetNetworkName() *string {
+func (o *Instance) GetNetworkName() *string {
 	if o == nil {
 		return nil
 	}
 	return o.NetworkName
 }
 
-func (o *AppEnvInfoInstance) GetRegion() *string {
+func (o *Instance) GetRegion() *string {
 	if o == nil {
 		return nil
 	}
@@ -96,7 +96,7 @@ type AppEnvInfo struct {
 	Environment    *AppEnvInfoEnvironment  `json:"environment,omitempty"`
 	Expansion      *ExpansionTelemetryInfo `json:"expansion,omitempty"`
 	Fqdn           *string                 `json:"fqdn,omitempty"`
-	Instance       *AppEnvInfoInstance     `json:"instance,omitempty"`
+	Instance       *Instance               `json:"instance,omitempty"`
 	IP             *string                 `json:"ip,omitempty"`
 	Pod            *PodTelemetryInfo       `json:"pod,omitempty"`
 	// runtime info of the pod (if is a pod)
@@ -139,7 +139,7 @@ func (o *AppEnvInfo) GetFqdn() *string {
 	return o.Fqdn
 }
 
-func (o *AppEnvInfo) GetInstance() *AppEnvInfoInstance {
+func (o *AppEnvInfo) GetInstance() *Instance {
 	if o == nil {
 		return nil
 	}

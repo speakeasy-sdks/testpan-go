@@ -1,5 +1,5 @@
 # Gateways
-(*Gateways*)
+(*.Gateways*)
 
 ### Available Operations
 
@@ -93,7 +93,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.Gateways != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -139,13 +139,13 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Gateways.GetGatewaysClusters(ctx, operations.GetGatewaysClustersRequest{
-        GatewayType: operations.GetGatewaysClustersGatewayTypeTykInternal,
+        GatewayType: operations.GatewayTypeTykInternal,
     })
     if err != nil {
         log.Fatal(err)
     }
 
-    if res.GatewayClusterInfos != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -197,7 +197,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetGatewaysGatewayIDDownloadBundle200ApplicationJSONBinaryString != nil {
+    if res.Stream != nil {
         // handle response
     }
 }

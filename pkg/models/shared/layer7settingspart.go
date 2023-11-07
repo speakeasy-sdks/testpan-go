@@ -7,19 +7,19 @@ import (
 	"fmt"
 )
 
-type Layer7SettingsPartLayer7Protocol string
+type Layer7Protocol string
 
 const (
-	Layer7SettingsPartLayer7ProtocolHTTPLayer7Part      Layer7SettingsPartLayer7Protocol = "HttpLayer7Part"
-	Layer7SettingsPartLayer7ProtocolKafkaLayerPart      Layer7SettingsPartLayer7Protocol = "KafkaLayerPart"
-	Layer7SettingsPartLayer7ProtocolAPIServiceLayerPart Layer7SettingsPartLayer7Protocol = "ApiServiceLayerPart"
+	Layer7ProtocolHTTPLayer7Part      Layer7Protocol = "HttpLayer7Part"
+	Layer7ProtocolKafkaLayerPart      Layer7Protocol = "KafkaLayerPart"
+	Layer7ProtocolAPIServiceLayerPart Layer7Protocol = "ApiServiceLayerPart"
 )
 
-func (e Layer7SettingsPartLayer7Protocol) ToPointer() *Layer7SettingsPartLayer7Protocol {
+func (e Layer7Protocol) ToPointer() *Layer7Protocol {
 	return &e
 }
 
-func (e *Layer7SettingsPartLayer7Protocol) UnmarshalJSON(data []byte) error {
+func (e *Layer7Protocol) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -30,18 +30,18 @@ func (e *Layer7SettingsPartLayer7Protocol) UnmarshalJSON(data []byte) error {
 	case "KafkaLayerPart":
 		fallthrough
 	case "ApiServiceLayerPart":
-		*e = Layer7SettingsPartLayer7Protocol(v)
+		*e = Layer7Protocol(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for Layer7SettingsPartLayer7Protocol: %v", v)
+		return fmt.Errorf("invalid value for Layer7Protocol: %v", v)
 	}
 }
 
 type Layer7SettingsPart struct {
-	Layer7Protocol *Layer7SettingsPartLayer7Protocol `json:"layer7Protocol,omitempty"`
+	Layer7Protocol *Layer7Protocol `json:"layer7Protocol,omitempty"`
 }
 
-func (o *Layer7SettingsPart) GetLayer7Protocol() *Layer7SettingsPartLayer7Protocol {
+func (o *Layer7SettingsPart) GetLayer7Protocol() *Layer7Protocol {
 	if o == nil {
 		return nil
 	}

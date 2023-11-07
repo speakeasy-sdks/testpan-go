@@ -10,19 +10,19 @@ import (
 	"net/http"
 )
 
-// GetImagesImageIDImageLayersSortDir - sorting direction
-type GetImagesImageIDImageLayersSortDir string
+// GetImagesImageIDImageLayersQueryParamSortDir - sorting direction
+type GetImagesImageIDImageLayersQueryParamSortDir string
 
 const (
-	GetImagesImageIDImageLayersSortDirAsc  GetImagesImageIDImageLayersSortDir = "ASC"
-	GetImagesImageIDImageLayersSortDirDesc GetImagesImageIDImageLayersSortDir = "DESC"
+	GetImagesImageIDImageLayersQueryParamSortDirAsc  GetImagesImageIDImageLayersQueryParamSortDir = "ASC"
+	GetImagesImageIDImageLayersQueryParamSortDirDesc GetImagesImageIDImageLayersQueryParamSortDir = "DESC"
 )
 
-func (e GetImagesImageIDImageLayersSortDir) ToPointer() *GetImagesImageIDImageLayersSortDir {
+func (e GetImagesImageIDImageLayersQueryParamSortDir) ToPointer() *GetImagesImageIDImageLayersQueryParamSortDir {
 	return &e
 }
 
-func (e *GetImagesImageIDImageLayersSortDir) UnmarshalJSON(data []byte) error {
+func (e *GetImagesImageIDImageLayersQueryParamSortDir) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -31,10 +31,10 @@ func (e *GetImagesImageIDImageLayersSortDir) UnmarshalJSON(data []byte) error {
 	case "ASC":
 		fallthrough
 	case "DESC":
-		*e = GetImagesImageIDImageLayersSortDir(v)
+		*e = GetImagesImageIDImageLayersQueryParamSortDir(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetImagesImageIDImageLayersSortDir: %v", v)
+		return fmt.Errorf("invalid value for GetImagesImageIDImageLayersQueryParamSortDir: %v", v)
 	}
 }
 
@@ -43,7 +43,7 @@ type GetImagesImageIDImageLayersRequest struct {
 	// Return ignored / not ignored entries
 	IsIgnored *bool `default:"false" queryParam:"style=form,explode=true,name=isIgnored"`
 	// sorting direction
-	SortDir *GetImagesImageIDImageLayersSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
+	SortDir *GetImagesImageIDImageLayersQueryParamSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
 }
 
 func (g GetImagesImageIDImageLayersRequest) MarshalJSON() ([]byte, error) {
@@ -71,7 +71,7 @@ func (o *GetImagesImageIDImageLayersRequest) GetIsIgnored() *bool {
 	return o.IsIgnored
 }
 
-func (o *GetImagesImageIDImageLayersRequest) GetSortDir() *GetImagesImageIDImageLayersSortDir {
+func (o *GetImagesImageIDImageLayersRequest) GetSortDir() *GetImagesImageIDImageLayersQueryParamSortDir {
 	if o == nil {
 		return nil
 	}

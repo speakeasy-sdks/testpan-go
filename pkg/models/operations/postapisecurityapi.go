@@ -14,7 +14,7 @@ type PostAPISecurityAPIResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// the new api id
-	PostAPISecurityAPI201ApplicationJSONUUIDString *string
+	Res *string
 }
 
 func (o *PostAPISecurityAPIResponse) GetContentType() string {
@@ -38,9 +38,9 @@ func (o *PostAPISecurityAPIResponse) GetRawResponse() *http.Response {
 	return o.RawResponse
 }
 
-func (o *PostAPISecurityAPIResponse) GetPostAPISecurityAPI201ApplicationJSONUUIDString() *string {
+func (o *PostAPISecurityAPIResponse) GetRes() *string {
 	if o == nil {
 		return nil
 	}
-	return o.PostAPISecurityAPI201ApplicationJSONUUIDString
+	return o.Res
 }

@@ -15,19 +15,19 @@ import (
 	"strings"
 )
 
-// deployers - APIs used to manage deployers on Secure Application
-type deployers struct {
+// Deployers - APIs used to manage deployers on Secure Application
+type Deployers struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newDeployers(sdkConfig sdkConfiguration) *deployers {
-	return &deployers{
+func newDeployers(sdkConfig sdkConfiguration) *Deployers {
+	return &Deployers{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // DeleteDeployersDeployerID - Delete an deployer
-func (s *deployers) DeleteDeployersDeployerID(ctx context.Context, request operations.DeleteDeployersDeployerIDRequest) (*operations.DeleteDeployersDeployerIDResponse, error) {
+func (s *Deployers) DeleteDeployersDeployerID(ctx context.Context, request operations.DeleteDeployersDeployerIDRequest) (*operations.DeleteDeployersDeployerIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/deployers/{deployerId}", request, nil)
 	if err != nil {
@@ -77,7 +77,7 @@ func (s *deployers) DeleteDeployersDeployerID(ctx context.Context, request opera
 }
 
 // GetDeployers - List all the deployers on the system
-func (s *deployers) GetDeployers(ctx context.Context, request operations.GetDeployersRequest) (*operations.GetDeployersResponse, error) {
+func (s *Deployers) GetDeployers(ctx context.Context, request operations.GetDeployersRequest) (*operations.GetDeployersResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/deployers"
 
@@ -125,7 +125,7 @@ func (s *deployers) GetDeployers(ctx context.Context, request operations.GetDepl
 				return nil, err
 			}
 
-			res.Deployers = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -139,7 +139,7 @@ func (s *deployers) GetDeployers(ctx context.Context, request operations.GetDepl
 }
 
 // GetDeployersServiceAccounts - List all the service account on the system
-func (s *deployers) GetDeployersServiceAccounts(ctx context.Context, request operations.GetDeployersServiceAccountsRequest) (*operations.GetDeployersServiceAccountsResponse, error) {
+func (s *Deployers) GetDeployersServiceAccounts(ctx context.Context, request operations.GetDeployersServiceAccountsRequest) (*operations.GetDeployersServiceAccountsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/deployers/serviceAccounts"
 
@@ -187,7 +187,7 @@ func (s *deployers) GetDeployersServiceAccounts(ctx context.Context, request ope
 				return nil, err
 			}
 
-			res.ServiceAccountInfos = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -201,7 +201,7 @@ func (s *deployers) GetDeployersServiceAccounts(ctx context.Context, request ope
 }
 
 // GetDeployersDeployerIDDeleteDependencies - get dependencies which need to be handled in order to delete specified deployer
-func (s *deployers) GetDeployersDeployerIDDeleteDependencies(ctx context.Context, request operations.GetDeployersDeployerIDDeleteDependenciesRequest) (*operations.GetDeployersDeployerIDDeleteDependenciesResponse, error) {
+func (s *Deployers) GetDeployersDeployerIDDeleteDependencies(ctx context.Context, request operations.GetDeployersDeployerIDDeleteDependenciesRequest) (*operations.GetDeployersDeployerIDDeleteDependenciesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/deployers/{deployerId}/deleteDependencies", request, nil)
 	if err != nil {
@@ -274,7 +274,7 @@ func (s *deployers) GetDeployersDeployerIDDeleteDependencies(ctx context.Context
 }
 
 // PostDeployers - Create a new deployer
-func (s *deployers) PostDeployers(ctx context.Context, request shared.DeployerInput) (*operations.PostDeployersResponse, error) {
+func (s *Deployers) PostDeployers(ctx context.Context, request shared.DeployerInput) (*operations.PostDeployersResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/deployers"
 
@@ -344,14 +344,14 @@ func (s *deployers) PostDeployers(ctx context.Context, request shared.DeployerIn
 }
 
 // PutDeployersDeployerID - Edit deployer definition
-func (s *deployers) PutDeployersDeployerID(ctx context.Context, request operations.PutDeployersDeployerIDRequest) (*operations.PutDeployersDeployerIDResponse, error) {
+func (s *Deployers) PutDeployersDeployerID(ctx context.Context, request operations.PutDeployersDeployerIDRequest) (*operations.PutDeployersDeployerIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/deployers/{deployerId}", request, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "DeployerInput", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Deployer", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, fmt.Errorf("error serializing request body: %w", err)
 	}

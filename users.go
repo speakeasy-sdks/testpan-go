@@ -15,19 +15,19 @@ import (
 	"strings"
 )
 
-// users - APIs used for login and password management
-type users struct {
+// Users - APIs used for login and password management
+type Users struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newUsers(sdkConfig sdkConfiguration) *users {
-	return &users{
+func newUsers(sdkConfig sdkConfiguration) *Users {
+	return &Users{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // DeleteUsersUserID - Delete a user
-func (s *users) DeleteUsersUserID(ctx context.Context, request operations.DeleteUsersUserIDRequest) (*operations.DeleteUsersUserIDResponse, error) {
+func (s *Users) DeleteUsersUserID(ctx context.Context, request operations.DeleteUsersUserIDRequest) (*operations.DeleteUsersUserIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/users/{userId}", request, nil)
 	if err != nil {
@@ -77,7 +77,7 @@ func (s *users) DeleteUsersUserID(ctx context.Context, request operations.Delete
 }
 
 // GetOperatorCredentials - get the credentials of the Secure Application Operator service user
-func (s *users) GetOperatorCredentials(ctx context.Context) (*operations.GetOperatorCredentialsResponse, error) {
+func (s *Users) GetOperatorCredentials(ctx context.Context) (*operations.GetOperatorCredentialsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/operatorCredentials"
 
@@ -147,7 +147,7 @@ func (s *users) GetOperatorCredentials(ctx context.Context) (*operations.GetOper
 }
 
 // GetUsers - List current users
-func (s *users) GetUsers(ctx context.Context, request operations.GetUsersRequest) (*operations.GetUsersResponse, error) {
+func (s *Users) GetUsers(ctx context.Context, request operations.GetUsersRequest) (*operations.GetUsersResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/users"
 
@@ -195,7 +195,7 @@ func (s *users) GetUsers(ctx context.Context, request operations.GetUsersRequest
 				return nil, err
 			}
 
-			res.UserDisplays = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -210,7 +210,7 @@ func (s *users) GetUsers(ctx context.Context, request operations.GetUsersRequest
 
 // GetUsersUserIDAccessTokens - Get the  access tokens for the user
 // Get the access tokens for the user, to access Secure Application
-func (s *users) GetUsersUserIDAccessTokens(ctx context.Context, request operations.GetUsersUserIDAccessTokensRequest) (*operations.GetUsersUserIDAccessTokensResponse, error) {
+func (s *Users) GetUsersUserIDAccessTokens(ctx context.Context, request operations.GetUsersUserIDAccessTokensRequest) (*operations.GetUsersUserIDAccessTokensResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/users/{userId}/accessTokens", request, nil)
 	if err != nil {
@@ -271,7 +271,7 @@ func (s *users) GetUsersUserIDAccessTokens(ctx context.Context, request operatio
 }
 
 // GetUsersUserIDDeleteDependencies - get dependencies which need to be handled in order to delete specified user
-func (s *users) GetUsersUserIDDeleteDependencies(ctx context.Context, request operations.GetUsersUserIDDeleteDependenciesRequest) (*operations.GetUsersUserIDDeleteDependenciesResponse, error) {
+func (s *Users) GetUsersUserIDDeleteDependencies(ctx context.Context, request operations.GetUsersUserIDDeleteDependenciesRequest) (*operations.GetUsersUserIDDeleteDependenciesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/users/{userId}/deleteDependencies", request, nil)
 	if err != nil {
@@ -344,7 +344,7 @@ func (s *users) GetUsersUserIDDeleteDependencies(ctx context.Context, request op
 }
 
 // PostAccountUsageStatus - an api to get the account usage status
-func (s *users) PostAccountUsageStatus(ctx context.Context) (*operations.PostAccountUsageStatusResponse, error) {
+func (s *Users) PostAccountUsageStatus(ctx context.Context) (*operations.PostAccountUsageStatusResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/account/usageStatus"
 
@@ -404,7 +404,7 @@ func (s *users) PostAccountUsageStatus(ctx context.Context) (*operations.PostAcc
 }
 
 // PostChangePassword - Change the password for the current user
-func (s *users) PostChangePassword(ctx context.Context, request shared.ChangePasswordInfo) (*operations.PostChangePasswordResponse, error) {
+func (s *Users) PostChangePassword(ctx context.Context, request shared.ChangePasswordInfo) (*operations.PostChangePasswordResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/changePassword"
 
@@ -465,7 +465,7 @@ func (s *users) PostChangePassword(ctx context.Context, request shared.ChangePas
 }
 
 // PostLogin - Login
-func (s *users) PostLogin(ctx context.Context, request operations.PostLoginRequest) (*operations.PostLoginResponse, error) {
+func (s *Users) PostLogin(ctx context.Context, request operations.PostLoginRequest) (*operations.PostLoginResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/login"
 
@@ -548,7 +548,7 @@ func (s *users) PostLogin(ctx context.Context, request operations.PostLoginReque
 }
 
 // PostLogout - Log out
-func (s *users) PostLogout(ctx context.Context) (*operations.PostLogoutResponse, error) {
+func (s *Users) PostLogout(ctx context.Context) (*operations.PostLogoutResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/logout"
 
@@ -597,7 +597,7 @@ func (s *users) PostLogout(ctx context.Context) (*operations.PostLogoutResponse,
 }
 
 // PostMe - an api to get current logged in user info
-func (s *users) PostMe(ctx context.Context) (*operations.PostMeResponse, error) {
+func (s *Users) PostMe(ctx context.Context) (*operations.PostMeResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/me"
 
@@ -658,7 +658,7 @@ func (s *users) PostMe(ctx context.Context) (*operations.PostMeResponse, error) 
 
 // PostUsers - Create a user
 // Create a new user. Must be admin user.
-func (s *users) PostUsers(ctx context.Context, request shared.UserInput) (*operations.PostUsersResponse, error) {
+func (s *Users) PostUsers(ctx context.Context, request shared.UserInput) (*operations.PostUsersResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/users"
 
@@ -738,7 +738,7 @@ func (s *users) PostUsers(ctx context.Context, request shared.UserInput) (*opera
 }
 
 // PostUsersAcceptEula - Accept the EULA
-func (s *users) PostUsersAcceptEula(ctx context.Context) (*operations.PostUsersAcceptEulaResponse, error) {
+func (s *Users) PostUsersAcceptEula(ctx context.Context) (*operations.PostUsersAcceptEulaResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/users/acceptEula"
 
@@ -785,7 +785,7 @@ func (s *users) PostUsersAcceptEula(ctx context.Context) (*operations.PostUsersA
 }
 
 // PostUsersTrial - Create a trail user
-func (s *users) PostUsersTrial(ctx context.Context, request operations.PostUsersTrialRequest) (*operations.PostUsersTrialResponse, error) {
+func (s *Users) PostUsersTrial(ctx context.Context, request operations.PostUsersTrialRequest) (*operations.PostUsersTrialResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/users/trial"
 
@@ -867,14 +867,14 @@ func (s *users) PostUsersTrial(ctx context.Context, request operations.PostUsers
 }
 
 // PutUsersUserID - Change user details
-func (s *users) PutUsersUserID(ctx context.Context, request operations.PutUsersUserIDRequest) (*operations.PutUsersUserIDResponse, error) {
+func (s *Users) PutUsersUserID(ctx context.Context, request operations.PutUsersUserIDRequest) (*operations.PutUsersUserIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/users/{userId}", request, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "EditUserInput", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "EditUser", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, fmt.Errorf("error serializing request body: %w", err)
 	}

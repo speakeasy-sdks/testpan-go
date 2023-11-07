@@ -14,19 +14,19 @@ import (
 	"strings"
 )
 
-// api - APIs to get the Secure Application API specification file
-type api struct {
+// API - APIs to get the Secure Application API specification file
+type API struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newAPI(sdkConfig sdkConfiguration) *api {
-	return &api{
+func newAPI(sdkConfig sdkConfiguration) *API {
+	return &API{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // GetAPI - Get Secure Application API as a Swagger file
-func (s *api) GetAPI(ctx context.Context) (*operations.GetAPIResponse, error) {
+func (s *API) GetAPI(ctx context.Context) (*operations.GetAPIResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api"
 
@@ -66,7 +66,7 @@ func (s *api) GetAPI(ctx context.Context) (*operations.GetAPIResponse, error) {
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
 			out := string(rawBody)
-			res.GetAPI200ApplicationJSONString = &out
+			res.Res = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}

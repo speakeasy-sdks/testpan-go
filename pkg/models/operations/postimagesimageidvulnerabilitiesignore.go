@@ -9,19 +9,19 @@ import (
 	"net/http"
 )
 
-// PostImagesImageIDVulnerabilitiesIgnoreActionType - The ignore action type (ADD/REMOVE)
-type PostImagesImageIDVulnerabilitiesIgnoreActionType string
+// QueryParamActionType - The ignore action type (ADD/REMOVE)
+type QueryParamActionType string
 
 const (
-	PostImagesImageIDVulnerabilitiesIgnoreActionTypeAdd    PostImagesImageIDVulnerabilitiesIgnoreActionType = "ADD"
-	PostImagesImageIDVulnerabilitiesIgnoreActionTypeRemove PostImagesImageIDVulnerabilitiesIgnoreActionType = "REMOVE"
+	QueryParamActionTypeAdd    QueryParamActionType = "ADD"
+	QueryParamActionTypeRemove QueryParamActionType = "REMOVE"
 )
 
-func (e PostImagesImageIDVulnerabilitiesIgnoreActionType) ToPointer() *PostImagesImageIDVulnerabilitiesIgnoreActionType {
+func (e QueryParamActionType) ToPointer() *QueryParamActionType {
 	return &e
 }
 
-func (e *PostImagesImageIDVulnerabilitiesIgnoreActionType) UnmarshalJSON(data []byte) error {
+func (e *QueryParamActionType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -30,28 +30,28 @@ func (e *PostImagesImageIDVulnerabilitiesIgnoreActionType) UnmarshalJSON(data []
 	case "ADD":
 		fallthrough
 	case "REMOVE":
-		*e = PostImagesImageIDVulnerabilitiesIgnoreActionType(v)
+		*e = QueryParamActionType(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for PostImagesImageIDVulnerabilitiesIgnoreActionType: %v", v)
+		return fmt.Errorf("invalid value for QueryParamActionType: %v", v)
 	}
 }
 
-// PostImagesImageIDVulnerabilitiesIgnoreSnoozeTime - The time to snooze the vulnerability
-type PostImagesImageIDVulnerabilitiesIgnoreSnoozeTime string
+// SnoozeTime - The time to snooze the vulnerability
+type SnoozeTime string
 
 const (
-	PostImagesImageIDVulnerabilitiesIgnoreSnoozeTimeAlways PostImagesImageIDVulnerabilitiesIgnoreSnoozeTime = "ALWAYS"
-	PostImagesImageIDVulnerabilitiesIgnoreSnoozeTimeYear   PostImagesImageIDVulnerabilitiesIgnoreSnoozeTime = "YEAR"
-	PostImagesImageIDVulnerabilitiesIgnoreSnoozeTimeMonth  PostImagesImageIDVulnerabilitiesIgnoreSnoozeTime = "MONTH"
-	PostImagesImageIDVulnerabilitiesIgnoreSnoozeTimeWeek   PostImagesImageIDVulnerabilitiesIgnoreSnoozeTime = "WEEK"
+	SnoozeTimeAlways SnoozeTime = "ALWAYS"
+	SnoozeTimeYear   SnoozeTime = "YEAR"
+	SnoozeTimeMonth  SnoozeTime = "MONTH"
+	SnoozeTimeWeek   SnoozeTime = "WEEK"
 )
 
-func (e PostImagesImageIDVulnerabilitiesIgnoreSnoozeTime) ToPointer() *PostImagesImageIDVulnerabilitiesIgnoreSnoozeTime {
+func (e SnoozeTime) ToPointer() *SnoozeTime {
 	return &e
 }
 
-func (e *PostImagesImageIDVulnerabilitiesIgnoreSnoozeTime) UnmarshalJSON(data []byte) error {
+func (e *SnoozeTime) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -64,20 +64,20 @@ func (e *PostImagesImageIDVulnerabilitiesIgnoreSnoozeTime) UnmarshalJSON(data []
 	case "MONTH":
 		fallthrough
 	case "WEEK":
-		*e = PostImagesImageIDVulnerabilitiesIgnoreSnoozeTime(v)
+		*e = SnoozeTime(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for PostImagesImageIDVulnerabilitiesIgnoreSnoozeTime: %v", v)
+		return fmt.Errorf("invalid value for SnoozeTime: %v", v)
 	}
 }
 
 type PostImagesImageIDVulnerabilitiesIgnoreRequest struct {
 	UUIDList shared.UUIDList `request:"mediaType=application/json"`
 	// The ignore action type (ADD/REMOVE)
-	ActionType PostImagesImageIDVulnerabilitiesIgnoreActionType `queryParam:"style=form,explode=true,name=actionType"`
-	ImageID    string                                           `pathParam:"style=simple,explode=false,name=imageId"`
+	ActionType QueryParamActionType `queryParam:"style=form,explode=true,name=actionType"`
+	ImageID    string               `pathParam:"style=simple,explode=false,name=imageId"`
 	// The time to snooze the vulnerability
-	SnoozeTime *PostImagesImageIDVulnerabilitiesIgnoreSnoozeTime `queryParam:"style=form,explode=true,name=snoozeTime"`
+	SnoozeTime *SnoozeTime `queryParam:"style=form,explode=true,name=snoozeTime"`
 }
 
 func (o *PostImagesImageIDVulnerabilitiesIgnoreRequest) GetUUIDList() shared.UUIDList {
@@ -87,9 +87,9 @@ func (o *PostImagesImageIDVulnerabilitiesIgnoreRequest) GetUUIDList() shared.UUI
 	return o.UUIDList
 }
 
-func (o *PostImagesImageIDVulnerabilitiesIgnoreRequest) GetActionType() PostImagesImageIDVulnerabilitiesIgnoreActionType {
+func (o *PostImagesImageIDVulnerabilitiesIgnoreRequest) GetActionType() QueryParamActionType {
 	if o == nil {
-		return PostImagesImageIDVulnerabilitiesIgnoreActionType("")
+		return QueryParamActionType("")
 	}
 	return o.ActionType
 }
@@ -101,7 +101,7 @@ func (o *PostImagesImageIDVulnerabilitiesIgnoreRequest) GetImageID() string {
 	return o.ImageID
 }
 
-func (o *PostImagesImageIDVulnerabilitiesIgnoreRequest) GetSnoozeTime() *PostImagesImageIDVulnerabilitiesIgnoreSnoozeTime {
+func (o *PostImagesImageIDVulnerabilitiesIgnoreRequest) GetSnoozeTime() *SnoozeTime {
 	if o == nil {
 		return nil
 	}

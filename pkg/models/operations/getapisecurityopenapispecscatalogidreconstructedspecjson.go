@@ -34,7 +34,7 @@ type GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecJSONResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Success
-	GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecJSON200ApplicationJSONString *string
+	Res *string
 }
 
 func (o *GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecJSONResponse) GetContentType() string {
@@ -58,9 +58,9 @@ func (o *GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecJSONResponse) GetRa
 	return o.RawResponse
 }
 
-func (o *GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecJSONResponse) GetGetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecJSON200ApplicationJSONString() *string {
+func (o *GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecJSONResponse) GetRes() *string {
 	if o == nil {
 		return nil
 	}
-	return o.GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecJSON200ApplicationJSONString
+	return o.Res
 }

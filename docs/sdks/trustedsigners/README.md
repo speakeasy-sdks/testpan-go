@@ -1,5 +1,5 @@
 # TrustedSigners
-(*TrustedSigners*)
+(*.TrustedSigners*)
 
 ## Overview
 
@@ -96,7 +96,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.TrustedSigners != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -257,7 +257,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TrustedSigners.PutTrustedSignersTrustedSignerID(ctx, operations.PutTrustedSignersTrustedSignerIDRequest{
-        TrustedSignerInput: shared.TrustedSignerInput{
+        TrustedSigner: shared.TrustedSignerInput{
             Keys: []shared.TrustedSignerKey{
                 shared.TrustedSignerKey{
                     Key: "<key>",

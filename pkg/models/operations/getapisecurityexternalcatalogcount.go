@@ -57,7 +57,7 @@ type GetAPISecurityExternalCatalogCountResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Number of APIs in the inventory
-	GetAPISecurityExternalCatalogCount200ApplicationJSONInteger *int64
+	Integer *int64
 }
 
 func (o *GetAPISecurityExternalCatalogCountResponse) GetContentType() string {
@@ -81,9 +81,9 @@ func (o *GetAPISecurityExternalCatalogCountResponse) GetRawResponse() *http.Resp
 	return o.RawResponse
 }
 
-func (o *GetAPISecurityExternalCatalogCountResponse) GetGetAPISecurityExternalCatalogCount200ApplicationJSONInteger() *int64 {
+func (o *GetAPISecurityExternalCatalogCountResponse) GetInteger() *int64 {
 	if o == nil {
 		return nil
 	}
-	return o.GetAPISecurityExternalCatalogCount200ApplicationJSONInteger
+	return o.Integer
 }

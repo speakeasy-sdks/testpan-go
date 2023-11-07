@@ -1,5 +1,5 @@
 # API
-(*API*)
+(*.API*)
 
 ## Overview
 
@@ -39,7 +39,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetAPI200ApplicationJSONString != nil {
+    if res.Res != nil {
         // handle response
     }
 }

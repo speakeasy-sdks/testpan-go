@@ -15,19 +15,19 @@ import (
 	"strings"
 )
 
-// dashboard - APIs to get dashboard statistics
-type dashboard struct {
+// Dashboard - APIs to get dashboard statistics
+type Dashboard struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newDashboard(sdkConfig sdkConfiguration) *dashboard {
-	return &dashboard{
+func newDashboard(sdkConfig sdkConfiguration) *Dashboard {
+	return &Dashboard{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // GetDashboardApisecRiskFindings - Get API sec risk findings widget
-func (s *dashboard) GetDashboardApisecRiskFindings(ctx context.Context, request operations.GetDashboardApisecRiskFindingsRequest) (*operations.GetDashboardApisecRiskFindingsResponse, error) {
+func (s *Dashboard) GetDashboardApisecRiskFindings(ctx context.Context, request operations.GetDashboardApisecRiskFindingsRequest) (*operations.GetDashboardApisecRiskFindingsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/dashboard/apisec/riskFindings"
 
@@ -89,7 +89,7 @@ func (s *dashboard) GetDashboardApisecRiskFindings(ctx context.Context, request 
 }
 
 // GetDashboardApisecRiskFindingsTrend - Get API sec risk findings trend graph widget for the last 30 days
-func (s *dashboard) GetDashboardApisecRiskFindingsTrend(ctx context.Context, request operations.GetDashboardApisecRiskFindingsTrendRequest) (*operations.GetDashboardApisecRiskFindingsTrendResponse, error) {
+func (s *Dashboard) GetDashboardApisecRiskFindingsTrend(ctx context.Context, request operations.GetDashboardApisecRiskFindingsTrendRequest) (*operations.GetDashboardApisecRiskFindingsTrendResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/dashboard/apisec/riskFindingsTrend"
 
@@ -151,7 +151,7 @@ func (s *dashboard) GetDashboardApisecRiskFindingsTrend(ctx context.Context, req
 }
 
 // GetDashboardApisecSpecsAndOperationsDiffs - Get API sec specs and operations diffs widget
-func (s *dashboard) GetDashboardApisecSpecsAndOperationsDiffs(ctx context.Context, request operations.GetDashboardApisecSpecsAndOperationsDiffsRequest) (*operations.GetDashboardApisecSpecsAndOperationsDiffsResponse, error) {
+func (s *Dashboard) GetDashboardApisecSpecsAndOperationsDiffs(ctx context.Context, request operations.GetDashboardApisecSpecsAndOperationsDiffsRequest) (*operations.GetDashboardApisecSpecsAndOperationsDiffsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/dashboard/apisec/specsAndOperationsDiffs"
 
@@ -213,7 +213,7 @@ func (s *dashboard) GetDashboardApisecSpecsAndOperationsDiffs(ctx context.Contex
 }
 
 // GetDashboardApisecTopRiskyApis - Get API sec top risky APIs widget
-func (s *dashboard) GetDashboardApisecTopRiskyApis(ctx context.Context, request operations.GetDashboardApisecTopRiskyApisRequest) (*operations.GetDashboardApisecTopRiskyApisResponse, error) {
+func (s *Dashboard) GetDashboardApisecTopRiskyApis(ctx context.Context, request operations.GetDashboardApisecTopRiskyApisRequest) (*operations.GetDashboardApisecTopRiskyApisResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/dashboard/apisec/topRiskyApis"
 
@@ -275,7 +275,7 @@ func (s *dashboard) GetDashboardApisecTopRiskyApis(ctx context.Context, request 
 }
 
 // GetDashboardApisecTopRiskyFindings - Get API sec top risky findings widget
-func (s *dashboard) GetDashboardApisecTopRiskyFindings(ctx context.Context, request operations.GetDashboardApisecTopRiskyFindingsRequest) (*operations.GetDashboardApisecTopRiskyFindingsResponse, error) {
+func (s *Dashboard) GetDashboardApisecTopRiskyFindings(ctx context.Context, request operations.GetDashboardApisecTopRiskyFindingsRequest) (*operations.GetDashboardApisecTopRiskyFindingsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/dashboard/apisec/topRiskyFindings"
 
@@ -337,7 +337,7 @@ func (s *dashboard) GetDashboardApisecTopRiskyFindings(ctx context.Context, requ
 }
 
 // GetDashboardClusters - Get the active clusters
-func (s *dashboard) GetDashboardClusters(ctx context.Context) (*operations.GetDashboardClustersResponse, error) {
+func (s *Dashboard) GetDashboardClusters(ctx context.Context) (*operations.GetDashboardClustersResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/dashboard/clusters"
 
@@ -395,7 +395,7 @@ func (s *dashboard) GetDashboardClusters(ctx context.Context) (*operations.GetDa
 }
 
 // GetDashboardConnectionTelemetries - Get pod connection dashboard data for all clusters
-func (s *dashboard) GetDashboardConnectionTelemetries(ctx context.Context) (*operations.GetDashboardConnectionTelemetriesResponse, error) {
+func (s *Dashboard) GetDashboardConnectionTelemetries(ctx context.Context) (*operations.GetDashboardConnectionTelemetriesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/dashboard/connectionTelemetries"
 
@@ -453,7 +453,7 @@ func (s *dashboard) GetDashboardConnectionTelemetries(ctx context.Context) (*ope
 }
 
 // GetDashboardKubernetesAuditLogs - Get kubernetes audit logs dashboard data for all clusters
-func (s *dashboard) GetDashboardKubernetesAuditLogs(ctx context.Context) (*operations.GetDashboardKubernetesAuditLogsResponse, error) {
+func (s *Dashboard) GetDashboardKubernetesAuditLogs(ctx context.Context) (*operations.GetDashboardKubernetesAuditLogsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/dashboard/kubernetesAuditLogs"
 
@@ -511,7 +511,7 @@ func (s *dashboard) GetDashboardKubernetesAuditLogs(ctx context.Context) (*opera
 }
 
 // GetDashboardOperationalBar - Get the operation data dashboard for the given kubernetesClusterId
-func (s *dashboard) GetDashboardOperationalBar(ctx context.Context, request operations.GetDashboardOperationalBarRequest) (*operations.GetDashboardOperationalBarResponse, error) {
+func (s *Dashboard) GetDashboardOperationalBar(ctx context.Context, request operations.GetDashboardOperationalBarRequest) (*operations.GetDashboardOperationalBarResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/dashboard/operationalBar"
 
@@ -573,7 +573,7 @@ func (s *dashboard) GetDashboardOperationalBar(ctx context.Context, request oper
 }
 
 // GetDashboardPermissions - Get permissions dashboard data for the given kubernetesClusterIds
-func (s *dashboard) GetDashboardPermissions(ctx context.Context, request operations.GetDashboardPermissionsRequest) (*operations.GetDashboardPermissionsResponse, error) {
+func (s *Dashboard) GetDashboardPermissions(ctx context.Context, request operations.GetDashboardPermissionsRequest) (*operations.GetDashboardPermissionsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/dashboard/permissions"
 
@@ -635,7 +635,7 @@ func (s *dashboard) GetDashboardPermissions(ctx context.Context, request operati
 }
 
 // GetDashboardPodTelemetries - Get pod telemetries dashboard data for all clusters
-func (s *dashboard) GetDashboardPodTelemetries(ctx context.Context) (*operations.GetDashboardPodTelemetriesResponse, error) {
+func (s *Dashboard) GetDashboardPodTelemetries(ctx context.Context) (*operations.GetDashboardPodTelemetriesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/dashboard/podTelemetries"
 
@@ -693,7 +693,7 @@ func (s *dashboard) GetDashboardPodTelemetries(ctx context.Context) (*operations
 }
 
 // GetDashboardReportDownload - Download Secure Application security report
-func (s *dashboard) GetDashboardReportDownload(ctx context.Context) (*operations.GetDashboardReportDownloadResponse, error) {
+func (s *Dashboard) GetDashboardReportDownload(ctx context.Context) (*operations.GetDashboardReportDownloadResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/dashboard/report/download"
 
@@ -723,7 +723,7 @@ func (s *dashboard) GetDashboardReportDownload(ctx context.Context) (*operations
 	}
 
 	if (httpRes.StatusCode == 200) && utils.MatchContentType(contentType, `application/json`) {
-		res.GetDashboardReportDownload200ApplicationJSONBinaryString = httpRes.Body
+		res.Stream = httpRes.Body
 
 		return res, nil
 	}
@@ -750,7 +750,7 @@ func (s *dashboard) GetDashboardReportDownload(ctx context.Context) (*operations
 }
 
 // GetDashboardReportStatus - Get Secure Application report security status
-func (s *dashboard) GetDashboardReportStatus(ctx context.Context) (*operations.GetDashboardReportStatusResponse, error) {
+func (s *Dashboard) GetDashboardReportStatus(ctx context.Context) (*operations.GetDashboardReportStatusResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/dashboard/report/status"
 
@@ -808,7 +808,7 @@ func (s *dashboard) GetDashboardReportStatus(ctx context.Context) (*operations.G
 }
 
 // GetDashboardSecurityContext - Get security context dashboard data for all clusters
-func (s *dashboard) GetDashboardSecurityContext(ctx context.Context, request operations.GetDashboardSecurityContextRequest) (*operations.GetDashboardSecurityContextResponse, error) {
+func (s *Dashboard) GetDashboardSecurityContext(ctx context.Context, request operations.GetDashboardSecurityContextRequest) (*operations.GetDashboardSecurityContextResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/dashboard/securityContext"
 
@@ -870,7 +870,7 @@ func (s *dashboard) GetDashboardSecurityContext(ctx context.Context, request ope
 }
 
 // GetDashboardTopSecurityRisks - Get the top risky deployments dashboard data for the given kubernetesClusterIds
-func (s *dashboard) GetDashboardTopSecurityRisks(ctx context.Context, request operations.GetDashboardTopSecurityRisksRequest) (*operations.GetDashboardTopSecurityRisksResponse, error) {
+func (s *Dashboard) GetDashboardTopSecurityRisks(ctx context.Context, request operations.GetDashboardTopSecurityRisksRequest) (*operations.GetDashboardTopSecurityRisksResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/dashboard/topSecurityRisks"
 
@@ -932,7 +932,7 @@ func (s *dashboard) GetDashboardTopSecurityRisks(ctx context.Context, request op
 }
 
 // GetDashboardVulnerabilities - Get vulnerabilities dashboard data for the given kubernetesClusterId
-func (s *dashboard) GetDashboardVulnerabilities(ctx context.Context, request operations.GetDashboardVulnerabilitiesRequest) (*operations.GetDashboardVulnerabilitiesResponse, error) {
+func (s *Dashboard) GetDashboardVulnerabilities(ctx context.Context, request operations.GetDashboardVulnerabilitiesRequest) (*operations.GetDashboardVulnerabilitiesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/dashboard/vulnerabilities"
 
@@ -994,7 +994,7 @@ func (s *dashboard) GetDashboardVulnerabilities(ctx context.Context, request ope
 }
 
 // GetDashboardKubernetesClusterIDConnectionTelemetries - Get connection telemetries dashboard data for the given kubernetesClusterId
-func (s *dashboard) GetDashboardKubernetesClusterIDConnectionTelemetries(ctx context.Context, request operations.GetDashboardKubernetesClusterIDConnectionTelemetriesRequest) (*operations.GetDashboardKubernetesClusterIDConnectionTelemetriesResponse, error) {
+func (s *Dashboard) GetDashboardKubernetesClusterIDConnectionTelemetries(ctx context.Context, request operations.GetDashboardKubernetesClusterIDConnectionTelemetriesRequest) (*operations.GetDashboardKubernetesClusterIDConnectionTelemetriesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/dashboard/{kubernetesClusterId}/connectionTelemetries", request, nil)
 	if err != nil {
@@ -1055,7 +1055,7 @@ func (s *dashboard) GetDashboardKubernetesClusterIDConnectionTelemetries(ctx con
 }
 
 // GetDashboardKubernetesClusterIDKubernetesAuditLogs - Get kubernetes audit logs dashboard data for the given kubernetesClusterId
-func (s *dashboard) GetDashboardKubernetesClusterIDKubernetesAuditLogs(ctx context.Context, request operations.GetDashboardKubernetesClusterIDKubernetesAuditLogsRequest) (*operations.GetDashboardKubernetesClusterIDKubernetesAuditLogsResponse, error) {
+func (s *Dashboard) GetDashboardKubernetesClusterIDKubernetesAuditLogs(ctx context.Context, request operations.GetDashboardKubernetesClusterIDKubernetesAuditLogsRequest) (*operations.GetDashboardKubernetesClusterIDKubernetesAuditLogsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/dashboard/{kubernetesClusterId}/kubernetesAuditLogs", request, nil)
 	if err != nil {
@@ -1116,7 +1116,7 @@ func (s *dashboard) GetDashboardKubernetesClusterIDKubernetesAuditLogs(ctx conte
 }
 
 // GetDashboardKubernetesClusterIDPodTelemetries - Get pod telemetries dashboard data for the given kubernetesClusterId
-func (s *dashboard) GetDashboardKubernetesClusterIDPodTelemetries(ctx context.Context, request operations.GetDashboardKubernetesClusterIDPodTelemetriesRequest) (*operations.GetDashboardKubernetesClusterIDPodTelemetriesResponse, error) {
+func (s *Dashboard) GetDashboardKubernetesClusterIDPodTelemetries(ctx context.Context, request operations.GetDashboardKubernetesClusterIDPodTelemetriesRequest) (*operations.GetDashboardKubernetesClusterIDPodTelemetriesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/dashboard/{kubernetesClusterId}/podTelemetries", request, nil)
 	if err != nil {
@@ -1177,7 +1177,7 @@ func (s *dashboard) GetDashboardKubernetesClusterIDPodTelemetries(ctx context.Co
 }
 
 // GetLicensingDashboard - Get licensing dashboard data
-func (s *dashboard) GetLicensingDashboard(ctx context.Context) (*operations.GetLicensingDashboardResponse, error) {
+func (s *Dashboard) GetLicensingDashboard(ctx context.Context) (*operations.GetLicensingDashboardResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/licensingDashboard"
 
@@ -1235,7 +1235,7 @@ func (s *dashboard) GetLicensingDashboard(ctx context.Context) (*operations.GetL
 }
 
 // PostDashboardReportGenerate - Generate Secure Application security report
-func (s *dashboard) PostDashboardReportGenerate(ctx context.Context) (*operations.PostDashboardReportGenerateResponse, error) {
+func (s *Dashboard) PostDashboardReportGenerate(ctx context.Context) (*operations.PostDashboardReportGenerateResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/dashboard/report/generate"
 

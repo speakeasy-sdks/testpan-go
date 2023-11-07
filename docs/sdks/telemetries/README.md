@@ -1,5 +1,5 @@
 # Telemetries
-(*Telemetries*)
+(*.Telemetries*)
 
 ## Overview
 
@@ -65,10 +65,10 @@ func main() {
         ImagesID: []string{
             "50dc36c5-6d44-446a-b356-669e30a7dfca",
         },
-        Result: []operations.GetAppTelemetriesResult{
-            operations.GetAppTelemetriesResultDetect,
+        Result: []operations.GetAppTelemetriesQueryParamResult{
+            operations.GetAppTelemetriesQueryParamResultDetect,
         },
-        SortKey: operations.GetAppTelemetriesSortKeyFinishTime,
+        SortKey: operations.GetAppTelemetriesQueryParamSortKeyFinishTime,
         StartTime: types.MustTimeFromString("2022-08-17T10:31:03.718Z"),
         Status: []string{
             "string",
@@ -76,15 +76,15 @@ func main() {
         VulnerabilityLevelsFilter: []string{
             "string",
         },
-        WorkloadRisks: []operations.GetAppTelemetriesWorkloadRisks{
-            operations.GetAppTelemetriesWorkloadRisksCritical,
+        WorkloadRisks: []operations.WorkloadRisks{
+            operations.WorkloadRisksCritical,
         },
     })
     if err != nil {
         log.Fatal(err)
     }
 
-    if res.AppTelemetries != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -188,7 +188,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.APIRiskInfos != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -240,7 +240,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.ImagesWithLicenses != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -292,7 +292,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.TokenInjectionInfos != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -340,10 +340,10 @@ func main() {
     ctx := context.Background()
     res, err := s.Telemetries.GetConnectionTelemetries(ctx, operations.GetConnectionTelemetriesRequest{
         EndTime: types.MustTimeFromString("2023-12-02T06:47:12.551Z"),
-        Result: []operations.GetConnectionTelemetriesResult{
-            operations.GetConnectionTelemetriesResultAllow,
+        Result: []operations.GetConnectionTelemetriesQueryParamResult{
+            operations.GetConnectionTelemetriesQueryParamResultAllow,
         },
-        SortKey: operations.GetConnectionTelemetriesSortKeySourceAppType,
+        SortKey: operations.GetConnectionTelemetriesQueryParamSortKeySourceAppType,
         SourceAppName: []string{
             "string",
         },
@@ -356,8 +356,8 @@ func main() {
         SourceHostName: []string{
             "string",
         },
-        SourceRisk: []operations.GetConnectionTelemetriesSourceRisk{
-            operations.GetConnectionTelemetriesSourceRiskLow,
+        SourceRisk: []operations.SourceRisk{
+            operations.SourceRiskLow,
         },
         StartTime: types.MustTimeFromString("2021-04-04T11:53:10.030Z"),
         TargetAppName: []string{
@@ -372,15 +372,15 @@ func main() {
         TargetHostName: []string{
             "string",
         },
-        TargetRisk: []operations.GetConnectionTelemetriesTargetRisk{
-            operations.GetConnectionTelemetriesTargetRiskHigh,
+        TargetRisk: []operations.TargetRisk{
+            operations.TargetRiskHigh,
         },
     })
     if err != nil {
         log.Fatal(err)
     }
 
-    if res.ConnectionTelemetries != nil {
+    if res.Classes != nil {
         // handle response
     }
 }

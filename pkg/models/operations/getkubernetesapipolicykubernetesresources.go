@@ -10,12 +10,12 @@ import (
 type GetKubernetesAPIPolicyKubernetesResourcesResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// Success
-	KubernetesResources []shared.KubernetesResource
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Success
+	Classes []shared.KubernetesResource
 }
 
 func (o *GetKubernetesAPIPolicyKubernetesResourcesResponse) GetContentType() string {
@@ -23,13 +23,6 @@ func (o *GetKubernetesAPIPolicyKubernetesResourcesResponse) GetContentType() str
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *GetKubernetesAPIPolicyKubernetesResourcesResponse) GetKubernetesResources() []shared.KubernetesResource {
-	if o == nil {
-		return nil
-	}
-	return o.KubernetesResources
 }
 
 func (o *GetKubernetesAPIPolicyKubernetesResourcesResponse) GetStatusCode() int {
@@ -44,4 +37,11 @@ func (o *GetKubernetesAPIPolicyKubernetesResourcesResponse) GetRawResponse() *ht
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetKubernetesAPIPolicyKubernetesResourcesResponse) GetClasses() []shared.KubernetesResource {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

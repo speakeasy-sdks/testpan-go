@@ -8,21 +8,14 @@ import (
 )
 
 type GetServerlessPolicyHistoryResponse struct {
-	// Success
-	ConnectionPolicyHistories []shared.ConnectionPolicyHistory
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-}
-
-func (o *GetServerlessPolicyHistoryResponse) GetConnectionPolicyHistories() []shared.ConnectionPolicyHistory {
-	if o == nil {
-		return nil
-	}
-	return o.ConnectionPolicyHistories
+	// Success
+	Classes []shared.ConnectionPolicyHistory
 }
 
 func (o *GetServerlessPolicyHistoryResponse) GetContentType() string {
@@ -44,4 +37,11 @@ func (o *GetServerlessPolicyHistoryResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetServerlessPolicyHistoryResponse) GetClasses() []shared.ConnectionPolicyHistory {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

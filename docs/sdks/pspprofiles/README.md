@@ -1,5 +1,5 @@
 # PspProfiles
-(*PspProfiles*)
+(*.PspProfiles*)
 
 ## Overview
 
@@ -151,7 +151,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.PodSecurityPolicies != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -199,7 +199,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.SeccompProfiles != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -391,7 +391,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.PodSecurityPolicies != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -589,7 +589,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.PspProfiles.PutSeccompProfilesProfileID(ctx, operations.PutSeccompProfilesProfileIDRequest{
-        SeccompProfileInput: shared.SeccompProfileInput{
+        SeccompProfile: shared.SeccompProfileInput{
             PodSecurityPolicies: []string{
                 "string",
             },

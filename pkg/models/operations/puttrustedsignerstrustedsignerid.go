@@ -8,15 +8,15 @@ import (
 )
 
 type PutTrustedSignersTrustedSignerIDRequest struct {
-	TrustedSignerInput shared.TrustedSignerInput `request:"mediaType=application/json"`
-	TrustedSignerID    string                    `pathParam:"style=simple,explode=false,name=trustedSignerId"`
+	TrustedSigner   shared.TrustedSignerInput `request:"mediaType=application/json"`
+	TrustedSignerID string                    `pathParam:"style=simple,explode=false,name=trustedSignerId"`
 }
 
-func (o *PutTrustedSignersTrustedSignerIDRequest) GetTrustedSignerInput() shared.TrustedSignerInput {
+func (o *PutTrustedSignersTrustedSignerIDRequest) GetTrustedSigner() shared.TrustedSignerInput {
 	if o == nil {
 		return shared.TrustedSignerInput{}
 	}
-	return o.TrustedSignerInput
+	return o.TrustedSigner
 }
 
 func (o *PutTrustedSignersTrustedSignerIDRequest) GetTrustedSignerID() string {

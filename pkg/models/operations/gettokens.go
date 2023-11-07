@@ -10,19 +10,19 @@ import (
 	"net/http"
 )
 
-// GetTokensSortDir - sorting direction
-type GetTokensSortDir string
+// GetTokensQueryParamSortDir - sorting direction
+type GetTokensQueryParamSortDir string
 
 const (
-	GetTokensSortDirAsc  GetTokensSortDir = "ASC"
-	GetTokensSortDirDesc GetTokensSortDir = "DESC"
+	GetTokensQueryParamSortDirAsc  GetTokensQueryParamSortDir = "ASC"
+	GetTokensQueryParamSortDirDesc GetTokensQueryParamSortDir = "DESC"
 )
 
-func (e GetTokensSortDir) ToPointer() *GetTokensSortDir {
+func (e GetTokensQueryParamSortDir) ToPointer() *GetTokensQueryParamSortDir {
 	return &e
 }
 
-func (e *GetTokensSortDir) UnmarshalJSON(data []byte) error {
+func (e *GetTokensQueryParamSortDir) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -31,35 +31,35 @@ func (e *GetTokensSortDir) UnmarshalJSON(data []byte) error {
 	case "ASC":
 		fallthrough
 	case "DESC":
-		*e = GetTokensSortDir(v)
+		*e = GetTokensQueryParamSortDir(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetTokensSortDir: %v", v)
+		return fmt.Errorf("invalid value for GetTokensQueryParamSortDir: %v", v)
 	}
 }
 
-// GetTokensSortKey - the token sort key
-type GetTokensSortKey string
+// GetTokensQueryParamSortKey - the token sort key
+type GetTokensQueryParamSortKey string
 
 const (
-	GetTokensSortKeyExpirationDate GetTokensSortKey = "expirationDate"
+	GetTokensQueryParamSortKeyExpirationDate GetTokensQueryParamSortKey = "expirationDate"
 )
 
-func (e GetTokensSortKey) ToPointer() *GetTokensSortKey {
+func (e GetTokensQueryParamSortKey) ToPointer() *GetTokensQueryParamSortKey {
 	return &e
 }
 
-func (e *GetTokensSortKey) UnmarshalJSON(data []byte) error {
+func (e *GetTokensQueryParamSortKey) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
 	}
 	switch v {
 	case "expirationDate":
-		*e = GetTokensSortKey(v)
+		*e = GetTokensQueryParamSortKey(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetTokensSortKey: %v", v)
+		return fmt.Errorf("invalid value for GetTokensQueryParamSortKey: %v", v)
 	}
 }
 
@@ -71,9 +71,9 @@ type GetTokensRequest struct {
 	// Return entries from this offset (pagination)
 	Offset *float64 `default:"0" queryParam:"style=form,explode=true,name=offset"`
 	// sorting direction
-	SortDir *GetTokensSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
+	SortDir *GetTokensQueryParamSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
 	// the token sort key
-	SortKey *GetTokensSortKey `queryParam:"style=form,explode=true,name=sortKey"`
+	SortKey *GetTokensQueryParamSortKey `queryParam:"style=form,explode=true,name=sortKey"`
 	// Defined token name
 	TokenName *string `queryParam:"style=form,explode=true,name=tokenName"`
 }
@@ -110,14 +110,14 @@ func (o *GetTokensRequest) GetOffset() *float64 {
 	return o.Offset
 }
 
-func (o *GetTokensRequest) GetSortDir() *GetTokensSortDir {
+func (o *GetTokensRequest) GetSortDir() *GetTokensQueryParamSortDir {
 	if o == nil {
 		return nil
 	}
 	return o.SortDir
 }
 
-func (o *GetTokensRequest) GetSortKey() *GetTokensSortKey {
+func (o *GetTokensRequest) GetSortKey() *GetTokensQueryParamSortKey {
 	if o == nil {
 		return nil
 	}
@@ -139,7 +139,7 @@ type GetTokensResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Success
-	Tokens []shared.Token
+	Classes []shared.Token
 }
 
 func (o *GetTokensResponse) GetContentType() string {
@@ -163,9 +163,9 @@ func (o *GetTokensResponse) GetRawResponse() *http.Response {
 	return o.RawResponse
 }
 
-func (o *GetTokensResponse) GetTokens() []shared.Token {
+func (o *GetTokensResponse) GetClasses() []shared.Token {
 	if o == nil {
 		return nil
 	}
-	return o.Tokens
+	return o.Classes
 }

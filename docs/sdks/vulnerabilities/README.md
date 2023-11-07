@@ -1,5 +1,5 @@
 # Vulnerabilities
-(*Vulnerabilities*)
+(*.Vulnerabilities*)
 
 ### Available Operations
 
@@ -36,7 +36,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetVulnerabilities200ApplicationJSONStrings != nil {
+    if res.Strings != nil {
         // handle response
     }
 }

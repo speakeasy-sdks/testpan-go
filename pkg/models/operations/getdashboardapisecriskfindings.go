@@ -10,19 +10,19 @@ import (
 	"net/http"
 )
 
-// GetDashboardApisecRiskFindingsAPISecSource - source filter. an enum representing the source of the APIs service in scope
-type GetDashboardApisecRiskFindingsAPISecSource string
+// QueryParamAPISecSource - source filter. an enum representing the source of the APIs service in scope
+type QueryParamAPISecSource string
 
 const (
-	GetDashboardApisecRiskFindingsAPISecSourceInternal GetDashboardApisecRiskFindingsAPISecSource = "INTERNAL"
-	GetDashboardApisecRiskFindingsAPISecSourceExternal GetDashboardApisecRiskFindingsAPISecSource = "EXTERNAL"
+	QueryParamAPISecSourceInternal QueryParamAPISecSource = "INTERNAL"
+	QueryParamAPISecSourceExternal QueryParamAPISecSource = "EXTERNAL"
 )
 
-func (e GetDashboardApisecRiskFindingsAPISecSource) ToPointer() *GetDashboardApisecRiskFindingsAPISecSource {
+func (e QueryParamAPISecSource) ToPointer() *QueryParamAPISecSource {
 	return &e
 }
 
-func (e *GetDashboardApisecRiskFindingsAPISecSource) UnmarshalJSON(data []byte) error {
+func (e *QueryParamAPISecSource) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -31,16 +31,16 @@ func (e *GetDashboardApisecRiskFindingsAPISecSource) UnmarshalJSON(data []byte) 
 	case "INTERNAL":
 		fallthrough
 	case "EXTERNAL":
-		*e = GetDashboardApisecRiskFindingsAPISecSource(v)
+		*e = QueryParamAPISecSource(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetDashboardApisecRiskFindingsAPISecSource: %v", v)
+		return fmt.Errorf("invalid value for QueryParamAPISecSource: %v", v)
 	}
 }
 
 type GetDashboardApisecRiskFindingsRequest struct {
 	// source filter. an enum representing the source of the APIs service in scope
-	APISecSource GetDashboardApisecRiskFindingsAPISecSource `default:"INTERNAL" queryParam:"style=form,explode=true,name=apiSecSource"`
+	APISecSource QueryParamAPISecSource `default:"INTERNAL" queryParam:"style=form,explode=true,name=apiSecSource"`
 }
 
 func (g GetDashboardApisecRiskFindingsRequest) MarshalJSON() ([]byte, error) {
@@ -54,9 +54,9 @@ func (g *GetDashboardApisecRiskFindingsRequest) UnmarshalJSON(data []byte) error
 	return nil
 }
 
-func (o *GetDashboardApisecRiskFindingsRequest) GetAPISecSource() GetDashboardApisecRiskFindingsAPISecSource {
+func (o *GetDashboardApisecRiskFindingsRequest) GetAPISecSource() QueryParamAPISecSource {
 	if o == nil {
-		return GetDashboardApisecRiskFindingsAPISecSource("")
+		return QueryParamAPISecSource("")
 	}
 	return o.APISecSource
 }

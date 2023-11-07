@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-type ConnectionTelemetryState struct {
+type State struct {
 	Count            *int64            `json:"count,omitempty"`
 	IsOpen           *bool             `json:"isOpen,omitempty"`
 	LastSeen         *time.Time        `json:"lastSeen,omitempty"`
@@ -16,53 +16,53 @@ type ConnectionTelemetryState struct {
 	StartTime        *time.Time        `json:"startTime,omitempty"`
 }
 
-func (c ConnectionTelemetryState) MarshalJSON() ([]byte, error) {
-	return utils.MarshalJSON(c, "", false)
+func (s State) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(s, "", false)
 }
 
-func (c *ConnectionTelemetryState) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, false); err != nil {
+func (s *State) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &s, "", false, false); err != nil {
 		return err
 	}
 	return nil
 }
 
-func (o *ConnectionTelemetryState) GetCount() *int64 {
+func (o *State) GetCount() *int64 {
 	if o == nil {
 		return nil
 	}
 	return o.Count
 }
 
-func (o *ConnectionTelemetryState) GetIsOpen() *bool {
+func (o *State) GetIsOpen() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.IsOpen
 }
 
-func (o *ConnectionTelemetryState) GetLastSeen() *time.Time {
+func (o *State) GetLastSeen() *time.Time {
 	if o == nil {
 		return nil
 	}
 	return o.LastSeen
 }
 
-func (o *ConnectionTelemetryState) GetLayer7Attributes() []Layer7Attribute {
+func (o *State) GetLayer7Attributes() []Layer7Attribute {
 	if o == nil {
 		return nil
 	}
 	return o.Layer7Attributes
 }
 
-func (o *ConnectionTelemetryState) GetProtocol() *string {
+func (o *State) GetProtocol() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Protocol
 }
 
-func (o *ConnectionTelemetryState) GetStartTime() *time.Time {
+func (o *State) GetStartTime() *time.Time {
 	if o == nil {
 		return nil
 	}
@@ -70,11 +70,11 @@ func (o *ConnectionTelemetryState) GetStartTime() *time.Time {
 }
 
 type ConnectionTelemetry struct {
-	APITokens []string                  `json:"apiTokens,omitempty"`
-	ID        *string                   `json:"id,omitempty"`
-	Source    *AppEnvInfo               `json:"source,omitempty"`
-	State     *ConnectionTelemetryState `json:"state,omitempty"`
-	Target    *AppEnvInfo               `json:"target,omitempty"`
+	APITokens []string    `json:"apiTokens,omitempty"`
+	ID        *string     `json:"id,omitempty"`
+	Source    *AppEnvInfo `json:"source,omitempty"`
+	State     *State      `json:"state,omitempty"`
+	Target    *AppEnvInfo `json:"target,omitempty"`
 	// If there is a connection violation according to the policy - this object will hold the violation info
 	Violation *ConnectionViolation `json:"violation,omitempty"`
 }
@@ -100,7 +100,7 @@ func (o *ConnectionTelemetry) GetSource() *AppEnvInfo {
 	return o.Source
 }
 
-func (o *ConnectionTelemetry) GetState() *ConnectionTelemetryState {
+func (o *ConnectionTelemetry) GetState() *State {
 	if o == nil {
 		return nil
 	}

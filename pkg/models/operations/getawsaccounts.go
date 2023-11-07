@@ -8,21 +8,14 @@ import (
 )
 
 type GetAwsAccountsResponse struct {
-	// Success
-	AWSAccounts []shared.AWSAccount
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-}
-
-func (o *GetAwsAccountsResponse) GetAWSAccounts() []shared.AWSAccount {
-	if o == nil {
-		return nil
-	}
-	return o.AWSAccounts
+	// Success
+	Classes []shared.AWSAccount
 }
 
 func (o *GetAwsAccountsResponse) GetContentType() string {
@@ -44,4 +37,11 @@ func (o *GetAwsAccountsResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetAwsAccountsResponse) GetClasses() []shared.AWSAccount {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

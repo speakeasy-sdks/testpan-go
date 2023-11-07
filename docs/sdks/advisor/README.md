@@ -1,5 +1,5 @@
 # Advisor
-(*Advisor*)
+(*.Advisor*)
 
 ## Overview
 
@@ -45,7 +45,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.ClusterEventRuleRecommendationPeriods != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -93,7 +93,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.ConnectionsRuleRecommendationPeriods != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -141,7 +141,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.EnvironmentRecommendationPeriods != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -189,7 +189,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.EnvironmentRulesRecommendationPeriods != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -237,7 +237,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.PodSecurityPolicyRecommendationPeriods != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -282,7 +282,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Advisor.GetAdvisorQueueAdvisorType(ctx, operations.GetAdvisorQueueAdvisorTypeRequest{
-        AdvisorType: operations.GetAdvisorQueueAdvisorTypeAdvisorTypeDeploymentRules,
+        AdvisorType: operations.AdvisorTypeDeploymentRules,
     })
     if err != nil {
         log.Fatal(err)
@@ -334,7 +334,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Advisor.PostAdvisorRun(ctx, operations.PostAdvisorRunRequest{
-        PolicyAdvisorType: operations.PostAdvisorRunPolicyAdvisorTypeAPIRules,
+        PolicyAdvisorType: operations.PolicyAdvisorTypeAPIRules,
     })
     if err != nil {
         log.Fatal(err)

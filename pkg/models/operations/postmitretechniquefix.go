@@ -9,41 +9,41 @@ import (
 	"net/http"
 )
 
-// PostMitreTechniqueFixMitreTechniqueType - MITRE technique type
-type PostMitreTechniqueFixMitreTechniqueType string
+// QueryParamMitreTechniqueType - MITRE technique type
+type QueryParamMitreTechniqueType string
 
 const (
-	PostMitreTechniqueFixMitreTechniqueTypeCompromisedImages               PostMitreTechniqueFixMitreTechniqueType = "COMPROMISED_IMAGES"
-	PostMitreTechniqueFixMitreTechniqueTypeUnauthorisedRegistriesUsage     PostMitreTechniqueFixMitreTechniqueType = "UNAUTHORISED_REGISTRIES_USAGE"
-	PostMitreTechniqueFixMitreTechniqueTypeSuspiciousDeployment            PostMitreTechniqueFixMitreTechniqueType = "SUSPICIOUS_DEPLOYMENT"
-	PostMitreTechniqueFixMitreTechniqueTypeVulnerableApplication           PostMitreTechniqueFixMitreTechniqueType = "VULNERABLE_APPLICATION"
-	PostMitreTechniqueFixMitreTechniqueTypeExposedK8SDashboard             PostMitreTechniqueFixMitreTechniqueType = "EXPOSED_K8S_DASHBOARD"
-	PostMitreTechniqueFixMitreTechniqueTypeExploitPublicFacingApplication  PostMitreTechniqueFixMitreTechniqueType = "EXPLOIT_PUBLIC_FACING_APPLICATION"
-	PostMitreTechniqueFixMitreTechniqueTypeContainerService                PostMitreTechniqueFixMitreTechniqueType = "CONTAINER_SERVICE"
-	PostMitreTechniqueFixMitreTechniqueTypeDeployContainer                 PostMitreTechniqueFixMitreTechniqueType = "DEPLOY_CONTAINER"
-	PostMitreTechniqueFixMitreTechniqueTypeSSHConnection                   PostMitreTechniqueFixMitreTechniqueType = "SSH_CONNECTION"
-	PostMitreTechniqueFixMitreTechniqueTypeWriteableHostPath               PostMitreTechniqueFixMitreTechniqueType = "WRITEABLE_HOST_PATH"
-	PostMitreTechniqueFixMitreTechniqueTypeCronJobs                        PostMitreTechniqueFixMitreTechniqueType = "CRON_JOBS"
-	PostMitreTechniqueFixMitreTechniqueTypePrivilegedOrRootContainer       PostMitreTechniqueFixMitreTechniqueType = "PRIVILEGED_OR_ROOT_CONTAINER"
-	PostMitreTechniqueFixMitreTechniqueTypePrivilegeEscalationEnabled      PostMitreTechniqueFixMitreTechniqueType = "PRIVILEGE_ESCALATION_ENABLED"
-	PostMitreTechniqueFixMitreTechniqueTypeClusterAdminBinding             PostMitreTechniqueFixMitreTechniqueType = "CLUSTER_ADMIN_BINDING"
-	PostMitreTechniqueFixMitreTechniqueTypeUnauthorizedClusterAdminBinding PostMitreTechniqueFixMitreTechniqueType = "UNAUTHORIZED_CLUSTER_ADMIN_BINDING"
-	PostMitreTechniqueFixMitreTechniqueTypeAccessClusterResources          PostMitreTechniqueFixMitreTechniqueType = "ACCESS_CLUSTER_RESOURCES"
-	PostMitreTechniqueFixMitreTechniqueTypeClearContainerLogs              PostMitreTechniqueFixMitreTechniqueType = "CLEAR_CONTAINER_LOGS"
-	PostMitreTechniqueFixMitreTechniqueTypeClearK8SEvents                  PostMitreTechniqueFixMitreTechniqueType = "CLEAR_K8S_EVENTS"
-	PostMitreTechniqueFixMitreTechniqueTypeListSecrets                     PostMitreTechniqueFixMitreTechniqueType = "LIST_SECRETS"
-	PostMitreTechniqueFixMitreTechniqueTypeServiceAccountAccess            PostMitreTechniqueFixMitreTechniqueType = "SERVICE_ACCOUNT_ACCESS"
-	PostMitreTechniqueFixMitreTechniqueTypeContainerResourceDiscovery      PostMitreTechniqueFixMitreTechniqueType = "CONTAINER_RESOURCE_DISCOVERY"
-	PostMitreTechniqueFixMitreTechniqueTypeClusterInternalNetworking       PostMitreTechniqueFixMitreTechniqueType = "CLUSTER_INTERNAL_NETWORKING"
-	PostMitreTechniqueFixMitreTechniqueTypeTillerEndpointAccess            PostMitreTechniqueFixMitreTechniqueType = "TILLER_ENDPOINT_ACCESS"
-	PostMitreTechniqueFixMitreTechniqueTypeDataDestruction                 PostMitreTechniqueFixMitreTechniqueType = "DATA_DESTRUCTION"
+	QueryParamMitreTechniqueTypeCompromisedImages               QueryParamMitreTechniqueType = "COMPROMISED_IMAGES"
+	QueryParamMitreTechniqueTypeUnauthorisedRegistriesUsage     QueryParamMitreTechniqueType = "UNAUTHORISED_REGISTRIES_USAGE"
+	QueryParamMitreTechniqueTypeSuspiciousDeployment            QueryParamMitreTechniqueType = "SUSPICIOUS_DEPLOYMENT"
+	QueryParamMitreTechniqueTypeVulnerableApplication           QueryParamMitreTechniqueType = "VULNERABLE_APPLICATION"
+	QueryParamMitreTechniqueTypeExposedK8SDashboard             QueryParamMitreTechniqueType = "EXPOSED_K8S_DASHBOARD"
+	QueryParamMitreTechniqueTypeExploitPublicFacingApplication  QueryParamMitreTechniqueType = "EXPLOIT_PUBLIC_FACING_APPLICATION"
+	QueryParamMitreTechniqueTypeContainerService                QueryParamMitreTechniqueType = "CONTAINER_SERVICE"
+	QueryParamMitreTechniqueTypeDeployContainer                 QueryParamMitreTechniqueType = "DEPLOY_CONTAINER"
+	QueryParamMitreTechniqueTypeSSHConnection                   QueryParamMitreTechniqueType = "SSH_CONNECTION"
+	QueryParamMitreTechniqueTypeWriteableHostPath               QueryParamMitreTechniqueType = "WRITEABLE_HOST_PATH"
+	QueryParamMitreTechniqueTypeCronJobs                        QueryParamMitreTechniqueType = "CRON_JOBS"
+	QueryParamMitreTechniqueTypePrivilegedOrRootContainer       QueryParamMitreTechniqueType = "PRIVILEGED_OR_ROOT_CONTAINER"
+	QueryParamMitreTechniqueTypePrivilegeEscalationEnabled      QueryParamMitreTechniqueType = "PRIVILEGE_ESCALATION_ENABLED"
+	QueryParamMitreTechniqueTypeClusterAdminBinding             QueryParamMitreTechniqueType = "CLUSTER_ADMIN_BINDING"
+	QueryParamMitreTechniqueTypeUnauthorizedClusterAdminBinding QueryParamMitreTechniqueType = "UNAUTHORIZED_CLUSTER_ADMIN_BINDING"
+	QueryParamMitreTechniqueTypeAccessClusterResources          QueryParamMitreTechniqueType = "ACCESS_CLUSTER_RESOURCES"
+	QueryParamMitreTechniqueTypeClearContainerLogs              QueryParamMitreTechniqueType = "CLEAR_CONTAINER_LOGS"
+	QueryParamMitreTechniqueTypeClearK8SEvents                  QueryParamMitreTechniqueType = "CLEAR_K8S_EVENTS"
+	QueryParamMitreTechniqueTypeListSecrets                     QueryParamMitreTechniqueType = "LIST_SECRETS"
+	QueryParamMitreTechniqueTypeServiceAccountAccess            QueryParamMitreTechniqueType = "SERVICE_ACCOUNT_ACCESS"
+	QueryParamMitreTechniqueTypeContainerResourceDiscovery      QueryParamMitreTechniqueType = "CONTAINER_RESOURCE_DISCOVERY"
+	QueryParamMitreTechniqueTypeClusterInternalNetworking       QueryParamMitreTechniqueType = "CLUSTER_INTERNAL_NETWORKING"
+	QueryParamMitreTechniqueTypeTillerEndpointAccess            QueryParamMitreTechniqueType = "TILLER_ENDPOINT_ACCESS"
+	QueryParamMitreTechniqueTypeDataDestruction                 QueryParamMitreTechniqueType = "DATA_DESTRUCTION"
 )
 
-func (e PostMitreTechniqueFixMitreTechniqueType) ToPointer() *PostMitreTechniqueFixMitreTechniqueType {
+func (e QueryParamMitreTechniqueType) ToPointer() *QueryParamMitreTechniqueType {
 	return &e
 }
 
-func (e *PostMitreTechniqueFixMitreTechniqueType) UnmarshalJSON(data []byte) error {
+func (e *QueryParamMitreTechniqueType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -96,10 +96,10 @@ func (e *PostMitreTechniqueFixMitreTechniqueType) UnmarshalJSON(data []byte) err
 	case "TILLER_ENDPOINT_ACCESS":
 		fallthrough
 	case "DATA_DESTRUCTION":
-		*e = PostMitreTechniqueFixMitreTechniqueType(v)
+		*e = QueryParamMitreTechniqueType(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for PostMitreTechniqueFixMitreTechniqueType: %v", v)
+		return fmt.Errorf("invalid value for QueryParamMitreTechniqueType: %v", v)
 	}
 }
 
@@ -108,7 +108,7 @@ type PostMitreTechniqueFixRequest struct {
 	// the clusters ids to filter by
 	ClustersIds []string `queryParam:"style=form,explode=true,name=clustersIds"`
 	// MITRE technique type
-	MitreTechniqueType PostMitreTechniqueFixMitreTechniqueType `queryParam:"style=form,explode=true,name=mitreTechniqueType"`
+	MitreTechniqueType QueryParamMitreTechniqueType `queryParam:"style=form,explode=true,name=mitreTechniqueType"`
 }
 
 func (o *PostMitreTechniqueFixRequest) GetMitreTechniqueFixInfo() shared.MitreTechniqueFixInfo {
@@ -125,9 +125,9 @@ func (o *PostMitreTechniqueFixRequest) GetClustersIds() []string {
 	return o.ClustersIds
 }
 
-func (o *PostMitreTechniqueFixRequest) GetMitreTechniqueType() PostMitreTechniqueFixMitreTechniqueType {
+func (o *PostMitreTechniqueFixRequest) GetMitreTechniqueType() QueryParamMitreTechniqueType {
 	if o == nil {
-		return PostMitreTechniqueFixMitreTechniqueType("")
+		return QueryParamMitreTechniqueType("")
 	}
 	return o.MitreTechniqueType
 }

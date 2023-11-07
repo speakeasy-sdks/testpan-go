@@ -1,5 +1,5 @@
 # Users
-(*Users*)
+(*.Users*)
 
 ## Overview
 
@@ -149,15 +149,15 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Users.GetUsers(ctx, operations.GetUsersRequest{
-        Roles: []operations.GetUsersRoles{
-            operations.GetUsersRolesService,
+        Roles: []operations.Roles{
+            operations.RolesService,
         },
     })
     if err != nil {
         log.Fatal(err)
     }
 
-    if res.UserDisplays != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -709,7 +709,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Users.PutUsersUserID(ctx, operations.PutUsersUserIDRequest{
-        EditUserInput: shared.EditUserInput{
+        EditUser: shared.EditUser{
             FullName: "Elisa O'Reilly",
             Status: shared.EditUserStatusDisabled,
         },

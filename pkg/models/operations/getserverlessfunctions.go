@@ -10,20 +10,20 @@ import (
 	"net/http"
 )
 
-type GetServerlessFunctionsPolicyRisk string
+type PolicyRisk string
 
 const (
-	GetServerlessFunctionsPolicyRiskLow      GetServerlessFunctionsPolicyRisk = "LOW"
-	GetServerlessFunctionsPolicyRiskMedium   GetServerlessFunctionsPolicyRisk = "MEDIUM"
-	GetServerlessFunctionsPolicyRiskHigh     GetServerlessFunctionsPolicyRisk = "HIGH"
-	GetServerlessFunctionsPolicyRiskCritical GetServerlessFunctionsPolicyRisk = "CRITICAL"
+	PolicyRiskLow      PolicyRisk = "LOW"
+	PolicyRiskMedium   PolicyRisk = "MEDIUM"
+	PolicyRiskHigh     PolicyRisk = "HIGH"
+	PolicyRiskCritical PolicyRisk = "CRITICAL"
 )
 
-func (e GetServerlessFunctionsPolicyRisk) ToPointer() *GetServerlessFunctionsPolicyRisk {
+func (e PolicyRisk) ToPointer() *PolicyRisk {
 	return &e
 }
 
-func (e *GetServerlessFunctionsPolicyRisk) UnmarshalJSON(data []byte) error {
+func (e *PolicyRisk) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -36,26 +36,26 @@ func (e *GetServerlessFunctionsPolicyRisk) UnmarshalJSON(data []byte) error {
 	case "HIGH":
 		fallthrough
 	case "CRITICAL":
-		*e = GetServerlessFunctionsPolicyRisk(v)
+		*e = PolicyRisk(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetServerlessFunctionsPolicyRisk: %v", v)
+		return fmt.Errorf("invalid value for PolicyRisk: %v", v)
 	}
 }
 
-type GetServerlessFunctionsResult string
+type QueryParamResult string
 
 const (
-	GetServerlessFunctionsResultAllow  GetServerlessFunctionsResult = "ALLOW"
-	GetServerlessFunctionsResultDetect GetServerlessFunctionsResult = "DETECT"
-	GetServerlessFunctionsResultBlock  GetServerlessFunctionsResult = "BLOCK"
+	QueryParamResultAllow  QueryParamResult = "ALLOW"
+	QueryParamResultDetect QueryParamResult = "DETECT"
+	QueryParamResultBlock  QueryParamResult = "BLOCK"
 )
 
-func (e GetServerlessFunctionsResult) ToPointer() *GetServerlessFunctionsResult {
+func (e QueryParamResult) ToPointer() *QueryParamResult {
 	return &e
 }
 
-func (e *GetServerlessFunctionsResult) UnmarshalJSON(data []byte) error {
+func (e *QueryParamResult) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -66,27 +66,27 @@ func (e *GetServerlessFunctionsResult) UnmarshalJSON(data []byte) error {
 	case "DETECT":
 		fallthrough
 	case "BLOCK":
-		*e = GetServerlessFunctionsResult(v)
+		*e = QueryParamResult(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetServerlessFunctionsResult: %v", v)
+		return fmt.Errorf("invalid value for QueryParamResult: %v", v)
 	}
 }
 
-type GetServerlessFunctionsRisk string
+type QueryParamRisk string
 
 const (
-	GetServerlessFunctionsRiskLow      GetServerlessFunctionsRisk = "LOW"
-	GetServerlessFunctionsRiskMedium   GetServerlessFunctionsRisk = "MEDIUM"
-	GetServerlessFunctionsRiskHigh     GetServerlessFunctionsRisk = "HIGH"
-	GetServerlessFunctionsRiskCritical GetServerlessFunctionsRisk = "CRITICAL"
+	QueryParamRiskLow      QueryParamRisk = "LOW"
+	QueryParamRiskMedium   QueryParamRisk = "MEDIUM"
+	QueryParamRiskHigh     QueryParamRisk = "HIGH"
+	QueryParamRiskCritical QueryParamRisk = "CRITICAL"
 )
 
-func (e GetServerlessFunctionsRisk) ToPointer() *GetServerlessFunctionsRisk {
+func (e QueryParamRisk) ToPointer() *QueryParamRisk {
 	return &e
 }
 
-func (e *GetServerlessFunctionsRisk) UnmarshalJSON(data []byte) error {
+func (e *QueryParamRisk) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -99,25 +99,25 @@ func (e *GetServerlessFunctionsRisk) UnmarshalJSON(data []byte) error {
 	case "HIGH":
 		fallthrough
 	case "CRITICAL":
-		*e = GetServerlessFunctionsRisk(v)
+		*e = QueryParamRisk(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetServerlessFunctionsRisk: %v", v)
+		return fmt.Errorf("invalid value for QueryParamRisk: %v", v)
 	}
 }
 
-type GetServerlessFunctionsSecretsRisk string
+type SecretsRisk string
 
 const (
-	GetServerlessFunctionsSecretsRiskNoKnownRisk    GetServerlessFunctionsSecretsRisk = "NO_KNOWN_RISK"
-	GetServerlessFunctionsSecretsRiskRiskIdentified GetServerlessFunctionsSecretsRisk = "RISK_IDENTIFIED"
+	SecretsRiskNoKnownRisk    SecretsRisk = "NO_KNOWN_RISK"
+	SecretsRiskRiskIdentified SecretsRisk = "RISK_IDENTIFIED"
 )
 
-func (e GetServerlessFunctionsSecretsRisk) ToPointer() *GetServerlessFunctionsSecretsRisk {
+func (e SecretsRisk) ToPointer() *SecretsRisk {
 	return &e
 }
 
-func (e *GetServerlessFunctionsSecretsRisk) UnmarshalJSON(data []byte) error {
+func (e *SecretsRisk) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -126,26 +126,26 @@ func (e *GetServerlessFunctionsSecretsRisk) UnmarshalJSON(data []byte) error {
 	case "NO_KNOWN_RISK":
 		fallthrough
 	case "RISK_IDENTIFIED":
-		*e = GetServerlessFunctionsSecretsRisk(v)
+		*e = SecretsRisk(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetServerlessFunctionsSecretsRisk: %v", v)
+		return fmt.Errorf("invalid value for SecretsRisk: %v", v)
 	}
 }
 
-// GetServerlessFunctionsSortDir - sorting direction
-type GetServerlessFunctionsSortDir string
+// GetServerlessFunctionsQueryParamSortDir - sorting direction
+type GetServerlessFunctionsQueryParamSortDir string
 
 const (
-	GetServerlessFunctionsSortDirAsc  GetServerlessFunctionsSortDir = "ASC"
-	GetServerlessFunctionsSortDirDesc GetServerlessFunctionsSortDir = "DESC"
+	GetServerlessFunctionsQueryParamSortDirAsc  GetServerlessFunctionsQueryParamSortDir = "ASC"
+	GetServerlessFunctionsQueryParamSortDirDesc GetServerlessFunctionsQueryParamSortDir = "DESC"
 )
 
-func (e GetServerlessFunctionsSortDir) ToPointer() *GetServerlessFunctionsSortDir {
+func (e GetServerlessFunctionsQueryParamSortDir) ToPointer() *GetServerlessFunctionsQueryParamSortDir {
 	return &e
 }
 
-func (e *GetServerlessFunctionsSortDir) UnmarshalJSON(data []byte) error {
+func (e *GetServerlessFunctionsQueryParamSortDir) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -154,10 +154,10 @@ func (e *GetServerlessFunctionsSortDir) UnmarshalJSON(data []byte) error {
 	case "ASC":
 		fallthrough
 	case "DESC":
-		*e = GetServerlessFunctionsSortDir(v)
+		*e = GetServerlessFunctionsQueryParamSortDir(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetServerlessFunctionsSortDir: %v", v)
+		return fmt.Errorf("invalid value for GetServerlessFunctionsQueryParamSortDir: %v", v)
 	}
 }
 
@@ -174,17 +174,17 @@ type GetServerlessFunctionsRequest struct {
 	// Return entries from this offset (pagination)
 	Offset *float64 `default:"0" queryParam:"style=form,explode=true,name=offset"`
 	// The risk of the serverless functioriskFindingsn policy
-	PolicyRisk []GetServerlessFunctionsPolicyRisk `queryParam:"style=form,explode=false,name=policyRisk"`
+	PolicyRisk []PolicyRisk `queryParam:"style=form,explode=false,name=policyRisk"`
 	// Filter cloud accounts by region
 	Region *string `queryParam:"style=form,explode=true,name=region"`
 	// serverless function result filter
-	Result []GetServerlessFunctionsResult `queryParam:"style=form,explode=false,name=result"`
+	Result []QueryParamResult `queryParam:"style=form,explode=false,name=result"`
 	// The risk of the serverless function
-	Risk []GetServerlessFunctionsRisk `queryParam:"style=form,explode=false,name=risk"`
+	Risk []QueryParamRisk `queryParam:"style=form,explode=false,name=risk"`
 	// The risk of the serverless function secrets
-	SecretsRisk []GetServerlessFunctionsSecretsRisk `queryParam:"style=form,explode=false,name=secretsRisk"`
+	SecretsRisk []SecretsRisk `queryParam:"style=form,explode=false,name=secretsRisk"`
 	// sorting direction
-	SortDir *GetServerlessFunctionsSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
+	SortDir *GetServerlessFunctionsQueryParamSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
 }
 
 func (g GetServerlessFunctionsRequest) MarshalJSON() ([]byte, error) {
@@ -240,7 +240,7 @@ func (o *GetServerlessFunctionsRequest) GetOffset() *float64 {
 	return o.Offset
 }
 
-func (o *GetServerlessFunctionsRequest) GetPolicyRisk() []GetServerlessFunctionsPolicyRisk {
+func (o *GetServerlessFunctionsRequest) GetPolicyRisk() []PolicyRisk {
 	if o == nil {
 		return nil
 	}
@@ -254,28 +254,28 @@ func (o *GetServerlessFunctionsRequest) GetRegion() *string {
 	return o.Region
 }
 
-func (o *GetServerlessFunctionsRequest) GetResult() []GetServerlessFunctionsResult {
+func (o *GetServerlessFunctionsRequest) GetResult() []QueryParamResult {
 	if o == nil {
 		return nil
 	}
 	return o.Result
 }
 
-func (o *GetServerlessFunctionsRequest) GetRisk() []GetServerlessFunctionsRisk {
+func (o *GetServerlessFunctionsRequest) GetRisk() []QueryParamRisk {
 	if o == nil {
 		return nil
 	}
 	return o.Risk
 }
 
-func (o *GetServerlessFunctionsRequest) GetSecretsRisk() []GetServerlessFunctionsSecretsRisk {
+func (o *GetServerlessFunctionsRequest) GetSecretsRisk() []SecretsRisk {
 	if o == nil {
 		return nil
 	}
 	return o.SecretsRisk
 }
 
-func (o *GetServerlessFunctionsRequest) GetSortDir() *GetServerlessFunctionsSortDir {
+func (o *GetServerlessFunctionsRequest) GetSortDir() *GetServerlessFunctionsQueryParamSortDir {
 	if o == nil {
 		return nil
 	}
@@ -285,12 +285,12 @@ func (o *GetServerlessFunctionsRequest) GetSortDir() *GetServerlessFunctionsSort
 type GetServerlessFunctionsResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// Success
-	ServerlessFunctions []shared.ServerlessFunction
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Success
+	Classes []shared.ServerlessFunction
 }
 
 func (o *GetServerlessFunctionsResponse) GetContentType() string {
@@ -298,13 +298,6 @@ func (o *GetServerlessFunctionsResponse) GetContentType() string {
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *GetServerlessFunctionsResponse) GetServerlessFunctions() []shared.ServerlessFunction {
-	if o == nil {
-		return nil
-	}
-	return o.ServerlessFunctions
 }
 
 func (o *GetServerlessFunctionsResponse) GetStatusCode() int {
@@ -319,4 +312,11 @@ func (o *GetServerlessFunctionsResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetServerlessFunctionsResponse) GetClasses() []shared.ServerlessFunction {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

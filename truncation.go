@@ -15,19 +15,19 @@ import (
 	"strings"
 )
 
-// truncation - APIs to delete workloads
-type truncation struct {
+// Truncation - APIs to delete workloads
+type Truncation struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newTruncation(sdkConfig sdkConfiguration) *truncation {
-	return &truncation{
+func newTruncation(sdkConfig sdkConfiguration) *Truncation {
+	return &Truncation{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // GetTruncationImages - Get workloads truncation time for account
-func (s *truncation) GetTruncationImages(ctx context.Context) (*operations.GetTruncationImagesResponse, error) {
+func (s *Truncation) GetTruncationImages(ctx context.Context) (*operations.GetTruncationImagesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/truncation/images"
 
@@ -85,7 +85,7 @@ func (s *truncation) GetTruncationImages(ctx context.Context) (*operations.GetTr
 }
 
 // GetTruncationWorkloads - Get workloads truncation time for account
-func (s *truncation) GetTruncationWorkloads(ctx context.Context) (*operations.GetTruncationWorkloadsResponse, error) {
+func (s *Truncation) GetTruncationWorkloads(ctx context.Context) (*operations.GetTruncationWorkloadsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/truncation/workloads"
 
@@ -143,7 +143,7 @@ func (s *truncation) GetTruncationWorkloads(ctx context.Context) (*operations.Ge
 }
 
 // PostTruncationImages - Update workloads truncation status for account
-func (s *truncation) PostTruncationImages(ctx context.Context, request shared.TruncationStatus) (*operations.PostTruncationImagesResponse, error) {
+func (s *Truncation) PostTruncationImages(ctx context.Context, request shared.TruncationStatus) (*operations.PostTruncationImagesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/truncation/images"
 
@@ -211,7 +211,7 @@ func (s *truncation) PostTruncationImages(ctx context.Context, request shared.Tr
 }
 
 // PostTruncationWorkloads - Update workloads truncation status for account
-func (s *truncation) PostTruncationWorkloads(ctx context.Context, request shared.TruncationStatus) (*operations.PostTruncationWorkloadsResponse, error) {
+func (s *Truncation) PostTruncationWorkloads(ctx context.Context, request shared.TruncationStatus) (*operations.PostTruncationWorkloadsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/truncation/workloads"
 

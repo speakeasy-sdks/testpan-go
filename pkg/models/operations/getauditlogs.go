@@ -11,19 +11,19 @@ import (
 	"time"
 )
 
-// GetAuditLogsSortDir - sorting direction
-type GetAuditLogsSortDir string
+// GetAuditLogsQueryParamSortDir - sorting direction
+type GetAuditLogsQueryParamSortDir string
 
 const (
-	GetAuditLogsSortDirAsc  GetAuditLogsSortDir = "ASC"
-	GetAuditLogsSortDirDesc GetAuditLogsSortDir = "DESC"
+	GetAuditLogsQueryParamSortDirAsc  GetAuditLogsQueryParamSortDir = "ASC"
+	GetAuditLogsQueryParamSortDirDesc GetAuditLogsQueryParamSortDir = "DESC"
 )
 
-func (e GetAuditLogsSortDir) ToPointer() *GetAuditLogsSortDir {
+func (e GetAuditLogsQueryParamSortDir) ToPointer() *GetAuditLogsQueryParamSortDir {
 	return &e
 }
 
-func (e *GetAuditLogsSortDir) UnmarshalJSON(data []byte) error {
+func (e *GetAuditLogsQueryParamSortDir) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -32,27 +32,27 @@ func (e *GetAuditLogsSortDir) UnmarshalJSON(data []byte) error {
 	case "ASC":
 		fallthrough
 	case "DESC":
-		*e = GetAuditLogsSortDir(v)
+		*e = GetAuditLogsQueryParamSortDir(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetAuditLogsSortDir: %v", v)
+		return fmt.Errorf("invalid value for GetAuditLogsQueryParamSortDir: %v", v)
 	}
 }
 
-// GetAuditLogsSortKey - sort key
-type GetAuditLogsSortKey string
+// GetAuditLogsQueryParamSortKey - sort key
+type GetAuditLogsQueryParamSortKey string
 
 const (
-	GetAuditLogsSortKeyTime       GetAuditLogsSortKey = "time"
-	GetAuditLogsSortKeyAction     GetAuditLogsSortKey = "action"
-	GetAuditLogsSortKeyObjectType GetAuditLogsSortKey = "objectType"
+	GetAuditLogsQueryParamSortKeyTime       GetAuditLogsQueryParamSortKey = "time"
+	GetAuditLogsQueryParamSortKeyAction     GetAuditLogsQueryParamSortKey = "action"
+	GetAuditLogsQueryParamSortKeyObjectType GetAuditLogsQueryParamSortKey = "objectType"
 )
 
-func (e GetAuditLogsSortKey) ToPointer() *GetAuditLogsSortKey {
+func (e GetAuditLogsQueryParamSortKey) ToPointer() *GetAuditLogsQueryParamSortKey {
 	return &e
 }
 
-func (e *GetAuditLogsSortKey) UnmarshalJSON(data []byte) error {
+func (e *GetAuditLogsQueryParamSortKey) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -63,10 +63,10 @@ func (e *GetAuditLogsSortKey) UnmarshalJSON(data []byte) error {
 	case "action":
 		fallthrough
 	case "objectType":
-		*e = GetAuditLogsSortKey(v)
+		*e = GetAuditLogsQueryParamSortKey(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetAuditLogsSortKey: %v", v)
+		return fmt.Errorf("invalid value for GetAuditLogsQueryParamSortKey: %v", v)
 	}
 }
 
@@ -84,9 +84,9 @@ type GetAuditLogsRequest struct {
 	// Return entries from this offset (pagination)
 	Offset *float64 `default:"0" queryParam:"style=form,explode=true,name=offset"`
 	// sorting direction
-	SortDir *GetAuditLogsSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
+	SortDir *GetAuditLogsQueryParamSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
 	// sort key
-	SortKey *GetAuditLogsSortKey `default:"time" queryParam:"style=form,explode=true,name=sortKey"`
+	SortKey *GetAuditLogsQueryParamSortKey `default:"time" queryParam:"style=form,explode=true,name=sortKey"`
 	// Start date of the query
 	StartTime time.Time `queryParam:"style=form,explode=true,name=startTime"`
 	// User name
@@ -146,14 +146,14 @@ func (o *GetAuditLogsRequest) GetOffset() *float64 {
 	return o.Offset
 }
 
-func (o *GetAuditLogsRequest) GetSortDir() *GetAuditLogsSortDir {
+func (o *GetAuditLogsRequest) GetSortDir() *GetAuditLogsQueryParamSortDir {
 	if o == nil {
 		return nil
 	}
 	return o.SortDir
 }
 
-func (o *GetAuditLogsRequest) GetSortKey() *GetAuditLogsSortKey {
+func (o *GetAuditLogsRequest) GetSortKey() *GetAuditLogsQueryParamSortKey {
 	if o == nil {
 		return nil
 	}
@@ -175,21 +175,14 @@ func (o *GetAuditLogsRequest) GetUser() *string {
 }
 
 type GetAuditLogsResponse struct {
-	// Success
-	AuditLogs []shared.AuditLog
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-}
-
-func (o *GetAuditLogsResponse) GetAuditLogs() []shared.AuditLog {
-	if o == nil {
-		return nil
-	}
-	return o.AuditLogs
+	// Success
+	Classes []shared.AuditLog
 }
 
 func (o *GetAuditLogsResponse) GetContentType() string {
@@ -211,4 +204,11 @@ func (o *GetAuditLogsResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetAuditLogsResponse) GetClasses() []shared.AuditLog {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

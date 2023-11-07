@@ -1,5 +1,5 @@
 # Dashboard
-(*Dashboard*)
+(*.Dashboard*)
 
 ## Overview
 
@@ -56,7 +56,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Dashboard.GetDashboardApisecRiskFindings(ctx, operations.GetDashboardApisecRiskFindingsRequest{
-        APISecSource: operations.GetDashboardApisecRiskFindingsAPISecSourceInternal,
+        APISecSource: operations.QueryParamAPISecSourceInternal,
     })
     if err != nil {
         log.Fatal(err)
@@ -108,7 +108,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Dashboard.GetDashboardApisecRiskFindingsTrend(ctx, operations.GetDashboardApisecRiskFindingsTrendRequest{
-        APISecSource: operations.GetDashboardApisecRiskFindingsTrendAPISecSourceInternal,
+        APISecSource: operations.GetDashboardApisecRiskFindingsTrendQueryParamAPISecSourceInternal,
     })
     if err != nil {
         log.Fatal(err)
@@ -160,7 +160,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Dashboard.GetDashboardApisecSpecsAndOperationsDiffs(ctx, operations.GetDashboardApisecSpecsAndOperationsDiffsRequest{
-        APISecSource: operations.GetDashboardApisecSpecsAndOperationsDiffsAPISecSourceExternal,
+        APISecSource: operations.GetDashboardApisecSpecsAndOperationsDiffsQueryParamAPISecSourceExternal,
     })
     if err != nil {
         log.Fatal(err)
@@ -212,7 +212,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Dashboard.GetDashboardApisecTopRiskyApis(ctx, operations.GetDashboardApisecTopRiskyApisRequest{
-        APISecSource: operations.GetDashboardApisecTopRiskyApisAPISecSourceExternal,
+        APISecSource: operations.GetDashboardApisecTopRiskyApisQueryParamAPISecSourceExternal,
     })
     if err != nil {
         log.Fatal(err)
@@ -264,7 +264,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Dashboard.GetDashboardApisecTopRiskyFindings(ctx, operations.GetDashboardApisecTopRiskyFindingsRequest{
-        APISecSource: operations.GetDashboardApisecTopRiskyFindingsAPISecSourceInternal,
+        APISecSource: operations.GetDashboardApisecTopRiskyFindingsQueryParamAPISecSourceInternal,
     })
     if err != nil {
         log.Fatal(err)
@@ -619,7 +619,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetDashboardReportDownload200ApplicationJSONBinaryString != nil {
+    if res.Stream != nil {
         // handle response
     }
 }

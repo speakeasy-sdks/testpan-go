@@ -2,35 +2,35 @@
 
 package shared
 
-type CaIntegrationRequestInput struct {
+type CaIntegrationRequest struct {
 	Certificate     string  `json:"certificate"`
 	IssuerName      string  `json:"issuerName"`
 	IssuerNamespace *string `json:"issuerNamespace,omitempty"`
 	Name            string  `json:"name"`
 }
 
-func (o *CaIntegrationRequestInput) GetCertificate() string {
+func (o *CaIntegrationRequest) GetCertificate() string {
 	if o == nil {
 		return ""
 	}
 	return o.Certificate
 }
 
-func (o *CaIntegrationRequestInput) GetIssuerName() string {
+func (o *CaIntegrationRequest) GetIssuerName() string {
 	if o == nil {
 		return ""
 	}
 	return o.IssuerName
 }
 
-func (o *CaIntegrationRequestInput) GetIssuerNamespace() *string {
+func (o *CaIntegrationRequest) GetIssuerNamespace() *string {
 	if o == nil {
 		return nil
 	}
 	return o.IssuerNamespace
 }
 
-func (o *CaIntegrationRequestInput) GetName() string {
+func (o *CaIntegrationRequest) GetName() string {
 	if o == nil {
 		return ""
 	}

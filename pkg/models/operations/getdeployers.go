@@ -10,19 +10,19 @@ import (
 	"net/http"
 )
 
-// GetDeployersSortDir - sorting direction
-type GetDeployersSortDir string
+// GetDeployersQueryParamSortDir - sorting direction
+type GetDeployersQueryParamSortDir string
 
 const (
-	GetDeployersSortDirAsc  GetDeployersSortDir = "ASC"
-	GetDeployersSortDirDesc GetDeployersSortDir = "DESC"
+	GetDeployersQueryParamSortDirAsc  GetDeployersQueryParamSortDir = "ASC"
+	GetDeployersQueryParamSortDirDesc GetDeployersQueryParamSortDir = "DESC"
 )
 
-func (e GetDeployersSortDir) ToPointer() *GetDeployersSortDir {
+func (e GetDeployersQueryParamSortDir) ToPointer() *GetDeployersQueryParamSortDir {
 	return &e
 }
 
-func (e *GetDeployersSortDir) UnmarshalJSON(data []byte) error {
+func (e *GetDeployersQueryParamSortDir) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -31,26 +31,26 @@ func (e *GetDeployersSortDir) UnmarshalJSON(data []byte) error {
 	case "ASC":
 		fallthrough
 	case "DESC":
-		*e = GetDeployersSortDir(v)
+		*e = GetDeployersQueryParamSortDir(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetDeployersSortDir: %v", v)
+		return fmt.Errorf("invalid value for GetDeployersQueryParamSortDir: %v", v)
 	}
 }
 
-// GetDeployersSortKey - sort key
-type GetDeployersSortKey string
+// GetDeployersQueryParamSortKey - sort key
+type GetDeployersQueryParamSortKey string
 
 const (
-	GetDeployersSortKeyDeployer GetDeployersSortKey = "deployer"
-	GetDeployersSortKeyType     GetDeployersSortKey = "type"
+	GetDeployersQueryParamSortKeyDeployer GetDeployersQueryParamSortKey = "deployer"
+	GetDeployersQueryParamSortKeyType     GetDeployersQueryParamSortKey = "type"
 )
 
-func (e GetDeployersSortKey) ToPointer() *GetDeployersSortKey {
+func (e GetDeployersQueryParamSortKey) ToPointer() *GetDeployersQueryParamSortKey {
 	return &e
 }
 
-func (e *GetDeployersSortKey) UnmarshalJSON(data []byte) error {
+func (e *GetDeployersQueryParamSortKey) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -59,10 +59,10 @@ func (e *GetDeployersSortKey) UnmarshalJSON(data []byte) error {
 	case "deployer":
 		fallthrough
 	case "type":
-		*e = GetDeployersSortKey(v)
+		*e = GetDeployersQueryParamSortKey(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetDeployersSortKey: %v", v)
+		return fmt.Errorf("invalid value for GetDeployersQueryParamSortKey: %v", v)
 	}
 }
 
@@ -78,9 +78,9 @@ type GetDeployersRequest struct {
 	// Filter deployers by security checks
 	SecurityCheck *bool `queryParam:"style=form,explode=true,name=securityCheck"`
 	// sorting direction
-	SortDir *GetDeployersSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
+	SortDir *GetDeployersQueryParamSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
 	// sort key
-	SortKey GetDeployersSortKey `queryParam:"style=form,explode=true,name=sortKey"`
+	SortKey GetDeployersQueryParamSortKey `queryParam:"style=form,explode=true,name=sortKey"`
 }
 
 func (g GetDeployersRequest) MarshalJSON() ([]byte, error) {
@@ -129,16 +129,16 @@ func (o *GetDeployersRequest) GetSecurityCheck() *bool {
 	return o.SecurityCheck
 }
 
-func (o *GetDeployersRequest) GetSortDir() *GetDeployersSortDir {
+func (o *GetDeployersRequest) GetSortDir() *GetDeployersQueryParamSortDir {
 	if o == nil {
 		return nil
 	}
 	return o.SortDir
 }
 
-func (o *GetDeployersRequest) GetSortKey() GetDeployersSortKey {
+func (o *GetDeployersRequest) GetSortKey() GetDeployersQueryParamSortKey {
 	if o == nil {
-		return GetDeployersSortKey("")
+		return GetDeployersQueryParamSortKey("")
 	}
 	return o.SortKey
 }
@@ -146,12 +146,12 @@ func (o *GetDeployersRequest) GetSortKey() GetDeployersSortKey {
 type GetDeployersResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// Success
-	Deployers []shared.Deployer
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Success
+	Classes []shared.Deployer
 }
 
 func (o *GetDeployersResponse) GetContentType() string {
@@ -159,13 +159,6 @@ func (o *GetDeployersResponse) GetContentType() string {
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *GetDeployersResponse) GetDeployers() []shared.Deployer {
-	if o == nil {
-		return nil
-	}
-	return o.Deployers
 }
 
 func (o *GetDeployersResponse) GetStatusCode() int {
@@ -180,4 +173,11 @@ func (o *GetDeployersResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetDeployersResponse) GetClasses() []shared.Deployer {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

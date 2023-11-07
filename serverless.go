@@ -15,18 +15,18 @@ import (
 	"strings"
 )
 
-type serverless struct {
+type Serverless struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newServerless(sdkConfig sdkConfiguration) *serverless {
-	return &serverless{
+func newServerless(sdkConfig sdkConfiguration) *Serverless {
+	return &Serverless{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // DeleteCloudAccountsCloudAccountID - Delete a cloud account
-func (s *serverless) DeleteCloudAccountsCloudAccountID(ctx context.Context, request operations.DeleteCloudAccountsCloudAccountIDRequest) (*operations.DeleteCloudAccountsCloudAccountIDResponse, error) {
+func (s *Serverless) DeleteCloudAccountsCloudAccountID(ctx context.Context, request operations.DeleteCloudAccountsCloudAccountIDRequest) (*operations.DeleteCloudAccountsCloudAccountIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/cloudAccounts/{cloudAccountId}", request, nil)
 	if err != nil {
@@ -76,7 +76,7 @@ func (s *serverless) DeleteCloudAccountsCloudAccountID(ctx context.Context, requ
 }
 
 // GetCloudAccounts - List all the cloud accounts on the system
-func (s *serverless) GetCloudAccounts(ctx context.Context, request operations.GetCloudAccountsRequest) (*operations.GetCloudAccountsResponse, error) {
+func (s *Serverless) GetCloudAccounts(ctx context.Context, request operations.GetCloudAccountsRequest) (*operations.GetCloudAccountsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/cloudAccounts"
 
@@ -124,7 +124,7 @@ func (s *serverless) GetCloudAccounts(ctx context.Context, request operations.Ge
 				return nil, err
 			}
 
-			res.CloudAccounts = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -138,7 +138,7 @@ func (s *serverless) GetCloudAccounts(ctx context.Context, request operations.Ge
 }
 
 // GetCloudAccountsAzureInstallationDetails - Get the Azure installation details
-func (s *serverless) GetCloudAccountsAzureInstallationDetails(ctx context.Context) (*operations.GetCloudAccountsAzureInstallationDetailsResponse, error) {
+func (s *Serverless) GetCloudAccountsAzureInstallationDetails(ctx context.Context) (*operations.GetCloudAccountsAzureInstallationDetailsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/cloudAccounts/azureInstallationDetails"
 
@@ -196,7 +196,7 @@ func (s *serverless) GetCloudAccountsAzureInstallationDetails(ctx context.Contex
 }
 
 // GetCloudAccountsInstallationDetails - Get the installation details
-func (s *serverless) GetCloudAccountsInstallationDetails(ctx context.Context) (*operations.GetCloudAccountsInstallationDetailsResponse, error) {
+func (s *Serverless) GetCloudAccountsInstallationDetails(ctx context.Context) (*operations.GetCloudAccountsInstallationDetailsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/cloudAccounts/installationDetails"
 
@@ -254,7 +254,7 @@ func (s *serverless) GetCloudAccountsInstallationDetails(ctx context.Context) (*
 }
 
 // GetCloudAccountsRegionsAWS - List all the possible regions of AWS
-func (s *serverless) GetCloudAccountsRegionsAWS(ctx context.Context) (*operations.GetCloudAccountsRegionsAWSResponse, error) {
+func (s *Serverless) GetCloudAccountsRegionsAWS(ctx context.Context) (*operations.GetCloudAccountsRegionsAWSResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/cloudAccounts/regions/AWS"
 
@@ -298,7 +298,7 @@ func (s *serverless) GetCloudAccountsRegionsAWS(ctx context.Context) (*operation
 				return nil, err
 			}
 
-			res.AwsRegions = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -312,7 +312,7 @@ func (s *serverless) GetCloudAccountsRegionsAWS(ctx context.Context) (*operation
 }
 
 // GetCloudAccountsRegionsAzure - List all the possible regions of Azure
-func (s *serverless) GetCloudAccountsRegionsAzure(ctx context.Context) (*operations.GetCloudAccountsRegionsAzureResponse, error) {
+func (s *Serverless) GetCloudAccountsRegionsAzure(ctx context.Context) (*operations.GetCloudAccountsRegionsAzureResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/cloudAccounts/regions/Azure"
 
@@ -356,7 +356,7 @@ func (s *serverless) GetCloudAccountsRegionsAzure(ctx context.Context) (*operati
 				return nil, err
 			}
 
-			res.GetCloudAccountsRegionsAzure200ApplicationJSONStrings = out
+			res.Strings = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -370,7 +370,7 @@ func (s *serverless) GetCloudAccountsRegionsAzure(ctx context.Context) (*operati
 }
 
 // GetCloudAccountsCloudAccountIDDeleteDependencies - get dependencies which need to be handled in order to delete specified cloud account
-func (s *serverless) GetCloudAccountsCloudAccountIDDeleteDependencies(ctx context.Context, request operations.GetCloudAccountsCloudAccountIDDeleteDependenciesRequest) (*operations.GetCloudAccountsCloudAccountIDDeleteDependenciesResponse, error) {
+func (s *Serverless) GetCloudAccountsCloudAccountIDDeleteDependencies(ctx context.Context, request operations.GetCloudAccountsCloudAccountIDDeleteDependenciesRequest) (*operations.GetCloudAccountsCloudAccountIDDeleteDependenciesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/cloudAccounts/{cloudAccountId}/deleteDependencies", request, nil)
 	if err != nil {
@@ -444,7 +444,7 @@ func (s *serverless) GetCloudAccountsCloudAccountIDDeleteDependencies(ctx contex
 
 // GetCloudAccountsCloudAccountIDDownloadBundle - Get Secure Application installation script
 // In order to install, extract and run "./install_bundle.sh"
-func (s *serverless) GetCloudAccountsCloudAccountIDDownloadBundle(ctx context.Context, request operations.GetCloudAccountsCloudAccountIDDownloadBundleRequest) (*operations.GetCloudAccountsCloudAccountIDDownloadBundleResponse, error) {
+func (s *Serverless) GetCloudAccountsCloudAccountIDDownloadBundle(ctx context.Context, request operations.GetCloudAccountsCloudAccountIDDownloadBundleRequest) (*operations.GetCloudAccountsCloudAccountIDDownloadBundleResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/cloudAccounts/{cloudAccountId}/download_bundle", request, nil)
 	if err != nil {
@@ -477,7 +477,7 @@ func (s *serverless) GetCloudAccountsCloudAccountIDDownloadBundle(ctx context.Co
 	}
 
 	if (httpRes.StatusCode == 200) && utils.MatchContentType(contentType, `application/json`) {
-		res.GetCloudAccountsCloudAccountIDDownloadBundle200ApplicationJSONBinaryString = httpRes.Body
+		res.Stream = httpRes.Body
 
 		return res, nil
 	}
@@ -516,7 +516,7 @@ func (s *serverless) GetCloudAccountsCloudAccountIDDownloadBundle(ctx context.Co
 }
 
 // GetServerlessFunctions - Get serverless functions
-func (s *serverless) GetServerlessFunctions(ctx context.Context, request operations.GetServerlessFunctionsRequest) (*operations.GetServerlessFunctionsResponse, error) {
+func (s *Serverless) GetServerlessFunctions(ctx context.Context, request operations.GetServerlessFunctionsRequest) (*operations.GetServerlessFunctionsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/serverless/functions"
 
@@ -564,7 +564,7 @@ func (s *serverless) GetServerlessFunctions(ctx context.Context, request operati
 				return nil, err
 			}
 
-			res.ServerlessFunctions = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -580,7 +580,7 @@ func (s *serverless) GetServerlessFunctions(ctx context.Context, request operati
 }
 
 // GetServerlessFunctionsArns - Get serverless functions names
-func (s *serverless) GetServerlessFunctionsArns(ctx context.Context, request operations.GetServerlessFunctionsArnsRequest) (*operations.GetServerlessFunctionsArnsResponse, error) {
+func (s *Serverless) GetServerlessFunctionsArns(ctx context.Context, request operations.GetServerlessFunctionsArnsRequest) (*operations.GetServerlessFunctionsArnsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/serverless/functions/arns"
 
@@ -628,7 +628,7 @@ func (s *serverless) GetServerlessFunctionsArns(ctx context.Context, request ope
 				return nil, err
 			}
 
-			res.ServerlessFunctionArns = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -644,7 +644,7 @@ func (s *serverless) GetServerlessFunctionsArns(ctx context.Context, request ope
 }
 
 // GetServerlessFunctionsNames - Get serverless functions names
-func (s *serverless) GetServerlessFunctionsNames(ctx context.Context, request operations.GetServerlessFunctionsNamesRequest) (*operations.GetServerlessFunctionsNamesResponse, error) {
+func (s *Serverless) GetServerlessFunctionsNames(ctx context.Context, request operations.GetServerlessFunctionsNamesRequest) (*operations.GetServerlessFunctionsNamesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/serverless/functions/names"
 
@@ -692,7 +692,7 @@ func (s *serverless) GetServerlessFunctionsNames(ctx context.Context, request op
 				return nil, err
 			}
 
-			res.ServerlessFunctionNames = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -708,7 +708,7 @@ func (s *serverless) GetServerlessFunctionsNames(ctx context.Context, request op
 }
 
 // GetServerlessFunctionsFunctionID - Get Serverless Function by ID
-func (s *serverless) GetServerlessFunctionsFunctionID(ctx context.Context, request operations.GetServerlessFunctionsFunctionIDRequest) (*operations.GetServerlessFunctionsFunctionIDResponse, error) {
+func (s *Serverless) GetServerlessFunctionsFunctionID(ctx context.Context, request operations.GetServerlessFunctionsFunctionIDRequest) (*operations.GetServerlessFunctionsFunctionIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/serverless/functions/{functionId}", request, nil)
 	if err != nil {
@@ -771,7 +771,7 @@ func (s *serverless) GetServerlessFunctionsFunctionID(ctx context.Context, reque
 }
 
 // GetServerlessFunctionsFunctionIDSecrets - Get Serverless Function secrets issues
-func (s *serverless) GetServerlessFunctionsFunctionIDSecrets(ctx context.Context, request operations.GetServerlessFunctionsFunctionIDSecretsRequest) (*operations.GetServerlessFunctionsFunctionIDSecretsResponse, error) {
+func (s *Serverless) GetServerlessFunctionsFunctionIDSecrets(ctx context.Context, request operations.GetServerlessFunctionsFunctionIDSecretsRequest) (*operations.GetServerlessFunctionsFunctionIDSecretsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/serverless/functions/{functionId}/secrets", request, nil)
 	if err != nil {
@@ -818,7 +818,7 @@ func (s *serverless) GetServerlessFunctionsFunctionIDSecrets(ctx context.Context
 				return nil, err
 			}
 
-			res.ServerlessFunctionSecretIssues = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -834,7 +834,7 @@ func (s *serverless) GetServerlessFunctionsFunctionIDSecrets(ctx context.Context
 }
 
 // GetServerlessFunctionsFunctionIDVulnerabilities - Get Serverless Function Vulnerabilities by ID
-func (s *serverless) GetServerlessFunctionsFunctionIDVulnerabilities(ctx context.Context, request operations.GetServerlessFunctionsFunctionIDVulnerabilitiesRequest) (*operations.GetServerlessFunctionsFunctionIDVulnerabilitiesResponse, error) {
+func (s *Serverless) GetServerlessFunctionsFunctionIDVulnerabilities(ctx context.Context, request operations.GetServerlessFunctionsFunctionIDVulnerabilitiesRequest) (*operations.GetServerlessFunctionsFunctionIDVulnerabilitiesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/serverless/functions/{functionId}/vulnerabilities", request, nil)
 	if err != nil {
@@ -885,7 +885,7 @@ func (s *serverless) GetServerlessFunctionsFunctionIDVulnerabilities(ctx context
 				return nil, err
 			}
 
-			res.Vulnerabilities = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -901,7 +901,7 @@ func (s *serverless) GetServerlessFunctionsFunctionIDVulnerabilities(ctx context
 }
 
 // GetServerlessZipFiles - Get serverless zip files that was scanned by cli
-func (s *serverless) GetServerlessZipFiles(ctx context.Context, request operations.GetServerlessZipFilesRequest) (*operations.GetServerlessZipFilesResponse, error) {
+func (s *Serverless) GetServerlessZipFiles(ctx context.Context, request operations.GetServerlessZipFilesRequest) (*operations.GetServerlessZipFilesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/serverless/zipFiles"
 
@@ -949,7 +949,7 @@ func (s *serverless) GetServerlessZipFiles(ctx context.Context, request operatio
 				return nil, err
 			}
 
-			res.ServerlessZips = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -965,7 +965,7 @@ func (s *serverless) GetServerlessZipFiles(ctx context.Context, request operatio
 }
 
 // GetServerlessZipFilesZipID - Get specific zip file record
-func (s *serverless) GetServerlessZipFilesZipID(ctx context.Context, request operations.GetServerlessZipFilesZipIDRequest) (*operations.GetServerlessZipFilesZipIDResponse, error) {
+func (s *Serverless) GetServerlessZipFilesZipID(ctx context.Context, request operations.GetServerlessZipFilesZipIDRequest) (*operations.GetServerlessZipFilesZipIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/serverless/zipFiles/{zipId}", request, nil)
 	if err != nil {
@@ -1028,7 +1028,7 @@ func (s *serverless) GetServerlessZipFilesZipID(ctx context.Context, request ope
 }
 
 // GetServerlessZipFilesZipIDPackages - Returns a list of packages for a specific serverless zip
-func (s *serverless) GetServerlessZipFilesZipIDPackages(ctx context.Context, request operations.GetServerlessZipFilesZipIDPackagesRequest) (*operations.GetServerlessZipFilesZipIDPackagesResponse, error) {
+func (s *Serverless) GetServerlessZipFilesZipIDPackages(ctx context.Context, request operations.GetServerlessZipFilesZipIDPackagesRequest) (*operations.GetServerlessZipFilesZipIDPackagesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/serverless/zipFiles/{zipId}/packages", request, nil)
 	if err != nil {
@@ -1075,7 +1075,7 @@ func (s *serverless) GetServerlessZipFilesZipIDPackages(ctx context.Context, req
 				return nil, err
 			}
 
-			res.ImagePackageDetails = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -1091,7 +1091,7 @@ func (s *serverless) GetServerlessZipFilesZipIDPackages(ctx context.Context, req
 }
 
 // GetServerlessZipFilesZipIDVulnerabilities - Returns a list of vulnerabilities detected in the serverless zip
-func (s *serverless) GetServerlessZipFilesZipIDVulnerabilities(ctx context.Context, request operations.GetServerlessZipFilesZipIDVulnerabilitiesRequest) (*operations.GetServerlessZipFilesZipIDVulnerabilitiesResponse, error) {
+func (s *Serverless) GetServerlessZipFilesZipIDVulnerabilities(ctx context.Context, request operations.GetServerlessZipFilesZipIDVulnerabilitiesRequest) (*operations.GetServerlessZipFilesZipIDVulnerabilitiesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/serverless/zipFiles/{zipId}/vulnerabilities", request, nil)
 	if err != nil {
@@ -1142,7 +1142,7 @@ func (s *serverless) GetServerlessZipFilesZipIDVulnerabilities(ctx context.Conte
 				return nil, err
 			}
 
-			res.Vulnerabilities = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -1156,7 +1156,7 @@ func (s *serverless) GetServerlessZipFilesZipIDVulnerabilities(ctx context.Conte
 }
 
 // PostCloudAccountsScan - invoke cloud account scan
-func (s *serverless) PostCloudAccountsScan(ctx context.Context, request shared.ServerlessScanConfig) (*operations.PostCloudAccountsScanResponse, error) {
+func (s *Serverless) PostCloudAccountsScan(ctx context.Context, request shared.ServerlessScanConfig) (*operations.PostCloudAccountsScanResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/cloudAccounts/scan"
 
@@ -1217,14 +1217,14 @@ func (s *serverless) PostCloudAccountsScan(ctx context.Context, request shared.S
 }
 
 // PutCloudAccountsCloudAccountID - Edit cloud account definition
-func (s *serverless) PutCloudAccountsCloudAccountID(ctx context.Context, request operations.PutCloudAccountsCloudAccountIDRequest) (*operations.PutCloudAccountsCloudAccountIDResponse, error) {
+func (s *Serverless) PutCloudAccountsCloudAccountID(ctx context.Context, request operations.PutCloudAccountsCloudAccountIDRequest) (*operations.PutCloudAccountsCloudAccountIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/cloudAccounts/{cloudAccountId}", request, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CloudAccountInput", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CloudAccount", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, fmt.Errorf("error serializing request body: %w", err)
 	}

@@ -15,18 +15,18 @@ import (
 	"strings"
 )
 
-// envs - APIs used to define environments
-type envs struct {
+// Envs - APIs used to define environments
+type Envs struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newEnvs(sdkConfig sdkConfiguration) *envs {
-	return &envs{
+func newEnvs(sdkConfig sdkConfiguration) *Envs {
+	return &Envs{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
-func (s *envs) DeleteEnvironmentsEnvID(ctx context.Context, request operations.DeleteEnvironmentsEnvIDRequest) (*operations.DeleteEnvironmentsEnvIDResponse, error) {
+func (s *Envs) DeleteEnvironmentsEnvID(ctx context.Context, request operations.DeleteEnvironmentsEnvIDRequest) (*operations.DeleteEnvironmentsEnvIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/environments/{envId}", request, nil)
 	if err != nil {
@@ -88,7 +88,7 @@ func (s *envs) DeleteEnvironmentsEnvID(ctx context.Context, request operations.D
 }
 
 // GetEnvironments - List all defined Secure Application environments
-func (s *envs) GetEnvironments(ctx context.Context, request operations.GetEnvironmentsRequest) (*operations.GetEnvironmentsResponse, error) {
+func (s *Envs) GetEnvironments(ctx context.Context, request operations.GetEnvironmentsRequest) (*operations.GetEnvironmentsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/environments"
 
@@ -136,7 +136,7 @@ func (s *envs) GetEnvironments(ctx context.Context, request operations.GetEnviro
 				return nil, err
 			}
 
-			res.Environments = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -152,7 +152,7 @@ func (s *envs) GetEnvironments(ctx context.Context, request operations.GetEnviro
 }
 
 // GetEnvironmentsEnvID - get a Secure Application environment
-func (s *envs) GetEnvironmentsEnvID(ctx context.Context, request operations.GetEnvironmentsEnvIDRequest) (*operations.GetEnvironmentsEnvIDResponse, error) {
+func (s *Envs) GetEnvironmentsEnvID(ctx context.Context, request operations.GetEnvironmentsEnvIDRequest) (*operations.GetEnvironmentsEnvIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/environments/{envId}", request, nil)
 	if err != nil {
@@ -199,7 +199,7 @@ func (s *envs) GetEnvironmentsEnvID(ctx context.Context, request operations.GetE
 				return nil, err
 			}
 
-			res.Environments = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -215,7 +215,7 @@ func (s *envs) GetEnvironmentsEnvID(ctx context.Context, request operations.GetE
 }
 
 // GetEnvironmentsEnvIDDeleteDependencies - get dependencies which need to be handled in order to delete specified environment
-func (s *envs) GetEnvironmentsEnvIDDeleteDependencies(ctx context.Context, request operations.GetEnvironmentsEnvIDDeleteDependenciesRequest) (*operations.GetEnvironmentsEnvIDDeleteDependenciesResponse, error) {
+func (s *Envs) GetEnvironmentsEnvIDDeleteDependencies(ctx context.Context, request operations.GetEnvironmentsEnvIDDeleteDependenciesRequest) (*operations.GetEnvironmentsEnvIDDeleteDependenciesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/environments/{envId}/deleteDependencies", request, nil)
 	if err != nil {
@@ -289,7 +289,7 @@ func (s *envs) GetEnvironmentsEnvIDDeleteDependencies(ctx context.Context, reque
 
 // PostEnvironments - Add a new environment
 // Add a  Secure Application environment. An instance should be contained in a single environment. The environment is defined by a VPC and an optional tag. If a tag is supplied, only instances in the specified VPC with the given tag will belong to the new environment.
-func (s *envs) PostEnvironments(ctx context.Context, request shared.EnvironmentInput) (*operations.PostEnvironmentsResponse, error) {
+func (s *Envs) PostEnvironments(ctx context.Context, request shared.EnvironmentInput) (*operations.PostEnvironmentsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/environments"
 
@@ -360,7 +360,7 @@ func (s *envs) PostEnvironments(ctx context.Context, request shared.EnvironmentI
 
 // PostEnvironmentsBatch - Add a number of  Secure Application environments
 // Add a number of new Secure Application environments. This is similar to the 'Add environment' method, but for multiple environments.
-func (s *envs) PostEnvironmentsBatch(ctx context.Context, request []shared.EnvironmentInput) (*operations.PostEnvironmentsBatchResponse, error) {
+func (s *Envs) PostEnvironmentsBatch(ctx context.Context, request []shared.EnvironmentInput) (*operations.PostEnvironmentsBatchResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/environments/batch"
 
@@ -414,7 +414,7 @@ func (s *envs) PostEnvironmentsBatch(ctx context.Context, request []shared.Envir
 				return nil, err
 			}
 
-			res.Environments = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -431,7 +431,7 @@ func (s *envs) PostEnvironmentsBatch(ctx context.Context, request []shared.Envir
 
 // PostEnvironmentsDelete - Delete multiple Secure Application environments
 // Delete multiple Secure Application environments.
-func (s *envs) PostEnvironmentsDelete(ctx context.Context) (*operations.PostEnvironmentsDeleteResponse, error) {
+func (s *Envs) PostEnvironmentsDelete(ctx context.Context) (*operations.PostEnvironmentsDeleteResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/environments/delete"
 
@@ -491,14 +491,14 @@ func (s *envs) PostEnvironmentsDelete(ctx context.Context) (*operations.PostEnvi
 
 // PutEnvironmentsEnvID - Edit an existing Secure Application environment
 // Edit an existing Secure Application environment.
-func (s *envs) PutEnvironmentsEnvID(ctx context.Context, request operations.PutEnvironmentsEnvIDRequest) (*operations.PutEnvironmentsEnvIDResponse, error) {
+func (s *Envs) PutEnvironmentsEnvID(ctx context.Context, request operations.PutEnvironmentsEnvIDRequest) (*operations.PutEnvironmentsEnvIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/environments/{envId}", request, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "EnvironmentInput", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Environment", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, fmt.Errorf("error serializing request body: %w", err)
 	}

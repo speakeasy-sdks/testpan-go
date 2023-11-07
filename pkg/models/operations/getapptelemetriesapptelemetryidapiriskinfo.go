@@ -20,21 +20,14 @@ func (o *GetAppTelemetriesAppTelemetryIDAPIRiskInfoRequest) GetAppTelemetryID() 
 }
 
 type GetAppTelemetriesAppTelemetryIDAPIRiskInfoResponse struct {
-	// Success
-	APIRiskInfos []shared.APIRiskInfo
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-}
-
-func (o *GetAppTelemetriesAppTelemetryIDAPIRiskInfoResponse) GetAPIRiskInfos() []shared.APIRiskInfo {
-	if o == nil {
-		return nil
-	}
-	return o.APIRiskInfos
+	// Success
+	Classes []shared.APIRiskInfo
 }
 
 func (o *GetAppTelemetriesAppTelemetryIDAPIRiskInfoResponse) GetContentType() string {
@@ -56,4 +49,11 @@ func (o *GetAppTelemetriesAppTelemetryIDAPIRiskInfoResponse) GetRawResponse() *h
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetAppTelemetriesAppTelemetryIDAPIRiskInfoResponse) GetClasses() []shared.APIRiskInfo {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

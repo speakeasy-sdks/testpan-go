@@ -15,19 +15,19 @@ import (
 	"strings"
 )
 
-// kubernetes - APIs used to manage Kubernetes clusters on Secure Application
-type kubernetes struct {
+// Kubernetes - APIs used to manage Kubernetes clusters on Secure Application
+type Kubernetes struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newKubernetes(sdkConfig sdkConfiguration) *kubernetes {
-	return &kubernetes{
+func newKubernetes(sdkConfig sdkConfiguration) *Kubernetes {
+	return &Kubernetes{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // DeleteKubernetesClustersKubernetesClusterID - Delete a Kubernetes cluster
-func (s *kubernetes) DeleteKubernetesClustersKubernetesClusterID(ctx context.Context, request operations.DeleteKubernetesClustersKubernetesClusterIDRequest) (*operations.DeleteKubernetesClustersKubernetesClusterIDResponse, error) {
+func (s *Kubernetes) DeleteKubernetesClustersKubernetesClusterID(ctx context.Context, request operations.DeleteKubernetesClustersKubernetesClusterIDRequest) (*operations.DeleteKubernetesClustersKubernetesClusterIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/kubernetesClusters/{kubernetesClusterId}", request, nil)
 	if err != nil {
@@ -89,7 +89,7 @@ func (s *kubernetes) DeleteKubernetesClustersKubernetesClusterID(ctx context.Con
 }
 
 // DeletePodDefinitionsPodID - Delete a pod definition
-func (s *kubernetes) DeletePodDefinitionsPodID(ctx context.Context, request operations.DeletePodDefinitionsPodIDRequest) (*operations.DeletePodDefinitionsPodIDResponse, error) {
+func (s *Kubernetes) DeletePodDefinitionsPodID(ctx context.Context, request operations.DeletePodDefinitionsPodIDRequest) (*operations.DeletePodDefinitionsPodIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/podDefinitions/{podId}", request, nil)
 	if err != nil {
@@ -139,7 +139,7 @@ func (s *kubernetes) DeletePodDefinitionsPodID(ctx context.Context, request oper
 }
 
 // GetGetControllerDataClusterID - get controller data using clusterId
-func (s *kubernetes) GetGetControllerDataClusterID(ctx context.Context, request operations.GetGetControllerDataClusterIDRequest) (*operations.GetGetControllerDataClusterIDResponse, error) {
+func (s *Kubernetes) GetGetControllerDataClusterID(ctx context.Context, request operations.GetGetControllerDataClusterIDRequest) (*operations.GetGetControllerDataClusterIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/getControllerData/{clusterId}", request, nil)
 	if err != nil {
@@ -212,7 +212,7 @@ func (s *kubernetes) GetGetControllerDataClusterID(ctx context.Context, request 
 }
 
 // GetIstioSupportedVersions - Get a list of istio releases that are supported by Secure Application agent. sorted from latest to oldest
-func (s *kubernetes) GetIstioSupportedVersions(ctx context.Context) (*operations.GetIstioSupportedVersionsResponse, error) {
+func (s *Kubernetes) GetIstioSupportedVersions(ctx context.Context) (*operations.GetIstioSupportedVersionsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/istio/supportedVersions"
 
@@ -256,7 +256,7 @@ func (s *kubernetes) GetIstioSupportedVersions(ctx context.Context) (*operations
 				return nil, err
 			}
 
-			res.GetIstioSupportedVersions200ApplicationJSONStrings = out
+			res.Strings = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -272,7 +272,7 @@ func (s *kubernetes) GetIstioSupportedVersions(ctx context.Context) (*operations
 }
 
 // GetKubernetesClusters - get a list of current Kubernetes clusters
-func (s *kubernetes) GetKubernetesClusters(ctx context.Context, request operations.GetKubernetesClustersRequest) (*operations.GetKubernetesClustersResponse, error) {
+func (s *Kubernetes) GetKubernetesClusters(ctx context.Context, request operations.GetKubernetesClustersRequest) (*operations.GetKubernetesClustersResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/kubernetesClusters"
 
@@ -320,7 +320,7 @@ func (s *kubernetes) GetKubernetesClusters(ctx context.Context, request operatio
 				return nil, err
 			}
 
-			res.KubernetesClusterControllers = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -346,7 +346,7 @@ func (s *kubernetes) GetKubernetesClusters(ctx context.Context, request operatio
 }
 
 // GetKubernetesClustersKubernetesClusterID - get the Kubernetes cluster with the given id
-func (s *kubernetes) GetKubernetesClustersKubernetesClusterID(ctx context.Context, request operations.GetKubernetesClustersKubernetesClusterIDRequest) (*operations.GetKubernetesClustersKubernetesClusterIDResponse, error) {
+func (s *Kubernetes) GetKubernetesClustersKubernetesClusterID(ctx context.Context, request operations.GetKubernetesClustersKubernetesClusterIDRequest) (*operations.GetKubernetesClustersKubernetesClusterIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/kubernetesClusters/{kubernetesClusterId}", request, nil)
 	if err != nil {
@@ -419,7 +419,7 @@ func (s *kubernetes) GetKubernetesClustersKubernetesClusterID(ctx context.Contex
 }
 
 // GetKubernetesClustersKubernetesClusterIDDeleteDependencies - get dependencies which need to be handled in order to delete specified Kubernetes cluster
-func (s *kubernetes) GetKubernetesClustersKubernetesClusterIDDeleteDependencies(ctx context.Context, request operations.GetKubernetesClustersKubernetesClusterIDDeleteDependenciesRequest) (*operations.GetKubernetesClustersKubernetesClusterIDDeleteDependenciesResponse, error) {
+func (s *Kubernetes) GetKubernetesClustersKubernetesClusterIDDeleteDependencies(ctx context.Context, request operations.GetKubernetesClustersKubernetesClusterIDDeleteDependenciesRequest) (*operations.GetKubernetesClustersKubernetesClusterIDDeleteDependenciesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/kubernetesClusters/{kubernetesClusterId}/deleteDependencies", request, nil)
 	if err != nil {
@@ -493,7 +493,7 @@ func (s *kubernetes) GetKubernetesClustersKubernetesClusterIDDeleteDependencies(
 
 // GetKubernetesClustersKubernetesClusterIDDownloadBundle - Get Secure Application installation script
 // In order to install,  extract and run "./install_bundle.sh"
-func (s *kubernetes) GetKubernetesClustersKubernetesClusterIDDownloadBundle(ctx context.Context, request operations.GetKubernetesClustersKubernetesClusterIDDownloadBundleRequest) (*operations.GetKubernetesClustersKubernetesClusterIDDownloadBundleResponse, error) {
+func (s *Kubernetes) GetKubernetesClustersKubernetesClusterIDDownloadBundle(ctx context.Context, request operations.GetKubernetesClustersKubernetesClusterIDDownloadBundleRequest) (*operations.GetKubernetesClustersKubernetesClusterIDDownloadBundleResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/kubernetesClusters/{kubernetesClusterId}/download_bundle", request, nil)
 	if err != nil {
@@ -530,7 +530,7 @@ func (s *kubernetes) GetKubernetesClustersKubernetesClusterIDDownloadBundle(ctx 
 	}
 
 	if (httpRes.StatusCode == 200) && utils.MatchContentType(contentType, `application/json`) {
-		res.GetKubernetesClustersKubernetesClusterIDDownloadBundle200ApplicationJSONBinaryString = httpRes.Body
+		res.Stream = httpRes.Body
 
 		return res, nil
 	}
@@ -569,7 +569,7 @@ func (s *kubernetes) GetKubernetesClustersKubernetesClusterIDDownloadBundle(ctx 
 }
 
 // GetKubernetesClustersKubernetesClusterIDGetHelmCommands - Get Panoptica Aug release Helm command
-func (s *kubernetes) GetKubernetesClustersKubernetesClusterIDGetHelmCommands(ctx context.Context, request operations.GetKubernetesClustersKubernetesClusterIDGetHelmCommandsRequest) (*operations.GetKubernetesClustersKubernetesClusterIDGetHelmCommandsResponse, error) {
+func (s *Kubernetes) GetKubernetesClustersKubernetesClusterIDGetHelmCommands(ctx context.Context, request operations.GetKubernetesClustersKubernetesClusterIDGetHelmCommandsRequest) (*operations.GetKubernetesClustersKubernetesClusterIDGetHelmCommandsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/kubernetesClusters/{kubernetesClusterId}/getHelmCommands", request, nil)
 	if err != nil {
@@ -642,7 +642,7 @@ func (s *kubernetes) GetKubernetesClustersKubernetesClusterIDGetHelmCommands(ctx
 }
 
 // GetKubernetesClustersKubernetesClusterIDNamespaces - List namespaces on a specific Kubernetes cluster
-func (s *kubernetes) GetKubernetesClustersKubernetesClusterIDNamespaces(ctx context.Context, request operations.GetKubernetesClustersKubernetesClusterIDNamespacesRequest) (*operations.GetKubernetesClustersKubernetesClusterIDNamespacesResponse, error) {
+func (s *Kubernetes) GetKubernetesClustersKubernetesClusterIDNamespaces(ctx context.Context, request operations.GetKubernetesClustersKubernetesClusterIDNamespacesRequest) (*operations.GetKubernetesClustersKubernetesClusterIDNamespacesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/kubernetesClusters/{kubernetesClusterId}/namespaces", request, nil)
 	if err != nil {
@@ -693,7 +693,7 @@ func (s *kubernetes) GetKubernetesClustersKubernetesClusterIDNamespaces(ctx cont
 				return nil, err
 			}
 
-			res.KubernetesNamespaceResponses = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -719,7 +719,7 @@ func (s *kubernetes) GetKubernetesClustersKubernetesClusterIDNamespaces(ctx cont
 }
 
 // GetKubernetesClustersKubernetesClusterIDServices - List services on a specific Kubernetes cluster
-func (s *kubernetes) GetKubernetesClustersKubernetesClusterIDServices(ctx context.Context, request operations.GetKubernetesClustersKubernetesClusterIDServicesRequest) (*operations.GetKubernetesClustersKubernetesClusterIDServicesResponse, error) {
+func (s *Kubernetes) GetKubernetesClustersKubernetesClusterIDServices(ctx context.Context, request operations.GetKubernetesClustersKubernetesClusterIDServicesRequest) (*operations.GetKubernetesClustersKubernetesClusterIDServicesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/kubernetesClusters/{kubernetesClusterId}/services", request, nil)
 	if err != nil {
@@ -770,7 +770,7 @@ func (s *kubernetes) GetKubernetesClustersKubernetesClusterIDServices(ctx contex
 				return nil, err
 			}
 
-			res.KubernetesServices = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -796,7 +796,7 @@ func (s *kubernetes) GetKubernetesClustersKubernetesClusterIDServices(ctx contex
 }
 
 // GetLeanKubernetesClusters - get a list of current Kubernetes clusters
-func (s *kubernetes) GetLeanKubernetesClusters(ctx context.Context, request operations.GetLeanKubernetesClustersRequest) (*operations.GetLeanKubernetesClustersResponse, error) {
+func (s *Kubernetes) GetLeanKubernetesClusters(ctx context.Context, request operations.GetLeanKubernetesClustersRequest) (*operations.GetLeanKubernetesClustersResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/leanKubernetesClusters"
 
@@ -844,7 +844,7 @@ func (s *kubernetes) GetLeanKubernetesClusters(ctx context.Context, request oper
 				return nil, err
 			}
 
-			res.LeanKubernetesClusters = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -870,7 +870,7 @@ func (s *kubernetes) GetLeanKubernetesClusters(ctx context.Context, request oper
 }
 
 // GetNamespaces - Get a list of current Kubernetes namespaces
-func (s *kubernetes) GetNamespaces(ctx context.Context, request operations.GetNamespacesRequest) (*operations.GetNamespacesResponse, error) {
+func (s *Kubernetes) GetNamespaces(ctx context.Context, request operations.GetNamespacesRequest) (*operations.GetNamespacesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/namespaces"
 
@@ -918,7 +918,7 @@ func (s *kubernetes) GetNamespaces(ctx context.Context, request operations.GetNa
 				return nil, err
 			}
 
-			res.Namespaces = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -944,7 +944,7 @@ func (s *kubernetes) GetNamespaces(ctx context.Context, request operations.GetNa
 }
 
 // GetPodDefinitions - Get all pod definitions on the system
-func (s *kubernetes) GetPodDefinitions(ctx context.Context, request operations.GetPodDefinitionsRequest) (*operations.GetPodDefinitionsResponse, error) {
+func (s *Kubernetes) GetPodDefinitions(ctx context.Context, request operations.GetPodDefinitionsRequest) (*operations.GetPodDefinitionsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/podDefinitions"
 
@@ -992,7 +992,7 @@ func (s *kubernetes) GetPodDefinitions(ctx context.Context, request operations.G
 				return nil, err
 			}
 
-			res.PodDefinitions = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -1006,7 +1006,7 @@ func (s *kubernetes) GetPodDefinitions(ctx context.Context, request operations.G
 }
 
 // PostKubernetesClusters - Add a new Kubernetes cluster to Secure Application
-func (s *kubernetes) PostKubernetesClusters(ctx context.Context, request shared.KubernetesCluster) (*operations.PostKubernetesClustersResponse, error) {
+func (s *Kubernetes) PostKubernetesClusters(ctx context.Context, request shared.KubernetesCluster) (*operations.PostKubernetesClustersResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/kubernetesClusters"
 
@@ -1086,7 +1086,7 @@ func (s *kubernetes) PostKubernetesClusters(ctx context.Context, request shared.
 }
 
 // PostPodDefinitions - Create a new pod definition
-func (s *kubernetes) PostPodDefinitions(ctx context.Context, request shared.PodDefinitionInput) (*operations.PostPodDefinitionsResponse, error) {
+func (s *Kubernetes) PostPodDefinitions(ctx context.Context, request shared.PodDefinitionInput) (*operations.PostPodDefinitionsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/podDefinitions"
 
@@ -1156,7 +1156,7 @@ func (s *kubernetes) PostPodDefinitions(ctx context.Context, request shared.PodD
 }
 
 // PutKubernetesClustersKubernetesClusterID - Update the Kubernetes cluster
-func (s *kubernetes) PutKubernetesClustersKubernetesClusterID(ctx context.Context, request operations.PutKubernetesClustersKubernetesClusterIDRequest) (*operations.PutKubernetesClustersKubernetesClusterIDResponse, error) {
+func (s *Kubernetes) PutKubernetesClustersKubernetesClusterID(ctx context.Context, request operations.PutKubernetesClustersKubernetesClusterIDRequest) (*operations.PutKubernetesClustersKubernetesClusterIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/kubernetesClusters/{kubernetesClusterId}", request, nil)
 	if err != nil {
@@ -1239,7 +1239,7 @@ func (s *kubernetes) PutKubernetesClustersKubernetesClusterID(ctx context.Contex
 }
 
 // PutKubernetesClustersKubernetesClusterIDManagedByHelm - Update the Kubernetes cluster which managed by HELM
-func (s *kubernetes) PutKubernetesClustersKubernetesClusterIDManagedByHelm(ctx context.Context, request operations.PutKubernetesClustersKubernetesClusterIDManagedByHelmRequest) (*operations.PutKubernetesClustersKubernetesClusterIDManagedByHelmResponse, error) {
+func (s *Kubernetes) PutKubernetesClustersKubernetesClusterIDManagedByHelm(ctx context.Context, request operations.PutKubernetesClustersKubernetesClusterIDManagedByHelmRequest) (*operations.PutKubernetesClustersKubernetesClusterIDManagedByHelmResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/kubernetesClusters/{kubernetesClusterId}/managedByHelm", request, nil)
 	if err != nil {
@@ -1322,14 +1322,14 @@ func (s *kubernetes) PutKubernetesClustersKubernetesClusterIDManagedByHelm(ctx c
 }
 
 // PutPodDefinitionsPodID - Change pod definition
-func (s *kubernetes) PutPodDefinitionsPodID(ctx context.Context, request operations.PutPodDefinitionsPodIDRequest) (*operations.PutPodDefinitionsPodIDResponse, error) {
+func (s *Kubernetes) PutPodDefinitionsPodID(ctx context.Context, request operations.PutPodDefinitionsPodIDRequest) (*operations.PutPodDefinitionsPodIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/podDefinitions/{podId}", request, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "PodDefinitionInput", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "PodDefinition", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, fmt.Errorf("error serializing request body: %w", err)
 	}

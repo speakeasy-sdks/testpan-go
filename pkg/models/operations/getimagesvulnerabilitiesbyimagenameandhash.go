@@ -10,19 +10,19 @@ import (
 	"net/http"
 )
 
-// GetImagesVulnerabilitiesByImageNameAndHashSortDir - sorting direction
-type GetImagesVulnerabilitiesByImageNameAndHashSortDir string
+// GetImagesVulnerabilitiesByImageNameAndHashQueryParamSortDir - sorting direction
+type GetImagesVulnerabilitiesByImageNameAndHashQueryParamSortDir string
 
 const (
-	GetImagesVulnerabilitiesByImageNameAndHashSortDirAsc  GetImagesVulnerabilitiesByImageNameAndHashSortDir = "ASC"
-	GetImagesVulnerabilitiesByImageNameAndHashSortDirDesc GetImagesVulnerabilitiesByImageNameAndHashSortDir = "DESC"
+	GetImagesVulnerabilitiesByImageNameAndHashQueryParamSortDirAsc  GetImagesVulnerabilitiesByImageNameAndHashQueryParamSortDir = "ASC"
+	GetImagesVulnerabilitiesByImageNameAndHashQueryParamSortDirDesc GetImagesVulnerabilitiesByImageNameAndHashQueryParamSortDir = "DESC"
 )
 
-func (e GetImagesVulnerabilitiesByImageNameAndHashSortDir) ToPointer() *GetImagesVulnerabilitiesByImageNameAndHashSortDir {
+func (e GetImagesVulnerabilitiesByImageNameAndHashQueryParamSortDir) ToPointer() *GetImagesVulnerabilitiesByImageNameAndHashQueryParamSortDir {
 	return &e
 }
 
-func (e *GetImagesVulnerabilitiesByImageNameAndHashSortDir) UnmarshalJSON(data []byte) error {
+func (e *GetImagesVulnerabilitiesByImageNameAndHashQueryParamSortDir) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -31,10 +31,10 @@ func (e *GetImagesVulnerabilitiesByImageNameAndHashSortDir) UnmarshalJSON(data [
 	case "ASC":
 		fallthrough
 	case "DESC":
-		*e = GetImagesVulnerabilitiesByImageNameAndHashSortDir(v)
+		*e = GetImagesVulnerabilitiesByImageNameAndHashQueryParamSortDir(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetImagesVulnerabilitiesByImageNameAndHashSortDir: %v", v)
+		return fmt.Errorf("invalid value for GetImagesVulnerabilitiesByImageNameAndHashQueryParamSortDir: %v", v)
 	}
 }
 
@@ -52,7 +52,7 @@ type GetImagesVulnerabilitiesByImageNameAndHashRequest struct {
 	Offset                         *float64 `default:"0" queryParam:"style=form,explode=true,name=offset"`
 	ShowOnlyVulnerabilitiesWithFix *bool    `default:"false" queryParam:"style=form,explode=true,name=showOnlyVulnerabilitiesWithFix"`
 	// sorting direction
-	SortDir *GetImagesVulnerabilitiesByImageNameAndHashSortDir `default:"DESC" queryParam:"style=form,explode=true,name=sortDir"`
+	SortDir *GetImagesVulnerabilitiesByImageNameAndHashQueryParamSortDir `default:"DESC" queryParam:"style=form,explode=true,name=sortDir"`
 }
 
 func (g GetImagesVulnerabilitiesByImageNameAndHashRequest) MarshalJSON() ([]byte, error) {
@@ -115,7 +115,7 @@ func (o *GetImagesVulnerabilitiesByImageNameAndHashRequest) GetShowOnlyVulnerabi
 	return o.ShowOnlyVulnerabilitiesWithFix
 }
 
-func (o *GetImagesVulnerabilitiesByImageNameAndHashRequest) GetSortDir() *GetImagesVulnerabilitiesByImageNameAndHashSortDir {
+func (o *GetImagesVulnerabilitiesByImageNameAndHashRequest) GetSortDir() *GetImagesVulnerabilitiesByImageNameAndHashQueryParamSortDir {
 	if o == nil {
 		return nil
 	}
@@ -130,7 +130,7 @@ type GetImagesVulnerabilitiesByImageNameAndHashResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// OK
-	Vulnerabilities []shared.Vulnerability
+	Classes []shared.Vulnerability
 }
 
 func (o *GetImagesVulnerabilitiesByImageNameAndHashResponse) GetContentType() string {
@@ -154,9 +154,9 @@ func (o *GetImagesVulnerabilitiesByImageNameAndHashResponse) GetRawResponse() *h
 	return o.RawResponse
 }
 
-func (o *GetImagesVulnerabilitiesByImageNameAndHashResponse) GetVulnerabilities() []shared.Vulnerability {
+func (o *GetImagesVulnerabilitiesByImageNameAndHashResponse) GetClasses() []shared.Vulnerability {
 	if o == nil {
 		return nil
 	}
-	return o.Vulnerabilities
+	return o.Classes
 }

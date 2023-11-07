@@ -10,12 +10,12 @@ import (
 type GetRiskAssessmentIgnoredRisksResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// Success
-	IgnoredRisks []shared.IgnoredRisk
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Success
+	Classes []shared.IgnoredRisk
 }
 
 func (o *GetRiskAssessmentIgnoredRisksResponse) GetContentType() string {
@@ -23,13 +23,6 @@ func (o *GetRiskAssessmentIgnoredRisksResponse) GetContentType() string {
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *GetRiskAssessmentIgnoredRisksResponse) GetIgnoredRisks() []shared.IgnoredRisk {
-	if o == nil {
-		return nil
-	}
-	return o.IgnoredRisks
 }
 
 func (o *GetRiskAssessmentIgnoredRisksResponse) GetStatusCode() int {
@@ -44,4 +37,11 @@ func (o *GetRiskAssessmentIgnoredRisksResponse) GetRawResponse() *http.Response 
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetRiskAssessmentIgnoredRisksResponse) GetClasses() []shared.IgnoredRisk {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

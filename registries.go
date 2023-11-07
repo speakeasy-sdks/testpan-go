@@ -15,19 +15,19 @@ import (
 	"strings"
 )
 
-// registries - APIs used to  define and manage registries
-type registries struct {
+// Registries - APIs used to  define and manage registries
+type Registries struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newRegistries(sdkConfig sdkConfiguration) *registries {
-	return &registries{
+func newRegistries(sdkConfig sdkConfiguration) *Registries {
+	return &Registries{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // DeleteRegistriesRegistryID - Delete a registry
-func (s *registries) DeleteRegistriesRegistryID(ctx context.Context, request operations.DeleteRegistriesRegistryIDRequest) (*operations.DeleteRegistriesRegistryIDResponse, error) {
+func (s *Registries) DeleteRegistriesRegistryID(ctx context.Context, request operations.DeleteRegistriesRegistryIDRequest) (*operations.DeleteRegistriesRegistryIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/registries/{registryId}", request, nil)
 	if err != nil {
@@ -77,7 +77,7 @@ func (s *registries) DeleteRegistriesRegistryID(ctx context.Context, request ope
 }
 
 // GetRegistries - Get a list of defined registries
-func (s *registries) GetRegistries(ctx context.Context, request operations.GetRegistriesRequest) (*operations.GetRegistriesResponse, error) {
+func (s *Registries) GetRegistries(ctx context.Context, request operations.GetRegistriesRequest) (*operations.GetRegistriesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/registries"
 
@@ -125,7 +125,7 @@ func (s *registries) GetRegistries(ctx context.Context, request operations.GetRe
 				return nil, err
 			}
 
-			res.Registries = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -141,7 +141,7 @@ func (s *registries) GetRegistries(ctx context.Context, request operations.GetRe
 }
 
 // PostRegistries - Add new registry
-func (s *registries) PostRegistries(ctx context.Context, request shared.RegistryInput) (*operations.PostRegistriesResponse, error) {
+func (s *Registries) PostRegistries(ctx context.Context, request shared.RegistryInput) (*operations.PostRegistriesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/registries"
 
@@ -209,7 +209,7 @@ func (s *registries) PostRegistries(ctx context.Context, request shared.Registry
 }
 
 // PostRegistriesTestConnection - test registry connection
-func (s *registries) PostRegistriesTestConnection(ctx context.Context, request shared.RegistryInput) (*operations.PostRegistriesTestConnectionResponse, error) {
+func (s *Registries) PostRegistriesTestConnection(ctx context.Context, request shared.RegistryInput) (*operations.PostRegistriesTestConnectionResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/registries/testConnection"
 
@@ -270,14 +270,14 @@ func (s *registries) PostRegistriesTestConnection(ctx context.Context, request s
 }
 
 // PostRegistriesTestConnectionRegistryID - test registry connection
-func (s *registries) PostRegistriesTestConnectionRegistryID(ctx context.Context, request operations.PostRegistriesTestConnectionRegistryIDRequest) (*operations.PostRegistriesTestConnectionRegistryIDResponse, error) {
+func (s *Registries) PostRegistriesTestConnectionRegistryID(ctx context.Context, request operations.PostRegistriesTestConnectionRegistryIDRequest) (*operations.PostRegistriesTestConnectionRegistryIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/registries/testConnection/{registryId}", request, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "RegistryInput", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Registry", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, fmt.Errorf("error serializing request body: %w", err)
 	}
@@ -334,14 +334,14 @@ func (s *registries) PostRegistriesTestConnectionRegistryID(ctx context.Context,
 }
 
 // PutRegistriesRegistryID - edit existing registry
-func (s *registries) PutRegistriesRegistryID(ctx context.Context, request operations.PutRegistriesRegistryIDRequest) (*operations.PutRegistriesRegistryIDResponse, error) {
+func (s *Registries) PutRegistriesRegistryID(ctx context.Context, request operations.PutRegistriesRegistryIDRequest) (*operations.PutRegistriesRegistryIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/registries/{registryId}", request, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "RegistryInput", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Registry", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, fmt.Errorf("error serializing request body: %w", err)
 	}

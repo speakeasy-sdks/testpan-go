@@ -10,12 +10,12 @@ import (
 type PostEnvironmentsBatchResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// Added
-	Environments []shared.Environment
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Added
+	Classes []shared.Environment
 }
 
 func (o *PostEnvironmentsBatchResponse) GetContentType() string {
@@ -23,13 +23,6 @@ func (o *PostEnvironmentsBatchResponse) GetContentType() string {
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *PostEnvironmentsBatchResponse) GetEnvironments() []shared.Environment {
-	if o == nil {
-		return nil
-	}
-	return o.Environments
 }
 
 func (o *PostEnvironmentsBatchResponse) GetStatusCode() int {
@@ -44,4 +37,11 @@ func (o *PostEnvironmentsBatchResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *PostEnvironmentsBatchResponse) GetClasses() []shared.Environment {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

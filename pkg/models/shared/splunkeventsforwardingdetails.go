@@ -6,7 +6,7 @@ import (
 	"github.com/speakeasy-sdks/testpan-go/pkg/utils"
 )
 
-type SplunkEventsForwardingDetailsInput struct {
+type SplunkEventsForwardingDetails struct {
 	EventsForwardingDetailsType EventsForwardingDetailsTypeEnum `json:"eventsForwardingDetailsType"`
 	EventsToForward             []EventsToForward               `json:"eventsToForward"`
 	IsCloud                     *bool                           `default:"false" json:"isCloud"`
@@ -17,67 +17,67 @@ type SplunkEventsForwardingDetailsInput struct {
 	URL                         *string                         `json:"url,omitempty"`
 }
 
-func (s SplunkEventsForwardingDetailsInput) MarshalJSON() ([]byte, error) {
+func (s SplunkEventsForwardingDetails) MarshalJSON() ([]byte, error) {
 	return utils.MarshalJSON(s, "", false)
 }
 
-func (s *SplunkEventsForwardingDetailsInput) UnmarshalJSON(data []byte) error {
+func (s *SplunkEventsForwardingDetails) UnmarshalJSON(data []byte) error {
 	if err := utils.UnmarshalJSON(data, &s, "", false, false); err != nil {
 		return err
 	}
 	return nil
 }
 
-func (o *SplunkEventsForwardingDetailsInput) GetEventsForwardingDetailsType() EventsForwardingDetailsTypeEnum {
+func (o *SplunkEventsForwardingDetails) GetEventsForwardingDetailsType() EventsForwardingDetailsTypeEnum {
 	if o == nil {
 		return EventsForwardingDetailsTypeEnum("")
 	}
 	return o.EventsForwardingDetailsType
 }
 
-func (o *SplunkEventsForwardingDetailsInput) GetEventsToForward() []EventsToForward {
+func (o *SplunkEventsForwardingDetails) GetEventsToForward() []EventsToForward {
 	if o == nil {
 		return []EventsToForward{}
 	}
 	return o.EventsToForward
 }
 
-func (o *SplunkEventsForwardingDetailsInput) GetIsCloud() *bool {
+func (o *SplunkEventsForwardingDetails) GetIsCloud() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.IsCloud
 }
 
-func (o *SplunkEventsForwardingDetailsInput) GetName() string {
+func (o *SplunkEventsForwardingDetails) GetName() string {
 	if o == nil {
 		return ""
 	}
 	return o.Name
 }
 
-func (o *SplunkEventsForwardingDetailsInput) GetPort() *int64 {
+func (o *SplunkEventsForwardingDetails) GetPort() *int64 {
 	if o == nil {
 		return nil
 	}
 	return o.Port
 }
 
-func (o *SplunkEventsForwardingDetailsInput) GetSourceName() *string {
+func (o *SplunkEventsForwardingDetails) GetSourceName() *string {
 	if o == nil {
 		return nil
 	}
 	return o.SourceName
 }
 
-func (o *SplunkEventsForwardingDetailsInput) GetToken() string {
+func (o *SplunkEventsForwardingDetails) GetToken() string {
 	if o == nil {
 		return ""
 	}
 	return o.Token
 }
 
-func (o *SplunkEventsForwardingDetailsInput) GetURL() *string {
+func (o *SplunkEventsForwardingDetails) GetURL() *string {
 	if o == nil {
 		return nil
 	}

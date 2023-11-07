@@ -8,21 +8,14 @@ import (
 )
 
 type GetAwsRolesResponse struct {
-	// Success
-	AWSRoles []shared.AWSRole
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-}
-
-func (o *GetAwsRolesResponse) GetAWSRoles() []shared.AWSRole {
-	if o == nil {
-		return nil
-	}
-	return o.AWSRoles
+	// Success
+	Classes []shared.AWSRole
 }
 
 func (o *GetAwsRolesResponse) GetContentType() string {
@@ -44,4 +37,11 @@ func (o *GetAwsRolesResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetAwsRolesResponse) GetClasses() []shared.AWSRole {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

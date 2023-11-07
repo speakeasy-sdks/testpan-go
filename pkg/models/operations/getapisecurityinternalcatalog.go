@@ -11,19 +11,19 @@ import (
 	"time"
 )
 
-// GetAPISecurityInternalCatalogSortDir - sorting direction
-type GetAPISecurityInternalCatalogSortDir string
+// GetAPISecurityInternalCatalogQueryParamSortDir - sorting direction
+type GetAPISecurityInternalCatalogQueryParamSortDir string
 
 const (
-	GetAPISecurityInternalCatalogSortDirAsc  GetAPISecurityInternalCatalogSortDir = "ASC"
-	GetAPISecurityInternalCatalogSortDirDesc GetAPISecurityInternalCatalogSortDir = "DESC"
+	GetAPISecurityInternalCatalogQueryParamSortDirAsc  GetAPISecurityInternalCatalogQueryParamSortDir = "ASC"
+	GetAPISecurityInternalCatalogQueryParamSortDirDesc GetAPISecurityInternalCatalogQueryParamSortDir = "DESC"
 )
 
-func (e GetAPISecurityInternalCatalogSortDir) ToPointer() *GetAPISecurityInternalCatalogSortDir {
+func (e GetAPISecurityInternalCatalogQueryParamSortDir) ToPointer() *GetAPISecurityInternalCatalogQueryParamSortDir {
 	return &e
 }
 
-func (e *GetAPISecurityInternalCatalogSortDir) UnmarshalJSON(data []byte) error {
+func (e *GetAPISecurityInternalCatalogQueryParamSortDir) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -32,26 +32,26 @@ func (e *GetAPISecurityInternalCatalogSortDir) UnmarshalJSON(data []byte) error 
 	case "ASC":
 		fallthrough
 	case "DESC":
-		*e = GetAPISecurityInternalCatalogSortDir(v)
+		*e = GetAPISecurityInternalCatalogQueryParamSortDir(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetAPISecurityInternalCatalogSortDir: %v", v)
+		return fmt.Errorf("invalid value for GetAPISecurityInternalCatalogQueryParamSortDir: %v", v)
 	}
 }
 
-// GetAPISecurityInternalCatalogSortKey - the Api Catalog sort key
-type GetAPISecurityInternalCatalogSortKey string
+// GetAPISecurityInternalCatalogQueryParamSortKey - the Api Catalog sort key
+type GetAPISecurityInternalCatalogQueryParamSortKey string
 
 const (
-	GetAPISecurityInternalCatalogSortKeyName GetAPISecurityInternalCatalogSortKey = "name"
-	GetAPISecurityInternalCatalogSortKeyRisk GetAPISecurityInternalCatalogSortKey = "risk"
+	GetAPISecurityInternalCatalogQueryParamSortKeyName GetAPISecurityInternalCatalogQueryParamSortKey = "name"
+	GetAPISecurityInternalCatalogQueryParamSortKeyRisk GetAPISecurityInternalCatalogQueryParamSortKey = "risk"
 )
 
-func (e GetAPISecurityInternalCatalogSortKey) ToPointer() *GetAPISecurityInternalCatalogSortKey {
+func (e GetAPISecurityInternalCatalogQueryParamSortKey) ToPointer() *GetAPISecurityInternalCatalogQueryParamSortKey {
 	return &e
 }
 
-func (e *GetAPISecurityInternalCatalogSortKey) UnmarshalJSON(data []byte) error {
+func (e *GetAPISecurityInternalCatalogQueryParamSortKey) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -60,10 +60,10 @@ func (e *GetAPISecurityInternalCatalogSortKey) UnmarshalJSON(data []byte) error 
 	case "name":
 		fallthrough
 	case "risk":
-		*e = GetAPISecurityInternalCatalogSortKey(v)
+		*e = GetAPISecurityInternalCatalogQueryParamSortKey(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetAPISecurityInternalCatalogSortKey: %v", v)
+		return fmt.Errorf("invalid value for GetAPISecurityInternalCatalogQueryParamSortKey: %v", v)
 	}
 }
 
@@ -85,9 +85,9 @@ type GetAPISecurityInternalCatalogRequest struct {
 	// Return entries from this offset (pagination)
 	Offset *float64 `default:"0" queryParam:"style=form,explode=true,name=offset"`
 	// sorting direction
-	SortDir *GetAPISecurityInternalCatalogSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
+	SortDir *GetAPISecurityInternalCatalogQueryParamSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
 	// the Api Catalog sort key
-	SortKey *GetAPISecurityInternalCatalogSortKey `queryParam:"style=form,explode=true,name=sortKey"`
+	SortKey *GetAPISecurityInternalCatalogQueryParamSortKey `queryParam:"style=form,explode=true,name=sortKey"`
 	// Only Apis updated since this date
 	UpdatedAfter *time.Time `queryParam:"style=form,explode=true,name=updatedAfter"`
 }
@@ -159,14 +159,14 @@ func (o *GetAPISecurityInternalCatalogRequest) GetOffset() *float64 {
 	return o.Offset
 }
 
-func (o *GetAPISecurityInternalCatalogRequest) GetSortDir() *GetAPISecurityInternalCatalogSortDir {
+func (o *GetAPISecurityInternalCatalogRequest) GetSortDir() *GetAPISecurityInternalCatalogQueryParamSortDir {
 	if o == nil {
 		return nil
 	}
 	return o.SortDir
 }
 
-func (o *GetAPISecurityInternalCatalogRequest) GetSortKey() *GetAPISecurityInternalCatalogSortKey {
+func (o *GetAPISecurityInternalCatalogRequest) GetSortKey() *GetAPISecurityInternalCatalogQueryParamSortKey {
 	if o == nil {
 		return nil
 	}

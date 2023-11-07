@@ -15,19 +15,19 @@ import (
 	"strings"
 )
 
-// ciCDPolicies - APIs used to  define and manage CI/CD policies
-type ciCDPolicies struct {
+// CICDPolicies - APIs used to  define and manage CI/CD policies
+type CICDPolicies struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newCICDPolicies(sdkConfig sdkConfiguration) *ciCDPolicies {
-	return &ciCDPolicies{
+func newCICDPolicies(sdkConfig sdkConfiguration) *CICDPolicies {
+	return &CICDPolicies{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // DeleteCdPolicyPolicyID - Delete CD policy
-func (s *ciCDPolicies) DeleteCdPolicyPolicyID(ctx context.Context, request operations.DeleteCdPolicyPolicyIDRequest) (*operations.DeleteCdPolicyPolicyIDResponse, error) {
+func (s *CICDPolicies) DeleteCdPolicyPolicyID(ctx context.Context, request operations.DeleteCdPolicyPolicyIDRequest) (*operations.DeleteCdPolicyPolicyIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/cdPolicy/{policyId}", request, nil)
 	if err != nil {
@@ -77,7 +77,7 @@ func (s *ciCDPolicies) DeleteCdPolicyPolicyID(ctx context.Context, request opera
 }
 
 // DeleteCiPolicyPolicyID - Delete CI policy
-func (s *ciCDPolicies) DeleteCiPolicyPolicyID(ctx context.Context, request operations.DeleteCiPolicyPolicyIDRequest) (*operations.DeleteCiPolicyPolicyIDResponse, error) {
+func (s *CICDPolicies) DeleteCiPolicyPolicyID(ctx context.Context, request operations.DeleteCiPolicyPolicyIDRequest) (*operations.DeleteCiPolicyPolicyIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/ciPolicy/{policyId}", request, nil)
 	if err != nil {
@@ -127,7 +127,7 @@ func (s *ciCDPolicies) DeleteCiPolicyPolicyID(ctx context.Context, request opera
 }
 
 // GetCdPolicy - Get the current CD policy
-func (s *ciCDPolicies) GetCdPolicy(ctx context.Context) (*operations.GetCdPolicyResponse, error) {
+func (s *CICDPolicies) GetCdPolicy(ctx context.Context) (*operations.GetCdPolicyResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/cdPolicy"
 
@@ -171,7 +171,7 @@ func (s *ciCDPolicies) GetCdPolicy(ctx context.Context) (*operations.GetCdPolicy
 				return nil, err
 			}
 
-			res.CdPolicies = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -187,7 +187,7 @@ func (s *ciCDPolicies) GetCdPolicy(ctx context.Context) (*operations.GetCdPolicy
 }
 
 // GetCiPolicy - Get the current CI policy
-func (s *ciCDPolicies) GetCiPolicy(ctx context.Context) (*operations.GetCiPolicyResponse, error) {
+func (s *CICDPolicies) GetCiPolicy(ctx context.Context) (*operations.GetCiPolicyResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/ciPolicy"
 
@@ -247,7 +247,7 @@ func (s *ciCDPolicies) GetCiPolicy(ctx context.Context) (*operations.GetCiPolicy
 }
 
 // PostCdPolicy - Set the current CD policy. At least one CdPolicyElement should be present
-func (s *ciCDPolicies) PostCdPolicy(ctx context.Context, request shared.CdPolicyInput) (*operations.PostCdPolicyResponse, error) {
+func (s *CICDPolicies) PostCdPolicy(ctx context.Context, request shared.CdPolicyInput) (*operations.PostCdPolicyResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/cdPolicy"
 
@@ -317,7 +317,7 @@ func (s *ciCDPolicies) PostCdPolicy(ctx context.Context, request shared.CdPolicy
 }
 
 // PostCiPolicy - Set the current CI policy
-func (s *ciCDPolicies) PostCiPolicy(ctx context.Context, request shared.CiPolicyInput) (*operations.PostCiPolicyResponse, error) {
+func (s *CICDPolicies) PostCiPolicy(ctx context.Context, request shared.CiPolicyInput) (*operations.PostCiPolicyResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/ciPolicy"
 
@@ -387,14 +387,14 @@ func (s *ciCDPolicies) PostCiPolicy(ctx context.Context, request shared.CiPolicy
 }
 
 // PutCdPolicyPolicyID - Edit CD policy. At least one CdPolicyElement should be present
-func (s *ciCDPolicies) PutCdPolicyPolicyID(ctx context.Context, request operations.PutCdPolicyPolicyIDRequest) (*operations.PutCdPolicyPolicyIDResponse, error) {
+func (s *CICDPolicies) PutCdPolicyPolicyID(ctx context.Context, request operations.PutCdPolicyPolicyIDRequest) (*operations.PutCdPolicyPolicyIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/cdPolicy/{policyId}", request, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CdPolicyInput", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CdPolicy", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, fmt.Errorf("error serializing request body: %w", err)
 	}
@@ -458,14 +458,14 @@ func (s *ciCDPolicies) PutCdPolicyPolicyID(ctx context.Context, request operatio
 }
 
 // PutCiPolicyPolicyID - Edit CI policy
-func (s *ciCDPolicies) PutCiPolicyPolicyID(ctx context.Context, request operations.PutCiPolicyPolicyIDRequest) (*operations.PutCiPolicyPolicyIDResponse, error) {
+func (s *CICDPolicies) PutCiPolicyPolicyID(ctx context.Context, request operations.PutCiPolicyPolicyIDRequest) (*operations.PutCiPolicyPolicyIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/ciPolicy/{policyId}", request, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CiPolicyInput", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CiPolicy", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, fmt.Errorf("error serializing request body: %w", err)
 	}

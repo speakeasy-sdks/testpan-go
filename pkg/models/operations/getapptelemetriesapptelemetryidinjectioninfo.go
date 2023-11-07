@@ -27,7 +27,7 @@ type GetAppTelemetriesAppTelemetryIDInjectionInfoResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Success
-	TokenInjectionInfos []shared.TokenInjectionInfo
+	Classes []shared.TokenInjectionInfo
 }
 
 func (o *GetAppTelemetriesAppTelemetryIDInjectionInfoResponse) GetContentType() string {
@@ -51,9 +51,9 @@ func (o *GetAppTelemetriesAppTelemetryIDInjectionInfoResponse) GetRawResponse() 
 	return o.RawResponse
 }
 
-func (o *GetAppTelemetriesAppTelemetryIDInjectionInfoResponse) GetTokenInjectionInfos() []shared.TokenInjectionInfo {
+func (o *GetAppTelemetriesAppTelemetryIDInjectionInfoResponse) GetClasses() []shared.TokenInjectionInfo {
 	if o == nil {
 		return nil
 	}
-	return o.TokenInjectionInfos
+	return o.Classes
 }

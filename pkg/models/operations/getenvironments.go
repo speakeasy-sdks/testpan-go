@@ -10,19 +10,19 @@ import (
 	"net/http"
 )
 
-// GetEnvironmentsSortDir - sorting direction
-type GetEnvironmentsSortDir string
+// GetEnvironmentsQueryParamSortDir - sorting direction
+type GetEnvironmentsQueryParamSortDir string
 
 const (
-	GetEnvironmentsSortDirAsc  GetEnvironmentsSortDir = "ASC"
-	GetEnvironmentsSortDirDesc GetEnvironmentsSortDir = "DESC"
+	GetEnvironmentsQueryParamSortDirAsc  GetEnvironmentsQueryParamSortDir = "ASC"
+	GetEnvironmentsQueryParamSortDirDesc GetEnvironmentsQueryParamSortDir = "DESC"
 )
 
-func (e GetEnvironmentsSortDir) ToPointer() *GetEnvironmentsSortDir {
+func (e GetEnvironmentsQueryParamSortDir) ToPointer() *GetEnvironmentsQueryParamSortDir {
 	return &e
 }
 
-func (e *GetEnvironmentsSortDir) UnmarshalJSON(data []byte) error {
+func (e *GetEnvironmentsQueryParamSortDir) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -31,35 +31,35 @@ func (e *GetEnvironmentsSortDir) UnmarshalJSON(data []byte) error {
 	case "ASC":
 		fallthrough
 	case "DESC":
-		*e = GetEnvironmentsSortDir(v)
+		*e = GetEnvironmentsQueryParamSortDir(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetEnvironmentsSortDir: %v", v)
+		return fmt.Errorf("invalid value for GetEnvironmentsQueryParamSortDir: %v", v)
 	}
 }
 
-// GetEnvironmentsSortKey - Environment sort key
-type GetEnvironmentsSortKey string
+// GetEnvironmentsQueryParamSortKey - Environment sort key
+type GetEnvironmentsQueryParamSortKey string
 
 const (
-	GetEnvironmentsSortKeyName GetEnvironmentsSortKey = "name"
+	GetEnvironmentsQueryParamSortKeyName GetEnvironmentsQueryParamSortKey = "name"
 )
 
-func (e GetEnvironmentsSortKey) ToPointer() *GetEnvironmentsSortKey {
+func (e GetEnvironmentsQueryParamSortKey) ToPointer() *GetEnvironmentsQueryParamSortKey {
 	return &e
 }
 
-func (e *GetEnvironmentsSortKey) UnmarshalJSON(data []byte) error {
+func (e *GetEnvironmentsQueryParamSortKey) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
 	}
 	switch v {
 	case "name":
-		*e = GetEnvironmentsSortKey(v)
+		*e = GetEnvironmentsQueryParamSortKey(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetEnvironmentsSortKey: %v", v)
+		return fmt.Errorf("invalid value for GetEnvironmentsQueryParamSortKey: %v", v)
 	}
 }
 
@@ -71,9 +71,9 @@ type GetEnvironmentsRequest struct {
 	// Filter environments by name
 	Name *string `queryParam:"style=form,explode=true,name=name"`
 	// sorting direction
-	SortDir *GetEnvironmentsSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
+	SortDir *GetEnvironmentsQueryParamSortDir `default:"ASC" queryParam:"style=form,explode=true,name=sortDir"`
 	// Environment sort key
-	SortKey *GetEnvironmentsSortKey `queryParam:"style=form,explode=true,name=sortKey"`
+	SortKey *GetEnvironmentsQueryParamSortKey `queryParam:"style=form,explode=true,name=sortKey"`
 }
 
 func (g GetEnvironmentsRequest) MarshalJSON() ([]byte, error) {
@@ -108,14 +108,14 @@ func (o *GetEnvironmentsRequest) GetName() *string {
 	return o.Name
 }
 
-func (o *GetEnvironmentsRequest) GetSortDir() *GetEnvironmentsSortDir {
+func (o *GetEnvironmentsRequest) GetSortDir() *GetEnvironmentsQueryParamSortDir {
 	if o == nil {
 		return nil
 	}
 	return o.SortDir
 }
 
-func (o *GetEnvironmentsRequest) GetSortKey() *GetEnvironmentsSortKey {
+func (o *GetEnvironmentsRequest) GetSortKey() *GetEnvironmentsQueryParamSortKey {
 	if o == nil {
 		return nil
 	}
@@ -125,12 +125,12 @@ func (o *GetEnvironmentsRequest) GetSortKey() *GetEnvironmentsSortKey {
 type GetEnvironmentsResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// Success
-	Environments []shared.Environment
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Success
+	Classes []shared.Environment
 }
 
 func (o *GetEnvironmentsResponse) GetContentType() string {
@@ -138,13 +138,6 @@ func (o *GetEnvironmentsResponse) GetContentType() string {
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *GetEnvironmentsResponse) GetEnvironments() []shared.Environment {
-	if o == nil {
-		return nil
-	}
-	return o.Environments
 }
 
 func (o *GetEnvironmentsResponse) GetStatusCode() int {
@@ -159,4 +152,11 @@ func (o *GetEnvironmentsResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetEnvironmentsResponse) GetClasses() []shared.Environment {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

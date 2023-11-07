@@ -7,20 +7,20 @@ import (
 	"fmt"
 )
 
-type AuthorizationSchemeAuthorizationSchemeType string
+type AuthorizationSchemeType string
 
 const (
-	AuthorizationSchemeAuthorizationSchemeTypeAuthorizationSchemeBasicAuth   AuthorizationSchemeAuthorizationSchemeType = "AuthorizationSchemeBasicAuth"
-	AuthorizationSchemeAuthorizationSchemeTypeAuthorizationSchemeAPIToken    AuthorizationSchemeAuthorizationSchemeType = "AuthorizationSchemeApiToken"
-	AuthorizationSchemeAuthorizationSchemeTypeAuthorizationSchemeBearerToken AuthorizationSchemeAuthorizationSchemeType = "AuthorizationSchemeBearerToken"
-	AuthorizationSchemeAuthorizationSchemeTypeAuthorizationSchemeNone        AuthorizationSchemeAuthorizationSchemeType = "AuthorizationSchemeNone"
+	AuthorizationSchemeTypeAuthorizationSchemeBasicAuth   AuthorizationSchemeType = "AuthorizationSchemeBasicAuth"
+	AuthorizationSchemeTypeAuthorizationSchemeAPIToken    AuthorizationSchemeType = "AuthorizationSchemeApiToken"
+	AuthorizationSchemeTypeAuthorizationSchemeBearerToken AuthorizationSchemeType = "AuthorizationSchemeBearerToken"
+	AuthorizationSchemeTypeAuthorizationSchemeNone        AuthorizationSchemeType = "AuthorizationSchemeNone"
 )
 
-func (e AuthorizationSchemeAuthorizationSchemeType) ToPointer() *AuthorizationSchemeAuthorizationSchemeType {
+func (e AuthorizationSchemeType) ToPointer() *AuthorizationSchemeType {
 	return &e
 }
 
-func (e *AuthorizationSchemeAuthorizationSchemeType) UnmarshalJSON(data []byte) error {
+func (e *AuthorizationSchemeType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -33,20 +33,20 @@ func (e *AuthorizationSchemeAuthorizationSchemeType) UnmarshalJSON(data []byte) 
 	case "AuthorizationSchemeBearerToken":
 		fallthrough
 	case "AuthorizationSchemeNone":
-		*e = AuthorizationSchemeAuthorizationSchemeType(v)
+		*e = AuthorizationSchemeType(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for AuthorizationSchemeAuthorizationSchemeType: %v", v)
+		return fmt.Errorf("invalid value for AuthorizationSchemeType: %v", v)
 	}
 }
 
 type AuthorizationScheme struct {
-	AuthorizationSchemeType AuthorizationSchemeAuthorizationSchemeType `json:"authorizationSchemeType"`
+	AuthorizationSchemeType AuthorizationSchemeType `json:"authorizationSchemeType"`
 }
 
-func (o *AuthorizationScheme) GetAuthorizationSchemeType() AuthorizationSchemeAuthorizationSchemeType {
+func (o *AuthorizationScheme) GetAuthorizationSchemeType() AuthorizationSchemeType {
 	if o == nil {
-		return AuthorizationSchemeAuthorizationSchemeType("")
+		return AuthorizationSchemeType("")
 	}
 	return o.AuthorizationSchemeType
 }

@@ -9,19 +9,19 @@ import (
 	"net/http"
 )
 
-// PostRiskAssessmentPermissionsOwnerIDApproveActionType - The approve action type (ADD/REMOVE)
-type PostRiskAssessmentPermissionsOwnerIDApproveActionType string
+// PostRiskAssessmentPermissionsOwnerIDApproveQueryParamActionType - The approve action type (ADD/REMOVE)
+type PostRiskAssessmentPermissionsOwnerIDApproveQueryParamActionType string
 
 const (
-	PostRiskAssessmentPermissionsOwnerIDApproveActionTypeAdd    PostRiskAssessmentPermissionsOwnerIDApproveActionType = "ADD"
-	PostRiskAssessmentPermissionsOwnerIDApproveActionTypeRemove PostRiskAssessmentPermissionsOwnerIDApproveActionType = "REMOVE"
+	PostRiskAssessmentPermissionsOwnerIDApproveQueryParamActionTypeAdd    PostRiskAssessmentPermissionsOwnerIDApproveQueryParamActionType = "ADD"
+	PostRiskAssessmentPermissionsOwnerIDApproveQueryParamActionTypeRemove PostRiskAssessmentPermissionsOwnerIDApproveQueryParamActionType = "REMOVE"
 )
 
-func (e PostRiskAssessmentPermissionsOwnerIDApproveActionType) ToPointer() *PostRiskAssessmentPermissionsOwnerIDApproveActionType {
+func (e PostRiskAssessmentPermissionsOwnerIDApproveQueryParamActionType) ToPointer() *PostRiskAssessmentPermissionsOwnerIDApproveQueryParamActionType {
 	return &e
 }
 
-func (e *PostRiskAssessmentPermissionsOwnerIDApproveActionType) UnmarshalJSON(data []byte) error {
+func (e *PostRiskAssessmentPermissionsOwnerIDApproveQueryParamActionType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -30,18 +30,18 @@ func (e *PostRiskAssessmentPermissionsOwnerIDApproveActionType) UnmarshalJSON(da
 	case "ADD":
 		fallthrough
 	case "REMOVE":
-		*e = PostRiskAssessmentPermissionsOwnerIDApproveActionType(v)
+		*e = PostRiskAssessmentPermissionsOwnerIDApproveQueryParamActionType(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for PostRiskAssessmentPermissionsOwnerIDApproveActionType: %v", v)
+		return fmt.Errorf("invalid value for PostRiskAssessmentPermissionsOwnerIDApproveQueryParamActionType: %v", v)
 	}
 }
 
 type PostRiskAssessmentPermissionsOwnerIDApproveRequest struct {
 	UUIDList shared.UUIDList `request:"mediaType=application/json"`
 	// The approve action type (ADD/REMOVE)
-	ActionType PostRiskAssessmentPermissionsOwnerIDApproveActionType `queryParam:"style=form,explode=true,name=actionType"`
-	OwnerID    string                                                `pathParam:"style=simple,explode=false,name=ownerId"`
+	ActionType PostRiskAssessmentPermissionsOwnerIDApproveQueryParamActionType `queryParam:"style=form,explode=true,name=actionType"`
+	OwnerID    string                                                          `pathParam:"style=simple,explode=false,name=ownerId"`
 }
 
 func (o *PostRiskAssessmentPermissionsOwnerIDApproveRequest) GetUUIDList() shared.UUIDList {
@@ -51,9 +51,9 @@ func (o *PostRiskAssessmentPermissionsOwnerIDApproveRequest) GetUUIDList() share
 	return o.UUIDList
 }
 
-func (o *PostRiskAssessmentPermissionsOwnerIDApproveRequest) GetActionType() PostRiskAssessmentPermissionsOwnerIDApproveActionType {
+func (o *PostRiskAssessmentPermissionsOwnerIDApproveRequest) GetActionType() PostRiskAssessmentPermissionsOwnerIDApproveQueryParamActionType {
 	if o == nil {
-		return PostRiskAssessmentPermissionsOwnerIDApproveActionType("")
+		return PostRiskAssessmentPermissionsOwnerIDApproveQueryParamActionType("")
 	}
 	return o.ActionType
 }

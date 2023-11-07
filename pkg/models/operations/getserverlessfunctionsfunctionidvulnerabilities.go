@@ -57,7 +57,7 @@ type GetServerlessFunctionsFunctionIDVulnerabilitiesResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Success
-	Vulnerabilities []shared.Vulnerability
+	Classes []shared.Vulnerability
 }
 
 func (o *GetServerlessFunctionsFunctionIDVulnerabilitiesResponse) GetContentType() string {
@@ -81,9 +81,9 @@ func (o *GetServerlessFunctionsFunctionIDVulnerabilitiesResponse) GetRawResponse
 	return o.RawResponse
 }
 
-func (o *GetServerlessFunctionsFunctionIDVulnerabilitiesResponse) GetVulnerabilities() []shared.Vulnerability {
+func (o *GetServerlessFunctionsFunctionIDVulnerabilitiesResponse) GetClasses() []shared.Vulnerability {
 	if o == nil {
 		return nil
 	}
-	return o.Vulnerabilities
+	return o.Classes
 }
