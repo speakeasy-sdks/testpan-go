@@ -34,34 +34,6 @@ func (e *DeployerType) UnmarshalJSON(data []byte) error {
 	}
 }
 
-// DeployerInput - represent deployer object
-type DeployerInput struct {
-	Deployer     *string      `json:"deployer,omitempty"`
-	DeployerID   string       `json:"deployerId"`
-	DeployerType DeployerType `json:"deployerType"`
-}
-
-func (o *DeployerInput) GetDeployer() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Deployer
-}
-
-func (o *DeployerInput) GetDeployerID() string {
-	if o == nil {
-		return ""
-	}
-	return o.DeployerID
-}
-
-func (o *DeployerInput) GetDeployerType() DeployerType {
-	if o == nil {
-		return DeployerType("")
-	}
-	return o.DeployerType
-}
-
 // Deployer - represent deployer object
 type Deployer struct {
 	Deployer     *string      `json:"deployer,omitempty"`
@@ -96,4 +68,32 @@ func (o *Deployer) GetID() *string {
 		return nil
 	}
 	return o.ID
+}
+
+// DeployerInput - represent deployer object
+type DeployerInput struct {
+	Deployer     *string      `json:"deployer,omitempty"`
+	DeployerID   string       `json:"deployerId"`
+	DeployerType DeployerType `json:"deployerType"`
+}
+
+func (o *DeployerInput) GetDeployer() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Deployer
+}
+
+func (o *DeployerInput) GetDeployerID() string {
+	if o == nil {
+		return ""
+	}
+	return o.DeployerID
+}
+
+func (o *DeployerInput) GetDeployerType() DeployerType {
+	if o == nil {
+		return DeployerType("")
+	}
+	return o.DeployerType
 }

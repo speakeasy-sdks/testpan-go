@@ -1,9 +1,0 @@
-# GetTrustedSignersRequest
-
-
-## Fields
-
-| Field                                                                                                           | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
-| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| `SortDir`                                                                                                       | [*operations.GetTrustedSignersQueryParamSortDir](../../models/operations/gettrustedsignersqueryparamsortdir.md) | :heavy_minus_sign:                                                                                              | sorting direction                                                                                               |
-| `SortKey`                                                                                                       | [*operations.GetTrustedSignersQueryParamSortKey](../../models/operations/gettrustedsignersqueryparamsortkey.md) | :heavy_minus_sign:                                                                                              | sort key                                                                                                        |

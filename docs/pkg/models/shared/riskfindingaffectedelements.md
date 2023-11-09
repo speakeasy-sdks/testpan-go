@@ -1,0 +1,9 @@
+# RiskFindingAffectedElements
+
+
+## Fields
+
+| Field                                                                                                       | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
+| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `ExternalElements`                                                                                          | [][shared.RiskFindingAffectedElementObject](../../../pkg/models/shared/riskfindingaffectedelementobject.md) | :heavy_minus_sign:                                                                                          | N/A                                                                                                         |
+| `InternalElements`                                                                                          | [][shared.RiskFindingAffectedElementObject](../../../pkg/models/shared/riskfindingaffectedelementobject.md) | :heavy_minus_sign:                                                                                          | N/A                                                                                                         |

@@ -2,61 +2,6 @@
 
 package shared
 
-// EnvironmentInput - Secure Application environment definition. #also must be included for at least one of the env details but Swagger does not support parameter dependencies and mutually exclusive parameters.
-type EnvironmentInput struct {
-	AwsEnvironments []AwsEnvironmentInput `json:"awsEnvironments,omitempty"`
-	// The environment description.
-	Description *string `json:"description,omitempty"`
-	ID          *string `json:"id,omitempty"`
-	// indicates if this environment represents system namespaces that usually will be filtered out from some screens
-	IsSystemEnv            *bool                        `json:"isSystemEnv,omitempty"`
-	KubernetesEnvironments []KubernetesEnvironmentInput `json:"kubernetesEnvironments,omitempty"`
-	// Environment name. Must be unique.
-	Name string `json:"name"`
-}
-
-func (o *EnvironmentInput) GetAwsEnvironments() []AwsEnvironmentInput {
-	if o == nil {
-		return nil
-	}
-	return o.AwsEnvironments
-}
-
-func (o *EnvironmentInput) GetDescription() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Description
-}
-
-func (o *EnvironmentInput) GetID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.ID
-}
-
-func (o *EnvironmentInput) GetIsSystemEnv() *bool {
-	if o == nil {
-		return nil
-	}
-	return o.IsSystemEnv
-}
-
-func (o *EnvironmentInput) GetKubernetesEnvironments() []KubernetesEnvironmentInput {
-	if o == nil {
-		return nil
-	}
-	return o.KubernetesEnvironments
-}
-
-func (o *EnvironmentInput) GetName() string {
-	if o == nil {
-		return ""
-	}
-	return o.Name
-}
-
 // Environment - Secure Application environment definition. #also must be included for at least one of the env details but Swagger does not support parameter dependencies and mutually exclusive parameters.
 type Environment struct {
 	AwsEnvironments []AwsEnvironment `json:"awsEnvironments,omitempty"`

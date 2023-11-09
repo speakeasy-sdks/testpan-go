@@ -1,0 +1,16 @@
+# Cvss
+
+
+## Fields
+
+| Field                                                                    | Type                                                                     | Required                                                                 | Description                                                              |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `AttackComplexity`                                                       | [*shared.CvssRiskLevel](../../../pkg/models/shared/cvssrisklevel.md)     | :heavy_minus_sign:                                                       | N/A                                                                      |
+| `AttackVector`                                                           | [*shared.AttackVector](../../../pkg/models/shared/attackvector.md)       | :heavy_minus_sign:                                                       | N/A                                                                      |
+| `AvailabilityImpact`                                                     | [*shared.CvssRiskLevel](../../../pkg/models/shared/cvssrisklevel.md)     | :heavy_minus_sign:                                                       | N/A                                                                      |
+| `ConfidentialityImpact`                                                  | [*shared.CvssRiskLevel](../../../pkg/models/shared/cvssrisklevel.md)     | :heavy_minus_sign:                                                       | N/A                                                                      |
+| `IntegrityImpact`                                                        | [*shared.CvssRiskLevel](../../../pkg/models/shared/cvssrisklevel.md)     | :heavy_minus_sign:                                                       | N/A                                                                      |
+| `PrivilegesRequired`                                                     | [*shared.CvssRiskLevel](../../../pkg/models/shared/cvssrisklevel.md)     | :heavy_minus_sign:                                                       | N/A                                                                      |
+| `Scope`                                                                  | [*shared.Scope](../../../pkg/models/shared/scope.md)                     | :heavy_minus_sign:                                                       | N/A                                                                      |
+| `Score`                                                                  | **float32*                                                               | :heavy_minus_sign:                                                       | N/A                                                                      |
+| `UserInteraction`                                                        | [*shared.UserInteraction](../../../pkg/models/shared/userinteraction.md) | :heavy_minus_sign:                                                       | N/A                                                                      |

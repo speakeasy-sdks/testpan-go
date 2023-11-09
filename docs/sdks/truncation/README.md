@@ -1,5 +1,5 @@
 # Truncation
-(*.Truncation*)
+(*Truncation*)
 
 ## Overview
 
@@ -57,8 +57,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetTruncationImagesResponse](../../models/operations/gettruncationimagesresponse.md), error**
-
+**[*operations.GetTruncationImagesResponse](../../pkg/models/operations/gettruncationimagesresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GetTruncationWorkloads
 
@@ -105,8 +107,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetTruncationWorkloadsResponse](../../models/operations/gettruncationworkloadsresponse.md), error**
-
+**[*operations.GetTruncationWorkloadsResponse](../../pkg/models/operations/gettruncationworkloadsresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## PostTruncationImages
 
@@ -149,16 +153,18 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                          | Type                                                               | Required                                                           | Description                                                        |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| `ctx`                                                              | [context.Context](https://pkg.go.dev/context#Context)              | :heavy_check_mark:                                                 | The context to use for the request.                                |
-| `request`                                                          | [shared.TruncationStatus](../../models/shared/truncationstatus.md) | :heavy_check_mark:                                                 | The request object to use for the request.                         |
+| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `ctx`                                                                  | [context.Context](https://pkg.go.dev/context#Context)                  | :heavy_check_mark:                                                     | The context to use for the request.                                    |
+| `request`                                                              | [shared.TruncationStatus](../../pkg/models/shared/truncationstatus.md) | :heavy_check_mark:                                                     | The request object to use for the request.                             |
 
 
 ### Response
 
-**[*operations.PostTruncationImagesResponse](../../models/operations/posttruncationimagesresponse.md), error**
-
+**[*operations.PostTruncationImagesResponse](../../pkg/models/operations/posttruncationimagesresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## PostTruncationWorkloads
 
@@ -201,13 +207,15 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                          | Type                                                               | Required                                                           | Description                                                        |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| `ctx`                                                              | [context.Context](https://pkg.go.dev/context#Context)              | :heavy_check_mark:                                                 | The context to use for the request.                                |
-| `request`                                                          | [shared.TruncationStatus](../../models/shared/truncationstatus.md) | :heavy_check_mark:                                                 | The request object to use for the request.                         |
+| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `ctx`                                                                  | [context.Context](https://pkg.go.dev/context#Context)                  | :heavy_check_mark:                                                     | The context to use for the request.                                    |
+| `request`                                                              | [shared.TruncationStatus](../../pkg/models/shared/truncationstatus.md) | :heavy_check_mark:                                                     | The request object to use for the request.                             |
 
 
 ### Response
 
-**[*operations.PostTruncationWorkloadsResponse](../../models/operations/posttruncationworkloadsresponse.md), error**
-
+**[*operations.PostTruncationWorkloadsResponse](../../pkg/models/operations/posttruncationworkloadsresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |

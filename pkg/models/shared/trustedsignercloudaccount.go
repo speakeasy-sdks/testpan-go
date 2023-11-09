@@ -2,33 +2,6 @@
 
 package shared
 
-type TrustedSignerCloudAccountInput struct {
-	ID         *string                         `json:"id,omitempty"`
-	Status     *TrustedSignerClusterStatus     `json:"status,omitempty"`
-	Validation *TrustedSignerClusterValidation `json:"validation,omitempty"`
-}
-
-func (o *TrustedSignerCloudAccountInput) GetID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.ID
-}
-
-func (o *TrustedSignerCloudAccountInput) GetStatus() *TrustedSignerClusterStatus {
-	if o == nil {
-		return nil
-	}
-	return o.Status
-}
-
-func (o *TrustedSignerCloudAccountInput) GetValidation() *TrustedSignerClusterValidation {
-	if o == nil {
-		return nil
-	}
-	return o.Validation
-}
-
 type TrustedSignerCloudAccount struct {
 	ID         *string                         `json:"id,omitempty"`
 	Name       *string                         `json:"name,omitempty"`

@@ -1,5 +1,5 @@
 # API
-(*.API*)
+(*API*)
 
 ## Overview
 
@@ -54,5 +54,7 @@ func main() {
 
 ### Response
 
-**[*operations.GetAPIResponse](../../models/operations/getapiresponse.md), error**
-
+**[*operations.GetAPIResponse](../../pkg/models/operations/getapiresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |

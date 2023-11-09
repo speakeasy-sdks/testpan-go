@@ -1,0 +1,9 @@
+# SecretsCdPolicyElement
+
+
+## Fields
+
+| Field                                                                                             | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `EnforcementOption`                                                                               | [shared.EnforcementOption](../../../pkg/models/shared/enforcementoption.md)                       | :heavy_check_mark:                                                                                | N/A                                                                                               |
+| `PermissibleVulnerabilityLevel`                                                                   | [shared.CDPipelineSecretsFindingRisk](../../../pkg/models/shared/cdpipelinesecretsfindingrisk.md) | :heavy_check_mark:                                                                                | N/A                                                                                               |

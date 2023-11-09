@@ -1,0 +1,10 @@
+# ServerlessPolicy
+
+
+## Fields
+
+| Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `DefaultRule`                                                                                 | [shared.ServerlessDefaultRule](../../../pkg/models/shared/serverlessdefaultrule.md)           | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `UnidentifiedServerlessRule`                                                                  | [shared.UnidentifiedServerlessRule](../../../pkg/models/shared/unidentifiedserverlessrule.md) | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `UserRules`                                                                                   | [][shared.ServerlessRule](../../../pkg/models/shared/serverlessrule.md)                       | :heavy_minus_sign:                                                                            | N/A                                                                                           |

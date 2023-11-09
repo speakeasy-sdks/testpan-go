@@ -1,0 +1,9 @@
+# SpecsAndOperationsDiffsWidget
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `OperationsDiffs`                                                                                  | [*shared.OperationsDiffsDonutPieChart](../../../pkg/models/shared/operationsdiffsdonutpiechart.md) | :heavy_minus_sign:                                                                                 | N/A                                                                                                |
+| `Specs`                                                                                            | [*shared.SpecsDonutPieChart](../../../pkg/models/shared/specsdonutpiechart.md)                     | :heavy_minus_sign:                                                                                 | N/A                                                                                                |

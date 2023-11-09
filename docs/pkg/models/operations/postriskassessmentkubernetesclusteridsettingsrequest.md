@@ -1,0 +1,9 @@
+# PostRiskAssessmentKubernetesClusterIDSettingsRequest
+
+
+## Fields
+
+| Field                                                                                                   | Type                                                                                                    | Required                                                                                                | Description                                                                                             |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `RiskAssessmentClusterScanConfig`                                                                       | [shared.RiskAssessmentClusterScanConfig](../../../pkg/models/shared/riskassessmentclusterscanconfig.md) | :heavy_check_mark:                                                                                      | N/A                                                                                                     |
+| `KubernetesClusterID`                                                                                   | *string*                                                                                                | :heavy_check_mark:                                                                                      | Secure Application Kubernetes cluster ID                                                                |

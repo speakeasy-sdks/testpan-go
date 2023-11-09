@@ -1,0 +1,10 @@
+# PerformanceMetrics
+
+
+## Fields
+
+| Field                                                                                               | Type                                                                                                | Required                                                                                            | Description                                                                                         |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `ConnectionProtocol`                                                                                | [*shared.ConnectionProtocol](../../../pkg/models/shared/connectionprotocol.md)                      | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |
+| `TotalReceivedBytes`                                                                                | [][shared.PerformanceMetricsGraphPoint](../../../pkg/models/shared/performancemetricsgraphpoint.md) | :heavy_minus_sign:                                                                                  | Return a list of total received bytes per connection                                                |
+| `TotalSentBytes`                                                                                    | [][shared.PerformanceMetricsGraphPoint](../../../pkg/models/shared/performancemetricsgraphpoint.md) | :heavy_minus_sign:                                                                                  | Return a list of total sent bytes per connection                                                    |

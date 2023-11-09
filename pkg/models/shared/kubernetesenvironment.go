@@ -2,49 +2,6 @@
 
 package shared
 
-type KubernetesEnvironmentInput struct {
-	ID                    *string  `json:"id,omitempty"`
-	KubernetesCluster     string   `json:"kubernetesCluster"`
-	KubernetesClusterName *string  `json:"kubernetesClusterName,omitempty"`
-	NamespaceLabels       []Label  `json:"namespaceLabels,omitempty"`
-	Namespaces            []string `json:"namespaces,omitempty"`
-}
-
-func (o *KubernetesEnvironmentInput) GetID() *string {
-	if o == nil {
-		return nil
-	}
-	return o.ID
-}
-
-func (o *KubernetesEnvironmentInput) GetKubernetesCluster() string {
-	if o == nil {
-		return ""
-	}
-	return o.KubernetesCluster
-}
-
-func (o *KubernetesEnvironmentInput) GetKubernetesClusterName() *string {
-	if o == nil {
-		return nil
-	}
-	return o.KubernetesClusterName
-}
-
-func (o *KubernetesEnvironmentInput) GetNamespaceLabels() []Label {
-	if o == nil {
-		return nil
-	}
-	return o.NamespaceLabels
-}
-
-func (o *KubernetesEnvironmentInput) GetNamespaces() []string {
-	if o == nil {
-		return nil
-	}
-	return o.Namespaces
-}
-
 type KubernetesEnvironment struct {
 	ID                       *string  `json:"id,omitempty"`
 	KubernetesCluster        string   `json:"kubernetesCluster"`

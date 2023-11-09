@@ -2,26 +2,6 @@
 
 package shared
 
-type APIReconstructedSpecInput struct {
-	// OpenAPI specification version
-	OASVersion      OASVersion       `json:"OASVersion"`
-	ReviewPathItems []ReviewPathItem `json:"reviewPathItems"`
-}
-
-func (o *APIReconstructedSpecInput) GetOASVersion() OASVersion {
-	if o == nil {
-		return OASVersion("")
-	}
-	return o.OASVersion
-}
-
-func (o *APIReconstructedSpecInput) GetReviewPathItems() []ReviewPathItem {
-	if o == nil {
-		return []ReviewPathItem{}
-	}
-	return o.ReviewPathItems
-}
-
 type APIReconstructedSpec struct {
 	// OpenAPI specification version
 	OASVersion      OASVersion       `json:"OASVersion"`

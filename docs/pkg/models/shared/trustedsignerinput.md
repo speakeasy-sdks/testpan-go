@@ -1,0 +1,13 @@
+# TrustedSignerInput
+
+Trusted signers profile
+
+
+## Fields
+
+| Field                                                                                                   | Type                                                                                                    | Required                                                                                                | Description                                                                                             |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `Keys`                                                                                                  | [][shared.TrustedSignerKey](../../../pkg/models/shared/trustedsignerkey.md)                             | :heavy_minus_sign:                                                                                      | N/A                                                                                                     |
+| `Name`                                                                                                  | *string*                                                                                                | :heavy_check_mark:                                                                                      | N/A                                                                                                     |
+| `TrustedSignerCloudAccounts`                                                                            | [][shared.TrustedSignerCloudAccountInput](../../../pkg/models/shared/trustedsignercloudaccountinput.md) | :heavy_minus_sign:                                                                                      | N/A                                                                                                     |
+| `TrustedSignerClusters`                                                                                 | [][shared.TrustedSignerClusterInput](../../../pkg/models/shared/trustedsignerclusterinput.md)           | :heavy_minus_sign:                                                                                      | N/A                                                                                                     |

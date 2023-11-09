@@ -2,65 +2,6 @@
 
 package shared
 
-type CdPolicyInput struct {
-	APISecurityCdPolicy     *APISecurityCdPolicyElement `json:"apiSecurityCdPolicy,omitempty"`
-	Deployers               []string                    `json:"deployers"`
-	Description             *string                     `json:"description,omitempty"`
-	Name                    string                      `json:"name"`
-	PermissionCDPolicy      *CdPolicyElement            `json:"permissionCDPolicy,omitempty"`
-	SecretCDPolicy          *SecretsCdPolicyElement     `json:"secretCDPolicy,omitempty"`
-	SecurityContextCDPolicy *CdPolicyElement            `json:"securityContextCDPolicy,omitempty"`
-}
-
-func (o *CdPolicyInput) GetAPISecurityCdPolicy() *APISecurityCdPolicyElement {
-	if o == nil {
-		return nil
-	}
-	return o.APISecurityCdPolicy
-}
-
-func (o *CdPolicyInput) GetDeployers() []string {
-	if o == nil {
-		return []string{}
-	}
-	return o.Deployers
-}
-
-func (o *CdPolicyInput) GetDescription() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Description
-}
-
-func (o *CdPolicyInput) GetName() string {
-	if o == nil {
-		return ""
-	}
-	return o.Name
-}
-
-func (o *CdPolicyInput) GetPermissionCDPolicy() *CdPolicyElement {
-	if o == nil {
-		return nil
-	}
-	return o.PermissionCDPolicy
-}
-
-func (o *CdPolicyInput) GetSecretCDPolicy() *SecretsCdPolicyElement {
-	if o == nil {
-		return nil
-	}
-	return o.SecretCDPolicy
-}
-
-func (o *CdPolicyInput) GetSecurityContextCDPolicy() *CdPolicyElement {
-	if o == nil {
-		return nil
-	}
-	return o.SecurityContextCDPolicy
-}
-
 type CdPolicy struct {
 	APISecurityCdPolicy     *APISecurityCdPolicyElement `json:"apiSecurityCdPolicy,omitempty"`
 	Deployers               []string                    `json:"deployers"`

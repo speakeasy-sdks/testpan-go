@@ -1,0 +1,11 @@
+# DashboardTimeBasedGraphs
+
+
+## Fields
+
+| Field                                                                                    | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `LastDay`                                                                                | [*shared.DashboardTimeBasedGraph](../../../pkg/models/shared/dashboardtimebasedgraph.md) | :heavy_minus_sign:                                                                       | N/A                                                                                      |
+| `LastHour`                                                                               | [*shared.DashboardTimeBasedGraph](../../../pkg/models/shared/dashboardtimebasedgraph.md) | :heavy_minus_sign:                                                                       | N/A                                                                                      |
+| `LastMonth`                                                                              | [*shared.DashboardTimeBasedGraph](../../../pkg/models/shared/dashboardtimebasedgraph.md) | :heavy_minus_sign:                                                                       | N/A                                                                                      |
+| `LastWeek`                                                                               | [*shared.DashboardTimeBasedGraph](../../../pkg/models/shared/dashboardtimebasedgraph.md) | :heavy_minus_sign:                                                                       | N/A                                                                                      |

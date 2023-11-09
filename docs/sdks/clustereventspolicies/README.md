@@ -1,5 +1,5 @@
 # ClusterEventsPolicies
-(*.ClusterEventsPolicies*)
+(*ClusterEventsPolicies*)
 
 ## Overview
 
@@ -59,8 +59,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetKubernetesAPIPolicyResponse](../../models/operations/getkubernetesapipolicyresponse.md), error**
-
+**[*operations.GetKubernetesAPIPolicyResponse](../../pkg/models/operations/getkubernetesapipolicyresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GetKubernetesAPIPolicyHistory
 
@@ -107,8 +109,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetKubernetesAPIPolicyHistoryResponse](../../models/operations/getkubernetesapipolicyhistoryresponse.md), error**
-
+**[*operations.GetKubernetesAPIPolicyHistoryResponse](../../pkg/models/operations/getkubernetesapipolicyhistoryresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GetKubernetesAPIPolicyKubernetesResources
 
@@ -155,8 +159,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetKubernetesAPIPolicyKubernetesResourcesResponse](../../models/operations/getkubernetesapipolicykubernetesresourcesresponse.md), error**
-
+**[*operations.GetKubernetesAPIPolicyKubernetesResourcesResponse](../../pkg/models/operations/getkubernetesapipolicykubernetesresourcesresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GetKubernetesAPIPolicyKubernetesUsers
 
@@ -203,8 +209,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetKubernetesAPIPolicyKubernetesUsersResponse](../../models/operations/getkubernetesapipolicykubernetesusersresponse.md), error**
-
+**[*operations.GetKubernetesAPIPolicyKubernetesUsersResponse](../../pkg/models/operations/getkubernetesapipolicykubernetesusersresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GetKubernetesAPIPolicyRecommendedRules
 
@@ -251,8 +259,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetKubernetesAPIPolicyRecommendedRulesResponse](../../models/operations/getkubernetesapipolicyrecommendedrulesresponse.md), error**
-
+**[*operations.GetKubernetesAPIPolicyRecommendedRulesResponse](../../pkg/models/operations/getkubernetesapipolicyrecommendedrulesresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## PutKubernetesAPIPolicy
 
@@ -299,13 +309,15 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
-| `ctx`                                                                    | [context.Context](https://pkg.go.dev/context#Context)                    | :heavy_check_mark:                                                       | The context to use for the request.                                      |
-| `request`                                                                | [shared.KubernetesAPIPolicy](../../models/shared/kubernetesapipolicy.md) | :heavy_check_mark:                                                       | The request object to use for the request.                               |
+| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `ctx`                                                                        | [context.Context](https://pkg.go.dev/context#Context)                        | :heavy_check_mark:                                                           | The context to use for the request.                                          |
+| `request`                                                                    | [shared.KubernetesAPIPolicy](../../pkg/models/shared/kubernetesapipolicy.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
 
 
 ### Response
 
-**[*operations.PutKubernetesAPIPolicyResponse](../../models/operations/putkubernetesapipolicyresponse.md), error**
-
+**[*operations.PutKubernetesAPIPolicyResponse](../../pkg/models/operations/putkubernetesapipolicyresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |

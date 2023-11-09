@@ -1,9 +1,0 @@
-# GetRegistriesRequest
-
-
-## Fields
-
-| Field                                                                                                   | Type                                                                                                    | Required                                                                                                | Description                                                                                             |
-| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| `SortDir`                                                                                               | [*operations.GetRegistriesQueryParamSortDir](../../models/operations/getregistriesqueryparamsortdir.md) | :heavy_minus_sign:                                                                                      | sorting direction                                                                                       |
-| `SortKey`                                                                                               | [*operations.GetRegistriesQueryParamSortKey](../../models/operations/getregistriesqueryparamsortkey.md) | :heavy_minus_sign:                                                                                      | sort key                                                                                                |

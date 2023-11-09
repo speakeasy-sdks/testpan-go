@@ -2,33 +2,6 @@
 
 package shared
 
-type SeccompProfileInput struct {
-	Data                *string  `json:"data,omitempty"`
-	Name                *string  `json:"name,omitempty"`
-	PodSecurityPolicies []string `json:"podSecurityPolicies,omitempty"`
-}
-
-func (o *SeccompProfileInput) GetData() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Data
-}
-
-func (o *SeccompProfileInput) GetName() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Name
-}
-
-func (o *SeccompProfileInput) GetPodSecurityPolicies() []string {
-	if o == nil {
-		return nil
-	}
-	return o.PodSecurityPolicies
-}
-
 type SeccompProfile struct {
 	Data                *string  `json:"data,omitempty"`
 	ID                  *string  `json:"id,omitempty"`

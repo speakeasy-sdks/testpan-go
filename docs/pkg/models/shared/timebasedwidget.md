@@ -1,0 +1,11 @@
+# TimeBasedWidget
+
+
+## Fields
+
+| Field                                                                                      | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `AllowedGraphs`                                                                            | [*shared.DashboardTimeBasedGraphs](../../../pkg/models/shared/dashboardtimebasedgraphs.md) | :heavy_minus_sign:                                                                         | N/A                                                                                        |
+| `BlockedGraphs`                                                                            | [*shared.DashboardTimeBasedGraphs](../../../pkg/models/shared/dashboardtimebasedgraphs.md) | :heavy_minus_sign:                                                                         | N/A                                                                                        |
+| `DetectedGraphs`                                                                           | [*shared.DashboardTimeBasedGraphs](../../../pkg/models/shared/dashboardtimebasedgraphs.md) | :heavy_minus_sign:                                                                         | N/A                                                                                        |
+| `Info`                                                                                     | [*shared.TimeBasedWidgetInfo](../../../pkg/models/shared/timebasedwidgetinfo.md)           | :heavy_minus_sign:                                                                         | N/A                                                                                        |

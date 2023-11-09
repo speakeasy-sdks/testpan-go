@@ -1,0 +1,12 @@
+# APISecRiskFindingsTrendWidget
+
+
+## Fields
+
+| Field                                                                       | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `Critical`                                                                  | [][shared.GraphNumberPoint](../../../pkg/models/shared/graphnumberpoint.md) | :heavy_minus_sign:                                                          | N/A                                                                         |
+| `High`                                                                      | [][shared.GraphNumberPoint](../../../pkg/models/shared/graphnumberpoint.md) | :heavy_minus_sign:                                                          | N/A                                                                         |
+| `Low`                                                                       | [][shared.GraphNumberPoint](../../../pkg/models/shared/graphnumberpoint.md) | :heavy_minus_sign:                                                          | N/A                                                                         |
+| `Medium`                                                                    | [][shared.GraphNumberPoint](../../../pkg/models/shared/graphnumberpoint.md) | :heavy_minus_sign:                                                          | N/A                                                                         |
+| `NoKnownRisk`                                                               | [][shared.GraphNumberPoint](../../../pkg/models/shared/graphnumberpoint.md) | :heavy_minus_sign:                                                          | N/A                                                                         |

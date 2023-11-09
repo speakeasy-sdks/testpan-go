@@ -1,0 +1,16 @@
+# MitreTable
+
+
+## Fields
+
+| Field                                                                   | Type                                                                    | Required                                                                | Description                                                             |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `CredentialsAccess`                                                     | [][shared.MitreTechnique](../../../pkg/models/shared/mitretechnique.md) | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `DefenseEvasion`                                                        | [][shared.MitreTechnique](../../../pkg/models/shared/mitretechnique.md) | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `Discovery`                                                             | [][shared.MitreTechnique](../../../pkg/models/shared/mitretechnique.md) | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `Execution`                                                             | [][shared.MitreTechnique](../../../pkg/models/shared/mitretechnique.md) | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `Impact`                                                                | [][shared.MitreTechnique](../../../pkg/models/shared/mitretechnique.md) | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `InitialAccess`                                                         | [][shared.MitreTechnique](../../../pkg/models/shared/mitretechnique.md) | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `LateralMovement`                                                       | [][shared.MitreTechnique](../../../pkg/models/shared/mitretechnique.md) | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `Persistence`                                                           | [][shared.MitreTechnique](../../../pkg/models/shared/mitretechnique.md) | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `PrivilegeEscalation`                                                   | [][shared.MitreTechnique](../../../pkg/models/shared/mitretechnique.md) | :heavy_minus_sign:                                                      | N/A                                                                     |

@@ -1,9 +1,0 @@
-# PutKubernetesClustersKubernetesClusterIDManagedByHelmRequest
-
-
-## Fields
-
-| Field                                                                                                  | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `EditKubernetesClusterManagedByHelm`                                                                   | [shared.EditKubernetesClusterManagedByHelm](../../models/shared/editkubernetesclustermanagedbyhelm.md) | :heavy_check_mark:                                                                                     | N/A                                                                                                    |
-| `KubernetesClusterID`                                                                                  | *string*                                                                                               | :heavy_check_mark:                                                                                     | Secure Application Kubernetes cluster ID                                                               |

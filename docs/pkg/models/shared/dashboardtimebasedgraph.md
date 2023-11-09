@@ -1,0 +1,9 @@
+# DashboardTimeBasedGraph
+
+
+## Fields
+
+| Field                                                                                            | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `Graph`                                                                                          | [][shared.GraphNumberPoint](../../../pkg/models/shared/graphnumberpoint.md)                      | :heavy_minus_sign:                                                                               | the graph points                                                                                 |
+| `Info`                                                                                           | [*shared.DashboardTimeBasedGraphInfo](../../../pkg/models/shared/dashboardtimebasedgraphinfo.md) | :heavy_minus_sign:                                                                               | N/A                                                                                              |

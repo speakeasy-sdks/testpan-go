@@ -1,0 +1,11 @@
+# PostImagesImageIDVulnerabilitiesIgnoreRequest
+
+
+## Fields
+
+| Field                                                                                     | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `UUIDList`                                                                                | [shared.UUIDList](../../../pkg/models/shared/uuidlist.md)                                 | :heavy_check_mark:                                                                        | N/A                                                                                       |
+| `ActionType`                                                                              | [operations.QueryParamActionType](../../../pkg/models/operations/queryparamactiontype.md) | :heavy_check_mark:                                                                        | The ignore action type (ADD/REMOVE)                                                       |
+| `ImageID`                                                                                 | *string*                                                                                  | :heavy_check_mark:                                                                        | N/A                                                                                       |
+| `SnoozeTime`                                                                              | [*operations.SnoozeTime](../../../pkg/models/operations/snoozetime.md)                    | :heavy_minus_sign:                                                                        | The time to snooze the vulnerability                                                      |

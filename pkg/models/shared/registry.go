@@ -43,42 +43,6 @@ func (e *RegistryType) UnmarshalJSON(data []byte) error {
 	}
 }
 
-// RegistryInput - image registry
-type RegistryInput struct {
-	ClusterIds  []string             `json:"clusterIds,omitempty"`
-	Credentials *RegistryCredentials `json:"credentials,omitempty"`
-	Type        RegistryType         `json:"type"`
-	URL         string               `json:"url"`
-}
-
-func (o *RegistryInput) GetClusterIds() []string {
-	if o == nil {
-		return nil
-	}
-	return o.ClusterIds
-}
-
-func (o *RegistryInput) GetCredentials() *RegistryCredentials {
-	if o == nil {
-		return nil
-	}
-	return o.Credentials
-}
-
-func (o *RegistryInput) GetType() RegistryType {
-	if o == nil {
-		return RegistryType("")
-	}
-	return o.Type
-}
-
-func (o *RegistryInput) GetURL() string {
-	if o == nil {
-		return ""
-	}
-	return o.URL
-}
-
 // Registry - image registry
 type Registry struct {
 	ClusterIds  []string             `json:"clusterIds,omitempty"`
@@ -117,6 +81,42 @@ func (o *Registry) GetType() RegistryType {
 }
 
 func (o *Registry) GetURL() string {
+	if o == nil {
+		return ""
+	}
+	return o.URL
+}
+
+// RegistryInput - image registry
+type RegistryInput struct {
+	ClusterIds  []string             `json:"clusterIds,omitempty"`
+	Credentials *RegistryCredentials `json:"credentials,omitempty"`
+	Type        RegistryType         `json:"type"`
+	URL         string               `json:"url"`
+}
+
+func (o *RegistryInput) GetClusterIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.ClusterIds
+}
+
+func (o *RegistryInput) GetCredentials() *RegistryCredentials {
+	if o == nil {
+		return nil
+	}
+	return o.Credentials
+}
+
+func (o *RegistryInput) GetType() RegistryType {
+	if o == nil {
+		return RegistryType("")
+	}
+	return o.Type
+}
+
+func (o *RegistryInput) GetURL() string {
 	if o == nil {
 		return ""
 	}

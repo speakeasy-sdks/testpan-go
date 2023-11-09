@@ -1,0 +1,10 @@
+# OpenAPISpecScoreElementsList
+
+
+## Fields
+
+| Field                                                                                     | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `Elements`                                                                                | [][shared.OpenAPISpecScoreElement](../../../pkg/models/shared/openapispecscoreelement.md) | :heavy_minus_sign:                                                                        | N/A                                                                                       |
+| `Severity`                                                                                | [*shared.APISecurityRiskSeverity](../../../pkg/models/shared/apisecurityriskseverity.md)  | :heavy_minus_sign:                                                                        | An `enum`eration.                                                                         |
+| `VulnerabilitiesSummary`                                                                  | [*shared.VulnerabilitiesSummary](../../../pkg/models/shared/vulnerabilitiessummary.md)    | :heavy_minus_sign:                                                                        | Vulnerabilities summary by severity                                                       |

@@ -1,0 +1,11 @@
+# Violation
+
+
+## Fields
+
+| Field                                                                            | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `EncryptRule`                                                                    | [*shared.ConnectionRuleBasic](../../../pkg/models/shared/connectionrulebasic.md) | :heavy_minus_sign:                                                               | N/A                                                                              |
+| `EncryptionReason`                                                               | [*shared.EncryptionReason](../../../pkg/models/shared/encryptionreason.md)       | :heavy_minus_sign:                                                               | N/A                                                                              |
+| `LastViolation`                                                                  | [*time.Time](https://pkg.go.dev/time#Time)                                       | :heavy_minus_sign:                                                               | N/A                                                                              |
+| `Rule`                                                                           | [*shared.ConnectionRuleBasic](../../../pkg/models/shared/connectionrulebasic.md) | :heavy_minus_sign:                                                               | N/A                                                                              |

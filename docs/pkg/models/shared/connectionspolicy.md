@@ -1,0 +1,10 @@
+# ConnectionsPolicy
+
+
+## Fields
+
+| Field                                                                                       | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `DefaultRule`                                                                               | [*shared.DefaultConnectionRule](../../../pkg/models/shared/defaultconnectionrule.md)        | :heavy_minus_sign:                                                                          | N/A                                                                                         |
+| `DirectPodRule`                                                                             | [shared.DirectPodIPConnectionRule](../../../pkg/models/shared/directpodipconnectionrule.md) | :heavy_check_mark:                                                                          | N/A                                                                                         |
+| `UserRules`                                                                                 | [][shared.ConnectionsRule](../../../pkg/models/shared/connectionsrule.md)                   | :heavy_minus_sign:                                                                          | N/A                                                                                         |

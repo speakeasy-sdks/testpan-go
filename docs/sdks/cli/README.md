@@ -1,5 +1,5 @@
 # Cli
-(*.Cli*)
+(*Cli*)
 
 ## Overview
 
@@ -54,5 +54,7 @@ func main() {
 
 ### Response
 
-**[*operations.GetToolsCliSecurecnDeploymentCliResponse](../../models/operations/gettoolsclisecurecndeploymentcliresponse.md), error**
-
+**[*operations.GetToolsCliSecurecnDeploymentCliResponse](../../pkg/models/operations/gettoolsclisecurecndeploymentcliresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |

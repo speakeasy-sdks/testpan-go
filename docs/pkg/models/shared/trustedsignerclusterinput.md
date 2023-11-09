@@ -1,0 +1,10 @@
+# TrustedSignerClusterInput
+
+
+## Fields
+
+| Field                                                                                                  | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `ID`                                                                                                   | **string*                                                                                              | :heavy_minus_sign:                                                                                     | N/A                                                                                                    |
+| `Status`                                                                                               | [*shared.TrustedSignerClusterStatus](../../../pkg/models/shared/trustedsignerclusterstatus.md)         | :heavy_minus_sign:                                                                                     | N/A                                                                                                    |
+| `Validation`                                                                                           | [*shared.TrustedSignerClusterValidation](../../../pkg/models/shared/trustedsignerclustervalidation.md) | :heavy_minus_sign:                                                                                     | N/A                                                                                                    |

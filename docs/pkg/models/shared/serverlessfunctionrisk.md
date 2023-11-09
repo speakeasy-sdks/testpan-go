@@ -1,0 +1,9 @@
+# ServerlessFunctionRisk
+
+
+## Fields
+
+| Field                                                                                            | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `FunctionRisk`                                                                                   | [*shared.ServerlessFunctionRiskLevel](../../../pkg/models/shared/serverlessfunctionrisklevel.md) | :heavy_minus_sign:                                                                               | N/A                                                                                              |
+| `Reasons`                                                                                        | [][shared.ServerlessFunctionReason](../../../pkg/models/shared/serverlessfunctionreason.md)      | :heavy_minus_sign:                                                                               | N/A                                                                                              |

@@ -1,0 +1,10 @@
+# EnvironmentRulesRecommendationPeriod
+
+
+## Fields
+
+| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `EnvironmentRulesRecommendations`                                                                     | [][shared.EnvironmentRuleRecommendation](../../../pkg/models/shared/environmentrulerecommendation.md) | :heavy_minus_sign:                                                                                    | N/A                                                                                                   |
+| `TimePeriod`                                                                                          | [*shared.RecommendationTimePeriod](../../../pkg/models/shared/recommendationtimeperiod.md)            | :heavy_minus_sign:                                                                                    | N/A                                                                                                   |
+| `TotalWorkloads`                                                                                      | **int64*                                                                                              | :heavy_minus_sign:                                                                                    | N/A                                                                                                   |

@@ -1,0 +1,10 @@
+# ServerlessFunctionReason
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `Level`                                                                                            | [*shared.ServerlessFunctionRiskLevel](../../../pkg/models/shared/serverlessfunctionrisklevel.md)   | :heavy_minus_sign:                                                                                 | N/A                                                                                                |
+| `Text`                                                                                             | **string*                                                                                          | :heavy_minus_sign:                                                                                 | N/A                                                                                                |
+| `Type`                                                                                             | [*shared.ServerlessFunctionReasonType](../../../pkg/models/shared/serverlessfunctionreasontype.md) | :heavy_minus_sign:                                                                                 | N/A                                                                                                |

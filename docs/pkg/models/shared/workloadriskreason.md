@@ -1,0 +1,11 @@
+# WorkloadRiskReason
+
+
+## Fields
+
+| Field                                                                                  | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `IsIgnored`                                                                            | **bool*                                                                                | :heavy_minus_sign:                                                                     | N/A                                                                                    |
+| `Level`                                                                                | [*shared.WorkloadRiskLevel](../../../pkg/models/shared/workloadrisklevel.md)           | :heavy_minus_sign:                                                                     | N/A                                                                                    |
+| `Text`                                                                                 | **string*                                                                              | :heavy_minus_sign:                                                                     | N/A                                                                                    |
+| `Type`                                                                                 | [*shared.WorkloadRiskReasonType](../../../pkg/models/shared/workloadriskreasontype.md) | :heavy_minus_sign:                                                                     | N/A                                                                                    |

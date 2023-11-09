@@ -2,41 +2,6 @@
 
 package shared
 
-type APISecurityPolicyInput struct {
-	CategoryConditions *APISecurityPolicyCategoryConditions `json:"categoryConditions,omitempty"`
-	Description        *string                              `json:"description,omitempty"`
-	GlobalCondition    *APISecurityPolicyGlobalCondition    `json:"globalCondition,omitempty"`
-	Name               string                               `json:"name"`
-}
-
-func (o *APISecurityPolicyInput) GetCategoryConditions() *APISecurityPolicyCategoryConditions {
-	if o == nil {
-		return nil
-	}
-	return o.CategoryConditions
-}
-
-func (o *APISecurityPolicyInput) GetDescription() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Description
-}
-
-func (o *APISecurityPolicyInput) GetGlobalCondition() *APISecurityPolicyGlobalCondition {
-	if o == nil {
-		return nil
-	}
-	return o.GlobalCondition
-}
-
-func (o *APISecurityPolicyInput) GetName() string {
-	if o == nil {
-		return ""
-	}
-	return o.Name
-}
-
 type APISecurityPolicy struct {
 	CategoryConditions *APISecurityPolicyCategoryConditions `json:"categoryConditions,omitempty"`
 	Description        *string                              `json:"description,omitempty"`

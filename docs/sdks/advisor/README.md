@@ -1,5 +1,5 @@
 # Advisor
-(*.Advisor*)
+(*Advisor*)
 
 ## Overview
 
@@ -60,8 +60,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetAdvisorClusterEventRulesResponse](../../models/operations/getadvisorclustereventrulesresponse.md), error**
-
+**[*operations.GetAdvisorClusterEventRulesResponse](../../pkg/models/operations/getadvisorclustereventrulesresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GetAdvisorConnectionRules
 
@@ -108,8 +110,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetAdvisorConnectionRulesResponse](../../models/operations/getadvisorconnectionrulesresponse.md), error**
-
+**[*operations.GetAdvisorConnectionRulesResponse](../../pkg/models/operations/getadvisorconnectionrulesresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GetAdvisorEnvironment
 
@@ -156,8 +160,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetAdvisorEnvironmentResponse](../../models/operations/getadvisorenvironmentresponse.md), error**
-
+**[*operations.GetAdvisorEnvironmentResponse](../../pkg/models/operations/getadvisorenvironmentresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GetAdvisorEnvironmentRules
 
@@ -204,8 +210,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetAdvisorEnvironmentRulesResponse](../../models/operations/getadvisorenvironmentrulesresponse.md), error**
-
+**[*operations.GetAdvisorEnvironmentRulesResponse](../../pkg/models/operations/getadvisorenvironmentrulesresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GetAdvisorPodSecurityPolicy
 
@@ -252,8 +260,10 @@ func main() {
 
 ### Response
 
-**[*operations.GetAdvisorPodSecurityPolicyResponse](../../models/operations/getadvisorpodsecuritypolicyresponse.md), error**
-
+**[*operations.GetAdvisorPodSecurityPolicyResponse](../../pkg/models/operations/getadvisorpodsecuritypolicyresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GetAdvisorQueueAdvisorType
 
@@ -296,16 +306,18 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `ctx`                                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                                        | :heavy_check_mark:                                                                                           | The context to use for the request.                                                                          |
-| `request`                                                                                                    | [operations.GetAdvisorQueueAdvisorTypeRequest](../../models/operations/getadvisorqueueadvisortyperequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
+| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                                            | :heavy_check_mark:                                                                                               | The context to use for the request.                                                                              |
+| `request`                                                                                                        | [operations.GetAdvisorQueueAdvisorTypeRequest](../../pkg/models/operations/getadvisorqueueadvisortyperequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
 
 
 ### Response
 
-**[*operations.GetAdvisorQueueAdvisorTypeResponse](../../models/operations/getadvisorqueueadvisortyperesponse.md), error**
-
+**[*operations.GetAdvisorQueueAdvisorTypeResponse](../../pkg/models/operations/getadvisorqueueadvisortyperesponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## PostAdvisorRun
 
@@ -348,13 +360,15 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
-| `request`                                                                            | [operations.PostAdvisorRunRequest](../../models/operations/postadvisorrunrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `ctx`                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                    | :heavy_check_mark:                                                                       | The context to use for the request.                                                      |
+| `request`                                                                                | [operations.PostAdvisorRunRequest](../../pkg/models/operations/postadvisorrunrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
 
 
 ### Response
 
-**[*operations.PostAdvisorRunResponse](../../models/operations/postadvisorrunresponse.md), error**
-
+**[*operations.PostAdvisorRunResponse](../../pkg/models/operations/postadvisorrunresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |

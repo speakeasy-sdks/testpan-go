@@ -1,0 +1,12 @@
+# SpecScoreFindings
+
+
+## Fields
+
+| Field                                                                                | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `Critical`                                                                           | [*shared.SpecScoreFindingsList](../../../pkg/models/shared/specscorefindingslist.md) | :heavy_minus_sign:                                                                   | N/A                                                                                  |
+| `High`                                                                               | [*shared.SpecScoreFindingsList](../../../pkg/models/shared/specscorefindingslist.md) | :heavy_minus_sign:                                                                   | N/A                                                                                  |
+| `Low`                                                                                | [*shared.SpecScoreFindingsList](../../../pkg/models/shared/specscorefindingslist.md) | :heavy_minus_sign:                                                                   | N/A                                                                                  |
+| `Medium`                                                                             | [*shared.SpecScoreFindingsList](../../../pkg/models/shared/specscorefindingslist.md) | :heavy_minus_sign:                                                                   | N/A                                                                                  |
+| `Unclassified`                                                                       | [*shared.SpecScoreFindingsList](../../../pkg/models/shared/specscorefindingslist.md) | :heavy_minus_sign:                                                                   | N/A                                                                                  |

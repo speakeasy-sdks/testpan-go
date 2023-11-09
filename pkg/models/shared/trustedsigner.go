@@ -2,42 +2,6 @@
 
 package shared
 
-// TrustedSignerInput - Trusted signers profile
-type TrustedSignerInput struct {
-	Keys                       []TrustedSignerKey               `json:"keys,omitempty"`
-	Name                       string                           `json:"name"`
-	TrustedSignerCloudAccounts []TrustedSignerCloudAccountInput `json:"trustedSignerCloudAccounts,omitempty"`
-	TrustedSignerClusters      []TrustedSignerClusterInput      `json:"trustedSignerClusters,omitempty"`
-}
-
-func (o *TrustedSignerInput) GetKeys() []TrustedSignerKey {
-	if o == nil {
-		return nil
-	}
-	return o.Keys
-}
-
-func (o *TrustedSignerInput) GetName() string {
-	if o == nil {
-		return ""
-	}
-	return o.Name
-}
-
-func (o *TrustedSignerInput) GetTrustedSignerCloudAccounts() []TrustedSignerCloudAccountInput {
-	if o == nil {
-		return nil
-	}
-	return o.TrustedSignerCloudAccounts
-}
-
-func (o *TrustedSignerInput) GetTrustedSignerClusters() []TrustedSignerClusterInput {
-	if o == nil {
-		return nil
-	}
-	return o.TrustedSignerClusters
-}
-
 // TrustedSigner - Trusted signers profile
 type TrustedSigner struct {
 	ID                         *string                     `json:"id,omitempty"`

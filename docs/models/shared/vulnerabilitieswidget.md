@@ -1,9 +1,0 @@
-# VulnerabilitiesWidget
-
-
-## Fields
-
-| Field                                                                                             | Type                                                                                              | Required                                                                                          | Description                                                                                       |
-| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| `ServerlessVulnerabilitiesWidget`                                                                 | [*shared.ServerlessVulnerabilitiesWidget](../../models/shared/serverlessvulnerabilitieswidget.md) | :heavy_minus_sign:                                                                                | N/A                                                                                               |
-| `WorkloadVulnerabilitiesWidget`                                                                   | [*shared.WorkloadVulnerabilitiesWidget](../../models/shared/workloadvulnerabilitieswidget.md)     | :heavy_minus_sign:                                                                                | N/A                                                                                               |

@@ -1,0 +1,10 @@
+# APIServiceBflaInfo
+
+
+## Fields
+
+| Field                                                                                     | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `EndTime`                                                                                 | [*time.Time](https://pkg.go.dev/time#Time)                                                | :heavy_minus_sign:                                                                        | N/A                                                                                       |
+| `Status`                                                                                  | [shared.APIServiceBflaInfoStatus](../../../pkg/models/shared/apiservicebflainfostatus.md) | :heavy_check_mark:                                                                        | N/A                                                                                       |
+| `Tags`                                                                                    | [][shared.APIServiceBflaTagInfo](../../../pkg/models/shared/apiservicebflataginfo.md)     | :heavy_minus_sign:                                                                        | N/A                                                                                       |

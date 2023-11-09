@@ -1,0 +1,10 @@
+# ConnectionsRuleRecommendationPeriod
+
+
+## Fields
+
+| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `ConnectionsRuleRecommendations`                                                                      | [][shared.ConnectionsRuleRecommendation](../../../pkg/models/shared/connectionsrulerecommendation.md) | :heavy_minus_sign:                                                                                    | N/A                                                                                                   |
+| `TimePeriod`                                                                                          | [*shared.RecommendationTimePeriod](../../../pkg/models/shared/recommendationtimeperiod.md)            | :heavy_minus_sign:                                                                                    | N/A                                                                                                   |
+| `TotalConnections`                                                                                    | **int64*                                                                                              | :heavy_minus_sign:                                                                                    | N/A                                                                                                   |

@@ -1,0 +1,10 @@
+# APISecurityPolicyDeleteDependencies
+
+
+## Fields
+
+| Field                                                                                     | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `AppRules`                                                                                | [][shared.DeleteDependencyElement](../../../pkg/models/shared/deletedependencyelement.md) | :heavy_minus_sign:                                                                        | N/A                                                                                       |
+| `CdPolicy`                                                                                | [][shared.DeleteDependencyElement](../../../pkg/models/shared/deletedependencyelement.md) | :heavy_minus_sign:                                                                        | N/A                                                                                       |
+| `ConnectionRules`                                                                         | [][shared.DeleteDependencyElement](../../../pkg/models/shared/deletedependencyelement.md) | :heavy_minus_sign:                                                                        | N/A                                                                                       |

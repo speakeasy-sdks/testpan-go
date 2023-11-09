@@ -9,116 +9,6 @@ import (
 	"time"
 )
 
-type ValidateFunction string
-
-const (
-	ValidateFunctionHashValidation      ValidateFunction = "HASH_VALIDATION"
-	ValidateFunctionSignatureValidation ValidateFunction = "SIGNATURE_VALIDATION"
-	ValidateFunctionNone                ValidateFunction = "NONE"
-)
-
-func (e ValidateFunction) ToPointer() *ValidateFunction {
-	return &e
-}
-
-func (e *ValidateFunction) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
-	}
-	switch v {
-	case "HASH_VALIDATION":
-		fallthrough
-	case "SIGNATURE_VALIDATION":
-		fallthrough
-	case "NONE":
-		*e = ValidateFunction(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for ValidateFunction: %v", v)
-	}
-}
-
-// CloudAccountInput - represent cloud account object
-type CloudAccountInput struct {
-	CloudProvider               *CloudProviderType              `json:"cloudProvider,omitempty"`
-	InstallVulnerabilityScanner *bool                           `default:"false" json:"installVulnerabilityScanner"`
-	Name                        *string                         `json:"name,omitempty"`
-	PeriodicJobExpression       ServerlessPeriodicJobExpression `json:"periodicJobExpression"`
-	Regions                     []string                        `json:"regions,omitempty"`
-	SecurityThreats             *CloudAccountSecurityThreats    `json:"securityThreats,omitempty"`
-	ValidateFunction            *ValidateFunction               `json:"validateFunction,omitempty"`
-	// Vulnerabilities summary by severity
-	VulnerabilitiesSummary *VulnerabilitiesSummary `json:"vulnerabilitiesSummary,omitempty"`
-}
-
-func (c CloudAccountInput) MarshalJSON() ([]byte, error) {
-	return utils.MarshalJSON(c, "", false)
-}
-
-func (c *CloudAccountInput) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, false); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (o *CloudAccountInput) GetCloudProvider() *CloudProviderType {
-	if o == nil {
-		return nil
-	}
-	return o.CloudProvider
-}
-
-func (o *CloudAccountInput) GetInstallVulnerabilityScanner() *bool {
-	if o == nil {
-		return nil
-	}
-	return o.InstallVulnerabilityScanner
-}
-
-func (o *CloudAccountInput) GetName() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Name
-}
-
-func (o *CloudAccountInput) GetPeriodicJobExpression() ServerlessPeriodicJobExpression {
-	if o == nil {
-		return ServerlessPeriodicJobExpression{}
-	}
-	return o.PeriodicJobExpression
-}
-
-func (o *CloudAccountInput) GetRegions() []string {
-	if o == nil {
-		return nil
-	}
-	return o.Regions
-}
-
-func (o *CloudAccountInput) GetSecurityThreats() *CloudAccountSecurityThreats {
-	if o == nil {
-		return nil
-	}
-	return o.SecurityThreats
-}
-
-func (o *CloudAccountInput) GetValidateFunction() *ValidateFunction {
-	if o == nil {
-		return nil
-	}
-	return o.ValidateFunction
-}
-
-func (o *CloudAccountInput) GetVulnerabilitiesSummary() *VulnerabilitiesSummary {
-	if o == nil {
-		return nil
-	}
-	return o.VulnerabilitiesSummary
-}
-
 type InstallationStatus string
 
 const (
@@ -146,6 +36,36 @@ func (e *InstallationStatus) UnmarshalJSON(data []byte) error {
 		return nil
 	default:
 		return fmt.Errorf("invalid value for InstallationStatus: %v", v)
+	}
+}
+
+type ValidateFunction string
+
+const (
+	ValidateFunctionHashValidation      ValidateFunction = "HASH_VALIDATION"
+	ValidateFunctionSignatureValidation ValidateFunction = "SIGNATURE_VALIDATION"
+	ValidateFunctionNone                ValidateFunction = "NONE"
+)
+
+func (e ValidateFunction) ToPointer() *ValidateFunction {
+	return &e
+}
+
+func (e *ValidateFunction) UnmarshalJSON(data []byte) error {
+	var v string
+	if err := json.Unmarshal(data, &v); err != nil {
+		return err
+	}
+	switch v {
+	case "HASH_VALIDATION":
+		fallthrough
+	case "SIGNATURE_VALIDATION":
+		fallthrough
+	case "NONE":
+		*e = ValidateFunction(v)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for ValidateFunction: %v", v)
 	}
 }
 
@@ -256,6 +176,86 @@ func (o *CloudAccount) GetValidateFunction() *ValidateFunction {
 }
 
 func (o *CloudAccount) GetVulnerabilitiesSummary() *VulnerabilitiesSummary {
+	if o == nil {
+		return nil
+	}
+	return o.VulnerabilitiesSummary
+}
+
+// CloudAccountInput - represent cloud account object
+type CloudAccountInput struct {
+	CloudProvider               *CloudProviderType              `json:"cloudProvider,omitempty"`
+	InstallVulnerabilityScanner *bool                           `default:"false" json:"installVulnerabilityScanner"`
+	Name                        *string                         `json:"name,omitempty"`
+	PeriodicJobExpression       ServerlessPeriodicJobExpression `json:"periodicJobExpression"`
+	Regions                     []string                        `json:"regions,omitempty"`
+	SecurityThreats             *CloudAccountSecurityThreats    `json:"securityThreats,omitempty"`
+	ValidateFunction            *ValidateFunction               `json:"validateFunction,omitempty"`
+	// Vulnerabilities summary by severity
+	VulnerabilitiesSummary *VulnerabilitiesSummary `json:"vulnerabilitiesSummary,omitempty"`
+}
+
+func (c CloudAccountInput) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *CloudAccountInput) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, false); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (o *CloudAccountInput) GetCloudProvider() *CloudProviderType {
+	if o == nil {
+		return nil
+	}
+	return o.CloudProvider
+}
+
+func (o *CloudAccountInput) GetInstallVulnerabilityScanner() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.InstallVulnerabilityScanner
+}
+
+func (o *CloudAccountInput) GetName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Name
+}
+
+func (o *CloudAccountInput) GetPeriodicJobExpression() ServerlessPeriodicJobExpression {
+	if o == nil {
+		return ServerlessPeriodicJobExpression{}
+	}
+	return o.PeriodicJobExpression
+}
+
+func (o *CloudAccountInput) GetRegions() []string {
+	if o == nil {
+		return nil
+	}
+	return o.Regions
+}
+
+func (o *CloudAccountInput) GetSecurityThreats() *CloudAccountSecurityThreats {
+	if o == nil {
+		return nil
+	}
+	return o.SecurityThreats
+}
+
+func (o *CloudAccountInput) GetValidateFunction() *ValidateFunction {
+	if o == nil {
+		return nil
+	}
+	return o.ValidateFunction
+}
+
+func (o *CloudAccountInput) GetVulnerabilitiesSummary() *VulnerabilitiesSummary {
 	if o == nil {
 		return nil
 	}
