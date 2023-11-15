@@ -409,12 +409,7 @@ import(
 )
 
 func main() {
-    s := testpango.New(
-        testpango.WithSecurity(shared.Security{
-            Password: "",
-            Username: "",
-        }),
-    )
+    s := testpango.New()
 
     ctx := context.Background()
     res, err := s.Users.PostLogin(ctx, operations.PostLoginRequest{})
