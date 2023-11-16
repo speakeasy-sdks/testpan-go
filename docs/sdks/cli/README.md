@@ -19,10 +19,10 @@ Get the Secure Application deployment cli
 package main
 
 import(
+	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
 	"context"
 	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
-	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
 )
 
 func main() {

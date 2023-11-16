@@ -25,12 +25,12 @@ Get App telemetries
 package main
 
 import(
-	"context"
-	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
-	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/types"
+	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -115,11 +115,11 @@ Get App telemetry by ID
 package main
 
 import(
-	"context"
-	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -169,11 +169,11 @@ Get API risks info of given app telemetry
 package main
 
 import(
-	"context"
-	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -223,11 +223,11 @@ list packages with licenses runnin on a pod
 package main
 
 import(
-	"context"
-	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -277,11 +277,11 @@ Get token injection info of given app telemetry
 package main
 
 import(
-	"context"
-	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -331,12 +331,12 @@ Get connection telemetries
 package main
 
 import(
-	"context"
-	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
-	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/types"
+	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -421,12 +421,12 @@ get details for a single connection telemetry
 package main
 
 import(
-	"context"
-	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
-	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/types"
+	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"log"
 )
 
 func main() {

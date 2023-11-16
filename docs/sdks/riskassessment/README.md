@@ -34,11 +34,12 @@ Delete ignored risk
 package main
 
 import(
-	"context"
-	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"log"
+	"net/http"
 )
 
 func main() {
@@ -88,11 +89,12 @@ Cancel the runtime scan on the given cluster with the given id
 package main
 
 import(
-	"context"
-	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"log"
+	"net/http"
 )
 
 func main() {
@@ -142,10 +144,10 @@ Get risk assessment data for all clusters
 package main
 
 import(
+	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
 	"context"
 	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
-	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
 )
 
 func main() {
@@ -192,10 +194,10 @@ Get all the ignored risks
 package main
 
 import(
+	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
 	"context"
 	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
-	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
 )
 
 func main() {
@@ -242,11 +244,11 @@ Get list of clusters and their permissions
 package main
 
 import(
-	"context"
-	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -298,11 +300,11 @@ Get all of the users permissions
 package main
 
 import(
-	"context"
-	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -352,11 +354,11 @@ Get the owner permissions
 package main
 
 import(
-	"context"
-	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -407,11 +409,11 @@ Get the owner permissions
 package main
 
 import(
-	"context"
-	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -463,11 +465,11 @@ Poll running scans
 package main
 
 import(
-	"context"
-	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -519,11 +521,11 @@ Get all images of given risk assessment pod
 package main
 
 import(
-	"context"
-	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -574,11 +576,11 @@ Get all risk assessments of all pods of given cluster
 package main
 
 import(
-	"context"
-	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -629,10 +631,10 @@ Add ignore risk
 package main
 
 import(
+	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
 	"context"
 	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
-	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
 )
 
 func main() {
@@ -679,11 +681,12 @@ add / remove permissions to /from the approved permissions list
 package main
 
 import(
-	"context"
-	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"log"
+	"net/http"
 )
 
 func main() {
@@ -739,11 +742,11 @@ Execute a new runtime scan on the given cluster with the given configuration
 package main
 
 import(
-	"context"
-	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -793,11 +796,11 @@ Save the runtime scan configuration on the given cluster
 package main
 
 import(
-	"context"
-	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -857,11 +860,11 @@ Edit ignore risk
 package main
 
 import(
-	"context"
-	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"log"
 )
 
 func main() {

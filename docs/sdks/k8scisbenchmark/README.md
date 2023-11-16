@@ -23,11 +23,11 @@ Get k8s cis benchmark for clusters
 package main
 
 import(
-	"context"
-	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -79,10 +79,10 @@ Get k8s cis benchmark summary of account
 package main
 
 import(
+	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
 	"context"
 	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
-	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
 )
 
 func main() {
@@ -129,11 +129,12 @@ Get k8s cis benchmark for a specific cluster
 package main
 
 import(
-	"context"
-	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"log"
+	"net/http"
 )
 
 func main() {
@@ -183,11 +184,11 @@ initiate k8s cis benchmark scan for a specific cluster
 package main
 
 import(
-	"context"
-	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -237,11 +238,12 @@ edit k8s cis benchmark for a specific cluster with test statuses
 package main
 
 import(
-	"context"
-	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"log"
+	"net/http"
 )
 
 func main() {

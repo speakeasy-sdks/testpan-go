@@ -24,11 +24,12 @@ Delete a registry
 package main
 
 import(
-	"context"
-	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"log"
+	"net/http"
 )
 
 func main() {
@@ -78,11 +79,11 @@ Get a list of defined registries
 package main
 
 import(
-	"context"
-	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -130,10 +131,10 @@ Add new registry
 package main
 
 import(
+	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
 	"context"
 	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
-	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
 )
 
 func main() {
@@ -190,10 +191,11 @@ test registry connection
 package main
 
 import(
+	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
 	"context"
 	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
-	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	"net/http"
 )
 
 func main() {
@@ -250,11 +252,12 @@ test registry connection
 package main
 
 import(
-	"context"
-	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"log"
+	"net/http"
 )
 
 func main() {
@@ -314,11 +317,12 @@ edit existing registry
 package main
 
 import(
-	"context"
-	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"log"
+	"net/http"
 )
 
 func main() {

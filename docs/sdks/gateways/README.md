@@ -20,11 +20,12 @@ Delete gateway
 package main
 
 import(
-	"context"
-	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"log"
+	"net/http"
 )
 
 func main() {
@@ -74,11 +75,11 @@ Get gateways
 package main
 
 import(
-	"context"
-	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -126,11 +127,11 @@ Get clusters info
 package main
 
 import(
-	"context"
-	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -180,11 +181,11 @@ In order to install,  extract and run "./install_bundle.sh"
 package main
 
 import(
-	"context"
-	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -234,10 +235,10 @@ Add new gateway
 package main
 
 import(
+	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
 	"context"
 	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
-	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
 )
 
 func main() {
@@ -289,11 +290,11 @@ Edit gateway
 package main
 
 import(
-	"context"
-	"log"
-	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	testpango "github.com/speakeasy-sdks/testpan-go"
+	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"log"
 )
 
 func main() {

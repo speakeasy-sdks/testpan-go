@@ -8,6 +8,7 @@ import (
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
 	"log"
+	"net/http"
 )
 
 func main() {

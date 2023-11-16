@@ -478,7 +478,7 @@ func (s *Users) PostLogin(ctx context.Context, request operations.PostLoginReque
 
 	utils.PopulateHeaders(ctx, req, request)
 
-	client := s.sdkConfiguration.DefaultClient
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil {

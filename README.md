@@ -27,6 +27,7 @@ import (
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
 	"log"
+	"net/http"
 )
 
 func main() {
@@ -547,14 +548,21 @@ package main
 
 import (
 	"context"
+	"errors"
 	testpango "github.com/speakeasy-sdks/testpan-go"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
+	"github.com/speakeasy-sdks/testpan-go/pkg/models/sdkerrors"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
 	"log"
 )
 
 func main() {
-	s := testpango.New()
+	s := testpango.New(
+		testpango.WithSecurity(shared.Security{
+			Password: "",
+			Username: "",
+		}),
+	)
 
 	ctx := context.Background()
 	res, err := s.Users.PostLogin(ctx, operations.PostLoginRequest{})
@@ -601,6 +609,7 @@ import (
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
 	"log"
+	"net/http"
 )
 
 func main() {
@@ -640,6 +649,7 @@ import (
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
 	"log"
+	"net/http"
 )
 
 func main() {
@@ -722,6 +732,7 @@ import (
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
 	"log"
+	"net/http"
 )
 
 func main() {
