@@ -3,6 +3,7 @@
 package operations
 
 import (
+	"github.com/speakeasy-sdks/testpan-go/pkg/models/sdkerrors"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
 	"net/http"
 )
@@ -21,7 +22,7 @@ func (o *GetCloudAccountsCloudAccountIDDeleteDependenciesRequest) GetCloudAccoun
 
 type GetCloudAccountsCloudAccountIDDeleteDependenciesResponse struct {
 	// unknown error
-	APIResponse *shared.APIResponse
+	APIResponse *sdkerrors.APIResponse
 	// Success
 	CloudAccountDeleteDependencies *shared.CloudAccountDeleteDependencies
 	// HTTP response content type for this operation
@@ -32,7 +33,7 @@ type GetCloudAccountsCloudAccountIDDeleteDependenciesResponse struct {
 	RawResponse *http.Response
 }
 
-func (o *GetCloudAccountsCloudAccountIDDeleteDependenciesResponse) GetAPIResponse() *shared.APIResponse {
+func (o *GetCloudAccountsCloudAccountIDDeleteDependenciesResponse) GetAPIResponse() *sdkerrors.APIResponse {
 	if o == nil {
 		return nil
 	}

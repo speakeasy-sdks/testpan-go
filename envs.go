@@ -73,7 +73,7 @@ func (s *Envs) DeleteEnvironmentsEnvID(ctx context.Context, request operations.D
 	default:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out shared.APIResponse
+			var out sdkerrors.APIResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
@@ -273,7 +273,7 @@ func (s *Envs) GetEnvironmentsEnvIDDeleteDependencies(ctx context.Context, reque
 	default:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out shared.APIResponse
+			var out sdkerrors.APIResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
@@ -475,7 +475,7 @@ func (s *Envs) PostEnvironmentsDelete(ctx context.Context) (*operations.PostEnvi
 	default:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out shared.APIResponse
+			var out sdkerrors.APIResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}

@@ -3,13 +3,14 @@
 package operations
 
 import (
+	"github.com/speakeasy-sdks/testpan-go/pkg/models/sdkerrors"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
 	"net/http"
 )
 
 type PostUsersResponse struct {
 	// unknown error
-	APIResponse *shared.APIResponse
+	APIResponse *sdkerrors.APIResponse
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
@@ -20,7 +21,7 @@ type PostUsersResponse struct {
 	User *shared.User
 }
 
-func (o *PostUsersResponse) GetAPIResponse() *shared.APIResponse {
+func (o *PostUsersResponse) GetAPIResponse() *sdkerrors.APIResponse {
 	if o == nil {
 		return nil
 	}

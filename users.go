@@ -132,7 +132,7 @@ func (s *Users) GetOperatorCredentials(ctx context.Context) (*operations.GetOper
 	default:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out shared.APIResponse
+			var out sdkerrors.APIResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
@@ -329,7 +329,7 @@ func (s *Users) GetUsersUserIDDeleteDependencies(ctx context.Context, request op
 	default:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out shared.APIResponse
+			var out sdkerrors.APIResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
@@ -723,7 +723,7 @@ func (s *Users) PostUsers(ctx context.Context, request shared.UserInput) (*opera
 	default:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out shared.APIResponse
+			var out sdkerrors.APIResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
@@ -852,7 +852,7 @@ func (s *Users) PostUsersTrial(ctx context.Context, request operations.PostUsers
 	default:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out shared.APIResponse
+			var out sdkerrors.APIResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}

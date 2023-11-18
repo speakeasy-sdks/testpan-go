@@ -3,7 +3,7 @@
 package operations
 
 import (
-	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	"github.com/speakeasy-sdks/testpan-go/pkg/models/sdkerrors"
 	"io"
 	"net/http"
 )
@@ -22,7 +22,7 @@ func (o *GetCloudAccountsCloudAccountIDDownloadBundleRequest) GetCloudAccountID(
 
 type GetCloudAccountsCloudAccountIDDownloadBundleResponse struct {
 	// unknown error
-	APIResponse *shared.APIResponse
+	APIResponse *sdkerrors.APIResponse
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
@@ -34,7 +34,7 @@ type GetCloudAccountsCloudAccountIDDownloadBundleResponse struct {
 	Stream io.ReadCloser
 }
 
-func (o *GetCloudAccountsCloudAccountIDDownloadBundleResponse) GetAPIResponse() *shared.APIResponse {
+func (o *GetCloudAccountsCloudAccountIDDownloadBundleResponse) GetAPIResponse() *sdkerrors.APIResponse {
 	if o == nil {
 		return nil
 	}

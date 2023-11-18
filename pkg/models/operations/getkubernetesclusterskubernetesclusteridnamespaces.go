@@ -5,6 +5,7 @@ package operations
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/speakeasy-sdks/testpan-go/pkg/models/sdkerrors"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
 	"github.com/speakeasy-sdks/testpan-go/pkg/utils"
 	"net/http"
@@ -118,7 +119,7 @@ func (o *GetKubernetesClustersKubernetesClusterIDNamespacesRequest) GetSortKey()
 
 type GetKubernetesClustersKubernetesClusterIDNamespacesResponse struct {
 	// unknown error
-	APIResponse *shared.APIResponse
+	APIResponse *sdkerrors.APIResponse
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
@@ -129,7 +130,7 @@ type GetKubernetesClustersKubernetesClusterIDNamespacesResponse struct {
 	Classes []shared.KubernetesNamespace
 }
 
-func (o *GetKubernetesClustersKubernetesClusterIDNamespacesResponse) GetAPIResponse() *shared.APIResponse {
+func (o *GetKubernetesClustersKubernetesClusterIDNamespacesResponse) GetAPIResponse() *sdkerrors.APIResponse {
 	if o == nil {
 		return nil
 	}

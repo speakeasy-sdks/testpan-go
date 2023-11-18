@@ -376,7 +376,7 @@ pkg/utils/utils.go
 /pkg/models/operations/posttrustedsigners.go
 /pkg/models/operations/puttrustedsignerstrustedsignerid.go
 /pkg/models/operations/getvulnerabilities.go
-/pkg/models/shared/apiresponse.go
+/pkg/models/sdkerrors/apiresponse.go
 /pkg/models/shared/accesstoken.go
 /pkg/models/shared/userdisplay.go
 /pkg/models/shared/role.go
@@ -885,7 +885,6 @@ pkg/utils/utils.go
 /pkg/models/shared/trustedsignerclusterinput.go
 /pkg/models/shared/trustedsignercloudaccountinput.go
 /pkg/models/shared/security.go
-/pkg/models/sdkerrors/apiresponse.go
 USAGE.md
 docs/pkg/models/operations/deleteusersuseridrequest.md
 docs/pkg/models/operations/deleteusersuseridresponse.md
@@ -1521,7 +1520,7 @@ docs/pkg/models/operations/puttrustedsignerstrustedsigneridrequest.md
 docs/pkg/models/operations/puttrustedsignerstrustedsigneridresponse.md
 docs/pkg/models/operations/getvulnerabilitiesrequest.md
 docs/pkg/models/operations/getvulnerabilitiesresponse.md
-docs/pkg/models/shared/apiresponse.md
+docs/pkg/models/sdkerrors/apiresponse.md
 docs/pkg/models/shared/accesstoken.md
 docs/pkg/models/shared/userdisplaystatus.md
 docs/pkg/models/shared/userdisplay.md
@@ -2082,7 +2081,6 @@ docs/pkg/models/shared/trustedsignerinput.md
 docs/pkg/models/shared/trustedsignerclusterinput.md
 docs/pkg/models/shared/trustedsignercloudaccountinput.md
 docs/pkg/models/shared/security.md
-docs/pkg/models/sdkerrors/apiresponse.md
 docs/sdks/pan/README.md
 docs/sdks/users/README.md
 docs/sdks/imagesandvulnerabilities/README.md

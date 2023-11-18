@@ -3,6 +3,7 @@
 package operations
 
 import (
+	"github.com/speakeasy-sdks/testpan-go/pkg/models/sdkerrors"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
 	"net/http"
 )
@@ -21,7 +22,7 @@ func (o *GetGetControllerDataClusterIDRequest) GetClusterID() string {
 
 type GetGetControllerDataClusterIDResponse struct {
 	// unknown error
-	APIResponse *shared.APIResponse
+	APIResponse *sdkerrors.APIResponse
 	// HTTP response content type for this operation
 	ContentType string
 	// Success
@@ -32,7 +33,7 @@ type GetGetControllerDataClusterIDResponse struct {
 	RawResponse *http.Response
 }
 
-func (o *GetGetControllerDataClusterIDResponse) GetAPIResponse() *shared.APIResponse {
+func (o *GetGetControllerDataClusterIDResponse) GetAPIResponse() *sdkerrors.APIResponse {
 	if o == nil {
 		return nil
 	}

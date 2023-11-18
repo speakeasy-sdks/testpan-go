@@ -3,7 +3,7 @@
 package operations
 
 import (
-	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	"github.com/speakeasy-sdks/testpan-go/pkg/models/sdkerrors"
 	"net/http"
 )
 
@@ -20,7 +20,7 @@ func (o *DeleteSettingsIntegrationsEventForwardingEventForwardingIDRequest) GetE
 
 type DeleteSettingsIntegrationsEventForwardingEventForwardingIDResponse struct {
 	// unknown error
-	APIResponse *shared.APIResponse
+	APIResponse *sdkerrors.APIResponse
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
@@ -29,7 +29,7 @@ type DeleteSettingsIntegrationsEventForwardingEventForwardingIDResponse struct {
 	RawResponse *http.Response
 }
 
-func (o *DeleteSettingsIntegrationsEventForwardingEventForwardingIDResponse) GetAPIResponse() *shared.APIResponse {
+func (o *DeleteSettingsIntegrationsEventForwardingEventForwardingIDResponse) GetAPIResponse() *sdkerrors.APIResponse {
 	if o == nil {
 		return nil
 	}

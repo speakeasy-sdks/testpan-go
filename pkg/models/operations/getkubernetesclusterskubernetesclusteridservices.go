@@ -3,6 +3,7 @@
 package operations
 
 import (
+	"github.com/speakeasy-sdks/testpan-go/pkg/models/sdkerrors"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
 	"github.com/speakeasy-sdks/testpan-go/pkg/utils"
 	"net/http"
@@ -42,7 +43,7 @@ func (o *GetKubernetesClustersKubernetesClusterIDServicesRequest) GetShowIstioOn
 
 type GetKubernetesClustersKubernetesClusterIDServicesResponse struct {
 	// unknown error
-	APIResponse *shared.APIResponse
+	APIResponse *sdkerrors.APIResponse
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
@@ -53,7 +54,7 @@ type GetKubernetesClustersKubernetesClusterIDServicesResponse struct {
 	Classes []shared.KubernetesService
 }
 
-func (o *GetKubernetesClustersKubernetesClusterIDServicesResponse) GetAPIResponse() *shared.APIResponse {
+func (o *GetKubernetesClustersKubernetesClusterIDServicesResponse) GetAPIResponse() *sdkerrors.APIResponse {
 	if o == nil {
 		return nil
 	}

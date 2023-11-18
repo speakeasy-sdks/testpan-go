@@ -3,6 +3,7 @@
 package operations
 
 import (
+	"github.com/speakeasy-sdks/testpan-go/pkg/models/sdkerrors"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
 	"net/http"
 )
@@ -29,7 +30,7 @@ func (o *PostUsersTrialRequest) GetGRecaptchaResponse() string {
 
 type PostUsersTrialResponse struct {
 	// unknown error
-	APIResponse *shared.APIResponse
+	APIResponse *sdkerrors.APIResponse
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
@@ -40,7 +41,7 @@ type PostUsersTrialResponse struct {
 	User *shared.User
 }
 
-func (o *PostUsersTrialResponse) GetAPIResponse() *shared.APIResponse {
+func (o *PostUsersTrialResponse) GetAPIResponse() *sdkerrors.APIResponse {
 	if o == nil {
 		return nil
 	}

@@ -74,7 +74,7 @@ func (s *Kubernetes) DeleteKubernetesClustersKubernetesClusterID(ctx context.Con
 	default:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out shared.APIResponse
+			var out sdkerrors.APIResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
@@ -197,7 +197,7 @@ func (s *Kubernetes) GetGetControllerDataClusterID(ctx context.Context, request 
 	default:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out shared.APIResponse
+			var out sdkerrors.APIResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
@@ -331,7 +331,7 @@ func (s *Kubernetes) GetKubernetesClusters(ctx context.Context, request operatio
 	default:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out shared.APIResponse
+			var out sdkerrors.APIResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
@@ -404,7 +404,7 @@ func (s *Kubernetes) GetKubernetesClustersKubernetesClusterID(ctx context.Contex
 	default:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out shared.APIResponse
+			var out sdkerrors.APIResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
@@ -477,7 +477,7 @@ func (s *Kubernetes) GetKubernetesClustersKubernetesClusterIDDeleteDependencies(
 	default:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out shared.APIResponse
+			var out sdkerrors.APIResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
@@ -554,7 +554,7 @@ func (s *Kubernetes) GetKubernetesClustersKubernetesClusterIDDownloadBundle(ctx 
 	default:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out shared.APIResponse
+			var out sdkerrors.APIResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
@@ -627,7 +627,7 @@ func (s *Kubernetes) GetKubernetesClustersKubernetesClusterIDGetHelmCommands(ctx
 	default:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out shared.APIResponse
+			var out sdkerrors.APIResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
@@ -704,7 +704,7 @@ func (s *Kubernetes) GetKubernetesClustersKubernetesClusterIDNamespaces(ctx cont
 	default:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out shared.APIResponse
+			var out sdkerrors.APIResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
@@ -781,7 +781,7 @@ func (s *Kubernetes) GetKubernetesClustersKubernetesClusterIDServices(ctx contex
 	default:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out shared.APIResponse
+			var out sdkerrors.APIResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
@@ -855,7 +855,7 @@ func (s *Kubernetes) GetLeanKubernetesClusters(ctx context.Context, request oper
 	default:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out shared.APIResponse
+			var out sdkerrors.APIResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
@@ -929,7 +929,7 @@ func (s *Kubernetes) GetNamespaces(ctx context.Context, request operations.GetNa
 	default:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out shared.APIResponse
+			var out sdkerrors.APIResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
@@ -1071,7 +1071,7 @@ func (s *Kubernetes) PostKubernetesClusters(ctx context.Context, request shared.
 	default:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out shared.APIResponse
+			var out sdkerrors.APIResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
@@ -1224,7 +1224,7 @@ func (s *Kubernetes) PutKubernetesClustersKubernetesClusterID(ctx context.Contex
 	default:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out shared.APIResponse
+			var out sdkerrors.APIResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
@@ -1307,7 +1307,7 @@ func (s *Kubernetes) PutKubernetesClustersKubernetesClusterIDManagedByHelm(ctx c
 	default:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out shared.APIResponse
+			var out sdkerrors.APIResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}

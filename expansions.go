@@ -196,7 +196,7 @@ func (s *Expansions) GetExpansionsExpansionIDInstallExpansionTarGz(ctx context.C
 	default:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out shared.APIResponse
+			var out sdkerrors.APIResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}

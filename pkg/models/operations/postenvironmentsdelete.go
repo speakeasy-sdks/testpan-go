@@ -3,13 +3,13 @@
 package operations
 
 import (
-	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	"github.com/speakeasy-sdks/testpan-go/pkg/models/sdkerrors"
 	"net/http"
 )
 
 type PostEnvironmentsDeleteResponse struct {
 	// unknown error
-	APIResponse *shared.APIResponse
+	APIResponse *sdkerrors.APIResponse
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
@@ -18,7 +18,7 @@ type PostEnvironmentsDeleteResponse struct {
 	RawResponse *http.Response
 }
 
-func (o *PostEnvironmentsDeleteResponse) GetAPIResponse() *shared.APIResponse {
+func (o *PostEnvironmentsDeleteResponse) GetAPIResponse() *sdkerrors.APIResponse {
 	if o == nil {
 		return nil
 	}

@@ -3,13 +3,14 @@
 package operations
 
 import (
+	"github.com/speakeasy-sdks/testpan-go/pkg/models/sdkerrors"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
 	"net/http"
 )
 
 type PostKubernetesClustersResponse struct {
 	// unknown error
-	APIResponse *shared.APIResponse
+	APIResponse *sdkerrors.APIResponse
 	// HTTP response content type for this operation
 	ContentType string
 	// Agent was added.
@@ -20,7 +21,7 @@ type PostKubernetesClustersResponse struct {
 	RawResponse *http.Response
 }
 
-func (o *PostKubernetesClustersResponse) GetAPIResponse() *shared.APIResponse {
+func (o *PostKubernetesClustersResponse) GetAPIResponse() *sdkerrors.APIResponse {
 	if o == nil {
 		return nil
 	}

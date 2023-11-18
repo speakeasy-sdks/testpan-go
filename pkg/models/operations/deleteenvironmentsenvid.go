@@ -3,7 +3,7 @@
 package operations
 
 import (
-	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
+	"github.com/speakeasy-sdks/testpan-go/pkg/models/sdkerrors"
 	"net/http"
 )
 
@@ -20,7 +20,7 @@ func (o *DeleteEnvironmentsEnvIDRequest) GetEnvID() string {
 
 type DeleteEnvironmentsEnvIDResponse struct {
 	// unknown error
-	APIResponse *shared.APIResponse
+	APIResponse *sdkerrors.APIResponse
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
@@ -29,7 +29,7 @@ type DeleteEnvironmentsEnvIDResponse struct {
 	RawResponse *http.Response
 }
 
-func (o *DeleteEnvironmentsEnvIDResponse) GetAPIResponse() *shared.APIResponse {
+func (o *DeleteEnvironmentsEnvIDResponse) GetAPIResponse() *sdkerrors.APIResponse {
 	if o == nil {
 		return nil
 	}

@@ -3,6 +3,7 @@
 package operations
 
 import (
+	"github.com/speakeasy-sdks/testpan-go/pkg/models/sdkerrors"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
 	"net/http"
 )
@@ -29,7 +30,7 @@ func (o *PostAgentsAgentIDUpdateStateRequest) GetAgentID() string {
 
 type PostAgentsAgentIDUpdateStateResponse struct {
 	// Account is disabled.
-	APIResponse *shared.APIResponse
+	APIResponse *sdkerrors.APIResponse
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
@@ -38,7 +39,7 @@ type PostAgentsAgentIDUpdateStateResponse struct {
 	RawResponse *http.Response
 }
 
-func (o *PostAgentsAgentIDUpdateStateResponse) GetAPIResponse() *shared.APIResponse {
+func (o *PostAgentsAgentIDUpdateStateResponse) GetAPIResponse() *sdkerrors.APIResponse {
 	if o == nil {
 		return nil
 	}

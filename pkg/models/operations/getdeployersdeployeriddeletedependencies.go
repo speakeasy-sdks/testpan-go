@@ -3,6 +3,7 @@
 package operations
 
 import (
+	"github.com/speakeasy-sdks/testpan-go/pkg/models/sdkerrors"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
 	"net/http"
 )
@@ -20,7 +21,7 @@ func (o *GetDeployersDeployerIDDeleteDependenciesRequest) GetDeployerID() string
 
 type GetDeployersDeployerIDDeleteDependenciesResponse struct {
 	// unknown error
-	APIResponse *shared.APIResponse
+	APIResponse *sdkerrors.APIResponse
 	// HTTP response content type for this operation
 	ContentType string
 	// Success
@@ -31,7 +32,7 @@ type GetDeployersDeployerIDDeleteDependenciesResponse struct {
 	RawResponse *http.Response
 }
 
-func (o *GetDeployersDeployerIDDeleteDependenciesResponse) GetAPIResponse() *shared.APIResponse {
+func (o *GetDeployersDeployerIDDeleteDependenciesResponse) GetAPIResponse() *sdkerrors.APIResponse {
 	if o == nil {
 		return nil
 	}

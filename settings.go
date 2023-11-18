@@ -74,7 +74,7 @@ func (s *Settings) DeleteSettingsIntegrationsCaID(ctx context.Context, request o
 	default:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out shared.APIResponse
+			var out sdkerrors.APIResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
@@ -136,7 +136,7 @@ func (s *Settings) DeleteSettingsIntegrationsEventForwardingEventForwardingID(ct
 	default:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out shared.APIResponse
+			var out sdkerrors.APIResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}

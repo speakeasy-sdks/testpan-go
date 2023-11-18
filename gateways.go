@@ -262,7 +262,7 @@ func (s *Gateways) GetGatewaysGatewayIDDownloadBundle(ctx context.Context, reque
 	default:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out shared.APIResponse
+			var out sdkerrors.APIResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}

@@ -3,6 +3,7 @@
 package operations
 
 import (
+	"github.com/speakeasy-sdks/testpan-go/pkg/models/sdkerrors"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
 	"net/http"
 )
@@ -11,7 +12,7 @@ type GetOperatorCredentialsResponse struct {
 	// Success
 	AccessToken *shared.AccessToken
 	// unknown error
-	APIResponse *shared.APIResponse
+	APIResponse *sdkerrors.APIResponse
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
@@ -27,7 +28,7 @@ func (o *GetOperatorCredentialsResponse) GetAccessToken() *shared.AccessToken {
 	return o.AccessToken
 }
 
-func (o *GetOperatorCredentialsResponse) GetAPIResponse() *shared.APIResponse {
+func (o *GetOperatorCredentialsResponse) GetAPIResponse() *sdkerrors.APIResponse {
 	if o == nil {
 		return nil
 	}

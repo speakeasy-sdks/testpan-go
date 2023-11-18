@@ -5,6 +5,7 @@ package operations
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/speakeasy-sdks/testpan-go/pkg/models/sdkerrors"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/shared"
 	"github.com/speakeasy-sdks/testpan-go/pkg/utils"
 	"net/http"
@@ -197,7 +198,7 @@ func (o *GetNamespacesRequest) GetSortKey() *GetNamespacesQueryParamSortKey {
 
 type GetNamespacesResponse struct {
 	// unknown error
-	APIResponse *shared.APIResponse
+	APIResponse *sdkerrors.APIResponse
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
@@ -208,7 +209,7 @@ type GetNamespacesResponse struct {
 	Classes []shared.Namespace
 }
 
-func (o *GetNamespacesResponse) GetAPIResponse() *shared.APIResponse {
+func (o *GetNamespacesResponse) GetAPIResponse() *sdkerrors.APIResponse {
 	if o == nil {
 		return nil
 	}
