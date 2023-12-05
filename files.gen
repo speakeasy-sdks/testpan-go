@@ -885,7 +885,6 @@ pkg/utils/utils.go
 /pkg/models/shared/trustedsignerclusterinput.go
 /pkg/models/shared/trustedsignercloudaccountinput.go
 /pkg/models/shared/security.go
-USAGE.md
 docs/pkg/models/operations/deleteusersuseridrequest.md
 docs/pkg/models/operations/deleteusersuseridresponse.md
 docs/pkg/models/operations/getoperatorcredentialsresponse.md
@@ -2120,4 +2119,5 @@ docs/sdks/cli/README.md
 docs/sdks/truncation/README.md
 docs/sdks/trustedsigners/README.md
 docs/sdks/vulnerabilities/README.md
+USAGE.md
 .gitattributes

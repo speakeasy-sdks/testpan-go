@@ -109,3 +109,13 @@ Based on:
 - [go v0.6.3] .
 ### Releases
 - [Go v0.6.3] https://github.com/speakeasy-sdks/testpan-go/releases/tag/v0.6.3 - .
+
+## 2023-12-05 01:16:39
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 
+- Speakeasy CLI 1.125.1 (2.210.3) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [go v0.6.4] .
+### Releases
+- [Go v0.6.4] https://github.com/speakeasy-sdks/testpan-go/releases/tag/v0.6.4 - .
