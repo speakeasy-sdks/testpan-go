@@ -34,8 +34,7 @@ import(
 func main() {
     s := testpango.New(
         testpango.WithSecurity(shared.Security{
-            Password: "",
-            Username: "",
+            Password: testpango.String("<YOUR_PASSWORD_HERE>"),
         }),
     )
 
@@ -88,8 +87,7 @@ import(
 func main() {
     s := testpango.New(
         testpango.WithSecurity(shared.Security{
-            Password: "",
-            Username: "",
+            Password: testpango.String("<YOUR_PASSWORD_HERE>"),
         }),
     )
 
@@ -140,8 +138,7 @@ import(
 func main() {
     s := testpango.New(
         testpango.WithSecurity(shared.Security{
-            Password: "",
-            Username: "",
+            Password: testpango.String("<YOUR_PASSWORD_HERE>"),
         }),
     )
 
@@ -193,8 +190,7 @@ import(
 func main() {
     s := testpango.New(
         testpango.WithSecurity(shared.Security{
-            Password: "",
-            Username: "",
+            Password: testpango.String("<YOUR_PASSWORD_HERE>"),
         }),
     )
 
@@ -260,8 +256,7 @@ import(
 func main() {
     s := testpango.New(
         testpango.WithSecurity(shared.Security{
-            Password: "",
-            Username: "",
+            Password: testpango.String("<YOUR_PASSWORD_HERE>"),
         }),
     )
 
