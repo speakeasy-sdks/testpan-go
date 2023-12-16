@@ -2,7 +2,7 @@
 
 package shared
 
-// AWSRolePost - A given name for the AWS role that Secure Application can connect to.
+// AWSRolePost - Defines a role ARN that Secure Application can connect to.
 type AWSRolePost struct {
 	Arn         string  `json:"arn"`
 	Description *string `json:"description,omitempty"`

@@ -2,7 +2,7 @@
 
 package shared
 
-// VPCDescriptionInput - Describes an AWS VPC.
+// VPCDescriptionInput - Like VPC but also includes the name
 type VPCDescriptionInput struct {
 	AwsAccountID string `json:"awsAccountId"`
 	// The "Name" tag of the VPC.

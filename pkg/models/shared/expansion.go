@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-// Expansion - represent expansion object used in put method
+// Expansion - represent expansion object
 type Expansion struct {
 	AccountName               *string `json:"accountName,omitempty"`
 	ClusterID                 string  `json:"clusterId"`

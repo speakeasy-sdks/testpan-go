@@ -2,7 +2,7 @@
 
 package shared
 
-// AWSRole - A given name for the AWS role that Secure Application can connect to.
+// AWSRole - Defines a role ARN that Secure Application can connect to.
 type AWSRole struct {
 	Arn         string  `json:"arn"`
 	Description *string `json:"description,omitempty"`

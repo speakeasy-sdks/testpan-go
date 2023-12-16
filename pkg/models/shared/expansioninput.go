@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-// ExpansionInput - represent expansion object used in put method
+// ExpansionInput - represent expansion object
 type ExpansionInput struct {
 	ClusterID string `json:"clusterId"`
 	// The last time that the agent sent telemetries

@@ -2,7 +2,7 @@
 
 package shared
 
-// VPCDescription - Describes an AWS VPC.
+// VPCDescription - Like VPC but also includes the name
 type VPCDescription struct {
 	AwsAccountID   string  `json:"awsAccountId"`
 	AwsAccountName *string `json:"awsAccountName,omitempty"`
