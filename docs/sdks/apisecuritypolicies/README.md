@@ -65,7 +65,7 @@ func main() {
 **[*operations.DeleteAPISecurityPolicyPolicyIDResponse](../../pkg/models/operations/deleteapisecuritypolicypolicyidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAPISecurityPolicy
 
@@ -114,7 +114,7 @@ func main() {
 **[*operations.GetAPISecurityPolicyResponse](../../pkg/models/operations/getapisecuritypolicyresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAPISecurityPolicyPolicyIDDeleteDependencies
 
@@ -167,7 +167,7 @@ func main() {
 **[*operations.GetAPISecurityPolicyPolicyIDDeleteDependenciesResponse](../../pkg/models/operations/getapisecuritypolicypolicyiddeletedependenciesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostAPISecurityPolicy
 
@@ -230,7 +230,7 @@ func main() {
 **[*operations.PostAPISecurityPolicyResponse](../../pkg/models/operations/postapisecuritypolicyresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PutAPISecurityPolicyPolicyID
 
@@ -297,4 +297,4 @@ func main() {
 **[*operations.PutAPISecurityPolicyPolicyIDResponse](../../pkg/models/operations/putapisecuritypolicypolicyidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

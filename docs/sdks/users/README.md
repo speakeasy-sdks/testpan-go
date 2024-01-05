@@ -74,7 +74,7 @@ func main() {
 **[*operations.DeleteUsersUserIDResponse](../../pkg/models/operations/deleteusersuseridresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetOperatorCredentials
 
@@ -123,7 +123,7 @@ func main() {
 **[*operations.GetOperatorCredentialsResponse](../../pkg/models/operations/getoperatorcredentialsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetUsers
 
@@ -178,7 +178,7 @@ func main() {
 **[*operations.GetUsersResponse](../../pkg/models/operations/getusersresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetUsersUserIDAccessTokens
 
@@ -231,7 +231,7 @@ func main() {
 **[*operations.GetUsersUserIDAccessTokensResponse](../../pkg/models/operations/getusersuseridaccesstokensresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetUsersUserIDDeleteDependencies
 
@@ -284,7 +284,7 @@ func main() {
 **[*operations.GetUsersUserIDDeleteDependenciesResponse](../../pkg/models/operations/getusersuseriddeletedependenciesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostAccountUsageStatus
 
@@ -333,7 +333,7 @@ func main() {
 **[*operations.PostAccountUsageStatusResponse](../../pkg/models/operations/postaccountusagestatusresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostChangePassword
 
@@ -384,7 +384,7 @@ func main() {
 **[*operations.PostChangePasswordResponse](../../pkg/models/operations/postchangepasswordresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostLogin
 
@@ -436,7 +436,7 @@ func main() {
 | Error Object          | Status Code           | Content Type          |
 | --------------------- | --------------------- | --------------------- |
 | sdkerrors.APIResponse | 402                   | application/json      |
-| sdkerrors.SDKError    | 400-600               | */*                   |
+| sdkerrors.SDKError    | 4xx-5xx               | */*                   |
 
 ## PostLogout
 
@@ -486,7 +486,7 @@ func main() {
 **[*operations.PostLogoutResponse](../../pkg/models/operations/postlogoutresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostMe
 
@@ -535,7 +535,7 @@ func main() {
 **[*operations.PostMeResponse](../../pkg/models/operations/postmeresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostUsers
 
@@ -589,7 +589,7 @@ func main() {
 **[*operations.PostUsersResponse](../../pkg/models/operations/postusersresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostUsersAcceptEula
 
@@ -639,7 +639,7 @@ func main() {
 **[*operations.PostUsersAcceptEulaResponse](../../pkg/models/operations/postusersaccepteularesponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostUsersTrial
 
@@ -698,7 +698,7 @@ func main() {
 **[*operations.PostUsersTrialResponse](../../pkg/models/operations/postuserstrialresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PutUsersUserID
 
@@ -755,4 +755,4 @@ func main() {
 **[*operations.PutUsersUserIDResponse](../../pkg/models/operations/putusersuseridresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

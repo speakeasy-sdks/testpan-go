@@ -62,7 +62,7 @@ func main() {
 **[*operations.DeleteGatewaysGatewayIDResponse](../../pkg/models/operations/deletegatewaysgatewayidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetGateways
 
@@ -113,7 +113,7 @@ func main() {
 **[*operations.GetGatewaysResponse](../../pkg/models/operations/getgatewaysresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetGatewaysClusters
 
@@ -166,7 +166,7 @@ func main() {
 **[*operations.GetGatewaysClustersResponse](../../pkg/models/operations/getgatewaysclustersresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetGatewaysGatewayIDDownloadBundle
 
@@ -219,7 +219,7 @@ func main() {
 **[*operations.GetGatewaysGatewayIDDownloadBundleResponse](../../pkg/models/operations/getgatewaysgatewayiddownloadbundleresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostGateways
 
@@ -273,7 +273,7 @@ func main() {
 **[*operations.PostGatewaysResponse](../../pkg/models/operations/postgatewaysresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PutGatewaysGatewayID
 
@@ -331,4 +331,4 @@ func main() {
 **[*operations.PutGatewaysGatewayIDResponse](../../pkg/models/operations/putgatewaysgatewayidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

@@ -115,7 +115,7 @@ func main() {
 **[*operations.DeleteAPISecurityAPICatalogIDResponse](../../pkg/models/operations/deleteapisecurityapicatalogidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## DeleteAPISecurityInternalCatalogCatalogIDBflaDetection
 
@@ -168,7 +168,7 @@ func main() {
 **[*operations.DeleteAPISecurityInternalCatalogCatalogIDBflaDetectionResponse](../../pkg/models/operations/deleteapisecurityinternalcatalogcatalogidbfladetectionresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## DeleteAPISecurityInternalCatalogCatalogIDBflaLearning
 
@@ -221,7 +221,7 @@ func main() {
 **[*operations.DeleteAPISecurityInternalCatalogCatalogIDBflaLearningResponse](../../pkg/models/operations/deleteapisecurityinternalcatalogcatalogidbflalearningresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## DeleteAPISecurityOpenAPISpecsCatalogID
 
@@ -274,7 +274,7 @@ func main() {
 **[*operations.DeleteAPISecurityOpenAPISpecsCatalogIDResponse](../../pkg/models/operations/deleteapisecurityopenapispecscatalogidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## DeleteGatewaysGatewayID
 
@@ -328,7 +328,7 @@ func main() {
 **[*operations.DeleteGatewaysGatewayIDResponse](../../pkg/models/operations/deletegatewaysgatewayidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAPISecurityExternalCatalog
 
@@ -383,7 +383,7 @@ func main() {
 **[*operations.GetAPISecurityExternalCatalogResponse](../../pkg/models/operations/getapisecurityexternalcatalogresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAPISecurityExternalCatalogCount
 
@@ -434,7 +434,7 @@ func main() {
 **[*operations.GetAPISecurityExternalCatalogCountResponse](../../pkg/models/operations/getapisecurityexternalcatalogcountresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAPISecurityExternalCatalogCatalogID
 
@@ -490,7 +490,7 @@ func main() {
 **[*operations.GetAPISecurityExternalCatalogCatalogIDResponse](../../pkg/models/operations/getapisecurityexternalcatalogcatalogidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAPISecurityInternalCatalog
 
@@ -545,7 +545,7 @@ func main() {
 **[*operations.GetAPISecurityInternalCatalogResponse](../../pkg/models/operations/getapisecurityinternalcatalogresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAPISecurityInternalCatalogCount
 
@@ -596,7 +596,7 @@ func main() {
 **[*operations.GetAPISecurityInternalCatalogCountResponse](../../pkg/models/operations/getapisecurityinternalcatalogcountresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAPISecurityInternalCatalogCatalogID
 
@@ -652,7 +652,7 @@ func main() {
 **[*operations.GetAPISecurityInternalCatalogCatalogIDResponse](../../pkg/models/operations/getapisecurityinternalcatalogcatalogidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAPISecurityInternalCatalogCatalogIDBfla
 
@@ -705,7 +705,7 @@ func main() {
 **[*operations.GetAPISecurityInternalCatalogCatalogIDBflaResponse](../../pkg/models/operations/getapisecurityinternalcatalogcatalogidbflaresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAPISecurityInternalCatalogCatalogIDFuzzingStatus
 
@@ -758,7 +758,7 @@ func main() {
 **[*operations.GetAPISecurityInternalCatalogCatalogIDFuzzingStatusResponse](../../pkg/models/operations/getapisecurityinternalcatalogcatalogidfuzzingstatusresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAPISecurityInternalCatalogCatalogIDFuzzingTests
 
@@ -811,7 +811,7 @@ func main() {
 **[*operations.GetAPISecurityInternalCatalogCatalogIDFuzzingTestsResponse](../../pkg/models/operations/getapisecurityinternalcatalogcatalogidfuzzingtestsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAPISecurityInternalCatalogCatalogIDTraceAnalysis
 
@@ -864,7 +864,7 @@ func main() {
 **[*operations.GetAPISecurityInternalCatalogCatalogIDTraceAnalysisResponse](../../pkg/models/operations/getapisecurityinternalcatalogcatalogidtraceanalysisresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAPISecurityOpenAPISpecsCatalogID
 
@@ -917,7 +917,7 @@ func main() {
 **[*operations.GetAPISecurityOpenAPISpecsCatalogIDResponse](../../pkg/models/operations/getapisecurityopenapispecscatalogidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAPISecurityOpenAPISpecsCatalogIDDiffDetectionStatus
 
@@ -970,7 +970,7 @@ func main() {
 **[*operations.GetAPISecurityOpenAPISpecsCatalogIDDiffDetectionStatusResponse](../../pkg/models/operations/getapisecurityopenapispecscatalogiddiffdetectionstatusresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAPISecurityOpenAPISpecsCatalogIDGetOpenAPISpecScoreStatus
 
@@ -1023,7 +1023,7 @@ func main() {
 **[*operations.GetAPISecurityOpenAPISpecsCatalogIDGetOpenAPISpecScoreStatusResponse](../../pkg/models/operations/getapisecurityopenapispecscatalogidgetopenapispecscorestatusresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAPISecurityOpenAPISpecsCatalogIDOpenAPISpecSwaggerJSON
 
@@ -1076,7 +1076,7 @@ func main() {
 **[*operations.GetAPISecurityOpenAPISpecsCatalogIDOpenAPISpecSwaggerJSONResponse](../../pkg/models/operations/getapisecurityopenapispecscatalogidopenapispecswaggerjsonresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReview
 
@@ -1129,7 +1129,7 @@ func main() {
 **[*operations.GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReviewResponse](../../pkg/models/operations/getapisecurityopenapispecscatalogidreconstructedspecreviewresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecStatus
 
@@ -1182,7 +1182,7 @@ func main() {
 **[*operations.GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecStatusResponse](../../pkg/models/operations/getapisecurityopenapispecscatalogidreconstructedspecstatusresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecJSON
 
@@ -1235,7 +1235,7 @@ func main() {
 **[*operations.GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecJSONResponse](../../pkg/models/operations/getapisecurityopenapispecscatalogidreconstructedspecjsonresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAPISecurityRiskFindings
 
@@ -1292,7 +1292,7 @@ func main() {
 **[*operations.GetAPISecurityRiskFindingsResponse](../../pkg/models/operations/getapisecurityriskfindingsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAPISecurityRiskFindingsCategories
 
@@ -1341,7 +1341,7 @@ func main() {
 **[*operations.GetAPISecurityRiskFindingsCategoriesResponse](../../pkg/models/operations/getapisecurityriskfindingscategoriesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAPISecurityRiskFindingsSources
 
@@ -1390,7 +1390,7 @@ func main() {
 **[*operations.GetAPISecurityRiskFindingsSourcesResponse](../../pkg/models/operations/getapisecurityriskfindingssourcesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAPISecurityRiskFindingsRiskFindingID
 
@@ -1443,7 +1443,7 @@ func main() {
 **[*operations.GetAPISecurityRiskFindingsRiskFindingIDResponse](../../pkg/models/operations/getapisecurityriskfindingsriskfindingidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAPISecurityCatalogIDDeleteDependencies
 
@@ -1496,7 +1496,7 @@ func main() {
 **[*operations.GetAPISecurityCatalogIDDeleteDependenciesResponse](../../pkg/models/operations/getapisecuritycatalogiddeletedependenciesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAPISecurityCatalogIDMethods
 
@@ -1552,7 +1552,7 @@ func main() {
 **[*operations.GetAPISecurityCatalogIDMethodsResponse](../../pkg/models/operations/getapisecuritycatalogidmethodsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAPISecurityCatalogIDTags
 
@@ -1605,7 +1605,7 @@ func main() {
 **[*operations.GetAPISecurityCatalogIDTagsResponse](../../pkg/models/operations/getapisecuritycatalogidtagsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetDashboardApisecRiskFindings
 
@@ -1658,7 +1658,7 @@ func main() {
 **[*operations.GetDashboardApisecRiskFindingsResponse](../../pkg/models/operations/getdashboardapisecriskfindingsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetDashboardApisecRiskFindingsTrend
 
@@ -1711,7 +1711,7 @@ func main() {
 **[*operations.GetDashboardApisecRiskFindingsTrendResponse](../../pkg/models/operations/getdashboardapisecriskfindingstrendresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetDashboardApisecSpecsAndOperationsDiffs
 
@@ -1764,7 +1764,7 @@ func main() {
 **[*operations.GetDashboardApisecSpecsAndOperationsDiffsResponse](../../pkg/models/operations/getdashboardapisecspecsandoperationsdiffsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetDashboardApisecTopRiskyApis
 
@@ -1817,7 +1817,7 @@ func main() {
 **[*operations.GetDashboardApisecTopRiskyApisResponse](../../pkg/models/operations/getdashboardapisectopriskyapisresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetDashboardApisecTopRiskyFindings
 
@@ -1870,7 +1870,7 @@ func main() {
 **[*operations.GetDashboardApisecTopRiskyFindingsResponse](../../pkg/models/operations/getdashboardapisectopriskyfindingsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetGateways
 
@@ -1921,7 +1921,7 @@ func main() {
 **[*operations.GetGatewaysResponse](../../pkg/models/operations/getgatewaysresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetGatewaysClusters
 
@@ -1974,7 +1974,7 @@ func main() {
 **[*operations.GetGatewaysClustersResponse](../../pkg/models/operations/getgatewaysclustersresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetGatewaysGatewayIDDownloadBundle
 
@@ -2027,7 +2027,7 @@ func main() {
 **[*operations.GetGatewaysGatewayIDDownloadBundleResponse](../../pkg/models/operations/getgatewaysgatewayiddownloadbundleresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostAPISecurityAPI
 
@@ -2079,7 +2079,7 @@ func main() {
 **[*operations.PostAPISecurityAPIResponse](../../pkg/models/operations/postapisecurityapiresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostAPISecurityInternalCatalogCatalogIDBflaDetection
 
@@ -2135,7 +2135,7 @@ func main() {
 **[*operations.PostAPISecurityInternalCatalogCatalogIDBflaDetectionResponse](../../pkg/models/operations/postapisecurityinternalcatalogcatalogidbfladetectionresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostAPISecurityInternalCatalogCatalogIDBflaLearning
 
@@ -2191,7 +2191,7 @@ func main() {
 **[*operations.PostAPISecurityInternalCatalogCatalogIDBflaLearningResponse](../../pkg/models/operations/postapisecurityinternalcatalogcatalogidbflalearningresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostAPISecurityInternalCatalogCatalogIDBflaReset
 
@@ -2244,7 +2244,7 @@ func main() {
 **[*operations.PostAPISecurityInternalCatalogCatalogIDBflaResetResponse](../../pkg/models/operations/postapisecurityinternalcatalogcatalogidbflaresetresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostAPISecurityInternalCatalogCatalogIDResetTraceAnalysis
 
@@ -2298,7 +2298,7 @@ func main() {
 **[*operations.PostAPISecurityInternalCatalogCatalogIDResetTraceAnalysisResponse](../../pkg/models/operations/postapisecurityinternalcatalogcatalogidresettraceanalysisresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostAPISecurityInternalCatalogCatalogIDStartFuzzing
 
@@ -2357,7 +2357,7 @@ func main() {
 **[*operations.PostAPISecurityInternalCatalogCatalogIDStartFuzzingResponse](../../pkg/models/operations/postapisecurityinternalcatalogcatalogidstartfuzzingresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostAPISecurityInternalCatalogCatalogIDStartTraceAnalysis
 
@@ -2415,7 +2415,7 @@ func main() {
 **[*operations.PostAPISecurityInternalCatalogCatalogIDStartTraceAnalysisResponse](../../pkg/models/operations/postapisecurityinternalcatalogcatalogidstarttraceanalysisresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostAPISecurityInternalCatalogCatalogIDStopFuzzing
 
@@ -2469,7 +2469,7 @@ func main() {
 **[*operations.PostAPISecurityInternalCatalogCatalogIDStopFuzzingResponse](../../pkg/models/operations/postapisecurityinternalcatalogcatalogidstopfuzzingresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostAPISecurityInternalCatalogCatalogIDStopTraceAnalysis
 
@@ -2523,7 +2523,7 @@ func main() {
 **[*operations.PostAPISecurityInternalCatalogCatalogIDStopTraceAnalysisResponse](../../pkg/models/operations/postapisecurityinternalcatalogcatalogidstoptraceanalysisresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecAbort
 
@@ -2577,7 +2577,7 @@ func main() {
 **[*operations.PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecAbortResponse](../../pkg/models/operations/postapisecurityopenapispecscatalogidreconstructedspecabortresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecLearn
 
@@ -2632,7 +2632,7 @@ func main() {
 **[*operations.PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecLearnResponse](../../pkg/models/operations/postapisecurityopenapispecscatalogidreconstructedspeclearnresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReviewApprove
 
@@ -2700,7 +2700,7 @@ func main() {
 **[*operations.PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReviewApproveResponse](../../pkg/models/operations/postapisecurityopenapispecscatalogidreconstructedspecreviewapproveresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostAPISecurityOpenAPISpecsCatalogIDStartDiffsDetection
 
@@ -2758,7 +2758,7 @@ func main() {
 **[*operations.PostAPISecurityOpenAPISpecsCatalogIDStartDiffsDetectionResponse](../../pkg/models/operations/postapisecurityopenapispecscatalogidstartdiffsdetectionresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostAPISecurityOpenAPISpecsCatalogIDStopDiffsDetection
 
@@ -2812,7 +2812,7 @@ func main() {
 **[*operations.PostAPISecurityOpenAPISpecsCatalogIDStopDiffsDetectionResponse](../../pkg/models/operations/postapisecurityopenapispecscatalogidstopdiffsdetectionresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostGateways
 
@@ -2866,7 +2866,7 @@ func main() {
 **[*operations.PostGatewaysResponse](../../pkg/models/operations/postgatewaysresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PutAPISecurityInternalCatalogCatalogIDBfla
 
@@ -2945,7 +2945,7 @@ func main() {
 **[*operations.PutAPISecurityInternalCatalogCatalogIDBflaResponse](../../pkg/models/operations/putapisecurityinternalcatalogcatalogidbflaresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PutAPISecurityOpenAPISpecsCatalogID
 
@@ -2999,7 +2999,7 @@ func main() {
 **[*operations.PutAPISecurityOpenAPISpecsCatalogIDResponse](../../pkg/models/operations/putapisecurityopenapispecscatalogidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PutGatewaysGatewayID
 
@@ -3057,4 +3057,4 @@ func main() {
 **[*operations.PutGatewaysGatewayIDResponse](../../pkg/models/operations/putgatewaysgatewayidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

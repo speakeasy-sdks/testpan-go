@@ -64,7 +64,7 @@ func main() {
 **[*operations.GetAwsAccountsResponse](../../pkg/models/operations/getawsaccountsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAwsRoles
 
@@ -113,7 +113,7 @@ func main() {
 **[*operations.GetAwsRolesResponse](../../pkg/models/operations/getawsrolesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAwsTags
 
@@ -162,7 +162,7 @@ func main() {
 **[*operations.GetAwsTagsResponse](../../pkg/models/operations/getawstagsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAwsAwsAccountIDRegions
 
@@ -216,7 +216,7 @@ func main() {
 **[*operations.GetAwsAwsAccountIDRegionsResponse](../../pkg/models/operations/getawsawsaccountidregionsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAwsAwsAccountIDRegionIDSubnets
 
@@ -270,7 +270,7 @@ func main() {
 **[*operations.GetAwsAwsAccountIDRegionIDSubnetsResponse](../../pkg/models/operations/getawsawsaccountidregionidsubnetsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAwsAwsAccountIDRegionIDVpcs
 
@@ -325,7 +325,7 @@ func main() {
 **[*operations.GetAwsAwsAccountIDRegionIDVpcsResponse](../../pkg/models/operations/getawsawsaccountidregionidvpcsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostAwsRoles
 
@@ -378,7 +378,7 @@ func main() {
 **[*operations.PostAwsRolesResponse](../../pkg/models/operations/postawsrolesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PutAwsRolesRoleID
 
@@ -434,4 +434,4 @@ func main() {
 **[*operations.PutAwsRolesRoleIDResponse](../../pkg/models/operations/putawsrolesroleidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

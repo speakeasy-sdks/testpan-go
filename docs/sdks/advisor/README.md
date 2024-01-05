@@ -62,7 +62,7 @@ func main() {
 **[*operations.GetAdvisorClusterEventRulesResponse](../../pkg/models/operations/getadvisorclustereventrulesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAdvisorConnectionRules
 
@@ -111,7 +111,7 @@ func main() {
 **[*operations.GetAdvisorConnectionRulesResponse](../../pkg/models/operations/getadvisorconnectionrulesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAdvisorEnvironment
 
@@ -160,7 +160,7 @@ func main() {
 **[*operations.GetAdvisorEnvironmentResponse](../../pkg/models/operations/getadvisorenvironmentresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAdvisorEnvironmentRules
 
@@ -209,7 +209,7 @@ func main() {
 **[*operations.GetAdvisorEnvironmentRulesResponse](../../pkg/models/operations/getadvisorenvironmentrulesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAdvisorPodSecurityPolicy
 
@@ -258,7 +258,7 @@ func main() {
 **[*operations.GetAdvisorPodSecurityPolicyResponse](../../pkg/models/operations/getadvisorpodsecuritypolicyresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAdvisorQueueAdvisorType
 
@@ -311,7 +311,7 @@ func main() {
 **[*operations.GetAdvisorQueueAdvisorTypeResponse](../../pkg/models/operations/getadvisorqueueadvisortyperesponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostAdvisorRun
 
@@ -365,4 +365,4 @@ func main() {
 **[*operations.PostAdvisorRunResponse](../../pkg/models/operations/postadvisorrunresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

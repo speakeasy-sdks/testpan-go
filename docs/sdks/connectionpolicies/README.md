@@ -65,7 +65,7 @@ func main() {
 **[*operations.GetConnectionsPolicyResponse](../../pkg/models/operations/getconnectionspolicyresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetConnectionsPolicyHistory
 
@@ -114,7 +114,7 @@ func main() {
 **[*operations.GetConnectionsPolicyHistoryResponse](../../pkg/models/operations/getconnectionspolicyhistoryresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetConnectionsPolicyKafkaActions
 
@@ -163,7 +163,7 @@ func main() {
 **[*operations.GetConnectionsPolicyKafkaActionsResponse](../../pkg/models/operations/getconnectionspolicykafkaactionsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetConnectionsPolicyKafkaKubernetesClusterIDBrokers
 
@@ -216,7 +216,7 @@ func main() {
 **[*operations.GetConnectionsPolicyKafkaKubernetesClusterIDBrokersResponse](../../pkg/models/operations/getconnectionspolicykafkakubernetesclusteridbrokersresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetConnectionsPolicyKafkaKubernetesClusterIDTopics
 
@@ -269,7 +269,7 @@ func main() {
 **[*operations.GetConnectionsPolicyKafkaKubernetesClusterIDTopicsResponse](../../pkg/models/operations/getconnectionspolicykafkakubernetesclusteridtopicsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetConnectionsPolicySearchOptions
 
@@ -320,7 +320,7 @@ func main() {
 **[*operations.GetConnectionsPolicySearchOptionsResponse](../../pkg/models/operations/getconnectionspolicysearchoptionsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetServerlessPolicyHistory
 
@@ -369,7 +369,7 @@ func main() {
 **[*operations.GetServerlessPolicyHistoryResponse](../../pkg/models/operations/getserverlesspolicyhistoryresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PutConnectionsPolicy
 
@@ -437,4 +437,4 @@ func main() {
 **[*operations.PutConnectionsPolicyResponse](../../pkg/models/operations/putconnectionspolicyresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

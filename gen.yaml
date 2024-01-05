@@ -1,25 +1,10 @@
-configVersion: 1.0.0
-management:
-  docChecksum: 8be724345472d3ac63089c40372a9a19
-  docVersion: 1.0.0
-  speakeasyVersion: 1.126.4
-  generationVersion: 2.214.10
+configVersion: 2.0.0
 generation:
-  comments: {}
   sdkClassName: pan
-  repoURL: https://github.com/speakeasy-sdks/testpan-go.git
   usageSnippets:
     optionalPropertyRendering: withExample
   fixes:
     nameResolutionDec2023: false
-features:
-  go:
-    constsAndDefaults: 0.1.2
-    core: 3.2.2
-    downloadStreams: 0.1.1
-    globalSecurity: 2.82.3
-    globalServerURLs: 2.82.1
-    inputOutputModels: 2.83.0
 go:
   version: 0.8.0
   clientServerStatusCodesAsErrors: true
@@ -33,9 +18,6 @@ go:
       shared: pkg/models/shared
       webhooks: pkg/models/webhooks
   inputModelSuffix: input
-  installationURL: https://github.com/speakeasy-sdks/testpan-go
   maxMethodParams: 0
   outputModelSuffix: output
   packageName: github.com/speakeasy-sdks/testpan-go
-  published: true
-  repoSubDirectory: .

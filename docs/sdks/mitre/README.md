@@ -63,7 +63,7 @@ func main() {
 **[*operations.GetMitreDashboardResponse](../../pkg/models/operations/getmitredashboardresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetMitreReportDownload
 
@@ -112,7 +112,7 @@ func main() {
 **[*operations.GetMitreReportDownloadResponse](../../pkg/models/operations/getmitrereportdownloadresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetMitreReportStatus
 
@@ -161,7 +161,7 @@ func main() {
 **[*operations.GetMitreReportStatusResponse](../../pkg/models/operations/getmitrereportstatusresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetMitreTechnique
 
@@ -217,7 +217,7 @@ func main() {
 **[*operations.GetMitreTechniqueResponse](../../pkg/models/operations/getmitretechniqueresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostMitreReportGenerate
 
@@ -267,7 +267,7 @@ func main() {
 **[*operations.PostMitreReportGenerateResponse](../../pkg/models/operations/postmitrereportgenerateresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostMitreTechniqueFix
 
@@ -329,4 +329,4 @@ func main() {
 **[*operations.PostMitreTechniqueFixResponse](../../pkg/models/operations/postmitretechniquefixresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

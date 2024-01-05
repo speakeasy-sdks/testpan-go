@@ -59,7 +59,7 @@ func main() {
 **[*operations.GetAPISecurityAPICatalogIDHitCountGraphResponse](../../pkg/models/operations/getapisecurityapicatalogidhitcountgraphresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetPerformanceMetrics
 
@@ -88,11 +88,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Performance.GetPerformanceMetrics(ctx, operations.GetPerformanceMetricsRequest{
-        EndTime: types.MustTimeFromString("2023-06-20T17:24:08.589Z"),
+        EndTime: types.MustTimeFromString("2024-06-20T13:08:39.501Z"),
         Protocol: "string",
         SourceNamespace: "565fb8ea-d185-4971-9112-61059b89d3b7",
         SourcePodTemplate: "dcd1b894-b8a5-4ad8-a111-06ddd9453d84",
-        StartTime: types.MustTimeFromString("2022-01-22T20:26:53.423Z"),
+        StartTime: types.MustTimeFromString("2023-01-23T04:55:37.636Z"),
         TargetNamespace: "e92fa045-69a7-47dd-a601-68cf6d7999aa",
         TargetPodTemplate: "93b9be30-176b-4a06-8558-1cebc600c70d",
     })
@@ -119,4 +119,4 @@ func main() {
 **[*operations.GetPerformanceMetricsResponse](../../pkg/models/operations/getperformancemetricsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

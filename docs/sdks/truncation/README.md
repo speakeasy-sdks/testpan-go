@@ -59,7 +59,7 @@ func main() {
 **[*operations.GetTruncationImagesResponse](../../pkg/models/operations/gettruncationimagesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetTruncationWorkloads
 
@@ -108,7 +108,7 @@ func main() {
 **[*operations.GetTruncationWorkloadsResponse](../../pkg/models/operations/gettruncationworkloadsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostTruncationImages
 
@@ -161,7 +161,7 @@ func main() {
 **[*operations.PostTruncationImagesResponse](../../pkg/models/operations/posttruncationimagesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostTruncationWorkloads
 
@@ -214,4 +214,4 @@ func main() {
 **[*operations.PostTruncationWorkloadsResponse](../../pkg/models/operations/posttruncationworkloadsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

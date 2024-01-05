@@ -66,7 +66,7 @@ func main() {
 **[*operations.DeleteRegistriesRegistryIDResponse](../../pkg/models/operations/deleteregistriesregistryidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetRegistries
 
@@ -117,7 +117,7 @@ func main() {
 **[*operations.GetRegistriesResponse](../../pkg/models/operations/getregistriesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostRegistries
 
@@ -176,7 +176,7 @@ func main() {
 **[*operations.PostRegistriesResponse](../../pkg/models/operations/postregistriesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostRegistriesTestConnection
 
@@ -236,7 +236,7 @@ func main() {
 **[*operations.PostRegistriesTestConnectionResponse](../../pkg/models/operations/postregistriestestconnectionresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostRegistriesTestConnectionRegistryID
 
@@ -300,7 +300,7 @@ func main() {
 **[*operations.PostRegistriesTestConnectionRegistryIDResponse](../../pkg/models/operations/postregistriestestconnectionregistryidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PutRegistriesRegistryID
 
@@ -364,4 +364,4 @@ func main() {
 **[*operations.PutRegistriesRegistryIDResponse](../../pkg/models/operations/putregistriesregistryidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

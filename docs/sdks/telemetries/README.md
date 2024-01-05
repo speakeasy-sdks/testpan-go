@@ -48,7 +48,7 @@ func main() {
         AppType: []string{
             "string",
         },
-        EndTime: types.MustTimeFromString("2023-07-22T16:11:08.877Z"),
+        EndTime: types.MustTimeFromString("2024-07-22T12:37:40.720Z"),
         EnvironmentName: []string{
             "string",
         },
@@ -68,7 +68,7 @@ func main() {
             operations.GetAppTelemetriesQueryParamResultDetect,
         },
         SortKey: operations.GetAppTelemetriesQueryParamSortKeyFinishTime,
-        StartTime: types.MustTimeFromString("2022-08-17T10:31:03.718Z"),
+        StartTime: types.MustTimeFromString("2023-08-17T23:31:28.434Z"),
         Status: []string{
             "string",
         },
@@ -102,7 +102,7 @@ func main() {
 **[*operations.GetAppTelemetriesResponse](../../pkg/models/operations/getapptelemetriesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAppTelemetriesAppTelemetryID
 
@@ -155,7 +155,7 @@ func main() {
 **[*operations.GetAppTelemetriesAppTelemetryIDResponse](../../pkg/models/operations/getapptelemetriesapptelemetryidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAppTelemetriesAppTelemetryIDAPIRiskInfo
 
@@ -208,7 +208,7 @@ func main() {
 **[*operations.GetAppTelemetriesAppTelemetryIDAPIRiskInfoResponse](../../pkg/models/operations/getapptelemetriesapptelemetryidapiriskinforesponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAppTelemetriesAppTelemetryIDImagePackages
 
@@ -261,7 +261,7 @@ func main() {
 **[*operations.GetAppTelemetriesAppTelemetryIDImagePackagesResponse](../../pkg/models/operations/getapptelemetriesapptelemetryidimagepackagesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAppTelemetriesAppTelemetryIDInjectionInfo
 
@@ -314,7 +314,7 @@ func main() {
 **[*operations.GetAppTelemetriesAppTelemetryIDInjectionInfoResponse](../../pkg/models/operations/getapptelemetriesapptelemetryidinjectioninforesponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetConnectionTelemetries
 
@@ -343,7 +343,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Telemetries.GetConnectionTelemetries(ctx, operations.GetConnectionTelemetriesRequest{
-        EndTime: types.MustTimeFromString("2023-12-02T06:47:12.551Z"),
+        EndTime: types.MustTimeFromString("2024-12-02T06:08:07.741Z"),
         Result: []operations.GetConnectionTelemetriesQueryParamResult{
             operations.GetConnectionTelemetriesQueryParamResultAllow,
         },
@@ -363,7 +363,7 @@ func main() {
         SourceRisk: []operations.SourceRisk{
             operations.SourceRiskLow,
         },
-        StartTime: types.MustTimeFromString("2021-04-04T11:53:10.030Z"),
+        StartTime: types.MustTimeFromString("2022-04-04T13:56:07.190Z"),
         TargetAppName: []string{
             "string",
         },
@@ -403,7 +403,7 @@ func main() {
 **[*operations.GetConnectionTelemetriesResponse](../../pkg/models/operations/getconnectiontelemetriesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetConnectionTelemetriesConnectionTelemetryID
 
@@ -433,8 +433,8 @@ func main() {
     ctx := context.Background()
     res, err := s.Telemetries.GetConnectionTelemetriesConnectionTelemetryID(ctx, operations.GetConnectionTelemetriesConnectionTelemetryIDRequest{
         ConnectionTelemetryID: "726acf07-d01e-4a6d-9948-64b67b807f65",
-        EndTime: types.MustTimeFromString("2021-06-17T09:20:57.797Z"),
-        StartTime: types.MustTimeFromString("2023-04-26T13:53:39.546Z"),
+        EndTime: types.MustTimeFromString("2022-06-17T13:01:05.521Z"),
+        StartTime: types.MustTimeFromString("2024-04-26T08:25:39.198Z"),
     })
     if err != nil {
         log.Fatal(err)
@@ -459,4 +459,4 @@ func main() {
 **[*operations.GetConnectionTelemetriesConnectionTelemetryIDResponse](../../pkg/models/operations/getconnectiontelemetriesconnectiontelemetryidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

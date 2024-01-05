@@ -68,7 +68,7 @@ func main() {
 **[*operations.DeleteCdPolicyPolicyIDResponse](../../pkg/models/operations/deletecdpolicypolicyidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## DeleteCiPolicyPolicyID
 
@@ -122,7 +122,7 @@ func main() {
 **[*operations.DeleteCiPolicyPolicyIDResponse](../../pkg/models/operations/deletecipolicypolicyidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetCdPolicy
 
@@ -171,7 +171,7 @@ func main() {
 **[*operations.GetCdPolicyResponse](../../pkg/models/operations/getcdpolicyresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetCiPolicy
 
@@ -220,7 +220,7 @@ func main() {
 **[*operations.GetCiPolicyResponse](../../pkg/models/operations/getcipolicyresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostCdPolicy
 
@@ -291,7 +291,7 @@ func main() {
 **[*operations.PostCdPolicyResponse](../../pkg/models/operations/postcdpolicyresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostCiPolicy
 
@@ -351,7 +351,7 @@ func main() {
 **[*operations.PostCiPolicyResponse](../../pkg/models/operations/postcipolicyresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PutCdPolicyPolicyID
 
@@ -426,7 +426,7 @@ func main() {
 **[*operations.PutCdPolicyPolicyIDResponse](../../pkg/models/operations/putcdpolicypolicyidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PutCiPolicyPolicyID
 
@@ -490,4 +490,4 @@ func main() {
 **[*operations.PutCiPolicyPolicyIDResponse](../../pkg/models/operations/putcipolicypolicyidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

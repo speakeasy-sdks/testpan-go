@@ -65,7 +65,7 @@ func main() {
 **[*operations.DeleteExpansionsExpansionIDResponse](../../pkg/models/operations/deleteexpansionsexpansionidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetExpansions
 
@@ -118,7 +118,7 @@ func main() {
 **[*operations.GetExpansionsResponse](../../pkg/models/operations/getexpansionsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetExpansionsExpansionIDInstallExpansionTarGz
 
@@ -171,7 +171,7 @@ func main() {
 **[*operations.GetExpansionsExpansionIDInstallExpansionTarGzResponse](../../pkg/models/operations/getexpansionsexpansionidinstallexpansiontargzresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostExpansions
 
@@ -236,7 +236,7 @@ func main() {
 **[*operations.PostExpansionsResponse](../../pkg/models/operations/postexpansionsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PutExpansionsExpansionID
 
@@ -303,4 +303,4 @@ func main() {
 **[*operations.PutExpansionsExpansionIDResponse](../../pkg/models/operations/putexpansionsexpansionidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

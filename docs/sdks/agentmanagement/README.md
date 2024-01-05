@@ -73,7 +73,7 @@ func main() {
 **[*operations.GetAgentsResponse](../../pkg/models/operations/getagentsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostAgentsAgentIDUpdate
 
@@ -128,7 +128,7 @@ func main() {
 | Error Object          | Status Code           | Content Type          |
 | --------------------- | --------------------- | --------------------- |
 | sdkerrors.APIResponse | 402                   | application/json      |
-| sdkerrors.SDKError    | 400-600               | */*                   |
+| sdkerrors.SDKError    | 4xx-5xx               | */*                   |
 
 ## PostAgentsAgentIDUpdateState
 
@@ -184,4 +184,4 @@ func main() {
 | Error Object          | Status Code           | Content Type          |
 | --------------------- | --------------------- | --------------------- |
 | sdkerrors.APIResponse | 402                   | application/json      |
-| sdkerrors.SDKError    | 400-600               | */*                   |
+| sdkerrors.SDKError    | 4xx-5xx               | */*                   |

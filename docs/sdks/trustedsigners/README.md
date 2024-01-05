@@ -65,7 +65,7 @@ func main() {
 **[*operations.DeleteTrustedSignersTrustedSignerIDResponse](../../pkg/models/operations/deletetrustedsignerstrustedsigneridresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetTrustedSigners
 
@@ -116,7 +116,7 @@ func main() {
 **[*operations.GetTrustedSignersResponse](../../pkg/models/operations/gettrustedsignersresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetTrustedSignersTrustedSignerID
 
@@ -169,7 +169,7 @@ func main() {
 **[*operations.GetTrustedSignersTrustedSignerIDResponse](../../pkg/models/operations/gettrustedsignerstrustedsigneridresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostTrustedSigners
 
@@ -233,7 +233,7 @@ func main() {
 **[*operations.PostTrustedSignersResponse](../../pkg/models/operations/posttrustedsignersresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PutTrustedSignersTrustedSignerID
 
@@ -302,4 +302,4 @@ func main() {
 **[*operations.PutTrustedSignersTrustedSignerIDResponse](../../pkg/models/operations/puttrustedsignerstrustedsigneridresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

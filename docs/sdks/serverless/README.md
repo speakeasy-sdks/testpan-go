@@ -76,7 +76,7 @@ func main() {
 **[*operations.DeleteCloudAccountsCloudAccountIDResponse](../../pkg/models/operations/deletecloudaccountscloudaccountidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetCloudAccounts
 
@@ -129,7 +129,7 @@ func main() {
 **[*operations.GetCloudAccountsResponse](../../pkg/models/operations/getcloudaccountsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetCloudAccountsAzureInstallationDetails
 
@@ -178,7 +178,7 @@ func main() {
 **[*operations.GetCloudAccountsAzureInstallationDetailsResponse](../../pkg/models/operations/getcloudaccountsazureinstallationdetailsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetCloudAccountsInstallationDetails
 
@@ -227,7 +227,7 @@ func main() {
 **[*operations.GetCloudAccountsInstallationDetailsResponse](../../pkg/models/operations/getcloudaccountsinstallationdetailsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetCloudAccountsRegionsAWS
 
@@ -276,7 +276,7 @@ func main() {
 **[*operations.GetCloudAccountsRegionsAWSResponse](../../pkg/models/operations/getcloudaccountsregionsawsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetCloudAccountsRegionsAzure
 
@@ -325,7 +325,7 @@ func main() {
 **[*operations.GetCloudAccountsRegionsAzureResponse](../../pkg/models/operations/getcloudaccountsregionsazureresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetCloudAccountsCloudAccountIDDeleteDependencies
 
@@ -378,7 +378,7 @@ func main() {
 **[*operations.GetCloudAccountsCloudAccountIDDeleteDependenciesResponse](../../pkg/models/operations/getcloudaccountscloudaccountiddeletedependenciesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetCloudAccountsCloudAccountIDDownloadBundle
 
@@ -431,7 +431,7 @@ func main() {
 **[*operations.GetCloudAccountsCloudAccountIDDownloadBundleResponse](../../pkg/models/operations/getcloudaccountscloudaccountiddownloadbundleresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetServerlessFunctions
 
@@ -501,7 +501,7 @@ func main() {
 **[*operations.GetServerlessFunctionsResponse](../../pkg/models/operations/getserverlessfunctionsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetServerlessFunctionsArns
 
@@ -556,7 +556,7 @@ func main() {
 **[*operations.GetServerlessFunctionsArnsResponse](../../pkg/models/operations/getserverlessfunctionsarnsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetServerlessFunctionsNames
 
@@ -611,7 +611,7 @@ func main() {
 **[*operations.GetServerlessFunctionsNamesResponse](../../pkg/models/operations/getserverlessfunctionsnamesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetServerlessFunctionsFunctionID
 
@@ -664,7 +664,7 @@ func main() {
 **[*operations.GetServerlessFunctionsFunctionIDResponse](../../pkg/models/operations/getserverlessfunctionsfunctionidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetServerlessFunctionsFunctionIDSecrets
 
@@ -717,7 +717,7 @@ func main() {
 **[*operations.GetServerlessFunctionsFunctionIDSecretsResponse](../../pkg/models/operations/getserverlessfunctionsfunctionidsecretsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetServerlessFunctionsFunctionIDVulnerabilities
 
@@ -770,7 +770,7 @@ func main() {
 **[*operations.GetServerlessFunctionsFunctionIDVulnerabilitiesResponse](../../pkg/models/operations/getserverlessfunctionsfunctionidvulnerabilitiesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetServerlessZipFiles
 
@@ -821,7 +821,7 @@ func main() {
 **[*operations.GetServerlessZipFilesResponse](../../pkg/models/operations/getserverlesszipfilesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetServerlessZipFilesZipID
 
@@ -874,7 +874,7 @@ func main() {
 **[*operations.GetServerlessZipFilesZipIDResponse](../../pkg/models/operations/getserverlesszipfileszipidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetServerlessZipFilesZipIDPackages
 
@@ -927,7 +927,7 @@ func main() {
 **[*operations.GetServerlessZipFilesZipIDPackagesResponse](../../pkg/models/operations/getserverlesszipfileszipidpackagesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetServerlessZipFilesZipIDVulnerabilities
 
@@ -980,7 +980,7 @@ func main() {
 **[*operations.GetServerlessZipFilesZipIDVulnerabilitiesResponse](../../pkg/models/operations/getserverlesszipfileszipidvulnerabilitiesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostCloudAccountsScan
 
@@ -1035,7 +1035,7 @@ func main() {
 **[*operations.PostCloudAccountsScanResponse](../../pkg/models/operations/postcloudaccountsscanresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PutCloudAccountsCloudAccountID
 
@@ -1098,4 +1098,4 @@ func main() {
 **[*operations.PutCloudAccountsCloudAccountIDResponse](../../pkg/models/operations/putcloudaccountscloudaccountidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

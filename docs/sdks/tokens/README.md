@@ -62,7 +62,7 @@ func main() {
 **[*operations.DeleteTokensTokenIDResponse](../../pkg/models/operations/deletetokenstokenidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetTokens
 
@@ -113,7 +113,7 @@ func main() {
 **[*operations.GetTokensResponse](../../pkg/models/operations/gettokensresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetTokensInfo
 
@@ -168,7 +168,7 @@ func main() {
 **[*operations.GetTokensInfoResponse](../../pkg/models/operations/gettokensinforesponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetTokensTokenIDDeleteDependencies
 
@@ -221,7 +221,7 @@ func main() {
 **[*operations.GetTokensTokenIDDeleteDependenciesResponse](../../pkg/models/operations/gettokenstokeniddeletedependenciesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostTokens
 
@@ -277,7 +277,7 @@ func main() {
 **[*operations.PostTokensResponse](../../pkg/models/operations/posttokensresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PutTokensTokenID
 
@@ -337,4 +337,4 @@ func main() {
 **[*operations.PutTokensTokenIDResponse](../../pkg/models/operations/puttokenstokenidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

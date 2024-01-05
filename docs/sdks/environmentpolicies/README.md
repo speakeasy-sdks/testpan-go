@@ -61,7 +61,7 @@ func main() {
 **[*operations.GetAppsPolicyResponse](../../pkg/models/operations/getappspolicyresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAppsPolicyHistory
 
@@ -110,7 +110,7 @@ func main() {
 **[*operations.GetAppsPolicyHistoryResponse](../../pkg/models/operations/getappspolicyhistoryresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAppsPolicySearchOptions
 
@@ -161,7 +161,7 @@ func main() {
 **[*operations.GetAppsPolicySearchOptionsResponse](../../pkg/models/operations/getappspolicysearchoptionsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PutAppsPolicy
 
@@ -230,4 +230,4 @@ func main() {
 **[*operations.PutAppsPolicyResponse](../../pkg/models/operations/putappspolicyresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

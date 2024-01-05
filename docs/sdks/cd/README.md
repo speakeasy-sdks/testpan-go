@@ -70,7 +70,7 @@ func main() {
 **[*operations.DeleteCdRuleIDConnectionsRuleResponse](../../pkg/models/operations/deletecdruleidconnectionsruleresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## DeleteCdRuleIDServerlessRule
 
@@ -124,7 +124,7 @@ func main() {
 **[*operations.DeleteCdRuleIDServerlessRuleResponse](../../pkg/models/operations/deletecdruleidserverlessruleresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetCd
 
@@ -153,8 +153,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Cd.GetCd(ctx, operations.GetCdRequest{
-        EndTime: types.MustTimeFromString("2022-11-13T13:45:57.433Z"),
-        StartTime: types.MustTimeFromString("2023-12-05T23:39:45.476Z"),
+        EndTime: types.MustTimeFromString("2023-11-14T04:42:16.390Z"),
+        StartTime: types.MustTimeFromString("2024-12-05T23:05:32.860Z"),
     })
     if err != nil {
         log.Fatal(err)
@@ -179,7 +179,7 @@ func main() {
 **[*operations.GetCdResponse](../../pkg/models/operations/getcdresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetCdResourceID
 
@@ -232,7 +232,7 @@ func main() {
 **[*operations.GetCdResourceIDResponse](../../pkg/models/operations/getcdresourceidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetCdRuleIDConnectionsRule
 
@@ -285,7 +285,7 @@ func main() {
 **[*operations.GetCdRuleIDConnectionsRuleResponse](../../pkg/models/operations/getcdruleidconnectionsruleresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetCdRuleIDServerlessRule
 
@@ -338,7 +338,7 @@ func main() {
 **[*operations.GetCdRuleIDServerlessRuleResponse](../../pkg/models/operations/getcdruleidserverlessruleresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostCdConnectionsRule
 
@@ -395,7 +395,7 @@ func main() {
 **[*operations.PostCdConnectionsRuleResponse](../../pkg/models/operations/postcdconnectionsruleresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostCdServerlessRule
 
@@ -461,7 +461,7 @@ func main() {
 **[*operations.PostCdServerlessRuleResponse](../../pkg/models/operations/postcdserverlessruleresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PutCdRuleIDConnectionsRule
 
@@ -522,7 +522,7 @@ func main() {
 **[*operations.PutCdRuleIDConnectionsRuleResponse](../../pkg/models/operations/putcdruleidconnectionsruleresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PutCdRuleIDServerlessRule
 
@@ -592,4 +592,4 @@ func main() {
 **[*operations.PutCdRuleIDServerlessRuleResponse](../../pkg/models/operations/putcdruleidserverlessruleresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

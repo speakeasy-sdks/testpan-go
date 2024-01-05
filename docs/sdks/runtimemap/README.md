@@ -64,7 +64,7 @@ func main() {
 **[*operations.DeleteNetworkMapQueueRequestIDResponse](../../pkg/models/operations/deletenetworkmapqueuerequestidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetNetworkMap
 
@@ -96,7 +96,7 @@ func main() {
         Apps: []string{
             "string",
         },
-        EndTime: types.MustTimeFromString("2023-01-07T14:07:43.013Z"),
+        EndTime: types.MustTimeFromString("2024-01-08T06:16:22.888Z"),
         Environments: []string{
             "string",
         },
@@ -109,7 +109,7 @@ func main() {
         Namespaces: []string{
             "fe7ca0fe-d770-4727-a0bc-8a727a6cf780",
         },
-        StartTime: types.MustTimeFromString("2022-08-24T13:40:09.607Z"),
+        StartTime: types.MustTimeFromString("2023-08-25T02:49:57.013Z"),
     })
     if err != nil {
         log.Fatal(err)
@@ -134,7 +134,7 @@ func main() {
 **[*operations.GetNetworkMapResponse](../../pkg/models/operations/getnetworkmapresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetNetworkMapQueueRequestID
 
@@ -187,7 +187,7 @@ func main() {
 **[*operations.GetNetworkMapQueueRequestIDResponse](../../pkg/models/operations/getnetworkmapqueuerequestidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetNetworkMapResultsRequestID
 
@@ -240,4 +240,4 @@ func main() {
 **[*operations.GetNetworkMapResultsRequestIDResponse](../../pkg/models/operations/getnetworkmapresultsrequestidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

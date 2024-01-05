@@ -66,7 +66,7 @@ func main() {
 **[*operations.DeleteDeployersDeployerIDResponse](../../pkg/models/operations/deletedeployersdeployeridresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetDeployers
 
@@ -119,7 +119,7 @@ func main() {
 **[*operations.GetDeployersResponse](../../pkg/models/operations/getdeployersresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetDeployersServiceAccounts
 
@@ -172,7 +172,7 @@ func main() {
 **[*operations.GetDeployersServiceAccountsResponse](../../pkg/models/operations/getdeployersserviceaccountsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetDeployersDeployerIDDeleteDependencies
 
@@ -225,7 +225,7 @@ func main() {
 **[*operations.GetDeployersDeployerIDDeleteDependenciesResponse](../../pkg/models/operations/getdeployersdeployeriddeletedependenciesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostDeployers
 
@@ -278,7 +278,7 @@ func main() {
 **[*operations.PostDeployersResponse](../../pkg/models/operations/postdeployersresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PutDeployersDeployerID
 
@@ -335,4 +335,4 @@ func main() {
 **[*operations.PutDeployersDeployerIDResponse](../../pkg/models/operations/putdeployersdeployeridresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

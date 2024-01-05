@@ -66,7 +66,7 @@ func main() {
 **[*operations.DeleteEnvironmentsEnvIDResponse](../../pkg/models/operations/deleteenvironmentsenvidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetEnvironments
 
@@ -117,7 +117,7 @@ func main() {
 **[*operations.GetEnvironmentsResponse](../../pkg/models/operations/getenvironmentsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetEnvironmentsEnvID
 
@@ -170,7 +170,7 @@ func main() {
 **[*operations.GetEnvironmentsEnvIDResponse](../../pkg/models/operations/getenvironmentsenvidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetEnvironmentsEnvIDDeleteDependencies
 
@@ -223,7 +223,7 @@ func main() {
 **[*operations.GetEnvironmentsEnvIDDeleteDependenciesResponse](../../pkg/models/operations/getenvironmentsenviddeletedependenciesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostEnvironments
 
@@ -305,7 +305,7 @@ func main() {
 **[*operations.PostEnvironmentsResponse](../../pkg/models/operations/postenvironmentsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostEnvironmentsBatch
 
@@ -389,7 +389,7 @@ func main() {
 **[*operations.PostEnvironmentsBatchResponse](../../pkg/models/operations/postenvironmentsbatchresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostEnvironmentsDelete
 
@@ -440,7 +440,7 @@ func main() {
 **[*operations.PostEnvironmentsDeleteResponse](../../pkg/models/operations/postenvironmentsdeleteresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PutEnvironmentsEnvID
 
@@ -526,4 +526,4 @@ func main() {
 **[*operations.PutEnvironmentsEnvIDResponse](../../pkg/models/operations/putenvironmentsenvidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

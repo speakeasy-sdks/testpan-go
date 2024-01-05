@@ -53,7 +53,7 @@ func main() {
 **[*operations.GetServerlessPolicyResponse](../../pkg/models/operations/getserverlesspolicyresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PutServerlessPolicy
 
@@ -127,4 +127,4 @@ func main() {
 **[*operations.PutServerlessPolicyResponse](../../pkg/models/operations/putserverlesspolicyresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

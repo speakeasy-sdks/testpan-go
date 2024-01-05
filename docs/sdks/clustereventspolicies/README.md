@@ -61,7 +61,7 @@ func main() {
 **[*operations.GetKubernetesAPIPolicyResponse](../../pkg/models/operations/getkubernetesapipolicyresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetKubernetesAPIPolicyHistory
 
@@ -110,7 +110,7 @@ func main() {
 **[*operations.GetKubernetesAPIPolicyHistoryResponse](../../pkg/models/operations/getkubernetesapipolicyhistoryresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetKubernetesAPIPolicyKubernetesResources
 
@@ -159,7 +159,7 @@ func main() {
 **[*operations.GetKubernetesAPIPolicyKubernetesResourcesResponse](../../pkg/models/operations/getkubernetesapipolicykubernetesresourcesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetKubernetesAPIPolicyKubernetesUsers
 
@@ -208,7 +208,7 @@ func main() {
 **[*operations.GetKubernetesAPIPolicyKubernetesUsersResponse](../../pkg/models/operations/getkubernetesapipolicykubernetesusersresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetKubernetesAPIPolicyRecommendedRules
 
@@ -257,7 +257,7 @@ func main() {
 **[*operations.GetKubernetesAPIPolicyRecommendedRulesResponse](../../pkg/models/operations/getkubernetesapipolicyrecommendedrulesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PutKubernetesAPIPolicy
 
@@ -314,4 +314,4 @@ func main() {
 **[*operations.PutKubernetesAPIPolicyResponse](../../pkg/models/operations/putkubernetesapipolicyresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

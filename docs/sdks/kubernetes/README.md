@@ -79,7 +79,7 @@ func main() {
 **[*operations.DeleteKubernetesClustersKubernetesClusterIDResponse](../../pkg/models/operations/deletekubernetesclusterskubernetesclusteridresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## DeletePodDefinitionsPodID
 
@@ -133,7 +133,7 @@ func main() {
 **[*operations.DeletePodDefinitionsPodIDResponse](../../pkg/models/operations/deletepoddefinitionspodidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetGetControllerDataClusterID
 
@@ -186,7 +186,7 @@ func main() {
 **[*operations.GetGetControllerDataClusterIDResponse](../../pkg/models/operations/getgetcontrollerdataclusteridresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetIstioSupportedVersions
 
@@ -235,7 +235,7 @@ func main() {
 **[*operations.GetIstioSupportedVersionsResponse](../../pkg/models/operations/getistiosupportedversionsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetKubernetesClusters
 
@@ -286,7 +286,7 @@ func main() {
 **[*operations.GetKubernetesClustersResponse](../../pkg/models/operations/getkubernetesclustersresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetKubernetesClustersKubernetesClusterID
 
@@ -339,7 +339,7 @@ func main() {
 **[*operations.GetKubernetesClustersKubernetesClusterIDResponse](../../pkg/models/operations/getkubernetesclusterskubernetesclusteridresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetKubernetesClustersKubernetesClusterIDDeleteDependencies
 
@@ -392,7 +392,7 @@ func main() {
 **[*operations.GetKubernetesClustersKubernetesClusterIDDeleteDependenciesResponse](../../pkg/models/operations/getkubernetesclusterskubernetesclusteriddeletedependenciesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetKubernetesClustersKubernetesClusterIDDownloadBundle
 
@@ -445,7 +445,7 @@ func main() {
 **[*operations.GetKubernetesClustersKubernetesClusterIDDownloadBundleResponse](../../pkg/models/operations/getkubernetesclusterskubernetesclusteriddownloadbundleresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetKubernetesClustersKubernetesClusterIDGetHelmCommands
 
@@ -498,7 +498,7 @@ func main() {
 **[*operations.GetKubernetesClustersKubernetesClusterIDGetHelmCommandsResponse](../../pkg/models/operations/getkubernetesclusterskubernetesclusteridgethelmcommandsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetKubernetesClustersKubernetesClusterIDNamespaces
 
@@ -551,7 +551,7 @@ func main() {
 **[*operations.GetKubernetesClustersKubernetesClusterIDNamespacesResponse](../../pkg/models/operations/getkubernetesclusterskubernetesclusteridnamespacesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetKubernetesClustersKubernetesClusterIDServices
 
@@ -604,7 +604,7 @@ func main() {
 **[*operations.GetKubernetesClustersKubernetesClusterIDServicesResponse](../../pkg/models/operations/getkubernetesclusterskubernetesclusteridservicesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetLeanKubernetesClusters
 
@@ -655,7 +655,7 @@ func main() {
 **[*operations.GetLeanKubernetesClustersResponse](../../pkg/models/operations/getleankubernetesclustersresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetNamespaces
 
@@ -706,7 +706,7 @@ func main() {
 **[*operations.GetNamespacesResponse](../../pkg/models/operations/getnamespacesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetPodDefinitions
 
@@ -764,7 +764,7 @@ func main() {
 **[*operations.GetPodDefinitionsResponse](../../pkg/models/operations/getpoddefinitionsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostKubernetesClusters
 
@@ -833,7 +833,7 @@ func main() {
 **[*operations.PostKubernetesClustersResponse](../../pkg/models/operations/postkubernetesclustersresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostPodDefinitions
 
@@ -902,7 +902,7 @@ func main() {
 **[*operations.PostPodDefinitionsResponse](../../pkg/models/operations/postpoddefinitionsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PutKubernetesClustersKubernetesClusterID
 
@@ -975,7 +975,7 @@ func main() {
 **[*operations.PutKubernetesClustersKubernetesClusterIDResponse](../../pkg/models/operations/putkubernetesclusterskubernetesclusteridresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PutKubernetesClustersKubernetesClusterIDManagedByHelm
 
@@ -1029,7 +1029,7 @@ func main() {
 **[*operations.PutKubernetesClustersKubernetesClusterIDManagedByHelmResponse](../../pkg/models/operations/putkubernetesclusterskubernetesclusteridmanagedbyhelmresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PutPodDefinitionsPodID
 
@@ -1102,4 +1102,4 @@ func main() {
 **[*operations.PutPodDefinitionsPodIDResponse](../../pkg/models/operations/putpoddefinitionspodidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

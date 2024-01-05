@@ -42,8 +42,8 @@ func main() {
         Actions: []string{
             "string",
         },
-        EndTime: types.MustTimeFromString("2022-10-20T03:40:31.022Z"),
-        StartTime: types.MustTimeFromString("2023-03-19T00:25:31.296Z"),
+        EndTime: types.MustTimeFromString("2023-10-20T18:04:43.105Z"),
+        StartTime: types.MustTimeFromString("2024-03-18T18:06:48.311Z"),
     })
     if err != nil {
         log.Fatal(err)
@@ -68,7 +68,7 @@ func main() {
 **[*operations.GetAuditLogsResponse](../../pkg/models/operations/getauditlogsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAuditLogsActions
 
@@ -117,7 +117,7 @@ func main() {
 **[*operations.GetAuditLogsActionsResponse](../../pkg/models/operations/getauditlogsactionsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAuditLogsKubernetes
 
@@ -146,14 +146,14 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AuditLogs.GetAuditLogsKubernetes(ctx, operations.GetAuditLogsKubernetesRequest{
-        EndTime: types.MustTimeFromString("2023-03-24T20:20:48.235Z"),
+        EndTime: types.MustTimeFromString("2024-03-24T14:09:45.265Z"),
         KubernetesAuditAction: []string{
             "string",
         },
         Result: []operations.Result{
             operations.ResultRisky,
         },
-        StartTime: types.MustTimeFromString("2021-10-10T01:17:52.269Z"),
+        StartTime: types.MustTimeFromString("2022-10-10T07:28:47.494Z"),
     })
     if err != nil {
         log.Fatal(err)
@@ -178,7 +178,7 @@ func main() {
 **[*operations.GetAuditLogsKubernetesResponse](../../pkg/models/operations/getauditlogskubernetesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAuditLogsKubernetesActions
 
@@ -227,4 +227,4 @@ func main() {
 **[*operations.GetAuditLogsKubernetesActionsResponse](../../pkg/models/operations/getauditlogskubernetesactionsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

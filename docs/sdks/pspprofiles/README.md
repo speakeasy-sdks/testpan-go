@@ -69,7 +69,7 @@ func main() {
 **[*operations.DeletePodSecurityPolicyProfilesProfileIDResponse](../../pkg/models/operations/deletepodsecuritypolicyprofilesprofileidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## DeleteSeccompProfilesProfileID
 
@@ -123,7 +123,7 @@ func main() {
 **[*operations.DeleteSeccompProfilesProfileIDResponse](../../pkg/models/operations/deleteseccompprofilesprofileidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetPodSecurityPolicyProfiles
 
@@ -172,7 +172,7 @@ func main() {
 **[*operations.GetPodSecurityPolicyProfilesResponse](../../pkg/models/operations/getpodsecuritypolicyprofilesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetSeccompProfiles
 
@@ -221,7 +221,7 @@ func main() {
 **[*operations.GetSeccompProfilesResponse](../../pkg/models/operations/getseccompprofilesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostPodSecurityPolicyProfiles
 
@@ -317,7 +317,7 @@ func main() {
 **[*operations.PostPodSecurityPolicyProfilesResponse](../../pkg/models/operations/postpodsecuritypolicyprofilesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostPodSecurityPolicyProfilesBatch
 
@@ -416,7 +416,7 @@ func main() {
 **[*operations.PostPodSecurityPolicyProfilesBatchResponse](../../pkg/models/operations/postpodsecuritypolicyprofilesbatchresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostSeccompProfiles
 
@@ -470,7 +470,7 @@ func main() {
 **[*operations.PostSeccompProfilesResponse](../../pkg/models/operations/postseccompprofilesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PutPodSecurityPolicyProfilesProfileID
 
@@ -570,7 +570,7 @@ func main() {
 **[*operations.PutPodSecurityPolicyProfilesProfileIDResponse](../../pkg/models/operations/putpodsecuritypolicyprofilesprofileidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PutSeccompProfilesProfileID
 
@@ -628,4 +628,4 @@ func main() {
 **[*operations.PutSeccompProfilesProfileIDResponse](../../pkg/models/operations/putseccompprofilesprofileidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

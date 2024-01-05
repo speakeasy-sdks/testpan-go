@@ -80,7 +80,7 @@ func main() {
 **[*operations.GetDashboardApisecRiskFindingsResponse](../../pkg/models/operations/getdashboardapisecriskfindingsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetDashboardApisecRiskFindingsTrend
 
@@ -133,7 +133,7 @@ func main() {
 **[*operations.GetDashboardApisecRiskFindingsTrendResponse](../../pkg/models/operations/getdashboardapisecriskfindingstrendresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetDashboardApisecSpecsAndOperationsDiffs
 
@@ -186,7 +186,7 @@ func main() {
 **[*operations.GetDashboardApisecSpecsAndOperationsDiffsResponse](../../pkg/models/operations/getdashboardapisecspecsandoperationsdiffsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetDashboardApisecTopRiskyApis
 
@@ -239,7 +239,7 @@ func main() {
 **[*operations.GetDashboardApisecTopRiskyApisResponse](../../pkg/models/operations/getdashboardapisectopriskyapisresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetDashboardApisecTopRiskyFindings
 
@@ -292,7 +292,7 @@ func main() {
 **[*operations.GetDashboardApisecTopRiskyFindingsResponse](../../pkg/models/operations/getdashboardapisectopriskyfindingsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetDashboardClusters
 
@@ -341,7 +341,7 @@ func main() {
 **[*operations.GetDashboardClustersResponse](../../pkg/models/operations/getdashboardclustersresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetDashboardConnectionTelemetries
 
@@ -390,7 +390,7 @@ func main() {
 **[*operations.GetDashboardConnectionTelemetriesResponse](../../pkg/models/operations/getdashboardconnectiontelemetriesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetDashboardKubernetesAuditLogs
 
@@ -439,7 +439,7 @@ func main() {
 **[*operations.GetDashboardKubernetesAuditLogsResponse](../../pkg/models/operations/getdashboardkubernetesauditlogsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetDashboardOperationalBar
 
@@ -494,7 +494,7 @@ func main() {
 **[*operations.GetDashboardOperationalBarResponse](../../pkg/models/operations/getdashboardoperationalbarresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetDashboardPermissions
 
@@ -549,7 +549,7 @@ func main() {
 **[*operations.GetDashboardPermissionsResponse](../../pkg/models/operations/getdashboardpermissionsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetDashboardPodTelemetries
 
@@ -598,7 +598,7 @@ func main() {
 **[*operations.GetDashboardPodTelemetriesResponse](../../pkg/models/operations/getdashboardpodtelemetriesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetDashboardReportDownload
 
@@ -647,7 +647,7 @@ func main() {
 **[*operations.GetDashboardReportDownloadResponse](../../pkg/models/operations/getdashboardreportdownloadresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetDashboardReportStatus
 
@@ -696,7 +696,7 @@ func main() {
 **[*operations.GetDashboardReportStatusResponse](../../pkg/models/operations/getdashboardreportstatusresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetDashboardSecurityContext
 
@@ -751,7 +751,7 @@ func main() {
 **[*operations.GetDashboardSecurityContextResponse](../../pkg/models/operations/getdashboardsecuritycontextresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetDashboardTopSecurityRisks
 
@@ -806,7 +806,7 @@ func main() {
 **[*operations.GetDashboardTopSecurityRisksResponse](../../pkg/models/operations/getdashboardtopsecurityrisksresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetDashboardVulnerabilities
 
@@ -861,7 +861,7 @@ func main() {
 **[*operations.GetDashboardVulnerabilitiesResponse](../../pkg/models/operations/getdashboardvulnerabilitiesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetDashboardKubernetesClusterIDConnectionTelemetries
 
@@ -914,7 +914,7 @@ func main() {
 **[*operations.GetDashboardKubernetesClusterIDConnectionTelemetriesResponse](../../pkg/models/operations/getdashboardkubernetesclusteridconnectiontelemetriesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetDashboardKubernetesClusterIDKubernetesAuditLogs
 
@@ -967,7 +967,7 @@ func main() {
 **[*operations.GetDashboardKubernetesClusterIDKubernetesAuditLogsResponse](../../pkg/models/operations/getdashboardkubernetesclusteridkubernetesauditlogsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetDashboardKubernetesClusterIDPodTelemetries
 
@@ -1020,7 +1020,7 @@ func main() {
 **[*operations.GetDashboardKubernetesClusterIDPodTelemetriesResponse](../../pkg/models/operations/getdashboardkubernetesclusteridpodtelemetriesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetLicensingDashboard
 
@@ -1069,7 +1069,7 @@ func main() {
 **[*operations.GetLicensingDashboardResponse](../../pkg/models/operations/getlicensingdashboardresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostDashboardReportGenerate
 
@@ -1119,4 +1119,4 @@ func main() {
 **[*operations.PostDashboardReportGenerateResponse](../../pkg/models/operations/postdashboardreportgenerateresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

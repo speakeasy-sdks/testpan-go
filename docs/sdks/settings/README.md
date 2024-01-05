@@ -79,7 +79,7 @@ func main() {
 **[*operations.DeleteSettingsIntegrationsCaIDResponse](../../pkg/models/operations/deletesettingsintegrationscaidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## DeleteSettingsIntegrationsEventForwardingEventForwardingID
 
@@ -133,7 +133,7 @@ func main() {
 **[*operations.DeleteSettingsIntegrationsEventForwardingEventForwardingIDResponse](../../pkg/models/operations/deletesettingsintegrationseventforwardingeventforwardingidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetSettingsAgentsUpdate
 
@@ -182,7 +182,7 @@ func main() {
 **[*operations.GetSettingsAgentsUpdateResponse](../../pkg/models/operations/getsettingsagentsupdateresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetSettingsIntegrationsCa
 
@@ -231,7 +231,7 @@ func main() {
 **[*operations.GetSettingsIntegrationsCaResponse](../../pkg/models/operations/getsettingsintegrationscaresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetSettingsIntegrationsEventForwarding
 
@@ -280,7 +280,7 @@ func main() {
 **[*operations.GetSettingsIntegrationsEventForwardingResponse](../../pkg/models/operations/getsettingsintegrationseventforwardingresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostSeccompProfilesValidateData
 
@@ -331,7 +331,7 @@ func main() {
 **[*operations.PostSeccompProfilesValidateDataResponse](../../pkg/models/operations/postseccompprofilesvalidatedataresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostSettingsAgentsUpdateUpdateNow
 
@@ -381,7 +381,7 @@ func main() {
 **[*operations.PostSettingsAgentsUpdateUpdateNowResponse](../../pkg/models/operations/postsettingsagentsupdateupdatenowresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostSettingsIntegrationsCa
 
@@ -435,7 +435,7 @@ func main() {
 **[*operations.PostSettingsIntegrationsCaResponse](../../pkg/models/operations/postsettingsintegrationscaresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostSettingsIntegrationsEventForwarding
 
@@ -491,7 +491,7 @@ func main() {
 **[*operations.PostSettingsIntegrationsEventForwardingResponse](../../pkg/models/operations/postsettingsintegrationseventforwardingresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostSettingsIntegrationsOpsgenieTestIntegration
 
@@ -544,7 +544,7 @@ func main() {
 **[*operations.PostSettingsIntegrationsOpsgenieTestIntegrationResponse](../../pkg/models/operations/postsettingsintegrationsopsgenietestintegrationresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostSettingsIntegrationsSecurexTestIntegration
 
@@ -597,7 +597,7 @@ func main() {
 **[*operations.PostSettingsIntegrationsSecurexTestIntegrationResponse](../../pkg/models/operations/postsettingsintegrationssecurextestintegrationresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostSettingsIntegrationsSlackTestIntegration
 
@@ -650,7 +650,7 @@ func main() {
 **[*operations.PostSettingsIntegrationsSlackTestIntegrationResponse](../../pkg/models/operations/postsettingsintegrationsslacktestintegrationresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostSettingsIntegrationsSplunkTestIntegration
 
@@ -704,7 +704,7 @@ func main() {
 **[*operations.PostSettingsIntegrationsSplunkTestIntegrationResponse](../../pkg/models/operations/postsettingsintegrationssplunktestintegrationresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostSettingsIntegrationsSumoLogicTestIntegration
 
@@ -757,7 +757,7 @@ func main() {
 **[*operations.PostSettingsIntegrationsSumoLogicTestIntegrationResponse](../../pkg/models/operations/postsettingsintegrationssumologictestintegrationresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostSettingsIntegrationsTeamsTestIntegration
 
@@ -810,7 +810,7 @@ func main() {
 **[*operations.PostSettingsIntegrationsTeamsTestIntegrationResponse](../../pkg/models/operations/postsettingsintegrationsteamstestintegrationresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostSettingsIntegrationsWebexTestIntegration
 
@@ -863,7 +863,7 @@ func main() {
 **[*operations.PostSettingsIntegrationsWebexTestIntegrationResponse](../../pkg/models/operations/postsettingsintegrationswebextestintegrationresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PutSettingsAgentsUpdate
 
@@ -913,7 +913,7 @@ func main() {
 **[*operations.PutSettingsAgentsUpdateResponse](../../pkg/models/operations/putsettingsagentsupdateresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PutSettingsIntegrationsCaID
 
@@ -971,7 +971,7 @@ func main() {
 **[*operations.PutSettingsIntegrationsCaIDResponse](../../pkg/models/operations/putsettingsintegrationscaidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PutSettingsIntegrationsEventForwardingEventForwardingID
 
@@ -1032,4 +1032,4 @@ func main() {
 **[*operations.PutSettingsIntegrationsEventForwardingEventForwardingIDResponse](../../pkg/models/operations/putsettingsintegrationseventforwardingeventforwardingidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

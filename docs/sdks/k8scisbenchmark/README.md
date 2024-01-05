@@ -66,7 +66,7 @@ func main() {
 **[*operations.GetK8sCISBenchmarkResponse](../../pkg/models/operations/getk8scisbenchmarkresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetK8sCISBenchmarkSummary
 
@@ -115,7 +115,7 @@ func main() {
 **[*operations.GetK8sCISBenchmarkSummaryResponse](../../pkg/models/operations/getk8scisbenchmarksummaryresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetK8sCISBenchmarkClusterID
 
@@ -169,7 +169,7 @@ func main() {
 **[*operations.GetK8sCISBenchmarkClusterIDResponse](../../pkg/models/operations/getk8scisbenchmarkclusteridresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostK8sCISBenchmarkClusterID
 
@@ -222,7 +222,7 @@ func main() {
 **[*operations.PostK8sCISBenchmarkClusterIDResponse](../../pkg/models/operations/postk8scisbenchmarkclusteridresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PutK8sCISBenchmarkClusterID
 
@@ -284,4 +284,4 @@ func main() {
 **[*operations.PutK8sCISBenchmarkClusterIDResponse](../../pkg/models/operations/putk8scisbenchmarkclusteridresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

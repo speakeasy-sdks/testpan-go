@@ -66,7 +66,7 @@ func main() {
 **[*operations.GetAppsResponse](../../pkg/models/operations/getappsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAppsAppID
 
@@ -119,7 +119,7 @@ func main() {
 **[*operations.GetAppsAppIDResponse](../../pkg/models/operations/getappsappidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostApps
 
@@ -187,7 +187,7 @@ func main() {
 **[*operations.PostAppsResponse](../../pkg/models/operations/postappsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostAppsDelete
 
@@ -241,7 +241,7 @@ func main() {
 **[*operations.PostAppsDeleteResponse](../../pkg/models/operations/postappsdeleteresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PutAppsAppID
 
@@ -313,4 +313,4 @@ func main() {
 **[*operations.PutAppsAppIDResponse](../../pkg/models/operations/putappsappidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

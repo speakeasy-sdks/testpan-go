@@ -62,7 +62,7 @@ func main() {
 **[*operations.DeleteAPISecurityInternalCatalogCatalogIDBflaDetectionResponse](../../pkg/models/operations/deleteapisecurityinternalcatalogcatalogidbfladetectionresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## DeleteAPISecurityInternalCatalogCatalogIDBflaLearning
 
@@ -115,7 +115,7 @@ func main() {
 **[*operations.DeleteAPISecurityInternalCatalogCatalogIDBflaLearningResponse](../../pkg/models/operations/deleteapisecurityinternalcatalogcatalogidbflalearningresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAPISecurityInternalCatalogCatalogIDBfla
 
@@ -168,7 +168,7 @@ func main() {
 **[*operations.GetAPISecurityInternalCatalogCatalogIDBflaResponse](../../pkg/models/operations/getapisecurityinternalcatalogcatalogidbflaresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostAPISecurityInternalCatalogCatalogIDBflaDetection
 
@@ -224,7 +224,7 @@ func main() {
 **[*operations.PostAPISecurityInternalCatalogCatalogIDBflaDetectionResponse](../../pkg/models/operations/postapisecurityinternalcatalogcatalogidbfladetectionresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostAPISecurityInternalCatalogCatalogIDBflaLearning
 
@@ -280,7 +280,7 @@ func main() {
 **[*operations.PostAPISecurityInternalCatalogCatalogIDBflaLearningResponse](../../pkg/models/operations/postapisecurityinternalcatalogcatalogidbflalearningresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostAPISecurityInternalCatalogCatalogIDBflaReset
 
@@ -333,7 +333,7 @@ func main() {
 **[*operations.PostAPISecurityInternalCatalogCatalogIDBflaResetResponse](../../pkg/models/operations/postapisecurityinternalcatalogcatalogidbflaresetresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PutAPISecurityInternalCatalogCatalogIDBfla
 
@@ -412,4 +412,4 @@ func main() {
 **[*operations.PutAPISecurityInternalCatalogCatalogIDBflaResponse](../../pkg/models/operations/putapisecurityinternalcatalogcatalogidbflaresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

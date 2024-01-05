@@ -76,7 +76,7 @@ func main() {
 **[*operations.DeleteRiskAssessmentIgnoredRisksIgnoredRiskIDResponse](../../pkg/models/operations/deleteriskassessmentignoredrisksignoredriskidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## DeleteRiskAssessmentKubernetesClusterIDCancel
 
@@ -130,7 +130,7 @@ func main() {
 **[*operations.DeleteRiskAssessmentKubernetesClusterIDCancelResponse](../../pkg/models/operations/deleteriskassessmentkubernetesclusteridcancelresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetRiskAssessment
 
@@ -179,7 +179,7 @@ func main() {
 **[*operations.GetRiskAssessmentResponse](../../pkg/models/operations/getriskassessmentresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetRiskAssessmentIgnoredRisks
 
@@ -228,7 +228,7 @@ func main() {
 **[*operations.GetRiskAssessmentIgnoredRisksResponse](../../pkg/models/operations/getriskassessmentignoredrisksresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetRiskAssessmentPermissions
 
@@ -283,7 +283,7 @@ func main() {
 **[*operations.GetRiskAssessmentPermissionsResponse](../../pkg/models/operations/getriskassessmentpermissionsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetRiskAssessmentPermissionsClusterID
 
@@ -336,7 +336,7 @@ func main() {
 **[*operations.GetRiskAssessmentPermissionsClusterIDResponse](../../pkg/models/operations/getriskassessmentpermissionsclusteridresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetRiskAssessmentPermissionsClusterIDOwnerID
 
@@ -390,7 +390,7 @@ func main() {
 **[*operations.GetRiskAssessmentPermissionsClusterIDOwnerIDResponse](../../pkg/models/operations/getriskassessmentpermissionsclusteridowneridresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetRiskAssessmentPermissionsClusterIDOwnerIDRoleID
 
@@ -445,7 +445,7 @@ func main() {
 **[*operations.GetRiskAssessmentPermissionsClusterIDOwnerIDRoleIDResponse](../../pkg/models/operations/getriskassessmentpermissionsclusteridowneridroleidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetRiskAssessmentPoll
 
@@ -500,7 +500,7 @@ func main() {
 **[*operations.GetRiskAssessmentPollResponse](../../pkg/models/operations/getriskassessmentpollresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetRiskAssessmentImageIDVulnerabilities
 
@@ -554,7 +554,7 @@ func main() {
 **[*operations.GetRiskAssessmentImageIDVulnerabilitiesResponse](../../pkg/models/operations/getriskassessmentimageidvulnerabilitiesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetRiskAssessmentKubernetesClusterIDPods
 
@@ -608,7 +608,7 @@ func main() {
 **[*operations.GetRiskAssessmentKubernetesClusterIDPodsResponse](../../pkg/models/operations/getriskassessmentkubernetesclusteridpodsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostRiskAssessmentIgnoredRisks
 
@@ -657,7 +657,7 @@ func main() {
 **[*operations.PostRiskAssessmentIgnoredRisksResponse](../../pkg/models/operations/postriskassessmentignoredrisksresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostRiskAssessmentPermissionsOwnerIDApprove
 
@@ -717,7 +717,7 @@ func main() {
 **[*operations.PostRiskAssessmentPermissionsOwnerIDApproveResponse](../../pkg/models/operations/postriskassessmentpermissionsowneridapproveresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostRiskAssessmentKubernetesClusterIDScan
 
@@ -770,7 +770,7 @@ func main() {
 **[*operations.PostRiskAssessmentKubernetesClusterIDScanResponse](../../pkg/models/operations/postriskassessmentkubernetesclusteridscanresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostRiskAssessmentKubernetesClusterIDSettings
 
@@ -833,7 +833,7 @@ func main() {
 **[*operations.PostRiskAssessmentKubernetesClusterIDSettingsResponse](../../pkg/models/operations/postriskassessmentkubernetesclusteridsettingsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PutRiskAssessmentIgnoredRisksIgnoredRiskID
 
@@ -897,4 +897,4 @@ func main() {
 **[*operations.PutRiskAssessmentIgnoredRisksIgnoredRiskIDResponse](../../pkg/models/operations/putriskassessmentignoredrisksignoredriskidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

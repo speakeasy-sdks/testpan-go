@@ -75,7 +75,7 @@ func main() {
 **[*operations.DeleteImagesIDResponse](../../pkg/models/operations/deleteimagesidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAccountVulnerabilitiesXlsx
 
@@ -137,7 +137,7 @@ func main() {
 **[*operations.GetAccountVulnerabilitiesXlsxResponse](../../pkg/models/operations/getaccountvulnerabilitiesxlsxresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetImages
 
@@ -199,7 +199,7 @@ func main() {
 **[*operations.GetImagesResponse](../../pkg/models/operations/getimagesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetImagesImagesHash
 
@@ -250,7 +250,7 @@ func main() {
 **[*operations.GetImagesImagesHashResponse](../../pkg/models/operations/getimagesimageshashresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetImagesVulnerabilitiesByImageNameAndHash
 
@@ -304,7 +304,7 @@ func main() {
 **[*operations.GetImagesVulnerabilitiesByImageNameAndHashResponse](../../pkg/models/operations/getimagesvulnerabilitiesbyimagenameandhashresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetImagesID
 
@@ -357,7 +357,7 @@ func main() {
 **[*operations.GetImagesIDResponse](../../pkg/models/operations/getimagesidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetImagesImageIDDockerfileScanResults
 
@@ -410,7 +410,7 @@ func main() {
 **[*operations.GetImagesImageIDDockerfileScanResultsResponse](../../pkg/models/operations/getimagesimageiddockerfilescanresultsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetImagesImageIDImageLayers
 
@@ -463,7 +463,7 @@ func main() {
 **[*operations.GetImagesImageIDImageLayersResponse](../../pkg/models/operations/getimagesimageidimagelayersresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetImagesImageIDPackages
 
@@ -516,7 +516,7 @@ func main() {
 **[*operations.GetImagesImageIDPackagesResponse](../../pkg/models/operations/getimagesimageidpackagesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetImagesImageIDSbomPath
 
@@ -569,7 +569,7 @@ func main() {
 **[*operations.GetImagesImageIDSbomPathResponse](../../pkg/models/operations/getimagesimageidsbompathresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetImagesImageIDVulnerabilities
 
@@ -622,7 +622,7 @@ func main() {
 **[*operations.GetImagesImageIDVulnerabilitiesResponse](../../pkg/models/operations/getimagesimageidvulnerabilitiesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostImages
 
@@ -676,7 +676,7 @@ func main() {
 **[*operations.PostImagesResponse](../../pkg/models/operations/postimagesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostImagesApprove
 
@@ -735,7 +735,7 @@ func main() {
 **[*operations.PostImagesApproveResponse](../../pkg/models/operations/postimagesapproveresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostImagesImageIDDockerfileScanResultsIgnore
 
@@ -795,7 +795,7 @@ func main() {
 **[*operations.PostImagesImageIDDockerfileScanResultsIgnoreResponse](../../pkg/models/operations/postimagesimageiddockerfilescanresultsignoreresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostImagesImageIDVulnerabilitiesIgnore
 
@@ -855,4 +855,4 @@ func main() {
 **[*operations.PostImagesImageIDVulnerabilitiesIgnoreResponse](../../pkg/models/operations/postimagesimageidvulnerabilitiesignoreresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
