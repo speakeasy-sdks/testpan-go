@@ -363,31 +363,8 @@ func main() {
     res, err := s.Bfla.PutAPISecurityInternalCatalogCatalogIDBfla(ctx, operations.PutAPISecurityInternalCatalogCatalogIDBflaRequest{
         APIServiceBflaInfo: shared.APIServiceBflaInfo{
             Status: shared.APIServiceBflaInfoStatusNoSpec,
-            Tags: []shared.APIServiceBflaTagInfo{
-                shared.APIServiceBflaTagInfo{
-                    Name: "string",
-                    Paths: []shared.APIServiceBflaPathInfo{
-                        shared.APIServiceBflaPathInfo{
-                            Clients: []shared.APIServiceBflaClientInfo{
-                                shared.APIServiceBflaClientInfo{
-                                    Name: "string",
-                                    Principles: []shared.APIServiceBflaPrincipleInfo{
-                                        shared.APIServiceBflaPrincipleInfo{
-                                            IP: "169.172.185.96",
-                                            Name: "string",
-                                            PrincipleType: "string",
-                                        },
-                                    },
-                                },
-                            },
-                            Method: shared.HTTPMethodPut,
-                            Path: "/tmp",
-                        },
-                    },
-                },
-            },
         },
-        CatalogID: "ef3b3fca-add4-4420-92ad-1459f8769c20",
+        CatalogID: "aab64aef-3b3f-4caa-9d44-2012ad1459f8",
     })
     if err != nil {
         log.Fatal(err)

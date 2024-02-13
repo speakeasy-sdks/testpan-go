@@ -36,20 +36,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.AgentManagement.GetAgents(ctx, operations.GetAgentsRequest{
-        EnvironmentName: []string{
-            "string",
-        },
-        HostName: []string{
-            "string",
-        },
-        Risk: []operations.Risk{
-            operations.RiskMedium,
-        },
-        Status: []operations.Status{
-            operations.StatusActive,
-        },
-    })
+    res, err := s.AgentManagement.GetAgents(ctx, operations.GetAgentsRequest{})
     if err != nil {
         log.Fatal(err)
     }

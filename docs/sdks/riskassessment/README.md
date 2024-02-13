@@ -255,11 +255,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.RiskAssessment.GetRiskAssessmentPermissions(ctx, operations.GetRiskAssessmentPermissionsRequest{
-        ClustersIds: []string{
-            "a89898f1-37f8-4c09-8113-2e54dc492339",
-        },
-    })
+    res, err := s.RiskAssessment.GetRiskAssessmentPermissions(ctx, operations.GetRiskAssessmentPermissionsRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -686,13 +682,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RiskAssessment.PostRiskAssessmentPermissionsOwnerIDApprove(ctx, operations.PostRiskAssessmentPermissionsOwnerIDApproveRequest{
-        UUIDList: shared.UUIDList{
-            UUIDList: []string{
-                "fda4268f-7c78-46d3-87e2-782993d8ba4d",
-            },
-        },
+        UUIDList: shared.UUIDList{},
         ActionType: operations.PostRiskAssessmentPermissionsOwnerIDApproveQueryParamActionTypeRemove,
-        OwnerID: "c3b8ad34-72d2-4f81-a59b-f81c3cc9c10e",
+        OwnerID: "da4268f7-c786-4d34-be27-82993d8ba4dd",
     })
     if err != nil {
         log.Fatal(err)
@@ -801,14 +793,8 @@ func main() {
         RiskAssessmentClusterScanConfig: shared.RiskAssessmentClusterScanConfig{
             MaxParallelism: 752536,
             MinimumSeverity: shared.VulnerabilitySeverityLow,
-            Namespaces: []string{
-                "string",
-            },
-            PeriodicJobExpression: &shared.PeriodicJobExpression{
-                PeriodicJobType: shared.PeriodicJobTypeByHoursPeriodicJobExpression,
-            },
         },
-        KubernetesClusterID: "c1a0c988-4def-48c1-bbd4-845665df2f73",
+        KubernetesClusterID: "8c1a0c98-84de-4f8c-97bd-4845665df2f7",
     })
     if err != nil {
         log.Fatal(err)
@@ -862,17 +848,9 @@ func main() {
     ctx := context.Background()
     res, err := s.RiskAssessment.PutRiskAssessmentIgnoredRisksIgnoredRiskID(ctx, operations.PutRiskAssessmentIgnoredRisksIgnoredRiskIDRequest{
         CiPolicy: shared.CiPolicyInput{
-            DockerfileScanCiPolicy: &shared.DockerfileScanCiPolicy{
-                EnforcementOption: shared.EnforcementOptionFail,
-                PermissibleDockerfileScanSeverity: shared.DockerfileScanSeverityInfo,
-            },
             Name: "string",
-            VulnerabilityCiPolicy: &shared.VulnerabilityCiPolicy{
-                EnforcementOption: shared.EnforcementOptionIgnore,
-                PermissibleVulnerabilityLevel: shared.VulnerabilitySeverityCritical,
-            },
         },
-        IgnoredRiskID: "1978a3a5-2b6e-4f16-935f-df8529c311ad",
+        IgnoredRiskID: "44ed1978-a3a5-42b6-af16-d35fdf8529c3",
     })
     if err != nil {
         log.Fatal(err)

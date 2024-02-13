@@ -144,14 +144,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Registries.PostRegistries(ctx, shared.RegistryInput{
-        ClusterIds: []string{
-            "95b632a5-fe89-4e35-884b-fdb5be5f9972",
-        },
-        Credentials: &shared.RegistryCredentials{
-            RegistryCredentialsType: shared.RegistryCredentialsTypeAwsRegistryCredentials,
-        },
-        Type: shared.RegistryTypeAzure,
-        URL: "http://svelte-curio.org",
+        Type: shared.RegistryTypeJfrog,
+        URL: "http://serene-hotel.biz",
     })
     if err != nil {
         log.Fatal(err)
@@ -204,14 +198,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Registries.PostRegistriesTestConnection(ctx, shared.RegistryInput{
-        ClusterIds: []string{
-            "146c9745-4e65-4c13-96b3-e4e8e106ebca",
-        },
-        Credentials: &shared.RegistryCredentials{
-            RegistryCredentialsType: shared.RegistryCredentialsTypeAwsRegistryCredentials,
-        },
-        Type: shared.RegistryTypeOther,
-        URL: "http://handy-energy.net",
+        Type: shared.RegistryTypeAws,
+        URL: "http://imaginative-servitude.name",
     })
     if err != nil {
         log.Fatal(err)
@@ -266,16 +254,10 @@ func main() {
     ctx := context.Background()
     res, err := s.Registries.PostRegistriesTestConnectionRegistryID(ctx, operations.PostRegistriesTestConnectionRegistryIDRequest{
         Registry: shared.RegistryInput{
-            ClusterIds: []string{
-                "309c9980-a8e5-4df0-8f7a-f1c1e7dae13c",
-            },
-            Credentials: &shared.RegistryCredentials{
-                RegistryCredentialsType: shared.RegistryCredentialsTypeStandardRegistryCredentials,
-            },
-            Type: shared.RegistryTypeAws,
-            URL: "http://blond-horror.org",
+            Type: shared.RegistryTypeGcp,
+            URL: "http://ordinary-shield.name",
         },
-        RegistryID: "99bd4248-5508-4257-836a-3d0e30be4155",
+        RegistryID: "980a8e5d-f00f-47af-9c1e-7dae13c52516",
     })
     if err != nil {
         log.Fatal(err)
@@ -330,16 +312,10 @@ func main() {
     ctx := context.Background()
     res, err := s.Registries.PutRegistriesRegistryID(ctx, operations.PutRegistriesRegistryIDRequest{
         Registry: shared.RegistryInput{
-            ClusterIds: []string{
-                "bb846b91-90fe-4927-838c-5cc07f3bb118",
-            },
-            Credentials: &shared.RegistryCredentials{
-                RegistryCredentialsType: shared.RegistryCredentialsTypeAwsRegistryCredentials,
-            },
-            Type: shared.RegistryTypeAws,
-            URL: "https://mixed-affiliate.info",
+            Type: shared.RegistryTypeJfrog,
+            URL: "https://narrow-encirclement.info",
         },
-        RegistryID: "a8f4138b-1ba6-41a9-bb5f-375f1e0e9ee0",
+        RegistryID: "b9190fe9-27c3-48c5-8c07-f3bb11811d80",
     })
     if err != nil {
         log.Fatal(err)

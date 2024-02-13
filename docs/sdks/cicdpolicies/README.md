@@ -247,26 +247,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.CICDPolicies.PostCdPolicy(ctx, shared.CdPolicyInput{
-        APISecurityCdPolicy: &shared.APISecurityCdPolicyElement{
-            APISecurityProfile: "e20e4f6e-3e04-4f9f-8904-433d8246a999",
-            EnforcementOption: shared.EnforcementOptionFail,
-        },
         Deployers: []string{
-            "aede075c-3164-444b-a1e6-c4ecee9d9042",
+            "e20e4f6e-3e04-4f9f-8904-433d8246a999",
         },
         Name: "string",
-        PermissionCDPolicy: &shared.CdPolicyElement{
-            EnforcementOption: shared.EnforcementOptionIgnore,
-            PermissibleVulnerabilityLevel: shared.CDPipelineFindingRiskNoRisk,
-        },
-        SecretCDPolicy: &shared.SecretsCdPolicyElement{
-            EnforcementOption: shared.EnforcementOptionFail,
-            PermissibleVulnerabilityLevel: shared.CDPipelineSecretsFindingRiskNoKnownRisk,
-        },
-        SecurityContextCDPolicy: &shared.CdPolicyElement{
-            EnforcementOption: shared.EnforcementOptionFail,
-            PermissibleVulnerabilityLevel: shared.CDPipelineFindingRiskNoRisk,
-        },
     })
     if err != nil {
         log.Fatal(err)
@@ -318,15 +302,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.CICDPolicies.PostCiPolicy(ctx, shared.CiPolicyInput{
-        DockerfileScanCiPolicy: &shared.DockerfileScanCiPolicy{
-            EnforcementOption: shared.EnforcementOptionFail,
-            PermissibleDockerfileScanSeverity: shared.DockerfileScanSeverityFatal,
-        },
         Name: "string",
-        VulnerabilityCiPolicy: &shared.VulnerabilityCiPolicy{
-            EnforcementOption: shared.EnforcementOptionIgnore,
-            PermissibleVulnerabilityLevel: shared.VulnerabilitySeverityLow,
-        },
     })
     if err != nil {
         log.Fatal(err)
@@ -380,28 +356,12 @@ func main() {
     ctx := context.Background()
     res, err := s.CICDPolicies.PutCdPolicyPolicyID(ctx, operations.PutCdPolicyPolicyIDRequest{
         CdPolicy: shared.CdPolicyInput{
-            APISecurityCdPolicy: &shared.APISecurityCdPolicyElement{
-                APISecurityProfile: "75218fad-dbdc-48d5-b27f-e1d8ecd9e791",
-                EnforcementOption: shared.EnforcementOptionFail,
-            },
             Deployers: []string{
-                "45666e4d-fb74-4ef6-9a81-a0d950f62fec",
+                "75218fad-dbdc-48d5-b27f-e1d8ecd9e791",
             },
             Name: "string",
-            PermissionCDPolicy: &shared.CdPolicyElement{
-                EnforcementOption: shared.EnforcementOptionFail,
-                PermissibleVulnerabilityLevel: shared.CDPipelineFindingRiskNoRisk,
-            },
-            SecretCDPolicy: &shared.SecretsCdPolicyElement{
-                EnforcementOption: shared.EnforcementOptionIgnore,
-                PermissibleVulnerabilityLevel: shared.CDPipelineSecretsFindingRiskRiskIdentified,
-            },
-            SecurityContextCDPolicy: &shared.CdPolicyElement{
-                EnforcementOption: shared.EnforcementOptionFail,
-                PermissibleVulnerabilityLevel: shared.CDPipelineFindingRiskMedium,
-            },
         },
-        PolicyID: "8aed8fba-0d21-49b4-a2fd-e7a8937033a3",
+        PolicyID: "545666e4-dfb7-44ef-ada8-1a0d950f62fe",
     })
     if err != nil {
         log.Fatal(err)
@@ -455,17 +415,9 @@ func main() {
     ctx := context.Background()
     res, err := s.CICDPolicies.PutCiPolicyPolicyID(ctx, operations.PutCiPolicyPolicyIDRequest{
         CiPolicy: shared.CiPolicyInput{
-            DockerfileScanCiPolicy: &shared.DockerfileScanCiPolicy{
-                EnforcementOption: shared.EnforcementOptionIgnore,
-                PermissibleDockerfileScanSeverity: shared.DockerfileScanSeverityInfo,
-            },
             Name: "string",
-            VulnerabilityCiPolicy: &shared.VulnerabilityCiPolicy{
-                EnforcementOption: shared.EnforcementOptionIgnore,
-                PermissibleVulnerabilityLevel: shared.VulnerabilitySeverityUnknown,
-            },
         },
-        PolicyID: "0c597151-5cdf-4e24-b5dc-fd347fd80ec5",
+        PolicyID: "a0c10c59-7151-45cd-be24-f5dcfd347fd8",
     })
     if err != nil {
         log.Fatal(err)

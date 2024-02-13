@@ -733,14 +733,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Kubernetes.GetPodDefinitions(ctx, operations.GetPodDefinitionsRequest{
-        DeploymentType: []string{
-            "string",
-        },
-        TemplateSource: []string{
-            "string",
-        },
-    })
+    res, err := s.Kubernetes.GetPodDefinitions(ctx, operations.GetPodDefinitionsRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -791,24 +784,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Kubernetes.PostKubernetesClusters(ctx, shared.KubernetesCluster{
-        ControllerDataResponse: &shared.ControllerDataResponse{},
-        HelmCommandsInstallation: &shared.HelmCommandsInstallation{},
-        InternalRegistryParameters: &shared.InternalRegistryParameters{},
-        IstioIngressAnnotations: []shared.KubernetesAnnotation{
-            shared.KubernetesAnnotation{
-                Key: "<key>",
-                Value: "string",
-            },
-        },
-        IstioInstallationParameters: &shared.IstioInstallationParameters{},
         Name: "string",
-        ProxyConfiguration: &shared.ProxyConfiguration{},
-        ScanConfiguration: &shared.ScanConfiguration{
-            ScanTypes: []shared.ScanType{
-                shared.ScanTypeVulnerabilities,
-            },
-        },
-        SidecarsResources: &shared.SidecarsResource{},
     })
     if err != nil {
         log.Fatal(err)
@@ -862,20 +838,7 @@ func main() {
     res, err := s.Kubernetes.PostPodDefinitions(ctx, shared.PodDefinitionInput{
         ClusterID: "caf647ad-b35e-4462-baa4-a61d2b4e2410",
         Containers: []shared.Container{
-            shared.Container{
-                Image: &shared.Image{},
-            },
-        },
-        InitContainers: []shared.Container{
-            shared.Container{
-                Image: &shared.Image{},
-            },
-        },
-        Labels: []shared.Label{
-            shared.Label{
-                Key: "<key>",
-                Value: "string",
-            },
+            shared.Container{},
         },
         Name: "string",
     })
@@ -931,26 +894,9 @@ func main() {
     ctx := context.Background()
     res, err := s.Kubernetes.PutKubernetesClustersKubernetesClusterID(ctx, operations.PutKubernetesClustersKubernetesClusterIDRequest{
         KubernetesCluster: shared.KubernetesCluster{
-            ControllerDataResponse: &shared.ControllerDataResponse{},
-            HelmCommandsInstallation: &shared.HelmCommandsInstallation{},
-            InternalRegistryParameters: &shared.InternalRegistryParameters{},
-            IstioIngressAnnotations: []shared.KubernetesAnnotation{
-                shared.KubernetesAnnotation{
-                    Key: "<key>",
-                    Value: "string",
-                },
-            },
-            IstioInstallationParameters: &shared.IstioInstallationParameters{},
             Name: "string",
-            ProxyConfiguration: &shared.ProxyConfiguration{},
-            ScanConfiguration: &shared.ScanConfiguration{
-                ScanTypes: []shared.ScanType{
-                    shared.ScanTypeDockerCisBenchmark,
-                },
-            },
-            SidecarsResources: &shared.SidecarsResource{},
         },
-        KubernetesClusterID: "fc49f9e0-fd95-4795-8a07-96a5f2d9d7f9",
+        KubernetesClusterID: "ffc49f9e-0fd9-4579-98a0-796a5f2d9d7f",
     })
     if err != nil {
         log.Fatal(err)
@@ -1060,20 +1006,7 @@ func main() {
         PodDefinition: shared.PodDefinitionInput{
             ClusterID: "8813d860-716a-4bd1-be6a-f36d0732a688",
             Containers: []shared.Container{
-                shared.Container{
-                    Image: &shared.Image{},
-                },
-            },
-            InitContainers: []shared.Container{
-                shared.Container{
-                    Image: &shared.Image{},
-                },
-            },
-            Labels: []shared.Label{
-                shared.Label{
-                    Key: "<key>",
-                    Value: "string",
-                },
+                shared.Container{},
             },
             Name: "string",
         },

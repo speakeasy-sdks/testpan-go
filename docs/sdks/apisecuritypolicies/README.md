@@ -194,17 +194,6 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurityPolicies.PostAPISecurityPolicy(ctx, shared.APISecurityPolicyInput{
-        CategoryConditions: &shared.APISecurityPolicyCategoryConditions{
-            Conditions: []shared.APISecurityPolicyCategoryCondition{
-                shared.APISecurityPolicyCategoryCondition{
-                    Category: "string",
-                    HighestAcceptedSeverity: shared.APISecurityPolicyRiskSeverityMedium,
-                },
-            },
-        },
-        GlobalCondition: &shared.APISecurityPolicyGlobalCondition{
-            HighestAcceptedSeverity: shared.APISecurityPolicyRiskSeverityCritical,
-        },
         Name: "string",
     })
     if err != nil {
@@ -259,20 +248,9 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurityPolicies.PutAPISecurityPolicyPolicyID(ctx, operations.PutAPISecurityPolicyPolicyIDRequest{
         APISecurityPolicy: shared.APISecurityPolicyInput{
-            CategoryConditions: &shared.APISecurityPolicyCategoryConditions{
-                Conditions: []shared.APISecurityPolicyCategoryCondition{
-                    shared.APISecurityPolicyCategoryCondition{
-                        Category: "string",
-                        HighestAcceptedSeverity: shared.APISecurityPolicyRiskSeverityMedium,
-                    },
-                },
-            },
-            GlobalCondition: &shared.APISecurityPolicyGlobalCondition{
-                HighestAcceptedSeverity: shared.APISecurityPolicyRiskSeverityLow,
-            },
             Name: "string",
         },
-        PolicyID: "5c1bef90-a301-4744-8558-c2807a30fd0b",
+        PolicyID: "735c1bef-90a3-4017-8485-58c2807a30fd",
     })
     if err != nil {
         log.Fatal(err)

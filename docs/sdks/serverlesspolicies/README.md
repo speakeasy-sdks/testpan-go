@@ -84,25 +84,6 @@ func main() {
         UnidentifiedServerlessRule: shared.UnidentifiedServerlessRule{
             Action: shared.UnidentifiedServerlessRuleActionDetect,
         },
-        UserRules: []shared.ServerlessRule{
-            shared.ServerlessRule{
-                Action: shared.ServerlessRuleActionAllow,
-                Name: "string",
-                Rule: shared.ServerlessRuleType{
-                    ServerlessFunctionValidation: &shared.ServerlessFunctionValidation{},
-                    ServerlessRuleType: shared.ServerlessRuleTypeServerlessRuleTypeFunctionNameServerlessRuleType,
-                },
-                Scope: []shared.ServerlessRuleScope{
-                    shared.ServerlessRuleScope{
-                        CloudAccount: "string",
-                        Regions: []string{
-                            "string",
-                        },
-                    },
-                },
-                Status: shared.ServerlessRuleStatusEnabled,
-            },
-        },
     })
     if err != nil {
         log.Fatal(err)

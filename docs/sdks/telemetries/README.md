@@ -42,42 +42,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Telemetries.GetAppTelemetries(ctx, operations.GetAppTelemetriesRequest{
-        AppName: []string{
-            "string",
-        },
-        AppType: []string{
-            "string",
-        },
         EndTime: types.MustTimeFromString("2024-07-22T12:37:40.720Z"),
-        EnvironmentName: []string{
-            "string",
-        },
-        Executable: []string{
-            "string",
-        },
-        HighestDockerfileScanResult: []string{
-            "string",
-        },
-        Host: []string{
-            "string",
-        },
-        ImagesID: []string{
-            "50dc36c5-6d44-446a-b356-669e30a7dfca",
-        },
-        Result: []operations.GetAppTelemetriesQueryParamResult{
-            operations.GetAppTelemetriesQueryParamResultDetect,
-        },
-        SortKey: operations.GetAppTelemetriesQueryParamSortKeyFinishTime,
-        StartTime: types.MustTimeFromString("2023-08-17T23:31:28.434Z"),
-        Status: []string{
-            "string",
-        },
-        VulnerabilityLevelsFilter: []string{
-            "string",
-        },
-        WorkloadRisks: []operations.WorkloadRisks{
-            operations.WorkloadRisksCritical,
-        },
+        SortKey: operations.GetAppTelemetriesQueryParamSortKeyEnvironmentName,
+        StartTime: types.MustTimeFromString("2022-02-25T06:07:38.033Z"),
     })
     if err != nil {
         log.Fatal(err)
@@ -344,41 +311,8 @@ func main() {
     ctx := context.Background()
     res, err := s.Telemetries.GetConnectionTelemetries(ctx, operations.GetConnectionTelemetriesRequest{
         EndTime: types.MustTimeFromString("2024-12-02T06:08:07.741Z"),
-        Result: []operations.GetConnectionTelemetriesQueryParamResult{
-            operations.GetConnectionTelemetriesQueryParamResultAllow,
-        },
-        SortKey: operations.GetConnectionTelemetriesQueryParamSortKeySourceAppType,
-        SourceAppName: []string{
-            "string",
-        },
-        SourceEnvironmentName: []string{
-            "string",
-        },
-        SourceExecutable: []string{
-            "string",
-        },
-        SourceHostName: []string{
-            "string",
-        },
-        SourceRisk: []operations.SourceRisk{
-            operations.SourceRiskLow,
-        },
-        StartTime: types.MustTimeFromString("2022-04-04T13:56:07.190Z"),
-        TargetAppName: []string{
-            "string",
-        },
-        TargetEnvironmentName: []string{
-            "string",
-        },
-        TargetExecutable: []string{
-            "string",
-        },
-        TargetHostName: []string{
-            "string",
-        },
-        TargetRisk: []operations.TargetRisk{
-            operations.TargetRiskHigh,
-        },
+        SortKey: operations.GetConnectionTelemetriesQueryParamSortKeyTargetRisk,
+        StartTime: types.MustTimeFromString("2022-04-30T20:32:05.208Z"),
     })
     if err != nil {
         log.Fatal(err)

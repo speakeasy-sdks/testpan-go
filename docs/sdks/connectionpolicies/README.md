@@ -396,22 +396,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.ConnectionPolicies.PutConnectionsPolicy(ctx, shared.ConnectionsPolicy{
-        DefaultRule: &shared.DefaultConnectionRule{},
         DirectPodRule: shared.DirectPodIPConnectionRule{
             Action: shared.DirectPodIPConnectionRuleActionDetect,
-        },
-        UserRules: []shared.ConnectionsRule{
-            shared.ConnectionsRule{
-                Action: shared.ConnectionRuleActionEncryptDirect,
-                Destination: &shared.ConnectionRulePart{
-                    ConnectionRulePartType: shared.ConnectionRulePartTypeKafkaConnectionRulePart,
-                },
-                Layer7Settings: &shared.Layer7SettingsPart{},
-                Name: "string",
-                Source: &shared.ConnectionRulePart{
-                    ConnectionRulePartType: shared.ConnectionRulePartTypeAnyConnectionRulePart,
-                },
-            },
         },
     })
     if err != nil {

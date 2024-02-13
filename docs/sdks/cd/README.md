@@ -364,14 +364,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Cd.PostCdConnectionsRule(ctx, shared.CdConnectionRule{
-        Destination: &shared.ConnectionRulePart{
-            ConnectionRulePartType: shared.ConnectionRulePartTypePodNameConnectionRulePart,
-        },
-        Source: &shared.ConnectionRulePart{
-            ConnectionRulePartType: shared.ConnectionRulePartTypeAppTypeConnectionRulePart,
-        },
-    })
+    res, err := s.Cd.PostCdConnectionsRule(ctx, shared.CdConnectionRule{})
     if err != nil {
         log.Fatal(err)
     }
@@ -425,16 +418,7 @@ func main() {
         Action: shared.ServerlessRuleActionDetect,
         Name: "string",
         Rule: shared.ServerlessRuleType{
-            ServerlessFunctionValidation: &shared.ServerlessFunctionValidation{},
             ServerlessRuleType: shared.ServerlessRuleTypeServerlessRuleTypeFunctionArnServerlessRuleType,
-        },
-        Scope: []shared.ServerlessRuleScope{
-            shared.ServerlessRuleScope{
-                CloudAccount: "string",
-                Regions: []string{
-                    "string",
-                },
-            },
         },
         Status: shared.ServerlessRuleStatusDisabled,
     })
@@ -489,15 +473,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Cd.PutCdRuleIDConnectionsRule(ctx, operations.PutCdRuleIDConnectionsRuleRequest{
-        CdConnectionRule: shared.CdConnectionRule{
-            Destination: &shared.ConnectionRulePart{
-                ConnectionRulePartType: shared.ConnectionRulePartTypeAppNameConnectionRulePart,
-            },
-            Source: &shared.ConnectionRulePart{
-                ConnectionRulePartType: shared.ConnectionRulePartTypeExpansionAnyConnectionRulePart,
-            },
-        },
-        RuleID: "3491c83a-5adc-4392-92ee-d6713c48128c",
+        CdConnectionRule: shared.CdConnectionRule{},
+        RuleID: "0d3491c8-3a5a-4dc3-9212-eed6713c4812",
     })
     if err != nil {
         log.Fatal(err)
@@ -554,16 +531,7 @@ func main() {
             Action: shared.ServerlessRuleActionDetect,
             Name: "string",
             Rule: shared.ServerlessRuleType{
-                ServerlessFunctionValidation: &shared.ServerlessFunctionValidation{},
                 ServerlessRuleType: shared.ServerlessRuleTypeServerlessRuleTypeFunctionArnServerlessRuleType,
-            },
-            Scope: []shared.ServerlessRuleScope{
-                shared.ServerlessRuleScope{
-                    CloudAccount: "string",
-                    Regions: []string{
-                        "string",
-                    },
-                },
             },
             Status: shared.ServerlessRuleStatusDisabled,
         },

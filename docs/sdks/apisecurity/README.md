@@ -355,11 +355,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.APISecurity.GetAPISecurityExternalCatalog(ctx, operations.GetAPISecurityExternalCatalogRequest{
-        APIPolicyProfiles: []string{
-            "string",
-        },
-    })
+    res, err := s.APISecurity.GetAPISecurityExternalCatalog(ctx, operations.GetAPISecurityExternalCatalogRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -462,9 +458,6 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.GetAPISecurityExternalCatalogCatalogID(ctx, operations.GetAPISecurityExternalCatalogCatalogIDRequest{
-        APIPolicyProfiles: []string{
-            "string",
-        },
         CatalogID: "2d833a13-8a8e-436d-b01d-d86e879c6858",
     })
     if err != nil {
@@ -517,11 +510,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.APISecurity.GetAPISecurityInternalCatalog(ctx, operations.GetAPISecurityInternalCatalogRequest{
-        APIPolicyProfiles: []string{
-            "string",
-        },
-    })
+    res, err := s.APISecurity.GetAPISecurityInternalCatalog(ctx, operations.GetAPISecurityInternalCatalogRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -624,9 +613,6 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.GetAPISecurityInternalCatalogCatalogID(ctx, operations.GetAPISecurityInternalCatalogCatalogIDRequest{
-        APIPolicyProfiles: []string{
-            "string",
-        },
         CatalogID: "a4b30b16-7e21-4dd4-bc5f-718b9d308613",
     })
     if err != nil {
@@ -1264,10 +1250,7 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.GetAPISecurityRiskFindings(ctx, operations.GetAPISecurityRiskFindingsRequest{
         APISecSource: operations.APISecSourceExternal,
-        Risks: []operations.Risks{
-            operations.RisksLow,
-        },
-        SortKey: operations.GetAPISecurityRiskFindingsQueryParamSortKeyRisk,
+        SortKey: operations.GetAPISecurityRiskFindingsQueryParamSortKeyName,
     })
     if err != nil {
         log.Fatal(err)
@@ -2606,7 +2589,6 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecLearn(ctx, operations.PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecLearnRequest{
-        APIReconstructionRequest: &shared.APIReconstructionRequest{},
         CatalogID: "4fd7941d-9d44-44e5-b609-cdd9605335d7",
     })
     if err != nil {
@@ -2664,18 +2646,10 @@ func main() {
         APIReconstructedSpec: shared.APIReconstructedSpecInput{
             OASVersion: shared.OASVersionOaSv30,
             ReviewPathItems: []shared.ReviewPathItem{
-                shared.ReviewPathItem{
-                    APIEventsPaths: []shared.APIEventPathAndMethods{
-                        shared.APIEventPathAndMethods{
-                            Methods: []shared.HTTPMethod{
-                                shared.HTTPMethodPut,
-                            },
-                        },
-                    },
-                },
+                shared.ReviewPathItem{},
             },
         },
-        CatalogID: "3273b3e1-0c33-4f3c-8f1f-e2c5b724ecc1",
+        CatalogID: "33273b3e-10c3-43f3-8cf1-fe2c5b724ecc",
     })
     if err != nil {
         log.Fatal(err)
@@ -2896,31 +2870,8 @@ func main() {
     res, err := s.APISecurity.PutAPISecurityInternalCatalogCatalogIDBfla(ctx, operations.PutAPISecurityInternalCatalogCatalogIDBflaRequest{
         APIServiceBflaInfo: shared.APIServiceBflaInfo{
             Status: shared.APIServiceBflaInfoStatusNoSpec,
-            Tags: []shared.APIServiceBflaTagInfo{
-                shared.APIServiceBflaTagInfo{
-                    Name: "string",
-                    Paths: []shared.APIServiceBflaPathInfo{
-                        shared.APIServiceBflaPathInfo{
-                            Clients: []shared.APIServiceBflaClientInfo{
-                                shared.APIServiceBflaClientInfo{
-                                    Name: "string",
-                                    Principles: []shared.APIServiceBflaPrincipleInfo{
-                                        shared.APIServiceBflaPrincipleInfo{
-                                            IP: "169.172.185.96",
-                                            Name: "string",
-                                            PrincipleType: "string",
-                                        },
-                                    },
-                                },
-                            },
-                            Method: shared.HTTPMethodPut,
-                            Path: "/tmp",
-                        },
-                    },
-                },
-            },
         },
-        CatalogID: "ef3b3fca-add4-4420-92ad-1459f8769c20",
+        CatalogID: "aab64aef-3b3f-4caa-9d44-2012ad1459f8",
     })
     if err != nil {
         log.Fatal(err)

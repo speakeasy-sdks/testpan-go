@@ -35,11 +35,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Mitre.GetMitreDashboard(ctx, operations.GetMitreDashboardRequest{
-        ClustersIds: []string{
-            "a91a8587-5ae9-468d-bcc5-575f0642f99f",
-        },
-    })
+    res, err := s.Mitre.GetMitreDashboard(ctx, operations.GetMitreDashboardRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -189,10 +185,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Mitre.GetMitreTechnique(ctx, operations.GetMitreTechniqueRequest{
-        ClustersIds: []string{
-            "15c243dc-adda-4d62-b64a-acf9b6fc450a",
-        },
-        MitreTechniqueType: operations.MitreTechniqueTypeDeployContainer,
+        MitreTechniqueType: operations.MitreTechniqueTypeUnauthorisedRegistriesUsage,
     })
     if err != nil {
         log.Fatal(err)
@@ -296,15 +289,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Mitre.PostMitreTechniqueFix(ctx, operations.PostMitreTechniqueFixRequest{
-        MitreTechniqueFixInfo: shared.MitreTechniqueFixInfo{
-            AffectedElements: []shared.MitreTechniqueAffectedElement{
-                shared.MitreTechniqueAffectedElement{},
-            },
-        },
-        ClustersIds: []string{
-            "684b4b2c-63c2-4f7d-9896-83947da0e326",
-        },
-        MitreTechniqueType: operations.QueryParamMitreTechniqueTypeClearK8SEvents,
+        MitreTechniqueFixInfo: shared.MitreTechniqueFixInfo{},
+        MitreTechniqueType: operations.QueryParamMitreTechniqueTypeWriteableHostPath,
     })
     if err != nil {
         log.Fatal(err)

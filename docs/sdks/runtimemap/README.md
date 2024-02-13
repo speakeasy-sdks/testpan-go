@@ -93,23 +93,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RuntimeMap.GetNetworkMap(ctx, operations.GetNetworkMapRequest{
-        Apps: []string{
-            "string",
-        },
         EndTime: types.MustTimeFromString("2024-01-08T06:16:22.888Z"),
-        Environments: []string{
-            "string",
-        },
-        ExcludeApps: []string{
-            "string",
-        },
-        Labels: []string{
-            "string",
-        },
-        Namespaces: []string{
-            "fe7ca0fe-d770-4727-a0bc-8a727a6cf780",
-        },
-        StartTime: types.MustTimeFromString("2023-08-25T02:49:57.013Z"),
+        StartTime: types.MustTimeFromString("2024-11-30T21:38:21.961Z"),
     })
     if err != nil {
         log.Fatal(err)

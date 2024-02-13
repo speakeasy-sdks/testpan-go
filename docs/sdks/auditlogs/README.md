@@ -39,9 +39,6 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AuditLogs.GetAuditLogs(ctx, operations.GetAuditLogsRequest{
-        Actions: []string{
-            "string",
-        },
         EndTime: types.MustTimeFromString("2023-10-20T18:04:43.105Z"),
         StartTime: types.MustTimeFromString("2024-03-18T18:06:48.311Z"),
     })
@@ -147,13 +144,7 @@ func main() {
     ctx := context.Background()
     res, err := s.AuditLogs.GetAuditLogsKubernetes(ctx, operations.GetAuditLogsKubernetesRequest{
         EndTime: types.MustTimeFromString("2024-03-24T14:09:45.265Z"),
-        KubernetesAuditAction: []string{
-            "string",
-        },
-        Result: []operations.Result{
-            operations.ResultRisky,
-        },
-        StartTime: types.MustTimeFromString("2022-10-10T07:28:47.494Z"),
+        StartTime: types.MustTimeFromString("2024-07-09T23:49:40.165Z"),
     })
     if err != nil {
         log.Fatal(err)

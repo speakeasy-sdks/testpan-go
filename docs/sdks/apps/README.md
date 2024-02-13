@@ -38,11 +38,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Apps.GetApps(ctx, operations.GetAppsRequest{
-        Type: []string{
-            "string",
-        },
-    })
+    res, err := s.Apps.GetApps(ctx, operations.GetAppsRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -154,12 +150,6 @@ func main() {
         Cwd: testpango.String("/usr/local/bin/corp"),
         Executable: "java",
         ExecutablePath: testpango.String("/usr/bin"),
-        Labels: []shared.Label{
-            shared.Label{
-                Key: "<key>",
-                Value: "string",
-            },
-        },
         Name: "AccountingApp",
         ProcessName: testpango.String("accounting_app"),
         Type: "frontend",
@@ -278,12 +268,6 @@ func main() {
             Cwd: testpango.String("/usr/local/bin/corp"),
             Executable: "java",
             ExecutablePath: testpango.String("/usr/bin"),
-            Labels: []shared.Label{
-                shared.Label{
-                    Key: "<key>",
-                    Value: "string",
-                },
-            },
             Name: "AccountingApp",
             ProcessName: testpango.String("accounting_app"),
             Type: "frontend",

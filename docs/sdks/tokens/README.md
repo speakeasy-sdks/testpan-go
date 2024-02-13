@@ -248,9 +248,6 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Tokens.PostTokens(ctx, shared.Token{
-        Apis: []string{
-            "06eb110c-ef48-45c9-b334-9ef284ebe70b",
-        },
         Name: "string",
         VaultSecretPath: "string",
     })
@@ -306,13 +303,10 @@ func main() {
     ctx := context.Background()
     res, err := s.Tokens.PutTokensTokenID(ctx, operations.PutTokensTokenIDRequest{
         Token: shared.Token{
-            Apis: []string{
-                "92f997c4-3e7b-4827-80b5-81f98e4dc9a1",
-            },
             Name: "string",
             VaultSecretPath: "string",
         },
-        TokenID: "de484da0-5c23-446d-bd22-b8df113331e5",
+        TokenID: "92f997c4-3e7b-4827-80b5-81f98e4dc9a1",
     })
     if err != nil {
         log.Fatal(err)

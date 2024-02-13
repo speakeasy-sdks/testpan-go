@@ -196,19 +196,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TrustedSigners.PostTrustedSigners(ctx, shared.TrustedSignerInput{
-        Keys: []shared.TrustedSignerKey{
-            shared.TrustedSignerKey{
-                Key: "<key>",
-                Name: "string",
-            },
-        },
         Name: "string",
-        TrustedSignerCloudAccounts: []shared.TrustedSignerCloudAccountInput{
-            shared.TrustedSignerCloudAccountInput{},
-        },
-        TrustedSignerClusters: []shared.TrustedSignerClusterInput{
-            shared.TrustedSignerClusterInput{},
-        },
     })
     if err != nil {
         log.Fatal(err)
@@ -263,19 +251,7 @@ func main() {
     ctx := context.Background()
     res, err := s.TrustedSigners.PutTrustedSignersTrustedSignerID(ctx, operations.PutTrustedSignersTrustedSignerIDRequest{
         TrustedSigner: shared.TrustedSignerInput{
-            Keys: []shared.TrustedSignerKey{
-                shared.TrustedSignerKey{
-                    Key: "<key>",
-                    Name: "string",
-                },
-            },
             Name: "string",
-            TrustedSignerCloudAccounts: []shared.TrustedSignerCloudAccountInput{
-                shared.TrustedSignerCloudAccountInput{},
-            },
-            TrustedSignerClusters: []shared.TrustedSignerClusterInput{
-                shared.TrustedSignerClusterInput{},
-            },
         },
         TrustedSignerID: "8d323c1d-de95-475d-a823-90f3ebb00bb0",
     })

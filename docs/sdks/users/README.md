@@ -150,11 +150,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Users.GetUsers(ctx, operations.GetUsersRequest{
-        Roles: []operations.Roles{
-            operations.RolesService,
-        },
-    })
+    res, err := s.Users.GetUsers(ctx, operations.GetUsersRequest{})
     if err != nil {
         log.Fatal(err)
     }

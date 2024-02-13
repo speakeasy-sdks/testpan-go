@@ -466,11 +466,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Dashboard.GetDashboardOperationalBar(ctx, operations.GetDashboardOperationalBarRequest{
-        ClustersIds: []string{
-            "22554b3a-d14f-42dc-b8d0-c3530e8f8d65",
-        },
-    })
+    res, err := s.Dashboard.GetDashboardOperationalBar(ctx, operations.GetDashboardOperationalBarRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -521,11 +517,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Dashboard.GetDashboardPermissions(ctx, operations.GetDashboardPermissionsRequest{
-        ClustersIds: []string{
-            "5a331cfa-e207-49d9-a176-e260318ece7d",
-        },
-    })
+    res, err := s.Dashboard.GetDashboardPermissions(ctx, operations.GetDashboardPermissionsRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -723,11 +715,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Dashboard.GetDashboardSecurityContext(ctx, operations.GetDashboardSecurityContextRequest{
-        ClustersIds: []string{
-            "238f2259-a31a-4eed-8f78-79faf6121c42",
-        },
-    })
+    res, err := s.Dashboard.GetDashboardSecurityContext(ctx, operations.GetDashboardSecurityContextRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -778,11 +766,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Dashboard.GetDashboardTopSecurityRisks(ctx, operations.GetDashboardTopSecurityRisksRequest{
-        ClustersIds: []string{
-            "e552767e-0350-4925-b7e4-39731700805c",
-        },
-    })
+    res, err := s.Dashboard.GetDashboardTopSecurityRisks(ctx, operations.GetDashboardTopSecurityRisksRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -833,11 +817,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Dashboard.GetDashboardVulnerabilities(ctx, operations.GetDashboardVulnerabilitiesRequest{
-        ClustersIds: []string{
-            "f32607b3-fc0f-4f77-9432-186ec778c011",
-        },
-    })
+    res, err := s.Dashboard.GetDashboardVulnerabilities(ctx, operations.GetDashboardVulnerabilitiesRequest{})
     if err != nil {
         log.Fatal(err)
     }

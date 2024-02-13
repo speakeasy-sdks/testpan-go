@@ -4,9 +4,9 @@ management:
   docChecksum: 8be724345472d3ac63089c40372a9a19
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.250.2
-  releaseVersion: 0.9.0
-  configChecksum: f9ce3359d1fa9b1d1fac755aaa102e35
+  generationVersion: 2.253.0
+  releaseVersion: 0.9.1
+  configChecksum: 3241f2e18a4bfaaab96f2896e7b556e2
   repoURL: https://github.com/speakeasy-sdks/testpan-go.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/testpan-go

@@ -103,17 +103,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.ImagesAndVulnerabilities.GetAccountVulnerabilitiesXlsx(ctx, operations.GetAccountVulnerabilitiesXlsxRequest{
-        ImageHash: []string{
-            "string",
-        },
-        ImageName: []string{
-            "string",
-        },
-        ImageTag: []string{
-            "string",
-        },
-    })
+    res, err := s.ImagesAndVulnerabilities.GetAccountVulnerabilitiesXlsx(ctx, operations.GetAccountVulnerabilitiesXlsxRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -165,15 +155,6 @@ func main() {
 
     ctx := context.Background()
     res, err := s.ImagesAndVulnerabilities.GetImages(ctx, operations.GetImagesRequest{
-        ImageHash: []string{
-            "string",
-        },
-        ImageName: []string{
-            "string",
-        },
-        ImageTag: []string{
-            "string",
-        },
         SortKey: operations.GetImagesQueryParamSortKeyImageName,
     })
     if err != nil {
@@ -648,11 +629,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.ImagesAndVulnerabilities.PostImages(ctx, shared.ImageDef{
-        ImageTags: []string{
-            "string",
-        },
-    })
+    res, err := s.ImagesAndVulnerabilities.PostImages(ctx, shared.ImageDef{})
     if err != nil {
         log.Fatal(err)
     }
@@ -705,11 +682,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.ImagesAndVulnerabilities.PostImagesApprove(ctx, operations.PostImagesApproveRequest{
-        UUIDList: shared.UUIDList{
-            UUIDList: []string{
-                "afe40a3f-7c16-48da-ac19-b6309faa9f44",
-            },
-        },
+        UUIDList: shared.UUIDList{},
         IsImageApproved: false,
     })
     if err != nil {
@@ -764,13 +737,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.ImagesAndVulnerabilities.PostImagesImageIDDockerfileScanResultsIgnore(ctx, operations.PostImagesImageIDDockerfileScanResultsIgnoreRequest{
-        UUIDList: shared.UUIDList{
-            UUIDList: []string{
-                "7d411c9e-43ee-4529-bae8-7474b2c192fe",
-            },
-        },
+        UUIDList: shared.UUIDList{},
         ActionType: operations.ActionTypeAdd,
-        ImageID: "fcccfe79-79d3-4058-b255-f4d4f301de39",
+        ImageID: "d411c9e4-3ee5-4293-ae87-474b2c192fe7",
     })
     if err != nil {
         log.Fatal(err)
@@ -824,13 +793,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.ImagesAndVulnerabilities.PostImagesImageIDVulnerabilitiesIgnore(ctx, operations.PostImagesImageIDVulnerabilitiesIgnoreRequest{
-        UUIDList: shared.UUIDList{
-            UUIDList: []string{
-                "0f457328-8079-4ea1-b64e-d7631fc85bb9",
-            },
-        },
-        ActionType: operations.QueryParamActionTypeRemove,
-        ImageID: "95b06784-3712-40b3-827e-08cfaaddc5ee",
+        UUIDList: shared.UUIDList{},
+        ActionType: operations.QueryParamActionTypeAdd,
+        ImageID: "f4573288-079e-4a1b-a4ed-7631fc85bb9b",
     })
     if err != nil {
         log.Fatal(err)

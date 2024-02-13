@@ -458,26 +458,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Serverless.GetServerlessFunctions(ctx, operations.GetServerlessFunctionsRequest{
-        CloudAccountsIdsFilter: []string{
-            "2d213824-3222-42f0-b89a-c2b1bfba58c4",
-        },
-        FuncName: []string{
-            "string",
-        },
-        PolicyRisk: []operations.PolicyRisk{
-            operations.PolicyRiskLow,
-        },
-        Result: []operations.QueryParamResult{
-            operations.QueryParamResultAllow,
-        },
-        Risk: []operations.QueryParamRisk{
-            operations.QueryParamRiskHigh,
-        },
-        SecretsRisk: []operations.SecretsRisk{
-            operations.SecretsRiskRiskIdentified,
-        },
-    })
+    res, err := s.Serverless.GetServerlessFunctions(ctx, operations.GetServerlessFunctionsRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -528,11 +509,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Serverless.GetServerlessFunctionsArns(ctx, operations.GetServerlessFunctionsArnsRequest{
-        FuncArn: []string{
-            "string",
-        },
-    })
+    res, err := s.Serverless.GetServerlessFunctionsArns(ctx, operations.GetServerlessFunctionsArnsRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -583,11 +560,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Serverless.GetServerlessFunctionsNames(ctx, operations.GetServerlessFunctionsNamesRequest{
-        FuncName: []string{
-            "string",
-        },
-    })
+    res, err := s.Serverless.GetServerlessFunctionsNames(ctx, operations.GetServerlessFunctionsNamesRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -1067,11 +1040,6 @@ func main() {
             PeriodicJobExpression: shared.ServerlessPeriodicJobExpression{
                 PeriodicJobType: shared.ServerlessPeriodicJobExpressionPeriodicJobTypeServerlessByHoursPeriodicJobExpression,
             },
-            Regions: []string{
-                "string",
-            },
-            SecurityThreats: &shared.CloudAccountSecurityThreats{},
-            VulnerabilitiesSummary: &shared.VulnerabilitiesSummary{},
         },
         CloudAccountID: "3c18ca7f-b155-4344-88dc-c7697a579ecd",
     })

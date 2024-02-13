@@ -38,11 +38,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.K8sCisBenchmark.GetK8sCISBenchmark(ctx, operations.GetK8sCISBenchmarkRequest{
-        ClusterIds: []string{
-            "string",
-        },
-    })
+    res, err := s.K8sCisBenchmark.GetK8sCISBenchmark(ctx, operations.GetK8sCISBenchmarkRequest{})
     if err != nil {
         log.Fatal(err)
     }

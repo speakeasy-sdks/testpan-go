@@ -251,35 +251,6 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Envs.PostEnvironments(ctx, shared.EnvironmentInput{
-        AwsEnvironments: []shared.AwsEnvironmentInput{
-            shared.AwsEnvironmentInput{
-                Tags: []shared.Tag{
-                    shared.Tag{
-                        Key: "<key>",
-                        Value: "string",
-                    },
-                },
-                Vpc: shared.VPCDescriptionInput{
-                    AwsAccountID: "string",
-                    RegionID: "string",
-                    VpcID: "string",
-                },
-            },
-        },
-        KubernetesEnvironments: []shared.KubernetesEnvironmentInput{
-            shared.KubernetesEnvironmentInput{
-                KubernetesCluster: "3143be01-277d-4065-a891-6a0e622811bd",
-                NamespaceLabels: []shared.Label{
-                    shared.Label{
-                        Key: "<key>",
-                        Value: "string",
-                    },
-                },
-                Namespaces: []string{
-                    "string",
-                },
-            },
-        },
         Name: "Prod",
     })
     if err != nil {
@@ -334,35 +305,6 @@ func main() {
     ctx := context.Background()
     res, err := s.Envs.PostEnvironmentsBatch(ctx, []shared.EnvironmentInput{
         shared.EnvironmentInput{
-            AwsEnvironments: []shared.AwsEnvironmentInput{
-                shared.AwsEnvironmentInput{
-                    Tags: []shared.Tag{
-                        shared.Tag{
-                            Key: "<key>",
-                            Value: "string",
-                        },
-                    },
-                    Vpc: shared.VPCDescriptionInput{
-                        AwsAccountID: "string",
-                        RegionID: "string",
-                        VpcID: "string",
-                    },
-                },
-            },
-            KubernetesEnvironments: []shared.KubernetesEnvironmentInput{
-                shared.KubernetesEnvironmentInput{
-                    KubernetesCluster: "925b166e-fc31-42c0-aebd-81198d741c5b",
-                    NamespaceLabels: []shared.Label{
-                        shared.Label{
-                            Key: "<key>",
-                            Value: "string",
-                        },
-                    },
-                    Namespaces: []string{
-                        "string",
-                    },
-                },
-            },
             Name: "Prod",
         },
     })
@@ -470,38 +412,9 @@ func main() {
     ctx := context.Background()
     res, err := s.Envs.PutEnvironmentsEnvID(ctx, operations.PutEnvironmentsEnvIDRequest{
         Environment: shared.EnvironmentInput{
-            AwsEnvironments: []shared.AwsEnvironmentInput{
-                shared.AwsEnvironmentInput{
-                    Tags: []shared.Tag{
-                        shared.Tag{
-                            Key: "<key>",
-                            Value: "string",
-                        },
-                    },
-                    Vpc: shared.VPCDescriptionInput{
-                        AwsAccountID: "string",
-                        RegionID: "string",
-                        VpcID: "string",
-                    },
-                },
-            },
-            KubernetesEnvironments: []shared.KubernetesEnvironmentInput{
-                shared.KubernetesEnvironmentInput{
-                    KubernetesCluster: "57cf89fe-5e65-409c-b415-d6003566df6f",
-                    NamespaceLabels: []shared.Label{
-                        shared.Label{
-                            Key: "<key>",
-                            Value: "string",
-                        },
-                    },
-                    Namespaces: []string{
-                        "string",
-                    },
-                },
-            },
             Name: "Prod",
         },
-        EnvID: "010de053-98de-43a9-acad-0419b6d55592",
+        EnvID: "57cf89fe-5e65-409c-b415-d6003566df6f",
     })
     if err != nil {
         log.Fatal(err)

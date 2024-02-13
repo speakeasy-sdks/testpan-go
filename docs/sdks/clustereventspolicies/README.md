@@ -283,14 +283,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.ClusterEventsPolicies.PutKubernetesAPIPolicy(ctx, shared.KubernetesAPIPolicy{
-        DefaultRule: &shared.DefaultKubernetesAPIRule{},
-        UserRules: []shared.KubernetesAPIRule{
-            shared.KubernetesAPIRule{
-                KubernetesAPIRuleType: shared.KubernetesAPIRuleTypeKubernetesAPIRecommendedRule,
-            },
-        },
-    })
+    res, err := s.ClusterEventsPolicies.PutKubernetesAPIPolicy(ctx, shared.KubernetesAPIPolicy{})
     if err != nil {
         log.Fatal(err)
     }

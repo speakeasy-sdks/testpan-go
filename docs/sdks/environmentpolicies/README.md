@@ -187,26 +187,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.EnvironmentPolicies.PutAppsPolicy(ctx, shared.AppPolicy{
-        UnidentifiedPodsRule: &shared.UnidentifiedPodsRule{
-            Action: shared.UnidentifiedPodsRuleActionBlock,
-        },
-        UserRules: []shared.AppRule{
-            shared.AppRule{
-                App: &shared.WorkloadRuleType{
-                    WorkloadRuleType: shared.WorkloadRuleTypeWorkloadRuleTypePodAnyWorkloadRuleType,
-                },
-                Name: "string",
-                RuleTypeProperties: shared.AppRuleType{
-                    RuleType: shared.RuleTypeViolationRuleType,
-                },
-                Scope: &shared.WorkloadRuleScopeType{
-                    WorkloadRuleScopeType: shared.WorkloadRuleScopeTypeEnumAnyRuleType,
-                },
-                Status: shared.AppRuleStatusEnabled,
-            },
-        },
-    })
+    res, err := s.EnvironmentPolicies.PutAppsPolicy(ctx, shared.AppPolicy{})
     if err != nil {
         log.Fatal(err)
     }

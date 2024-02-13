@@ -248,51 +248,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.PspProfiles.PostPodSecurityPolicyProfiles(ctx, shared.PodSecurityPolicy{
-        AllowedCapabilities: []string{
-            "string",
-        },
-        AllowedHostPaths: []shared.AllowedHostPath{
-            shared.AllowedHostPath{},
-        },
-        AllowedProcMountTypes: []shared.AllowedProcMountType{
-            shared.AllowedProcMountTypeUnmasked,
-        },
-        AllowedUnsafeSysctls: []string{
-            "string",
-        },
-        ForbiddenSysctls: []string{
-            "string",
-        },
-        FsGroup: shared.RunAsGroupStrategyOptions{
-            Ranges: []shared.IDRange{
-                shared.IDRange{},
-            },
-        },
-        HostPorts: []shared.HostPortRange{
-            shared.HostPortRange{},
-        },
+        FsGroup: shared.RunAsGroupStrategyOptions{},
         Name: "string",
-        RequiredDropCapabilities: []string{
-            "string",
-        },
-        RunAsGroup: &shared.RunAsGroupStrategyOptions{
-            Ranges: []shared.IDRange{
-                shared.IDRange{},
-            },
-        },
-        RunAsUser: shared.RunAsUserStrategyOptions{
-            Ranges: []shared.IDRange{
-                shared.IDRange{},
-            },
-        },
-        SupplementalGroups: shared.RunAsGroupStrategyOptions{
-            Ranges: []shared.IDRange{
-                shared.IDRange{},
-            },
-        },
-        Volumes: []shared.PSPVolumeTypes{
-            shared.PSPVolumeTypesAzureFile,
-        },
+        RunAsUser: shared.RunAsUserStrategyOptions{},
+        SupplementalGroups: shared.RunAsGroupStrategyOptions{},
     })
     if err != nil {
         log.Fatal(err)
@@ -346,51 +305,10 @@ func main() {
     ctx := context.Background()
     res, err := s.PspProfiles.PostPodSecurityPolicyProfilesBatch(ctx, []shared.PodSecurityPolicy{
         shared.PodSecurityPolicy{
-            AllowedCapabilities: []string{
-                "string",
-            },
-            AllowedHostPaths: []shared.AllowedHostPath{
-                shared.AllowedHostPath{},
-            },
-            AllowedProcMountTypes: []shared.AllowedProcMountType{
-                shared.AllowedProcMountTypeDefault,
-            },
-            AllowedUnsafeSysctls: []string{
-                "string",
-            },
-            ForbiddenSysctls: []string{
-                "string",
-            },
-            FsGroup: shared.RunAsGroupStrategyOptions{
-                Ranges: []shared.IDRange{
-                    shared.IDRange{},
-                },
-            },
-            HostPorts: []shared.HostPortRange{
-                shared.HostPortRange{},
-            },
+            FsGroup: shared.RunAsGroupStrategyOptions{},
             Name: "string",
-            RequiredDropCapabilities: []string{
-                "string",
-            },
-            RunAsGroup: &shared.RunAsGroupStrategyOptions{
-                Ranges: []shared.IDRange{
-                    shared.IDRange{},
-                },
-            },
-            RunAsUser: shared.RunAsUserStrategyOptions{
-                Ranges: []shared.IDRange{
-                    shared.IDRange{},
-                },
-            },
-            SupplementalGroups: shared.RunAsGroupStrategyOptions{
-                Ranges: []shared.IDRange{
-                    shared.IDRange{},
-                },
-            },
-            Volumes: []shared.PSPVolumeTypes{
-                shared.PSPVolumeTypesFlexVolume,
-            },
+            RunAsUser: shared.RunAsUserStrategyOptions{},
+            SupplementalGroups: shared.RunAsGroupStrategyOptions{},
         },
     })
     if err != nil {
@@ -442,11 +360,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.PspProfiles.PostSeccompProfiles(ctx, shared.SeccompProfileInput{
-        PodSecurityPolicies: []string{
-            "string",
-        },
-    })
+    res, err := s.PspProfiles.PostSeccompProfiles(ctx, shared.SeccompProfileInput{})
     if err != nil {
         log.Fatal(err)
     }
@@ -499,53 +413,12 @@ func main() {
     ctx := context.Background()
     res, err := s.PspProfiles.PutPodSecurityPolicyProfilesProfileID(ctx, operations.PutPodSecurityPolicyProfilesProfileIDRequest{
         PodSecurityPolicy: shared.PodSecurityPolicy{
-            AllowedCapabilities: []string{
-                "string",
-            },
-            AllowedHostPaths: []shared.AllowedHostPath{
-                shared.AllowedHostPath{},
-            },
-            AllowedProcMountTypes: []shared.AllowedProcMountType{
-                shared.AllowedProcMountTypeDefault,
-            },
-            AllowedUnsafeSysctls: []string{
-                "string",
-            },
-            ForbiddenSysctls: []string{
-                "string",
-            },
-            FsGroup: shared.RunAsGroupStrategyOptions{
-                Ranges: []shared.IDRange{
-                    shared.IDRange{},
-                },
-            },
-            HostPorts: []shared.HostPortRange{
-                shared.HostPortRange{},
-            },
+            FsGroup: shared.RunAsGroupStrategyOptions{},
             Name: "string",
-            RequiredDropCapabilities: []string{
-                "string",
-            },
-            RunAsGroup: &shared.RunAsGroupStrategyOptions{
-                Ranges: []shared.IDRange{
-                    shared.IDRange{},
-                },
-            },
-            RunAsUser: shared.RunAsUserStrategyOptions{
-                Ranges: []shared.IDRange{
-                    shared.IDRange{},
-                },
-            },
-            SupplementalGroups: shared.RunAsGroupStrategyOptions{
-                Ranges: []shared.IDRange{
-                    shared.IDRange{},
-                },
-            },
-            Volumes: []shared.PSPVolumeTypes{
-                shared.PSPVolumeTypesAwsElasticBlockStore,
-            },
+            RunAsUser: shared.RunAsUserStrategyOptions{},
+            SupplementalGroups: shared.RunAsGroupStrategyOptions{},
         },
-        ProfileID: "ce973a74-d37d-4a32-9460-4edb379d9afb",
+        ProfileID: "10ce973a-74d3-47da-b254-604edb379d9a",
     })
     if err != nil {
         log.Fatal(err)
@@ -598,11 +471,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.PspProfiles.PutSeccompProfilesProfileID(ctx, operations.PutSeccompProfilesProfileIDRequest{
-        SeccompProfile: shared.SeccompProfileInput{
-            PodSecurityPolicies: []string{
-                "string",
-            },
-        },
+        SeccompProfile: shared.SeccompProfileInput{},
         ProfileID: "7a689ccb-cc10-41fe-9293-6c76ef44408a",
     })
     if err != nil {
