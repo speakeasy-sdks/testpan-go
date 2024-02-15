@@ -194,7 +194,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurityPolicies.PostAPISecurityPolicy(ctx, shared.APISecurityPolicyInput{
-        Name: "string",
+        Name: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -248,7 +248,7 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurityPolicies.PutAPISecurityPolicyPolicyID(ctx, operations.PutAPISecurityPolicyPolicyIDRequest{
         APISecurityPolicy: shared.APISecurityPolicyInput{
-            Name: "string",
+            Name: "<value>",
         },
         PolicyID: "735c1bef-90a3-4017-8485-58c2807a30fd",
     })

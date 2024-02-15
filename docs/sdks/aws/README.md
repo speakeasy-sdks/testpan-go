@@ -191,7 +191,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Aws.GetAwsAwsAccountIDRegions(ctx, operations.GetAwsAwsAccountIDRegionsRequest{
-        AwsAccountID: "string",
+        AwsAccountID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -244,8 +244,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Aws.GetAwsAwsAccountIDRegionIDSubnets(ctx, operations.GetAwsAwsAccountIDRegionIDSubnetsRequest{
-        AwsAccountID: "string",
-        RegionID: "string",
+        AwsAccountID: "<value>",
+        RegionID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -299,8 +299,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Aws.GetAwsAwsAccountIDRegionIDVpcs(ctx, operations.GetAwsAwsAccountIDRegionIDVpcsRequest{
-        AwsAccountID: "string",
-        RegionID: "string",
+        AwsAccountID: "<value>",
+        RegionID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -352,8 +352,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Aws.PostAwsRoles(ctx, shared.AWSRolePost{
-        Arn: "string",
-        Name: "string",
+        Arn: "<value>",
+        Name: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -407,7 +407,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Aws.PutAwsRolesRoleID(ctx, operations.PutAwsRolesRoleIDRequest{
         AWSRoleDetails: shared.AWSRoleDetails{
-            Name: "string",
+            Name: "<value>",
         },
         RoleID: "81eef92a-b1e0-45da-ba61-a597d143757f",
     })

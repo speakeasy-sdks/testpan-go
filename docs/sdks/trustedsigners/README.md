@@ -196,7 +196,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TrustedSigners.PostTrustedSigners(ctx, shared.TrustedSignerInput{
-        Name: "string",
+        Name: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -251,7 +251,7 @@ func main() {
     ctx := context.Background()
     res, err := s.TrustedSigners.PutTrustedSignersTrustedSignerID(ctx, operations.PutTrustedSignersTrustedSignerIDRequest{
         TrustedSigner: shared.TrustedSignerInput{
-            Name: "string",
+            Name: "<value>",
         },
         TrustedSignerID: "8d323c1d-de95-475d-a823-90f3ebb00bb0",
     })

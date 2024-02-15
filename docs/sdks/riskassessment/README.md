@@ -848,7 +848,7 @@ func main() {
     ctx := context.Background()
     res, err := s.RiskAssessment.PutRiskAssessmentIgnoredRisksIgnoredRiskID(ctx, operations.PutRiskAssessmentIgnoredRisksIgnoredRiskIDRequest{
         CiPolicy: shared.CiPolicyInput{
-            Name: "string",
+            Name: "<value>",
         },
         IgnoredRiskID: "44ed1978-a3a5-42b6-af16-d35fdf8529c3",
     })

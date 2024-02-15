@@ -246,8 +246,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Gateways.PostGateways(ctx, shared.Gateway{
-        ClusterName: "string",
-        Name: "string",
+        ClusterName: "<value>",
+        Name: "<value>",
         Type: shared.GatewayTypeApigeeX,
     })
     if err != nil {
@@ -302,8 +302,8 @@ func main() {
     ctx := context.Background()
     res, err := s.Gateways.PutGatewaysGatewayID(ctx, operations.PutGatewaysGatewayIDRequest{
         Gateway: shared.Gateway{
-            ClusterName: "string",
-            Name: "string",
+            ClusterName: "<value>",
+            Name: "<value>",
             Type: shared.GatewayTypeF5BigIP,
         },
         GatewayID: "b1d9c87e-1369-4f02-8e6c-75779c9c8e93",

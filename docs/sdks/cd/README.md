@@ -416,7 +416,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Cd.PostCdServerlessRule(ctx, shared.CdServerlessRule{
         Action: shared.ServerlessRuleActionDetect,
-        Name: "string",
+        Name: "<value>",
         Rule: shared.ServerlessRuleType{
             ServerlessRuleType: shared.ServerlessRuleTypeServerlessRuleTypeFunctionArnServerlessRuleType,
         },
@@ -529,7 +529,7 @@ func main() {
     res, err := s.Cd.PutCdRuleIDServerlessRule(ctx, operations.PutCdRuleIDServerlessRuleRequest{
         CdServerlessRule: shared.CdServerlessRule{
             Action: shared.ServerlessRuleActionDetect,
-            Name: "string",
+            Name: "<value>",
             Rule: shared.ServerlessRuleType{
                 ServerlessRuleType: shared.ServerlessRuleTypeServerlessRuleTypeFunctionArnServerlessRuleType,
             },

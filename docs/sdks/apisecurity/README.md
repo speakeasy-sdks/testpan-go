@@ -1509,7 +1509,7 @@ func main() {
     res, err := s.APISecurity.GetAPISecurityCatalogIDMethods(ctx, operations.GetAPISecurityCatalogIDMethodsRequest{
         CatalogID: "bc418193-54db-45b9-831c-a3b7fcd92288",
         Tags: []string{
-            "string",
+            "<value>",
         },
     })
     if err != nil {
@@ -2037,7 +2037,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.PostAPISecurityAPI(ctx, shared.APISecurityAPI{
-        Name: "string",
+        Name: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -2091,7 +2091,7 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.PostAPISecurityInternalCatalogCatalogIDBflaDetection(ctx, operations.PostAPISecurityInternalCatalogCatalogIDBflaDetectionRequest{
         BflaDurationConfiguration: shared.BflaDurationConfiguration{
-            Duration: "string",
+            Duration: "<value>",
         },
         CatalogID: "35e94464-b0ff-40e6-be14-ca29162fc277",
     })
@@ -2147,7 +2147,7 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.PostAPISecurityInternalCatalogCatalogIDBflaLearning(ctx, operations.PostAPISecurityInternalCatalogCatalogIDBflaLearningRequest{
         BflaDurationConfiguration: shared.BflaDurationConfiguration{
-            Duration: "string",
+            Duration: "<value>",
         },
         CatalogID: "08fbc82f-2c9e-4a85-a326-b52d888f26e1",
     })
@@ -2813,8 +2813,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.PostGateways(ctx, shared.Gateway{
-        ClusterName: "string",
-        Name: "string",
+        ClusterName: "<value>",
+        Name: "<value>",
         Type: shared.GatewayTypeApigeeX,
     })
     if err != nil {
@@ -2924,7 +2924,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.PutAPISecurityOpenAPISpecsCatalogID(ctx, operations.PutAPISecurityOpenAPISpecsCatalogIDRequest{
-        RequestBody: "string",
+        RequestBody: "<value>",
         CatalogID: "39b6c1e7-d209-4d8c-b8d6-6907b8b2d3e4",
     })
     if err != nil {
@@ -2979,8 +2979,8 @@ func main() {
     ctx := context.Background()
     res, err := s.APISecurity.PutGatewaysGatewayID(ctx, operations.PutGatewaysGatewayIDRequest{
         Gateway: shared.Gateway{
-            ClusterName: "string",
-            Name: "string",
+            ClusterName: "<value>",
+            Name: "<value>",
             Type: shared.GatewayTypeF5BigIP,
         },
         GatewayID: "b1d9c87e-1369-4f02-8e6c-75779c9c8e93",

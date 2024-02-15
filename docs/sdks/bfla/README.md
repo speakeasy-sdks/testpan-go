@@ -197,7 +197,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Bfla.PostAPISecurityInternalCatalogCatalogIDBflaDetection(ctx, operations.PostAPISecurityInternalCatalogCatalogIDBflaDetectionRequest{
         BflaDurationConfiguration: shared.BflaDurationConfiguration{
-            Duration: "string",
+            Duration: "<value>",
         },
         CatalogID: "35e94464-b0ff-40e6-be14-ca29162fc277",
     })
@@ -253,7 +253,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Bfla.PostAPISecurityInternalCatalogCatalogIDBflaLearning(ctx, operations.PostAPISecurityInternalCatalogCatalogIDBflaLearningRequest{
         BflaDurationConfiguration: shared.BflaDurationConfiguration{
-            Duration: "string",
+            Duration: "<value>",
         },
         CatalogID: "08fbc82f-2c9e-4a85-a326-b52d888f26e1",
     })

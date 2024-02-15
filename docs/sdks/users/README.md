@@ -669,7 +669,7 @@ func main() {
             LastName: "Mitchell",
             PrivacyPolicyAndTermsAndConditionsAgreement: false,
         },
-        GRecaptchaResponse: "string",
+        GRecaptchaResponse: "<value>",
     })
     if err != nil {
         log.Fatal(err)

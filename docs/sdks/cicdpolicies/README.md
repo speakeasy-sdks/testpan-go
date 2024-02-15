@@ -250,7 +250,7 @@ func main() {
         Deployers: []string{
             "e20e4f6e-3e04-4f9f-8904-433d8246a999",
         },
-        Name: "string",
+        Name: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -302,7 +302,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.CICDPolicies.PostCiPolicy(ctx, shared.CiPolicyInput{
-        Name: "string",
+        Name: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -359,7 +359,7 @@ func main() {
             Deployers: []string{
                 "75218fad-dbdc-48d5-b27f-e1d8ecd9e791",
             },
-            Name: "string",
+            Name: "<value>",
         },
         PolicyID: "545666e4-dfb7-44ef-ada8-1a0d950f62fe",
     })
@@ -415,7 +415,7 @@ func main() {
     ctx := context.Background()
     res, err := s.CICDPolicies.PutCiPolicyPolicyID(ctx, operations.PutCiPolicyPolicyIDRequest{
         CiPolicy: shared.CiPolicyInput{
-            Name: "string",
+            Name: "<value>",
         },
         PolicyID: "a0c10c59-7151-45cd-be24-f5dcfd347fd8",
     })

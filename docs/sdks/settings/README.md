@@ -408,9 +408,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Settings.PostSettingsIntegrationsCa(ctx, shared.CaIntegrationRequest{
-        Certificate: "string",
-        IssuerName: "string",
-        Name: "string",
+        Certificate: "<value>",
+        IssuerName: "<value>",
+        Name: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -466,7 +466,7 @@ func main() {
         EventsToForward: []shared.EventsToForward{
             shared.EventsToForwardAttackPath,
         },
-        Name: "string",
+        Name: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -519,7 +519,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Settings.PostSettingsIntegrationsOpsgenieTestIntegration(ctx, shared.TestOpsgenieConnectionRequest{
-        Token: "string",
+        Token: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -678,7 +678,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Settings.PostSettingsIntegrationsSplunkTestIntegration(ctx, shared.TestSplunkConnectionRequest{
-        Token: "string",
+        Token: "<value>",
         URL: "http://same-shopper.biz",
     })
     if err != nil {
@@ -942,9 +942,9 @@ func main() {
     ctx := context.Background()
     res, err := s.Settings.PutSettingsIntegrationsCaID(ctx, operations.PutSettingsIntegrationsCaIDRequest{
         CaIntegrationRequest: shared.CaIntegrationRequest{
-            Certificate: "string",
-            IssuerName: "string",
-            Name: "string",
+            Certificate: "<value>",
+            IssuerName: "<value>",
+            Name: "<value>",
         },
         ID: "3150c8bd-a77d-45f8-8b65-8d2fdcaeae55",
     })
@@ -1004,8 +1004,8 @@ func main() {
             EventsToForward: []shared.EventsToForward{
                 shared.EventsToForwardNotification,
             },
-            Name: "string",
-            Token: "string",
+            Name: "<value>",
+            Token: "<value>",
         },
         EventForwardingID: "a96473ef-b0fd-4047-9c2d-c1b408bce49d",
     })

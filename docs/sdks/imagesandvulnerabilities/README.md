@@ -259,8 +259,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.ImagesAndVulnerabilities.GetImagesVulnerabilitiesByImageNameAndHash(ctx, operations.GetImagesVulnerabilitiesByImageNameAndHashRequest{
-        ImageHash: "string",
-        ImageName: "string",
+        ImageHash: "<value>",
+        ImageName: "<value>",
     })
     if err != nil {
         log.Fatal(err)

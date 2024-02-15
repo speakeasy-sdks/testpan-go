@@ -249,7 +249,7 @@ func main() {
     res, err := s.K8sCisBenchmark.PutK8sCISBenchmarkClusterID(ctx, operations.PutK8sCISBenchmarkClusterIDRequest{
         K8sCISBenchmarkUpdateNodes: shared.K8sCISBenchmarkUpdateNodes{
             ClusterID: "49b403e0-ddc8-4f07-8f6d-7b4806fe4a7b",
-            Index: "string",
+            Index: "<value>",
             Nodes: []shared.K8sCISBenchmarkUpdateNode{
                 shared.K8sCISBenchmarkUpdateNode{},
             },

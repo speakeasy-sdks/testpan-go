@@ -199,7 +199,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Expansions.PostExpansions(ctx, shared.ExpansionInput{
         ClusterID: "ef536384-aae2-4f5a-87a4-cef022a42548",
-        Name: "string",
+        Name: "<value>",
         NamespaceID: "ea7db024-5fda-41fa-8ab8-8259ba11df19",
         WorkloadAddresses: []shared.WorkloadAddress{
             shared.WorkloadAddress{
@@ -259,7 +259,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Expansions.PutExpansionsExpansionID(ctx, operations.PutExpansionsExpansionIDRequest{
         ExpansionPut: shared.ExpansionPut{
-            Name: "string",
+            Name: "<value>",
             WorkloadAddresses: []shared.WorkloadAddress{
                 shared.WorkloadAddress{
                     Address: "218 Jenkins Gateway",

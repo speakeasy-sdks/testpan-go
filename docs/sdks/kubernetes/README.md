@@ -784,7 +784,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Kubernetes.PostKubernetesClusters(ctx, shared.KubernetesCluster{
-        Name: "string",
+        Name: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -840,7 +840,7 @@ func main() {
         Containers: []shared.Container{
             shared.Container{},
         },
-        Name: "string",
+        Name: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -894,7 +894,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Kubernetes.PutKubernetesClustersKubernetesClusterID(ctx, operations.PutKubernetesClustersKubernetesClusterIDRequest{
         KubernetesCluster: shared.KubernetesCluster{
-            Name: "string",
+            Name: "<value>",
         },
         KubernetesClusterID: "ffc49f9e-0fd9-4579-98a0-796a5f2d9d7f",
     })
@@ -1008,7 +1008,7 @@ func main() {
             Containers: []shared.Container{
                 shared.Container{},
             },
-            Name: "string",
+            Name: "<value>",
         },
         PodID: "d5b40efc-46b3-4d79-9349-9390e36a1df3",
     })

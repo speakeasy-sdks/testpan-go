@@ -249,7 +249,7 @@ func main() {
     ctx := context.Background()
     res, err := s.PspProfiles.PostPodSecurityPolicyProfiles(ctx, shared.PodSecurityPolicy{
         FsGroup: shared.RunAsGroupStrategyOptions{},
-        Name: "string",
+        Name: "<value>",
         RunAsUser: shared.RunAsUserStrategyOptions{},
         SupplementalGroups: shared.RunAsGroupStrategyOptions{},
     })
@@ -306,7 +306,7 @@ func main() {
     res, err := s.PspProfiles.PostPodSecurityPolicyProfilesBatch(ctx, []shared.PodSecurityPolicy{
         shared.PodSecurityPolicy{
             FsGroup: shared.RunAsGroupStrategyOptions{},
-            Name: "string",
+            Name: "<value>",
             RunAsUser: shared.RunAsUserStrategyOptions{},
             SupplementalGroups: shared.RunAsGroupStrategyOptions{},
         },
@@ -414,7 +414,7 @@ func main() {
     res, err := s.PspProfiles.PutPodSecurityPolicyProfilesProfileID(ctx, operations.PutPodSecurityPolicyProfilesProfileIDRequest{
         PodSecurityPolicy: shared.PodSecurityPolicy{
             FsGroup: shared.RunAsGroupStrategyOptions{},
-            Name: "string",
+            Name: "<value>",
             RunAsUser: shared.RunAsUserStrategyOptions{},
             SupplementalGroups: shared.RunAsGroupStrategyOptions{},
         },
