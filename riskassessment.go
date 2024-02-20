@@ -44,12 +44,12 @@ func (s *RiskAssessment) DeleteRiskAssessmentIgnoredRisksIgnoredRiskID(ctx conte
 	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -72,7 +72,6 @@ func (s *RiskAssessment) DeleteRiskAssessmentIgnoredRisksIgnoredRiskID(ctx conte
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DeleteRiskAssessmentIgnoredRisksIgnoredRiskIDResponse{
@@ -116,12 +115,12 @@ func (s *RiskAssessment) DeleteRiskAssessmentKubernetesClusterIDCancel(ctx conte
 	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -144,7 +143,6 @@ func (s *RiskAssessment) DeleteRiskAssessmentKubernetesClusterIDCancel(ctx conte
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DeleteRiskAssessmentKubernetesClusterIDCancelResponse{
@@ -188,12 +186,12 @@ func (s *RiskAssessment) GetRiskAssessment(ctx context.Context) (*operations.Get
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -216,7 +214,6 @@ func (s *RiskAssessment) GetRiskAssessment(ctx context.Context) (*operations.Get
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetRiskAssessmentResponse{
@@ -271,12 +268,12 @@ func (s *RiskAssessment) GetRiskAssessmentIgnoredRisks(ctx context.Context) (*op
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -299,7 +296,6 @@ func (s *RiskAssessment) GetRiskAssessmentIgnoredRisks(ctx context.Context) (*op
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetRiskAssessmentIgnoredRisksResponse{
@@ -358,12 +354,12 @@ func (s *RiskAssessment) GetRiskAssessmentPermissions(ctx context.Context, reque
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -386,7 +382,6 @@ func (s *RiskAssessment) GetRiskAssessmentPermissions(ctx context.Context, reque
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetRiskAssessmentPermissionsResponse{
@@ -447,12 +442,12 @@ func (s *RiskAssessment) GetRiskAssessmentPermissionsClusterID(ctx context.Conte
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -475,7 +470,6 @@ func (s *RiskAssessment) GetRiskAssessmentPermissionsClusterID(ctx context.Conte
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetRiskAssessmentPermissionsClusterIDResponse{
@@ -536,12 +530,12 @@ func (s *RiskAssessment) GetRiskAssessmentPermissionsClusterIDOwnerID(ctx contex
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -564,7 +558,6 @@ func (s *RiskAssessment) GetRiskAssessmentPermissionsClusterIDOwnerID(ctx contex
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetRiskAssessmentPermissionsClusterIDOwnerIDResponse{
@@ -621,12 +614,12 @@ func (s *RiskAssessment) GetRiskAssessmentPermissionsClusterIDOwnerIDRoleID(ctx 
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -649,7 +642,6 @@ func (s *RiskAssessment) GetRiskAssessmentPermissionsClusterIDOwnerIDRoleID(ctx 
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetRiskAssessmentPermissionsClusterIDOwnerIDRoleIDResponse{
@@ -710,12 +702,12 @@ func (s *RiskAssessment) GetRiskAssessmentPoll(ctx context.Context, request oper
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -738,7 +730,6 @@ func (s *RiskAssessment) GetRiskAssessmentPoll(ctx context.Context, request oper
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetRiskAssessmentPollResponse{
@@ -797,12 +788,12 @@ func (s *RiskAssessment) GetRiskAssessmentImageIDVulnerabilities(ctx context.Con
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -825,7 +816,6 @@ func (s *RiskAssessment) GetRiskAssessmentImageIDVulnerabilities(ctx context.Con
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetRiskAssessmentImageIDVulnerabilitiesResponse{
@@ -884,12 +874,12 @@ func (s *RiskAssessment) GetRiskAssessmentKubernetesClusterIDPods(ctx context.Co
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -912,7 +902,6 @@ func (s *RiskAssessment) GetRiskAssessmentKubernetesClusterIDPods(ctx context.Co
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetRiskAssessmentKubernetesClusterIDPodsResponse{
@@ -967,12 +956,12 @@ func (s *RiskAssessment) PostRiskAssessmentIgnoredRisks(ctx context.Context) (*o
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -995,7 +984,6 @@ func (s *RiskAssessment) PostRiskAssessmentIgnoredRisks(ctx context.Context) (*o
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PostRiskAssessmentIgnoredRisksResponse{
@@ -1060,12 +1048,12 @@ func (s *RiskAssessment) PostRiskAssessmentPermissionsOwnerIDApprove(ctx context
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -1088,7 +1076,6 @@ func (s *RiskAssessment) PostRiskAssessmentPermissionsOwnerIDApprove(ctx context
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PostRiskAssessmentPermissionsOwnerIDApproveResponse{
@@ -1132,12 +1119,12 @@ func (s *RiskAssessment) PostRiskAssessmentKubernetesClusterIDScan(ctx context.C
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -1160,7 +1147,6 @@ func (s *RiskAssessment) PostRiskAssessmentKubernetesClusterIDScan(ctx context.C
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PostRiskAssessmentKubernetesClusterIDScanResponse{
@@ -1217,12 +1203,12 @@ func (s *RiskAssessment) PostRiskAssessmentKubernetesClusterIDSettings(ctx conte
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -1245,7 +1231,6 @@ func (s *RiskAssessment) PostRiskAssessmentKubernetesClusterIDSettings(ctx conte
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PostRiskAssessmentKubernetesClusterIDSettingsResponse{
@@ -1302,12 +1287,12 @@ func (s *RiskAssessment) PutRiskAssessmentIgnoredRisksIgnoredRiskID(ctx context.
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -1330,7 +1315,6 @@ func (s *RiskAssessment) PutRiskAssessmentIgnoredRisksIgnoredRiskID(ctx context.
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PutRiskAssessmentIgnoredRisksIgnoredRiskIDResponse{
