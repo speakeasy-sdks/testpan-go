@@ -48,12 +48,12 @@ func (s *ConnectionPolicies) GetConnectionsPolicy(ctx context.Context, request o
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -76,7 +76,6 @@ func (s *ConnectionPolicies) GetConnectionsPolicy(ctx context.Context, request o
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetConnectionsPolicyResponse{
@@ -133,12 +132,12 @@ func (s *ConnectionPolicies) GetConnectionsPolicyHistory(ctx context.Context) (*
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -161,7 +160,6 @@ func (s *ConnectionPolicies) GetConnectionsPolicyHistory(ctx context.Context) (*
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetConnectionsPolicyHistoryResponse{
@@ -218,12 +216,12 @@ func (s *ConnectionPolicies) GetConnectionsPolicyKafkaActions(ctx context.Contex
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -246,7 +244,6 @@ func (s *ConnectionPolicies) GetConnectionsPolicyKafkaActions(ctx context.Contex
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetConnectionsPolicyKafkaActionsResponse{
@@ -303,12 +300,12 @@ func (s *ConnectionPolicies) GetConnectionsPolicyKafkaKubernetesClusterIDBrokers
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -331,7 +328,6 @@ func (s *ConnectionPolicies) GetConnectionsPolicyKafkaKubernetesClusterIDBrokers
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetConnectionsPolicyKafkaKubernetesClusterIDBrokersResponse{
@@ -388,12 +384,12 @@ func (s *ConnectionPolicies) GetConnectionsPolicyKafkaKubernetesClusterIDTopics(
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -416,7 +412,6 @@ func (s *ConnectionPolicies) GetConnectionsPolicyKafkaKubernetesClusterIDTopics(
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetConnectionsPolicyKafkaKubernetesClusterIDTopicsResponse{
@@ -477,12 +472,12 @@ func (s *ConnectionPolicies) GetConnectionsPolicySearchOptions(ctx context.Conte
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -505,7 +500,6 @@ func (s *ConnectionPolicies) GetConnectionsPolicySearchOptions(ctx context.Conte
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetConnectionsPolicySearchOptionsResponse{
@@ -562,12 +556,12 @@ func (s *ConnectionPolicies) GetServerlessPolicyHistory(ctx context.Context) (*o
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -590,7 +584,6 @@ func (s *ConnectionPolicies) GetServerlessPolicyHistory(ctx context.Context) (*o
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetServerlessPolicyHistoryResponse{
@@ -653,12 +646,12 @@ func (s *ConnectionPolicies) PutConnectionsPolicy(ctx context.Context, request s
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -681,7 +674,6 @@ func (s *ConnectionPolicies) PutConnectionsPolicy(ctx context.Context, request s
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PutConnectionsPolicyResponse{

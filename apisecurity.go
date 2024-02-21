@@ -44,12 +44,12 @@ func (s *APISecurity) DeleteAPISecurityAPICatalogID(ctx context.Context, request
 	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -72,7 +72,6 @@ func (s *APISecurity) DeleteAPISecurityAPICatalogID(ctx context.Context, request
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DeleteAPISecurityAPICatalogIDResponse{
@@ -118,12 +117,12 @@ func (s *APISecurity) DeleteAPISecurityInternalCatalogCatalogIDBflaDetection(ctx
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -146,7 +145,6 @@ func (s *APISecurity) DeleteAPISecurityInternalCatalogCatalogIDBflaDetection(ctx
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DeleteAPISecurityInternalCatalogCatalogIDBflaDetectionResponse{
@@ -199,12 +197,12 @@ func (s *APISecurity) DeleteAPISecurityInternalCatalogCatalogIDBflaLearning(ctx 
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -227,7 +225,6 @@ func (s *APISecurity) DeleteAPISecurityInternalCatalogCatalogIDBflaLearning(ctx 
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DeleteAPISecurityInternalCatalogCatalogIDBflaLearningResponse{
@@ -280,12 +277,12 @@ func (s *APISecurity) DeleteAPISecurityOpenAPISpecsCatalogID(ctx context.Context
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -308,7 +305,6 @@ func (s *APISecurity) DeleteAPISecurityOpenAPISpecsCatalogID(ctx context.Context
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DeleteAPISecurityOpenAPISpecsCatalogIDResponse{
@@ -365,12 +361,12 @@ func (s *APISecurity) DeleteGatewaysGatewayID(ctx context.Context, request opera
 	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -393,7 +389,6 @@ func (s *APISecurity) DeleteGatewaysGatewayID(ctx context.Context, request opera
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DeleteGatewaysGatewayIDResponse{
@@ -441,12 +436,12 @@ func (s *APISecurity) GetAPISecurityExternalCatalog(ctx context.Context, request
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -469,7 +464,6 @@ func (s *APISecurity) GetAPISecurityExternalCatalog(ctx context.Context, request
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetAPISecurityExternalCatalogResponse{
@@ -530,12 +524,12 @@ func (s *APISecurity) GetAPISecurityExternalCatalogCount(ctx context.Context, re
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -558,7 +552,6 @@ func (s *APISecurity) GetAPISecurityExternalCatalogCount(ctx context.Context, re
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetAPISecurityExternalCatalogCountResponse{
@@ -619,12 +612,12 @@ func (s *APISecurity) GetAPISecurityExternalCatalogCatalogID(ctx context.Context
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -647,7 +640,6 @@ func (s *APISecurity) GetAPISecurityExternalCatalogCatalogID(ctx context.Context
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetAPISecurityExternalCatalogCatalogIDResponse{
@@ -708,12 +700,12 @@ func (s *APISecurity) GetAPISecurityInternalCatalog(ctx context.Context, request
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -736,7 +728,6 @@ func (s *APISecurity) GetAPISecurityInternalCatalog(ctx context.Context, request
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetAPISecurityInternalCatalogResponse{
@@ -797,12 +788,12 @@ func (s *APISecurity) GetAPISecurityInternalCatalogCount(ctx context.Context, re
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -825,7 +816,6 @@ func (s *APISecurity) GetAPISecurityInternalCatalogCount(ctx context.Context, re
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetAPISecurityInternalCatalogCountResponse{
@@ -886,12 +876,12 @@ func (s *APISecurity) GetAPISecurityInternalCatalogCatalogID(ctx context.Context
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -914,7 +904,6 @@ func (s *APISecurity) GetAPISecurityInternalCatalogCatalogID(ctx context.Context
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetAPISecurityInternalCatalogCatalogIDResponse{
@@ -971,12 +960,12 @@ func (s *APISecurity) GetAPISecurityInternalCatalogCatalogIDBfla(ctx context.Con
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -999,7 +988,6 @@ func (s *APISecurity) GetAPISecurityInternalCatalogCatalogIDBfla(ctx context.Con
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetAPISecurityInternalCatalogCatalogIDBflaResponse{
@@ -1056,12 +1044,12 @@ func (s *APISecurity) GetAPISecurityInternalCatalogCatalogIDFuzzingStatus(ctx co
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -1084,7 +1072,6 @@ func (s *APISecurity) GetAPISecurityInternalCatalogCatalogIDFuzzingStatus(ctx co
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetAPISecurityInternalCatalogCatalogIDFuzzingStatusResponse{
@@ -1141,12 +1128,12 @@ func (s *APISecurity) GetAPISecurityInternalCatalogCatalogIDFuzzingTests(ctx con
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -1169,7 +1156,6 @@ func (s *APISecurity) GetAPISecurityInternalCatalogCatalogIDFuzzingTests(ctx con
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetAPISecurityInternalCatalogCatalogIDFuzzingTestsResponse{
@@ -1230,12 +1216,12 @@ func (s *APISecurity) GetAPISecurityInternalCatalogCatalogIDTraceAnalysis(ctx co
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -1258,7 +1244,6 @@ func (s *APISecurity) GetAPISecurityInternalCatalogCatalogIDTraceAnalysis(ctx co
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetAPISecurityInternalCatalogCatalogIDTraceAnalysisResponse{
@@ -1315,12 +1300,12 @@ func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogID(ctx context.Context, r
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -1343,7 +1328,6 @@ func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogID(ctx context.Context, r
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetAPISecurityOpenAPISpecsCatalogIDResponse{
@@ -1400,12 +1384,12 @@ func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDDiffDetectionStatus(ctx
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -1428,7 +1412,6 @@ func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDDiffDetectionStatus(ctx
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetAPISecurityOpenAPISpecsCatalogIDDiffDetectionStatusResponse{
@@ -1485,12 +1468,12 @@ func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDGetOpenAPISpecScoreStat
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -1513,7 +1496,6 @@ func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDGetOpenAPISpecScoreStat
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetAPISecurityOpenAPISpecsCatalogIDGetOpenAPISpecScoreStatusResponse{
@@ -1570,12 +1552,12 @@ func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDOpenAPISpecSwaggerJSON(
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -1598,7 +1580,6 @@ func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDOpenAPISpecSwaggerJSON(
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetAPISecurityOpenAPISpecsCatalogIDOpenAPISpecSwaggerJSONResponse{
@@ -1651,12 +1632,12 @@ func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReview
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -1679,7 +1660,6 @@ func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReview
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReviewResponse{
@@ -1736,12 +1716,12 @@ func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecStatus
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -1764,7 +1744,6 @@ func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecStatus
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecStatusResponse{
@@ -1825,12 +1804,12 @@ func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecJSON(c
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -1853,7 +1832,6 @@ func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecJSON(c
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecJSONResponse{
@@ -1910,12 +1888,12 @@ func (s *APISecurity) GetAPISecurityRiskFindings(ctx context.Context, request op
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -1938,7 +1916,6 @@ func (s *APISecurity) GetAPISecurityRiskFindings(ctx context.Context, request op
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetAPISecurityRiskFindingsResponse{
@@ -1995,12 +1972,12 @@ func (s *APISecurity) GetAPISecurityRiskFindingsCategories(ctx context.Context) 
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -2023,7 +2000,6 @@ func (s *APISecurity) GetAPISecurityRiskFindingsCategories(ctx context.Context) 
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetAPISecurityRiskFindingsCategoriesResponse{
@@ -2080,12 +2056,12 @@ func (s *APISecurity) GetAPISecurityRiskFindingsSources(ctx context.Context) (*o
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -2108,7 +2084,6 @@ func (s *APISecurity) GetAPISecurityRiskFindingsSources(ctx context.Context) (*o
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetAPISecurityRiskFindingsSourcesResponse{
@@ -2165,12 +2140,12 @@ func (s *APISecurity) GetAPISecurityRiskFindingsRiskFindingID(ctx context.Contex
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -2193,7 +2168,6 @@ func (s *APISecurity) GetAPISecurityRiskFindingsRiskFindingID(ctx context.Contex
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetAPISecurityRiskFindingsRiskFindingIDResponse{
@@ -2250,12 +2224,12 @@ func (s *APISecurity) GetAPISecurityCatalogIDDeleteDependencies(ctx context.Cont
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -2278,7 +2252,6 @@ func (s *APISecurity) GetAPISecurityCatalogIDDeleteDependencies(ctx context.Cont
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetAPISecurityCatalogIDDeleteDependenciesResponse{
@@ -2349,12 +2322,12 @@ func (s *APISecurity) GetAPISecurityCatalogIDMethods(ctx context.Context, reques
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -2377,7 +2350,6 @@ func (s *APISecurity) GetAPISecurityCatalogIDMethods(ctx context.Context, reques
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetAPISecurityCatalogIDMethodsResponse{
@@ -2434,12 +2406,12 @@ func (s *APISecurity) GetAPISecurityCatalogIDTags(ctx context.Context, request o
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -2462,7 +2434,6 @@ func (s *APISecurity) GetAPISecurityCatalogIDTags(ctx context.Context, request o
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetAPISecurityCatalogIDTagsResponse{
@@ -2523,12 +2494,12 @@ func (s *APISecurity) GetDashboardApisecRiskFindings(ctx context.Context, reques
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -2551,7 +2522,6 @@ func (s *APISecurity) GetDashboardApisecRiskFindings(ctx context.Context, reques
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetDashboardApisecRiskFindingsResponse{
@@ -2610,12 +2580,12 @@ func (s *APISecurity) GetDashboardApisecRiskFindingsTrend(ctx context.Context, r
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -2638,7 +2608,6 @@ func (s *APISecurity) GetDashboardApisecRiskFindingsTrend(ctx context.Context, r
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetDashboardApisecRiskFindingsTrendResponse{
@@ -2697,12 +2666,12 @@ func (s *APISecurity) GetDashboardApisecSpecsAndOperationsDiffs(ctx context.Cont
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -2725,7 +2694,6 @@ func (s *APISecurity) GetDashboardApisecSpecsAndOperationsDiffs(ctx context.Cont
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetDashboardApisecSpecsAndOperationsDiffsResponse{
@@ -2784,12 +2752,12 @@ func (s *APISecurity) GetDashboardApisecTopRiskyApis(ctx context.Context, reques
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -2812,7 +2780,6 @@ func (s *APISecurity) GetDashboardApisecTopRiskyApis(ctx context.Context, reques
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetDashboardApisecTopRiskyApisResponse{
@@ -2871,12 +2838,12 @@ func (s *APISecurity) GetDashboardApisecTopRiskyFindings(ctx context.Context, re
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -2899,7 +2866,6 @@ func (s *APISecurity) GetDashboardApisecTopRiskyFindings(ctx context.Context, re
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetDashboardApisecTopRiskyFindingsResponse{
@@ -2958,12 +2924,12 @@ func (s *APISecurity) GetGateways(ctx context.Context, request operations.GetGat
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -2986,7 +2952,6 @@ func (s *APISecurity) GetGateways(ctx context.Context, request operations.GetGat
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetGatewaysResponse{
@@ -3047,12 +3012,12 @@ func (s *APISecurity) GetGatewaysClusters(ctx context.Context, request operation
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -3075,7 +3040,6 @@ func (s *APISecurity) GetGatewaysClusters(ctx context.Context, request operation
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetGatewaysClustersResponse{
@@ -3133,12 +3097,12 @@ func (s *APISecurity) GetGatewaysGatewayIDDownloadBundle(ctx context.Context, re
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -3161,7 +3125,6 @@ func (s *APISecurity) GetGatewaysGatewayIDDownloadBundle(ctx context.Context, re
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetGatewaysGatewayIDDownloadBundleResponse{
@@ -3233,12 +3196,12 @@ func (s *APISecurity) PostAPISecurityAPI(ctx context.Context, request shared.API
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -3261,7 +3224,6 @@ func (s *APISecurity) PostAPISecurityAPI(ctx context.Context, request shared.API
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PostAPISecurityAPIResponse{
@@ -3324,12 +3286,12 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDBflaDetection(ctx c
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -3352,7 +3314,6 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDBflaDetection(ctx c
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PostAPISecurityInternalCatalogCatalogIDBflaDetectionResponse{
@@ -3411,12 +3372,12 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDBflaLearning(ctx co
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -3439,7 +3400,6 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDBflaLearning(ctx co
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PostAPISecurityInternalCatalogCatalogIDBflaLearningResponse{
@@ -3492,12 +3452,12 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDBflaReset(ctx conte
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -3520,7 +3480,6 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDBflaReset(ctx conte
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PostAPISecurityInternalCatalogCatalogIDBflaResetResponse{
@@ -3573,12 +3532,12 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDResetTraceAnalysis(
 	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -3601,7 +3560,6 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDResetTraceAnalysis(
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PostAPISecurityInternalCatalogCatalogIDResetTraceAnalysisResponse{
@@ -3653,12 +3611,12 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDStartFuzzing(ctx co
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -3681,7 +3639,6 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDStartFuzzing(ctx co
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PostAPISecurityInternalCatalogCatalogIDStartFuzzingResponse{
@@ -3744,12 +3701,12 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDStartTraceAnalysis(
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -3772,7 +3729,6 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDStartTraceAnalysis(
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PostAPISecurityInternalCatalogCatalogIDStartTraceAnalysisResponse{
@@ -3818,12 +3774,12 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDStopFuzzing(ctx con
 	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -3846,7 +3802,6 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDStopFuzzing(ctx con
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PostAPISecurityInternalCatalogCatalogIDStopFuzzingResponse{
@@ -3892,12 +3847,12 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDStopTraceAnalysis(c
 	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -3920,7 +3875,6 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDStopTraceAnalysis(c
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PostAPISecurityInternalCatalogCatalogIDStopTraceAnalysisResponse{
@@ -3966,12 +3920,12 @@ func (s *APISecurity) PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecAbort
 	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -3994,7 +3948,6 @@ func (s *APISecurity) PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecAbort
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecAbortResponse{
@@ -4046,12 +3999,12 @@ func (s *APISecurity) PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecLearn
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -4074,7 +4027,6 @@ func (s *APISecurity) PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecLearn
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecLearnResponse{
@@ -4126,12 +4078,12 @@ func (s *APISecurity) PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecRevie
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -4154,7 +4106,6 @@ func (s *APISecurity) PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecRevie
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReviewApproveResponse{
@@ -4206,12 +4157,12 @@ func (s *APISecurity) PostAPISecurityOpenAPISpecsCatalogIDStartDiffsDetection(ct
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -4234,7 +4185,6 @@ func (s *APISecurity) PostAPISecurityOpenAPISpecsCatalogIDStartDiffsDetection(ct
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PostAPISecurityOpenAPISpecsCatalogIDStartDiffsDetectionResponse{
@@ -4280,12 +4230,12 @@ func (s *APISecurity) PostAPISecurityOpenAPISpecsCatalogIDStopDiffsDetection(ctx
 	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -4308,7 +4258,6 @@ func (s *APISecurity) PostAPISecurityOpenAPISpecsCatalogIDStopDiffsDetection(ctx
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PostAPISecurityOpenAPISpecsCatalogIDStopDiffsDetectionResponse{
@@ -4360,12 +4309,12 @@ func (s *APISecurity) PostGateways(ctx context.Context, request shared.Gateway) 
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -4388,7 +4337,6 @@ func (s *APISecurity) PostGateways(ctx context.Context, request shared.Gateway) 
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PostGatewaysResponse{
@@ -4451,12 +4399,12 @@ func (s *APISecurity) PutAPISecurityInternalCatalogCatalogIDBfla(ctx context.Con
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -4479,7 +4427,6 @@ func (s *APISecurity) PutAPISecurityInternalCatalogCatalogIDBfla(ctx context.Con
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PutAPISecurityInternalCatalogCatalogIDBflaResponse{
@@ -4538,12 +4485,12 @@ func (s *APISecurity) PutAPISecurityOpenAPISpecsCatalogID(ctx context.Context, r
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -4566,7 +4513,6 @@ func (s *APISecurity) PutAPISecurityOpenAPISpecsCatalogID(ctx context.Context, r
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PutAPISecurityOpenAPISpecsCatalogIDResponse{
@@ -4629,12 +4575,12 @@ func (s *APISecurity) PutGatewaysGatewayID(ctx context.Context, request operatio
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -4657,7 +4603,6 @@ func (s *APISecurity) PutGatewaysGatewayID(ctx context.Context, request operatio
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PutGatewaysGatewayIDResponse{
