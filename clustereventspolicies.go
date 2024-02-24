@@ -29,7 +29,11 @@ func newClusterEventsPolicies(sdkConfig sdkConfiguration) *ClusterEventsPolicies
 
 // GetKubernetesAPIPolicy - Get current Kubernetes API policy
 func (s *ClusterEventsPolicies) GetKubernetesAPIPolicy(ctx context.Context) (*operations.GetKubernetesAPIPolicyResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/kubernetesApiPolicy"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/kubernetesApiPolicy",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := url.JoinPath(baseURL, "/kubernetesApiPolicy")
@@ -44,12 +48,12 @@ func (s *ClusterEventsPolicies) GetKubernetesAPIPolicy(ctx context.Context) (*op
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -59,15 +63,15 @@ func (s *ClusterEventsPolicies) GetKubernetesAPIPolicy(ctx context.Context) (*op
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -113,7 +117,11 @@ func (s *ClusterEventsPolicies) GetKubernetesAPIPolicy(ctx context.Context) (*op
 
 // GetKubernetesAPIPolicyHistory - Get the history of the Kubernetes API policies
 func (s *ClusterEventsPolicies) GetKubernetesAPIPolicyHistory(ctx context.Context) (*operations.GetKubernetesAPIPolicyHistoryResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/kubernetesApiPolicy/history"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/kubernetesApiPolicy/history",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := url.JoinPath(baseURL, "/kubernetesApiPolicy/history")
@@ -128,12 +136,12 @@ func (s *ClusterEventsPolicies) GetKubernetesAPIPolicyHistory(ctx context.Contex
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -143,15 +151,15 @@ func (s *ClusterEventsPolicies) GetKubernetesAPIPolicyHistory(ctx context.Contex
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -197,7 +205,11 @@ func (s *ClusterEventsPolicies) GetKubernetesAPIPolicyHistory(ctx context.Contex
 
 // GetKubernetesAPIPolicyKubernetesResources - Get the Kubernetes resource list
 func (s *ClusterEventsPolicies) GetKubernetesAPIPolicyKubernetesResources(ctx context.Context) (*operations.GetKubernetesAPIPolicyKubernetesResourcesResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/kubernetesApiPolicy/kubernetesResources"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/kubernetesApiPolicy/kubernetesResources",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := url.JoinPath(baseURL, "/kubernetesApiPolicy/kubernetesResources")
@@ -212,12 +224,12 @@ func (s *ClusterEventsPolicies) GetKubernetesAPIPolicyKubernetesResources(ctx co
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -227,15 +239,15 @@ func (s *ClusterEventsPolicies) GetKubernetesAPIPolicyKubernetesResources(ctx co
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -281,7 +293,11 @@ func (s *ClusterEventsPolicies) GetKubernetesAPIPolicyKubernetesResources(ctx co
 
 // GetKubernetesAPIPolicyKubernetesUsers - Get the Kubernetes user list
 func (s *ClusterEventsPolicies) GetKubernetesAPIPolicyKubernetesUsers(ctx context.Context) (*operations.GetKubernetesAPIPolicyKubernetesUsersResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/kubernetesApiPolicy/kubernetesUsers"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/kubernetesApiPolicy/kubernetesUsers",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := url.JoinPath(baseURL, "/kubernetesApiPolicy/kubernetesUsers")
@@ -296,12 +312,12 @@ func (s *ClusterEventsPolicies) GetKubernetesAPIPolicyKubernetesUsers(ctx contex
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -311,15 +327,15 @@ func (s *ClusterEventsPolicies) GetKubernetesAPIPolicyKubernetesUsers(ctx contex
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -365,7 +381,11 @@ func (s *ClusterEventsPolicies) GetKubernetesAPIPolicyKubernetesUsers(ctx contex
 
 // GetKubernetesAPIPolicyRecommendedRules - Get the recommended Kubernetes API rules
 func (s *ClusterEventsPolicies) GetKubernetesAPIPolicyRecommendedRules(ctx context.Context) (*operations.GetKubernetesAPIPolicyRecommendedRulesResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/kubernetesApiPolicy/recommendedRules"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/kubernetesApiPolicy/recommendedRules",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := url.JoinPath(baseURL, "/kubernetesApiPolicy/recommendedRules")
@@ -380,12 +400,12 @@ func (s *ClusterEventsPolicies) GetKubernetesAPIPolicyRecommendedRules(ctx conte
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -395,15 +415,15 @@ func (s *ClusterEventsPolicies) GetKubernetesAPIPolicyRecommendedRules(ctx conte
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -449,7 +469,11 @@ func (s *ClusterEventsPolicies) GetKubernetesAPIPolicyRecommendedRules(ctx conte
 
 // PutKubernetesAPIPolicy - set the current Kubernetes API policy
 func (s *ClusterEventsPolicies) PutKubernetesAPIPolicy(ctx context.Context, request shared.KubernetesAPIPolicy) (*operations.PutKubernetesAPIPolicyResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "put_/kubernetesApiPolicy"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "put_/kubernetesApiPolicy",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := url.JoinPath(baseURL, "/kubernetesApiPolicy")
@@ -470,12 +494,12 @@ func (s *ClusterEventsPolicies) PutKubernetesAPIPolicy(ctx context.Context, requ
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -485,15 +509,15 @@ func (s *ClusterEventsPolicies) PutKubernetesAPIPolicy(ctx context.Context, requ
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}

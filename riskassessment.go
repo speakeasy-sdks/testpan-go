@@ -29,7 +29,11 @@ func newRiskAssessment(sdkConfig sdkConfiguration) *RiskAssessment {
 
 // DeleteRiskAssessmentIgnoredRisksIgnoredRiskID - Delete ignored risk
 func (s *RiskAssessment) DeleteRiskAssessmentIgnoredRisksIgnoredRiskID(ctx context.Context, request operations.DeleteRiskAssessmentIgnoredRisksIgnoredRiskIDRequest) (*operations.DeleteRiskAssessmentIgnoredRisksIgnoredRiskIDResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "delete_/riskAssessment/ignoredRisks/{ignoredRiskId}"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "delete_/riskAssessment/ignoredRisks/{ignoredRiskId}",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/riskAssessment/ignoredRisks/{ignoredRiskId}", request, nil)
@@ -44,12 +48,12 @@ func (s *RiskAssessment) DeleteRiskAssessmentIgnoredRisksIgnoredRiskID(ctx conte
 	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -59,15 +63,15 @@ func (s *RiskAssessment) DeleteRiskAssessmentIgnoredRisksIgnoredRiskID(ctx conte
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -100,7 +104,11 @@ func (s *RiskAssessment) DeleteRiskAssessmentIgnoredRisksIgnoredRiskID(ctx conte
 
 // DeleteRiskAssessmentKubernetesClusterIDCancel - Cancel the runtime scan on the given cluster with the given id
 func (s *RiskAssessment) DeleteRiskAssessmentKubernetesClusterIDCancel(ctx context.Context, request operations.DeleteRiskAssessmentKubernetesClusterIDCancelRequest) (*operations.DeleteRiskAssessmentKubernetesClusterIDCancelResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "delete_/riskAssessment/{kubernetesClusterId}/cancel"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "delete_/riskAssessment/{kubernetesClusterId}/cancel",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/riskAssessment/{kubernetesClusterId}/cancel", request, nil)
@@ -115,12 +123,12 @@ func (s *RiskAssessment) DeleteRiskAssessmentKubernetesClusterIDCancel(ctx conte
 	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -130,15 +138,15 @@ func (s *RiskAssessment) DeleteRiskAssessmentKubernetesClusterIDCancel(ctx conte
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -171,7 +179,11 @@ func (s *RiskAssessment) DeleteRiskAssessmentKubernetesClusterIDCancel(ctx conte
 
 // GetRiskAssessment - Get risk assessment data for all clusters
 func (s *RiskAssessment) GetRiskAssessment(ctx context.Context) (*operations.GetRiskAssessmentResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/riskAssessment"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/riskAssessment",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := url.JoinPath(baseURL, "/riskAssessment")
@@ -186,12 +198,12 @@ func (s *RiskAssessment) GetRiskAssessment(ctx context.Context) (*operations.Get
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -201,15 +213,15 @@ func (s *RiskAssessment) GetRiskAssessment(ctx context.Context) (*operations.Get
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -253,7 +265,11 @@ func (s *RiskAssessment) GetRiskAssessment(ctx context.Context) (*operations.Get
 
 // GetRiskAssessmentIgnoredRisks - Get all the ignored risks
 func (s *RiskAssessment) GetRiskAssessmentIgnoredRisks(ctx context.Context) (*operations.GetRiskAssessmentIgnoredRisksResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/riskAssessment/ignoredRisks"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/riskAssessment/ignoredRisks",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := url.JoinPath(baseURL, "/riskAssessment/ignoredRisks")
@@ -268,12 +284,12 @@ func (s *RiskAssessment) GetRiskAssessmentIgnoredRisks(ctx context.Context) (*op
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -283,15 +299,15 @@ func (s *RiskAssessment) GetRiskAssessmentIgnoredRisks(ctx context.Context) (*op
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -335,7 +351,11 @@ func (s *RiskAssessment) GetRiskAssessmentIgnoredRisks(ctx context.Context) (*op
 
 // GetRiskAssessmentPermissions - Get list of clusters and their permissions
 func (s *RiskAssessment) GetRiskAssessmentPermissions(ctx context.Context, request operations.GetRiskAssessmentPermissionsRequest) (*operations.GetRiskAssessmentPermissionsResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/riskAssessment/permissions"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/riskAssessment/permissions",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := url.JoinPath(baseURL, "/riskAssessment/permissions")
@@ -354,12 +374,12 @@ func (s *RiskAssessment) GetRiskAssessmentPermissions(ctx context.Context, reque
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -369,15 +389,15 @@ func (s *RiskAssessment) GetRiskAssessmentPermissions(ctx context.Context, reque
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -423,7 +443,11 @@ func (s *RiskAssessment) GetRiskAssessmentPermissions(ctx context.Context, reque
 
 // GetRiskAssessmentPermissionsClusterID - Get all of the users permissions
 func (s *RiskAssessment) GetRiskAssessmentPermissionsClusterID(ctx context.Context, request operations.GetRiskAssessmentPermissionsClusterIDRequest) (*operations.GetRiskAssessmentPermissionsClusterIDResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/riskAssessment/permissions/{clusterId}"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/riskAssessment/permissions/{clusterId}",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/riskAssessment/permissions/{clusterId}", request, nil)
@@ -442,12 +466,12 @@ func (s *RiskAssessment) GetRiskAssessmentPermissionsClusterID(ctx context.Conte
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -457,15 +481,15 @@ func (s *RiskAssessment) GetRiskAssessmentPermissionsClusterID(ctx context.Conte
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -511,7 +535,11 @@ func (s *RiskAssessment) GetRiskAssessmentPermissionsClusterID(ctx context.Conte
 
 // GetRiskAssessmentPermissionsClusterIDOwnerID - Get the owner permissions
 func (s *RiskAssessment) GetRiskAssessmentPermissionsClusterIDOwnerID(ctx context.Context, request operations.GetRiskAssessmentPermissionsClusterIDOwnerIDRequest) (*operations.GetRiskAssessmentPermissionsClusterIDOwnerIDResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/riskAssessment/permissions/{clusterId}/{ownerId}"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/riskAssessment/permissions/{clusterId}/{ownerId}",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/riskAssessment/permissions/{clusterId}/{ownerId}", request, nil)
@@ -530,12 +558,12 @@ func (s *RiskAssessment) GetRiskAssessmentPermissionsClusterIDOwnerID(ctx contex
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -545,15 +573,15 @@ func (s *RiskAssessment) GetRiskAssessmentPermissionsClusterIDOwnerID(ctx contex
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -599,7 +627,11 @@ func (s *RiskAssessment) GetRiskAssessmentPermissionsClusterIDOwnerID(ctx contex
 
 // GetRiskAssessmentPermissionsClusterIDOwnerIDRoleID - Get the owner permissions
 func (s *RiskAssessment) GetRiskAssessmentPermissionsClusterIDOwnerIDRoleID(ctx context.Context, request operations.GetRiskAssessmentPermissionsClusterIDOwnerIDRoleIDRequest) (*operations.GetRiskAssessmentPermissionsClusterIDOwnerIDRoleIDResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/riskAssessment/permissions/{clusterId}/{ownerId}/{roleId}"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/riskAssessment/permissions/{clusterId}/{ownerId}/{roleId}",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/riskAssessment/permissions/{clusterId}/{ownerId}/{roleId}", request, nil)
@@ -614,12 +646,12 @@ func (s *RiskAssessment) GetRiskAssessmentPermissionsClusterIDOwnerIDRoleID(ctx 
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -629,15 +661,15 @@ func (s *RiskAssessment) GetRiskAssessmentPermissionsClusterIDOwnerIDRoleID(ctx 
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -683,7 +715,11 @@ func (s *RiskAssessment) GetRiskAssessmentPermissionsClusterIDOwnerIDRoleID(ctx 
 
 // GetRiskAssessmentPoll - Poll running scans
 func (s *RiskAssessment) GetRiskAssessmentPoll(ctx context.Context, request operations.GetRiskAssessmentPollRequest) (*operations.GetRiskAssessmentPollResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/riskAssessment/poll"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/riskAssessment/poll",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := url.JoinPath(baseURL, "/riskAssessment/poll")
@@ -702,12 +738,12 @@ func (s *RiskAssessment) GetRiskAssessmentPoll(ctx context.Context, request oper
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -717,15 +753,15 @@ func (s *RiskAssessment) GetRiskAssessmentPoll(ctx context.Context, request oper
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -769,7 +805,11 @@ func (s *RiskAssessment) GetRiskAssessmentPoll(ctx context.Context, request oper
 
 // GetRiskAssessmentImageIDVulnerabilities - Get all images of given risk assessment pod
 func (s *RiskAssessment) GetRiskAssessmentImageIDVulnerabilities(ctx context.Context, request operations.GetRiskAssessmentImageIDVulnerabilitiesRequest) (*operations.GetRiskAssessmentImageIDVulnerabilitiesResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/riskAssessment/{imageId}/vulnerabilities"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/riskAssessment/{imageId}/vulnerabilities",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/riskAssessment/{imageId}/vulnerabilities", request, nil)
@@ -788,12 +828,12 @@ func (s *RiskAssessment) GetRiskAssessmentImageIDVulnerabilities(ctx context.Con
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -803,15 +843,15 @@ func (s *RiskAssessment) GetRiskAssessmentImageIDVulnerabilities(ctx context.Con
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -855,7 +895,11 @@ func (s *RiskAssessment) GetRiskAssessmentImageIDVulnerabilities(ctx context.Con
 
 // GetRiskAssessmentKubernetesClusterIDPods - Get all risk assessments of all pods of given cluster
 func (s *RiskAssessment) GetRiskAssessmentKubernetesClusterIDPods(ctx context.Context, request operations.GetRiskAssessmentKubernetesClusterIDPodsRequest) (*operations.GetRiskAssessmentKubernetesClusterIDPodsResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/riskAssessment/{kubernetesClusterId}/pods"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/riskAssessment/{kubernetesClusterId}/pods",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/riskAssessment/{kubernetesClusterId}/pods", request, nil)
@@ -874,12 +918,12 @@ func (s *RiskAssessment) GetRiskAssessmentKubernetesClusterIDPods(ctx context.Co
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -889,15 +933,15 @@ func (s *RiskAssessment) GetRiskAssessmentKubernetesClusterIDPods(ctx context.Co
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -941,7 +985,11 @@ func (s *RiskAssessment) GetRiskAssessmentKubernetesClusterIDPods(ctx context.Co
 
 // PostRiskAssessmentIgnoredRisks - Add ignore risk
 func (s *RiskAssessment) PostRiskAssessmentIgnoredRisks(ctx context.Context) (*operations.PostRiskAssessmentIgnoredRisksResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "post_/riskAssessment/ignoredRisks"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "post_/riskAssessment/ignoredRisks",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := url.JoinPath(baseURL, "/riskAssessment/ignoredRisks")
@@ -956,12 +1004,12 @@ func (s *RiskAssessment) PostRiskAssessmentIgnoredRisks(ctx context.Context) (*o
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -971,15 +1019,15 @@ func (s *RiskAssessment) PostRiskAssessmentIgnoredRisks(ctx context.Context) (*o
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -1023,7 +1071,11 @@ func (s *RiskAssessment) PostRiskAssessmentIgnoredRisks(ctx context.Context) (*o
 
 // PostRiskAssessmentPermissionsOwnerIDApprove - add / remove permissions to /from the approved permissions list
 func (s *RiskAssessment) PostRiskAssessmentPermissionsOwnerIDApprove(ctx context.Context, request operations.PostRiskAssessmentPermissionsOwnerIDApproveRequest) (*operations.PostRiskAssessmentPermissionsOwnerIDApproveResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "post_/riskAssessment/permissions/{ownerId}/approve"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "post_/riskAssessment/permissions/{ownerId}/approve",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/riskAssessment/permissions/{ownerId}/approve", request, nil)
@@ -1048,12 +1100,12 @@ func (s *RiskAssessment) PostRiskAssessmentPermissionsOwnerIDApprove(ctx context
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -1063,15 +1115,15 @@ func (s *RiskAssessment) PostRiskAssessmentPermissionsOwnerIDApprove(ctx context
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -1104,7 +1156,11 @@ func (s *RiskAssessment) PostRiskAssessmentPermissionsOwnerIDApprove(ctx context
 
 // PostRiskAssessmentKubernetesClusterIDScan - Execute a new runtime scan on the given cluster with the given configuration
 func (s *RiskAssessment) PostRiskAssessmentKubernetesClusterIDScan(ctx context.Context, request operations.PostRiskAssessmentKubernetesClusterIDScanRequest) (*operations.PostRiskAssessmentKubernetesClusterIDScanResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "post_/riskAssessment/{kubernetesClusterId}/scan"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "post_/riskAssessment/{kubernetesClusterId}/scan",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/riskAssessment/{kubernetesClusterId}/scan", request, nil)
@@ -1119,12 +1175,12 @@ func (s *RiskAssessment) PostRiskAssessmentKubernetesClusterIDScan(ctx context.C
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -1134,15 +1190,15 @@ func (s *RiskAssessment) PostRiskAssessmentKubernetesClusterIDScan(ctx context.C
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -1182,7 +1238,11 @@ func (s *RiskAssessment) PostRiskAssessmentKubernetesClusterIDScan(ctx context.C
 
 // PostRiskAssessmentKubernetesClusterIDSettings - Save the runtime scan configuration on the given cluster
 func (s *RiskAssessment) PostRiskAssessmentKubernetesClusterIDSettings(ctx context.Context, request operations.PostRiskAssessmentKubernetesClusterIDSettingsRequest) (*operations.PostRiskAssessmentKubernetesClusterIDSettingsResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "post_/riskAssessment/{kubernetesClusterId}/settings"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "post_/riskAssessment/{kubernetesClusterId}/settings",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/riskAssessment/{kubernetesClusterId}/settings", request, nil)
@@ -1203,12 +1263,12 @@ func (s *RiskAssessment) PostRiskAssessmentKubernetesClusterIDSettings(ctx conte
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -1218,15 +1278,15 @@ func (s *RiskAssessment) PostRiskAssessmentKubernetesClusterIDSettings(ctx conte
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -1266,7 +1326,11 @@ func (s *RiskAssessment) PostRiskAssessmentKubernetesClusterIDSettings(ctx conte
 
 // PutRiskAssessmentIgnoredRisksIgnoredRiskID - Edit ignore risk
 func (s *RiskAssessment) PutRiskAssessmentIgnoredRisksIgnoredRiskID(ctx context.Context, request operations.PutRiskAssessmentIgnoredRisksIgnoredRiskIDRequest) (*operations.PutRiskAssessmentIgnoredRisksIgnoredRiskIDResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "put_/riskAssessment/ignoredRisks/{ignoredRiskId}"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "put_/riskAssessment/ignoredRisks/{ignoredRiskId}",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/riskAssessment/ignoredRisks/{ignoredRiskId}", request, nil)
@@ -1287,12 +1351,12 @@ func (s *RiskAssessment) PutRiskAssessmentIgnoredRisksIgnoredRiskID(ctx context.
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -1302,15 +1366,15 @@ func (s *RiskAssessment) PutRiskAssessmentIgnoredRisksIgnoredRiskID(ctx context.
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}

@@ -29,7 +29,11 @@ func newAPISecurity(sdkConfig sdkConfiguration) *APISecurity {
 
 // DeleteAPISecurityAPICatalogID - Delete an API
 func (s *APISecurity) DeleteAPISecurityAPICatalogID(ctx context.Context, request operations.DeleteAPISecurityAPICatalogIDRequest) (*operations.DeleteAPISecurityAPICatalogIDResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "delete_/apiSecurity/api/{catalogId}"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "delete_/apiSecurity/api/{catalogId}",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/api/{catalogId}", request, nil)
@@ -44,12 +48,12 @@ func (s *APISecurity) DeleteAPISecurityAPICatalogID(ctx context.Context, request
 	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -59,15 +63,15 @@ func (s *APISecurity) DeleteAPISecurityAPICatalogID(ctx context.Context, request
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -102,7 +106,11 @@ func (s *APISecurity) DeleteAPISecurityAPICatalogID(ctx context.Context, request
 
 // DeleteAPISecurityInternalCatalogCatalogIDBflaDetection - stop bfla detection phase
 func (s *APISecurity) DeleteAPISecurityInternalCatalogCatalogIDBflaDetection(ctx context.Context, request operations.DeleteAPISecurityInternalCatalogCatalogIDBflaDetectionRequest) (*operations.DeleteAPISecurityInternalCatalogCatalogIDBflaDetectionResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "delete_/apiSecurity/internalCatalog/{catalogId}/bfla/detection"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "delete_/apiSecurity/internalCatalog/{catalogId}/bfla/detection",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/bfla/detection", request, nil)
@@ -117,12 +125,12 @@ func (s *APISecurity) DeleteAPISecurityInternalCatalogCatalogIDBflaDetection(ctx
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -132,15 +140,15 @@ func (s *APISecurity) DeleteAPISecurityInternalCatalogCatalogIDBflaDetection(ctx
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -182,7 +190,11 @@ func (s *APISecurity) DeleteAPISecurityInternalCatalogCatalogIDBflaDetection(ctx
 
 // DeleteAPISecurityInternalCatalogCatalogIDBflaLearning - stop bfla learning phase
 func (s *APISecurity) DeleteAPISecurityInternalCatalogCatalogIDBflaLearning(ctx context.Context, request operations.DeleteAPISecurityInternalCatalogCatalogIDBflaLearningRequest) (*operations.DeleteAPISecurityInternalCatalogCatalogIDBflaLearningResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "delete_/apiSecurity/internalCatalog/{catalogId}/bfla/learning"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "delete_/apiSecurity/internalCatalog/{catalogId}/bfla/learning",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/bfla/learning", request, nil)
@@ -197,12 +209,12 @@ func (s *APISecurity) DeleteAPISecurityInternalCatalogCatalogIDBflaLearning(ctx 
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -212,15 +224,15 @@ func (s *APISecurity) DeleteAPISecurityInternalCatalogCatalogIDBflaLearning(ctx 
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -262,7 +274,11 @@ func (s *APISecurity) DeleteAPISecurityInternalCatalogCatalogIDBflaLearning(ctx 
 
 // DeleteAPISecurityOpenAPISpecsCatalogID - delete open api spec include all of it findings and scores
 func (s *APISecurity) DeleteAPISecurityOpenAPISpecsCatalogID(ctx context.Context, request operations.DeleteAPISecurityOpenAPISpecsCatalogIDRequest) (*operations.DeleteAPISecurityOpenAPISpecsCatalogIDResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "delete_/apiSecurity/openApiSpecs/{catalogId}"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "delete_/apiSecurity/openApiSpecs/{catalogId}",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/openApiSpecs/{catalogId}", request, nil)
@@ -277,12 +293,12 @@ func (s *APISecurity) DeleteAPISecurityOpenAPISpecsCatalogID(ctx context.Context
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -292,15 +308,15 @@ func (s *APISecurity) DeleteAPISecurityOpenAPISpecsCatalogID(ctx context.Context
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -346,7 +362,11 @@ func (s *APISecurity) DeleteAPISecurityOpenAPISpecsCatalogID(ctx context.Context
 
 // DeleteGatewaysGatewayID - Delete gateway
 func (s *APISecurity) DeleteGatewaysGatewayID(ctx context.Context, request operations.DeleteGatewaysGatewayIDRequest) (*operations.DeleteGatewaysGatewayIDResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "delete_/gateways/{gatewayId}"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "delete_/gateways/{gatewayId}",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/gateways/{gatewayId}", request, nil)
@@ -361,12 +381,12 @@ func (s *APISecurity) DeleteGatewaysGatewayID(ctx context.Context, request opera
 	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -376,15 +396,15 @@ func (s *APISecurity) DeleteGatewaysGatewayID(ctx context.Context, request opera
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -417,7 +437,11 @@ func (s *APISecurity) DeleteGatewaysGatewayID(ctx context.Context, request opera
 
 // GetAPISecurityExternalCatalog - Get a list of APIs and their compliance
 func (s *APISecurity) GetAPISecurityExternalCatalog(ctx context.Context, request operations.GetAPISecurityExternalCatalogRequest) (*operations.GetAPISecurityExternalCatalogResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/apiSecurity/externalCatalog"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/apiSecurity/externalCatalog",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := url.JoinPath(baseURL, "/apiSecurity/externalCatalog")
@@ -436,12 +460,12 @@ func (s *APISecurity) GetAPISecurityExternalCatalog(ctx context.Context, request
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -451,15 +475,15 @@ func (s *APISecurity) GetAPISecurityExternalCatalog(ctx context.Context, request
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -505,7 +529,11 @@ func (s *APISecurity) GetAPISecurityExternalCatalog(ctx context.Context, request
 
 // GetAPISecurityExternalCatalogCount - Get the number of existing 3rd party APIs in the inventory
 func (s *APISecurity) GetAPISecurityExternalCatalogCount(ctx context.Context, request operations.GetAPISecurityExternalCatalogCountRequest) (*operations.GetAPISecurityExternalCatalogCountResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/apiSecurity/externalCatalog/count"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/apiSecurity/externalCatalog/count",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := url.JoinPath(baseURL, "/apiSecurity/externalCatalog/count")
@@ -524,12 +552,12 @@ func (s *APISecurity) GetAPISecurityExternalCatalogCount(ctx context.Context, re
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -539,15 +567,15 @@ func (s *APISecurity) GetAPISecurityExternalCatalogCount(ctx context.Context, re
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -593,7 +621,11 @@ func (s *APISecurity) GetAPISecurityExternalCatalogCount(ctx context.Context, re
 
 // GetAPISecurityExternalCatalogCatalogID - Get information about a specific API
 func (s *APISecurity) GetAPISecurityExternalCatalogCatalogID(ctx context.Context, request operations.GetAPISecurityExternalCatalogCatalogIDRequest) (*operations.GetAPISecurityExternalCatalogCatalogIDResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/apiSecurity/externalCatalog/{catalogId}"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/apiSecurity/externalCatalog/{catalogId}",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/externalCatalog/{catalogId}", request, nil)
@@ -612,12 +644,12 @@ func (s *APISecurity) GetAPISecurityExternalCatalogCatalogID(ctx context.Context
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -627,15 +659,15 @@ func (s *APISecurity) GetAPISecurityExternalCatalogCatalogID(ctx context.Context
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -681,7 +713,11 @@ func (s *APISecurity) GetAPISecurityExternalCatalogCatalogID(ctx context.Context
 
 // GetAPISecurityInternalCatalog - Get a list of APIs and their compliance
 func (s *APISecurity) GetAPISecurityInternalCatalog(ctx context.Context, request operations.GetAPISecurityInternalCatalogRequest) (*operations.GetAPISecurityInternalCatalogResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/apiSecurity/internalCatalog"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/apiSecurity/internalCatalog",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := url.JoinPath(baseURL, "/apiSecurity/internalCatalog")
@@ -700,12 +736,12 @@ func (s *APISecurity) GetAPISecurityInternalCatalog(ctx context.Context, request
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -715,15 +751,15 @@ func (s *APISecurity) GetAPISecurityInternalCatalog(ctx context.Context, request
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -769,7 +805,11 @@ func (s *APISecurity) GetAPISecurityInternalCatalog(ctx context.Context, request
 
 // GetAPISecurityInternalCatalogCount - Get the number of existing 3rd party APIs in the inventory
 func (s *APISecurity) GetAPISecurityInternalCatalogCount(ctx context.Context, request operations.GetAPISecurityInternalCatalogCountRequest) (*operations.GetAPISecurityInternalCatalogCountResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/apiSecurity/internalCatalog/count"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/apiSecurity/internalCatalog/count",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := url.JoinPath(baseURL, "/apiSecurity/internalCatalog/count")
@@ -788,12 +828,12 @@ func (s *APISecurity) GetAPISecurityInternalCatalogCount(ctx context.Context, re
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -803,15 +843,15 @@ func (s *APISecurity) GetAPISecurityInternalCatalogCount(ctx context.Context, re
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -857,7 +897,11 @@ func (s *APISecurity) GetAPISecurityInternalCatalogCount(ctx context.Context, re
 
 // GetAPISecurityInternalCatalogCatalogID - Get information about a specific API
 func (s *APISecurity) GetAPISecurityInternalCatalogCatalogID(ctx context.Context, request operations.GetAPISecurityInternalCatalogCatalogIDRequest) (*operations.GetAPISecurityInternalCatalogCatalogIDResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/apiSecurity/internalCatalog/{catalogId}"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/apiSecurity/internalCatalog/{catalogId}",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}", request, nil)
@@ -876,12 +920,12 @@ func (s *APISecurity) GetAPISecurityInternalCatalogCatalogID(ctx context.Context
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -891,15 +935,15 @@ func (s *APISecurity) GetAPISecurityInternalCatalogCatalogID(ctx context.Context
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -945,7 +989,11 @@ func (s *APISecurity) GetAPISecurityInternalCatalogCatalogID(ctx context.Context
 
 // GetAPISecurityInternalCatalogCatalogIDBfla - Get bfla info for given catalogId
 func (s *APISecurity) GetAPISecurityInternalCatalogCatalogIDBfla(ctx context.Context, request operations.GetAPISecurityInternalCatalogCatalogIDBflaRequest) (*operations.GetAPISecurityInternalCatalogCatalogIDBflaResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/apiSecurity/internalCatalog/{catalogId}/bfla"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/apiSecurity/internalCatalog/{catalogId}/bfla",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/bfla", request, nil)
@@ -960,12 +1008,12 @@ func (s *APISecurity) GetAPISecurityInternalCatalogCatalogIDBfla(ctx context.Con
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -975,15 +1023,15 @@ func (s *APISecurity) GetAPISecurityInternalCatalogCatalogIDBfla(ctx context.Con
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -1029,7 +1077,11 @@ func (s *APISecurity) GetAPISecurityInternalCatalogCatalogIDBfla(ctx context.Con
 
 // GetAPISecurityInternalCatalogCatalogIDFuzzingStatus - Get status of the last/running fuzzing test
 func (s *APISecurity) GetAPISecurityInternalCatalogCatalogIDFuzzingStatus(ctx context.Context, request operations.GetAPISecurityInternalCatalogCatalogIDFuzzingStatusRequest) (*operations.GetAPISecurityInternalCatalogCatalogIDFuzzingStatusResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/apiSecurity/internalCatalog/{catalogId}/fuzzingStatus"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/apiSecurity/internalCatalog/{catalogId}/fuzzingStatus",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/fuzzingStatus", request, nil)
@@ -1044,12 +1096,12 @@ func (s *APISecurity) GetAPISecurityInternalCatalogCatalogIDFuzzingStatus(ctx co
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -1059,15 +1111,15 @@ func (s *APISecurity) GetAPISecurityInternalCatalogCatalogIDFuzzingStatus(ctx co
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -1113,7 +1165,11 @@ func (s *APISecurity) GetAPISecurityInternalCatalogCatalogIDFuzzingStatus(ctx co
 
 // GetAPISecurityInternalCatalogCatalogIDFuzzingTests - Get list of fuzzing tests
 func (s *APISecurity) GetAPISecurityInternalCatalogCatalogIDFuzzingTests(ctx context.Context, request operations.GetAPISecurityInternalCatalogCatalogIDFuzzingTestsRequest) (*operations.GetAPISecurityInternalCatalogCatalogIDFuzzingTestsResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/apiSecurity/internalCatalog/{catalogId}/fuzzingTests"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/apiSecurity/internalCatalog/{catalogId}/fuzzingTests",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/fuzzingTests", request, nil)
@@ -1128,12 +1184,12 @@ func (s *APISecurity) GetAPISecurityInternalCatalogCatalogIDFuzzingTests(ctx con
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -1143,15 +1199,15 @@ func (s *APISecurity) GetAPISecurityInternalCatalogCatalogIDFuzzingTests(ctx con
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -1197,7 +1253,11 @@ func (s *APISecurity) GetAPISecurityInternalCatalogCatalogIDFuzzingTests(ctx con
 
 // GetAPISecurityInternalCatalogCatalogIDTraceAnalysis - Get trace analysis details
 func (s *APISecurity) GetAPISecurityInternalCatalogCatalogIDTraceAnalysis(ctx context.Context, request operations.GetAPISecurityInternalCatalogCatalogIDTraceAnalysisRequest) (*operations.GetAPISecurityInternalCatalogCatalogIDTraceAnalysisResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/apiSecurity/internalCatalog/{catalogId}/traceAnalysis"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/apiSecurity/internalCatalog/{catalogId}/traceAnalysis",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/traceAnalysis", request, nil)
@@ -1216,12 +1276,12 @@ func (s *APISecurity) GetAPISecurityInternalCatalogCatalogIDTraceAnalysis(ctx co
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -1231,15 +1291,15 @@ func (s *APISecurity) GetAPISecurityInternalCatalogCatalogIDTraceAnalysis(ctx co
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -1285,7 +1345,11 @@ func (s *APISecurity) GetAPISecurityInternalCatalogCatalogIDTraceAnalysis(ctx co
 
 // GetAPISecurityOpenAPISpecsCatalogID - Get provided and reconstructed open api specs for specific API
 func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogID(ctx context.Context, request operations.GetAPISecurityOpenAPISpecsCatalogIDRequest) (*operations.GetAPISecurityOpenAPISpecsCatalogIDResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/apiSecurity/openApiSpecs/{catalogId}"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/apiSecurity/openApiSpecs/{catalogId}",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/openApiSpecs/{catalogId}", request, nil)
@@ -1300,12 +1364,12 @@ func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogID(ctx context.Context, r
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -1315,15 +1379,15 @@ func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogID(ctx context.Context, r
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -1369,7 +1433,11 @@ func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogID(ctx context.Context, r
 
 // GetAPISecurityOpenAPISpecsCatalogIDDiffDetectionStatus - Get provided and reconstructed open api specs for specific API
 func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDDiffDetectionStatus(ctx context.Context, request operations.GetAPISecurityOpenAPISpecsCatalogIDDiffDetectionStatusRequest) (*operations.GetAPISecurityOpenAPISpecsCatalogIDDiffDetectionStatusResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/apiSecurity/openApiSpecs/{catalogId}/diffDetectionStatus"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/apiSecurity/openApiSpecs/{catalogId}/diffDetectionStatus",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/openApiSpecs/{catalogId}/diffDetectionStatus", request, nil)
@@ -1384,12 +1452,12 @@ func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDDiffDetectionStatus(ctx
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -1399,15 +1467,15 @@ func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDDiffDetectionStatus(ctx
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -1453,7 +1521,11 @@ func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDDiffDetectionStatus(ctx
 
 // GetAPISecurityOpenAPISpecsCatalogIDGetOpenAPISpecScoreStatus - Get open api spec score status
 func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDGetOpenAPISpecScoreStatus(ctx context.Context, request operations.GetAPISecurityOpenAPISpecsCatalogIDGetOpenAPISpecScoreStatusRequest) (*operations.GetAPISecurityOpenAPISpecsCatalogIDGetOpenAPISpecScoreStatusResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/apiSecurity/openApiSpecs/{catalogId}/getOpenApiSpecScoreStatus"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/apiSecurity/openApiSpecs/{catalogId}/getOpenApiSpecScoreStatus",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/openApiSpecs/{catalogId}/getOpenApiSpecScoreStatus", request, nil)
@@ -1468,12 +1540,12 @@ func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDGetOpenAPISpecScoreStat
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -1483,15 +1555,15 @@ func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDGetOpenAPISpecScoreStat
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -1537,7 +1609,11 @@ func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDGetOpenAPISpecScoreStat
 
 // GetAPISecurityOpenAPISpecsCatalogIDOpenAPISpecSwaggerJSON - Get provided spec content as json
 func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDOpenAPISpecSwaggerJSON(ctx context.Context, request operations.GetAPISecurityOpenAPISpecsCatalogIDOpenAPISpecSwaggerJSONRequest) (*operations.GetAPISecurityOpenAPISpecsCatalogIDOpenAPISpecSwaggerJSONResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/apiSecurity/openApiSpecs/{catalogId}/openApiSpecSwagger.json"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/apiSecurity/openApiSpecs/{catalogId}/openApiSpecSwagger.json",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/openApiSpecs/{catalogId}/openApiSpecSwagger.json", request, nil)
@@ -1552,12 +1628,12 @@ func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDOpenAPISpecSwaggerJSON(
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -1567,15 +1643,15 @@ func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDOpenAPISpecSwaggerJSON(
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -1617,7 +1693,11 @@ func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDOpenAPISpecSwaggerJSON(
 
 // GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReview - Get the suggestions of a spec reconstruction (or previously cached info)
 func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReview(ctx context.Context, request operations.GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReviewRequest) (*operations.GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReviewResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/apiSecurity/openApiSpecs/{catalogId}/reconstructedSpec/review"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/apiSecurity/openApiSpecs/{catalogId}/reconstructedSpec/review",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/openApiSpecs/{catalogId}/reconstructedSpec/review", request, nil)
@@ -1632,12 +1712,12 @@ func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReview
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -1647,15 +1727,15 @@ func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReview
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -1701,7 +1781,11 @@ func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReview
 
 // GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecStatus - Get the status of a spec reconstruction
 func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecStatus(ctx context.Context, request operations.GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecStatusRequest) (*operations.GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecStatusResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/apiSecurity/openApiSpecs/{catalogId}/reconstructedSpec/status"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/apiSecurity/openApiSpecs/{catalogId}/reconstructedSpec/status",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/openApiSpecs/{catalogId}/reconstructedSpec/status", request, nil)
@@ -1716,12 +1800,12 @@ func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecStatus
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -1731,15 +1815,15 @@ func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecStatus
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -1785,7 +1869,11 @@ func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecStatus
 
 // GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecJSON - Get reconstructed open api spec as json for specific API
 func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecJSON(ctx context.Context, request operations.GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecJSONRequest) (*operations.GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecJSONResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/apiSecurity/openApiSpecs/{catalogId}/reconstructedSpecJson"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/apiSecurity/openApiSpecs/{catalogId}/reconstructedSpecJson",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/openApiSpecs/{catalogId}/reconstructedSpecJson", request, nil)
@@ -1804,12 +1892,12 @@ func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecJSON(c
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -1819,15 +1907,15 @@ func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecJSON(c
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -1869,7 +1957,11 @@ func (s *APISecurity) GetAPISecurityOpenAPISpecsCatalogIDReconstructedSpecJSON(c
 
 // GetAPISecurityRiskFindings - Get a list of risk findings
 func (s *APISecurity) GetAPISecurityRiskFindings(ctx context.Context, request operations.GetAPISecurityRiskFindingsRequest) (*operations.GetAPISecurityRiskFindingsResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/apiSecurity/riskFindings"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/apiSecurity/riskFindings",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := url.JoinPath(baseURL, "/apiSecurity/riskFindings")
@@ -1888,12 +1980,12 @@ func (s *APISecurity) GetAPISecurityRiskFindings(ctx context.Context, request op
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -1903,15 +1995,15 @@ func (s *APISecurity) GetAPISecurityRiskFindings(ctx context.Context, request op
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -1957,7 +2049,11 @@ func (s *APISecurity) GetAPISecurityRiskFindings(ctx context.Context, request op
 
 // GetAPISecurityRiskFindingsCategories - Get a list of risk findings categories
 func (s *APISecurity) GetAPISecurityRiskFindingsCategories(ctx context.Context) (*operations.GetAPISecurityRiskFindingsCategoriesResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/apiSecurity/riskFindings/categories"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/apiSecurity/riskFindings/categories",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := url.JoinPath(baseURL, "/apiSecurity/riskFindings/categories")
@@ -1972,12 +2068,12 @@ func (s *APISecurity) GetAPISecurityRiskFindingsCategories(ctx context.Context) 
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -1987,15 +2083,15 @@ func (s *APISecurity) GetAPISecurityRiskFindingsCategories(ctx context.Context) 
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -2041,7 +2137,11 @@ func (s *APISecurity) GetAPISecurityRiskFindingsCategories(ctx context.Context) 
 
 // GetAPISecurityRiskFindingsSources - Get a list of risk findings sources
 func (s *APISecurity) GetAPISecurityRiskFindingsSources(ctx context.Context) (*operations.GetAPISecurityRiskFindingsSourcesResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/apiSecurity/riskFindings/sources"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/apiSecurity/riskFindings/sources",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := url.JoinPath(baseURL, "/apiSecurity/riskFindings/sources")
@@ -2056,12 +2156,12 @@ func (s *APISecurity) GetAPISecurityRiskFindingsSources(ctx context.Context) (*o
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -2071,15 +2171,15 @@ func (s *APISecurity) GetAPISecurityRiskFindingsSources(ctx context.Context) (*o
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -2125,7 +2225,11 @@ func (s *APISecurity) GetAPISecurityRiskFindingsSources(ctx context.Context) (*o
 
 // GetAPISecurityRiskFindingsRiskFindingID - Get a specific risk findings
 func (s *APISecurity) GetAPISecurityRiskFindingsRiskFindingID(ctx context.Context, request operations.GetAPISecurityRiskFindingsRiskFindingIDRequest) (*operations.GetAPISecurityRiskFindingsRiskFindingIDResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/apiSecurity/riskFindings/{riskFindingId}"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/apiSecurity/riskFindings/{riskFindingId}",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/riskFindings/{riskFindingId}", request, nil)
@@ -2140,12 +2244,12 @@ func (s *APISecurity) GetAPISecurityRiskFindingsRiskFindingID(ctx context.Contex
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -2155,15 +2259,15 @@ func (s *APISecurity) GetAPISecurityRiskFindingsRiskFindingID(ctx context.Contex
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -2209,7 +2313,11 @@ func (s *APISecurity) GetAPISecurityRiskFindingsRiskFindingID(ctx context.Contex
 
 // GetAPISecurityCatalogIDDeleteDependencies - get dependencies which need to be handled in order to delete specified api security service
 func (s *APISecurity) GetAPISecurityCatalogIDDeleteDependencies(ctx context.Context, request operations.GetAPISecurityCatalogIDDeleteDependenciesRequest) (*operations.GetAPISecurityCatalogIDDeleteDependenciesResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/apiSecurity/{catalogId}/deleteDependencies"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/apiSecurity/{catalogId}/deleteDependencies",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/{catalogId}/deleteDependencies", request, nil)
@@ -2224,12 +2332,12 @@ func (s *APISecurity) GetAPISecurityCatalogIDDeleteDependencies(ctx context.Cont
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -2239,15 +2347,15 @@ func (s *APISecurity) GetAPISecurityCatalogIDDeleteDependencies(ctx context.Cont
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -2303,7 +2411,11 @@ func (s *APISecurity) GetAPISecurityCatalogIDDeleteDependencies(ctx context.Cont
 
 // GetAPISecurityCatalogIDMethods - Get a list of an API spec methods for a specific API and its spec's tags
 func (s *APISecurity) GetAPISecurityCatalogIDMethods(ctx context.Context, request operations.GetAPISecurityCatalogIDMethodsRequest) (*operations.GetAPISecurityCatalogIDMethodsResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/apiSecurity/{catalogId}/methods"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/apiSecurity/{catalogId}/methods",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/{catalogId}/methods", request, nil)
@@ -2322,12 +2434,12 @@ func (s *APISecurity) GetAPISecurityCatalogIDMethods(ctx context.Context, reques
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -2337,15 +2449,15 @@ func (s *APISecurity) GetAPISecurityCatalogIDMethods(ctx context.Context, reques
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -2391,7 +2503,11 @@ func (s *APISecurity) GetAPISecurityCatalogIDMethods(ctx context.Context, reques
 
 // GetAPISecurityCatalogIDTags - Get a list of an API spec tags or a specific API
 func (s *APISecurity) GetAPISecurityCatalogIDTags(ctx context.Context, request operations.GetAPISecurityCatalogIDTagsRequest) (*operations.GetAPISecurityCatalogIDTagsResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/apiSecurity/{catalogId}/tags"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/apiSecurity/{catalogId}/tags",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/{catalogId}/tags", request, nil)
@@ -2406,12 +2522,12 @@ func (s *APISecurity) GetAPISecurityCatalogIDTags(ctx context.Context, request o
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -2421,15 +2537,15 @@ func (s *APISecurity) GetAPISecurityCatalogIDTags(ctx context.Context, request o
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -2475,7 +2591,11 @@ func (s *APISecurity) GetAPISecurityCatalogIDTags(ctx context.Context, request o
 
 // GetDashboardApisecRiskFindings - Get API sec risk findings widget
 func (s *APISecurity) GetDashboardApisecRiskFindings(ctx context.Context, request operations.GetDashboardApisecRiskFindingsRequest) (*operations.GetDashboardApisecRiskFindingsResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/dashboard/apisec/riskFindings"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/dashboard/apisec/riskFindings",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := url.JoinPath(baseURL, "/dashboard/apisec/riskFindings")
@@ -2494,12 +2614,12 @@ func (s *APISecurity) GetDashboardApisecRiskFindings(ctx context.Context, reques
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -2509,15 +2629,15 @@ func (s *APISecurity) GetDashboardApisecRiskFindings(ctx context.Context, reques
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -2561,7 +2681,11 @@ func (s *APISecurity) GetDashboardApisecRiskFindings(ctx context.Context, reques
 
 // GetDashboardApisecRiskFindingsTrend - Get API sec risk findings trend graph widget for the last 30 days
 func (s *APISecurity) GetDashboardApisecRiskFindingsTrend(ctx context.Context, request operations.GetDashboardApisecRiskFindingsTrendRequest) (*operations.GetDashboardApisecRiskFindingsTrendResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/dashboard/apisec/riskFindingsTrend"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/dashboard/apisec/riskFindingsTrend",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := url.JoinPath(baseURL, "/dashboard/apisec/riskFindingsTrend")
@@ -2580,12 +2704,12 @@ func (s *APISecurity) GetDashboardApisecRiskFindingsTrend(ctx context.Context, r
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -2595,15 +2719,15 @@ func (s *APISecurity) GetDashboardApisecRiskFindingsTrend(ctx context.Context, r
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -2647,7 +2771,11 @@ func (s *APISecurity) GetDashboardApisecRiskFindingsTrend(ctx context.Context, r
 
 // GetDashboardApisecSpecsAndOperationsDiffs - Get API sec specs and operations diffs widget
 func (s *APISecurity) GetDashboardApisecSpecsAndOperationsDiffs(ctx context.Context, request operations.GetDashboardApisecSpecsAndOperationsDiffsRequest) (*operations.GetDashboardApisecSpecsAndOperationsDiffsResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/dashboard/apisec/specsAndOperationsDiffs"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/dashboard/apisec/specsAndOperationsDiffs",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := url.JoinPath(baseURL, "/dashboard/apisec/specsAndOperationsDiffs")
@@ -2666,12 +2794,12 @@ func (s *APISecurity) GetDashboardApisecSpecsAndOperationsDiffs(ctx context.Cont
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -2681,15 +2809,15 @@ func (s *APISecurity) GetDashboardApisecSpecsAndOperationsDiffs(ctx context.Cont
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -2733,7 +2861,11 @@ func (s *APISecurity) GetDashboardApisecSpecsAndOperationsDiffs(ctx context.Cont
 
 // GetDashboardApisecTopRiskyApis - Get API sec top risky APIs widget
 func (s *APISecurity) GetDashboardApisecTopRiskyApis(ctx context.Context, request operations.GetDashboardApisecTopRiskyApisRequest) (*operations.GetDashboardApisecTopRiskyApisResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/dashboard/apisec/topRiskyApis"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/dashboard/apisec/topRiskyApis",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := url.JoinPath(baseURL, "/dashboard/apisec/topRiskyApis")
@@ -2752,12 +2884,12 @@ func (s *APISecurity) GetDashboardApisecTopRiskyApis(ctx context.Context, reques
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -2767,15 +2899,15 @@ func (s *APISecurity) GetDashboardApisecTopRiskyApis(ctx context.Context, reques
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -2819,7 +2951,11 @@ func (s *APISecurity) GetDashboardApisecTopRiskyApis(ctx context.Context, reques
 
 // GetDashboardApisecTopRiskyFindings - Get API sec top risky findings widget
 func (s *APISecurity) GetDashboardApisecTopRiskyFindings(ctx context.Context, request operations.GetDashboardApisecTopRiskyFindingsRequest) (*operations.GetDashboardApisecTopRiskyFindingsResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/dashboard/apisec/topRiskyFindings"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/dashboard/apisec/topRiskyFindings",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := url.JoinPath(baseURL, "/dashboard/apisec/topRiskyFindings")
@@ -2838,12 +2974,12 @@ func (s *APISecurity) GetDashboardApisecTopRiskyFindings(ctx context.Context, re
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -2853,15 +2989,15 @@ func (s *APISecurity) GetDashboardApisecTopRiskyFindings(ctx context.Context, re
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -2905,7 +3041,11 @@ func (s *APISecurity) GetDashboardApisecTopRiskyFindings(ctx context.Context, re
 
 // GetGateways - Get gateways
 func (s *APISecurity) GetGateways(ctx context.Context, request operations.GetGatewaysRequest) (*operations.GetGatewaysResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/gateways"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/gateways",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := url.JoinPath(baseURL, "/gateways")
@@ -2924,12 +3064,12 @@ func (s *APISecurity) GetGateways(ctx context.Context, request operations.GetGat
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -2939,15 +3079,15 @@ func (s *APISecurity) GetGateways(ctx context.Context, request operations.GetGat
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -2993,7 +3133,11 @@ func (s *APISecurity) GetGateways(ctx context.Context, request operations.GetGat
 
 // GetGatewaysClusters - Get clusters info
 func (s *APISecurity) GetGatewaysClusters(ctx context.Context, request operations.GetGatewaysClustersRequest) (*operations.GetGatewaysClustersResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/gateways/clusters"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/gateways/clusters",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := url.JoinPath(baseURL, "/gateways/clusters")
@@ -3012,12 +3156,12 @@ func (s *APISecurity) GetGatewaysClusters(ctx context.Context, request operation
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -3027,15 +3171,15 @@ func (s *APISecurity) GetGatewaysClusters(ctx context.Context, request operation
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -3082,7 +3226,11 @@ func (s *APISecurity) GetGatewaysClusters(ctx context.Context, request operation
 // GetGatewaysGatewayIDDownloadBundle - Get a GW installation script
 // In order to install,  extract and run "./install_bundle.sh"
 func (s *APISecurity) GetGatewaysGatewayIDDownloadBundle(ctx context.Context, request operations.GetGatewaysGatewayIDDownloadBundleRequest) (*operations.GetGatewaysGatewayIDDownloadBundleResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/gateways/{gatewayId}/download_bundle"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/gateways/{gatewayId}/download_bundle",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/gateways/{gatewayId}/download_bundle", request, nil)
@@ -3097,12 +3245,12 @@ func (s *APISecurity) GetGatewaysGatewayIDDownloadBundle(ctx context.Context, re
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -3112,15 +3260,15 @@ func (s *APISecurity) GetGatewaysGatewayIDDownloadBundle(ctx context.Context, re
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -3175,7 +3323,11 @@ func (s *APISecurity) GetGatewaysGatewayIDDownloadBundle(ctx context.Context, re
 
 // PostAPISecurityAPI - Register an API for scoring
 func (s *APISecurity) PostAPISecurityAPI(ctx context.Context, request shared.APISecurityAPI) (*operations.PostAPISecurityAPIResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "post_/apiSecurity/api"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "post_/apiSecurity/api",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := url.JoinPath(baseURL, "/apiSecurity/api")
@@ -3196,12 +3348,12 @@ func (s *APISecurity) PostAPISecurityAPI(ctx context.Context, request shared.API
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -3211,15 +3363,15 @@ func (s *APISecurity) PostAPISecurityAPI(ctx context.Context, request shared.API
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "403", "404", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -3265,7 +3417,11 @@ func (s *APISecurity) PostAPISecurityAPI(ctx context.Context, request shared.API
 
 // PostAPISecurityInternalCatalogCatalogIDBflaDetection - Start new bfla detection phase
 func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDBflaDetection(ctx context.Context, request operations.PostAPISecurityInternalCatalogCatalogIDBflaDetectionRequest) (*operations.PostAPISecurityInternalCatalogCatalogIDBflaDetectionResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "post_/apiSecurity/internalCatalog/{catalogId}/bfla/detection"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "post_/apiSecurity/internalCatalog/{catalogId}/bfla/detection",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/bfla/detection", request, nil)
@@ -3286,12 +3442,12 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDBflaDetection(ctx c
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -3301,15 +3457,15 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDBflaDetection(ctx c
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -3351,7 +3507,11 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDBflaDetection(ctx c
 
 // PostAPISecurityInternalCatalogCatalogIDBflaLearning - Start new bfla learning phase
 func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDBflaLearning(ctx context.Context, request operations.PostAPISecurityInternalCatalogCatalogIDBflaLearningRequest) (*operations.PostAPISecurityInternalCatalogCatalogIDBflaLearningResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "post_/apiSecurity/internalCatalog/{catalogId}/bfla/learning"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "post_/apiSecurity/internalCatalog/{catalogId}/bfla/learning",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/bfla/learning", request, nil)
@@ -3372,12 +3532,12 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDBflaLearning(ctx co
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -3387,15 +3547,15 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDBflaLearning(ctx co
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -3437,7 +3597,11 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDBflaLearning(ctx co
 
 // PostAPISecurityInternalCatalogCatalogIDBflaReset - Reset bfla model
 func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDBflaReset(ctx context.Context, request operations.PostAPISecurityInternalCatalogCatalogIDBflaResetRequest) (*operations.PostAPISecurityInternalCatalogCatalogIDBflaResetResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "post_/apiSecurity/internalCatalog/{catalogId}/bfla/reset"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "post_/apiSecurity/internalCatalog/{catalogId}/bfla/reset",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/bfla/reset", request, nil)
@@ -3452,12 +3616,12 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDBflaReset(ctx conte
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -3467,15 +3631,15 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDBflaReset(ctx conte
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -3517,7 +3681,11 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDBflaReset(ctx conte
 
 // PostAPISecurityInternalCatalogCatalogIDResetTraceAnalysis - Reset trace analysis
 func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDResetTraceAnalysis(ctx context.Context, request operations.PostAPISecurityInternalCatalogCatalogIDResetTraceAnalysisRequest) (*operations.PostAPISecurityInternalCatalogCatalogIDResetTraceAnalysisResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "post_/apiSecurity/internalCatalog/{catalogId}/resetTraceAnalysis"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "post_/apiSecurity/internalCatalog/{catalogId}/resetTraceAnalysis",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/resetTraceAnalysis", request, nil)
@@ -3532,12 +3700,12 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDResetTraceAnalysis(
 	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -3547,15 +3715,15 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDResetTraceAnalysis(
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -3590,7 +3758,11 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDResetTraceAnalysis(
 
 // PostAPISecurityInternalCatalogCatalogIDStartFuzzing - Start new fuzzing test
 func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDStartFuzzing(ctx context.Context, request operations.PostAPISecurityInternalCatalogCatalogIDStartFuzzingRequest) (*operations.PostAPISecurityInternalCatalogCatalogIDStartFuzzingResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "post_/apiSecurity/internalCatalog/{catalogId}/startFuzzing"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "post_/apiSecurity/internalCatalog/{catalogId}/startFuzzing",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/startFuzzing", request, nil)
@@ -3611,12 +3783,12 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDStartFuzzing(ctx co
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -3626,15 +3798,15 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDStartFuzzing(ctx co
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -3680,7 +3852,11 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDStartFuzzing(ctx co
 
 // PostAPISecurityInternalCatalogCatalogIDStartTraceAnalysis - Start trace analysis
 func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDStartTraceAnalysis(ctx context.Context, request operations.PostAPISecurityInternalCatalogCatalogIDStartTraceAnalysisRequest) (*operations.PostAPISecurityInternalCatalogCatalogIDStartTraceAnalysisResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "post_/apiSecurity/internalCatalog/{catalogId}/startTraceAnalysis"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "post_/apiSecurity/internalCatalog/{catalogId}/startTraceAnalysis",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/startTraceAnalysis", request, nil)
@@ -3701,12 +3877,12 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDStartTraceAnalysis(
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -3716,15 +3892,15 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDStartTraceAnalysis(
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -3759,7 +3935,11 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDStartTraceAnalysis(
 
 // PostAPISecurityInternalCatalogCatalogIDStopFuzzing - Stop fuzzing test
 func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDStopFuzzing(ctx context.Context, request operations.PostAPISecurityInternalCatalogCatalogIDStopFuzzingRequest) (*operations.PostAPISecurityInternalCatalogCatalogIDStopFuzzingResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "post_/apiSecurity/internalCatalog/{catalogId}/stopFuzzing"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "post_/apiSecurity/internalCatalog/{catalogId}/stopFuzzing",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/stopFuzzing", request, nil)
@@ -3774,12 +3954,12 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDStopFuzzing(ctx con
 	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -3789,15 +3969,15 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDStopFuzzing(ctx con
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -3832,7 +4012,11 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDStopFuzzing(ctx con
 
 // PostAPISecurityInternalCatalogCatalogIDStopTraceAnalysis - Stop trace analysis
 func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDStopTraceAnalysis(ctx context.Context, request operations.PostAPISecurityInternalCatalogCatalogIDStopTraceAnalysisRequest) (*operations.PostAPISecurityInternalCatalogCatalogIDStopTraceAnalysisResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "post_/apiSecurity/internalCatalog/{catalogId}/stopTraceAnalysis"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "post_/apiSecurity/internalCatalog/{catalogId}/stopTraceAnalysis",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/stopTraceAnalysis", request, nil)
@@ -3847,12 +4031,12 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDStopTraceAnalysis(c
 	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -3862,15 +4046,15 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDStopTraceAnalysis(c
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -3905,7 +4089,11 @@ func (s *APISecurity) PostAPISecurityInternalCatalogCatalogIDStopTraceAnalysis(c
 
 // PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecAbort - abort learning and reconstructing an API via API Clarity
 func (s *APISecurity) PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecAbort(ctx context.Context, request operations.PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecAbortRequest) (*operations.PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecAbortResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "post_/apiSecurity/openApiSpecs/{catalogId}/reconstructedSpec/abort"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "post_/apiSecurity/openApiSpecs/{catalogId}/reconstructedSpec/abort",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/openApiSpecs/{catalogId}/reconstructedSpec/abort", request, nil)
@@ -3920,12 +4108,12 @@ func (s *APISecurity) PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecAbort
 	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -3935,15 +4123,15 @@ func (s *APISecurity) PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecAbort
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -3978,7 +4166,11 @@ func (s *APISecurity) PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecAbort
 
 // PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecLearn - Start learning and reconstructing an API via API Clarity
 func (s *APISecurity) PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecLearn(ctx context.Context, request operations.PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecLearnRequest) (*operations.PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecLearnResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "post_/apiSecurity/openApiSpecs/{catalogId}/reconstructedSpec/learn"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "post_/apiSecurity/openApiSpecs/{catalogId}/reconstructedSpec/learn",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/openApiSpecs/{catalogId}/reconstructedSpec/learn", request, nil)
@@ -3999,12 +4191,12 @@ func (s *APISecurity) PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecLearn
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -4014,15 +4206,15 @@ func (s *APISecurity) PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecLearn
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -4057,7 +4249,11 @@ func (s *APISecurity) PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecLearn
 
 // PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReviewApprove - Approve reconstructed spec suggestions (only 1 approval per catalogId)
 func (s *APISecurity) PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReviewApprove(ctx context.Context, request operations.PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReviewApproveRequest) (*operations.PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecReviewApproveResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "post_/apiSecurity/openApiSpecs/{catalogId}/reconstructedSpec/review/approve"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "post_/apiSecurity/openApiSpecs/{catalogId}/reconstructedSpec/review/approve",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/openApiSpecs/{catalogId}/reconstructedSpec/review/approve", request, nil)
@@ -4078,12 +4274,12 @@ func (s *APISecurity) PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecRevie
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -4093,15 +4289,15 @@ func (s *APISecurity) PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecRevie
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -4136,7 +4332,11 @@ func (s *APISecurity) PostAPISecurityOpenAPISpecsCatalogIDReconstructedSpecRevie
 
 // PostAPISecurityOpenAPISpecsCatalogIDStartDiffsDetection - Start spec diffs detection
 func (s *APISecurity) PostAPISecurityOpenAPISpecsCatalogIDStartDiffsDetection(ctx context.Context, request operations.PostAPISecurityOpenAPISpecsCatalogIDStartDiffsDetectionRequest) (*operations.PostAPISecurityOpenAPISpecsCatalogIDStartDiffsDetectionResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "post_/apiSecurity/openApiSpecs/{catalogId}/startDiffsDetection"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "post_/apiSecurity/openApiSpecs/{catalogId}/startDiffsDetection",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/openApiSpecs/{catalogId}/startDiffsDetection", request, nil)
@@ -4157,12 +4357,12 @@ func (s *APISecurity) PostAPISecurityOpenAPISpecsCatalogIDStartDiffsDetection(ct
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -4172,15 +4372,15 @@ func (s *APISecurity) PostAPISecurityOpenAPISpecsCatalogIDStartDiffsDetection(ct
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -4215,7 +4415,11 @@ func (s *APISecurity) PostAPISecurityOpenAPISpecsCatalogIDStartDiffsDetection(ct
 
 // PostAPISecurityOpenAPISpecsCatalogIDStopDiffsDetection - stop spec diffs detection
 func (s *APISecurity) PostAPISecurityOpenAPISpecsCatalogIDStopDiffsDetection(ctx context.Context, request operations.PostAPISecurityOpenAPISpecsCatalogIDStopDiffsDetectionRequest) (*operations.PostAPISecurityOpenAPISpecsCatalogIDStopDiffsDetectionResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "post_/apiSecurity/openApiSpecs/{catalogId}/stopDiffsDetection"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "post_/apiSecurity/openApiSpecs/{catalogId}/stopDiffsDetection",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/openApiSpecs/{catalogId}/stopDiffsDetection", request, nil)
@@ -4230,12 +4434,12 @@ func (s *APISecurity) PostAPISecurityOpenAPISpecsCatalogIDStopDiffsDetection(ctx
 	req.Header.Set("Accept", "*/*")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -4245,15 +4449,15 @@ func (s *APISecurity) PostAPISecurityOpenAPISpecsCatalogIDStopDiffsDetection(ctx
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -4288,7 +4492,11 @@ func (s *APISecurity) PostAPISecurityOpenAPISpecsCatalogIDStopDiffsDetection(ctx
 
 // PostGateways - Add new gateway
 func (s *APISecurity) PostGateways(ctx context.Context, request shared.Gateway) (*operations.PostGatewaysResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "post_/gateways"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "post_/gateways",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := url.JoinPath(baseURL, "/gateways")
@@ -4309,12 +4517,12 @@ func (s *APISecurity) PostGateways(ctx context.Context, request shared.Gateway) 
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -4324,15 +4532,15 @@ func (s *APISecurity) PostGateways(ctx context.Context, request shared.Gateway) 
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -4378,7 +4586,11 @@ func (s *APISecurity) PostGateways(ctx context.Context, request shared.Gateway) 
 
 // PutAPISecurityInternalCatalogCatalogIDBfla - update BFLA info for this catalogId
 func (s *APISecurity) PutAPISecurityInternalCatalogCatalogIDBfla(ctx context.Context, request operations.PutAPISecurityInternalCatalogCatalogIDBflaRequest) (*operations.PutAPISecurityInternalCatalogCatalogIDBflaResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "put_/apiSecurity/internalCatalog/{catalogId}/bfla"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "put_/apiSecurity/internalCatalog/{catalogId}/bfla",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/bfla", request, nil)
@@ -4399,12 +4611,12 @@ func (s *APISecurity) PutAPISecurityInternalCatalogCatalogIDBfla(ctx context.Con
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -4414,15 +4626,15 @@ func (s *APISecurity) PutAPISecurityInternalCatalogCatalogIDBfla(ctx context.Con
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -4464,7 +4676,11 @@ func (s *APISecurity) PutAPISecurityInternalCatalogCatalogIDBfla(ctx context.Con
 
 // PutAPISecurityOpenAPISpecsCatalogID - Add or edit a spec about a specific API for the account
 func (s *APISecurity) PutAPISecurityOpenAPISpecsCatalogID(ctx context.Context, request operations.PutAPISecurityOpenAPISpecsCatalogIDRequest) (*operations.PutAPISecurityOpenAPISpecsCatalogIDResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "put_/apiSecurity/openApiSpecs/{catalogId}"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "put_/apiSecurity/openApiSpecs/{catalogId}",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/openApiSpecs/{catalogId}", request, nil)
@@ -4485,12 +4701,12 @@ func (s *APISecurity) PutAPISecurityOpenAPISpecsCatalogID(ctx context.Context, r
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -4500,15 +4716,15 @@ func (s *APISecurity) PutAPISecurityOpenAPISpecsCatalogID(ctx context.Context, r
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -4554,7 +4770,11 @@ func (s *APISecurity) PutAPISecurityOpenAPISpecsCatalogID(ctx context.Context, r
 
 // PutGatewaysGatewayID - Edit gateway
 func (s *APISecurity) PutGatewaysGatewayID(ctx context.Context, request operations.PutGatewaysGatewayIDRequest) (*operations.PutGatewaysGatewayIDResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "put_/gateways/{gatewayId}"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "put_/gateways/{gatewayId}",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/gateways/{gatewayId}", request, nil)
@@ -4575,12 +4795,12 @@ func (s *APISecurity) PutGatewaysGatewayID(ctx context.Context, request operatio
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -4590,15 +4810,15 @@ func (s *APISecurity) PutGatewaysGatewayID(ctx context.Context, request operatio
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"400", "401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}

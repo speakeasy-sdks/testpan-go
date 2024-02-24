@@ -27,7 +27,11 @@ func newBfla(sdkConfig sdkConfiguration) *Bfla {
 
 // DeleteAPISecurityInternalCatalogCatalogIDBflaDetection - stop bfla detection phase
 func (s *Bfla) DeleteAPISecurityInternalCatalogCatalogIDBflaDetection(ctx context.Context, request operations.DeleteAPISecurityInternalCatalogCatalogIDBflaDetectionRequest) (*operations.DeleteAPISecurityInternalCatalogCatalogIDBflaDetectionResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "delete_/apiSecurity/internalCatalog/{catalogId}/bfla/detection"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "delete_/apiSecurity/internalCatalog/{catalogId}/bfla/detection",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/bfla/detection", request, nil)
@@ -42,12 +46,12 @@ func (s *Bfla) DeleteAPISecurityInternalCatalogCatalogIDBflaDetection(ctx contex
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -57,15 +61,15 @@ func (s *Bfla) DeleteAPISecurityInternalCatalogCatalogIDBflaDetection(ctx contex
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -107,7 +111,11 @@ func (s *Bfla) DeleteAPISecurityInternalCatalogCatalogIDBflaDetection(ctx contex
 
 // DeleteAPISecurityInternalCatalogCatalogIDBflaLearning - stop bfla learning phase
 func (s *Bfla) DeleteAPISecurityInternalCatalogCatalogIDBflaLearning(ctx context.Context, request operations.DeleteAPISecurityInternalCatalogCatalogIDBflaLearningRequest) (*operations.DeleteAPISecurityInternalCatalogCatalogIDBflaLearningResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "delete_/apiSecurity/internalCatalog/{catalogId}/bfla/learning"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "delete_/apiSecurity/internalCatalog/{catalogId}/bfla/learning",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/bfla/learning", request, nil)
@@ -122,12 +130,12 @@ func (s *Bfla) DeleteAPISecurityInternalCatalogCatalogIDBflaLearning(ctx context
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -137,15 +145,15 @@ func (s *Bfla) DeleteAPISecurityInternalCatalogCatalogIDBflaLearning(ctx context
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -187,7 +195,11 @@ func (s *Bfla) DeleteAPISecurityInternalCatalogCatalogIDBflaLearning(ctx context
 
 // GetAPISecurityInternalCatalogCatalogIDBfla - Get bfla info for given catalogId
 func (s *Bfla) GetAPISecurityInternalCatalogCatalogIDBfla(ctx context.Context, request operations.GetAPISecurityInternalCatalogCatalogIDBflaRequest) (*operations.GetAPISecurityInternalCatalogCatalogIDBflaResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "get_/apiSecurity/internalCatalog/{catalogId}/bfla"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "get_/apiSecurity/internalCatalog/{catalogId}/bfla",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/bfla", request, nil)
@@ -202,12 +214,12 @@ func (s *Bfla) GetAPISecurityInternalCatalogCatalogIDBfla(ctx context.Context, r
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -217,15 +229,15 @@ func (s *Bfla) GetAPISecurityInternalCatalogCatalogIDBfla(ctx context.Context, r
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -271,7 +283,11 @@ func (s *Bfla) GetAPISecurityInternalCatalogCatalogIDBfla(ctx context.Context, r
 
 // PostAPISecurityInternalCatalogCatalogIDBflaDetection - Start new bfla detection phase
 func (s *Bfla) PostAPISecurityInternalCatalogCatalogIDBflaDetection(ctx context.Context, request operations.PostAPISecurityInternalCatalogCatalogIDBflaDetectionRequest) (*operations.PostAPISecurityInternalCatalogCatalogIDBflaDetectionResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "post_/apiSecurity/internalCatalog/{catalogId}/bfla/detection"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "post_/apiSecurity/internalCatalog/{catalogId}/bfla/detection",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/bfla/detection", request, nil)
@@ -292,12 +308,12 @@ func (s *Bfla) PostAPISecurityInternalCatalogCatalogIDBflaDetection(ctx context.
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -307,15 +323,15 @@ func (s *Bfla) PostAPISecurityInternalCatalogCatalogIDBflaDetection(ctx context.
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -357,7 +373,11 @@ func (s *Bfla) PostAPISecurityInternalCatalogCatalogIDBflaDetection(ctx context.
 
 // PostAPISecurityInternalCatalogCatalogIDBflaLearning - Start new bfla learning phase
 func (s *Bfla) PostAPISecurityInternalCatalogCatalogIDBflaLearning(ctx context.Context, request operations.PostAPISecurityInternalCatalogCatalogIDBflaLearningRequest) (*operations.PostAPISecurityInternalCatalogCatalogIDBflaLearningResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "post_/apiSecurity/internalCatalog/{catalogId}/bfla/learning"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "post_/apiSecurity/internalCatalog/{catalogId}/bfla/learning",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/bfla/learning", request, nil)
@@ -378,12 +398,12 @@ func (s *Bfla) PostAPISecurityInternalCatalogCatalogIDBflaLearning(ctx context.C
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -393,15 +413,15 @@ func (s *Bfla) PostAPISecurityInternalCatalogCatalogIDBflaLearning(ctx context.C
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -443,7 +463,11 @@ func (s *Bfla) PostAPISecurityInternalCatalogCatalogIDBflaLearning(ctx context.C
 
 // PostAPISecurityInternalCatalogCatalogIDBflaReset - Reset bfla model
 func (s *Bfla) PostAPISecurityInternalCatalogCatalogIDBflaReset(ctx context.Context, request operations.PostAPISecurityInternalCatalogCatalogIDBflaResetRequest) (*operations.PostAPISecurityInternalCatalogCatalogIDBflaResetResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "post_/apiSecurity/internalCatalog/{catalogId}/bfla/reset"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "post_/apiSecurity/internalCatalog/{catalogId}/bfla/reset",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/bfla/reset", request, nil)
@@ -458,12 +482,12 @@ func (s *Bfla) PostAPISecurityInternalCatalogCatalogIDBflaReset(ctx context.Cont
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -473,15 +497,15 @@ func (s *Bfla) PostAPISecurityInternalCatalogCatalogIDBflaReset(ctx context.Cont
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
@@ -523,7 +547,11 @@ func (s *Bfla) PostAPISecurityInternalCatalogCatalogIDBflaReset(ctx context.Cont
 
 // PutAPISecurityInternalCatalogCatalogIDBfla - update BFLA info for this catalogId
 func (s *Bfla) PutAPISecurityInternalCatalogCatalogIDBfla(ctx context.Context, request operations.PutAPISecurityInternalCatalogCatalogIDBflaRequest) (*operations.PutAPISecurityInternalCatalogCatalogIDBflaResponse, error) {
-	hookCtx := hooks.HookContext{OperationID: "put_/apiSecurity/internalCatalog/{catalogId}/bfla"}
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "put_/apiSecurity/internalCatalog/{catalogId}/bfla",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apiSecurity/internalCatalog/{catalogId}/bfla", request, nil)
@@ -544,12 +572,12 @@ func (s *Bfla) PutAPISecurityInternalCatalogCatalogIDBfla(ctx context.Context, r
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	client := s.sdkConfiguration.SecurityClient
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
-
-	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -559,15 +587,15 @@ func (s *Bfla) PutAPISecurityInternalCatalogCatalogIDBfla(ctx context.Context, r
 			err = fmt.Errorf("error sending request: no response")
 		}
 
-		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"401", "4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
 		}
 	} else {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
 		if err != nil {
 			return nil, err
 		}
