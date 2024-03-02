@@ -1249,8 +1249,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.GetAPISecurityRiskFindings(ctx, operations.GetAPISecurityRiskFindingsRequest{
-        APISecSource: operations.APISecSourceExternal,
-        SortKey: operations.GetAPISecurityRiskFindingsQueryParamSortKeyName,
+        APISecSource: operations.APISecSourceInternal,
+        SortKey: operations.GetAPISecurityRiskFindingsQueryParamSortKeyRisk,
     })
     if err != nil {
         log.Fatal(err)
@@ -1722,7 +1722,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.GetDashboardApisecSpecsAndOperationsDiffs(ctx, operations.GetDashboardApisecSpecsAndOperationsDiffsRequest{
-        APISecSource: operations.GetDashboardApisecSpecsAndOperationsDiffsQueryParamAPISecSourceExternal,
+        APISecSource: operations.GetDashboardApisecSpecsAndOperationsDiffsQueryParamAPISecSourceInternal,
     })
     if err != nil {
         log.Fatal(err)
@@ -1775,7 +1775,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APISecurity.GetDashboardApisecTopRiskyApis(ctx, operations.GetDashboardApisecTopRiskyApisRequest{
-        APISecSource: operations.GetDashboardApisecTopRiskyApisQueryParamAPISecSourceExternal,
+        APISecSource: operations.GetDashboardApisecTopRiskyApisQueryParamAPISecSourceInternal,
     })
     if err != nil {
         log.Fatal(err)

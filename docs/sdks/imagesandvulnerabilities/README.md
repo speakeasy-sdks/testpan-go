@@ -155,7 +155,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.ImagesAndVulnerabilities.GetImages(ctx, operations.GetImagesRequest{
-        SortKey: operations.GetImagesQueryParamSortKeyImageName,
+        SortKey: operations.GetImagesQueryParamSortKeyRisk,
     })
     if err != nil {
         log.Fatal(err)

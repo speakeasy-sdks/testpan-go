@@ -161,7 +161,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Dashboard.GetDashboardApisecSpecsAndOperationsDiffs(ctx, operations.GetDashboardApisecSpecsAndOperationsDiffsRequest{
-        APISecSource: operations.GetDashboardApisecSpecsAndOperationsDiffsQueryParamAPISecSourceExternal,
+        APISecSource: operations.GetDashboardApisecSpecsAndOperationsDiffsQueryParamAPISecSourceInternal,
     })
     if err != nil {
         log.Fatal(err)
@@ -214,7 +214,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Dashboard.GetDashboardApisecTopRiskyApis(ctx, operations.GetDashboardApisecTopRiskyApisRequest{
-        APISecSource: operations.GetDashboardApisecTopRiskyApisQueryParamAPISecSourceExternal,
+        APISecSource: operations.GetDashboardApisecTopRiskyApisQueryParamAPISecSourceInternal,
     })
     if err != nil {
         log.Fatal(err)

@@ -579,7 +579,7 @@ func main() {
     ctx := context.Background()
     res, err := s.RiskAssessment.GetRiskAssessmentKubernetesClusterIDPods(ctx, operations.GetRiskAssessmentKubernetesClusterIDPodsRequest{
         KubernetesClusterID: "764514eb-01d8-4d87-972e-7065c0075222",
-        SortKey: operations.GetRiskAssessmentKubernetesClusterIDPodsQueryParamSortKeyName,
+        SortKey: operations.GetRiskAssessmentKubernetesClusterIDPodsQueryParamSortKeyRisk,
     })
     if err != nil {
         log.Fatal(err)
