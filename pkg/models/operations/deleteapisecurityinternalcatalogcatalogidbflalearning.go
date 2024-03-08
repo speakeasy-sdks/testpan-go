@@ -25,7 +25,7 @@ type DeleteAPISecurityInternalCatalogCatalogIDBflaLearningResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Stopped
-	Res *string
+	String *string
 }
 
 func (o *DeleteAPISecurityInternalCatalogCatalogIDBflaLearningResponse) GetContentType() string {
@@ -49,9 +49,9 @@ func (o *DeleteAPISecurityInternalCatalogCatalogIDBflaLearningResponse) GetRawRe
 	return o.RawResponse
 }
 
-func (o *DeleteAPISecurityInternalCatalogCatalogIDBflaLearningResponse) GetRes() *string {
+func (o *DeleteAPISecurityInternalCatalogCatalogIDBflaLearningResponse) GetString() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Res
+	return o.String
 }

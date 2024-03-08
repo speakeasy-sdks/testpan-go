@@ -60,7 +60,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.APISecRiskFindingsWidget != nil {
         // handle response
     }
@@ -113,7 +112,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.APISecRiskFindingsTrendWidget != nil {
         // handle response
     }
@@ -166,7 +164,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.SpecsAndOperationsDiffsWidget != nil {
         // handle response
     }
@@ -219,7 +216,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.APISecTopRiskyApisWidget != nil {
         // handle response
     }
@@ -272,7 +268,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.APISecTopRiskyFindingsWidget != nil {
         // handle response
     }
@@ -322,7 +317,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ClustersDetails != nil {
         // handle response
     }
@@ -371,7 +365,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.TimeBasedWidget != nil {
         // handle response
     }
@@ -420,7 +413,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.TimeBasedWidget != nil {
         // handle response
     }
@@ -470,7 +462,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.OperationalBar != nil {
         // handle response
     }
@@ -521,7 +512,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.PermissionsWidget != nil {
         // handle response
     }
@@ -571,7 +561,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.TimeBasedWidget != nil {
         // handle response
     }
@@ -620,7 +609,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Stream != nil {
         // handle response
     }
@@ -669,7 +657,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ReportStatus != nil {
         // handle response
     }
@@ -719,7 +706,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.SecurityContextWidget != nil {
         // handle response
     }
@@ -770,7 +756,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.TopSecurityRisksWidget != nil {
         // handle response
     }
@@ -821,7 +806,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.VulnerabilitiesWidget != nil {
         // handle response
     }
@@ -874,7 +858,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.TimeBasedWidget != nil {
         // handle response
     }
@@ -927,7 +910,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.TimeBasedWidget != nil {
         // handle response
     }
@@ -980,7 +962,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.TimeBasedWidget != nil {
         // handle response
     }
@@ -1030,7 +1011,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.LicensingDashboard != nil {
         // handle response
     }
@@ -1065,7 +1045,6 @@ import(
 	testpango "github.com/speakeasy-sdks/testpan-go"
 	"context"
 	"log"
-	"net/http"
 )
 
 func main() {
@@ -1080,8 +1059,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
-    if res.StatusCode == http.StatusOK {
+    if res != nil {
         // handle response
     }
 }

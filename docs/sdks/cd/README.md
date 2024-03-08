@@ -33,7 +33,6 @@ import(
 	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
 	"log"
-	"net/http"
 )
 
 func main() {
@@ -50,8 +49,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
-    if res.StatusCode == http.StatusOK {
+    if res != nil {
         // handle response
     }
 }
@@ -87,7 +85,6 @@ import(
 	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
 	"log"
-	"net/http"
 )
 
 func main() {
@@ -104,8 +101,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
-    if res.StatusCode == http.StatusOK {
+    if res != nil {
         // handle response
     }
 }
@@ -159,7 +155,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Classes != nil {
         // handle response
     }
@@ -212,7 +207,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.CdPipelineResourceResult != nil {
         // handle response
     }
@@ -265,7 +259,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.CdConnectionRule != nil {
         // handle response
     }
@@ -318,7 +311,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.CdServerlessRule != nil {
         // handle response
     }
@@ -368,7 +360,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.CdConnectionRule != nil {
         // handle response
     }
@@ -425,7 +416,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.CdServerlessRule != nil {
         // handle response
     }
@@ -479,7 +469,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.CdConnectionRule != nil {
         // handle response
     }
@@ -540,7 +529,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.CdServerlessRule != nil {
         // handle response
     }

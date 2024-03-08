@@ -78,7 +78,6 @@ import(
 	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
 	"log"
-	"net/http"
 )
 
 func main() {
@@ -95,8 +94,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
-    if res.StatusCode == http.StatusOK {
+    if res != nil {
         // handle response
     }
 }
@@ -148,8 +146,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
-    if res.Res != nil {
+    if res.String != nil {
         // handle response
     }
 }
@@ -201,8 +198,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
-    if res.Res != nil {
+    if res.String != nil {
         // handle response
     }
 }
@@ -254,7 +250,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.OpenAPISpecScoreStatus != nil {
         // handle response
     }
@@ -291,7 +286,6 @@ import(
 	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
 	"log"
-	"net/http"
 )
 
 func main() {
@@ -308,8 +302,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
-    if res.StatusCode == http.StatusOK {
+    if res != nil {
         // handle response
     }
 }
@@ -359,7 +352,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.APIServiceListExternal != nil {
         // handle response
     }
@@ -410,7 +402,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Integer != nil {
         // handle response
     }
@@ -463,7 +454,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.APIServiceDrillDownExternal != nil {
         // handle response
     }
@@ -514,7 +504,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.APIServiceListInternal != nil {
         // handle response
     }
@@ -565,7 +554,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Integer != nil {
         // handle response
     }
@@ -618,7 +606,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.APIServiceDrillDownInternal != nil {
         // handle response
     }
@@ -671,7 +658,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.APIServiceBflaInfo != nil {
         // handle response
     }
@@ -724,7 +710,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.APIServiceFuzzingProgress != nil {
         // handle response
     }
@@ -777,7 +762,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Classes != nil {
         // handle response
     }
@@ -830,7 +814,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.TraceAnalysisDetails != nil {
         // handle response
     }
@@ -883,7 +866,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.OpenAPISpec != nil {
         // handle response
     }
@@ -936,7 +918,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.DiffDetectionStatus != nil {
         // handle response
     }
@@ -989,7 +970,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.OpenAPISpecScoreStatus != nil {
         // handle response
     }
@@ -1042,8 +1022,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
-    if res.Res != nil {
+    if res.String != nil {
         // handle response
     }
 }
@@ -1095,7 +1074,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.APIReconstructedSpec != nil {
         // handle response
     }
@@ -1148,7 +1126,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.APIReconstructionResponse != nil {
         // handle response
     }
@@ -1201,8 +1178,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
-    if res.Res != nil {
+    if res.String != nil {
         // handle response
     }
 }
@@ -1255,7 +1231,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.RiskFindings != nil {
         // handle response
     }
@@ -1305,7 +1280,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Strings != nil {
         // handle response
     }
@@ -1354,7 +1328,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Strings != nil {
         // handle response
     }
@@ -1406,7 +1379,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.RiskFinding != nil {
         // handle response
     }
@@ -1459,7 +1431,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.APIServiceDeleteDependencies != nil {
         // handle response
     }
@@ -1515,7 +1486,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Classes != nil {
         // handle response
     }
@@ -1568,7 +1538,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.APIServiceTags != nil {
         // handle response
     }
@@ -1621,7 +1590,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.APISecRiskFindingsWidget != nil {
         // handle response
     }
@@ -1674,7 +1642,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.APISecRiskFindingsTrendWidget != nil {
         // handle response
     }
@@ -1727,7 +1694,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.SpecsAndOperationsDiffsWidget != nil {
         // handle response
     }
@@ -1780,7 +1746,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.APISecTopRiskyApisWidget != nil {
         // handle response
     }
@@ -1833,7 +1798,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.APISecTopRiskyFindingsWidget != nil {
         // handle response
     }
@@ -1884,7 +1848,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Classes != nil {
         // handle response
     }
@@ -1937,7 +1900,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Classes != nil {
         // handle response
     }
@@ -1990,7 +1952,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Stream != nil {
         // handle response
     }
@@ -2042,8 +2003,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
-    if res.Res != nil {
+    if res.String != nil {
         // handle response
     }
 }
@@ -2098,8 +2058,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
-    if res.Res != nil {
+    if res.String != nil {
         // handle response
     }
 }
@@ -2154,8 +2113,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
-    if res.Res != nil {
+    if res.String != nil {
         // handle response
     }
 }
@@ -2207,8 +2165,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
-    if res.Res != nil {
+    if res.String != nil {
         // handle response
     }
 }
@@ -2244,7 +2201,6 @@ import(
 	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
 	"log"
-	"net/http"
 )
 
 func main() {
@@ -2261,8 +2217,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
-    if res.StatusCode == http.StatusOK {
+    if res != nil {
         // handle response
     }
 }
@@ -2320,7 +2275,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.APIServiceFuzzingTest != nil {
         // handle response
     }
@@ -2357,7 +2311,6 @@ import(
 	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
 	"log"
-	"net/http"
 )
 
 func main() {
@@ -2378,8 +2331,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
-    if res.StatusCode == http.StatusOK {
+    if res != nil {
         // handle response
     }
 }
@@ -2415,7 +2367,6 @@ import(
 	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
 	"log"
-	"net/http"
 )
 
 func main() {
@@ -2432,8 +2383,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
-    if res.StatusCode == http.StatusOK {
+    if res != nil {
         // handle response
     }
 }
@@ -2469,7 +2419,6 @@ import(
 	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
 	"log"
-	"net/http"
 )
 
 func main() {
@@ -2486,8 +2435,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
-    if res.StatusCode == http.StatusOK {
+    if res != nil {
         // handle response
     }
 }
@@ -2523,7 +2471,6 @@ import(
 	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
 	"log"
-	"net/http"
 )
 
 func main() {
@@ -2540,8 +2487,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
-    if res.StatusCode == http.StatusOK {
+    if res != nil {
         // handle response
     }
 }
@@ -2577,7 +2523,6 @@ import(
 	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
 	"log"
-	"net/http"
 )
 
 func main() {
@@ -2594,8 +2539,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
-    if res.StatusCode == http.StatusOK {
+    if res != nil {
         // handle response
     }
 }
@@ -2631,7 +2575,6 @@ import(
 	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
 	"log"
-	"net/http"
 )
 
 func main() {
@@ -2654,8 +2597,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
-    if res.StatusCode == http.StatusOK {
+    if res != nil {
         // handle response
     }
 }
@@ -2691,7 +2633,6 @@ import(
 	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
 	"log"
-	"net/http"
 )
 
 func main() {
@@ -2712,8 +2653,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
-    if res.StatusCode == http.StatusOK {
+    if res != nil {
         // handle response
     }
 }
@@ -2749,7 +2689,6 @@ import(
 	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
 	"log"
-	"net/http"
 )
 
 func main() {
@@ -2766,8 +2705,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
-    if res.StatusCode == http.StatusOK {
+    if res != nil {
         // handle response
     }
 }
@@ -2820,7 +2758,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Gateway != nil {
         // handle response
     }
@@ -2876,8 +2813,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
-    if res.Res != nil {
+    if res.String != nil {
         // handle response
     }
 }
@@ -2930,7 +2866,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.OpenAPISpec != nil {
         // handle response
     }
@@ -2988,7 +2923,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Gateway != nil {
         // handle response
     }

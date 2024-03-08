@@ -42,7 +42,6 @@ import(
 	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
 	"log"
-	"net/http"
 )
 
 func main() {
@@ -59,8 +58,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
-    if res.StatusCode == http.StatusOK {
+    if res != nil {
         // handle response
     }
 }
@@ -96,7 +94,6 @@ import(
 	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
 	"log"
-	"net/http"
 )
 
 func main() {
@@ -113,8 +110,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
-    if res.StatusCode == http.StatusOK {
+    if res != nil {
         // handle response
     }
 }
@@ -166,7 +162,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ControllerDataResponse != nil {
         // handle response
     }
@@ -216,7 +211,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Strings != nil {
         // handle response
     }
@@ -266,7 +260,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Classes != nil {
         // handle response
     }
@@ -319,7 +312,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.KubernetesCluster != nil {
         // handle response
     }
@@ -372,7 +364,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.KubernetesClusterDeleteDependencies != nil {
         // handle response
     }
@@ -425,7 +416,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Stream != nil {
         // handle response
     }
@@ -478,7 +468,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.HelmCommandsInstallation != nil {
         // handle response
     }
@@ -531,7 +520,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Classes != nil {
         // handle response
     }
@@ -584,7 +572,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Classes != nil {
         // handle response
     }
@@ -635,7 +622,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Classes != nil {
         // handle response
     }
@@ -686,7 +672,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Classes != nil {
         // handle response
     }
@@ -737,7 +722,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Classes != nil {
         // handle response
     }
@@ -789,7 +773,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.KubernetesCluster != nil {
         // handle response
     }
@@ -845,7 +828,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.PodDefinition != nil {
         // handle response
     }
@@ -901,7 +883,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.KubernetesCluster != nil {
         // handle response
     }
@@ -955,7 +936,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.KubernetesCluster != nil {
         // handle response
     }
@@ -1015,7 +995,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.PodDefinition != nil {
         // handle response
     }

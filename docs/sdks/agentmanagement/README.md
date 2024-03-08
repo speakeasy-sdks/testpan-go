@@ -40,7 +40,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Agents != nil {
         // handle response
     }
@@ -77,7 +76,6 @@ import(
 	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
 	"log"
-	"net/http"
 )
 
 func main() {
@@ -94,8 +92,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
-    if res.StatusCode == http.StatusOK {
+    if res != nil {
         // handle response
     }
 }
@@ -132,7 +129,6 @@ import(
 	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
 	"log"
-	"net/http"
 )
 
 func main() {
@@ -150,8 +146,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
-    if res.StatusCode == http.StatusOK {
+    if res != nil {
         // handle response
     }
 }

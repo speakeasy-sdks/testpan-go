@@ -25,7 +25,7 @@ type GetAPISecurityOpenAPISpecsCatalogIDOpenAPISpecSwaggerJSONResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Success
-	Res *string
+	String *string
 }
 
 func (o *GetAPISecurityOpenAPISpecsCatalogIDOpenAPISpecSwaggerJSONResponse) GetContentType() string {
@@ -49,9 +49,9 @@ func (o *GetAPISecurityOpenAPISpecsCatalogIDOpenAPISpecSwaggerJSONResponse) GetR
 	return o.RawResponse
 }
 
-func (o *GetAPISecurityOpenAPISpecsCatalogIDOpenAPISpecSwaggerJSONResponse) GetRes() *string {
+func (o *GetAPISecurityOpenAPISpecsCatalogIDOpenAPISpecSwaggerJSONResponse) GetString() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Res
+	return o.String
 }

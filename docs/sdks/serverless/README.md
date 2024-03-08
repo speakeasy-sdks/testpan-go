@@ -39,7 +39,6 @@ import(
 	"context"
 	"github.com/speakeasy-sdks/testpan-go/pkg/models/operations"
 	"log"
-	"net/http"
 )
 
 func main() {
@@ -56,8 +55,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
-    if res.StatusCode == http.StatusOK {
+    if res != nil {
         // handle response
     }
 }
@@ -109,7 +107,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Classes != nil {
         // handle response
     }
@@ -159,7 +156,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ServerlessAzureInstallationDetails != nil {
         // handle response
     }
@@ -208,7 +204,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ServerlessInstallationDetails != nil {
         // handle response
     }
@@ -257,7 +252,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Classes != nil {
         // handle response
     }
@@ -306,7 +300,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Strings != nil {
         // handle response
     }
@@ -358,7 +351,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.CloudAccountDeleteDependencies != nil {
         // handle response
     }
@@ -411,7 +403,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Stream != nil {
         // handle response
     }
@@ -462,7 +453,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Classes != nil {
         // handle response
     }
@@ -513,7 +503,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Classes != nil {
         // handle response
     }
@@ -564,7 +553,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Classes != nil {
         // handle response
     }
@@ -617,7 +605,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ServerlessFunction != nil {
         // handle response
     }
@@ -670,7 +657,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Classes != nil {
         // handle response
     }
@@ -723,7 +709,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Classes != nil {
         // handle response
     }
@@ -774,7 +759,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Classes != nil {
         // handle response
     }
@@ -827,7 +811,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ServerlessZip != nil {
         // handle response
     }
@@ -880,7 +863,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Classes != nil {
         // handle response
     }
@@ -933,7 +915,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Classes != nil {
         // handle response
     }
@@ -969,7 +950,6 @@ import(
 	testpango "github.com/speakeasy-sdks/testpan-go"
 	"context"
 	"log"
-	"net/http"
 )
 
 func main() {
@@ -988,8 +968,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
-    if res.StatusCode == http.StatusOK {
+    if res != nil {
         // handle response
     }
 }
@@ -1046,7 +1025,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.CloudAccount != nil {
         // handle response
     }

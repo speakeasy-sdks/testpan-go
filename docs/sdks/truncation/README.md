@@ -40,7 +40,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.TruncationStatus != nil {
         // handle response
     }
@@ -89,7 +88,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.TruncationStatus != nil {
         // handle response
     }
@@ -141,7 +139,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.TruncationStatus != nil {
         // handle response
     }
@@ -194,7 +191,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.TruncationStatus != nil {
         // handle response
     }

@@ -14,7 +14,7 @@ type GetAPIResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Success
-	Res *string
+	String *string
 }
 
 func (o *GetAPIResponse) GetContentType() string {
@@ -38,9 +38,9 @@ func (o *GetAPIResponse) GetRawResponse() *http.Response {
 	return o.RawResponse
 }
 
-func (o *GetAPIResponse) GetRes() *string {
+func (o *GetAPIResponse) GetString() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Res
+	return o.String
 }

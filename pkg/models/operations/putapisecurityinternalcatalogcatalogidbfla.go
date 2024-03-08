@@ -34,7 +34,7 @@ type PutAPISecurityInternalCatalogCatalogIDBflaResponse struct {
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
 	// Updated
-	Res *string
+	String *string
 }
 
 func (o *PutAPISecurityInternalCatalogCatalogIDBflaResponse) GetContentType() string {
@@ -58,9 +58,9 @@ func (o *PutAPISecurityInternalCatalogCatalogIDBflaResponse) GetRawResponse() *h
 	return o.RawResponse
 }
 
-func (o *PutAPISecurityInternalCatalogCatalogIDBflaResponse) GetRes() *string {
+func (o *PutAPISecurityInternalCatalogCatalogIDBflaResponse) GetString() *string {
 	if o == nil {
 		return nil
 	}
-	return o.Res
+	return o.String
 }
